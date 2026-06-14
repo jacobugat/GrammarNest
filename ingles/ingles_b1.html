@@ -4048,13 +4048,22 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
         }
 
         // ---- Reproducción ----
+
+        // Algunos motores de voz "deletrean" las contracciones (you'll, I'd, etc.)
+        // cuando el texto usa el apóstrofo recto ('). Usando el apóstrofo
+        // tipográfico (') el motor reconoce la contracción como una sola
+        // palabra y la pronuncia de corrido.
+        function prepareTextForSpeech(text) {
+            return text.replace(/'/g, '\u2019');
+        }
+
         function speakCurrent() {
             if (currentList.length === 0) return;
 
             window.speechSynthesis.cancel();
 
             const item = currentList[currentIndex];
-            const utterance = new SpeechSynthesisUtterance(item.sentence);
+            const utterance = new SpeechSynthesisUtterance(prepareTextForSpeech(item.sentence));
             utterance.lang = 'en-US';
             utterance.rate = parseFloat(speedRange.value);
 
