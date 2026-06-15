@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrammarNest</title>
+    <title>IAidiomas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">GrammarNest Ingles</a>
+            <a class="navbar-brand" href="../index.html">IAidiomas Ingles</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -3496,7 +3496,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
     </div>
 
     <footer class="bg-dark text-white mt-4 text-center py-3">
-        <p>&copy; Since 2025 GrammarNest</p>
+        <p>&copy; 2025 IAidiomas</p>
         <p>Autor: Jhon Sandoval</p>
     </footer>
 
@@ -3928,7 +3928,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
         let currentIndex = 0;
         let currentRep = 0;
         let isPlaying = false;
-        let cancelledOnPurpose = false;
+        let utteranceToken = 0;
         let currentUtterance = null;
 
         const topicSelect = document.getElementById('topicSelect');
@@ -4057,10 +4057,19 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             return text.replace(/'/g, '\u2019');
         }
 
+        // Invalida cualquier utterance en curso/pendiente para que su evento
+        // onend/onerror (que puede llegar de forma asíncrona o no llegar)
+        // no afecte la siguiente reproducción.
+        function stopSpeaking() {
+            utteranceToken++;
+            window.speechSynthesis.cancel();
+        }
+
         function speakCurrent() {
             if (currentList.length === 0) return;
 
             window.speechSynthesis.cancel();
+            const token = ++utteranceToken;
 
             const item = currentList[currentIndex];
             const utterance = new SpeechSynthesisUtterance(prepareTextForSpeech(item.sentence));
@@ -4071,18 +4080,12 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             if (voice) utterance.voice = voice;
 
             utterance.onend = () => {
-                if (cancelledOnPurpose) {
-                    cancelledOnPurpose = false;
-                    return;
-                }
+                if (token !== utteranceToken) return;
                 handleUtteranceEnd();
             };
 
             utterance.onerror = () => {
-                if (cancelledOnPurpose) {
-                    cancelledOnPurpose = false;
-                    return;
-                }
+                if (token !== utteranceToken) return;
             };
 
             currentUtterance = utterance;
@@ -4127,8 +4130,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             if (isPlaying) {
                 // Pausar
                 isPlaying = false;
-                cancelledOnPurpose = true;
-                window.speechSynthesis.cancel();
+                stopSpeaking();
                 setPlayIcon(true);
             } else {
                 // Reproducir / reanudar
@@ -4140,8 +4142,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 
         stopBtn.addEventListener('click', () => {
             isPlaying = false;
-            cancelledOnPurpose = true;
-            window.speechSynthesis.cancel();
+            stopSpeaking();
             currentRep = 0;
             setPlayIcon(true);
             updateDisplay();
@@ -4149,8 +4150,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 
         prevBtn.addEventListener('click', () => {
             if (currentList.length === 0) return;
-            cancelledOnPurpose = true;
-            window.speechSynthesis.cancel();
+            stopSpeaking();
             currentRep = 0;
             currentIndex = Math.max(0, currentIndex - 1);
             updateDisplay();
@@ -4159,8 +4159,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 
         nextBtn.addEventListener('click', () => {
             if (currentList.length === 0) return;
-            cancelledOnPurpose = true;
-            window.speechSynthesis.cancel();
+            stopSpeaking();
             currentRep = 0;
             currentIndex = Math.min(currentList.length - 1, currentIndex + 1);
             updateDisplay();
@@ -4168,19 +4167,20 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
         });
 
         topicSelect.addEventListener('change', () => {
-            isPlaying = false;
-            cancelledOnPurpose = true;
-            window.speechSynthesis.cancel();
-            setPlayIcon(true);
+            const wasPlaying = isPlaying;
+            stopSpeaking();
             buildList();
             updateDisplay();
+            if (wasPlaying) {
+                speakCurrent();
+            } else {
+                setPlayIcon(true);
+            }
         });
 
         speedRange.addEventListener('input', () => {
             speedValue.textContent = `${parseFloat(speedRange.value).toFixed(2)}x`;
             if (isPlaying) {
-                cancelledOnPurpose = true;
-                window.speechSynthesis.cancel();
                 speakCurrent();
             }
         });
@@ -4195,8 +4195,6 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 
         voiceSelect.addEventListener('change', () => {
             if (isPlaying) {
-                cancelledOnPurpose = true;
-                window.speechSynthesis.cancel();
                 speakCurrent();
             }
         });
@@ -4204,8 +4202,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
         // Detener todo al cerrar el modal
         document.getElementById('audioPlayerModal').addEventListener('hidden.bs.modal', () => {
             isPlaying = false;
-            cancelledOnPurpose = true;
-            window.speechSynthesis.cancel();
+            stopSpeaking();
             setPlayIcon(true);
         });
 
