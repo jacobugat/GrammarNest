@@ -34,6 +34,13 @@
         <h1>B2</h1>
     </header>
 
+    <!-- Acceso al Audio Player de Flashcards -->
+    <div class="container mt-3">
+        <button class="btn btn-warning w-100 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#audioPlayerModal">
+            <i class="fa-solid fa-headphones-simple"></i> Audio Flashcards · Grammar Focus
+        </button>
+    </div>
+
     <!-- 01 Verbs followed by gerunds -->
     <div class="container mt-2">
         <!-- Verbs followed by gerunds -->
@@ -3386,6 +3393,101 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
         </div>
     </div>
 
+    <!-- Modal: Audio Flashcards Player -->
+    <div class="modal fade" id="audioPlayerModal" tabindex="-1" aria-labelledby="audioPlayerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="audioPlayerLabel">
+                        <i class="fa-solid fa-headphones-simple"></i> Audio Flashcards · Grammar Focus B1
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Selector de tema -->
+                    <div class="mb-3">
+                        <label for="topicSelect" class="form-label fw-bold">Tema (Grammar Focus)</label>
+                        <select class="form-select" id="topicSelect"></select>
+                    </div>
+
+                    <!-- Info de progreso -->
+                    <div class="d-flex justify-content-between small text-muted mb-1">
+                        <span id="topicLabel">—</span>
+                        <span id="sentenceCounter">Frase 0 / 0</span>
+                    </div>
+
+                    <!-- Frase actual -->
+                    <div class="card bg-light mb-3">
+                        <div class="card-body text-center">
+                            <p class="fs-4 fw-semibold mb-0" id="sentenceDisplay">Selecciona un tema y presiona Play
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Progreso de repeticiones -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span>Repetición</span>
+                            <span id="repCounter">0 / 10</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-warning" id="repProgressBar" role="progressbar"
+                                style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Controles de reproducción -->
+                    <div class="d-flex justify-content-center gap-2 mb-3">
+                        <button class="btn btn-outline-dark" id="prevBtn" title="Frase anterior">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </button>
+                        <button class="btn btn-success btn-lg" id="playPauseBtn" title="Reproducir / Pausar">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button class="btn btn-outline-dark" id="stopBtn" title="Detener">
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                        <button class="btn btn-outline-dark" id="nextBtn" title="Siguiente frase">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <!-- Configuración -->
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="speedRange" class="form-label">Velocidad: <span
+                                    id="speedValue">0.8x</span></label>
+                            <input type="range" class="form-range" id="speedRange" min="0.5" max="1.2" step="0.05"
+                                value="0.8">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="repeatInput" class="form-label">Repeticiones por frase</label>
+                            <input type="number" class="form-control" id="repeatInput" min="1" max="30" value="10">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="voiceSelect" class="form-label">Voz (Inglés)</label>
+                            <select class="form-select" id="voiceSelect"></select>
+                        </div>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" id="autoAdvanceCheck" checked>
+                        <label class="form-check-label" for="autoAdvanceCheck">
+                            Avanzar automáticamente a la siguiente frase
+                        </label>
+                    </div>
+                    <p class="text-muted small mt-3 mb-0">
+                        <i class="fa-solid fa-circle-info"></i>
+                        La voz depende del navegador/dispositivo. En Chrome y Edge suele haber más voces en inglés
+                        disponibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark text-white mt-4 text-center py-3">
         <p>&copy; Since 2025 GrammarNest</p>
         <p>Autor: Jhon Sandoval</p>
@@ -3424,6 +3526,593 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             // Mostrar el toast de éxito
             var toast = new bootstrap.Toast(document.getElementById('toastMessage'));
             toast.show();
+        }
+    </script>
+
+    <!-- Audio Flashcards Player: datos y lógica -->
+    <script>
+        // Datos extraídos del Grammar Focus de cada tema (sin Grammar Bonus)
+        const grammarData = [
+  {
+    "title": "Verbs followed by gerunds",
+    "sentences": [
+      "I enjoy going to parties where I don't know everyone.",
+      "I avoid expressing my feelings and ideas in public.",
+      "I don't mind giving up my time to help other people.",
+      "I can't stand being in a messy room.",
+      "I love taking my friends to cool new clubs.",
+      "I hate getting up for early morning classes.",
+      "I insist on making my own decisions.",
+      "I always feel like going dancing!",
+      "I'm into going out to new foreign restaurants."
+    ]
+  },
+  {
+    "title": "Noun clauses after be",
+    "sentences": [
+      "The only trouble with being a two-income family is that we don't spend as much time together.",
+      "The big advantage of having Grandma at home is that she can babysit more often."
+    ]
+  },
+  {
+    "title": "Past modals and phrasal modals of obligation",
+    "sentences": [
+      "I should have stayed home and studied!",
+      "I was supposed to be studying this weekend.",
+      "I had to wear a uniform.",
+      "I didn't have to go with my friends, but I did.",
+      "I thought I needed to have more clothes."
+    ]
+  },
+  {
+    "title": "Modals with multiple uses",
+    "sentences": [
+      "I'm certain Banksy must have wanted to win that Oscar.",
+      "People thought he could have been trying to get publicity for the movie.",
+      "That website hoax might have been planned by Banksy himself.",
+      "Banksy shouldn't have painted on other people's property.",
+      "He should be more careful.",
+      "The magazine readers shouldn't have expected Banksy to reveal his identity just because of an article."
+    ]
+  },
+  {
+    "title": "Defining and non-defining relative clauses",
+    "sentences": [
+      "The Myeong-dong area has dozens of shops that sell the latest fashions.",
+      "The spring and fall are the seasons when most people come to visit.",
+      "Most restaurants here stay open until midnight, when many locals are still enjoying dinner.",
+      "Beijing has many popular tourist attractions, which include the Summer Palace and the Forbidden City."
+    ]
+  },
+  {
+    "title": "Order of modifiers",
+    "sentences": [
+      "Article → quality → size → noun → descriptive phrase",
+      "This, exciting, large, city, with bustling streets",
+      "Article → quality → size → type → noun → descriptive phrase",
+      "A, picturesque, little, resort, town, with year-round outdoor activities",
+      "Article → quality → age → type → noun → descriptive phrase",
+      "A, run-down, old, port, town, that has seen better days"
+    ]
+  },
+  {
+    "title": "Connecting contrasting ideas",
+    "sentences": [
+      "despite",
+      "in spite of",
+      "although",
+      "even though",
+      "however",
+      "nevertheless",
+      "on the other hand"
+    ]
+  },
+  {
+    "title": "Reduce time clauses",
+    "sentences": [
+      "After I finish my workout, I head to the office.",
+      "While taking my lunch break at work, I often sneak a five-minute nap.",
+      "I'm not very approachable right after waking up!",
+      "Ever since I was a kid, I've had trouble getting up early.",
+      "As soon as I get up in the morning, I race off to the gym.",
+      "Until I've had my coffee, I'm such a grouch.",
+      "Whenever you have to work with numbers, plan to do it around noon.",
+      "I've been a night person from the moment I started college."
+    ]
+  },
+  {
+    "title": "Clauses stating reasons and conditions",
+    "sentences": [
+      "I sometimes lie awake at night, even if I'm really tired.",
+      "I'm lucky I can get by on six hours of sleep, considering that most people need eight.",
+      "I can manage on five hours of sleep, as long as I take a nap during the day.",
+      "Unless I get a good night's sleep, I can easily fall asleep at school, at work, or even on the bus.",
+      "I always set two alarm clocks just in case one of them doesn't go off.",
+      "I only wake up early if I have somewhere to be in the morning.",
+      "I wake up early only if I have somewhere to be in the morning."
+    ]
+  },
+  {
+    "title": "Infinitive and gerund phrases",
+    "sentences": [
+      "It's rude to ignore your conversation partner.",
+      "Ignoring your conversation partner is rude.",
+      "It's a good idea to try out different topics.",
+      "Trying out different topics is a good idea.",
+      "It's considered impolite to interrupt people.",
+      "Interrupting people is considered impolite.",
+      "It's customary for the complimenter to say nice things about others.",
+      "Saying nice things about others is customary for the complimenter."
+    ]
+  },
+  {
+    "title": "Reported speech",
+    "sentences": [
+      "It's a big secret.",
+      "He said that it was a big secret.",
+      "I'm getting a terrible grade.",
+      "He said that he was getting a terrible grade.",
+      "They got engaged.",
+      "He said that they had gotten engaged.",
+      "We weren't talking about you.",
+      "They claimed that they hadn't been talking about me.",
+      "She's been absent since Tuesday.",
+      "He said that she had been absent since Tuesday.",
+      "We had never been there before.",
+      "She said that they had never been there before.",
+      "I'll meet you at the café.",
+      "He said that he would meet me at the café.",
+      "Did you know about the layoffs?",
+      "I asked him if he had known about the layoffs.",
+      "What are you saying?",
+      "I asked them what they were saying.",
+      "Don't say anything!",
+      "He warned his friend not to say anything.",
+      "The sun rises in the east.",
+      "She said that the sun rises in the east."
+    ]
+  },
+  {
+    "title": "Present perfect vs. simple past",
+    "sentences": [
+      "I've locked my keys in the car.",
+      "After a day at the mall, the woman went out to her car.",
+      "I started teaching her to paint last year."
+    ]
+  },
+  {
+    "title": "Present perfect vs. present perfect continuous",
+    "sentences": [
+      "A dog has been stealing all the attention.",
+      "I've always surfed with my dog.",
+      "Maggie has been amazing visitors by painting for her supper.",
+      "I've locked my keys in the car.",
+      "He's always loved it."
+    ]
+  },
+  {
+    "title": "Adverbs with the simple past and past perfect",
+    "sentences": [
+      "Afterwards, we all laughed about it.",
+      "When I got to work, my boss asked to speak to me.",
+      "Until that time, I had never lost anything important."
+    ]
+  },
+  {
+    "title": "Passive of present continuous, present perfect, future",
+    "sentences": [
+      "More employees are being allowed to work remotely for part of their workweek.",
+      "Music fans have been given access to nearly unlimited music libraries in \"the cloud.”",
+      "Most store purchases will be made by using a mobile device linked to an online account.",
+      "More and more doctor's examinations are likely going to be done over the Internet."
+    ]
+  },
+  {
+    "title": "Negative and tag questions for giving opinions",
+    "sentences": [
+      "Isn't it weird how some people use mobile devices constantly?",
+      "Doesn't it seem like kids spend too much time playing violent video games?",
+      "Wouldn't it be great if phones came loaded with even more apps?",
+      "Shouldn't the government fine sites that contain false information?",
+      "Apps are cool, aren't they?",
+      "It makes kids more aggressive, doesn't it?",
+      "Don't you think there are too many websites full of misinformation?",
+      "It's actually dangerous, don't you think?"
+    ]
+  },
+  {
+    "title": "Reduced relative clauses",
+    "sentences": [
+      "Someone able to think quickly might be a good surgeon.",
+      "A person looking for adventure could be a private detective.",
+      "A person trained in music might be a good DJ.",
+      "Someone who needs job security might not want to be a jazz musician.",
+      "Someone needing job security might not want to be a jazz musician.",
+      "A person that has a good voice could be a good TV journalist.",
+      "A person with a good voice could be a good TV journalist."
+    ]
+  },
+  {
+    "title": "Non-defining relative clauses as sentence modifiers",
+    "sentences": [
+      "I have three cats, which means there's usually a lot of cat fur on my clothes.",
+      "My roommate is a slob, which is why I want to get my own apartment."
+    ]
+  },
+  {
+    "title": "Clauses and phrases showing contrast and exception",
+    "sentences": [
+      "While the typical Italian person studies until the age of 22, the typical Japanese person studies until the age of 24.",
+      "Unlike the Japanese, Italians seem to drink a lot of bottled water.",
+      "In contrast to Italians, the Japanese travel a lot more by rail.",
+      "Both like TV, except that the typical Italian person watches more.",
+      "Italian and Japanese people are fairly different, except for the age they get married.",
+      "Japanese people typically consume less, except for the fact that they drink more tea."
+    ]
+  },
+  {
+    "title": "Past habitual with used to and would",
+    "sentences": [
+      "You always used to make me laugh.",
+      "My job didn't use to be so demanding!",
+      "Remember the way we would sit around talking?",
+      "I would see some great jacket, but you wouldn't let me buy it."
+    ]
+  },
+  {
+    "title": "Relative clauses and noun clauses",
+    "sentences": [
+      "Something that bugs me is people who take up two seats on a crowded bus.",
+      "The thing that I can't stand is co-workers who leave their cell phones ringing on their desks.",
+      "The thing that I hate is when kids ride their scooters on the sidewalk.",
+      "One thing that bothers me is when my friends don't show up on time for things."
+    ]
+  },
+  {
+    "title": "Simple and complex indirect questions",
+    "sentences": [
+      "Why don't they have more buses at rush hour?",
+      "I wonder why they don't have more buses at rush hour.",
+      "Will I be able to get into the class?",
+      "My big concern is whether I'll be able to get into the class.",
+      "How can anyone afford them?",
+      "How anyone can afford them is beyond me."
+    ]
+  },
+  {
+    "title": "Present unreal conditional with unless, only if, and even if",
+    "sentences": [
+      "I wouldn't try to return it unless it were a large amount.",
+      "I would keep it a secret unless my boss asked me directly about it.",
+      "I would keep it a secret only if I liked my co-worker.",
+      "Even if clauses are followed by unexpected results.",
+      "Even if I were really broke, I'd give the money to the police."
+    ]
+  },
+  {
+    "title": "Wishes and regrets",
+    "sentences": [
+      "I wish I had enough nerve to ask for a promotion.",
+      "I wish I could find the time to do volunteer work.",
+      "I wish I'd taken a few Spanish classes.",
+      "I wish I hadn't given my parents such a hard time when I was growing up.",
+      "For regrets about the past, use if + past perfect and could I would have + past participle.",
+      "If I had stuck with something, I could have gotten good at it.",
+      "For strong wishes about the present or future, or for strong regrets about the past, use if only. If only clauses are often used without a main clause.",
+      "If only my boss would consider promoting me!"
+    ]
+  },
+  {
+    "title": "Future perfect and future perfect continuous",
+    "sentences": [
+      "By this time next year, your self-confidence will have increased.",
+      "By the end of next year, you will have been studying your chosen language for 12 months."
+    ]
+  },
+  {
+    "title": "Mixed conditionals",
+    "sentences": [
+      "If you hadn't been so nice, you would probably still have your wallet!",
+      "If someone had broken into your room, you would probably still be trying to get home!"
+    ]
+  }
+];
+
+        // ---- Estado del reproductor ----
+        let currentList = [];      // [{ topicTitle, sentence }]
+        let currentIndex = 0;
+        let currentRep = 0;
+        let isPlaying = false;
+        let utteranceToken = 0;
+        let currentUtterance = null;
+
+        const topicSelect = document.getElementById('topicSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const speedRange = document.getElementById('speedRange');
+        const speedValue = document.getElementById('speedValue');
+        const repeatInput = document.getElementById('repeatInput');
+        const autoAdvanceCheck = document.getElementById('autoAdvanceCheck');
+
+        const topicLabel = document.getElementById('topicLabel');
+        const sentenceCounter = document.getElementById('sentenceCounter');
+        const sentenceDisplay = document.getElementById('sentenceDisplay');
+        const repCounter = document.getElementById('repCounter');
+        const repProgressBar = document.getElementById('repProgressBar');
+
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // ---- Construir el selector de temas ----
+        function buildTopicOptions() {
+            const totalSentences = grammarData.reduce((acc, t) => acc + t.sentences.length, 0);
+
+            const allOption = document.createElement('option');
+            allOption.value = 'all';
+            allOption.textContent = `Todos los temas (${totalSentences} frases)`;
+            topicSelect.appendChild(allOption);
+
+            grammarData.forEach((topic, idx) => {
+                const opt = document.createElement('option');
+                opt.value = String(idx);
+                opt.textContent = `${idx + 1}. ${topic.title} (${topic.sentences.length})`;
+                topicSelect.appendChild(opt);
+            });
+        }
+
+        // ---- Construir la lista de frases según el tema elegido ----
+        function buildList() {
+            const value = topicSelect.value;
+            currentList = [];
+            if (value === 'all') {
+                grammarData.forEach(topic => {
+                    topic.sentences.forEach(sentence => {
+                        currentList.push({ topicTitle: topic.title, sentence });
+                    });
+                });
+            } else {
+                const topic = grammarData[parseInt(value, 10)];
+                topic.sentences.forEach(sentence => {
+                    currentList.push({ topicTitle: topic.title, sentence });
+                });
+            }
+            currentIndex = 0;
+            currentRep = 0;
+        }
+
+        // ---- Voces disponibles (inglés) ----
+        function populateVoices() {
+            const voices = window.speechSynthesis.getVoices()
+                .filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+
+            if (voices.length === 0) return;
+
+            voiceSelect.innerHTML = '';
+            voices.forEach((voice, idx) => {
+                const opt = document.createElement('option');
+                opt.value = String(idx);
+                opt.textContent = `${voice.name} (${voice.lang})`;
+                opt.dataset.voiceName = voice.name;
+                voiceSelect.appendChild(opt);
+            });
+
+            // Preferir una voz en inglés estadounidense por defecto, si existe
+            const usIndex = voices.findIndex(v => v.lang.toLowerCase() === 'en-us');
+            if (usIndex >= 0) {
+                voiceSelect.value = String(usIndex);
+            }
+        }
+
+        function getSelectedVoice() {
+            const voices = window.speechSynthesis.getVoices()
+                .filter(v => v.lang && v.lang.toLowerCase().startsWith('en'));
+            const idx = parseInt(voiceSelect.value, 10);
+            return voices[idx] || voices[0] || null;
+        }
+
+        // ---- Actualizar la interfaz ----
+        function updateDisplay() {
+            const total = currentList.length;
+            const repeatCount = parseInt(repeatInput.value, 10) || 10;
+
+            if (total === 0) {
+                topicLabel.textContent = 'Selecciona un tema';
+                sentenceDisplay.textContent = 'Selecciona un tema y presiona Play';
+                sentenceCounter.textContent = 'Frase 0 / 0';
+                repCounter.textContent = `0 / ${repeatCount}`;
+                repProgressBar.style.width = '0%';
+                return;
+            }
+
+            const item = currentList[currentIndex];
+            topicLabel.textContent = item.topicTitle;
+            sentenceDisplay.textContent = item.sentence;
+            sentenceCounter.textContent = `Frase ${currentIndex + 1} / ${total}`;
+
+            const repShown = Math.min(currentRep + (isPlaying ? 1 : 0), repeatCount);
+            repCounter.textContent = `${currentRep} / ${repeatCount}`;
+            const pct = repeatCount > 0 ? (currentRep / repeatCount) * 100 : 0;
+            repProgressBar.style.width = `${pct}%`;
+        }
+
+        function setPlayIcon(showPlay) {
+            playPauseBtn.innerHTML = showPlay
+                ? '<i class="fa-solid fa-play"></i>'
+                : '<i class="fa-solid fa-pause"></i>';
+        }
+
+        // ---- Reproducción ----
+
+        // Algunos motores de voz "deletrean" las contracciones (you'll, I'd, etc.)
+        // cuando el texto usa el apóstrofo recto ('). Usando el apóstrofo
+        // tipográfico (') el motor reconoce la contracción como una sola
+        // palabra y la pronuncia de corrido.
+        function prepareTextForSpeech(text) {
+            return text.replace(/'/g, '\u2019');
+        }
+
+        // Invalida cualquier utterance en curso/pendiente para que su evento
+        // onend/onerror (que puede llegar de forma asíncrona o no llegar)
+        // no afecte la siguiente reproducción.
+        function stopSpeaking() {
+            utteranceToken++;
+            window.speechSynthesis.cancel();
+        }
+
+        function speakCurrent() {
+            if (currentList.length === 0) return;
+
+            window.speechSynthesis.cancel();
+            const token = ++utteranceToken;
+
+            const item = currentList[currentIndex];
+            const utterance = new SpeechSynthesisUtterance(prepareTextForSpeech(item.sentence));
+            utterance.lang = 'en-US';
+            utterance.rate = parseFloat(speedRange.value);
+
+            const voice = getSelectedVoice();
+            if (voice) utterance.voice = voice;
+
+            utterance.onend = () => {
+                if (token !== utteranceToken) return;
+                handleUtteranceEnd();
+            };
+
+            utterance.onerror = () => {
+                if (token !== utteranceToken) return;
+            };
+
+            currentUtterance = utterance;
+            window.speechSynthesis.speak(utterance);
+            updateDisplay();
+        }
+
+        function handleUtteranceEnd() {
+            const repeatCount = parseInt(repeatInput.value, 10) || 10;
+            currentRep++;
+
+            if (currentRep < repeatCount) {
+                updateDisplay();
+                if (isPlaying) {
+                    setTimeout(() => { if (isPlaying) speakCurrent(); }, 600);
+                }
+            } else {
+                currentRep = 0;
+                const isLast = currentIndex >= currentList.length - 1;
+
+                if (autoAdvanceCheck.checked && !isLast) {
+                    currentIndex++;
+                    updateDisplay();
+                    if (isPlaying) {
+                        setTimeout(() => { if (isPlaying) speakCurrent(); }, 900);
+                    }
+                } else {
+                    isPlaying = false;
+                    setPlayIcon(true);
+                    updateDisplay();
+                }
+            }
+        }
+
+        // ---- Controles ----
+        playPauseBtn.addEventListener('click', () => {
+            if (currentList.length === 0) {
+                buildList();
+            }
+            if (currentList.length === 0) return;
+
+            if (isPlaying) {
+                // Pausar
+                isPlaying = false;
+                stopSpeaking();
+                setPlayIcon(true);
+            } else {
+                // Reproducir / reanudar
+                isPlaying = true;
+                setPlayIcon(false);
+                speakCurrent();
+            }
+        });
+
+        stopBtn.addEventListener('click', () => {
+            isPlaying = false;
+            stopSpeaking();
+            currentRep = 0;
+            setPlayIcon(true);
+            updateDisplay();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentList.length === 0) return;
+            stopSpeaking();
+            currentRep = 0;
+            currentIndex = Math.max(0, currentIndex - 1);
+            updateDisplay();
+            if (isPlaying) speakCurrent();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentList.length === 0) return;
+            stopSpeaking();
+            currentRep = 0;
+            currentIndex = Math.min(currentList.length - 1, currentIndex + 1);
+            updateDisplay();
+            if (isPlaying) speakCurrent();
+        });
+
+        topicSelect.addEventListener('change', () => {
+            const wasPlaying = isPlaying;
+            stopSpeaking();
+            buildList();
+            updateDisplay();
+            if (wasPlaying) {
+                speakCurrent();
+            } else {
+                setPlayIcon(true);
+            }
+        });
+
+        speedRange.addEventListener('input', () => {
+            speedValue.textContent = `${parseFloat(speedRange.value).toFixed(2)}x`;
+            if (isPlaying) {
+                speakCurrent();
+            }
+        });
+
+        repeatInput.addEventListener('change', () => {
+            let val = parseInt(repeatInput.value, 10);
+            if (isNaN(val) || val < 1) val = 1;
+            if (val > 30) val = 30;
+            repeatInput.value = val;
+            updateDisplay();
+        });
+
+        voiceSelect.addEventListener('change', () => {
+            if (isPlaying) {
+                speakCurrent();
+            }
+        });
+
+        // Detener todo al cerrar el modal
+        document.getElementById('audioPlayerModal').addEventListener('hidden.bs.modal', () => {
+            isPlaying = false;
+            stopSpeaking();
+            setPlayIcon(true);
+        });
+
+        // ---- Inicialización ----
+        buildTopicOptions();
+        buildList();
+        updateDisplay();
+        speedValue.textContent = `${parseFloat(speedRange.value).toFixed(2)}x`;
+
+        if ('speechSynthesis' in window) {
+            populateVoices();
+            window.speechSynthesis.onvoiceschanged = populateVoices;
+        } else {
+            voiceSelect.innerHTML = '<option>No disponible en este navegador</option>';
+            playPauseBtn.disabled = true;
         }
     </script>
 
