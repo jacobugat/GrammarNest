@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>100 Phrasal Verbs</title>
+    <style>
+        :root {
+            --bg: #0f1117;
+            --surface: #1a1d27;
+            --card: #22263a;
+            --border: #2e3350;
+            --accent: #7c6af7;
+            --accent2: #4ecdc4;
+            --text: #e8eaf0;
+            --muted: #8891a8;
+            --success: #3dd68c;
+            --pill-bg: #2a2f4a;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            padding: 20px 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            padding: 10px 22px;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--muted);
+            font-size: .95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            margin-bottom: -1px;
+        }
+
+        .tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab:hover:not(.active) {
+            color: var(--text);
+        }
+
+        .search-wrap {
+            padding: 20px 24px 4px;
+        }
+
+        .search-wrap input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 12px 18px;
+            color: var(--text);
+            font-size: .95rem;
+            outline: none;
+            transition: border-color .2s;
+        }
+
+        .search-wrap input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-wrap input::placeholder {
+            color: var(--muted);
+        }
+
+        #view-list {
+            padding: 16px 24px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 12px;
+        }
+
+        .verb-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            transition: border-color .2s, transform .15s;
+        }
+
+        .verb-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .verb-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .verb-num {
+            font-size: .72rem;
+            color: var(--muted);
+            background: var(--pill-bg);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+            margin-top: 3px;
+        }
+
+        .verb-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            flex: 1;
+        }
+
+        .verb-trans {
+            font-size: .85rem;
+            color: var(--accent2);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .verb-example {
+            font-size: .9rem;
+            color: var(--text);
+            line-height: 1.5;
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .verb-example-es {
+            font-size: .82rem;
+            color: var(--muted);
+            padding-left: 13px;
+            margin-top: 4px;
+        }
+
+        /* FLASHCARD */
+        #view-flash {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding: 28px 24px 60px;
+            min-height: 80vh;
+        }
+
+        .audio-panel {
+            width: 100%;
+            max-width: 600px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .audio-panel-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .audio-label {
+            font-size: .78rem;
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            min-width: 80px;
+        }
+
+        .audio-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .abtn {
+            width: 40px;
+            height: 40px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s;
+        }
+
+        .abtn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .abtn-play {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s;
+        }
+
+        .abtn-play:hover {
+            background: #9585ff;
+            transform: scale(1.05);
+        }
+
+        .rep-info {
+            font-size: .82rem;
+            color: var(--accent2);
+            font-weight: 600;
+        }
+
+        select.audio-select {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            padding: 6px 10px;
+            font-size: .8rem;
+            outline: none;
+            cursor: pointer;
+            flex: 1;
+            min-width: 0;
+        }
+
+        input[type=range].speed-range {
+            accent-color: var(--accent);
+            cursor: pointer;
+            width: 120px;
+        }
+
+        .speed-val {
+            font-size: .82rem;
+            color: var(--accent);
+            font-weight: 700;
+            min-width: 34px;
+        }
+
+        .flash-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .flash-meta span {
+            font-size: .85rem;
+            color: var(--muted);
+            background: var(--pill-bg);
+            padding: 5px 14px;
+            border-radius: 20px;
+        }
+
+        .rep-badge {
+            color: var(--accent2) !important;
+            font-weight: 700;
+        }
+
+        .flash-progress-bar {
+            width: 100%;
+            max-width: 600px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+
+        .flash-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            border-radius: 4px;
+            transition: width .4s ease;
+            width: 0%;
+        }
+
+        /* Tarjeta única (sin flip) */
+        .fc-card {
+            width: 100%;
+            max-width: 580px;
+            background: linear-gradient(135deg, #1e2240 0%, #252b4a 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 44px 40px;
+            text-align: center;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            min-height: 220px;
+            justify-content: center;
+        }
+
+        .card-hint {
+            font-size: .72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .card-verb {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .card-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--border);
+            border-radius: 2px;
+        }
+
+        .card-translation {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent2);
+        }
+
+        .card-num-badge {
+            font-size: .78rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .card-rep-dots {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 6px;
+        }
+
+        .rep-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            transition: background .3s;
+        }
+
+        .rep-dot.done {
+            background: var(--accent2);
+        }
+
+        .flash-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 11px 26px;
+            border-radius: 10px;
+            border: none;
+            font-size: .92rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #9585ff;
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-icon {
+            padding: 11px 15px;
+            background: var(--surface);
+            color: var(--muted);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all .2s;
+        }
+
+        .btn-icon:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .toggle-label {
+            font-size: .85rem;
+            color: var(--muted);
+        }
+
+        .toggle {
+            position: relative;
+            width: 44px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            inset: 0;
+            background: var(--border);
+            border-radius: 24px;
+            transition: .3s;
+        }
+
+        .slider:before {
+            content: '';
+            position: absolute;
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--muted);
+            border-radius: 50%;
+            transition: .3s;
+        }
+
+        .toggle input:checked+.slider {
+            background: var(--accent);
+        }
+
+        .toggle input:checked+.slider:before {
+            transform: translateX(20px);
+            background: white;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        #view-list:not(.hidden) {
+            display: grid;
+        }
+
+        #view-flash:not(.hidden) {
+            display: flex;
+        }
+
+        @media(max-width:600px) {
+            #view-list {
+                grid-template-columns: 1fr;
+                padding: 12px 14px 40px;
+            }
+
+            .card-verb {
+                font-size: 2rem;
+            }
+
+            .card-translation {
+                font-size: 1.2rem;
+            }
+
+            .tabs {
+                padding: 16px 14px 0;
+            }
+
+            .search-wrap {
+                padding: 16px 14px 4px;
+            }
+
+            .fc-card {
+                padding: 32px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">GrammarNest Ingles</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="ingles_a1.html">A1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ingles_a2.html">A2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ingles_b1.html">B1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ingles_b2.html">B2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ingles_c1.html">C1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="phrasal_verbs_100.html">100</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tabs">
+        <button class="tab active" id="tab-list" onclick="showTab('list')">📋 Lista</button>
+        <button class="tab" id="tab-flash" onclick="showTab('flash')">🎧 Audio Flashcards</button>
+    </div>
+
+    <!-- LISTA -->
+    <div class="search-wrap" id="search-section">
+        <input type="text" id="searchInput" placeholder="Buscar verbo, traducción o frase..." oninput="filterList()">
+    </div>
+    <div id="view-list"></div>
+
+    <!-- AUDIO FLASHCARDS -->
+    <div id="view-flash" class="hidden">
+
+        <!-- Tarjeta primero -->
+        <div class="flash-meta">
+            <span>Verbo <strong id="fc-num">1</strong> de <strong id="fc-total">100</strong></span>
+            <span class="rep-badge">Completados: <strong id="fc-done">0</strong></span>
+        </div>
+
+        <div class="flash-progress-bar">
+            <div class="flash-progress-fill" id="fc-progress"></div>
+        </div>
+
+        <div class="fc-card">
+            <div class="card-hint">Phrasal Verb</div>
+            <div class="card-verb" id="fc-verb">bring out</div>
+            <div class="card-divider"></div>
+            <div class="card-translation" id="fc-trans">sacar, revelar</div>
+            <div class="card-num-badge" id="fc-badge">#1</div>
+            <div class="card-rep-dots" id="fc-dots"></div>
+        </div>
+
+        <div class="flash-controls">
+            <button class="btn-icon" onclick="prevCard()">◀</button>
+            <button class="btn btn-secondary" onclick="restartFlash()">↺ Reiniciar</button>
+            <button class="btn btn-primary" onclick="nextCard()">Siguiente →</button>
+            <button class="btn-icon" onclick="nextCard()">▶</button>
+        </div>
+
+        <!-- Reproductor abajo -->
+        <div class="audio-panel">
+            <div class="audio-panel-row">
+                <span class="audio-label">Controles</span>
+                <div class="audio-btns">
+                    <button class="abtn" onclick="prevCard()" title="Anterior">◀</button>
+                    <button class="abtn-play" id="btn-play" onclick="togglePlay()">▶</button>
+                    <button class="abtn" onclick="stopAudio()" title="Detener">■</button>
+                    <button class="abtn" onclick="nextCard()" title="Siguiente">▶▶</button>
+                </div>
+                <span class="rep-info">Rep <span id="fc-rep">1</span> / <span id="fc-rep-max">10</span></span>
+            </div>
+
+            <div class="audio-panel-row">
+                <span class="audio-label">Velocidad</span>
+                <input type="range" class="speed-range" id="speedRange" min="0.5" max="1.2" step="0.1" value="0.8"
+                    oninput="document.getElementById('speedVal').textContent=parseFloat(this.value).toFixed(1)+'x'">
+                <span class="speed-val" id="speedVal">0.8x</span>
+            </div>
+
+            <div class="audio-panel-row">
+                <span class="audio-label">Repeticiones</span>
+                <input type="number" id="repInput" min="1" max="30" value="10"
+                    style="width:60px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:5px 8px;font-size:.85rem;outline:none;">
+                <span style="font-size:.8rem;color:var(--muted)">por verbo</span>
+            </div>
+
+            <div class="audio-panel-row">
+                <span class="audio-label">Voz</span>
+                <select id="voiceSelect" class="audio-select"></select>
+            </div>
+
+            <div class="audio-panel-row">
+                <span class="audio-label">Auto-avance</span>
+                <label class="toggle"><input type="checkbox" id="autoAdvance" checked><span
+                        class="slider"></span></label>
+                <span style="font-size:.8rem;color:var(--muted)">Avanza solo al terminar repeticiones</span>
+            </div>
+
+            <div class="audio-panel-row">
+                <span class="audio-label">Aleatorio</span>
+                <label class="toggle"><input type="checkbox" id="shuffleToggle"><span class="slider"></span></label>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function () {
+            var VERBS = [{ "verb": "bring out", "translation": "sacar, revelar", "example": "They bring out the steaks.", "example_es": "Sacan los filetes.", "num": 1 }, { "verb": "come along", "translation": "acompañar, venir", "example": "Would you like to come along?", "example_es": "¿Te gustaría venir?", "num": 2 }, { "verb": "look after", "translation": "cuidar a alguien", "example": "Look after yourself.", "example_es": "Cuídate.", "num": 3 }, { "verb": "deal with", "translation": "lidiar con, manejar", "example": "I'll deal with this situation.", "example_es": "Yo me encargo de esta situación.", "num": 4 }, { "verb": "come back", "translation": "volver, regresar", "example": "I'll come back and visit.", "example_es": "Volveré a visitar.", "num": 5 }, { "verb": "speed up", "translation": "acelerar", "example": "I should speed up.", "example_es": "Debería acelerar.", "num": 6 }, { "verb": "go on", "translation": "seguir, continuar", "example": "She has to go on.", "example_es": "Ella tiene que seguir.", "num": 7 }, { "verb": "break in", "translation": "entrar a la fuerza, allanar", "example": "Someone broke into my house.", "example_es": "Alguien entró a la fuerza a mi casa.", "num": 8 }, { "verb": "bring up", "translation": "mencionar, criar", "example": "Angela does bring up a good point.", "example_es": "Angela saca un buen punto.", "num": 9 }, { "verb": "look up", "translation": "buscar (información)", "example": "You should look up the word metaphor.", "example_es": "Deberías buscar la palabra metáfora.", "num": 10 }, { "verb": "go back", "translation": "regresar, volver", "example": "We've got to go back.", "example_es": "Tenemos que regresar.", "num": 11 }, { "verb": "give away", "translation": "regalar, revelar", "example": "I'm going to give my old clothes away.", "example_es": "Voy a regalar mi ropa vieja.", "num": 12 }, { "verb": "get up", "translation": "levantarse", "example": "I gotta get up early.", "example_es": "Tengo que levantarme temprano.", "num": 13 }, { "verb": "check in", "translation": "registrarse (hotel/vuelo)", "example": "They check in early.", "example_es": "Ellos se registran temprano.", "num": 14 }, { "verb": "check out", "translation": "salir del hotel, revisar", "example": "I'd like to check out, please.", "example_es": "Me gustaría hacer el check-out, por favor.", "num": 15 }, { "verb": "come out", "translation": "salir, aparecer", "example": "Can you come out and play?", "example_es": "¿Puedes salir a jugar?", "num": 16 }, { "verb": "mix up", "translation": "confundir, mezclar", "example": "I mixed up their names.", "example_es": "Confundí sus nombres.", "num": 17 }, { "verb": "work out", "translation": "hacer ejercicio, resolver", "example": "I worked out this morning.", "example_es": "Hice ejercicio esta mañana.", "num": 18 }, { "verb": "cut off", "translation": "cortar, interrumpir", "example": "They're gonna cut off the power.", "example_es": "Van a cortar la electricidad.", "num": 19 }, { "verb": "hang out", "translation": "pasar el rato", "example": "Do you want to hang out tonight?", "example_es": "¿Quieres pasar el rato esta noche?", "num": 20 }, { "verb": "set up", "translation": "organizar, establecer", "example": "I've set up a meeting.", "example_es": "He organizado una reunión.", "num": 21 }, { "verb": "find out", "translation": "descubrir, averiguar", "example": "Let's find out the truth.", "example_es": "Averigüemos la verdad.", "num": 22 }, { "verb": "go through", "translation": "atravesar, pasar por", "example": "You don't have to go through this alone.", "example_es": "No tienes que pasar por esto solo.", "num": 23 }, { "verb": "care for", "translation": "cuidar, querer", "example": "I care for you so much.", "example_es": "Me importas mucho.", "num": 24 }, { "verb": "take over", "translation": "tomar el control", "example": "I'm going to take over this project.", "example_es": "Voy a tomar el control de este proyecto.", "num": 25 }, { "verb": "believe in", "translation": "creer en alguien", "example": "You have to believe in yourself.", "example_es": "Tienes que creer en ti mismo.", "num": 26 }, { "verb": "take on", "translation": "asumir, aceptar", "example": "It's a lot to take on.", "example_es": "Es mucho para asumir.", "num": 27 }, { "verb": "clear up", "translation": "aclarar, despejar", "example": "Let me just clear this up.", "example_es": "Déjame aclarar esto.", "num": 28 }, { "verb": "stand for", "translation": "representar, tolerar", "example": "I will not stand for this.", "example_es": "No voy a tolerar esto.", "num": 29 }, { "verb": "warm up", "translation": "calentar, entrar en calor", "example": "Let's warm up.", "example_es": "Vamos a entrar en calor.", "num": 30 }, { "verb": "end up", "translation": "terminar, acabar", "example": "We always end up agreeing.", "example_es": "Siempre terminamos de acuerdo.", "num": 31 }, { "verb": "take off", "translation": "quitarse, despegar", "example": "Take off your jacket.", "example_es": "Quítate la chaqueta.", "num": 32 }, { "verb": "try on", "translation": "probarse (ropa)", "example": "Want to try on a few things?", "example_es": "¿Quieres probarte algunas cosas?", "num": 33 }, { "verb": "get along with", "translation": "llevarse bien con", "example": "Do you get along with your parents?", "example_es": "¿Te llevas bien con tus padres?", "num": 34 }, { "verb": "stand by", "translation": "mantenerse firme, esperar", "example": "Stand by.", "example_es": "Espera / Mantente en posición.", "num": 35 }, { "verb": "catch up with", "translation": "ponerse al día, alcanzar", "example": "I'll catch up with you later.", "example_es": "Me pondré al día contigo después.", "num": 36 }, { "verb": "build up", "translation": "acumular, desarrollar", "example": "You build up your portfolio.", "example_es": "Desarrollas tu portafolio.", "num": 37 }, { "verb": "get in", "translation": "entrar, subirse", "example": "Get in the car.", "example_es": "Súbete al carro.", "num": 38 }, { "verb": "carry out", "translation": "llevar a cabo, ejecutar", "example": "Harvey Dent will carry out that promise.", "example_es": "Harvey Dent cumplirá esa promesa.", "num": 39 }, { "verb": "carry on", "translation": "continuar, seguir adelante", "example": "You must carry on.", "example_es": "Debes seguir adelante.", "num": 40 }, { "verb": "cut down on", "translation": "reducir, disminuir", "example": "I need to cut down on my drinking.", "example_es": "Necesito reducir mi consumo de alcohol.", "num": 41 }, { "verb": "hurry up", "translation": "apresurarse, darse prisa", "example": "Hurry up!", "example_es": "¡Date prisa!", "num": 42 }, { "verb": "go by", "translation": "pasar por, guiarse por", "example": "I could go by the hospital.", "example_es": "Podría pasar por el hospital.", "num": 43 }, { "verb": "come down", "translation": "bajar, derrumbarse", "example": "The whole house is gonna come down.", "example_es": "Toda la casa va a venirse abajo.", "num": 44 }, { "verb": "cheer up", "translation": "animarse, alegrar", "example": "Cheer up, you look sad.", "example_es": "Anímate, te ves triste.", "num": 45 }, { "verb": "pass out", "translation": "desmayarse, repartir", "example": "He was walking and all of a sudden he passed out.", "example_es": "Estaba caminando y de repente se desmayó.", "num": 46 }, { "verb": "cheat on", "translation": "engañar (pareja), hacer trampa", "example": "Johnny would never cheat on me.", "example_es": "Johnny nunca me engañaría.", "num": 47 }, { "verb": "hang up", "translation": "colgar (teléfono), colgar (ropa)", "example": "Don't hang up.", "example_es": "No cuelgues.", "num": 48 }, { "verb": "show up", "translation": "aparecer, presentarse", "example": "She didn't show up for work today.", "example_es": "Ella no se presentó al trabajo hoy.", "num": 49 }, { "verb": "turn on", "translation": "encender, prender", "example": "Turn on the TV.", "example_es": "Enciende la televisión.", "num": 50 }, { "verb": "meet up", "translation": "reunirse, quedar", "example": "Could we meet up and talk?", "example_es": "¿Podríamos reunirnos y hablar?", "num": 51 }, { "verb": "follow up", "translation": "hacer seguimiento, dar seguimiento", "example": "Did you follow up on that?", "example_es": "¿Le diste seguimiento a eso?", "num": 52 }, { "verb": "break up", "translation": "romper (pareja), separarse", "example": "We have to break up.", "example_es": "Tenemos que terminar.", "num": 53 }, { "verb": "let down", "translation": "decepcionar, fallar", "example": "Don't let me down.", "example_es": "No me decepciones.", "num": 54 }, { "verb": "screw up", "translation": "arruinar, cometer un error", "example": "Don't screw up.", "example_es": "No la cagues.", "num": 55 }, { "verb": "look forward to", "translation": "esperar con entusiasmo", "example": "I look forward to seeing you next week.", "example_es": "Espero con ansias verte la próxima semana.", "num": 56 }, { "verb": "stay up", "translation": "quedarse despierto", "example": "Don't stay up too late.", "example_es": "No te quedes despierto muy tarde.", "num": 57 }, { "verb": "count on", "translation": "contar con, depender de", "example": "You can count on me.", "example_es": "Puedes contar conmigo.", "num": 58 }, { "verb": "pass down", "translation": "transmitir, heredar", "example": "They pass down wisdom.", "example_es": "Transmiten sabiduría.", "num": 59 }, { "verb": "blow away", "translation": "impresionar, sorprender", "example": "You blow me away.", "example_es": "Me dejas sin palabras.", "num": 60 }, { "verb": "come up with", "translation": "idear, ocurrirse", "example": "I'll come up with something.", "example_es": "Se me ocurrirá algo.", "num": 61 }, { "verb": "run over", "translation": "atropellar, repasar", "example": "Caroline was run over by a car.", "example_es": "Caroline fue atropellada por un carro.", "num": 62 }, { "verb": "pull out", "translation": "retirarse, sacar", "example": "I need to pull out of the deal.", "example_es": "Necesito retirarme del trato.", "num": 63 }, { "verb": "put on", "translation": "ponerse (ropa), poner", "example": "Put on the suit.", "example_es": "Ponte el traje.", "num": 64 }, { "verb": "figure out", "translation": "descubrir, entender", "example": "I can figure out what to do.", "example_es": "Puedo descubrir qué hacer.", "num": 65 }, { "verb": "stay in", "translation": "quedarse en casa", "example": "You need to stay in bed.", "example_es": "Necesitas quedarte en cama.", "num": 66 }, { "verb": "round up", "translation": "reunir, redondear", "example": "Let's round up the team.", "example_es": "Reunamos al equipo.", "num": 67 }, { "verb": "fall behind", "translation": "quedarse atrás, atrasarse", "example": "Be sure you don't fall behind.", "example_es": "Asegúrate de no atrasarte.", "num": 68 }, { "verb": "let go", "translation": "soltar, dejar ir", "example": "You gotta let him go.", "example_es": "Tienes que dejarlo ir.", "num": 69 }, { "verb": "bargain for", "translation": "negociar por, esperar", "example": "You need to bargain for a good price.", "example_es": "Necesitas negociar un buen precio.", "num": 70 }, { "verb": "stay over", "translation": "quedarse a dormir", "example": "Do you want to stay over tonight?", "example_es": "¿Quieres quedarte a dormir esta noche?", "num": 71 }, { "verb": "head back", "translation": "regresar, volver", "example": "I'm gonna head back now.", "example_es": "Me voy a regresar ahora.", "num": 72 }, { "verb": "call on", "translation": "llamar a alguien, visitar", "example": "The teacher calls on the students.", "example_es": "El maestro llama a los estudiantes.", "num": 73 }, { "verb": "put away", "translation": "guardar, poner en su lugar", "example": "Put away your phones.", "example_es": "Guarden sus teléfonos.", "num": 74 }, { "verb": "sit back", "translation": "recostarse, relajarse", "example": "Sit back and enjoy the show.", "example_es": "Recuéstate y disfruta el espectáculo.", "num": 75 }, { "verb": "turn off", "translation": "apagar", "example": "Turn off the light.", "example_es": "Apaga la luz.", "num": 76 }, { "verb": "wash up", "translation": "lavarse, asearse", "example": "I'm gonna go wash up.", "example_es": "Voy a lavarme.", "num": 77 }, { "verb": "call off", "translation": "cancelar", "example": "She'll call off the wedding.", "example_es": "Ella va a cancelar la boda.", "num": 78 }, { "verb": "come across", "translation": "encontrarse con, dar la impresión", "example": "I came across this old photo.", "example_es": "Me encontré con esta foto antigua.", "num": 79 }, { "verb": "break down", "translation": "descomponerse, derrumbarse emocionalmente", "example": "My car broke down.", "example_es": "Mi carro se descompuso.", "num": 80 }, { "verb": "pick on", "translation": "meterse con, burlarse de", "example": "Don't pick on me.", "example_es": "No te metas conmigo.", "num": 81 }, { "verb": "get through", "translation": "superar, atravesar", "example": "We could get through anything.", "example_es": "Podemos superar cualquier cosa.", "num": 82 }, { "verb": "eat out", "translation": "comer fuera", "example": "I just love to eat out.", "example_es": "Me encanta comer fuera.", "num": 83 }, { "verb": "make up", "translation": "inventar, reconciliarse", "example": "Don't make up excuses.", "example_es": "No inventes excusas.", "num": 84 }, { "verb": "pick up", "translation": "recoger, levantar", "example": "I'm gonna pick up some flowers.", "example_es": "Voy a recoger unas flores.", "num": 85 }, { "verb": "fall for", "translation": "enamorarse de, caer en (trampa)", "example": "You fall for it every time.", "example_es": "Caes en eso cada vez.", "num": 86 }, { "verb": "get over", "translation": "superar (a alguien/algo)", "example": "You will get over him.", "example_es": "Lo vas a superar.", "num": 87 }, { "verb": "go about", "translation": "seguir con, abordar algo", "example": "Just go about your normal routine.", "example_es": "Sigue con tu rutina normal.", "num": 88 }, { "verb": "butt in", "translation": "entrometerse, interrumpir", "example": "I won't butt in.", "example_es": "No me voy a entromenter.", "num": 89 }, { "verb": "get rid of", "translation": "deshacerse de", "example": "You need to get rid of your glasses.", "example_es": "Necesitas deshacerte de tus lentes.", "num": 90 }, { "verb": "watch out", "translation": "tener cuidado, ojo", "example": "You better watch out.", "example_es": "Más te vale tener cuidado.", "num": 91 }, { "verb": "brush up on", "translation": "repasar, practicar", "example": "You should brush up on your Spanish.", "example_es": "Deberías repasar tu español.", "num": 92 }, { "verb": "talk down to", "translation": "hablar con condescendencia", "example": "Don't talk down to me.", "example_es": "No me hables con condescendencia.", "num": 93 }, { "verb": "go after", "translation": "perseguir, ir tras", "example": "We wanted to go after him.", "example_es": "Queríamos ir tras él.", "num": 94 }, { "verb": "give up", "translation": "rendirse, abandonar", "example": "Don't give up on learning English.", "example_es": "No te rindas aprendiendo inglés.", "num": 95 }, { "verb": "go on", "translation": "seguir, continuar (pasado: went on)", "example": "It went on for hours.", "example_es": "Siguió por horas.", "num": 96 }, { "verb": "take over", "translation": "tomar el control (repetido con contexto diferente)", "example": "Can you take over?", "example_es": "¿Puedes hacerte cargo?", "num": 97 }, { "verb": "stay in", "translation": "quedarse adentro / en casa", "example": "Stay in the game.", "example_es": "Quédate en el juego.", "num": 98 }, { "verb": "pass out", "translation": "desmayarse / repartir", "example": "You watched me pass out.", "example_es": "Me viste desmayarme.", "num": 99 }, { "verb": "go on (practice)", "translation": "seguir practicando", "example": "Go on and practice.", "example_es": "Sigue practicando.", "num": 100 }];
+            var order = [], fcIdx = 0, fcRep = 0, isPlay = false, tok = 0;
+
+            /* LISTA */
+            function renderList(list) {
+                var el = document.getElementById('view-list');
+                el.innerHTML = '';
+                list.forEach(function (v) {
+                    var d = document.createElement('div');
+                    d.className = 'verb-card';
+                    d.innerHTML =
+                        '<div class="verb-card-top">' +
+                        '<div class="verb-name">' + v.verb + '</div>' +
+                        '<div class="verb-num">#' + v.num + '</div>' +
+                        '</div>' +
+                        '<div class="verb-trans">' + v.translation + '</div>' +
+                        '<div class="verb-example">"' + v.example + '"</div>' +
+                        '<div class="verb-example-es">' + v.example_es + '</div>';
+                    el.appendChild(d);
+                });
+                document.getElementById('header-count').textContent = list.length + ' verbos';
+            }
+            window.filterList = function () {
+                var q = document.getElementById('searchInput').value.toLowerCase();
+                renderList(VERBS.filter(function (v) {
+                    return v.verb.toLowerCase().includes(q) ||
+                        v.translation.toLowerCase().includes(q) ||
+                        v.example.toLowerCase().includes(q) ||
+                        v.example_es.toLowerCase().includes(q);
+                }));
+            };
+
+            /* TABS */
+            window.showTab = function (tab) {
+                var isList = tab === 'list';
+                document.getElementById('view-list').classList.toggle('hidden', !isList);
+                document.getElementById('view-flash').classList.toggle('hidden', isList);
+                document.getElementById('search-section').classList.toggle('hidden', !isList);
+                document.getElementById('tab-list').classList.toggle('active', isList);
+                document.getElementById('tab-flash').classList.toggle('active', !isList);
+                if (!isList) renderCard();
+            };
+
+            /* ORDEN */
+            function buildOrder() {
+                order = VERBS.map(function (_, i) { return i; });
+                if (document.getElementById('shuffleToggle').checked) {
+                    for (var i = order.length - 1; i > 0; i--) {
+                        var j = Math.floor(Math.random() * (i + 1));
+                        var t = order[i]; order[i] = order[j]; order[j] = t;
+                    }
+                }
+            }
+
+            /* VOCES */
+            function loadVoices() {
+                var voices = speechSynthesis.getVoices().filter(function (v) {
+                    return v.lang && v.lang.toLowerCase().startsWith('en');
+                });
+                var sel = document.getElementById('voiceSelect');
+                sel.innerHTML = '';
+                voices.forEach(function (v, i) {
+                    var o = document.createElement('option');
+                    o.value = i;
+                    o.textContent = v.name + ' (' + v.lang + ')';
+                    sel.appendChild(o);
+                });
+                var usIdx = voices.findIndex(function (v) { return v.lang.toLowerCase() === 'en-us'; });
+                if (usIdx >= 0) sel.value = usIdx;
+            }
+            speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+
+            function getVoice() {
+                var voices = speechSynthesis.getVoices().filter(function (v) {
+                    return v.lang && v.lang.toLowerCase().startsWith('en');
+                });
+                return voices[parseInt(document.getElementById('voiceSelect').value) || 0] || voices[0] || null;
+            }
+
+            /* RENDER */
+            function renderCard() {
+                var v = VERBS[order[fcIdx]];
+                var repMax = parseInt(document.getElementById('repInput').value) || 10;
+
+                document.getElementById('fc-verb').textContent = v.verb;
+                document.getElementById('fc-trans').textContent = v.translation;
+                document.getElementById('fc-badge').textContent = '#' + v.num;
+                document.getElementById('fc-num').textContent = fcIdx + 1;
+                document.getElementById('fc-total').textContent = order.length;
+                document.getElementById('fc-rep').textContent = fcRep + 1;
+                document.getElementById('fc-rep-max').textContent = repMax;
+                document.getElementById('fc-done').textContent = fcIdx;
+                document.getElementById('fc-progress').style.width = (fcIdx / order.length * 100) + '%';
+
+                var dots = document.getElementById('fc-dots');
+                dots.innerHTML = '';
+                for (var i = 0; i < repMax; i++) {
+                    var dot = document.createElement('div');
+                    dot.className = 'rep-dot' + (i < fcRep ? ' done' : '');
+                    dots.appendChild(dot);
+                }
+                document.getElementById('btn-play').textContent = '▶';
+            }
+
+            /* AUDIO — inglés para el verbo, español para la traducción */
+            function getSpVoice(lang) {
+                var all = speechSynthesis.getVoices();
+                var matches = all.filter(function (v) {
+                    return v.lang && v.lang.toLowerCase().startsWith(lang);
+                });
+                if (lang === 'en') {
+                    var usIdx = matches.findIndex(function (v) { return v.lang.toLowerCase() === 'en-us'; });
+                    return matches[usIdx >= 0 ? usIdx : 0] || null;
+                }
+                if (lang === 'es') {
+                    // Preferir es-ES o es-MX, cualquier voz en español
+                    return matches[0] || null;
+                }
+                return null;
+            }
+
+            function speak() {
+                var v = VERBS[order[fcIdx]];
+                var rate = parseFloat(document.getElementById('speedRange').value) || 0.8;
+                var myTok = ++tok;
+                isPlay = true;
+                document.getElementById('btn-play').textContent = '⏸';
+                speechSynthesis.cancel();
+
+                // Utterance 1: verbo en INGLÉS
+                var u1 = new SpeechSynthesisUtterance(v.verb);
+                u1.lang = 'en-US';
+                u1.rate = rate;
+                var voiceEn = getSpVoice('en');
+                if (voiceEn) u1.voice = voiceEn;
+
+                // Utterance 2: traducción en ESPAÑOL
+                var u2 = new SpeechSynthesisUtterance(v.translation);
+                u2.lang = 'es-ES';
+                u2.rate = rate;
+                var voiceEs = getSpVoice('es');
+                if (voiceEs) u2.voice = voiceEs;
+
+                // Al terminar el español → avanzar repetición
+                u2.onend = function () {
+                    if (myTok !== tok) return;
+                    isPlay = false;
+                    document.getElementById('btn-play').textContent = '▶';
+                    fcRep++;
+                    var repMax = parseInt(document.getElementById('repInput').value) || 10;
+                    renderCard();
+                    if (fcRep >= repMax) {
+                        fcRep = 0;
+                        if (document.getElementById('autoAdvance').checked) {
+                            fcIdx = (fcIdx + 1) % order.length;
+                            if (fcIdx === 0) buildOrder();
+                            renderCard();
+                        }
+                    }
+                    if (document.getElementById('autoAdvance').checked) {
+                        setTimeout(speak, 400);
+                    }
+                };
+
+                // Encolar ambos: primero inglés, luego español
+                speechSynthesis.speak(u1);
+                speechSynthesis.speak(u2);
+            }
+
+            window.togglePlay = function () {
+                if (isPlay) { tok++; speechSynthesis.cancel(); isPlay = false; document.getElementById('btn-play').textContent = '▶'; }
+                else speak();
+            };
+            window.stopAudio = function () {
+                tok++; speechSynthesis.cancel(); isPlay = false; fcRep = 0;
+                document.getElementById('btn-play').textContent = '▶';
+                renderCard();
+            };
+            window.nextCard = function () {
+                tok++; speechSynthesis.cancel(); isPlay = false; fcRep = 0;
+                fcIdx = (fcIdx + 1) % order.length; renderCard();
+            };
+            window.prevCard = function () {
+                tok++; speechSynthesis.cancel(); isPlay = false; fcRep = 0;
+                fcIdx = (fcIdx - 1 + order.length) % order.length; renderCard();
+            };
+            window.restartFlash = function () {
+                tok++; speechSynthesis.cancel(); isPlay = false; fcIdx = 0; fcRep = 0;
+                buildOrder(); renderCard();
+            };
+
+            document.getElementById('shuffleToggle').addEventListener('change', restartFlash);
+
+            /* INIT */
+            renderList(VERBS);
+            buildOrder();
+        })();
+    </script>
+</body>
+
+</html>

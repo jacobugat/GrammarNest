@@ -19,6 +19,10 @@
 <div class="collapse navbar-collapse" id="navbarNav">
 <ul class="navbar-nav">
 <li class="nav-item"><a class="nav-link" href="japones_n5.html">N5</a></li>
+<li class="nav-item"><a class="nav-link" href="japones_n4.html">N4</a></li>
+<li class="nav-item"><a class="nav-link" href="japones_n3.html">N3</a></li>
+<li class="nav-item"><a class="nav-link" href="japones_n2.html">N2</a></li>
+<li class="nav-item"><a class="nav-link" href="japones_n1.html">N1</a></li>
 </ul>
 </div>
 </div>
@@ -27,6 +31,12 @@
 <h3><b>Japonés con enfasis en mecanica</b></h3>
 <h2><b>N5</b></h2>
 </header>
+    <!-- Acceso al Audio Flashcards -->
+    <div class="container mt-3">
+        <button class="btn btn-warning w-100 fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#audioPlayerModal">
+            <i class="fa-solid fa-headphones-simple"></i> Audio Flashcards · Pronunciación
+        </button>
+    </div>
 <!-- 1. Introduccion al Japonés -->
 <div class="container mt-2">
 <!-- 1. Introduccion al Japonés -->
@@ -769,8 +779,45 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             10. Forma potencial
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido10">
-<p>La <strong>forma potencial</strong> expresa que se puede hacer algo. En el taller se usa para indicar capacidades, especificaciones y limitaciones del vehículo.</p><br/><h5>Ejemplos con mecánica</h5><h1>できる</h1><p><strong>できる</strong></p><p>できる</p><p>Dekiru: poder hacer (grupo 3, する → できる).</p><p>このエンジンは最大300馬力まで<strong>出せる</strong>。</p><p>このえんじんはさいだい300ばりきまで<strong>だせる</strong>。</p><p>Kono enjin wa saidai 300 bariki made daseru.</p><p>Este motor puede producir hasta 300 caballos de fuerza.</p><br/><h1>読める</h1><p><strong>読める</strong></p><p>よめる</p><p>Yomeru: poder leer (書く → 書ける, grupo 1).</p><p>日本語のマニュアルが<strong>読める</strong>ようになりたい。</p><p>にほんごのまにゅあるが<strong>よめる</strong>ようになりたい。</p><p>Nihongo no manyuaru ga yomeru yō ni naritai.</p><p>Quiero poder leer el manual en japonés.</p><br/><h1>使える</h1><p><strong>使える</strong></p><p>つかえる</p><p>Tsukaeru: poder usar (使う → 使える, grupo 1).</p><p>この診断機はトヨタの車に<strong>使える</strong>か？</p><p>このしんだんきはとよたのくるまに<strong>つかえる</strong>か？</p><p>Kono shindan-ki wa Toyota no kuruma ni tsukaeru ka?</p><p>¿Esta máquina de diagnóstico se puede usar en autos Toyota?</p><br/><h5>Forma negativa potencial</h5><p>締められない, しめられない, no poder apretar.</p><p>ブレーキが<strong>使えない</strong>状態です。</p><p>ぶれーきが<strong>つかえない</strong>じょうたいです。</p><p>Burēki ga tsukaenai jōtai desu.</p><p>El freno está en un estado en que no se puede usar.</p>
+            <p>La <strong>forma potencial</strong> expresa capacidad. En el taller se usa para describir lo que puede hacer un motor o vehículo.</p><br/><h5>Ejemplos con mecánica</h5><h1>出せる</h1><p><strong>出せる</strong></p><p><b>だせる</b></p><p>Daseru: poder producir, poder sacar (potencia).</p><p>このエンジンは最大300馬力まで<strong>出せる</strong>。</p><p><b>このえんじんはさいだい300ばりきまで</b><strong><b>だせる</b></strong>。</p><p>Kono enjin wa saidai san-byaku bariki made daseru.</p><p>Este motor puede producir hasta 300 caballos de potencia.</p><br/><h1>読める</h1><p><strong>読める</strong></p><p><b>よめる</b></p><p>Yomeru: poder leer.</p><p>日本語のマニュアルが<strong>読める</strong>ようになりたい。</p><p><b>にほんごのまにゅあるが</b><strong><b>よめる</b></strong><b>ようになりたい。</b></p><p>Nihongo no manyuaru ga yomeru yō ni naritai.</p><p>Quiero poder leer el manual en japonés.</p><br/><h1>使える</h1><p><strong>使える</strong></p><p><b>つかえる</b></p><p>Tsukaeru: poder usar.</p><p>この診断機はトヨタの車に<strong>使える</strong>か？</p><p><b>このしんだんきはとよたのくるまに</b><strong><b>つかえる</b></strong><b>か？</b></p><p>Kono shindan-ki wa Toyota no kuruma ni tsukaeru ka?</p><p>¿Esta máquina de diagnóstico se puede usar en autos Toyota?</p><br/><h5>Forma negativa potencial</h5><p>ブレーキが<strong>使えない</strong>状態です。</p><p><b>ぶれーきが</b><strong><b>つかえない</b></strong><b>じょうたいです。</b></p><p>Burēki ga tsukaenai jōtai desu.</p><p>El freno está en un estado en que no se puede usar.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_10-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -795,7 +842,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             11. Verbos irregulares (する, くる)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido11">
-<p>Los <strong>verbos irregulares</strong> する y くる son los más usados en el taller japonés, especialmente en procedimientos compuestos con する.</p><br/><h4>する (suru) — hacer</h4><p>Presente informal: <strong>する</strong></p><p>Presente formal: <strong>します</strong></p><p>Pasado informal: <strong>した</strong></p><p>Pasado formal: <strong>しました</strong></p><p>Negativo informal: <strong>しない</strong></p><p>Negativo formal: <strong>しません</strong></p><br/><p>点検する → エンジンを<strong>点検します</strong>。</p><p>てんけんする → えんじんを<strong>てんけんします</strong>。</p><p>Tenken suru → enjin o tenken shimasu.</p><p>Inspeccionar → Inspecciono el motor.</p><br/><p>修理する → オートバイを<strong>修理しました</strong>。</p><p>しゅうりする → おーとばいを<strong>しゅうりしました</strong>。</p><p>Shūri suru → ōtobai o shūri shimashita.</p><p>Reparar → Reparé la motocicleta.</p><br/><h4>くる (kuru) — venir</h4><p>Presente informal: <strong>くる</strong></p><p>Presente formal: <strong>きます</strong></p><p>Pasado informal: <strong>きた</strong></p><p>Pasado formal: <strong>きました</strong></p><p>Negativo informal: <strong>こない</strong></p><p>Negativo formal: <strong>きません</strong></p><br/><p>部品が<strong>きました</strong>。</p><p>ぶひんが<strong>きました</strong>。</p><p>Buhin ga kimashita.</p><p>Las refacciones llegaron.</p>
+<p>Los <strong>verbos irregulares</strong> する y くる son los más usados en el taller japonés, especialmente en procedimientos compuestos con する.</p><br/><h4>する (suru) — hacer</h4><p>Presente informal: <strong>する</strong></p><p>Presente formal: <strong>します</strong></p><p>Pasado informal: <strong>した</strong></p><p>Pasado formal: <strong>しました</strong></p><p>Negativo informal: <strong>しない</strong></p><p>Negativo formal: <strong>しません</strong></p><br/><p>点検する → エンジンを<strong>点検します</strong>。</p><p>てんけんする → えんじんを<strong>てんけんします</strong>。</p><p>Tenken suru → enjin o tenken shimasu.</p><p>Inspeccionar → Inspecciono el motor.</p><br/><p>修理する → オートバイを<strong>修理しました</strong>。</p><p>しゅうりする → おーとばいを<strong>しゅうりしました</strong>。</p><p>Shūri suru → ōtobai o shūri shimashita.</p><p>Reparar → Reparé la moto.</p><br/><h4>くる (kuru) — venir</h4><p>Presente informal: <strong>くる</strong></p><p>Presente formal: <strong>きます</strong></p><p>Pasado informal: <strong>きた</strong></p><p>Pasado formal: <strong>きました</strong></p><p>Negativo informal: <strong>こない</strong></p><p>Negativo formal: <strong>きません</strong></p><br/><p>部品が<strong>きました</strong>。</p><p>ぶひんが<strong>きました</strong>。</p><p>Buhin ga kimashita.</p><p>Las refacciones llegaron.</p>
 <!-- Icono de copiar -->
 <button class="btn btn-light border" onclick="copyText_1('copy-text_11-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
@@ -821,8 +868,37 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             12. Adjetivos い (い形容詞 - i-keiyoushi)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido12">
-<p>Los <strong>adjetivos い</strong> describen características técnicas y físicas de piezas, motores y vehículos. Se conjugan directamente sin cópula.</p><br/><h5>Conjugación con mecánica</h5><h1>速い</h1><p><strong>速い (はやい)</strong> — rápido</p><p>Presente afirmativo informal: <strong>速い</strong></p><p>Presente afirmativo formal: <strong>速いです</strong> — es rápido</p><p>Presente negativo informal: <strong>速くない</strong></p><p>Presente negativo formal: <strong>速くありません</strong></p><p>Pasado afirmativo: <strong>速かった / 速かったです</strong></p><p>Pasado negativo: <strong>速くなかった / 速くなかったです</strong></p><br/><p>このバイクのエンジンは<strong>速い</strong>です。</p><p>このばいくのえんじんは<strong>はやい</strong>です。</p><p>Kono baiku no enjin wa hayai desu.</p><p>El motor de esta moto es rápido.</p><br/><h1>古い</h1><p><strong>古い (ふるい)</strong> — viejo, antiguo</p><p>このタイヤは<strong>古い</strong>から交換が必要です。</p><p>このたいやは<strong>ふるい</strong>からこうかんがひつようです。</p><p>Kono taiya wa furui kara kōkan ga hitsuyō desu.</p><p>Este neumático es viejo, por eso es necesario cambiarlo.</p><br/><h1>重い</h1><p><strong>重い (おもい)</strong> — pesado</p><p>このエンジンブロックは<strong>重い</strong>ので二人で持ち上げる。</p><p>このえんじんぶろっくは<strong>おもい</strong>のでふたりでもちあげる。</p><p>Kono enjin burokku wa omoi node futari de mochiageru.</p><p>Este bloque de motor es pesado, así que lo levantamos entre dos personas.</p>
+            <p>Los <strong>adjetivos い</strong> describen características técnicas y físicas. Se conjugan directamente sin cópula extra.</p><br/><h5>Conjugación con mecánica</h5><h1>速い</h1><p><strong>速い</strong> (はやい) — rápido</p><p>Presente afirmativo: <strong>速い / 速いです</strong></p><p>Presente negativo: <strong>速くない / 速くありません</strong></p><p>Pasado: <strong>速かった / 速かったです</strong></p><br/><p>このバイクのエンジンは<strong>速い</strong>です。</p><p><b>このばいくのえんじんは</b><strong><b>はやい</b></strong><b>です。</b></p><p>Kono baiku no enjin wa hayai desu.</p><p>El motor de esta moto es rápido.</p><br/><h1>古い</h1><p><strong>古い</strong> (ふるい) — viejo, desgastado</p><p>このタイヤは<strong>古い</strong>から交換が必要です。</p><p><b>このたいやは</b><strong><b>ふるい</b></strong><b>からこうかんがひつようです。</b></p><p>Kono taiya wa furui kara kōkan ga hitsuyō desu.</p><p>Este neumático es viejo, por eso necesita cambio.</p><br/><h1>重い</h1><p><strong>重い</strong> (おもい) — pesado</p><p>このエンジンブロックは<strong>重い</strong>ので二人で持ち上げます。</p><p><b>このえんじんぶろっくは</b><strong><b>おもい</b></strong><b>のでふたりでもちあげます。</b></p><p>Kono enjin burokku wa omoi node futari de mochiageru.</p><p>Este bloque de motor es pesado, así que lo levantamos entre dos personas.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_12-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -873,7 +949,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             14. ～です / ～だ
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido14">
-<p><strong>～です / ～だ</strong> son los verbos copulativos del japonés (ser/estar). En el taller se usan para identificar piezas, describir fallas y dar diagnósticos.</p><br/><h5>Conjugaciones</h5><p>Presente afirmativo formal: <strong>です</strong></p><p>Presente negativo formal: <strong>ではありません</strong></p><p>Pasado afirmativo formal: <strong>でした</strong></p><p>Pasado negativo formal: <strong>ではありませんでした</strong></p><p>Afirmativo informal: <strong>だ</strong></p><p>Negativo informal: <strong>じゃない</strong></p><p>Pasado informal: <strong>だった</strong></p><p>Pasado negativo informal: <strong>じゃなかった</strong></p><br/><h5>Ejemplos en el taller</h5><p>これはブレーキパッド<strong>です</strong>。</p><p>これはぶれーきぱっど<strong>です</strong>。</p><p>Kore wa burēki paddo desu.</p><p>Esto es una pastilla de freno.</p><br/><p>問題はエンジンオイルの漏れ<strong>でした</strong>。</p><p>もんだいはえんじんおいるのもれ<strong>でした</strong>。</p><p>Mondai wa enjin oiru no more deshita.</p><p>El problema era una fuga de aceite del motor.</p><br/><p>このパーツはトヨタ純正品<strong>ではありません</strong>。</p><p>このぱーつはとよたじゅんせいひん<strong>ではありません</strong>。</p><p>Kono pātsu wa Toyota junsei-hin de wa arimasen.</p><p>Esta pieza no es una refacción original de Toyota.</p><br/><p>修理費用は五万円<strong>だった</strong>。</p><p>しゅうりひようはごまんえん<strong>だった</strong>。</p><p>Shūri hiyō wa goman-en datta.</p><p>El costo de la reparación fue de cincuenta mil yenes.</p>
+<p><strong>～です / ～だ</strong> son los verbos copulativos del japonés (ser/estar). En el taller se usan para identificar piezas, describir fallas y dar diagnósticos.</p><br/><h5>Conjugaciones</h5><p>Presente afirmativo formal: <strong>です</strong></p><p>Presente negativo formal: <strong>ではありません</strong></p><p>Pasado afirmativo formal: <strong>でした</strong></p><p>Pasado negativo formal: <strong>ではありませんでした</strong></p><p>Afirmativo informal: <strong>だ</strong></p><p>Negativo informal: <strong>じゃない</strong></p><p>Pasado informal: <strong>だった</strong></p><p>Pasado negativo informal: <strong>じゃなかった</strong></p><br/><h5>Ejemplos en el taller</h5><p>これはブレーキパッド<strong>です</strong>。</p><p>これはぶれーきぱっど<strong>です</strong>。</p><p>Kore wa burēki paddo desu.</p><p>Esto es una pastilla de freno.</p><br/><p>問題はエンジンオイルの漏れ<strong>でした</strong>。</p><p>もんだいはえんじんおいるのもれ<strong>でした</strong>。</p><p>Mondai wa enjin oiru no more deshita.</p><p>El problema era una fuga de aceite del motor.</p><br/><p>このパーツはトヨタ純正品<strong>ではありません</strong>。</p><p>このぱーつはとよたじゅんせいひん<strong>ではありません</strong>。</p><p>Kono pātsu wa Toyota junsei-hin de wa arimasen.</p><p>Esta pieza no es una refacción original de Toyota.</p><br/><p>修理費用は五万円です。</p><p>しゅうりひようはごまんえんです。</p><p>Shūri hiyō wa goman-en desu.</p><p>El costo de la reparación es de cincuenta mil yenes.</p>
 <!-- Icono de copiar -->
 <button class="btn btn-light border" onclick="copyText_1('copy-text_14-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
@@ -925,8 +1001,37 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             16. ～が好きです / ～が嫌いです
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido16">
-<p><strong>～が好きです / ～が嫌いです</strong> expresan gusto y disgusto. En el contexto automotriz se usan para hablar de marcas, modelos y tipos de trabajo en el taller.</p><br/><h5>Vocabulario clave</h5><p><strong>が好きです</strong> (がすきです) — me gusta</p><p><strong>が嫌いです</strong> (がきらいです) — no me gusta / odio</p><p><strong>が大好きです</strong> (がだいすきです) — me encanta</p><br/><h5>Ejemplos</h5><p>日本の<strong>オートバイが大好きです</strong>。</p><p>にほんの<strong>おーとばいがだいすきです</strong>。</p><p>Nihon no ōtobai ga daisuki desu.</p><p>Me encantan las motocicletas japonesas.</p><br/><p>ホンダのエンジン<strong>が好きです</strong>。</p><p>ほんだのえんじん<strong>がすきです</strong>。</p><p>Honda no enjin ga suki desu.</p><p>Me gusta el motor de Honda.</p><br/><p>エンジンの焼き付き<strong>が嫌いです</strong>。</p><p>えんじんのやきつき<strong>がきらいです</strong>。</p><p>Enjin no yakitsuki ga kirai desu.</p><p>Detesto el agarrotamiento del motor.</p><br/><p>タービンの修理<strong>が好きです</strong>か？</p><p>たーびんのしゅうり<strong>がすきです</strong>か？</p><p>Tābin no shūri ga suki desu ka?</p><p>¿Le gusta la reparación de turbinas?</p>
+            <p><strong>～が好きです / ～が嫌いです</strong> expresan gusto y disgusto sobre máquinas, marcas y procesos de reparación.</p><br/><h5>Estructura</h5><p><strong>が好きです</strong> — me gusta</p><p><strong>が嫌いです</strong> — no me gusta</p><p><strong>が大好きです</strong> — me encanta</p><br/><h5>Ejemplos</h5><p>日本の<strong>オートバイが大好きです</strong>。</p><p><b>にほんの</b><strong><b>おーとばいがだいすきです</b></strong>。</p><p>Nihon no ōtobai ga daisuki desu.</p><p>Me encantan las motocicletas japonesas.</p><br/><p>ホンダのエンジン<strong>が好きです</strong>。</p><p><b>ほんだのえんじん</b><strong><b>がすきです</b></strong>。</p><p>Honda no enjin ga suki desu.</p><p>Me gusta el motor de Honda.</p><br/><p>エンジン焼き付きが<strong>嫌いです</strong>。</p><p><b>えんじんやきつきが</b><strong><b>きらいです</b></strong>。</p><p>Enjin yakitsuki ga kirai desu.</p><p>Detesto cuando el motor se agarra.</p><br/><p>タービンの修理<strong>が好きです</strong>か？</p><p><b>たーびんのしゅうり</b><strong><b>がすきです</b></strong><b>か？</b></p><p>Tābin no shūri ga suki desu ka?</p><p>¿Te gusta reparar turbinas?</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_16-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -977,7 +1082,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             18. ～ませんか？ (Invitación)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido18">
-<p><strong>～ませんか？</strong> es una invitación educada para hacer algo juntos. En el taller se usa para proponer revisiones, pruebas de manejo y trabajos en equipo.</p><br/><h5>Estructura</h5><p>Verbo en forma ます → forma negativa → + か</p><p>行きます → 行きません → <strong>行きませんか？</strong></p><br/><h5>Ejemplos en el taller</h5><p>一緒にエンジンを<strong>点検しませんか</strong>？</p><p>いっしょにえんじんを<strong>てんけんしませんか</strong>？</p><p>Issho ni enjin o tenken shimasen ka?</p><p>¿Por qué no inspeccionamos el motor juntos?</p><br/><p>試乗して不具合を<strong>確認しませんか</strong>？</p><p>しじょうしてふぐあいを<strong>かくにんしませんか</strong>？</p><p>Shijō shite fuguai o kakunin shimasen ka?</p><p>¿Por qué no hacemos una prueba de manejo para verificar la falla?</p><br/><p>一緒にタイヤを<strong>交換しませんか</strong>？</p><p>いっしょにたいやを<strong>こうかんしませんか</strong>？</p><p>Issho ni taiya o kōkan shimasen ka?</p><p>¿Por qué no cambiamos los neumáticos juntos?</p>
+<p><strong>～ませんか？</strong> es una invitación educada para hacer algo juntos. En el taller se usa para proponer revisiones, pruebas de manejo y trabajos en equipo.</p><br/><h5>Estructura</h5><p>Verbo en forma ます → forma negativa → + か</p><p>一緒にエンジンを点検しませんか？</p><br/><h5>Ejemplos en el taller</h5><p>いっしょにえんじんをてんけんしませんか？</p><p>Issho ni enjin o tenken shimasen ka?</p><p>¿Por qué no inspeccionamos el motor juntos?</p><p>¿Por qué no inspeccionamos el motor juntos?</p><br/><p>試乗して不具合を<strong>確認しませんか</strong>？</p><p>しじょうしてふぐあいを<strong>かくにんしませんか</strong>？</p><p>Shijō shite fuguai o kakunin shimasen ka?</p><p>¿Por qué no hacemos una prueba de manejo para verificar la falla?</p><br/><p>一緒にタイヤを<strong>交換しませんか</strong>？</p><p>いっしょにたいやを<strong>こうかんしませんか</strong>？</p><p>Issho ni taiya o kōkan shimasen ka?</p><p>¿Por qué no cambiamos los neumáticos juntos?</p>
 <!-- Icono de copiar -->
 <button class="btn btn-light border" onclick="copyText_1('copy-text_18-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
@@ -1003,7 +1108,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             19. ～ましょう / ～ましょうか？
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido19">
-<p><strong>～ましょう</strong> expresa una propuesta firme o acción decidida. <strong>～ましょうか？</strong> ofrece ayuda o propone algo con cortesía. Ambas son muy comunes en el taller japonés.</p><br/><h5>Cómo se forma</h5><p>Quita la forma <strong>ます</strong> y añade <strong>ましょう</strong> o <strong>ましょうか</strong>.</p><br/><h5>Ejemplos en el taller</h5><p>オイルを今すぐ<strong>交換しましょう</strong>。</p><p>おいるをいますぐ<strong>こうかんしましょう</strong>。</p><p>Oiru o ima sugu kōkan shimashō.</p><p>Cambiemos el aceite ahora mismo.</p><br/><p>エンジンを<strong>かけてみましょうか</strong>？</p><p>えんじんを<strong>かけてみましょうか</strong>？</p><p>Enjin o kakete mimashō ka?</p><p>¿Probamos a encender el motor?</p><br/><p>一緒にブレーキを<strong>点検しましょう</strong>。</p><p>いっしょにぶれーきを<strong>てんけんしましょう</strong>。</p><p>Issho ni burēki o tenken shimashō.</p><p>Inspeccionemos los frenos juntos.</p><br/><p>見積もりを<strong>作成しましょうか</strong>？</p><p>みつもりを<strong>さくせいしましょうか</strong>？</p><p>Mitsumori o sakusei shimashō ka?</p><p>¿Le elaboramos un presupuesto?</p>
+<p><strong>～ましょう</strong> expresa una propuesta firme o acción decidida. <strong>～ましょうか？</strong> ofrece ayuda o propone algo con cortesía. Ambas son muy comunes en el taller japonés.</p><br/><h5>Cómo se forma</h5><p>Quita la forma <strong>ます</strong> y añade <strong>ましょう</strong> o <strong>ましょうか</strong>.</p><br/><h5>Ejemplos en el taller</h5><p>オイルを今すぐ<strong>交換しましょう</strong>。</p><p>おいるをいますぐ<strong>こうかんしましょう</strong>。</p><p>Oiru o ima sugu kōkan shimashō.</p><p>Cambiemos el aceite ahora mismo.</p><br/><p>エンジンをかけてみましょうか？</p><p>えんじんをかけてみましょうか？</p><p>Enjin o kakete mimashō ka?</p><p>¿Probamos a encender el motor?</p><br/><p>一緒にブレーキを<strong>点検しましょう</strong>。</p><p>いっしょにぶれーきを<strong>てんけんしましょう</strong>。</p><p>Issho ni burēki o tenken shimashō.</p><p>Inspeccionemos los frenos juntos.</p><br/><p>見積もりを<strong>作成しましょうか</strong>？</p><p>みつもりを<strong>さくせいしましょうか</strong>？</p><p>Mitsumori o sakusei shimashō ka?</p><p>¿Le elaboramos un presupuesto?</p>
 <!-- Icono de copiar -->
 <button class="btn btn-light border" onclick="copyText_1('copy-text_19-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
@@ -1029,8 +1134,35 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             20. ～てください (Petición)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido20">
-<p><strong>～てください</strong> es una petición cortés: "por favor, haga...". En el taller se usa para dar instrucciones al cliente o a otros mecánicos.</p><br/><h5>Estructura</h5><p>Verbo en forma <strong>て</strong> + <strong>ください</strong></p><br/><h5>Ejemplos en el taller</h5><p>エンジンを<strong>止めてください</strong>。</p><p>えんじんを<strong>とめてください</strong>。</p><p>Enjin o tomete kudasai.</p><p>Por favor, apague el motor.</p><br/><p>ここに車を<strong>止めてください</strong>。</p><p>ここにくるまを<strong>とめてください</strong>。</p><p>Koko ni kuruma o tomete kudasai.</p><p>Por favor, estacione el auto aquí.</p><br/><p>オイルキャップを<strong>開けてください</strong>。</p><p>おいるきゃっぷを<strong>あけてください</strong>。</p><p>Oiru kyappu o akete kudasai.</p><p>Por favor, abra la tapa del aceite.</p><br/><p>整備記録を<strong>見せてください</strong>。</p><p>せいびきろくを<strong>みせてください</strong>。</p><p>Seibi kiroku o misete kudasai.</p><p>Por favor, muéstreme el historial de mantenimiento.</p>
+            <p><strong>～てください</strong> es una petición cortés: "por favor, haga...". Se usa para dar instrucciones o pedir acciones específicas.</p><br/><h5>Estructura</h5><p>Verbo forma <strong>て</strong> + <strong>ください</strong></p><br/><h5>Ejemplos en el taller</h5><p>エンジンを<strong>止めてください</strong>。</p><p><b>えんじんを</b><strong><b>とめてください</b></strong>。</p><p>Enjin o tomete kudasai.</p><p>Por favor, apague el motor.</p><br/><p>ここに車を<strong>止めてください</strong>。</p><p><b>ここにくるまを</b><strong><b>とめてください</b></strong>。</p><p>Koko ni kuruma o tomete kudasai.</p><p>Por favor, estacione el auto aquí.</p><br/><p>オイルキャップを<strong>開けてください</strong>。</p><p><b>おいるきゃっぷを</b><strong><b>あけてください</b></strong>。</p><p>Oiru kyappu o akete kudasai.</p><p>Por favor, abra la tapa del aceite.</p><br/><p>整備記録を<strong>見せてください</strong>。</p><p><b>せいびきろくを</b><strong><b>みせてください</b></strong>。</p><p>Seibi kiroku o misete kudasai.</p><p>Por favor, muéstreme el historial de mantenimiento.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_20-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1081,7 +1213,9 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             22. ～てはいけません (Prohibición)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido22">
-<p><strong>～てはいけません</strong> expresa prohibición formal. En el taller y en los manuales japoneses se usa para indicar acciones peligrosas o no permitidas.</p><br/><h5>Niveles de prohibición</h5><p>Formal: <strong>～てはいけません</strong></p><p>Informal: <strong>～てはいけない</strong></p><p>Muy coloquial: <strong>ちゃダメ</strong></p><p>Petición suave: <strong>ないで</strong></p><br/><h5>Ejemplos en el taller</h5><p>エンジンが熱いうちに冷却水を<strong>開けてはいけません</strong>。</p><p>えんじんがあついうちにれいきゃくすいを<strong>あけてはいけません</strong>。</p><p>Enjin ga atsui uchi ni reikyakusui o akete wa ikemasen.</p><p>No abra el agua de enfriamiento mientras el motor está caliente.</p><br/><p>バイクのエンジンをかけたまま整備<strong>してはいけない</strong>。</p><p>ばいくのえんじんをかけたまませいび<strong>してはいけない</strong>。</p><p>Baiku no enjin o kaketa mama seibi shite wa ikenai.</p><p>No se debe dar mantenimiento con el motor de la moto encendido.</p><br/><p>電気系統の修理中に電源を<strong>切らないで</strong>ください。</p><p>でんきけいとうのしゅうりちゅうにでんげんを<strong>きらないで</strong>ください。</p><p>Denki keitō no shūri-chū ni dengen o kiranai de kudasai.</p><p>Por favor no corte la alimentación eléctrica mientras repara el sistema eléctrico.</p>
+            <p><strong>～てはいけません</strong> expresa prohibición formal. En manuales y procedimientos se usa para indicar acciones peligrosas.</p><br/><h5>Estructura</h5><p>Verbo forma <strong>て</strong> + <strong>はいけません / はいけない</strong></p><br/><h5>Ejemplos en el taller</h5><p>エンジンが熱いうちに冷却水を<strong>開けてはいけません</strong>。</p><p><b>えんじんがあついうちにれいきゃくすいを</b><strong><b>あけてはいけません</b></strong>。</p><p>Enjin ga atsui uchi ni reikyakusui o akete wa ikemasen.</p><p>No abras el agua de enfriamiento mientras el motor está caliente.</p><br/><p>バイクのエンジンをかけたまま整備<strong>してはいけない</strong>。</p><p><b>ばいくのえんじんをかけたまませいび</b><strong><b>してはいけない</b></strong>。</p><p>Baiku no enjin o kaketa mama seibi shite wa ikenai.</p><p>No hagas mantenimiento con el motor de la moto encendido.</p><br/><p>電気系統の修理中に電源を<strong>切らないでください</strong>。</p><p><b>でんきけいとうのしゅうりちゅうにでんげんを</b><strong><b>きらないでください</b></strong>。</p><p>Denki keitō no shūri-chū ni dengen o kiranai de kudasai.</p><p>No cortes la alimentación eléctrica durante la reparación del sistema eléctrico.</p>
+            
+
             
 
 
@@ -1089,6 +1223,26 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 
 ここでたばこをすっ<b>てはいけません</b>
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_22-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1113,8 +1267,33 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             23. ～ています
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido23">
-<p><strong>～ています</strong> se usa para dos situaciones: acción en progreso y estado resultante. En el taller indica lo que se está haciendo o el estado en que se encuentra el vehículo.</p><br/><h5>Estructura</h5><p>Verbo en forma <strong>て</strong> + <strong>います</strong></p><br/><h5>Acción en progreso</h5><p>今、エンジンを<strong>診断しています</strong>。</p><p>いま、えんじんを<strong>しんだんしています</strong>。</p><p>Ima, enjin o shindan shite imasu.</p><p>Ahora estoy diagnosticando el motor.</p><br/><p>整備士がオイルを<strong>交換しています</strong>。</p><p>せいびしがおいるを<strong>こうかんしています</strong>。</p><p>Seibishi ga oiru o kōkan shite imasu.</p><p>El mecánico está cambiando el aceite.</p><br/><h5>Estado resultante</h5><p>ブレーキパッドが<strong>摩耗しています</strong>。</p><p>ぶれーきぱっどが<strong>まもうしています</strong>。</p><p>Burēki paddo ga mamō shite imasu.</p><p>Las pastillas de freno están desgastadas.</p><br/><p>エンジンオイルが<strong>漏れています</strong>。</p><p>えんじんおいるが<strong>もれています</strong>。</p><p>Enjin oiru ga morete imasu.</p><p>El aceite del motor está fugando.</p>
+            <p><strong>～ています</strong> describe acciones en progreso o estados resultantes. En el taller indica qué se está haciendo o en qué condición está el vehículo.</p><br/><h5>Acción en progreso</h5><p>今、エンジンを<strong>診断しています</strong>。</p><p><b>いま、えんじんを</b><strong><b>しんだんしています</b></strong>。</p><p>Ima, enjin o shindan shite imasu.</p><p>Ahora estoy diagnosticando el motor.</p><br/><p>整備士がオイルを<strong>交換しています</strong>。</p><p><b>せいびしがおいるを</b><strong><b>こうかんしています</b></strong>。</p><p>Seibishi ga oiru o kōkan shite imasu.</p><p>El mecánico está cambiando el aceite.</p><br/><h5>Estado resultante (se ve el resultado ahora)</h5><p>ブレーキパッドが<strong>摩耗しています</strong>。</p><p><b>ぶれーきぱっどが</b><strong><b>まもうしています</b></strong>。</p><p>Burēki paddo ga mamō shite imasu.</p><p>Las pastillas de freno están desgastadas.</p><br/><p>エンジンオイルが<strong>漏れています</strong>。</p><p><b>えんじんおいるが</b><strong><b>もれています</b></strong>。</p><p>Enjin oiru ga morete imasu.</p><p>El aceite del motor se está fugando.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_23-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1139,7 +1318,9 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             24. ～に行きます
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido24">
-<p>Voy al concesionario a pasar la inspección técnica vehicular.</p><p>Shaken o uke ni dīrā e ikimasu.</p><p>しゃけんを<strong>うけに</strong>でぃーらーへいきます。</p><p>車検を<strong>受けに</strong>ディーラーへ行きます。</p><br/><p>Voy al taller a reparar el motor.</p><p>Enjin o shūri shi ni kōjō ni ikimasu.</p><p>えんじんを<strong>しゅうりしに</strong>こうじょうにいきます。</p><p>エンジンを<strong>修理しに</strong>工場に行きます。</p><br/><p>Voy a comprar las refacciones.</p><p>Buhin o kai ni ikimasu.</p><p>ぶひんを<strong>かいに</strong>いきます。</p><p>部品を<strong>買いに</strong>行きます。</p><h5>Ejemplos en el taller</h5><br/><p>Grupo 3 — する → <strong>し</strong>に行く</p><p>Grupo 2 — elimina –ru: 調べる → <strong>調べ</strong>に行く</p><p>Grupo 1 — cambia –u por –i: 直す → <strong>直し</strong>に行く</p><h5>Conversión de verbos</h5><br/><p>Lugar + verbo (forma raíz sustantiva) + <strong>に</strong> + <strong>行きます</strong></p><h5>Estructura</h5><br/><p><strong>～に行きます</strong> expresa el propósito de ir a algún lugar. En el contexto automotriz se usa para indicar a dónde se va y con qué fin.</p>
+            
+            
+
 </div>
 </div>
 <!-- 25. ～くなる / ～になる (Cambio de estado) -->
@@ -1149,7 +1330,7 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             25. ～くなる / ～になる (Cambio de estado)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido25">
-<p><strong>～くなる</strong> (con adjetivos い) y <strong>～になる</strong> (con sustantivos o adjetivos な) indican cambio de estado. En mecánica se usan para describir cómo evoluciona el estado del vehículo o sus componentes.</p><br/><h5>～くなる (adjetivos い)</h5><p>Elimina <strong>い</strong> del adjetivo y agrega <strong>くなる</strong>.</p><p>熱い → <strong>熱くなる</strong>, volverse caliente</p><p>古い → <strong>古くなる</strong>, envejecer, desgastarse</p><br/><p>走り続けるとエンジンが<strong>熱くなります</strong>。</p><p>はしりつづけるとえんじんが<strong>あつくなります</strong>。</p><p>Hashiri tsuzukeru to enjin ga atsuku narimasu.</p><p>Si sigue conduciendo, el motor se calienta.</p><br/><p>タイヤが<strong>古くなる</strong>と危険です。</p><p>たいやが<strong>ふるくなる</strong>とあぶないです。</p><p>Taiya ga furuku naru to abunai desu.</p><p>Es peligroso cuando los neumáticos se envejecen.</p><br/><h5>～になる (sustantivos / adjetivos な)</h5><p>整備士 → <strong>整備士になる</strong>, convertirse en mecánico</p><p>必要 → <strong>必要になる</strong>, volverse necesario</p><br/><p>オイル交換が<strong>必要になりました</strong>。</p><p>おいるこうかんが<strong>ひつようになりました</strong>。</p><p>Oiru kōkan ga hitsuyō ni narimashita.</p><p>Se volvió necesario cambiar el aceite.</p>
+<p><strong>～くなる</strong> (con adjetivos い) y <strong>～になる</strong> (con sustantivos o adjetivos な) indican cambio de estado. En mecánica se usan para describir cómo evoluciona el estado del vehículo o sus componentes.</p><br/><h5>～くなる (adjetivos い)</h5><p>Elimina <strong>い</strong> del adjetivo y agrega <strong>くなる</strong>.</p><p>熱い → <strong>熱くなる</strong>, volverse caliente</p><p>古い → <strong>古くなる</strong>, envejecer, desgastarse</p><br/><p>走り続けるとエンジンが<strong>熱くなります</strong>。</p><p>はしりつづけるとえんじんが<strong>あつくなります</strong>。</p><p>Hashiri tsuzukeru to enjin ga atsuku narimasu.</p><p>Si sigues conduciendo, el motor se calienta.</p><br/><p>タイヤが<strong>古くなる</strong>と危険です。</p><p>たいやが<strong>ふるくなる</strong>とあぶないです。</p><p>Taiya ga furuku naru to abunai desu.</p><p>Es peligroso cuando los neumáticos se envejecen.</p><br/><h5>～になる (sustantivos / adjetivos な)</h5><p>整備士 → <strong>整備士になる</strong>, convertirse en mecánico</p><p>必要 → <strong>必要になる</strong>, volverse necesario</p><br/><p>オイル交換が<strong>必要になりました</strong>。</p><p>おいるこうかんが<strong>ひつようになりました</strong>。</p><p>Oiru kōkan ga hitsuyō ni narimashita.</p><p>Se volvió necesario cambiar el aceite.</p>
 <!-- Icono de copiar -->
 <button class="btn btn-light border" onclick="copyText_1('copy-text_25-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
@@ -1175,7 +1356,9 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             26. ～と思います / ～と言います
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido26">
-<p>El fabricante dice que esta pieza fue descontinuada.</p><p>Mēkā wa kono buhin o haiban ni shita to itte imasu.</p><p>めーかーはこのぶひんをはいばんにした<strong>といっています</strong>。</p><p>メーカーはこの部品を廃番にした<strong>と言っています</strong>。</p><br/><p>El cliente dice que el ruido del freno es extraño.</p><p>Okyakusan wa burēki no oto ga okashii to itte imasu.</p><p>おきゃくさんはぶれーきのおとがおかしい<strong>といっています</strong>。</p><p>お客さんはブレーキの音がおかしい<strong>と言っています</strong>。</p><h1>～と言います</h1><br/><p>Creo que la correa de distribución todavía está bien.</p><p>Taimingu beruto wa mada daijōbu da to omoimasu.</p><p>たいみんぐべるとはまだだいじょうぶだ<strong>とおもいます</strong>。</p><p>タイミングベルトはまだ大丈夫だ<strong>と思います</strong>。</p><br/><p>Creo que el problema del motor es del sensor.</p><p>Enjin no fuguai wa sensā no mondai da to omoimasu.</p><p>えんじんのふぐあいはせんさーのもんだいだ<strong>とおもいます</strong>。</p><p>エンジンの不具合はセンサーの問題だ<strong>と思います</strong>。</p><h1>～と思います</h1><br/><p><strong>～と思います</strong> (creo que...) y <strong>～と言います</strong> (dice que...) son estructuras de reporte y opinión muy usadas en el diagnóstico y comunicación con el cliente.</p>
+            
+            
+
 </div>
 </div>
 <!-- 27. ～たいです (Expresar deseo) -->
@@ -1185,8 +1368,35 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             27. ～たいです (Expresar deseo)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido27">
-<p><strong>～たいです</strong> expresa el deseo de hacer algo. En el taller japonés se usa para comunicar lo que se quiere aprender, reparar o conseguir.</p><br/><h5>Estructura</h5><p>Verbo (forma raíz) + <strong>たいです</strong></p><p>Negativo: <strong>～たくないです</strong></p><p>Pasado: <strong>～たかったです</strong></p><br/><h5>Ejemplos</h5><p>エンジンのオーバーホールをやっ<strong>てみたいです</strong>。</p><p>えんじんのおーばーほーるをやっ<strong>てみたいです</strong>。</p><p>Enjin no ōbāhōru o yatte mitai desu.</p><p>Quiero intentar hacer una revisión general del motor.</p><br/><p>日本のバイクメーカーで働き<strong>たいです</strong>。</p><p>にほんのばいくめーかーではたらき<strong>たいです</strong>。</p><p>Nihon no baiku mēkā de hataraki tai desu.</p><p>Quiero trabajar en un fabricante de motos japonés.</p><br/><p>このターボエンジンを修理し<strong>たかったです</strong>。</p><p>このたーぼえんじんをしゅうりし<strong>たかったです</strong>。</p><p>Kono tābo enjin o shūri shi takatta desu.</p><p>Hubiera querido reparar este motor turbo.</p><br/><p>スポーツカーのサスペンションを調整し<strong>たいですか</strong>？</p><p>すぽーつかーのさすぺんしょんをちょうせいし<strong>たいですか</strong>？</p><p>Supōtsu kā no sasupenShon o chōsei shi tai desu ka?</p><p>¿Quieres ajustar la suspensión de un auto deportivo?</p>
+            <p><strong>～たいです</strong> expresa deseo de hacer algo. Se usa para hablar de metas laborales, reparaciones que se quieren aprender.</p><br/><h5>Estructura</h5><p>Verbo (raíz) + <strong>たいです</strong></p><br/><h5>Ejemplos</h5><p>エンジンのオーバーホールを<strong>やってみたい</strong>です。</p><p><b>えんじんのおーばーほーるを</b><strong><b>やってみたい</b></strong><b>です。</b></p><p>Enjin no ōbāhōru o yatte mitai desu.</p><p>Quiero intentar hacer una revisión general del motor.</p><br/><p>日本のバイクメーカーで<strong>働きたい</strong>です。</p><p><b>にほんのばいくめーかーで</b><strong><b>はたらきたい</b></strong><b>です。</b></p><p>Nihon no baiku mēkā de hataraki tai desu.</p><p>Quiero trabajar en un fabricante de motos japonés.</p><br/><p>このターボエンジンを<strong>修理したかった</strong>です。</p><p><b>このたーぼえんじんを</b><strong><b>しゅうりしたかった</b></strong><b>です。</b></p><p>Kono tābo enjin o shūri shi takatta desu.</p><p>Hubiera querido reparar este motor turbo.</p><br/><p>スポーツカーのサスペンションを<strong>調整したい</strong>ですか？</p><p><b>すぽーつかーのさすぺんしょんを</b><strong><b>ちょうせいしたい</b></strong><b>ですか？</b></p><p>Supōtsu kā no sasupenShon o chōsei shitai desu ka?</p><p>¿Quieres ajustar la suspensión de un auto deportivo?</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_27-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1237,8 +1447,35 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             29. ～たことがあります (Experiencia pasada)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido29">
-<p><strong>～たことがあります</strong> habla de experiencias pasadas: "alguna vez he...". En el taller se usa para hablar de reparaciones, modelos trabajados y habilidades adquiridas.</p><br/><h5>Estructura</h5><p>Verbo forma <strong>た</strong> + <strong>ことがあります</strong></p><p>Negativo: verbo forma <strong>た</strong> + <strong>ことがありません</strong></p><br/><h5>Ejemplos</h5><p>GT-Rのエンジンを修理した<strong>ことがあります</strong>。</p><p>じーてぃーあーるのえんじんをしゅうりした<strong>ことがあります</strong>。</p><p>GT-R no enjin o shūri shita koto ga arimasu.</p><p>Alguna vez he reparado el motor de un GT-R.</p><br/><p>バイクのタイヤを自分で交換した<strong>ことがあります</strong>か？</p><p>ばいくのたいやをじぶんでこうかんした<strong>ことがあります</strong>か？</p><p>Baiku no taiya o jibun de kōkan shita koto ga arimasu ka?</p><p>¿Alguna vez has cambiado el neumático de la moto tú mismo?</p><br/><p>ターボのオーバーホールをした<strong>ことがありません</strong>。</p><p>たーぼのおーばーほーるをした<strong>ことがありません</strong>。</p><p>Tābo no ōbāhōru o shita koto ga arimasen.</p><p>Nunca he hecho una revisión general de un turbo.</p><br/><p>日本のレーシングチームで働いた<strong>ことがあります</strong>。</p><p>にほんのれーしんぐちーむではたらいた<strong>ことがあります</strong>。</p><p>Nihon no rēshingu chīmu de hataraita koto ga arimasu.</p><p>Alguna vez trabajé con un equipo de carreras japonés.</p>
+            <p><strong>～たことがあります</strong> expresa experiencia pasada: "alguna vez he...". En el taller se usa para hablar de reparaciones que se han hecho.</p><br/><h5>Estructura</h5><p>Verbo forma た + <strong>ことがあります</strong> (experiencia confirmada)</p><br/><h5>Ejemplos</h5><p>GT-Rのエンジンを<strong>修理したことがあります</strong>。</p><p><b>じーてぃーあーるのえんじんを</b><strong><b>しゅうりしたことがあります</b></strong>。</p><p>GT-R no enjin o shūri shita koto ga arimasu.</p><p>Alguna vez he reparado el motor de un GT-R.</p><br/><p>バイクのタイヤを自分で<strong>交換したことがあります</strong>か？</p><p><b>ばいくのたいやをじぶんで</b><strong><b>こうかんしたことがあります</b></strong><b>か？</b></p><p>Baiku no taiya o jibun de kōkan shita koto ga arimasu ka?</p><p>¿Alguna vez has cambiado el neumático de la moto tú mismo?</p><br/><p>ターボのオーバーホールを<strong>したことがありません</strong>。</p><p><b>たーぼのおーばーほーるを</b><strong><b>したことがありません</b></strong>。</p><p>Tābo no ōbāhōru o shita koto ga arimasen.</p><p>Nunca he hecho una revisión general de un turbo.</p><br/><p>日本のレーシングチームで<strong>働いたことがあります</strong>。</p><p><b>にほんのれーしんぐちーむで</b><strong><b>はたらいたことがあります</b></strong>。</p><p>Nihon no rēshingu chīmu de hataraita koto ga arimasu.</p><p>Alguna vez trabajé en un equipo de carreras japonés.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_29-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1263,8 +1500,30 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             30. ～や ～など (Enumeración parcial)
         </button>
 <div class="collapse bg-light border p-4 mt-1" id="contenido30">
-<p><strong>～や ～など</strong> se usan para enumeraciones parciales (etc., entre otros). En el taller se usan para listar piezas, herramientas y marcas sin ser exhaustivo.</p><br/><h5>Estructura</h5><p>A + <strong>や</strong> + B + <strong>など</strong> (A, B, etc.)</p><br/><h5>Ejemplos en el taller</h5><p>エンジンオイル<strong>や</strong>ブレーキフルード<strong>など</strong>を補充します。</p><p>えんじんおいる<strong>や</strong>ぶれーきふるーど<strong>など</strong>をほじゅうします。</p><p>Enjin oiru ya burēki furūdo nado o hojū shimasu.</p><p>Completamos el aceite de motor, el líquido de frenos, entre otros.</p><br/><p>トヨタ<strong>や</strong>ホンダ<strong>や</strong>スズキ<strong>など</strong>の日本車を修理します。</p><p>とよた<strong>や</strong>ほんだ<strong>や</strong>すずき<strong>など</strong>のにほんしゃをしゅうりします。</p><p>Toyota ya Honda ya Suzuki nado no Nihon-sha o shūri shimasu.</p><p>Reparamos autos japoneses como Toyota, Honda, Suzuki, entre otros.</p><br/><p>スパナ<strong>や</strong>ソケットレンチ<strong>など</strong>が必要です。</p><p>すぱな<strong>や</strong>そけっとれんち<strong>など</strong>がひつようです。</p><p>Supana ya soketto renchi nado ga hitsuyō desu.</p><p>Se necesitan herramientas como llaves, llaves de tubo, entre otras.</p>
+            <p><strong>～や ～など</strong> se usan para enumeraciones parciales (y otros, etc.). En el taller se usa sin ser exhaustivo.</p><br/><h5>Estructura</h5><p>A + や + B + など (A, B, entre otros)</p><br/><h5>Ejemplos en el taller</h5><p>エンジンオイル<strong>や</strong>ブレーキフルード<strong>など</strong>を補充します。</p><p><b>えんじんおいる</b><strong><b>や</b></strong><b>ぶれーきふるーど</b><strong><b>など</b></strong><b>をほじゅうします。</b></p><p>Enjin oiru ya burēki furūdo nado o hojū shimasu.</p><p>Completamos el aceite de motor, el líquido de frenos, entre otros.</p><br/><p>トヨタ<strong>や</strong>ホンダ<strong>や</strong>スズキ<strong>など</strong>の日本車を修理します。</p><p><b>とよた</b><strong><b>や</b></strong><b>ほんだ</b><strong><b>や</b></strong><b>すずき</b><strong><b>など</b></strong><b>のにほんしゃをしゅうりします。</b></p><p>Toyota ya Honda ya Suzuki nado no Nihon-sha o shūri shimasu.</p><p>Reparamos autos japoneses como Toyota, Honda, Suzuki, entre otros.</p><br/><p>スパナ<strong>や</strong>ソケットレンチ<strong>など</strong>が必要です。</p><p><b>すぱな</b><strong><b>や</b></strong><b>そけっとれんち</b><strong><b>など</b></strong><b>がひつようです。</b></p><p>Supana ya soketto renchi nado ga hitsuyō desu.</p><p>Se necesitan herramientas como llaves inglesas, llaves de tubo, entre otras.</p>
+            
+
 <!-- Icono de copiar -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <button class="btn btn-light border" onclick="copyText_1('copy-text_30-2')">
 <i class="fas fa-copy"></i> Explicacion y practica
             </button>
@@ -1438,8 +1697,103 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
 <br/>
 </div>
 </div>
+    <!-- Modal: Audio Flashcards Player -->
+    <div class="modal fade" id="audioPlayerModal" tabindex="-1" aria-labelledby="audioPlayerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="audioPlayerLabel">
+                        <i class="fa-solid fa-headphones-simple"></i> Audio Flashcards · Pronunciación N5
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Selector de tema -->
+                    <div class="mb-3">
+                        <label for="topicSelect" class="form-label fw-bold">Tema (Grammar Focus)</label>
+                        <select class="form-select" id="topicSelect"></select>
+                    </div>
+
+                    <!-- Info de progreso -->
+                    <div class="d-flex justify-content-between small text-muted mb-1">
+                        <span id="topicLabel">—</span>
+                        <span id="sentenceCounter">Frase 0 / 0</span>
+                    </div>
+
+                    <!-- Frase actual -->
+                    <div class="card bg-light mb-3">
+                        <div class="card-body text-center">
+                            <p class="fs-4 fw-semibold mb-0" id="sentenceDisplay">Selecciona un tema y presiona Play
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Progreso de repeticiones -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span>Repetición</span>
+                            <span id="repCounter">0 / 10</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar bg-warning" id="repProgressBar" role="progressbar"
+                                style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Controles de reproducción -->
+                    <div class="d-flex justify-content-center gap-2 mb-3">
+                        <button class="btn btn-outline-dark" id="prevBtn" title="Frase anterior">
+                            <i class="fa-solid fa-backward-step"></i>
+                        </button>
+                        <button class="btn btn-success btn-lg" id="playPauseBtn" title="Reproducir / Pausar">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+                        <button class="btn btn-outline-dark" id="stopBtn" title="Detener">
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                        <button class="btn btn-outline-dark" id="nextBtn" title="Siguiente frase">
+                            <i class="fa-solid fa-forward-step"></i>
+                        </button>
+                    </div>
+
+                    <hr>
+
+                    <!-- Configuración -->
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="speedRange" class="form-label">Velocidad: <span
+                                    id="speedValue">0.8x</span></label>
+                            <input type="range" class="form-range" id="speedRange" min="0.5" max="1.2" step="0.05"
+                                value="0.8">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="repeatInput" class="form-label">Repeticiones por frase</label>
+                            <input type="number" class="form-control" id="repeatInput" min="1" max="30" value="10">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="voiceSelect" class="form-label">Voz (Inglés)</label>
+                            <select class="form-select" id="voiceSelect"></select>
+                        </div>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" id="autoAdvanceCheck" checked>
+                        <label class="form-check-label" for="autoAdvanceCheck">
+                            Avanzar automáticamente a la siguiente frase
+                        </label>
+                    </div>
+                    <p class="text-muted small mt-3 mb-0">
+                        <i class="fa-solid fa-circle-info"></i>
+                        La voz depende del navegador/dispositivo. En Chrome y Edge suele haber más voces en inglés
+                        disponibles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 <footer class="bg-dark text-white mt-4 text-center py-3">
-<p>© 2026 GrammarNest</p>
+<p>© 2026 IAidiomas</p>
 <p>Autor: Jhon Sandoval</p>
 </footer>
 <!-- Toast de Bootstrap para el mensaje de éxito -->
@@ -1473,5 +1827,175 @@ Al finalizar, dime si ya estoy preparado para avanzar al siguiente tema o si deb
             toast.show();
         }
     </script>
+    <!-- Audio Flashcards Player: datos y lógica -->
+    
+</script>
+
+
+<script>
+(function() {
+    var grammarData = [{"title": "Forma diccionario", "sentences": [{"kanji": "ボルトを締める前にトルクレンチを使う。", "hiragana": "ぼるとをしめるまえにとるくれんちをつかう。", "romaji": "Boruto o shimeru mae ni toruku renchi o tsukau.", "spanish": "Usar la llave de torque antes de apretar el perno."}, {"kanji": "オイルレベルを確認する。", "hiragana": "おいるれべるをかくにんする。", "romaji": "Oiru reberu o kakunin suru.", "spanish": "Verificar el nivel de aceite."}, {"kanji": "タイミングベルトを交換する時期がきた。", "hiragana": "たいみんぐべるとをこうかんするじきがきた。", "romaji": "Taimingu beruto o kōkan suru jiki ga kita.", "spanish": "Es hora de cambiar la correa de distribución."}, {"kanji": "エンジンオイルを交換しないと故障が起きる。", "hiragana": "えんじんおいるをこうかんしないとこしょうがおきる。", "romaji": "Enjin oiru o kōkan shinai to koshō ga okiru.", "spanish": "Si no cambias el aceite del motor, ocurrirá una falla."}]}, {"title": "Forma potencial", "sentences": [{"kanji": "このエンジンは最大300馬力まで出せる。", "hiragana": "このえんじんはさいだい300ばりきまでだせる。", "romaji": "Kono enjin wa saidai san-byaku bariki made daseru.", "spanish": "Este motor puede producir hasta 300 caballos de potencia."}, {"kanji": "日本語のマニュアルが読めるようになりたい。", "hiragana": "にほんごのまにゅあるがよめるようになりたい。", "romaji": "Nihongo no manyuaru ga yomeru yō ni naritai.", "spanish": "Quiero poder leer el manual en japonés."}, {"kanji": "この診断機はトヨタの車に使えるか？", "hiragana": "このしんだんきはとよたのくるまにつかえるか？", "romaji": "Kono shindan-ki wa Toyota no kuruma ni tsukaeru ka?", "spanish": "¿Esta máquina de diagnóstico se puede usar en autos Toyota?"}, {"kanji": "ブレーキが使えない状態です。", "hiragana": "ぶれーきがつかえないじょうたいです。", "romaji": "Burēki ga tsukaenai jōtai desu.", "spanish": "El freno está en un estado en que no se puede usar."}]}, {"title": "Verbos irregulares (する, くる)", "sentences": [{"kanji": "部品がきました。", "hiragana": "ぶひんがきました。", "romaji": "Buhin ga kimashita.", "spanish": "Las refacciones llegaron."}, {"kanji": "エンジンが故障した。", "hiragana": "えんじんがこしょうした。", "romaji": "Enjin ga koshō shita.", "spanish": "El motor se averiió."}, {"kanji": "部品が来ました。", "hiragana": "ぶひんがきました。", "romaji": "Buhin ga kimashita.", "spanish": "Las refacciones llegaron."}]}, {"title": "Adjetivos い (い形容詞 - i-keiyoushi)", "sentences": [{"kanji": "このバイクのエンジンは速いです。", "hiragana": "このばいくのえんじんははやいです。", "romaji": "Kono baiku no enjin wa hayai desu.", "spanish": "El motor de esta moto es rápido."}, {"kanji": "このタイヤは古いから交換が必要です。", "hiragana": "このたいやはふるいからこうかんがひつようです。", "romaji": "Kono taiya wa furui kara kōkan ga hitsuyō desu.", "spanish": "Este neumático es viejo, por eso necesita cambio."}, {"kanji": "このエンジンブロックは重いので二人で持ち上げます。", "hiragana": "このえんじんぶろっくはおもいのでふたりでもちあげます。", "romaji": "Kono enjin burokku wa omoi node futari de mochiageru.", "spanish": "Este bloque de motor es pesado, así que lo levantamos entre dos personas."}]}, {"title": "Adjetivos な (な形容詞 - na-keiyoushi)", "sentences": [{"kanji": "ホンダのフレームは丈夫です。", "hiragana": "ほんだのふれーむはじょうぶです。", "romaji": "Honda no furēmu wa jōbu desu.", "spanish": "El chasis de Honda es resistente."}, {"kanji": "オイル交換は必要です。", "hiragana": "おいるこうかんはひつようです。", "romaji": "Oiru kōkan wa hitsuyō desu.", "spanish": "El cambio de aceite es necesario."}, {"kanji": "トルクの正確な設定が大事です。", "hiragana": "とるくのせいかくなせっていがだいじです。", "romaji": "Toruku no seikaku na settei ga daiji desu.", "spanish": "La configuración precisa del torque es importante."}]}, {"title": "～です / ～だ", "sentences": [{"kanji": "問題はエンジンオイルの漏れでした。", "hiragana": "もんだいはえんじんおいるのもれでした。", "romaji": "Mondai wa enjin oiru no more deshita.", "spanish": "El problema era una fuga de aceite del motor."}, {"kanji": "このパーツはトヨタ純正品ではありません。", "hiragana": "このぱーつはとよたじゅんせいひんではありません。", "romaji": "Kono pātsu wa Toyota junsei-hin de wa arimasen.", "spanish": "Esta pieza no es una refacción original de Toyota."}, {"kanji": "修理費用は五万円です。", "hiragana": "しゅうりひようはごまんえんです。", "romaji": "Shūri hiyō wa goman-en desu.", "spanish": "El costo de la reparación es de cincuenta mil yenes."}]}, {"title": "～ですか？ (Preguntas)", "sentences": [{"kanji": "エンジンオイルの交換は完了ですか？", "hiragana": "えんじんおいるのこうかんはかんりょうですか？", "romaji": "Enjin oiru no kōkan wa kanryō desu ka?", "spanish": "¿Ya se completó el cambio de aceite del motor?"}, {"kanji": "この部品はホンダ純正品ですか？", "hiragana": "このぶひんはほんだじゅんせいひんですか？", "romaji": "Kono buhin wa Honda junsei-hin desu ka?", "spanish": "¿Esta refacción es original de Honda?"}, {"kanji": "ブレーキパッドの交換は今日できますか？", "hiragana": "ぶれーきぱっどのこうかんはきょうできますか？", "romaji": "Burēki paddo no kōkan wa kyō dekimasu ka?", "spanish": "¿Pueden cambiar las pastillas de freno hoy?"}, {"kanji": "タイヤの空気圧は正常ですか？", "hiragana": "たいやのくうきあつはせいじょうですか？", "romaji": "Taiya no kūki-atsu wa seijō desu ka?", "spanish": "¿La presión de los neumáticos es normal?"}]}, {"title": "～が好きです / ～が嫌いです", "sentences": [{"kanji": "日本のオートバイが大好きです。", "hiragana": "にほんのおーとばいがだいすきです。", "romaji": "Nihon no ōtobai ga daisuki desu.", "spanish": "Me encantan las motocicletas japonesas."}, {"kanji": "ホンダのエンジンが好きです。", "hiragana": "ほんだのえんじんがすきです。", "romaji": "Honda no enjin ga suki desu.", "spanish": "Me gusta el motor de Honda."}, {"kanji": "エンジン焼き付きが嫌いです。", "hiragana": "えんじんやきつきがきらいです。", "romaji": "Enjin yakitsuki ga kirai desu.", "spanish": "Detesto cuando el motor se agarra."}, {"kanji": "タービンの修理が好きですか？", "hiragana": "たーびんのしゅうりがすきですか？", "romaji": "Tābin no shūri ga suki desu ka?", "spanish": "¿Te gusta reparar turbinas?"}]}, {"title": "～があります / ～がいます", "sentences": [{"kanji": "工場にトルクレンチがあります。", "hiragana": "こうじょうにとるくれんちがあります。", "romaji": "Kōjō ni toruku renchi ga arimasu.", "spanish": "En el taller hay una llave de torque."}, {"kanji": "整備士が三人います。", "hiragana": "せいびしがさんにんいます。", "romaji": "Seibishi ga san-nin imasu.", "spanish": "Hay tres mecánicos."}, {"kanji": "エンジン診断の資格を持つ技術者がいますか？", "hiragana": "えんじんしんだんのしかくをもつぎじゅつしゃがいますか？", "romaji": "Enjin shindan no shikaku o motsu gijutsusha ga imasu ka?", "spanish": "¿Hay algún técnico con certificación en diagnóstico de motores?"}]}, {"title": "～ませんか？ (Invitación)", "sentences": [{"kanji": "一緒にエンジンを点検しませんか？", "hiragana": "いっしょにえんじんをてんけんしませんか？", "romaji": "Issho ni enjin o tenken shimasen ka?", "spanish": "¿Por qué no inspeccionamos el motor juntos?"}, {"kanji": "試乗して不具合を確認しませんか？", "hiragana": "しじょうしてふぐあいをかくにんしませんか？", "romaji": "Shijō shite fuguai o kakunin shimasen ka?", "spanish": "¿Por qué no hacemos una prueba de manejo para verificar la falla?"}, {"kanji": "一緒にタイヤを交換しませんか？", "hiragana": "いっしょにたいやをこうかんしませんか？", "romaji": "Issho ni taiya o kōkan shimasen ka?", "spanish": "¿Por qué no cambiamos los neumáticos juntos?"}]}, {"title": "～ましょう / ～ましょうか？", "sentences": [{"kanji": "オイルを今すぐ交換しましょう。", "hiragana": "おいるをいますぐこうかんしましょう。", "romaji": "Oiru o ima sugu kōkan shimashō.", "spanish": "Cambiemos el aceite ahora mismo."}, {"kanji": "一緒にブレーキを点検しましょう。", "hiragana": "いっしょにぶれーきをてんけんしましょう。", "romaji": "Issho ni burēki o tenken shimashō.", "spanish": "Inspeccionemos los frenos juntos."}, {"kanji": "見積もりを作成しましょうか？", "hiragana": "みつもりをさくせいしましょうか？", "romaji": "Mitsumori o sakusei shimashō ka?", "spanish": "¿Le elaboramos un presupuesto?"}]}, {"title": "～てください (Petición)", "sentences": [{"kanji": "エンジンを止めてください。", "hiragana": "えんじんをとめてください。", "romaji": "Enjin o tomete kudasai.", "spanish": "Por favor, apague el motor."}, {"kanji": "ここに車を止めてください。", "hiragana": "ここにくるまをとめてください。", "romaji": "Koko ni kuruma o tomete kudasai.", "spanish": "Por favor, estacione el auto aquí."}, {"kanji": "オイルキャップを開けてください。", "hiragana": "おいるきゃっぷをあけてください。", "romaji": "Oiru kyappu o akete kudasai.", "spanish": "Por favor, abra la tapa del aceite."}, {"kanji": "整備記録を見せてください。", "hiragana": "せいびきろくをみせてください。", "romaji": "Seibi kiroku o misete kudasai.", "spanish": "Por favor, muéstreme el historial de mantenimiento."}]}, {"title": "～てもいいですか？ (Permiso)", "sentences": [{"kanji": "エンジンカバーを外してもいいですか？", "hiragana": "えんじんかばーをはずしてもいいですか？", "romaji": "Enjin kabā o hazushite mo ii desu ka?", "spanish": "¿Puedo quitar la cubierta del motor?"}, {"kanji": "試乗してもいいですか？", "hiragana": "しじょうしてもいいですか？", "romaji": "Shijō shite mo ii desu ka?", "spanish": "¿Puedo hacer una prueba de manejo?"}, {"kanji": "このパーツを社外品に換えてもいいですか？", "hiragana": "このぱーつをしゃがいひんにかえてもいいですか？", "romaji": "Kono pātsu o shagahin ni kaete mo ii desu ka?", "spanish": "¿Puedo cambiar esta pieza por una de reemplazo no original?"}]}, {"title": "～てはいけません (Prohibición)", "sentences": [{"kanji": "エンジンが熱いうちに冷却水を開けてはいけません。", "hiragana": "えんじんがあついうちにれいきゃくすいをあけてはいけません。", "romaji": "Enjin ga atsui uchi ni reikyakusui o akete wa ikemasen.", "spanish": "No abras el agua de enfriamiento mientras el motor está caliente."}, {"kanji": "バイクのエンジンをかけたまま整備してはいけない。", "hiragana": "ばいくのえんじんをかけたまませいびしてはいけない。", "romaji": "Baiku no enjin o kaketa mama seibi shite wa ikenai.", "spanish": "No hagas mantenimiento con el motor de la moto encendido."}, {"kanji": "電気系統の修理中に電源を切らないでください。", "hiragana": "でんきけいとうのしゅうりちゅうにでんげんをきらないでください。", "romaji": "Denki keitō no shūri-chū ni dengen o kiranai de kudasai.", "spanish": "No cortes la alimentación eléctrica durante la reparación del sistema eléctrico."}]}, {"title": "～ています", "sentences": [{"kanji": "今、エンジンを診断しています。", "hiragana": "いま、えんじんをしんだんしています。", "romaji": "Ima, enjin o shindan shite imasu.", "spanish": "Ahora estoy diagnosticando el motor."}, {"kanji": "整備士がオイルを交換しています。", "hiragana": "せいびしがおいるをこうかんしています。", "romaji": "Seibishi ga oiru o kōkan shite imasu.", "spanish": "El mecánico está cambiando el aceite."}, {"kanji": "ブレーキパッドが摩耗しています。", "hiragana": "ぶれーきぱっどがまもうしています。", "romaji": "Burēki paddo ga mamō shite imasu.", "spanish": "Las pastillas de freno están desgastadas."}, {"kanji": "エンジンオイルが漏れています。", "hiragana": "えんじんおいるがもれています。", "romaji": "Enjin oiru ga morete imasu.", "spanish": "El aceite del motor se está fugando."}]}, {"title": "～に行きます", "sentences": [{"kanji": "部品を買いに行きます。", "hiragana": "ぶひんをかいにいきます。", "romaji": "Buhin o kai ni ikimasu.", "spanish": "Voy a comprar las refacciones."}, {"kanji": "エンジンを修理しに工場に行きます。", "hiragana": "えんじんをしゅうりしにこうじょうにいきます。", "romaji": "Enjin o shūri shi ni kōjō ni ikimasu.", "spanish": "Voy al taller para reparar el motor."}, {"kanji": "車検を受けにディーラーへ行きます。", "hiragana": "しゃけんをうけにでぃーらーへいきます。", "romaji": "Shaken o uke ni dīrā e ikimasu.", "spanish": "Voy al concesionario para pasar la inspección técnica vehicular."}]}, {"title": "～くなる / ～になる (Cambio de estado)", "sentences": [{"kanji": "走り続けるとエンジンが熱くなります。", "hiragana": "はしりつづけるとえんじんがあつくなります。", "romaji": "Hashiri tsuzukeru to enjin ga atsuku narimasu.", "spanish": "Si sigues conduciendo, el motor se calienta."}, {"kanji": "タイヤが古くなると危険です。", "hiragana": "たいやがふるくなるとあぶないです。", "romaji": "Taiya ga furuku naru to abunai desu.", "spanish": "Es peligroso cuando los neumáticos se envejecen."}, {"kanji": "オイル交換が必要になりました。", "hiragana": "おいるこうかんがひつようになりました。", "romaji": "Oiru kōkan ga hitsuyō ni narimashita.", "spanish": "Se volvió necesario cambiar el aceite."}]}, {"title": "～と思います / ～と言います", "sentences": [{"kanji": "エンジンの不具合はセンサーの問題だと思います。", "hiragana": "えんじんのふぐあいはせんさーのもんだいだとおもいます。", "romaji": "Enjin no fuguai wa sensā no mondai da to omoimasu.", "spanish": "Creo que el problema del motor es un sensor defectuoso."}, {"kanji": "タイミングベルトはまだ大丈夫だと思います。", "hiragana": "たいみんぐべるとはまだだいじょうぶだとおもいます。", "romaji": "Taimingu beruto wa mada daijōbu da to omoimasu.", "spanish": "Creo que la correa de distribución todavía está bien."}, {"kanji": "お客さんはブレーキの音がおかしいと言っています。", "hiragana": "おきゃくさんはぶれーきのおとがおかしいといっています。", "romaji": "Okyakusan wa burēki no oto ga okashii to itte imasu.", "spanish": "El cliente dice que el ruido del freno es extraño."}, {"kanji": "メーカーはこの部品を廃番にしたと言っています。", "hiragana": "めーかーはこのぶひんをはいばんにしたといっています。", "romaji": "Mēkā wa kono buhin o haiban ni shita to itte imasu.", "spanish": "El fabricante dice que esta pieza fue descontinuada."}]}, {"title": "～たいです (Expresar deseo)", "sentences": [{"kanji": "日本のバイクメーカーで働きたいです。", "hiragana": "にほんのばいくめーかーではたらきたいです。", "romaji": "Nihon no baiku mēkā de hataraki tai desu.", "spanish": "Quiero trabajar en un fabricante de motos japonés."}, {"kanji": "このターボエンジンを修理したかったです。", "hiragana": "このたーぼえんじんをしゅうりしたかったです。", "romaji": "Kono tābo enjin o shūri shi takatta desu.", "spanish": "Hubiera querido reparar este motor turbo."}, {"kanji": "スポーツカーのサスペンションを調整したいですか？", "hiragana": "すぽーつかーのさすぺんしょんをちょうせいしたいですか？", "romaji": "Supōtsu kā no sasupenShon o chōsei shitai desu ka?", "spanish": "¿Quieres ajustar la suspensión de un auto deportivo?"}]}, {"title": "～つもりです (Intención futura)", "sentences": [{"kanji": "来月、ブレーキを交換するつもりです。", "hiragana": "らいげつ、ぶれーきをこうかんするつもりです。", "romaji": "Raigetsu, burēki o kōkan suru tsumori desu.", "spanish": "El próximo mes tengo intención de cambiar los frenos."}, {"kanji": "中古のスープラを買うつもりです。", "hiragana": "ちゅうこのすーぷらをかうつもりです。", "romaji": "Chūko no Sūpura o kau tsumori desu.", "spanish": "Tengo intención de comprar un Supra de segunda mano."}, {"kanji": "タービンは自分では交換しないつもりです。", "hiragana": "たーびんはじぶんではこうかんしないつもりです。", "romaji": "Tābin wa jibun de wa kōkan shinai tsumori desu.", "spanish": "No tengo intención de cambiar la turbina yo mismo."}, {"kanji": "整備士の資格を取るつもりです。", "hiragana": "せいびしのしかくをとるつもりです。", "romaji": "Seibishi no shikaku o toru tsumori desu.", "spanish": "Tengo intención de obtener la certificación de mecánico."}]}, {"title": "～たことがあります (Experiencia pasada)", "sentences": [{"kanji": "GT-Rのエンジンを修理したことがあります。", "hiragana": "じーてぃーあーるのえんじんをしゅうりしたことがあります。", "romaji": "GT-R no enjin o shūri shita koto ga arimasu.", "spanish": "Alguna vez he reparado el motor de un GT-R."}, {"kanji": "バイクのタイヤを自分で交換したことがありますか？", "hiragana": "ばいくのたいやをじぶんでこうかんしたことがありますか？", "romaji": "Baiku no taiya o jibun de kōkan shita koto ga arimasu ka?", "spanish": "¿Alguna vez has cambiado el neumático de la moto tú mismo?"}, {"kanji": "日本のレーシングチームで働いたことがあります。", "hiragana": "にほんのれーしんぐちーむではたらいたことがあります。", "romaji": "Nihon no rēshingu chīmu de hataraita koto ga arimasu.", "spanish": "Alguna vez trabajé en un equipo de carreras japonés."}]}, {"title": "～や ～など (Enumeración parcial)", "sentences": [{"kanji": "エンジンオイルやブレーキフルードなどを補充します。", "hiragana": "えんじんおいるやぶれーきふるーどなどをほじゅうします。", "romaji": "Enjin oiru ya burēki furūdo nado o hojū shimasu.", "spanish": "Completamos el aceite de motor, el líquido de frenos, entre otros."}, {"kanji": "トヨタやホンダやスズキなどの日本車を修理します。", "hiragana": "とよたやほんだやすずきなどのにほんしゃをしゅうりします。", "romaji": "Toyota ya Honda ya Suzuki nado no Nihon-sha o shūri shimasu.", "spanish": "Reparamos autos japoneses como Toyota, Honda, Suzuki, entre otros."}, {"kanji": "スパナやソケットレンチなどが必要です。", "hiragana": "すぱなやそけっとれんちなどがひつようです。", "romaji": "Supana ya soketto renchi nado ga hitsuyō desu.", "spanish": "Se necesitan herramientas como llaves inglesas, llaves de tubo, entre otras."}]}, {"title": "～より / ～のほうが (Comparación)", "sentences": [{"kanji": "ディーゼルエンジンのほうがガソリンエンジンより燃費がいいです。", "hiragana": "でぃーぜるえんじんのほうががそりんえんじんよりねんぴがいいです。", "romaji": "Dīzeru enjin no hō ga gasorin enjin yori nenpi ga ii desu.", "spanish": "El motor diésel tiene mejor consumo de combustible que el motor a gasolina."}, {"kanji": "純正パーツのほうが社外品より信頼性が高いです。", "hiragana": "じゅんせいぱーつのほうがしゃがいひんよりしんらいせいがたかいです。", "romaji": "Junsei pātsu no hō ga shagahin yori shinraisei ga takai desu.", "spanish": "Las piezas originales tienen mayor fiabilidad que las de reemplazo."}, {"kanji": "ホンダCB400のほうがヤマハFZ400より維持費が安いです。", "hiragana": "ほんだCB400のほうがやまはFZ400よりいじひがやすいです。", "romaji": "Honda CB400 no hō ga Yamaha FZ400 yori iji-hi ga yasui desu.", "spanish": "El Honda CB400 tiene menor costo de mantenimiento que el Yamaha FZ400."}]}, {"title": "～まだ / もう (Aún / Ya)", "sentences": [{"kanji": "エンジンの修理はまだ終わっていません。", "hiragana": "えんじんのしゅうりはまだおわっていません。", "romaji": "Enjin no shūri wa mada owatte imasen.", "spanish": "La reparación del motor aún no ha terminado."}, {"kanji": "タイヤはまだ使えます。", "hiragana": "たいやはまだつかえます。", "romaji": "Taiya wa mada tsukaemasu.", "spanish": "Los neumáticos todavía se pueden usar."}, {"kanji": "オイル交換はもうできました。", "hiragana": "おいるこうかんはもうできました。", "romaji": "Oiru kōkan wa mō dekimashita.", "spanish": "El cambio de aceite ya está listo."}, {"kanji": "ブレーキパッドはもう交換が必要です。", "hiragana": "ぶれーきぱっどはもうこうかんがひつようです。", "romaji": "Burēki paddo wa mō kōkan ga hitsuyō desu.", "spanish": "Las pastillas de freno ya necesitan cambio."}]}, {"title": "～だけ / ～しか (Solo / Nada más que)", "sentences": [{"kanji": "このキットにはガスケットだけが含まれています。", "hiragana": "このきっとにはがすけっとだけがふくまれています。", "romaji": "Kono kitto ni wa gasuketto dake ga fukumarete imasu.", "spanish": "Este kit incluye solo el empaque."}, {"kanji": "バルブを一つだけ交換します。", "hiragana": "ばるぶをひとつだけこうかんします。", "romaji": "Barubu o hitotsu dake kōkan shimasu.", "spanish": "Solo cambiamos una válvula."}, {"kanji": "在庫にブレーキパッドが一つしかありません。", "hiragana": "ざいこにぶれーきぱっどがひとつしかありません。", "romaji": "Zaiko ni burēki paddo ga hitotsu shika arimasen.", "spanish": "En el inventario solo queda una pastilla de freno."}, {"kanji": "この工具は日本製のボルトしか対応していません。", "hiragana": "このこうぐはにほんせいのぼるとしかたいおうしていません。", "romaji": "Kono kōgu wa Nihon-sei no boruto shika taiō shite imasen.", "spanish": "Esta herramienta solo es compatible con pernos de fabricación japonesa."}]}];
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var topicSelect      = document.getElementById('topicSelect');
+        var topicLabel       = document.getElementById('topicLabel');
+        var sentenceDisplay  = document.getElementById('sentenceDisplay');
+        var sentenceCounter  = document.getElementById('sentenceCounter');
+        var repCounter       = document.getElementById('repCounter');
+        var repProgressBar   = document.getElementById('repProgressBar');
+        var playPauseBtn     = document.getElementById('playPauseBtn');
+        var stopBtn          = document.getElementById('stopBtn');
+        var prevBtn          = document.getElementById('prevBtn');
+        var nextBtn          = document.getElementById('nextBtn');
+        var speedRange       = document.getElementById('speedRange');
+        var speedValue       = document.getElementById('speedValue');
+        var repeatInput      = document.getElementById('repeatInput');
+        var voiceSelect      = document.getElementById('voiceSelect');
+        var autoAdvanceCheck = document.getElementById('autoAdvanceCheck');
+
+        var currentList  = [];
+        var currentIndex = 0;
+        var currentRep   = 0;
+        var isPlaying    = false;
+        var token        = 0;
+
+        // Llenar selector de temas
+        var total = grammarData.reduce(function(s,t){ return s + t.sentences.length; }, 0);
+        var opt = document.createElement('option');
+        opt.value = 'all';
+        opt.textContent = 'Todos los temas (' + total + ' frases)';
+        topicSelect.appendChild(opt);
+
+        grammarData.forEach(function(t, i) {
+            var o = document.createElement('option');
+            o.value = i;
+            o.textContent = (i+1) + '. ' + t.title + ' (' + t.sentences.length + ')';
+            topicSelect.appendChild(o);
+        });
+
+        function cargarTema() {
+            currentList  = [];
+            currentIndex = 0;
+            currentRep   = 0;
+            var v = topicSelect.value;
+            if (v === 'all') {
+                grammarData.forEach(function(t) {
+                    t.sentences.forEach(function(s){ currentList.push(s); });
+                });
+            } else {
+                var t = grammarData[parseInt(v)];
+                if (t) currentList = t.sentences.slice();
+            }
+            mostrar();
+        }
+
+        function mostrar() {
+            var rc = parseInt(repeatInput.value) || 10;
+
+            if (currentList.length === 0) {
+                if (sentenceDisplay)  sentenceDisplay.innerHTML = '<p style="text-align:center;padding:30px;color:#999">No hay frases</p>';
+                if (sentenceCounter)  sentenceCounter.textContent = 'Frase 0 / 0';
+                if (repCounter)       repCounter.textContent = '0 / ' + rc;
+                if (repProgressBar)   repProgressBar.style.width = '0%';
+                return;
+            }
+
+            var item = currentList[currentIndex];
+
+            // Pantalla de frase con 4 lineas
+            sentenceDisplay.innerHTML =
+                '<div style="text-align:center;padding:15px">' +
+                '<div style="font-size:2em;font-weight:bold;margin-bottom:10px">'         + item.kanji    + '</div>' +
+                '<div style="font-size:1.2em;color:#555;margin-bottom:6px">'              + item.hiragana + '</div>' +
+                '<div style="font-size:.95em;color:#888;font-style:italic;margin-bottom:10px">' + item.romaji  + '</div>' +
+                '<div style="font-size:1.1em;color:#222;border-top:2px solid #ddd;padding-top:10px">' + item.spanish + '</div>' +
+                '</div>';
+
+            if (topicLabel)      topicLabel.textContent      = topicSelect.options[topicSelect.selectedIndex].textContent;
+            if (sentenceCounter) sentenceCounter.textContent  = 'Frase ' + (currentIndex+1) + ' / ' + currentList.length;
+            if (repCounter)      repCounter.textContent       = (currentRep+1) + ' / ' + rc;
+            if (repProgressBar)  repProgressBar.style.width   = ((currentIndex+1)/currentList.length*100) + '%';
+
+            playPauseBtn.innerHTML = isPlaying
+                ? '<i class="fa-solid fa-pause"></i>'
+                : '<i class="fa-solid fa-play"></i>';
+        }
+
+        function cargarVoces() {
+            var voices = speechSynthesis.getVoices().filter(function(v){
+                return v.lang && v.lang.toLowerCase().startsWith('ja');
+            });
+            voiceSelect.innerHTML = '';
+            voices.forEach(function(v, i){
+                var o = document.createElement('option');
+                o.value = i;
+                o.textContent = v.name + ' (' + v.lang + ')';
+                voiceSelect.appendChild(o);
+            });
+        }
+        speechSynthesis.onvoiceschanged = cargarVoces;
+        cargarVoces();
+
+        function pronunciar() {
+            if (currentList.length === 0) return;
+            var texto = currentList[currentIndex].kanji;
+            speechSynthesis.cancel();
+            var u = new SpeechSynthesisUtterance(texto);
+            u.lang = 'ja-JP';
+            u.rate = parseFloat(speedRange.value) || 0.8;
+            var voices = speechSynthesis.getVoices().filter(function(v){
+                return v.lang && v.lang.toLowerCase().startsWith('ja');
+            });
+            if (voices.length > 0) u.voice = voices[parseInt(voiceSelect.value)||0] || voices[0];
+            var myToken = ++token;
+            u.onstart = function(){ isPlaying = true; mostrar(); };
+            u.onend = function(){
+                if (myToken !== token) return;
+                currentRep++;
+                var rc = parseInt(repeatInput.value) || 10;
+                if (currentRep >= rc) {
+                    currentRep = 0;
+                    if (autoAdvanceCheck.checked) {
+                        currentIndex = (currentIndex+1) % currentList.length;
+                    }
+                }
+                isPlaying = false;
+                mostrar();
+                if (autoAdvanceCheck.checked && currentRep === 0) setTimeout(pronunciar, 500);
+            };
+            speechSynthesis.speak(u);
+        }
+
+        function detener() {
+            token++;
+            speechSynthesis.cancel();
+            isPlaying   = false;
+            currentRep  = 0;
+            mostrar();
+        }
+
+        topicSelect.addEventListener('change', function(){ detener(); cargarTema(); });
+        playPauseBtn.addEventListener('click', function(){
+            if (isPlaying) { detener(); } else { currentRep = 0; pronunciar(); }
+        });
+        stopBtn.addEventListener('click', detener);
+        prevBtn.addEventListener('click', function(){
+            detener();
+            currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
+            mostrar();
+        });
+        nextBtn.addEventListener('click', function(){
+            detener();
+            currentIndex = (currentIndex+1) % currentList.length;
+            mostrar();
+        });
+        if (speedRange) speedRange.addEventListener('input', function(){
+            if (speedValue) speedValue.textContent = parseFloat(speedRange.value).toFixed(1) + 'x';
+        });
+
+        cargarTema();
+    });
+})();
+</script>
 </body>
 </html>
