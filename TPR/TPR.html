@@ -35,6 +35,14 @@
     .translation { color:var(--accent); font-size:.86rem; font-weight:600; margin-bottom:1rem; }
     .gesture { color:var(--muted); font-size:.91rem; line-height:1.62; margin:0; }
     .gesture span { color:#e6e6eb; font-weight:700; }
+    .purpose { margin:.95rem 0 .8rem; padding:.75rem .8rem; border-radius:10px; background:rgba(198,255,74,.055); border:1px solid rgba(198,255,74,.13); color:#c7c9d2; font-size:.81rem; line-height:1.5; }
+    .purpose b { color:var(--accent); }
+    .tpr-steps { display:flex; gap:.45rem; border-top:1px solid var(--line); padding-top:.85rem; color:#aeb1bd; font-size:.75rem; line-height:1.35; }
+    .tpr-step { flex:1; }
+    .tpr-step i { display:block; color:var(--violet); font-family:"DM Mono",monospace; font-style:normal; font-size:.65rem; margin-bottom:.22rem; }
+    .method { border:1px solid var(--line); border-radius:18px; background:linear-gradient(120deg,#10131b,#151322); padding:1.55rem; height:100%; }
+    .method h3 { font-size:1rem; margin:.45rem 0; }
+    .method p { font-size:.84rem; color:var(--muted); line-height:1.6; margin:0; }
     .empty { display:none; color:var(--muted); text-align:center; padding:3rem; }
     footer { border-top:1px solid var(--line); color:#828593; font-size:.82rem; }
     @media (max-width:767px) { .hero { padding-top:6rem; } .hero-stat { border-left:0; padding-left:0; margin-top:1rem; } }
@@ -42,14 +50,14 @@
 </head>
 <body>
   <nav class="navbar navbar-expand fixed-top">
-    <div class="container"><a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold" href="#top"><span class="brand-mark">V</span> Visual English</a><span class="small text-secondary d-none d-sm-inline">Aprende con el cuerpo</span></div>
+    <div class="container"><a class="navbar-brand text-white d-flex align-items-center gap-2 fw-bold" href="../index.html"><span class="brand-mark">V</span> Visual English</a><span class="small text-secondary d-none d-sm-inline">Aprende con el cuerpo</span></div>
   </nav>
   <main id="top">
     <section class="hero">
       <div class="container">
         <div class="row align-items-end g-4">
           <div class="col-lg-9"><div class="eyebrow mb-3">Guía práctica · Inglés conversacional</div><h1>Visual Association<br><span style="color:var(--accent)">& Embodied Learning.</span></h1><p class="mt-4 mb-0">Asocia cada expresión con una acción. Al involucrar gestos, postura y emoción, tu memoria tiene más pistas para recuperar el inglés cuando realmente lo necesitas.</p></div>
-          <div class="col-lg-3"><div class="hero-stat"><strong>26</strong><span class="text-secondary">frases para actuar, sentir y recordar</span></div></div>
+          <div class="col-lg-3"><div class="hero-stat"><strong id="total">51</strong><span class="text-secondary">frases para actuar, sentir y recordar</span></div></div>
         </div>
       </div>
     </section>
@@ -57,6 +65,9 @@
       <div class="container">
         <div class="row g-3 align-items-center"><div class="col-md-5"><input id="search" class="form-control" type="search" placeholder="Buscar frase, traducción o gesto..."></div><div class="col-md-7"><div class="d-flex flex-wrap gap-2" id="filters"><button class="filter-btn active" data-filter="all">Todas</button><button class="filter-btn" data-filter="reaccion">Reacciones</button><button class="filter-btn" data-filter="tiempo">Tiempo & rutina</button><button class="filter-btn" data-filter="social">Vida social</button><button class="filter-btn" data-filter="frustracion">Frustración</button></div></div></div>
       </div>
+    </section>
+    <section class="py-5 border-bottom" style="border-color:var(--line)!important;background:#0b0d13">
+      <div class="container"><div class="row g-3 align-items-stretch"><div class="col-lg-3"><div class="eyebrow mt-2">Método en 3 pasos</div><h2 class="mt-2" style="font-size:1.75rem;letter-spacing:-.04em">No memorices.<br>Ensáyalo.</h2></div><div class="col-md-4 col-lg-3"><div class="method"><div class="number">01 · Input</div><h3>Escucha y comprende</h3><p>Lee la frase como si apareciera en una escena. Decide quién la dice, a quién y con qué emoción.</p></div></div><div class="col-md-4 col-lg-3"><div class="method"><div class="number">02 · Acción</div><h3>Ancla el significado</h3><p>Haz el gesto grande y lento. Después dilo sin gesto: el cuerpo habrá dejado una pista en la memoria.</p></div></div><div class="col-md-4 col-lg-3"><div class="method"><div class="number">03 · Recuperación</div><h3>Cambia la escena</h3><p>Repite la frase con una situación distinta: con un amigo, en el trabajo o en la calle. Así pasa a ser tuya.</p></div></div></div></div>
     </section>
     <section class="lesson-grid"><div class="container"><div class="row g-4" id="cards"></div><div id="empty" class="empty">No encontramos una expresión con esa búsqueda.</div></div></section>
   </main>
@@ -88,10 +99,36 @@
       ["Be up at the crack of dawn.","Levantarse al amanecer","Mira un sol brillante saliendo en el horizonte mientras te estiras en la cama con cara de sueño.","tiempo"],
       ["My phone has been ringing off the hook.","Mi teléfono no ha dejado de sonar","Imagina un teléfono de casa antiguo vibrando tan fuerte que la bocina salta en el aire una y otra vez.","frustracion"],
       ["You took the words right out of my mouth.","Me quitaste las palabras de la boca","Señala a la otra persona con el dedo índice mientras asientes con la cabeza diciendo: ¡Exacto!","reaccion"],
-      ["Good chat.","Buena charla","Da un toque ligero de puños o una palmadita rápida en el hombro al despedirte con una sonrisa.","social"]
+      ["Good chat.","Buena charla","Da un toque ligero de puños o una palmadita rápida en el hombro al despedirte con una sonrisa.","social"],
+      ["Get ahold of yourself!","¡Cálmate! / ¡Contrólate!","Tómate de los hombros, respira hondo y fija la mirada al frente como recuperando la calma.","reaccion"],
+      ["I'm wired.","Estoy súper acelerado","Abre mucho los ojos y da golpecitos rápidos con los dedos sobre una mesa, incapaz de quedarte quieto.","reaccion"],
+      ["Wave your hand, try to draw her attention.","Hazle señas; trata de llamar su atención","Alza un brazo y sacude la mano en círculos grandes; acompáñalo con un pequeño salto.","social"],
+      ["Take a look at this.","Échale un vistazo a esto","Extiende el brazo como mostrando un teléfono y señala un punto preciso con el índice.","social"],
+      ["There's no telling.","Nadie lo sabe / Es imposible saberlo","Encógete de hombros con las palmas abiertas y mira al cielo con una mueca de duda.","reaccion"],
+      ["I can't hear you, you're breaking up.","No te escucho; se corta la señal","Pega el teléfono a la oreja, frunce el ceño y busca señal caminando lentamente.","frustracion"],
+      ["What's on your mind?","¿En qué piensas? / ¿Qué tienes en mente?","Inclínate hacia adelante con empatía, ladea la cabeza y apoya el mentón en la mano.","social"],
+      ["I'm just gonna make a pit stop.","Haré una parada rápida","Señala con el pulgar hacia un lado y guiña un ojo, dejando claro que vuelves en seguida.","tiempo"],
+      ["Keep your head on a swivel.","Mantente alerta / Mira a todos lados","Mueve la cabeza de lado a lado con los ojos bien abiertos, como al cruzar una calle peligrosa.","reaccion"],
+      ["I beg to differ.","Respetuosamente, no estoy de acuerdo","Levanta un índice a la altura del pecho, sonríe con suavidad y niega despacio.","social"],
+      ["I was drifting away...","Me estaba quedando dormido...","Deja caer la cabeza hacia un lado con los párpados pesados y da un pequeño sobresalto para despertar.","tiempo"],
+      ["I think I need a trim.","Creo que necesito despuntar el cabello","Toma las puntas del cabello y simula cortar solo un poco con dos dedos a modo de tijeras.","social"],
+      ["It made me sick to my stomach.","Me revolvió el estómago","Cruza los brazos sobre el abdomen, arruga la cara con asco y traga saliva.","reaccion"],
+      ["Toss it out.","Tíralo / Arrójalo a la basura","Haz un movimiento corto de muñeca lanzando un papel imaginario hacia un bote.","social"],
+      ["I had such a long day, I'm beat.","Tuve un día larguísimo; estoy agotado","Déjate caer pesadamente sobre un sillón, suelta los brazos y exhala con los ojos cerrados.","tiempo"],
+      ["I was having so much fun I lost track of time.","Me divertía tanto que perdí la noción del tiempo","Mira el reloj de golpe, abre la boca sorprendido y cúbrete la cara al ver la hora.","tiempo"],
+      ["Nothing gets by you, does it?","Nada se te escapa, ¿verdad?","Entorna los ojos con una sonrisa irónica y señala a la persona con dos dedos.","reaccion"],
+      ["These cables are tangled up.","Estos cables están todos enredados","Sostén un mazo de cables imaginario y trata de descifrar los nudos frunciendo el ceño.","frustracion"],
+      ["That's a little overkill.","Eso es una exageración","Haz una señal de freno con la mano abierta y abre los ojos como diciendo: tampoco tanto.","reaccion"],
+      ["You caught me off guard.","Me agarraste desprevenido","Da un pequeño brinco, pon una mano en el pecho para calmar el susto y ríete nerviosamente.","reaccion"],
+      ["That'll do.","Con eso basta / Así está bien","Asiente satisfecho, da una palmadita sobre la mesa y cruza los brazos dando por terminado el trabajo.","social"],
+      ["The restaurant is within walking distance.","El restaurante está a un paso","Señala hacia adelante y mueve índice y medio caminando en el aire para indicar que se llega fácil.","tiempo"],
+      ["Wipe the table.","Limpia la mesa","Haz un movimiento circular con la mano abierta y plana sobre la mesa, como pasando un trapo.","social"],
+      ["Sweep the floor.","Barre el piso","Junta las manos a la altura de la cintura y empuja una escoba imaginaria hacia adelante.","social"],
+      ["Picture this:","Imagínate esto:","Abre las dos manos frente a ti como si dibujaras una gran pantalla transparente antes de contar algo.","social"]
     ];
-    const cards = document.querySelector('#cards'), search = document.querySelector('#search'), empty = document.querySelector('#empty'); let active = 'all';
-    const render = () => { const q = search.value.toLowerCase().trim(); const visible = lessons.filter(x => (active === 'all' || x[3] === active) && x.join(' ').toLowerCase().includes(q)); cards.innerHTML = visible.map((x,i) => `<article class="col-md-6 col-xl-4"><div class="lesson-card"><div class="number">${String(lessons.indexOf(x)+1).padStart(2,'0')} · ${x[3]}</div><h2 class="phrase">${x[0]}</h2><div class="translation">${x[1]}</div><p class="gesture"><span>Actívalo:</span> ${x[2]}</p></div></article>`).join(''); empty.style.display = visible.length ? 'none' : 'block'; };
+    const learningFocus = { reaccion:'Para expresar una reacción real: sorpresa, duda, desacuerdo o emoción. Practica cambiando la intensidad de tu cara y voz.', tiempo:'Para situar acciones en una rutina, una espera o una prisa. Imagina una escena concreta antes de decirla.', social:'Para abrir, sostener o cerrar una interacción cotidiana. Di la frase mirando a un compañero como si fuera una conversación real.', frustracion:'Para liberar tensión sin perder naturalidad. Deja que la postura y el tono comuniquen el estado antes de pronunciarla.' };
+    const cards = document.querySelector('#cards'), search = document.querySelector('#search'), empty = document.querySelector('#empty'); document.querySelector('#total').textContent = lessons.length; let active = 'all';
+    const render = () => { const q = search.value.toLowerCase().trim(); const visible = lessons.filter(x => (active === 'all' || x[3] === active) && x.join(' ').toLowerCase().includes(q)); cards.innerHTML = visible.map(x => `<article class="col-md-6 col-xl-4"><div class="lesson-card"><div class="number">${String(lessons.indexOf(x)+1).padStart(2,'0')} · ${x[3]}</div><h2 class="phrase">${x[0]}</h2><div class="translation">${x[1]}</div><div class="purpose"><b>¿Cuándo usarla?</b> ${learningFocus[x[3]]}</div><p class="gesture"><span>Actívalo:</span> ${x[2]}</p><div class="tpr-steps"><div class="tpr-step"><i>01 · MIRA</i>Visualiza la escena.</div><div class="tpr-step"><i>02 · HAZ</i>Ejecuta el gesto.</div><div class="tpr-step"><i>03 · DI</i>Di la frase con emoción.</div></div></div></article>`).join(''); empty.style.display = visible.length ? 'none' : 'block'; };
     document.querySelectorAll('.filter-btn').forEach(b => b.addEventListener('click', () => { document.querySelector('.filter-btn.active').classList.remove('active'); b.classList.add('active'); active = b.dataset.filter; render(); })); search.addEventListener('input', render); render();
   </script>
 </body>
