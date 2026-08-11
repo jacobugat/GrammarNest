@@ -1,177 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrammarNest</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-        }
-    
-        .container {
-          max-width: 100%;
-          padding: 15px;
-        }
-    
-        h2 {
-          font-size: 1.2rem;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-    
-        @media (min-width: 768px) {
-          h2 {
-            font-size: 1.8rem;
-          }
-        }
-    
-        #grammarChart {
-          max-width: 100%;
-          width: 100%;
-          height: 300px !important;
-        }
-      </style>  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="GrammarNest: recursos bilingües de inglés para estudiantes y docentes.">
+  <title>GrammarNest · Aprende, enseña y conecta</title>
+  <style>
+    :root{--bg:#090d19;--surface:#11192d;--surface-2:#192542;--ink:#f3f6ff;--muted:#afbbd5;--violet:#a494ff;--cyan:#63dbd0;--line:rgba(255,255,255,.11)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 9% 0,#29345e 0,transparent 36rem),radial-gradient(circle at 93% 21%,#153b4c 0,transparent 30rem),var(--bg);color:var(--ink);font:17px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(1180px,calc(100% - 44px));margin:auto}.nav{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);background:#090d19e8;backdrop-filter:blur(18px)}.navin{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{color:var(--ink);text-decoration:none;font-size:1.14rem;font-weight:800;letter-spacing:-.03em}.brand span{color:var(--cyan)}.links{display:flex;flex-wrap:wrap;gap:4px}.links a{color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:8px;font-size:.92rem}.links a:hover{background:var(--surface-2);color:var(--ink)}.hero{padding:clamp(70px,11vw,140px) 0 68px}.eyebrow{color:var(--cyan);font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:870px;margin:14px 0 20px;font-size:clamp(3.1rem,8vw,6.6rem);line-height:.98;letter-spacing:-.065em}.hero h1 em{font-style:normal;color:var(--violet)}.hero p{max-width:730px;margin:0;color:var(--muted);font-size:1.17rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:10px;font-weight:750}.primary{background:var(--violet);color:#0b0d19}.secondary{border:1px solid var(--line);color:var(--ink);background:#111a30}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--line);margin-bottom:88px}.stat{padding:21px 24px;background:var(--surface)}.stat strong{display:block;font-size:1.45rem}.stat span{color:var(--muted);font-size:.9rem}.section{margin:0 0 86px}.section-head{max-width:730px;margin-bottom:26px}.kicker{color:var(--cyan);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.section h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.05;letter-spacing:-.05em;margin:9px 0 12px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{display:flex;min-height:235px;flex-direction:column;padding:25px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,var(--surface-2),var(--surface));text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-4px);border-color:var(--violet)}.icon{font-size:1.55rem}.card h3{font-size:1.22rem;margin:17px 0 8px;letter-spacing:-.025em}.card p{color:var(--muted);font-size:.96rem;margin:0}.card .go{margin-top:auto;padding-top:18px;color:var(--cyan);font-size:.9rem;font-weight:750}.highlight{padding:clamp(28px,5vw,52px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#23204a,#143541)}.highlight h2{max-width:700px}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.pillar{border-top:1px solid #ffffff36;padding-top:13px}.pillar b{display:block;margin-bottom:5px}.pillar span{color:#d4ddf2;font-size:.93rem}footer{border-top:1px solid var(--line);padding:32px 0 45px;color:var(--muted);font-size:.9rem}@media(max-width:760px){.wrap{width:calc(100% - 32px)}.navin{align-items:flex-start;flex-direction:column;padding:15px 0}.links{gap:2px}.links a{padding:5px 7px;font-size:.84rem}.hero{padding:66px 0 48px}.stats,.grid,.pillars{grid-template-columns:1fr}.stats{margin-bottom:65px}.stat{padding:18px 20px}.section{margin-bottom:64px}}
+  </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">GrammarNest</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="ingles/ingles_a1.html">Ingles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="portugues/portugues_a1.html">Portugués</a></li>
-                    <li class="nav-item"><a class="nav-link" href="japones/japones_n5.html">Japonés</a></li>
-                    <li class="nav-item"><a class="nav-link" href="TPR/TPR.html">TPR</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Education/glosario-profesor-ingles.html">Glosario</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Education/flashcards-comunicacion.html">Communications</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="bg-dark text-white text-center py-5 p-2">
-        <h1>Tu futuro comienza con el inglés.</h1>
-        <p>Aprende inglés utilizando las últimas tecnologías, de manera innovadora y gratuita.</p>
-    </header>
-
-    <div class="container">
-
-        <div class="card shadow-lg p-4 border-0 rounded-4">
-            <h2 class="mb-4">Bienvenido a <strong>GrammarNest</strong></h2>
-            <p class="lead">
-                Un recurso práctico y sencillo para mejorar tu gramática en inglés y otros idiomas.
-                Aquí encontrarás prompts listos para estudiar y practicar de manera intuitiva.
-            </p>
-
-            <div class="text-start mt-4">
-                <h4>Recomendaciones y uso</h4>
-                <ul class="list-unstyled">
-                    <li>- Familiarízate con plataformas de IA como
-                        <a href="chatgpt.com">ChatGPT</a>,
-                        <a href="copilot.microsoft.com"> Copilot</a>,
-                        <a href="https://gemini.google.com/">Gemini</a>
-                        entre otras.
-                    </li>
-                    <br>
-                    <li>- Copia y usa los prompts en estas plataformas para profundizar en cada tema.</li>
-                    <br>
-                    <li>- Aprende de manera intuitiva viendo la gramática en acción, lo cual te permitira realizar
-                        oraciones.</li>
-                    <br>
-                    <li>¿Tienes dudas? Pregunta a ChatGPT y descubre un nuevo método de aprendizaje.</li>
-                </ul>
-            </div>
-
-            <div class="text-start mt-4">
-                <h4>Dirigido a:</h4>
-                <ul class="list-unstyled">
-                    <li>- Estudiantes que buscan un método de aprendizaje alternativo.</li>
-                    <br>
-                    <li>- Personas que ya usan ChatGPT u otras IA y desean aprovecharlas para estudiar idiomas.</li>
-                    <br>
-                    <li>- Estudiantes de inglés de todos los niveles.</li>
-                    <br>
-                    <li>- Agentes de back-office o agentes call center que necesiten mejorar su inglés.</li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="container mt-3">
-        <div class="card shadow-lg p-4 border-0 rounded-4">
-            <h2 class="mb-4">Skills recomendadas</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">- Autonomía y capacidad de autogestión.</li>
-                <li class="list-group-item">- Pensamiento crítico para analizar y aplicar lo aprendido.</li>
-                <li class="list-group-item">- Constancia y disciplina en el estudio.</li>
-                <li class="list-group-item">- Habilidad para el autoaprendizaje.</li>
-            </ul>
-        </div>
-
-        <div class="card shadow-lg p-4 border-0 rounded-4 mt-3 mb-2">
-            <h2 class="text-center mb-3">¿En cuánto tiempo podré dominar la gramática esencial del inglés?</h2>
-            <p class="text-center">El tiempo puede variar según tu dedicación y ritmo de estudio, pero con práctica
-                constante, podrías alcanzar un dominio sólido de la gramática requerida en aproximadamente <strong>7
-                    meses</strong>.</p>
-            <button onclick="location='A1.html'" class="btn btn-success">Comienza ya!</button>
-        </div>
-
-        <div class="card shadow-lg p-4 border-0 rounded-4 mb-5">
-            <h2 class="mb-3">¿Por que debo familiarizarme con la inteligencia artifical?</h2>
-            <p>La IA está transformando rápidamente el mundo laboral y quienes aprendan a utilizarla tendrán una ventaja
-                competitiva. Aquí te explico por qué:</p>
-            <br>
-            <h5>1. La IA automatiza tareas repetitivas</h5>
-            <p>Muchos trabajos administrativos, de servicio al cliente y manufactura están siendo automatizados. Sin
-                embargo,
-                las personas que sepan manejar IA podrán enfocarse en tareas más estratégicas y creativas.</p>
-            <br>
-            <h5>2. Aumenta la productividad y eficiencia</h5>
-            <p>Los profesionales que integren herramientas de IA en su trabajo podrán hacer más en menos tiempo,
-                optimizando
-                procesos y mejorando la toma de decisiones.</p>
-            <br>
-            <h5>3. Nuevas oportunidades laborales</h5>
-            <p>La IA no solo reemplaza trabajos, sino que también crea nuevas profesiones, como:</p>
-            <p>- Prompt Engineers (expertos en interactuar con IA)</p>
-            <p>- Desarrolladores de IA</p>
-            <p>- Analistas de datos</p>
-            <p>- Especialistas en ciberseguridad con IA</p>
-            <br>
-            <h5>4. Mejora la creatividad y la innovación</h5>
-            <p>La IA ayuda a generar ideas, mejorar diseños y optimizar estrategias, lo que la convierte en una
-                herramienta
-                poderosa para emprendedores, diseñadores, escritores y muchos más.</p>
-            <br>
-            <h5>5. Es una habilidad clave para el futuro</h5>
-            <p>Las empresas buscan personas que sepan usar IA para mejorar su negocio. No se trata solo de programar,
-                sino de
-                entender cómo aprovecharla en cualquier industria.</p>
-            <br>
-            <p>Aprender a manejar la inteligencia artificial no es opcional, sino esencial para destacar en el mercado
-                laboral.
-                Los que dominen la IA tendrán más oportunidades y mejores empleos en el futuro.</p>
-        </div>
-    </div>
-    <br>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; Since 2025 GrammarNest</p>
-        <p>Autor: Jhon Sandoval</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <nav class="nav"><div class="wrap navin"><a class="brand" href="index.html">Grammar<span>Nest</span></a><div class="links"><a href="#idiomas">Idiomas</a><a href="#docentes">Docentes</a><a href="#bilingue">Bilingüe</a></div></div></nav>
+  <main>
+    <section class="wrap hero"><div class="eyebrow">Recursos educativos abiertos</div><h1>Aprende idiomas.<br><em>Enseña mejor.</em></h1><p>GrammarNest reúne rutas de aprendizaje de idiomas, materiales para docentes de inglés y recursos bilingües para estudiar, explicar y llevar el idioma a contextos reales.</p><div class="actions"><a class="button primary" href="ingles/ingles_a1.html">Comenzar inglés</a><a class="button secondary" href="#docentes">Explorar recursos docentes</a></div></section>
+    <section class="wrap stats"><div class="stat"><strong>3 idiomas</strong><span>inglés, portugués y japonés</span></div><div class="stat"><strong>6 niveles</strong><span>rutas estructuradas para inglés</span></div><div class="stat"><strong>100 términos</strong><span>para futuros docentes de inglés</span></div></section>
+    <section class="wrap section" id="idiomas"><div class="section-head"><div class="kicker">Aprendizaje de idiomas</div><h2>Una ruta clara para practicar con propósito.</h2><p>Materiales para construir gramática, vocabulario y confianza, desde los primeros pasos hasta niveles avanzados.</p></div><div class="grid"><a class="card" href="ingles/ingles_a1.html"><div class="icon">EN</div><h3>Inglés por niveles</h3><p>Rutas desde A1 hasta C1 para avanzar con explicaciones, práctica y prompts de estudio.</p><span class="go">Ver niveles de inglés →</span></a><a class="card" href="portugues/portugues_a1.html"><div class="icon">PT</div><h3>Portugués</h3><p>Contenido organizado por nivel para comprender y usar el idioma con mayor seguridad.</p><span class="go">Explorar portugués →</span></a><a class="card" href="japones/japones_n5.html"><div class="icon">JP</div><h3>Japonés</h3><p>Una ruta por niveles JLPT para estudiar estructuras, expresiones y uso real.</p><span class="go">Explorar japonés →</span></a></div></section>
+    <section class="wrap section" id="docentes"><div class="section-head"><div class="kicker">English teacher resources</div><h2>Herramientas para quienes enseñan inglés.</h2><p>Recursos pensados para planear clases, dominar conceptos de didáctica y convertir la teoría en actividades útiles para el aula.</p></div><div class="grid"><a class="card" href="Education/glosario-profesor-ingles.html"><div class="icon">▤</div><h3>Glosario del profesor</h3><p>100 términos esenciales de SLA, didáctica, lingüística, evaluación, inclusión y gestión de aula, con ejemplos.</p><span class="go">Abrir glosario →</span></a><a class="card" href="TPR/TPR.html"><div class="icon">↗</div><h3>Recursos de aula</h3><p>Ideas para aprendizaje activo, participación y práctica comunicativa con propósito.</p><span class="go">Ver recursos →</span></a><a class="card" href="Education/flashcards-comunicacion.html"><div class="icon">◫</div><h3>Comunicación bilingüe</h3><p>Flashcards sobre comunicación, asertividad, escucha empática y teoría pragmática, en español e inglés.</p><span class="go">Abrir flashcards →</span></a></div></section>
+    <section class="wrap section" id="bilingue"><div class="highlight"><div class="kicker">Bilingual learning</div><h2>Entender en español. Aplicar en inglés.</h2><p>El contenido bilingüe ayuda a conectar conceptos, vocabulario y práctica sin perder claridad. Es útil tanto para estudiantes como para docentes que preparan explicaciones y actividades.</p><div class="pillars"><div class="pillar"><b>Explicaciones claras</b><span>Conceptos presentados con lenguaje directo y contexto.</span></div><div class="pillar"><b>Ejemplos aplicables</b><span>Del concepto a la clase, la conversación o la tarea.</span></div><div class="pillar"><b>Aprendizaje autónomo</b><span>Recursos para avanzar a tu ritmo y volver cuando lo necesites.</span></div></div></div></section>
+  </main>
+  <footer><div class="wrap">GrammarNest · Recursos educativos bilingües para aprender idiomas y enseñar inglés.</div></footer>
 </body>
-
-</html> 
+</html>
