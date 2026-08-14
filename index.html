@@ -1,24 +1,438 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="GrammarNest: recursos bilingües de inglés para estudiantes y docentes.">
   <title>GrammarNest · Aprende, enseña y conecta</title>
   <style>
-    :root{--bg:#090d19;--surface:#11192d;--surface-2:#192542;--ink:#f3f6ff;--muted:#afbbd5;--violet:#a494ff;--cyan:#63dbd0;--line:rgba(255,255,255,.11)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 9% 0,#29345e 0,transparent 36rem),radial-gradient(circle at 93% 21%,#153b4c 0,transparent 30rem),var(--bg);color:var(--ink);font:17px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(1180px,calc(100% - 44px));margin:auto}.nav{position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);background:#090d19e8;backdrop-filter:blur(18px)}.navin{min-height:67px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{color:var(--ink);text-decoration:none;font-size:1.14rem;font-weight:800;letter-spacing:-.03em}.brand span{color:var(--cyan)}.links{display:flex;flex-wrap:wrap;gap:4px}.links a{color:var(--muted);text-decoration:none;padding:8px 11px;border-radius:8px;font-size:.92rem}.links a:hover{background:var(--surface-2);color:var(--ink)}.hero{padding:clamp(70px,11vw,140px) 0 68px}.eyebrow{color:var(--cyan);font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:870px;margin:14px 0 20px;font-size:clamp(3.1rem,8vw,6.6rem);line-height:.98;letter-spacing:-.065em}.hero h1 em{font-style:normal;color:var(--violet)}.hero p{max-width:730px;margin:0;color:var(--muted);font-size:1.17rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.button{display:inline-block;text-decoration:none;padding:13px 18px;border-radius:10px;font-weight:750}.primary{background:var(--violet);color:#0b0d19}.secondary{border:1px solid var(--line);color:var(--ink);background:#111a30}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--line);margin-bottom:88px}.stat{padding:21px 24px;background:var(--surface)}.stat strong{display:block;font-size:1.45rem}.stat span{color:var(--muted);font-size:.9rem}.section{margin:0 0 86px}.section-head{max-width:730px;margin-bottom:26px}.kicker{color:var(--cyan);font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.section h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.05;letter-spacing:-.05em;margin:9px 0 12px}.section-head p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{display:flex;min-height:235px;flex-direction:column;padding:25px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(150deg,var(--surface-2),var(--surface));text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-4px);border-color:var(--violet)}.icon{font-size:1.55rem}.card h3{font-size:1.22rem;margin:17px 0 8px;letter-spacing:-.025em}.card p{color:var(--muted);font-size:.96rem;margin:0}.card .go{margin-top:auto;padding-top:18px;color:var(--cyan);font-size:.9rem;font-weight:750}.highlight{padding:clamp(28px,5vw,52px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#23204a,#143541)}.highlight h2{max-width:700px}.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.pillar{border-top:1px solid #ffffff36;padding-top:13px}.pillar b{display:block;margin-bottom:5px}.pillar span{color:#d4ddf2;font-size:.93rem}footer{border-top:1px solid var(--line);padding:32px 0 45px;color:var(--muted);font-size:.9rem}@media(max-width:760px){.wrap{width:calc(100% - 32px)}.navin{align-items:flex-start;flex-direction:column;padding:15px 0}.links{gap:2px}.links a{padding:5px 7px;font-size:.84rem}.hero{padding:66px 0 48px}.stats,.grid,.pillars{grid-template-columns:1fr}.stats{margin-bottom:65px}.stat{padding:18px 20px}.section{margin-bottom:64px}}
+    :root {
+      --bg: #090d19;
+      --surface: #11192d;
+      --surface-2: #192542;
+      --ink: #f3f6ff;
+      --muted: #afbbd5;
+      --violet: #a494ff;
+      --cyan: #63dbd0;
+      --line: rgba(255, 255, 255, .11)
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 9% 0, #29345e 0, transparent 36rem), radial-gradient(circle at 93% 21%, #153b4c 0, transparent 30rem), var(--bg);
+      color: var(--ink);
+      font: 17px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 64px));
+      margin: auto
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1px solid var(--line);
+      background: #090d19e8;
+      backdrop-filter: blur(18px)
+    }
+
+    .navin {
+      min-height: 67px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px
+    }
+
+    .brand {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.14rem;
+      font-weight: 800;
+      letter-spacing: -.03em
+    }
+
+    .brand span {
+      color: var(--cyan)
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px
+    }
+
+    .links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 11px;
+      border-radius: 8px;
+      font-size: .92rem
+    }
+
+    .links a:hover {
+      background: var(--surface-2);
+      color: var(--ink)
+    }
+
+    .hero {
+      padding: clamp(70px, 11vw, 140px) 0 68px
+    }
+
+    .eyebrow {
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase
+    }
+
+    .hero h1 {
+      max-width: 870px;
+      margin: 14px 0 20px;
+      font-size: clamp(3.1rem, 8vw, 6.6rem);
+      line-height: .98;
+      letter-spacing: -.065em
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--violet)
+    }
+
+    .hero p {
+      max-width: 730px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.17rem
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 10px;
+      font-weight: 750
+    }
+
+    .primary {
+      background: var(--violet);
+      color: #0b0d19
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #111a30
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      overflow: hidden;
+      background: var(--line);
+      margin-bottom: 88px
+    }
+
+    .stat {
+      padding: 21px 24px;
+      background: var(--surface)
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .section {
+      margin: 0 auto 86px
+    }
+
+    .section-head {
+      max-width: 730px;
+      margin-bottom: 26px
+    }
+
+    .kicker {
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.05;
+      letter-spacing: -.05em;
+      margin: 9px 0 12px
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px
+    }
+
+    .card {
+      display: flex;
+      min-height: 235px;
+      flex-direction: column;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: linear-gradient(150deg, var(--surface-2), var(--surface));
+      text-decoration: none;
+      color: var(--ink);
+      transition: transform .18s, border-color .18s
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--violet)
+    }
+
+    .icon {
+      font-size: 1.55rem
+    }
+
+    .card h3 {
+      font-size: 1.22rem;
+      margin: 17px 0 8px;
+      letter-spacing: -.025em
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .96rem;
+      margin: 0
+    }
+
+    .card .go {
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--cyan);
+      font-size: .9rem;
+      font-weight: 750
+    }
+
+    .highlight {
+      padding: clamp(28px, 5vw, 52px);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(135deg, #23204a, #143541)
+    }
+
+    .highlight h2 {
+      max-width: 700px
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px
+    }
+
+    .pillar {
+      border-top: 1px solid #ffffff36;
+      padding-top: 13px
+    }
+
+    .pillar b {
+      display: block;
+      margin-bottom: 5px
+    }
+
+    .pillar span {
+      color: #d4ddf2;
+      font-size: .93rem
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 0 45px;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    @media(max-width:760px) {
+      .wrap {
+        width: calc(100% - 48px)
+      }
+
+      .navin {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0
+      }
+
+      .links {
+        gap: 2px
+      }
+
+      .links a {
+        padding: 5px 7px;
+        font-size: .84rem
+      }
+
+      .hero {
+        padding: 66px 0 48px
+      }
+
+      .stats,
+      .grid,
+      .pillars {
+        grid-template-columns: 1fr
+      }
+
+      .stats {
+        margin-bottom: 65px
+      }
+
+      .stat {
+        padding: 18px 20px
+      }
+
+      .section {
+        margin: 0 auto 64px
+      }
+    }
   </style>
 </head>
+
 <body>
-  <nav class="nav"><div class="wrap navin"><a class="brand" href="index.html">Grammar<span>Nest</span></a><div class="links"><a href="#idiomas">Idiomas</a><a href="#docentes">Docentes</a><a href="#bilingue">Bilingüe</a></div></div></nav>
+  <nav class="nav">
+    <div class="wrap navin"><a class="brand" href="index.html">Grammar<span>Nest</span></a>
+      <div class="links"><a href="#idiomas">Idiomas</a><a href="#docentes">Docentes</a><a href="Education/speelling_bee.html">Spelling Bee</a><a href="#bilingue">Bilingüe</a>
+      </div>
+    </div>
+  </nav>
   <main>
-    <section class="wrap hero"><div class="eyebrow">Recursos educativos abiertos</div><h1>Aprende idiomas.<br><em>Enseña mejor.</em></h1><p>GrammarNest reúne rutas de aprendizaje de idiomas, materiales para docentes de inglés y recursos bilingües para estudiar, explicar y llevar el idioma a contextos reales.</p><div class="actions"><a class="button primary" href="ingles/ingles_a1.html">Comenzar inglés</a><a class="button secondary" href="#docentes">Explorar recursos docentes</a></div></section>
-    <section class="wrap stats"><div class="stat"><strong>3 idiomas</strong><span>inglés, portugués y japonés</span></div><div class="stat"><strong>6 niveles</strong><span>rutas estructuradas para inglés</span></div><div class="stat"><strong>100 términos</strong><span>para futuros docentes de inglés</span></div></section>
-    <section class="wrap section" id="idiomas"><div class="section-head"><div class="kicker">Aprendizaje de idiomas</div><h2>Una ruta clara para practicar con propósito.</h2><p>Materiales para construir gramática, vocabulario y confianza, desde los primeros pasos hasta niveles avanzados.</p></div><div class="grid"><a class="card" href="ingles/ingles_a1.html"><div class="icon">EN</div><h3>Inglés por niveles</h3><p>Rutas desde A1 hasta C1 para avanzar con explicaciones, práctica y prompts de estudio.</p><span class="go">Ver niveles de inglés →</span></a><a class="card" href="portugues/portugues_a1.html"><div class="icon">PT</div><h3>Portugués</h3><p>Contenido organizado por nivel para comprender y usar el idioma con mayor seguridad.</p><span class="go">Explorar portugués →</span></a><a class="card" href="japones/japones_n5.html"><div class="icon">JP</div><h3>Japonés</h3><p>Una ruta por niveles JLPT para estudiar estructuras, expresiones y uso real.</p><span class="go">Explorar japonés →</span></a></div></section>
-    <section class="wrap section" id="docentes"><div class="section-head"><div class="kicker">English teacher resources</div><h2>Herramientas para quienes enseñan inglés.</h2><p>Recursos pensados para planear clases, dominar conceptos de didáctica y convertir la teoría en actividades útiles para el aula.</p></div><div class="grid"><a class="card" href="Education/glosario-profesor-ingles.html"><div class="icon">▤</div><h3>Glosario del profesor</h3><p>100 términos esenciales de SLA, didáctica, lingüística, evaluación, inclusión y gestión de aula, con ejemplos.</p><span class="go">Abrir glosario →</span></a><a class="card" href="TPR/TPR.html"><div class="icon">↗</div><h3>Recursos de aula</h3><p>Ideas para aprendizaje activo, participación y práctica comunicativa con propósito.</p><span class="go">Ver recursos →</span></a><a class="card" href="Education/flashcards-comunicacion.html"><div class="icon">◫</div><h3>Comunicación bilingüe</h3><p>Flashcards sobre comunicación, asertividad, escucha empática y teoría pragmática, en español e inglés.</p><span class="go">Abrir flashcards →</span></a></div></section>
-    <section class="wrap section" id="bilingue"><div class="highlight"><div class="kicker">Bilingual learning</div><h2>Entender en español. Aplicar en inglés.</h2><p>El contenido bilingüe ayuda a conectar conceptos, vocabulario y práctica sin perder claridad. Es útil tanto para estudiantes como para docentes que preparan explicaciones y actividades.</p><div class="pillars"><div class="pillar"><b>Explicaciones claras</b><span>Conceptos presentados con lenguaje directo y contexto.</span></div><div class="pillar"><b>Ejemplos aplicables</b><span>Del concepto a la clase, la conversación o la tarea.</span></div><div class="pillar"><b>Aprendizaje autónomo</b><span>Recursos para avanzar a tu ritmo y volver cuando lo necesites.</span></div></div></div></section>
+    <section class="wrap hero">
+      <div class="eyebrow">Recursos educativos abiertos</div>
+      <h1>Aprende idiomas.<br><em>Enseña mejor.</em></h1>
+      <p>GrammarNest reúne rutas de aprendizaje de idiomas, materiales para docentes de inglés y recursos bilingües para
+        estudiar, explicar y llevar el idioma a contextos reales.</p>
+      <div class="actions"><a class="button primary" href="ingles/ingles_a1.html">Comenzar inglés</a><a
+          class="button secondary" href="#docentes">Explorar recursos docentes</a></div>
+    </section>
+    <section class="wrap stats">
+      <div class="stat"><strong>3 idiomas</strong><span>inglés, portugués y japonés</span></div>
+      <div class="stat"><strong>6 niveles</strong><span>rutas estructuradas para inglés</span></div>
+      <div class="stat"><strong>100 términos</strong><span>para futuros docentes de inglés</span></div>
+    </section>
+    <section class="wrap section" id="idiomas">
+      <div class="section-head">
+        <div class="kicker">Aprendizaje de idiomas</div>
+        <h2>Una ruta clara para practicar con propósito.</h2>
+        <p>Materiales para construir gramática, vocabulario y confianza, desde los primeros pasos hasta niveles
+          avanzados.</p>
+      </div>
+      <div class="grid"><a class="card" href="ingles/ingles_a1.html">
+          <div class="icon">EN</div>
+          <h3>Inglés por niveles</h3>
+          <p>Rutas desde A1 hasta C1 para avanzar con explicaciones, práctica y prompts de estudio.</p><span
+            class="go">Ver niveles de inglés →</span>
+        </a><a class="card" href="portugues/portugues_a1.html">
+          <div class="icon">PT</div>
+          <h3>Portugués</h3>
+          <p>Contenido organizado por nivel para comprender y usar el idioma con mayor seguridad.</p><span
+            class="go">Explorar portugués →</span>
+        </a><a class="card" href="japones/japones_n5.html">
+          <div class="icon">JP</div>
+          <h3>Japonés</h3>
+          <p>Una ruta por niveles JLPT para estudiar estructuras, expresiones y uso real.</p><span class="go">Explorar
+            japonés →</span>
+        </a></div>
+    </section>
+    <section class="wrap section" id="docentes">
+      <div class="section-head">
+        <div class="kicker">English teacher resources</div>
+        <h2>Herramientas para quienes enseñan inglés.</h2>
+        <p>Recursos pensados para planear clases, dominar conceptos de didáctica y convertir la teoría en actividades
+          útiles para el aula.</p>
+      </div>
+      <div class="grid"><a class="card" href="Education/speelling_bee.html">
+          <div class="icon">🐝</div>
+          <h3>Spelling Bee</h3>
+          <p>Practica el abecedario, el deletreo de palabras, el modo examen y revisa todo el material de estudio.</p><span
+            class="go">Abrir Spelling Bee →</span>
+        </a><a class="card" href="Education/glosario-profesor-ingles.html">
+          <div class="icon">▤</div>
+          <h3>Glosario del profesor</h3>
+          <p>100 términos esenciales de SLA, didáctica, lingüística, evaluación, inclusión y gestión de aula, con
+            ejemplos.</p><span class="go">Abrir glosario →</span>
+        </a><a class="card" href="TPR/TPR.html">
+          <div class="icon">↗</div>
+          <h3>Recursos de aula</h3>
+          <p>Ideas para aprendizaje activo, participación y práctica comunicativa con propósito.</p><span class="go">Ver
+            recursos →</span>
+        </a><a class="card" href="Education/flashcards-comunicacion.html">
+          <div class="icon">◫</div>
+          <h3>Comunicación bilingüe</h3>
+          <p>Flashcards sobre comunicación, asertividad, escucha empática y teoría pragmática, en español e inglés.</p>
+          <span class="go">Abrir flashcards →</span>
+        </a>
+        </a><a class="card" href="Education/analisis_textual.html">
+          <div class="icon">◫</div>
+          <h3>Analisis Critico</h3>
+          <p>..</p>
+          <span class="go">Abrir curso practico →</span>
+        </a>
+      </div>
+    </section>
+    <section class="wrap section" id="bilingue">
+      <div class="highlight">
+        <div class="kicker">Bilingual learning</div>
+        <h2>Entender en español. Aplicar en inglés.</h2>
+        <p>El contenido bilingüe ayuda a conectar conceptos, vocabulario y práctica sin perder claridad. Es útil tanto
+          para estudiantes como para docentes que preparan explicaciones y actividades.</p>
+        <div class="pillars">
+          <div class="pillar"><b>Explicaciones claras</b><span>Conceptos presentados con lenguaje directo y
+              contexto.</span></div>
+          <div class="pillar"><b>Ejemplos aplicables</b><span>Del concepto a la clase, la conversación o la
+              tarea.</span></div>
+          <div class="pillar"><b>Aprendizaje autónomo</b><span>Recursos para avanzar a tu ritmo y volver cuando lo
+              necesites.</span></div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="wrap">GrammarNest · Recursos educativos bilingües para aprender idiomas y enseñar inglés.</div></footer>
+  <footer>
+    <div class="wrap">GrammarNest · Recursos educativos bilingües para aprender idiomas y enseñar inglés.</div>
+  </footer>
 </body>
+
 </html>

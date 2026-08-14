@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spelling Bee · Práctica nocturna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F0C09;
+    --bg-2: #16110A;
+    --surface: #1D170F;
+    --surface-2: #241C11;
+    --accent: #E8B93F;
+    --accent-soft: #F2D27F;
+    --accent-2: #C97A2B;
+    --accent-glow: rgba(232,185,63,.35);
+    --text: #F5EFE0;
+    --text-muted: #A99C82;
+    --text-faint: #6E6350;
+    --success: #7CC576;
+    --success-bg: rgba(124,197,118,.14);
+    --error: #E1637A;
+    --error-bg: rgba(225,99,122,.14);
+    --border: rgba(232,185,63,.16);
+    --radius: 20px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 900px 500px at 50% -10%, rgba(232,185,63,.08), transparent 60%),
+      repeating-linear-gradient(120deg, rgba(232,185,63,.025) 0px, rgba(232,185,63,.025) 1px, transparent 1px, transparent 46px),
+      repeating-linear-gradient(60deg, rgba(232,185,63,.025) 0px, rgba(232,185,63,.025) 1px, transparent 1px, transparent 46px),
+      var(--bg);
+    color:var(--text);
+    font-family:'Public Sans', system-ui, sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px 16px 60px;
+  }
+
+  .hex{
+    clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  }
+
+  /* ---------- Top nav ---------- */
+  .topbar{
+    width:100%;
+    max-width:480px;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .site-nav{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    color:var(--text-muted);
+    text-decoration:none;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    letter-spacing:.04em;
+    border:1px solid var(--border);
+    padding:7px 13px;
+    border-radius:30px;
+    transition:border-color .2s, color .2s, background .2s;
+  }
+  .site-nav::before{content:"←"; font-family:'Public Sans', sans-serif;}
+  .site-nav:hover{border-color:var(--accent); color:var(--accent-soft); background:rgba(232,185,63,.06);}
+  .menu-btn{background:transparent; cursor:pointer;}
+  .menu-btn::before{content:"☰"; font-family:'Public Sans', sans-serif;}
+  .material-btn{background:transparent; cursor:pointer;}
+  .material-btn::before{content:"≡"; font-family:'Public Sans', sans-serif;}
+
+  /* ---------- Header ---------- */
+  header{
+    width:100%;
+    max-width:480px;
+    text-align:center;
+    margin-bottom:26px;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-bottom:10px;
+  }
+  .eyebrow .dot{width:5px;height:5px;background:var(--accent);border-radius:50%;opacity:.7;}
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(28px,7vw,38px);
+    margin:0 0 6px;
+    letter-spacing:-.01em;
+  }
+  header p.sub{
+    margin:0;
+    color:var(--text-muted);
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  .scoreboard{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+  }
+  .scoreboard span{display:flex;align-items:center;gap:5px;}
+  .chip-ok{color:var(--success);}
+  .chip-bad{color:var(--error);}
+  .chip-left{color:var(--text-faint);}
+
+  .order-switch{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    margin-top:16px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .order-switch input{ position:absolute; opacity:0; width:0; height:0; }
+  .order-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    color:var(--text-faint);
+    transition:color .2s;
+  }
+  .order-label.active{ color:var(--accent-soft); }
+  .switch-track{
+    width:38px; height:21px;
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    border-radius:20px;
+    position:relative;
+    transition:background .2s, border-color .2s;
+    flex-shrink:0;
+  }
+  .switch-thumb{
+    position:absolute;
+    top:2px; left:2px;
+    width:15px; height:15px;
+    background:var(--text-faint);
+    border-radius:50%;
+    transition:transform .2s ease, background .2s;
+  }
+  .order-switch input:checked + .switch-track{ border-color:var(--accent); }
+  .order-switch input:checked + .switch-track .switch-thumb{
+    transform:translateX(17px);
+    background:var(--accent);
+  }
+
+  /* ---------- Progress honeycomb ---------- */
+  .progress-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:4px;
+    max-width:440px;
+    margin:18px auto 0;
+  }
+  .progress-row .cell{
+    width:12px;height:13px;
+    background:rgba(255,255,255,.06);
+    transition:background .25s ease, transform .2s ease;
+    flex-shrink:0;
+  }
+  .progress-row .cell.current{background:var(--accent); box-shadow:0 0 6px var(--accent-glow); transform:scale(1.15);}
+  .progress-row .cell.correct{background:var(--success);}
+  .progress-row .cell.wrong{background:var(--error);}
+
+  /* ---------- Card scene ---------- */
+  .stage{width:100%; max-width:440px; margin-top:26px;}
+  .card-scene{ width:100%; position:relative; }
+
+  .card-face{
+    width:100%;
+    background:linear-gradient(160deg, var(--surface), var(--surface-2));
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:26px 24px 24px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 20px 50px -20px rgba(0,0,0,.6);
+    transition:opacity .22s ease, transform .22s ease;
+  }
+  .card-face.is-hidden{ display:none; }
+  .card-face.fade-out{ opacity:0; transform:scale(.97); }
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--text-faint);
+    letter-spacing:.05em;
+    margin-bottom:6px;
+  }
+  .flip-hint-btn{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--text-muted);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    padding:5px 10px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:border-color .2s, color .2s;
+  }
+  .flip-hint-btn:hover{border-color:var(--accent); color:var(--accent-soft);}
+
+  /* Play button */
+  .play-zone{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    padding:26px 0 24px;
+  }
+  .play-btn{
+    width:104px;height:104px;
+    background:radial-gradient(circle at 35% 30%, var(--accent-soft), var(--accent) 60%, var(--accent-2) 100%);
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    color:#1a1206;
+    flex-shrink:0;
+  }
+  .play-btn svg{width:34px;height:34px; position:relative; z-index:2;}
+  .play-btn .ring{
+    position:absolute; inset:-14px;
+    border:1px solid var(--accent);
+    clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+    opacity:0;
+  }
+  .card-scene.speaking .ring{
+    animation: pulse 1.4s ease-out infinite;
+  }
+  .card-scene.speaking .play-btn{ animation: glow 1.4s ease-in-out infinite; }
+  @keyframes pulse{
+    0%{opacity:.7; transform:scale(1);}
+    100%{opacity:0; transform:scale(1.5);}
+  }
+  @keyframes glow{
+    0%,100%{filter:brightness(1);}
+    50%{filter:brightness(1.18);}
+  }
+  .status-text{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--text-muted);
+    min-height:16px;
+    text-align:center;
+  }
+  .replay-btn{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--accent-soft);
+    font-family:'Public Sans', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:background .2s, border-color .2s;
+  }
+  .replay-btn:hover{background:rgba(232,185,63,.08); border-color:var(--accent);}
+  .replay-btn:disabled{opacity:.4; cursor:default;}
+
+  /* Answer form */
+  .answer-block{ padding-top:4px; border-top:1px solid rgba(255,255,255,.05); }
+  form{display:flex; gap:8px; margin-top:18px;}
+  input[type=text]{
+    flex:1;
+    min-width:0;
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    color:var(--text);
+    font-family:'JetBrains Mono', monospace;
+    font-size:16px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    padding:13px 14px;
+    border-radius:12px;
+    outline:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  input[type=text]:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-glow);}
+  input[type=text]:disabled{opacity:.55;}
+  input[type=text]::placeholder{color:var(--text-faint); text-transform:none; letter-spacing:normal;}
+
+  .check-btn{
+    background:var(--accent);
+    color:#1a1206;
+    border:none;
+    font-weight:700;
+    font-size:13.5px;
+    padding:0 18px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:filter .2s, transform .1s;
+    flex-shrink:0;
+  }
+  .check-btn:hover{filter:brightness(1.08);}
+  .check-btn:active{transform:scale(.97);}
+  .check-btn:disabled{opacity:.4; cursor:default;}
+
+  .hint-row{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    color:var(--text-faint);
+    margin-top:9px;
+    text-align:center;
+  }
+
+  /* Result panel */
+  .result-panel{
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px dashed var(--border);
+    display:none;
+  }
+  .result-panel.show{display:block;}
+  .verdict{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-weight:700;
+    font-size:14px;
+    padding:10px 14px;
+    border-radius:10px;
+    margin-bottom:18px;
+  }
+  .verdict.ok{background:var(--success-bg); color:var(--success);}
+  .verdict.bad{background:var(--error-bg); color:var(--error);}
+  .verdict.neutral{background:rgba(232,185,63,.10); color:var(--accent-soft);}
+
+  .letters-block + .letters-block{ margin-top:16px; }
+  .letters-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    margin:0 0 8px;
+  }
+  .letters-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:4px;
+  }
+  .letter-cell{
+    width:26px;height:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700;
+    font-size:14px;
+    border-radius:6px;
+    background:rgba(255,255,255,.05);
+    color:var(--text-muted);
+    flex-shrink:0;
+  }
+  .letter-cell.good{background:var(--success-bg); color:var(--success); border:1px solid rgba(124,197,118,.35);}
+  .letter-cell.bad{background:var(--error-bg); color:var(--error); border:1px solid rgba(225,99,122,.35);}
+  .letter-cell.ref{background:rgba(232,185,63,.08); color:var(--accent-soft);}
+
+  .next-btn{
+    width:100%;
+    background:var(--text);
+    color:#1a1206;
+    border:none;
+    font-weight:700;
+    font-size:14px;
+    padding:13px;
+    border-radius:12px;
+    cursor:pointer;
+    margin-top:22px;
+    transition:filter .2s, transform .1s;
+  }
+  .next-btn:hover{filter:brightness(.94);}
+  .next-btn:active{transform:scale(.98);}
+
+  /* Back face */
+  .back-word{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(30px,8vw,40px);
+    text-align:center;
+    color:var(--accent-soft);
+    margin:18px 0 4px;
+  }
+  .back-translation{
+    text-align:center;
+    color:var(--text);
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:22px;
+  }
+  .back-divider{
+    width:40px; height:2px; background:var(--accent-2); margin:0 auto 22px; opacity:.6;
+  }
+  .back-example-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    text-align:center;
+    margin-bottom:8px;
+  }
+  .back-example{
+    text-align:center;
+    color:var(--text-muted);
+    font-size:15px;
+    line-height:1.6;
+    font-style:italic;
+    margin:0 auto;
+    max-width:320px;
+  }
+  .back-example-es{
+    text-align:center;
+    color:var(--text-faint);
+    font-size:13.5px;
+    line-height:1.6;
+    margin:8px auto 0;
+    max-width:320px;
+  }
+  .back-footer{
+    margin-top:26px;
+    display:flex;
+    justify-content:center;
+  }
+  .back-btn{
+    background:none;
+    border:1px solid var(--border);
+    color:var(--accent-soft);
+    font-family:'Public Sans', sans-serif;
+    font-weight:600;
+    font-size:13px;
+    padding:10px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:background .2s, border-color .2s;
+  }
+  .back-btn:hover{background:rgba(232,185,63,.08); border-color:var(--accent);}
+
+  /* Completion screen */
+  .done-screen{ align-items:center; text-align:center; }
+  .done-screen h2{font-family:'Fraunces', serif; font-size:26px; margin:10px 0 4px;}
+  .done-screen .stat-big{font-family:'JetBrains Mono', monospace; font-size:38px; color:var(--accent); font-weight:700; margin-top:8px;}
+  .done-screen p{color:var(--text-muted); font-size:13.5px; margin:2px 0 18px;}
+  .missed-list{
+    width:100%;
+    text-align:left;
+    max-height:220px;
+    overflow-y:auto;
+    margin-bottom:20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+  }
+  .missed-list div{
+    display:flex; justify-content:space-between;
+    padding:7px 8px;
+    border-bottom:1px solid rgba(255,255,255,.05);
+    color:var(--text-muted);
+  }
+  .missed-list div span:first-child{color:var(--error);}
+  .restart-btn{
+    background:var(--accent);
+    color:#1a1206;
+    border:none;
+    font-weight:700;
+    font-size:14px;
+    padding:13px 26px;
+    border-radius:12px;
+    cursor:pointer;
+    width:100%;
+  }
+  .restart-btn:hover{filter:brightness(1.08);}
+
+  /* ---------- Alphabet review ---------- */
+  .alphabet-review{align-items:center; text-align:center;}
+  .alphabet-review h2{font-family:'Fraunces', serif; font-size:27px; margin:10px 0 6px;}
+  .alphabet-review p{color:var(--text-muted); font-size:14px; line-height:1.55; margin:0 auto 20px; max-width:320px;}
+  .alphabet-grid{display:grid; grid-template-columns:repeat(6, 1fr); gap:8px; width:100%;}
+  .alphabet-letter{
+    min-height:43px; border:1px solid var(--border); border-radius:10px;
+    background:var(--bg-2); color:var(--accent-soft); font-family:'JetBrains Mono', monospace;
+    font-size:16px; font-weight:700; cursor:pointer; transition:background .2s, border-color .2s, transform .1s;
+  }
+  .alphabet-letter:hover,.alphabet-letter:focus{background:rgba(232,185,63,.1); border-color:var(--accent); outline:none;}
+  .alphabet-letter:active{transform:scale(.95);}
+  .alphabet-status{min-height:20px; margin:18px 0 16px; color:var(--text-muted); font-family:'JetBrains Mono', monospace; font-size:12px;}
+  .start-practice-btn{width:100%; background:var(--accent); color:#1a1206; border:none; font-weight:700; font-size:14px; padding:13px; border-radius:12px; cursor:pointer;}
+  .start-practice-btn:hover{filter:brightness(1.08);}
+  .setting-group{width:100%; margin:0 0 16px; text-align:left;}
+  .setting-title{font-family:'JetBrains Mono', monospace; color:var(--text-faint); font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:7px;}
+  .setting-options{display:grid; grid-template-columns:repeat(2,1fr); gap:7px;}
+  .setting-option{background:var(--bg-2); border:1px solid var(--border); color:var(--text-muted); border-radius:9px; padding:10px 8px; cursor:pointer; font:600 12px 'Public Sans', sans-serif;}
+  .setting-option.active{background:rgba(232,185,63,.12); border-color:var(--accent); color:var(--accent-soft);}
+  .order-switch.is-disabled{opacity:.45; pointer-events:none;}
+
+  /* ---------- Study material ---------- */
+  .study-material h2{font-family:'Fraunces', serif; font-size:27px; margin:10px 0 6px; text-align:center;}
+  .study-material .study-intro{color:var(--text-muted); font-size:13.5px; line-height:1.5; text-align:center; margin:0 0 16px;}
+  .study-search{width:100%; background:var(--bg-2); border:1px solid var(--border); color:var(--text); font:13px 'Public Sans', sans-serif; padding:11px 13px; border-radius:10px; outline:none;}
+  .study-search:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-glow);}
+  .study-list{max-height:360px; overflow-y:auto; margin:12px 0 18px; padding-right:3px;}
+  .study-item{padding:12px 10px; border-bottom:1px solid rgba(255,255,255,.07);}
+  .study-word{color:var(--accent-soft); font:700 15px 'JetBrains Mono', monospace;}
+  .study-translation{color:var(--text); font-size:13px; font-weight:600; margin-left:8px;}
+  .study-example{display:block; color:var(--text-muted); font-size:12.5px; font-style:italic; margin-top:5px; line-height:1.45;}
+  .study-empty{color:var(--text-faint); text-align:center; padding:22px 0; font-size:13px;}
+
+  footer{
+    margin-top:34px;
+    color:var(--text-faint);
+    font-family:'JetBrains Mono', monospace;
+    font-size:10.5px;
+    text-align:center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card-face{transition:none;}
+  }
+
+  @media (max-width:380px){
+    .letter-cell{width:22px;height:27px;font-size:12.5px;}
+    .alphabet-grid{gap:6px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="site-nav" href="../index.html" aria-label="Volver a GrammarNest">GrammarNest</a>
+  <button class="site-nav material-btn" id="materialBtn" type="button">Material</button>
+  <button class="site-nav menu-btn" id="menuBtn" type="button" aria-label="Volver al menú">Menú</button>
+</div>
+
+<header>
+  <div class="eyebrow"><span class="dot"></span>Spelling Bee · Escucha y escribe<span class="dot"></span></div>
+  <h1>Entrena tu oído</h1>
+  <p class="sub">Primero repasa el abecedario; después escucha, deletrea y escribe las palabras.</p>
+  <div class="scoreboard">
+    <span class="chip-ok" id="chip-ok">✓ 0</span>
+    <span class="chip-bad" id="chip-bad">✕ 0</span>
+    <span class="chip-left" id="chip-left">· 101 restantes</span>
+  </div>
+  <label class="order-switch" id="orderSwitch">
+    <span class="order-label" id="orderLabelOff">A-Z</span>
+    <input type="checkbox" id="orderToggle">
+    <span class="switch-track"><span class="switch-thumb"></span></span>
+    <span class="order-label" id="orderLabelOn">🔀 Aleatorio</span>
+  </label>
+</header>
+
+<div class="progress-row" id="progressRow"></div>
+
+<div class="stage">
+  <div class="card-scene" id="cardScene">
+
+    <!-- ALPHABET REVIEW -->
+    <div class="card-face alphabet-review" id="alphabetReview">
+      <div class="eyebrow"><span class="dot"></span>Antes de empezar<span class="dot"></span></div>
+      <h2>Repaso del abecedario</h2>
+      <p>Toca una letra para escuchar su nombre en inglés. Así puedes verificar cada pronunciación antes de practicar palabras.</p>
+      <div class="alphabet-grid" id="alphabetGrid" aria-label="Letras del alfabeto"></div>
+      <div class="alphabet-status" id="alphabetStatus">Elige una letra para escucharla</div>
+      <div class="setting-group">
+        <div class="setting-title">Modo</div>
+        <div class="setting-options">
+          <button type="button" class="setting-option active" id="practiceModeBtn">Práctica</button>
+          <button type="button" class="setting-option" id="examModeBtn">Examen</button>
+        </div>
+      </div>
+      <div class="setting-group">
+        <div class="setting-title">Dificultad</div>
+        <div class="setting-options">
+          <button type="button" class="setting-option active" id="easyBtn">Easy · lento</button>
+          <button type="button" class="setting-option" id="hardBtn">Hard · rápido</button>
+        </div>
+      </div>
+      <button class="start-practice-btn" id="startPracticeBtn">Empezar práctica de palabras →</button>
+    </div>
+
+    <!-- STUDY MATERIAL -->
+    <div class="card-face study-material is-hidden" id="studyMaterial">
+      <div class="eyebrow"><span class="dot"></span>Temario<span class="dot"></span></div>
+      <h2>Material de estudio</h2>
+      <p class="study-intro"><span id="studyCount">101</span> palabras para estudiar. Busca una palabra o recorre la lista completa.</p>
+      <input class="study-search" id="studySearch" type="search" placeholder="Buscar palabra o traducción..." autocomplete="off">
+      <div class="study-list" id="studyList"></div>
+      <button class="back-btn" id="studyBackBtn" type="button">← Volver al menú</button>
+    </div>
+
+    <!-- FRONT -->
+    <div class="card-face front is-hidden" id="frontFace">
+      <div class="card-top">
+        <span id="wordIndex">Palabra 1 de 101</span>
+        <button class="flip-hint-btn" id="flipBtn" title="Ver palabra, traducción y ejemplo">👁 ver tarjeta</button>
+      </div>
+
+      <div class="play-zone">
+        <button class="play-btn hex" id="playBtn" aria-label="Reproducir palabra">
+          <div class="ring"></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 9 8 9 13 4 13 20 8 15 3 15 3 9"></polygon>
+            <path d="M17.5 8.5a5 5 0 0 1 0 7"></path>
+            <path d="M20 6a8.5 8.5 0 0 1 0 12"></path>
+          </svg>
+        </button>
+        <div class="status-text" id="statusText">Toca para escuchar la palabra</div>
+        <button class="replay-btn" id="replayBtn">🔁 Escuchar de nuevo</button>
+      </div>
+
+      <div class="answer-block">
+        <form id="answerForm" autocomplete="off">
+          <input type="text" id="answerInput" placeholder="Escribe la palabra..." autocomplete="off" autocapitalize="off" spellcheck="false">
+          <button type="submit" class="check-btn" id="checkBtn">Comprobar</button>
+        </form>
+        <div class="hint-row">Enter para comprobar · Enter de nuevo para continuar</div>
+
+        <div class="result-panel" id="resultPanel">
+          <div class="verdict" id="verdict"></div>
+          <div class="letters-block">
+            <p class="letters-label">Tu respuesta</p>
+            <div class="letters-row" id="typedRow"></div>
+          </div>
+          <div class="letters-block">
+            <p class="letters-label">Palabra correcta</p>
+            <div class="letters-row" id="correctRow"></div>
+          </div>
+          <button class="next-btn" id="nextBtn">Siguiente palabra →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="card-face back is-hidden" id="backFace">
+      <div class="card-top">
+        <span id="wordIndexBack">Palabra 1 de 101</span>
+        <span></span>
+      </div>
+      <div class="back-word" id="backWord">word</div>
+      <div class="back-translation" id="backTranslation">traducción</div>
+      <div class="back-divider"></div>
+      <p class="back-example-label">Ejemplo</p>
+      <p class="back-example" id="backExample">Example sentence.</p>
+      <p class="back-example-es" id="backExampleEs">Oración de ejemplo.</p>
+      <div class="back-footer">
+        <button class="back-btn" id="unflipBtn">← seguir practicando</button>
+      </div>
+    </div>
+
+    <!-- DONE -->
+    <div class="card-face front done-screen is-hidden" id="doneScreen">
+      <div class="stat-big" id="doneScore">0 / 101</div>
+      <h2 id="doneTitle">¡Sesión terminada!</h2>
+      <p id="doneText">Aquí están las palabras que puedes repasar.</p>
+      <div class="missed-list" id="missedList"></div>
+      <button class="restart-btn" id="restartBtn">Reiniciar sesión</button>
+    </div>
+
+  </div>
+</div>
+
+<footer>hecho para practicar de oído, no de vista 🐝</footer>
+
+<script>
+const WORDS = [
+["Afraid","Asustado/a","She is afraid of spiders.","Ella le tiene miedo a las arañas."],
+["Almost","Casi","I am almost ready.","Ya casi estoy listo/a."],
+["Angry","Enojado/a","He was angry about the mistake.","Él estaba enojado por el error."],
+["Answer","Responder","Please answer the phone.","Por favor, contesta el teléfono."],
+["Arrive","Llegar","They will arrive at noon.","Ellos llegarán al mediodía."],
+["Ask","Preguntar","Can I ask you a question?","¿Puedo hacerte una pregunta?"],
+["Away","Lejos","She walked away from the house.","Ella se alejó caminando de la casa."],
+["Beautiful","Hermoso/a","The sunset is beautiful.","El atardecer es hermoso."],
+["Because","Porque","I stayed home because I was sick.","Me quedé en casa porque estaba enfermo/a."],
+["Before","Antes","Finish your work before dinner.","Termina tu trabajo antes de la cena."],
+["Begin","Empezar","The show will begin soon.","El espectáculo comenzará pronto."],
+["Believe","Creer","I believe in ghosts.","Creo en los fantasmas."],
+["Best","El/La mejor","She is my best friend.","Ella es mi mejor amiga."],
+["Better","Mejor","I feel better today.","Me siento mejor hoy."],
+["Big","Grande","They have a big house.","Ellos tienen una casa grande."],
+["Birthday","Cumpleaños","My birthday is in June.","Mi cumpleaños es en junio."],
+["Borrow","Pedir prestado","Can I borrow your book?","¿Me prestas tu libro?"],
+["Break","Romper","Don't break the glass.","No rompas el vidrio."],
+["Bring","Traer","Please bring your notebook.","Por favor, trae tu cuaderno."],
+["Build","Construir","They will build a new school.","Ellos construirán una nueva escuela."],
+["Busy","Ocupado/a","She is busy with work.","Ella está ocupada con el trabajo."],
+["Buy","Comprar","I want to buy a new phone.","Quiero comprar un teléfono nuevo."],
+["Call","Llamar","Call me later.","Llámame más tarde."],
+["Careful","Cuidadoso/a","Be careful with that knife!","¡Ten cuidado con ese cuchillo!"],
+["Carry","Cargar","He can carry the box.","Él puede cargar la caja."],
+["Catch","Atrapar","Catch the ball!","¡Atrapa la pelota!"],
+["Change","Cambiar","I want to change my hairstyle.","Quiero cambiar mi peinado."],
+["Clean","Limpio/a","Wash your hands to keep them clean.","Lávate las manos para mantenerlas limpias."],
+["Clever","Astuto/a","She is a clever student.","Ella es una estudiante astuta."],
+["Climb","Escalar","He can climb the tree.","Él puede trepar el árbol."],
+["Cold","Frío/a","The water is very cold.","El agua está muy fría."],
+["Come","Venir","Come here, please!","¡Ven aquí, por favor!"],
+["Comfortable","Cómodo/a","This chair is very comfortable.","Esta silla es muy cómoda."],
+["Common","Común","It's common to rain in April.","Es común que llueva en abril."],
+["Cook","Cocinar","She can cook delicious meals.","Ella puede cocinar comidas deliciosas."],
+["Correct","Correcto/a","Your answer is correct.","Tu respuesta es correcta."],
+["Cost","Costar","How much does it cost?","¿Cuánto cuesta?"],
+["Country","País","France is a beautiful country.","Francia es un país hermoso."],
+["Cry","Llorar","The baby started to cry.","El bebé empezó a llorar."],
+["Dance","Bailar","They love to dance at parties.","Les encanta bailar en las fiestas."],
+["Dark","Oscuro/a","It's too dark to see outside.","Está demasiado oscuro para ver afuera."],
+["Date","Fecha","What is today's date?","¿Cuál es la fecha de hoy?"],
+["Decide","Decidir","I can't decide what to eat.","No puedo decidir qué comer."],
+["Describe","Describir","Can you describe the picture?","¿Puedes describir la imagen?"],
+["Different","Diferente","These two books are different.","Estos dos libros son diferentes."],
+["Difficult","Difícil","This test is very difficult.","Este examen es muy difícil."],
+["Dirty","Sucio/a","Wash your dirty hands.","Lávate las manos sucias."],
+["Discover","Descubrir","Scientists discover new animals.","Los científicos descubren nuevos animales."],
+["Doctor","Doctor/a","The doctor gave me medicine.","El doctor me dio medicina."],
+["Draw","Dibujar","He likes to draw cartoons.","A él le gusta dibujar caricaturas."],
+["Dream","Sueño","I had a strange dream.","Tuve un sueño extraño."],
+["Drive","Conducir","She can drive very well.","Ella sabe conducir muy bien."],
+["Early","Temprano","I woke up early today.","Hoy me desperté temprano."],
+["Easy","Fácil","This question is easy.","Esta pregunta es fácil."],
+["Eat","Comer","We eat lunch at noon.","Almorzamos al mediodía."],
+["Electricity","Electricidad","The storm cut the electricity.","La tormenta cortó la electricidad."],
+["Enjoy","Disfrutar","I enjoy reading books.","Disfruto leer libros."],
+["Enough","Suficiente","I have enough money.","Tengo suficiente dinero."],
+["Expensive","Caro/a","This watch is very expensive.","Este reloj es muy caro."],
+["Explain","Explicar","Can you explain the rules?","¿Puedes explicar las reglas?"],
+["Fast","Rápido/a","He runs very fast.","Él corre muy rápido."],
+["Feel","Sentir","I feel happy today.","Hoy me siento feliz."],
+["Find","Encontrar","I can't find my keys.","No puedo encontrar mis llaves."],
+["Finish","Terminar","I will finish my homework soon.","Terminaré mi tarea pronto."],
+["Flower","Flor","The rose is a beautiful flower.","La rosa es una flor hermosa."],
+["Friendly","Amigable","The new student is very friendly.","El nuevo estudiante es muy amigable."],
+["Funny","Gracioso/a","That joke was very funny.","Ese chiste fue muy gracioso."],
+["Future","Futuro","What do you want to do in the future?","¿Qué quieres hacer en el futuro?"],
+["Gift","Regalo","I got a gift for my birthday.","Recibí un regalo por mi cumpleaños."],
+["Glass","Vidrio","The window is made of glass.","La ventana está hecha de vidrio."],
+["Good","Bueno/a","She is a good singer.","Ella es una buena cantante."],
+["Great","Genial","That was a great movie.","Esa fue una película genial."],
+["Happy","Feliz","I am happy today.","Hoy estoy feliz."],
+["Help","Ayudar","Can you help me?","¿Puedes ayudarme?"],
+["Hope","Esperar","I hope you feel better.","Espero que te sientas mejor."],
+["Hurry","Apurarse","Hurry up! We are late.","¡Apúrate! Vamos tarde."],
+["Idea","Idea","That's a great idea!","¡Esa es una gran idea!"],
+["Important","Importante","Education is important.","La educación es importante."],
+["Inside","Adentro","The dog is inside the house.","El perro está adentro de la casa."],
+["Journey","Viaje","We went on a journey to Spain.","Hicimos un viaje a España."],
+["Kind","Amable","She is very kind to everyone.","Ella es muy amable con todos."],
+["Learn","Aprender","I want to learn French.","Quiero aprender francés."],
+["Listen","Escuchar","Listen to the teacher.","Escucha al profesor."],
+["Love","Amor","I love my family.","Amo a mi familia."],
+["Lucky","Afortunado/a","He is very lucky today.","Él tiene mucha suerte hoy."],
+["Mistake","Error","I made a spelling mistake.","Cometí un error de ortografía."],
+["Money","Dinero","I have no money left.","Ya no me queda dinero."],
+["Never","Nunca","I have never been to Japan.","Nunca he estado en Japón."],
+["Outside","Afuera","Let's go outside and play.","Vamos afuera a jugar."],
+["Remember","Recordar","Do you remember her name?","¿Recuerdas su nombre?"],
+["Travel","Viajar","I love to travel.","Me encanta viajar."],
+["Accident","Accidente","She had a car accident last night.","Ella tuvo un accidente de auto anoche."],
+["Activity","Actividad","Swimming is my favorite activity.","Nadar es mi actividad favorita."],
+["Adventure","Aventura","Our trip to the mountains was an adventure.","Nuestro viaje a las montañas fue una aventura."],
+["Appointment","Cita","I have a doctor's appointment at 3 PM.","Tengo una cita con el doctor a las 3 PM."],
+["Conversation","Conversación","We had a long conversation about school.","Tuvimos una conversación larga sobre la escuela."],
+["Difference","Diferencia","What is the difference between these two books?","¿Cuál es la diferencia entre estos dos libros?"],
+["Education","Educación","Education is important for everyone.","La educación es importante para todos."],
+["Invitation","Invitación","I received an invitation to her wedding.","Recibí una invitación a su boda."],
+["Temperature","Temperatura","The temperature today is very high.","La temperatura hoy está muy alta."],
+["Vacation","Vacaciones","We are going on vacation next month.","Nos vamos de vacaciones el próximo mes."]
+];
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+let randomMode = false;
+let deck = WORDS.slice(); // keep the file's own order (alphabetical, A first) for abecedario practice
+let idx = 0;
+let results = new Array(deck.length).fill(null); // null | 'correct' | 'wrong'
+let answered = false;
+let speaking = false;
+let practiceStarted = false;
+let examMode = false;
+let difficulty = 'easy';
+let speechRunId = 0;
+
+const els = {
+  scene: document.getElementById('cardScene'),
+  menuBtn: document.getElementById('menuBtn'),
+  materialBtn: document.getElementById('materialBtn'),
+  alphabetReview: document.getElementById('alphabetReview'),
+  alphabetGrid: document.getElementById('alphabetGrid'),
+  alphabetStatus: document.getElementById('alphabetStatus'),
+  startPracticeBtn: document.getElementById('startPracticeBtn'),
+  studyMaterial: document.getElementById('studyMaterial'),
+  studySearch: document.getElementById('studySearch'),
+  studyList: document.getElementById('studyList'),
+  studyCount: document.getElementById('studyCount'),
+  studyBackBtn: document.getElementById('studyBackBtn'),
+  practiceModeBtn: document.getElementById('practiceModeBtn'),
+  examModeBtn: document.getElementById('examModeBtn'),
+  easyBtn: document.getElementById('easyBtn'),
+  hardBtn: document.getElementById('hardBtn'),
+  frontFace: document.getElementById('frontFace'),
+  backFace: document.getElementById('backFace'),
+  wordIndex: document.getElementById('wordIndex'),
+  wordIndexBack: document.getElementById('wordIndexBack'),
+  statusText: document.getElementById('statusText'),
+  playBtn: document.getElementById('playBtn'),
+  replayBtn: document.getElementById('replayBtn'),
+  form: document.getElementById('answerForm'),
+  input: document.getElementById('answerInput'),
+  checkBtn: document.getElementById('checkBtn'),
+  resultPanel: document.getElementById('resultPanel'),
+  verdict: document.getElementById('verdict'),
+  typedRow: document.getElementById('typedRow'),
+  correctRow: document.getElementById('correctRow'),
+  correctBlock: document.getElementById('correctRow').closest('.letters-block'),
+  nextBtn: document.getElementById('nextBtn'),
+  flipBtn: document.getElementById('flipBtn'),
+  unflipBtn: document.getElementById('unflipBtn'),
+  backWord: document.getElementById('backWord'),
+  backTranslation: document.getElementById('backTranslation'),
+  backExample: document.getElementById('backExample'),
+  backExampleEs: document.getElementById('backExampleEs'),
+  progressRow: document.getElementById('progressRow'),
+  chipOk: document.getElementById('chip-ok'),
+  chipBad: document.getElementById('chip-bad'),
+  chipLeft: document.getElementById('chip-left'),
+  doneScreen: document.getElementById('doneScreen'),
+  doneScore: document.getElementById('doneScore'),
+  doneTitle: document.getElementById('doneTitle'),
+  doneText: document.getElementById('doneText'),
+  missedList: document.getElementById('missedList'),
+  restartBtn: document.getElementById('restartBtn'),
+  orderToggle: document.getElementById('orderToggle'),
+  orderSwitch: document.getElementById('orderSwitch'),
+  orderLabelOff: document.getElementById('orderLabelOff'),
+  orderLabelOn: document.getElementById('orderLabelOn'),
+};
+
+function applyOrder(){
+  deck = (examMode || randomMode) ? shuffle(WORDS) : WORDS.slice();
+  idx = 0;
+  results = new Array(deck.length).fill(null);
+  els.orderLabelOff.classList.toggle('active', !randomMode && !examMode);
+  els.orderLabelOn.classList.toggle('active', randomMode || examMode);
+  els.doneScreen.classList.add('is-hidden');
+  els.backFace.classList.add('is-hidden');
+  els.studyMaterial.classList.add('is-hidden');
+  buildProgress();
+  if(practiceStarted){
+    els.alphabetReview.classList.add('is-hidden');
+    els.frontFace.classList.remove('is-hidden');
+    render();
+  } else {
+    updateScoreboard();
+  }
+}
+
+function updateModeControls(){
+  els.practiceModeBtn.classList.toggle('active', !examMode);
+  els.examModeBtn.classList.toggle('active', examMode);
+  els.easyBtn.classList.toggle('active', difficulty === 'easy');
+  els.hardBtn.classList.toggle('active', difficulty === 'hard');
+  els.orderToggle.disabled = examMode;
+  els.orderSwitch.classList.toggle('is-disabled', examMode);
+  els.startPracticeBtn.textContent = examMode ? 'Comenzar examen →' : 'Empezar práctica de palabras →';
+}
+
+els.practiceModeBtn.addEventListener('click', () => {
+  examMode = false;
+  updateModeControls();
+  applyOrder();
+});
+els.examModeBtn.addEventListener('click', () => {
+  examMode = true;
+  updateModeControls();
+  applyOrder();
+});
+els.easyBtn.addEventListener('click', () => {
+  difficulty = 'easy';
+  updateModeControls();
+});
+els.hardBtn.addEventListener('click', () => {
+  difficulty = 'hard';
+  updateModeControls();
+});
+
+els.orderToggle.addEventListener('change', () => {
+  randomMode = els.orderToggle.checked;
+  applyOrder();
+});
+
+function buildProgress(){
+  els.progressRow.innerHTML = '';
+  deck.forEach((_, i) => {
+    const c = document.createElement('div');
+    c.className = 'cell hex';
+    c.id = 'prog-'+i;
+    els.progressRow.appendChild(c);
+  });
+}
+
+function updateProgressCell(i){
+  const c = document.getElementById('prog-'+i);
+  if(!c) return;
+  c.classList.remove('current','correct','wrong');
+  if(results[i] === 'correct') c.classList.add('correct');
+  else if(results[i] === 'wrong') c.classList.add('wrong');
+  else if(i === idx) c.classList.add('current');
+}
+
+function refreshAllProgress(){
+  deck.forEach((_, i) => updateProgressCell(i));
+}
+
+function updateScoreboard(){
+  const ok = results.filter(r => r === 'correct').length;
+  const bad = results.filter(r => r === 'wrong').length;
+  const left = results.filter(r => r === null).length;
+  els.chipOk.textContent = '✓ ' + ok;
+  els.chipBad.textContent = '✕ ' + bad;
+  els.chipLeft.textContent = '· ' + left + ' restantes';
+}
+
+function render(){
+  if(idx >= deck.length){
+    showDone();
+    return;
+  }
+  els.backFace.classList.add('is-hidden');
+  els.frontFace.classList.remove('is-hidden');
+  const [word, translation, example, exampleEs] = deck[idx];
+  els.wordIndex.textContent = `Palabra ${idx+1} de ${deck.length}`;
+  els.wordIndexBack.textContent = `Palabra ${idx+1} de ${deck.length}`;
+  els.backWord.textContent = word;
+  els.backTranslation.textContent = translation;
+  els.backExample.textContent = example;
+  els.backExampleEs.textContent = exampleEs;
+  els.flipBtn.classList.toggle('is-hidden', examMode);
+
+  els.input.value = '';
+  els.input.disabled = false;
+  els.checkBtn.disabled = false;
+  els.resultPanel.classList.remove('show');
+  els.statusText.textContent = 'Toca para escuchar la palabra';
+  answered = false;
+
+  refreshAllProgress();
+  updateScoreboard();
+  setTimeout(() => els.input.focus(), 50);
+}
+
+/* ---------- Speech ---------- */
+let voiceEn = null;
+function pickVoice(){
+  const voices = speechSynthesis.getVoices();
+  voiceEn = voices.find(v => v.lang === 'en-US') || voices.find(v => v.lang && v.lang.startsWith('en')) || null;
+}
+if('speechSynthesis' in window){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+
+// Sending a lone letter like "A" to the browser's TTS is ambiguous — many engines
+// read it as the word "a" (reduced schwa vowel) instead of the letter's name.
+// Spelling the name out phonetically removes that ambiguity.
+const LETTER_SOUNDS = {
+  A:'A.', B:'Bee', C:'See', D:'Dee', E:'Ee', F:'Eff', G:'Jee', H:'Aitch',
+  I:'Eye', J:'Jay', K:'Kay', L:'El', M:'Em', N:'En', O:'Oh', P:'Pee',
+  Q:'Cue', R:'Are', S:'Ess', T:'Tee', U:'You', V:'Vee', W:'Double-u',
+  X:'Ex', Y:'Why', Z:'Zee'
+};
+
+function makeUtterance(text, rate){
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US';
+  if(voiceEn) u.voice = voiceEn;
+  u.rate = rate;
+  u.pitch = 1;
+  return u;
+}
+
+const LETTER_PRONUNCIATIONS = {
+  A:'ei', B:'bi', C:'si', D:'di', E:'i', F:'ef', G:'yi', H:'eich',
+  I:'ai', J:'yei', K:'kei', L:'el', M:'em', N:'en', O:'ou', P:'pi',
+  Q:'kiu', R:'ar', S:'es', T:'ti', U:'iu', V:'vi', W:'double iu',
+  X:'eks', Y:'uai', Z:'zi'
+};
+
+function speakAlphabetLetter(letter){
+  if(!('speechSynthesis' in window)){
+    els.alphabetStatus.textContent = 'Tu navegador no soporta síntesis de voz.';
+    return;
+  }
+  speechSynthesis.cancel();
+  speaking = true;
+  els.scene.classList.add('speaking');
+  els.alphabetStatus.textContent = `${letter} suena “${LETTER_PRONUNCIATIONS[letter]}”`;
+  const u = makeUtterance(LETTER_SOUNDS[letter], 0.7);
+  u.onend = u.onerror = () => {
+    speaking = false;
+    els.scene.classList.remove('speaking');
+  };
+  speechSynthesis.speak(u);
+}
+
+function buildAlphabetReview(){
+  Object.keys(LETTER_SOUNDS).forEach(letter => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'alphabet-letter';
+    button.textContent = letter;
+    button.setAttribute('aria-label', `Escuchar la letra ${letter}`);
+    button.addEventListener('click', () => {
+      if(!speaking) speakAlphabetLetter(letter);
+    });
+    els.alphabetGrid.appendChild(button);
+  });
+}
+
+function renderStudyList(query = ''){
+  const search = query.trim().toLowerCase();
+  const matches = WORDS.filter(([word, translation, example]) =>
+    `${word} ${translation} ${example}`.toLowerCase().includes(search)
+  );
+  els.studyList.innerHTML = '';
+  els.studyCount.textContent = matches.length === WORDS.length ? WORDS.length : matches.length;
+  if(matches.length === 0){
+    els.studyList.innerHTML = '<p class="study-empty">No encontramos esa palabra.</p>';
+    return;
+  }
+  matches.forEach(([word, translation, example]) => {
+    const item = document.createElement('div');
+    item.className = 'study-item';
+    const title = document.createElement('div');
+    const wordEl = document.createElement('span');
+    wordEl.className = 'study-word';
+    wordEl.textContent = word;
+    const translationEl = document.createElement('span');
+    translationEl.className = 'study-translation';
+    translationEl.textContent = translation;
+    const exampleEl = document.createElement('span');
+    exampleEl.className = 'study-example';
+    exampleEl.textContent = example;
+    title.append(wordEl, translationEl);
+    item.append(title, exampleEl);
+    els.studyList.appendChild(item);
+  });
+}
+
+function openStudyMaterial(){
+  speechRunId++;
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  practiceStarted = false;
+  els.scene.classList.remove('speaking');
+  els.alphabetReview.classList.add('is-hidden');
+  els.frontFace.classList.add('is-hidden');
+  els.backFace.classList.add('is-hidden');
+  els.doneScreen.classList.add('is-hidden');
+  els.studyMaterial.classList.remove('is-hidden');
+  els.studySearch.value = '';
+  renderStudyList();
+  setTimeout(() => els.studySearch.focus(), 50);
+}
+
+els.materialBtn.addEventListener('click', openStudyMaterial);
+els.studySearch.addEventListener('input', () => renderStudyList(els.studySearch.value));
+els.studyBackBtn.addEventListener('click', () => els.menuBtn.click());
+
+els.startPracticeBtn.addEventListener('click', () => {
+  practiceStarted = true;
+  speechRunId++;
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  els.scene.classList.remove('speaking');
+  els.alphabetReview.classList.add('is-hidden');
+  els.studyMaterial.classList.add('is-hidden');
+  applyOrder();
+});
+
+els.menuBtn.addEventListener('click', () => {
+  speechRunId++;
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  practiceStarted = false;
+  els.scene.classList.remove('speaking');
+  els.frontFace.classList.add('is-hidden');
+  els.backFace.classList.add('is-hidden');
+  els.doneScreen.classList.add('is-hidden');
+  els.studyMaterial.classList.add('is-hidden');
+  els.alphabetReview.classList.remove('is-hidden');
+  els.alphabetStatus.textContent = 'Elige una letra para escucharla';
+});
+
+function speakWord(word){
+  if(!('speechSynthesis' in window)){
+    els.statusText.textContent = 'Tu navegador no soporta síntesis de voz.';
+    return;
+  }
+  speechSynthesis.cancel();
+  const runId = ++speechRunId;
+  speaking = true;
+  els.scene.classList.add('speaking');
+  els.replayBtn.disabled = true;
+  els.statusText.textContent = 'Deletreando...';
+
+  const letters = word.toUpperCase().split('');
+  const queue = [];
+
+  // Round 1
+  letters.forEach(ch => queue.push({type:'letter', ch, round:1}));
+  queue.push({type:'pause', ms: 1800});
+  // Round 2 (second chance)
+  letters.forEach(ch => queue.push({type:'letter', ch, round:2}));
+
+  let i = 0;
+  function playNext(){
+    if(runId !== speechRunId) return;
+    if(i >= queue.length){
+      speaking = false;
+      els.scene.classList.remove('speaking');
+      els.replayBtn.disabled = false;
+      els.statusText.textContent = 'Escribe la palabra que escuchaste';
+      return;
+    }
+    const item = queue[i]; i++;
+    if(item.type === 'pause'){
+      els.statusText.textContent = 'Segunda oportunidad...';
+      setTimeout(playNext, item.ms);
+      return;
+    }
+    // Never reveal the letter on screen — audio only.
+    els.statusText.textContent = item.round === 1 ? 'Deletreando...' : 'Repitiendo...';
+    const letterRate = difficulty === 'hard' ? 1.1 : 0.58;
+    const u = makeUtterance(LETTER_SOUNDS[item.ch] || item.ch, letterRate);
+    u.onend = () => {
+      if(runId === speechRunId) setTimeout(playNext, 130);
+    };
+    u.onerror = () => {
+      if(runId === speechRunId) setTimeout(playNext, 130);
+    };
+    speechSynthesis.speak(u);
+  }
+  playNext();
+}
+
+els.playBtn.addEventListener('click', () => {
+  if(speaking || idx >= deck.length) return;
+  speakWord(deck[idx][0]);
+});
+els.replayBtn.addEventListener('click', () => {
+  if(speaking || idx >= deck.length) return;
+  speakWord(deck[idx][0]);
+});
+
+/* ---------- Answer checking ---------- */
+function buildLetterRow(container, text, compareTo, mode){
+  container.innerHTML = '';
+  const len = Math.max(text.length, compareTo ? compareTo.length : 0);
+  for(let i = 0; i < len; i++){
+    const cell = document.createElement('div');
+    cell.className = 'letter-cell';
+    const ch = text[i];
+    cell.textContent = ch ? ch.toUpperCase() : '_';
+    if(mode === 'typed'){
+      const target = compareTo[i];
+      if(ch && target && ch.toLowerCase() === target.toLowerCase()) cell.classList.add('good');
+      else cell.classList.add('bad');
+    } else {
+      cell.classList.add('ref');
+    }
+    container.appendChild(cell);
+  }
+}
+
+function checkAnswer(){
+  const word = deck[idx][0];
+  const typed = els.input.value.trim();
+  if(typed === ''){
+    els.input.focus();
+    return;
+  }
+  const isCorrect = typed.toLowerCase() === word.toLowerCase();
+  results[idx] = isCorrect ? 'correct' : 'wrong';
+  answered = true;
+
+  els.input.disabled = true;
+  els.checkBtn.disabled = true;
+
+  if(examMode){
+    els.verdict.className = 'verdict neutral';
+    els.verdict.textContent = 'Respuesta registrada';
+    buildLetterRow(els.typedRow, typed, '', 'exam');
+    els.correctBlock.classList.add('is-hidden');
+    els.nextBtn.textContent = 'Siguiente pregunta →';
+  } else {
+    els.verdict.className = 'verdict ' + (isCorrect ? 'ok' : 'bad');
+    els.verdict.textContent = isCorrect ? '✓ ¡Correcto!' : '✕ No es correcto, revisa las letras';
+    buildLetterRow(els.typedRow, typed, word, 'typed');
+    buildLetterRow(els.correctRow, word, null, 'ref');
+    els.correctBlock.classList.remove('is-hidden');
+    els.nextBtn.textContent = 'Siguiente palabra →';
+  }
+
+  els.resultPanel.classList.add('show');
+  updateProgressCell(idx);
+  updateScoreboard();
+  els.nextBtn.focus();
+}
+
+els.form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if(!answered) checkAnswer();
+  else goNext();
+});
+
+function goNext(){
+  idx++;
+  render();
+}
+els.nextBtn.addEventListener('click', goNext);
+
+/* ---------- Flip (crossfade, auto-height) ---------- */
+function flip(){
+  if(examMode) return;
+  els.frontFace.classList.add('fade-out');
+  setTimeout(() => {
+    els.frontFace.classList.add('is-hidden');
+    els.frontFace.classList.remove('fade-out');
+    els.backFace.classList.remove('is-hidden');
+  }, 200);
+}
+function unflip(){
+  els.backFace.classList.add('fade-out');
+  setTimeout(() => {
+    els.backFace.classList.add('is-hidden');
+    els.backFace.classList.remove('fade-out');
+    els.frontFace.classList.remove('is-hidden');
+  }, 200);
+}
+els.flipBtn.addEventListener('click', flip);
+els.unflipBtn.addEventListener('click', unflip);
+
+/* ---------- Completion ---------- */
+function showDone(){
+  els.frontFace.classList.add('is-hidden');
+  els.backFace.classList.add('is-hidden');
+  els.doneScreen.classList.remove('is-hidden');
+
+  const ok = results.filter(r => r === 'correct').length;
+  if(examMode){
+    const grade = 1 + (ok / deck.length) * 4;
+    els.doneScore.textContent = grade.toFixed(1) + ' / 5';
+    els.doneTitle.textContent = 'Examen terminado';
+    els.doneText.textContent = `${ok} respuestas correctas de ${deck.length}.`;
+    els.missedList.innerHTML = '<div style="justify-content:center;color:var(--accent-soft);">Tu resultado se muestra sin revelar las respuestas.</div>';
+    els.restartBtn.textContent = 'Repetir examen';
+    return;
+  }
+
+  els.doneScore.textContent = ok + ' / ' + deck.length;
+  els.doneTitle.textContent = '¡Sesión terminada!';
+  els.doneText.textContent = 'Aquí están las palabras que puedes repasar.';
+  els.restartBtn.textContent = 'Reiniciar sesión';
+
+  els.missedList.innerHTML = '';
+  deck.forEach((w, i) => {
+    if(results[i] === 'wrong'){
+      const row = document.createElement('div');
+      row.innerHTML = `<span>${w[0]}</span><span>${w[1]}</span>`;
+      els.missedList.appendChild(row);
+    }
+  });
+  if(els.missedList.children.length === 0){
+    els.missedList.innerHTML = '<div style="justify-content:center;color:var(--success);">¡Ninguna palabra fallada! 🐝</div>';
+  }
+}
+
+els.restartBtn.addEventListener('click', applyOrder);
+
+/* ---------- Init ---------- */
+els.orderLabelOff.classList.add('active');
+buildProgress();
+buildAlphabetReview();
+renderStudyList();
+updateScoreboard();
+</script>
+</body>
+</html>
