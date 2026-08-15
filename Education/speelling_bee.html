@@ -871,6 +871,14 @@ const els = {
   orderLabelOn: document.getElementById('orderLabelOn'),
 };
 
+function stopActiveSpeech(){
+  speechRunId++;
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  els.scene.classList.remove('speaking');
+  els.replayBtn.disabled = false;
+}
+
 function applyOrder(){
   deck = (examMode || randomMode) ? shuffle(WORDS) : WORDS.slice();
   idx = 0;
@@ -999,7 +1007,7 @@ if('speechSynthesis' in window){
 // read it as the word "a" (reduced schwa vowel) instead of the letter's name.
 // Spelling the name out phonetically removes that ambiguity.
 const LETTER_SOUNDS = {
-  A:'A.', B:'Bee', C:'See', D:'Dee', E:'Ee', F:'Eff', G:'Jee', H:'Aitch',
+  A:'A.', B:'Bee', C:'See', D:'Dee', E:'E.', F:'Eff', G:'Jee', H:'Aitch',
   I:'Eye', J:'Jay', K:'Kay', L:'El', M:'Em', N:'En', O:'Oh', P:'Pee',
   Q:'Cue', R:'Are', S:'Ess', T:'Tee', U:'You', V:'Vee', W:'Double-u',
   X:'Ex', Y:'Why', Z:'Zee'
@@ -1215,6 +1223,7 @@ function checkAnswer(){
     els.input.focus();
     return;
   }
+  stopActiveSpeech();
   const isCorrect = typed.toLowerCase() === word.toLowerCase();
   results[idx] = isCorrect ? 'correct' : 'wrong';
   answered = true;
@@ -1250,6 +1259,7 @@ els.form.addEventListener('submit', (e) => {
 });
 
 function goNext(){
+  stopActiveSpeech();
   idx++;
   render();
 }
