@@ -523,6 +523,10 @@
   .setting-option{background:var(--bg-2); border:1px solid var(--border); color:var(--text-muted); border-radius:9px; padding:10px 8px; cursor:pointer; font:600 12px 'Public Sans', sans-serif;}
   .setting-option.active{background:rgba(232,185,63,.12); border-color:var(--accent); color:var(--accent-soft);}
   .order-switch.is-disabled{opacity:.45; pointer-events:none;}
+  .speed-control{width:100%; accent-color:var(--accent); cursor:pointer;}
+  .speed-caption{display:flex; justify-content:space-between; color:var(--text-muted); font:11px 'JetBrains Mono', monospace; margin-top:6px;}
+  .speed-inline{width:min(260px, 100%); margin-top:2px;}
+  .speed-inline .setting-title{text-align:left;}
 
   /* ---------- Study material ---------- */
   .study-material h2{font-family:'Fraunces', serif; font-size:27px; margin:10px 0 6px; text-align:center;}
@@ -598,13 +602,6 @@
           <button type="button" class="setting-option" id="examModeBtn">Examen</button>
         </div>
       </div>
-      <div class="setting-group">
-        <div class="setting-title">Dificultad</div>
-        <div class="setting-options">
-          <button type="button" class="setting-option active" id="easyBtn">Easy · lento</button>
-          <button type="button" class="setting-option" id="hardBtn">Hard · rápido</button>
-        </div>
-      </div>
       <button class="start-practice-btn" id="startPracticeBtn">Empezar práctica de palabras →</button>
     </div>
 
@@ -636,6 +633,11 @@
         </button>
         <div class="status-text" id="statusText">Toca para escuchar la palabra</div>
         <button class="replay-btn" id="replayBtn">🔁 Escuchar de nuevo</button>
+        <div class="speed-inline">
+          <div class="setting-title" id="speedLabel">Velocidad: normal (0.7×)</div>
+          <input class="speed-control" id="speedRange" type="range" min="0.4" max="1.3" step="0.1" value="0.7" aria-labelledby="speedLabel">
+          <div class="speed-caption"><span>Lenta</span><span>Rápida</span></div>
+        </div>
       </div>
 
       <div class="answer-block">
@@ -813,7 +815,7 @@ let answered = false;
 let speaking = false;
 let practiceStarted = false;
 let examMode = false;
-let difficulty = 'easy';
+let speechRate = 0.7;
 let speechRunId = 0;
 
 const els = {
@@ -831,8 +833,8 @@ const els = {
   studyBackBtn: document.getElementById('studyBackBtn'),
   practiceModeBtn: document.getElementById('practiceModeBtn'),
   examModeBtn: document.getElementById('examModeBtn'),
-  easyBtn: document.getElementById('easyBtn'),
-  hardBtn: document.getElementById('hardBtn'),
+  speedRange: document.getElementById('speedRange'),
+  speedLabel: document.getElementById('speedLabel'),
   frontFace: document.getElementById('frontFace'),
   backFace: document.getElementById('backFace'),
   wordIndex: document.getElementById('wordIndex'),
@@ -901,8 +903,6 @@ function applyOrder(){
 function updateModeControls(){
   els.practiceModeBtn.classList.toggle('active', !examMode);
   els.examModeBtn.classList.toggle('active', examMode);
-  els.easyBtn.classList.toggle('active', difficulty === 'easy');
-  els.hardBtn.classList.toggle('active', difficulty === 'hard');
   els.orderToggle.disabled = examMode;
   els.orderSwitch.classList.toggle('is-disabled', examMode);
   els.startPracticeBtn.textContent = examMode ? 'Comenzar examen →' : 'Empezar práctica de palabras →';
@@ -918,13 +918,14 @@ els.examModeBtn.addEventListener('click', () => {
   updateModeControls();
   applyOrder();
 });
-els.easyBtn.addEventListener('click', () => {
-  difficulty = 'easy';
-  updateModeControls();
-});
-els.hardBtn.addEventListener('click', () => {
-  difficulty = 'hard';
-  updateModeControls();
+function updateSpeedLabel(){
+  const label = speechRate < 0.65 ? 'lenta' : speechRate > 0.95 ? 'rápida' : 'normal';
+  els.speedLabel.textContent = `Velocidad: ${label} (${speechRate.toFixed(1)}×)`;
+}
+
+els.speedRange.addEventListener('input', () => {
+  speechRate = Number(els.speedRange.value);
+  updateSpeedLabel();
 });
 
 els.orderToggle.addEventListener('change', () => {
@@ -1038,7 +1039,7 @@ function speakAlphabetLetter(letter){
   speaking = true;
   els.scene.classList.add('speaking');
   els.alphabetStatus.textContent = `${letter} suena “${LETTER_PRONUNCIATIONS[letter]}”`;
-  const u = makeUtterance(LETTER_SOUNDS[letter], 0.7);
+  const u = makeUtterance(LETTER_SOUNDS[letter], speechRate);
   u.onend = u.onerror = () => {
     speaking = false;
     els.scene.classList.remove('speaking');
@@ -1174,8 +1175,7 @@ function speakWord(word){
     }
     // Never reveal the letter on screen — audio only.
     els.statusText.textContent = item.round === 1 ? 'Deletreando...' : 'Repitiendo...';
-    const letterRate = difficulty === 'hard' ? 1.1 : 0.58;
-    const u = makeUtterance(LETTER_SOUNDS[item.ch] || item.ch, letterRate);
+    const u = makeUtterance(LETTER_SOUNDS[item.ch] || item.ch, speechRate);
     u.onend = () => {
       if(runId === speechRunId) setTimeout(playNext, 130);
     };
