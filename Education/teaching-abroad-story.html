@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive A1-A2 reading about teaching English abroad.">
+  <title>Teaching Abroad | GrammarNest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0d1110;--panel:#161c18;--panel-2:#1d2620;--line:#344238;--ink:#f4f2e9;--muted:#a9b0a9;--lime:#c7f85f;--blue:#83b8ff;--coral:#ff846e;--yellow:#ffd56b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,Arial,sans-serif;line-height:1.65}button,a{font:inherit}a{color:inherit;text-decoration:none}.shell{max-width:1240px;margin:auto;padding:24px 30px 56px}nav{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:21px;gap:20px}.brand{font-size:20px;font-weight:800}.brand span{color:var(--lime)}.back{font-size:13px;color:var(--muted);font-weight:700}.back:hover{color:var(--lime)}.hero{display:grid;grid-template-columns:1.05fr .95fr;background:var(--panel);margin-top:28px;min-height:330px}.hero-copy{padding:43px 50px;align-self:center}.eyebrow{font:500 11px 'DM Mono',monospace;letter-spacing:1.4px;color:var(--lime);text-transform:uppercase}.hero h1{font-size:clamp(42px,5.8vw,72px);line-height:1;margin:13px 0 18px;letter-spacing:0}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{margin:0;color:var(--muted);max-width:460px;font-size:15px}.cover{background:linear-gradient(90deg,rgba(13,17,16,.35),rgba(13,17,16,.05)),url('https://images.unsplash.com/photo-1647767444107-8f383924382d?auto=format&fit=crop&w=1100&q=85') center/cover;min-height:260px;position:relative}.cover span{position:absolute;right:19px;bottom:18px;font:500 10px 'DM Mono',monospace;letter-spacing:1px;color:#eff5ed}.layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:30px;padding-top:32px}.read{min-width:0}.meter{display:flex;align-items:center;gap:11px;color:var(--muted);font:500 11px 'DM Mono',monospace;letter-spacing:.7px}.track{height:4px;flex:1;max-width:220px;background:#313e35}.fill{height:100%;width:0;background:var(--lime);transition:width .3s}.chapter{border-top:2px solid var(--lime);padding-top:24px;margin-top:18px}.chapter-label{font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:1px;text-transform:uppercase}.chapter h2{font-size:31px;line-height:1.16;margin:8px 0 18px}.reading{font-size:16px;max-width:760px}.reading p{margin:0 0 18px}.term{color:var(--lime);border-bottom:1px solid var(--lime);cursor:pointer;background:none;padding:0 1px}.term:hover{color:#e1ff9b}.scene{margin:25px 0;padding:20px 22px;background:var(--panel-2);border-left:3px solid var(--blue)}.scene strong{display:block;font:500 11px 'DM Mono',monospace;color:var(--blue);letter-spacing:1px;margin-bottom:7px}.choice-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.choice{cursor:pointer;text-align:left;background:#182019;border:1px solid var(--line);border-left:3px solid transparent;color:var(--ink);padding:13px 15px;font-size:13px;line-height:1.45;transition:.18s}.choice:hover,.choice.selected{border-left-color:var(--lime);border-color:var(--lime);background:#202b22}.choice b{display:block;color:var(--lime);font:500 10px 'DM Mono',monospace;letter-spacing:.8px;margin-bottom:4px}.feedback{min-height:25px;margin:8px 0 0;color:var(--muted);font-size:13px}.next{cursor:pointer;border:0;background:var(--lime);color:#10150f;font-weight:800;padding:12px 16px;margin-top:20px}.next:hover{background:#dcff97}.side{display:grid;align-content:start;gap:16px}.box{border:1px solid var(--line);background:var(--panel);padding:20px}.box h3{margin:0 0 13px;font-size:16px}.box p{font-size:13px;color:var(--muted);margin:0}.word-list{max-height:394px;overflow:auto}.word{border-top:1px solid var(--line);padding:11px 0}.word:first-child{border:0;padding-top:0}.word button{all:unset;cursor:pointer;color:var(--lime);font:500 12px 'DM Mono',monospace}.word span{display:block;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.4}.word.active{background:#202b22;margin-left:-8px;margin-right:-8px;padding-left:8px;padding-right:8px}.tip{border-left:3px solid var(--coral);background:#241e1b;padding:17px 19px}.tip b{color:var(--coral);display:block;font:500 10px 'DM Mono',monospace;letter-spacing:1px}.tip p{font-size:13px;color:#dbcfc8;margin:5px 0 0}.quiz{margin-top:33px;border-top:2px solid var(--yellow);padding-top:23px}.quiz h2{font-size:29px;margin:7px 0}.quiz-intro{color:var(--muted);font-size:14px}.q{padding:18px 0;border-bottom:1px solid var(--line)}.q p{margin:0 0 10px;font-size:15px}.answers{display:flex;flex-wrap:wrap;gap:8px}.answer{cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 10px;font-size:12px}.answer:hover{border-color:var(--yellow);color:var(--yellow)}.answer.correct{border-color:var(--lime);color:var(--lime);background:#1d2a1d}.answer.wrong{border-color:var(--coral);color:var(--coral)}.score{margin-top:20px;padding:18px;background:var(--panel-2);font-size:15px}.score b{color:var(--lime)}.hidden{display:none}
+    .match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin:22px 0}.match-col{display:grid;align-content:start;gap:8px}.match-btn{cursor:pointer;text-align:left;border:1px solid var(--line);background:#182019;color:var(--ink);padding:10px 12px;font-size:13px;line-height:1.4;width:100%}.match-btn:hover{border-color:var(--yellow)}.match-btn.selected{border-color:var(--yellow);color:var(--yellow)}.match-btn.correct{border-color:var(--lime);color:var(--lime);background:#1d2a1d;cursor:default}.match-btn.wrong{border-color:var(--coral);color:var(--coral)}.match-progress{color:var(--lime);font-weight:700}
+    @media(max-width:820px){.shell{padding:18px}.hero,.layout{grid-template-columns:1fr}.hero-copy{padding:37px 25px}.cover{min-height:230px}.side{grid-row:1}.choice-row{grid-template-columns:1fr}.word-list{max-height:260px}.track{max-width:120px}.match-wrap{grid-template-columns:1fr}}@media(max-width:450px){nav{align-items:flex-start;flex-direction:column;gap:6px}.hero h1{font-size:44px}.reading{font-size:15px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav><a class="brand" href="../index.html">Grammar<span>Nest</span></a><a class="back" href="../index.html">← Back to Education</a></nav>
+    <header class="hero"><div class="hero-copy"><div class="eyebrow">Interactive reading · A1-A2 · about 5 min</div><h1>My First Class <em>Abroad</em></h1><p>Read Sofia's first week as an English teacher in Busan, South Korea. Tap highlighted phrases, make choices, play the phrasal verb match, and finish the reading challenge.</p></div><div class="cover" role="img" aria-label="Haeundae skyline and beach in Busan, South Korea"><span>BUSAN, SOUTH KOREA</span></div></header>
+    <div class="layout">
+      <section class="read">
+        <div class="meter"><span id="meterText">CHAPTER 1 / 3</span><div class="track"><div class="fill" id="fill"></div></div><span id="percent">0%</span></div>
+
+        <article class="chapter active" data-chapter="1">
+          <div class="chapter-label">Chapter 1 · A new beginning</div>
+          <h2>A suitcase, a map, and a new job</h2>
+          <div class="reading">
+            <p>Sofia is twenty-four and lives in Colombia. She studies English every day and dreams of teaching abroad. One evening, she sees a job post from a small school in Busan, South Korea, and she <span class="term" data-term="fills out">fills out</span> the application form. Two weeks later, Ms. Park, the school manager, asks her to <span class="term" data-term="come over">come over</span> for an online interview. Sofia is nervous, but she answers honestly: “I want my students to use English in real life.” She gets the job. Her mother gives her a notebook and says, “Write about your days.” Sofia needs to <span class="term" data-term="pack up">pack up</span> her room, get a visa, and say goodbye to her family.</p>
+            <p>Six weeks later, Sofia arrives at Gimhae Airport with one suitcase and a lot of questions. She cannot <span class="term" data-term="find out">find out</span> which bus to take — the signs are in Korean and English. A woman at the information desk helps her: “Take bus 307 and <span class="term" data-term="get off">get off</span> near Haeundae Station.” Sofia writes the words in her notebook and smiles. She can do this.</p>
+          </div>
+          <div class="scene"><strong>YOUR CHOICE</strong>You arrive at the school 20 minutes early. What do you do?</div>
+          <div class="choice-row" data-choice="arrival">
+            <button class="choice"><b>A</b>Say hello to the receptionist and ask where your classroom is.</button>
+            <button class="choice"><b>B</b>Wait outside and check your phone until class starts.</button>
+          </div>
+          <p class="feedback" id="arrivalFeedback"></p>
+          <button class="next" data-next="2">Continue to chapter 2 →</button>
+        </article>
+
+        <article class="chapter hidden" data-chapter="2">
+          <div class="chapter-label">Chapter 2 · The first lesson</div>
+          <h2>“Hello, I’m Sofia.”</h2>
+          <div class="reading">
+            <p>On Tuesday, Sofia walks into Room 204. Twelve students are inside — some are talking, some are looking at their phones, one is sleeping. Sofia <span class="term" data-term="sets up">sets up</span> her name cards and says, “Good morning, I’m Sofia, your new English teacher.” She writes three questions on the board and asks students to <span class="term" data-term="stand up">stand up</span>, find a partner, and talk. At first, nobody moves.</p>
+            <p>Sofia remembers Ms. Park’s advice: “Do not <span class="term" data-term="give up">give up</span> when a class is quiet.” She shows the activity with one volunteer, and soon everyone is talking and laughing. During the break, a student named Min-jun says, “My English is very bad.” Sofia answers, “Your English is growing. Just <span class="term" data-term="keep on">keep on</span> practicing.” At the end of class, she asks students to <span class="term" data-term="hand in">hand in</span> a small paper with one question about English. On the bus home, she reads: “How can I speak without fear?” She understands that question very well.</p>
+          </div>
+          <div class="scene"><strong>YOUR CHOICE</strong>Min-jun says, “I am afraid to speak.” Which response is most helpful?</div>
+          <div class="choice-row" data-choice="student">
+            <button class="choice"><b>A</b>“Speak a little every day. Mistakes are part of learning.”</button>
+            <button class="choice"><b>B</b>“Do not speak until your English is perfect.”</button>
+          </div>
+          <p class="feedback" id="studentFeedback"></p>
+          <button class="next" data-next="3">Continue to chapter 3 →</button>
+        </article>
+
+        <article class="chapter hidden" data-chapter="3">
+          <div class="chapter-label">Chapter 3 · Small steps</div>
+          <h2>More than a teacher</h2>
+          <div class="reading">
+            <p>By Friday, Sofia knows her way around the neighborhood. Ms. Park asks her to <span class="term" data-term="look after">look after</span> the school’s conversation club on Saturday, where students can <span class="term" data-term="hang out">hang out</span> and practice English. Sofia <span class="term" data-term="come up with">comes up with</span> an idea: a “city guide” activity, where students show a visitor their favorite place in Busan.</p>
+            <p>Saturday is rainy, and Sofia worries nobody will come. But slowly, students <span class="term" data-term="turn up">turn up</span> — first Min-jun, then eight more. They talk about beaches, markets, and cafés, and Sofia does not correct every small mistake. “Great job,” she tells Min-jun. “You kept going.”</p>
+            <p>That evening, Sofia calls her mother. “I miss home,” she says, “but I am okay.” She looks at the map above her desk. She still does not know every street or every word. But she is starting to <span class="term" data-term="look forward to">look forward to</span> Monday — and to a whole year ahead.</p>
+          </div>
+          <div class="scene"><strong>YOUR CHOICE</strong>Why does Sofia avoid correcting every small mistake at the conversation club?</div>
+          <div class="choice-row" data-choice="club">
+            <button class="choice"><b>A</b>She wants students to feel confident and keep speaking.</button>
+            <button class="choice"><b>B</b>She does not know any English grammar.</button>
+          </div>
+          <p class="feedback" id="clubFeedback"></p>
+          <button class="next" id="startMatch">Practice the phrasal verbs ↓</button>
+        </article>
+
+        <section class="quiz hidden" id="matchGame">
+          <div class="chapter-label">Practice · Match the pairs</div>
+          <h2>Phrasal verb match</h2>
+          <p class="quiz-intro">Tap a phrasal verb on the left, then tap its meaning on the right. <span class="match-progress" id="matchProgress">0 / 6 matched</span></p>
+          <div class="match-wrap">
+            <div class="match-col" id="matchVerbCol"></div>
+            <div class="match-col" id="matchDefCol"></div>
+          </div>
+          <button class="next hidden" id="startQuiz">Start the reading challenge ↓</button>
+        </section>
+
+        <section class="quiz hidden" id="quiz">
+          <div class="chapter-label">Final check · 12 questions</div>
+          <h2>Reading challenge</h2>
+          <p class="quiz-intro">Choose the best answer. Your score appears at the end. You can return to the text at any time.</p>
+          <div id="questions"></div>
+          <div class="score hidden" id="score"></div>
+        </section>
+      </section>
+
+      <aside class="side">
+        <section class="box"><h3>Word pocket</h3><p>Tap a highlighted expression in the story, or choose a word below.</p><div class="word-list" id="wordList"></div></section>
+        <div class="tip"><b>READING STRATEGY</b><p>First read for the person, place, and main action. Then use the highlighted phrases to build your vocabulary.</p></div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // ---------- Glossary (feeds the word pocket + term highlights) ----------
+    const glossary = {
+      teacher: 'a person who helps students learn',
+      'fills out': 'completes a form with information',
+      'come over': 'go to a place, often to visit or attend',
+      'pack up': 'put your things into bags or boxes',
+      'find out': 'learn or discover information',
+      'get off': 'leave a bus, train, or other transport',
+      'sets up': 'prepares or arranges something',
+      'stand up': 'move from sitting to a standing position',
+      'give up': 'stop trying',
+      'keep on': 'continue doing something',
+      'hand in': 'give work to a teacher or person in charge',
+      'look after': 'take care of someone or something',
+      'hang out': 'spend time relaxing with people',
+      'come up with': 'think of a new idea or plan',
+      'turn up': 'arrive or appear',
+      'look forward to': 'feel happy about a future event',
+      suitcase: 'a bag for clothes when travelling',
+      manager: 'a person who organizes a team or place',
+      visa: 'an official document that lets you enter a country',
+      receptionist: 'a person who welcomes visitors',
+      confident: 'feeling sure that you can do something'
+    };
+
+    const wordListEl = document.querySelector('#wordList');
+    Object.entries(glossary).forEach(([word, meaning]) => {
+      const row = document.createElement('div');
+      row.className = 'word';
+      row.innerHTML = `<button type="button">${word.toUpperCase()}</button><span>${meaning}</span>`;
+      row.querySelector('button').onclick = () => activateWord(word);
+      wordListEl.appendChild(row);
+    });
+
+    function activateWord(word) {
+      document.querySelectorAll('.word').forEach(x => {
+        x.classList.toggle('active', x.querySelector('button').textContent.toLowerCase() === word);
+      });
+      document.querySelectorAll('.term').forEach(x => {
+        x.style.color = x.dataset.term === word ? 'var(--yellow)' : '';
+      });
+    }
+    document.querySelectorAll('.term').forEach(x => x.onclick = () => activateWord(x.dataset.term));
+
+    // ---------- Reading progress meter (3 chapters) ----------
+    let finished = 0;
+    function update() {
+      const pct = Math.round((finished / 3) * 100);
+      document.querySelector('#fill').style.width = pct + '%';
+      document.querySelector('#percent').textContent = pct + '%';
+      document.querySelector('#meterText').textContent = finished === 3 ? 'READING COMPLETE' : 'CHAPTER ' + (finished + 1) + ' / 3';
+    }
+
+    document.querySelectorAll('[data-next]').forEach(btn => {
+      btn.onclick = () => {
+        const next = btn.dataset.next;
+        finished = Math.max(finished, Number(next) - 1);
+        const chapterEl = document.querySelector(`[data-chapter="${next}"]`);
+        chapterEl.classList.remove('hidden');
+        chapterEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        update();
+      };
+    });
+
+    document.querySelector('#startMatch').onclick = () => {
+      finished = 3;
+      update();
+      const mg = document.querySelector('#matchGame');
+      mg.classList.remove('hidden');
+      mg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    // ---------- Chapter choices ----------
+    const choiceData = {
+      arrival: { ok: 0, feedback: '<b style="color:var(--lime)">Good choice.</b> A friendly hello helps Sofia learn the place and meet people.' },
+      student: { ok: 0, feedback: '<b style="color:var(--lime)">Exactly.</b> Students need small, safe chances to use English.' },
+      club: { ok: 0, feedback: '<b style="color:var(--lime)">Correct.</b> The goal is communication and confidence, not perfect speech.' }
+    };
+    Object.entries(choiceData).forEach(([name, data]) => {
+      document.querySelectorAll(`[data-choice="${name}"] .choice`).forEach((btn, i) => {
+        btn.onclick = () => {
+          document.querySelectorAll(`[data-choice="${name}"] .choice`).forEach(x => x.classList.remove('selected'));
+          btn.classList.add('selected');
+          document.querySelector('#' + name + 'Feedback').innerHTML = i === data.ok
+            ? data.feedback
+            : '<b style="color:var(--coral)">Look again.</b> Think about Sofia’s role as a supportive teacher.';
+        };
+      });
+    });
+
+    // ---------- Phrasal verb match game ----------
+    const matchSet = [
+      { id: 'giveup', term: 'give up', def: 'stop trying' },
+      { id: 'turnup', term: 'turn up', def: 'arrive or appear' },
+      { id: 'lookafter', term: 'look after', def: 'take care of someone or something' },
+      { id: 'comeupwith', term: 'come up with', def: 'think of a new idea or plan' },
+      { id: 'keepon', term: 'keep on', def: 'continue doing something' },
+      { id: 'handin', term: 'hand in', def: 'give work to a teacher or person in charge' }
+    ];
+
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    const verbCol = document.querySelector('#matchVerbCol');
+    const defCol = document.querySelector('#matchDefCol');
+    shuffle(matchSet).forEach(item => {
+      const b = document.createElement('button');
+      b.className = 'match-btn';
+      b.dataset.id = item.id;
+      b.textContent = item.term;
+      verbCol.appendChild(b);
+    });
+    shuffle(matchSet).forEach(item => {
+      const b = document.createElement('button');
+      b.className = 'match-btn';
+      b.dataset.id = item.id;
+      b.textContent = item.def;
+      defCol.appendChild(b);
+    });
+
+    let selectedVerbBtn = null;
+    let matchedCount = 0;
+    const matchTotal = matchSet.length;
+
+    verbCol.querySelectorAll('.match-btn').forEach(btn => {
+      btn.onclick = () => {
+        if (btn.classList.contains('correct')) return;
+        verbCol.querySelectorAll('.match-btn').forEach(x => x.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedVerbBtn = btn;
+      };
+    });
+
+    defCol.querySelectorAll('.match-btn').forEach(btn => {
+      btn.onclick = () => {
+        if (btn.classList.contains('correct') || !selectedVerbBtn) return;
+        if (btn.dataset.id === selectedVerbBtn.dataset.id) {
+          btn.classList.remove('wrong', 'selected');
+          selectedVerbBtn.classList.remove('wrong', 'selected');
+          btn.classList.add('correct');
+          selectedVerbBtn.classList.add('correct');
+          matchedCount++;
+          document.querySelector('#matchProgress').textContent = matchedCount + ' / ' + matchTotal + ' matched';
+          selectedVerbBtn = null;
+          if (matchedCount === matchTotal) {
+            document.querySelector('#startQuiz').classList.remove('hidden');
+          }
+        } else {
+          btn.classList.add('wrong');
+          selectedVerbBtn.classList.add('wrong');
+          setTimeout(() => {
+            btn.classList.remove('wrong');
+            if (selectedVerbBtn) selectedVerbBtn.classList.remove('wrong', 'selected');
+            selectedVerbBtn = null;
+          }, 450);
+        }
+      };
+    });
+
+    document.querySelector('#startQuiz').onclick = () => {
+      const quizEl = document.querySelector('#quiz');
+      quizEl.classList.remove('hidden');
+      quizEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    // ---------- Final quiz ----------
+    const questions = [
+      ['Why does Sofia move to Busan?', ['To visit her friend', 'To teach English', 'To learn Korean only'], 1],
+      ['What does “fill out” mean?', ['Complete a form', 'Throw away a form', 'Read a form aloud'], 0],
+      ['Why does Sofia wait after giving the first activity?', ['She forgets the lesson', 'She gives students time', 'She wants to leave'], 1],
+      ['What does “give up” mean?', ['Stop trying', 'Sit down', 'Start a class'], 0],
+      ['What does Min-jun say about his English?', ['“My English is very bad.”', '“I don’t like English.”', '“I speak perfect English.”'], 0],
+      ['What does Sofia ask students to hand in?', ['A small paper', 'Their phone', 'A map'], 0],
+      ['Where is the conversation club?', ['At the airport', 'At the school', 'At a bookstore'], 1],
+      ['What does “turn up” mean?', ['Arrive', 'Go to sleep', 'Speak quietly'], 0],
+      ['Why does Sofia not correct every mistake?', ['She wants speaking to continue', 'She is angry', 'She cannot hear'], 0],
+      ['What does “come up with” mean?', ['Think of a new idea', 'Forget an idea', 'Copy an idea'], 0],
+      ['What does “look after” mean?', ['Take care of', 'Look away from', 'Sell something'], 0],
+      ['How does Sofia feel at the end of the story?', ['Ready for the year ahead', 'Ready to go home forever', 'Not interested in teaching'], 0]
+    ];
+
+    const holder = document.querySelector('#questions');
+    const scoreEl = document.querySelector('#score');
+    let correctCount = 0;
+    let doneCount = 0;
+
+    questions.forEach(([q, opts, correct], n) => {
+      const el = document.createElement('div');
+      el.className = 'q';
+      el.innerHTML = `<p><b>${n + 1}.</b> ${q}</p><div class="answers"></div>`;
+      opts.forEach((op, i) => {
+        const b = document.createElement('button');
+        b.className = 'answer';
+        b.textContent = op;
+        b.onclick = () => {
+          if (b.dataset.done) return;
+          el.querySelectorAll('.answer').forEach(x => { x.dataset.done = 'true'; x.disabled = true; });
+          if (i === correct) {
+            b.classList.add('correct');
+            correctCount++;
+          } else {
+            b.classList.add('wrong');
+            el.querySelectorAll('.answer')[correct].classList.add('correct');
+          }
+          doneCount++;
+          if (doneCount === questions.length) {
+            scoreEl.classList.remove('hidden');
+            const note = correctCount >= 10
+              ? 'Excellent reading. You are ready for the next story.'
+              : correctCount >= 7
+                ? 'Good work. Revisit the highlighted vocabulary and try again.'
+                : 'Keep going. Read the story once more, then retake the challenge.';
+            scoreEl.innerHTML = `<b>${correctCount} / ${questions.length}</b> correct. ${note}`;
+          }
+        };
+        el.querySelector('.answers').appendChild(b);
+      });
+      holder.appendChild(el);
+    });
+
+    update();
+  </script>
+</body>
+</html>
