@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía interactiva: Cómo hacer un mapa conceptual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0e14;
+      --bg-elevated: #13161f;
+      --bg-card: #181c28;
+      --bg-card-hover: #1e2333;
+      --border: #2a3144;
+      --text: #e8ecf4;
+      --text-muted: #8b95a8;
+      --accent: #7c6cf0;
+      --accent-soft: rgba(124, 108, 240, 0.15);
+      --cyan: #3dd6c8;
+      --cyan-soft: rgba(61, 214, 200, 0.12);
+      --amber: #f5b942;
+      --amber-soft: rgba(245, 185, 66, 0.12);
+      --rose: #f472b6;
+      --rose-soft: rgba(244, 114, 182, 0.12);
+      --green: #4ade80;
+      --green-soft: rgba(74, 222, 128, 0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* Background mesh */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124, 108, 240, 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 20%, rgba(61, 214, 200, 0.1), transparent),
+        radial-gradient(ellipse 50% 30% at 50% 100%, rgba(245, 185, 66, 0.06), transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(12, 14, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      gap: 16px;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    nav .logo svg { flex-shrink: 0; }
+
+    nav .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    nav .back-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      padding-right: 14px;
+      border-right: 1px solid var(--border);
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    nav .back-link:hover { color: var(--text); }
+
+    nav .back-link .brand-mini em {
+      font-style: normal;
+      color: #3dd6c8;
+    }
+
+    @media (max-width: 640px) {
+      nav .back-link span.brand-mini { display: none; }
+      nav .back-link { padding-right: 10px; }
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--text);
+      background: var(--bg-card);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 72px 0 56px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(124, 108, 240, 0.25);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #5b4dd4);
+      color: white;
+      box-shadow: 0 4px 20px rgba(124, 108, 240, 0.35);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover { background: var(--bg-card-hover); }
+
+    /* Sections */
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 680px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    /* ===== Bilingual helpers (ES/EN) ===== */
+    .eng {
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.75;
+    }
+
+    .section-label .eng {
+      font-size: 11px;
+    }
+
+    .eng-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--cyan, #3dd6c8);
+      background: rgba(61, 214, 200, 0.12);
+      border: 1px solid rgba(61, 214, 200, 0.3);
+      border-radius: 5px;
+      padding: 2px 7px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .eng-sub {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .glossary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .glossary-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 12px 14px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .glossary-item .en {
+      font-weight: 700;
+      color: var(--cyan, #3dd6c8);
+      font-size: 13.5px;
+      white-space: nowrap;
+    }
+
+    .glossary-item .sep {
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    .glossary-item .es {
+      color: var(--text-muted);
+      font-size: 13.5px;
+    }
+
+    /* Cards grid */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(124, 108, 240, 0.3);
+      background: var(--bg-card-hover);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+
+    .card p { color: var(--text-muted); font-size: 15px; }
+
+    .card.concepto .card-icon { background: var(--accent-soft); }
+    .card.conector .card-icon { background: var(--cyan-soft); }
+    .card.proposicion .card-icon { background: var(--amber-soft); }
+
+    /* Diagram container */
+    .diagram {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin: 24px 0;
+      overflow-x: auto;
+    }
+
+    .diagram-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .diagram svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+
+    /* El mapa de ejemplo es denso: se le da ancho real (con scroll horizontal,
+       que .diagram ya soporta) en vez de encogerlo hasta volverlo ilegible. */
+    .diagram svg.map-large { min-width: 1300px; max-width: none; }
+
+    /* Callout */
+    .callout {
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 24px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .callout-tip {
+      background: var(--cyan-soft);
+      border: 1px solid rgba(61, 214, 200, 0.25);
+    }
+
+    .callout-reflect {
+      background: var(--rose-soft);
+      border: 1px solid rgba(244, 114, 182, 0.25);
+    }
+
+    .callout-example {
+      background: var(--amber-soft);
+      border: 1px solid rgba(245, 185, 66, 0.25);
+    }
+
+    .callout-icon { font-size: 24px; flex-shrink: 0; line-height: 1; }
+
+    .callout strong { display: block; margin-bottom: 4px; }
+
+    .callout p { color: var(--text-muted); font-size: 15px; margin: 0; }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 32px; }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), #5b4dd4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(124, 108, 240, 0.3);
+    }
+
+    .step-content h3 { font-size: 1.25rem; margin-bottom: 8px; }
+
+    .step-content > p { color: var(--text-muted); margin-bottom: 16px; }
+
+    /* Concept list */
+    .concept-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0;
+    }
+
+    .concept-tag {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .concept-tag:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .concept-tag.root {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+    }
+
+    .checklist li::before {
+      content: none;
+    }
+
+    .checklist .check-mark {
+      width: 26px;
+      height: 26px;
+      background: var(--green-soft);
+      color: var(--green);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .checklist .check-text {
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .checklist .check-text strong {
+      color: var(--green);
+    }
+
+    /* Compare boxes */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    @media (max-width: 600px) {
+      .compare { grid-template-columns: 1fr; }
+      .step { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+
+    .compare-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .compare-box.bad { border-color: rgba(244, 114, 182, 0.3); }
+    .compare-box.good { border-color: rgba(74, 222, 128, 0.3); }
+
+    .compare-box h4 {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .compare-box.bad h4 { color: var(--rose); }
+    .compare-box.good h4 { color: var(--green); }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85em;
+      background: var(--bg-elevated);
+      padding: 2px 7px;
+      border-radius: 5px;
+      color: var(--cyan);
+    }
+
+    .analogy {
+      background: linear-gradient(135deg, var(--accent-soft), var(--cyan-soft));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      margin: 24px 0;
+    }
+
+    .analogy p { color: var(--text-muted); margin-top: 8px; }
+
+    /* Exercise */
+    .reading-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--amber);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 32px;
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    .reading-box strong { color: var(--text); }
+
+    .exercise-workspace {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      margin: 24px 0;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .field-label.connector-label {
+      color: var(--cyan);
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+
+    .map-input {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      display: block;
+      background: var(--bg-card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .map-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      border-style: solid;
+      background: var(--bg-card-hover);
+    }
+
+    .map-input.question-input {
+      max-width: 480px;
+      font-weight: 600;
+      font-size: 16px;
+      border-color: rgba(124, 108, 240, 0.4);
+    }
+
+    .map-input.connector-input {
+      max-width: 200px;
+      font-size: 13px;
+      padding: 6px 12px;
+      color: var(--cyan);
+      border-color: rgba(61, 214, 200, 0.3);
+    }
+
+    .map-input::placeholder { color: #4a5568; }
+
+    .map-input.root-concept {
+      border-color: rgba(124, 108, 240, 0.5);
+    }
+
+    .map-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6px 0;
+      color: var(--text-muted);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .map-arrow .arrow-line {
+      width: 2px;
+      height: 20px;
+      background: var(--border);
+    }
+
+    .map-node-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .exercise-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 32px;
+    }
+
+    .btn-export {
+      background: linear-gradient(135deg, var(--cyan), #2bb8aa);
+      color: #0c0e14;
+      box-shadow: 0 4px 20px rgba(61, 214, 200, 0.3);
+    }
+
+    .btn-export:hover { transform: translateY(-2px); }
+
+    .btn-prompt {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-prompt:hover { border-color: var(--accent); }
+
+    .export-preview {
+      margin-top: 32px;
+      text-align: center;
+      display: none;
+    }
+
+    .export-preview.visible { display: block; }
+
+    .export-preview img {
+      max-width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      margin-top: 12px;
+    }
+
+    .export-preview p {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    .prompt-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 24px;
+      display: none;
+    }
+
+    .prompt-box.visible { display: block; }
+
+    .prompt-box textarea {
+      width: 100%;
+      min-height: 280px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      resize: vertical;
+    }
+
+    .prompt-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .prompt-box-header h3 { margin: 0; font-size: 1rem; }
+
+    .btn-copy {
+      padding: 8px 16px;
+      font-size: 13px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--accent-soft);
+      color: var(--accent);
+      cursor: pointer;
+      font-weight: 600;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover { background: rgba(124, 108, 240, 0.25); }
+
+    .btn-copy.copied { color: var(--green); border-color: var(--green); }
+
+    .optional-cross {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .optional-cross .field-label { color: var(--text-muted); }
+
+    .cross-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .cross-row .map-input { max-width: 160px; font-size: 14px; }
+    .cross-row .map-input.connector-input { max-width: 140px; }
+    .cross-row span { color: var(--text-muted); font-size: 13px; }
+
+    #export-canvas { display: none; }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--bg-card);
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 200;
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="nav-left">
+        <a href="../index.html" class="back-link" title="Volver a GrammarNest">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M10 3.5 5 8l5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-mini">Grammar<em>Nest</em></span>
+        </a>
+        <a href="#" class="logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="12" stroke="#7c6cf0" stroke-width="2"/>
+            <circle cx="14" cy="8" r="3" fill="#3dd6c8"/>
+            <circle cx="8" cy="18" r="3" fill="#7c6cf0"/>
+            <circle cx="20" cy="18" r="3" fill="#f5b942"/>
+            <line x1="14" y1="11" x2="10" y2="16" stroke="#4a5568" stroke-width="1.5"/>
+            <line x1="14" y1="11" x2="18" y2="16" stroke="#4a5568" stroke-width="1.5"/>
+          </svg>
+          Mapa Conceptual
+        </a>
+      </div>
+      <ul>
+        <li><a href="#que-es">Qué es</a></li>
+        <li><a href="#componentes">Componentes</a></li>
+        <li><a href="#ejemplo-simple">Ejemplo fácil</a></li>
+        <li><a href="#pasos">Pasos</a></li>
+        <li><a href="#ejemplo">Ejemplo</a></li>
+        <li><a href="#ejercicio">Ejercicio</a></li>
+        <li><a href="#revision">Revisión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="badge">📚 Guía de estudio visual <span class="eng">· Visual Study Guide</span></div>
+      <h1>Aprende a hacer un <span>mapa conceptual</span></h1>
+      <p>Un mapa conceptual es un dibujo con cajitas y líneas que te ayuda a entender un texto y a acordarte de él. Aquí te explicamos, paso a paso y con ejemplos bien simples, cómo hacer el tuyo. <span class="eng">A concept map is a diagram of boxes and lines that helps you understand and remember a text.</span></p>
+      <div class="hero-cta">
+        <a href="#ejemplo-simple" class="btn btn-primary">Ver un ejemplo fácil →</a>
+        <a href="#pasos" class="btn btn-secondary">Ir a los pasos</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- QUÉ ES -->
+    <section id="que-es">
+      <p class="section-label">Lo primero <span class="eng">· First things first</span></p>
+      <h2>¿Qué es un mapa conceptual? <span class="eng-tag">EN: concept map</span></h2>
+      <p class="section-intro">Es un dibujo hecho de <strong>cajitas</strong> (ideas) unidas por <strong>líneas con una palabra encima</strong> (que explican cómo se relacionan esas ideas). Nada más. Eso es todo el truco.</p>
+
+      <div class="analogy">
+        <h3>💡 Piénsalo como una familia de ideas <span class="eng-tag">think of it as a family tree</span></h3>
+        <p>Imagina que las ideas de un texto son personas en una familia: hay una idea "abuela" (la más importante, arriba de todo) y de ella salen sus "hijas" y "nietas" (ideas más pequeñas y específicas). Las líneas son como decir "es hija de" o "es parte de". Un resumen te cuenta la historia en orden. Un mapa conceptual te muestra <em>quién es familia de quién</em>, todo junto, de un vistazo.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon" style="background: var(--accent-soft);">🧠</div>
+          <h3>Entiendes mejor <span class="eng-sub">You understand better</span></h3>
+          <p>Para armar el mapa tienes que pensar en lo que leíste, no solo copiarlo. Eso hace que tu cerebro entienda de verdad, no que solo "pase la vista" por el texto.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: var(--cyan-soft);">🔗</div>
+          <h3>Ves cómo se conecta todo <span class="eng-sub">You see the connections</span></h3>
+          <p>Un resumen es una fila de frases. El mapa te muestra qué idea viene de otra, qué la causa, y qué ideas —aunque estén lejos en el texto— hablan de lo mismo.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: var(--amber-soft);">📌</div>
+          <h3>Se te queda en la memoria <span class="eng-sub">It sticks in your memory</span></h3>
+          <p>Es más fácil acordarse de un dibujo con cajitas conectadas que de un párrafo largo. Por eso los mapas conceptuales sirven tanto para estudiar.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background: var(--green-soft);">🎯</div>
+          <h3>No te pierdes <span class="eng-sub">You stay on track</span></h3>
+          <p>Antes de empezar, te haces una pregunta simple sobre el texto. Esa pregunta es tu filtro: todo lo que no ayude a responderla, no entra al mapa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPONENTES -->
+    <section id="componentes">
+      <p class="section-label">Anatomía del mapa <span class="eng">· Map Anatomy</span></p>
+      <h2>Los 3 componentes esenciales</h2>
+      <p class="section-intro">Todo mapa conceptual se construye con solo tres piezas. Al combinarlas, aparece un cuarto elemento: la proposición.</p>
+
+      <div class="grid-3">
+        <div class="card concepto">
+          <div class="card-icon">🏷️</div>
+          <h3>Conceptos <span class="eng-tag">concepts</span></h3>
+          <p>Ideas representadas con <strong>una palabra o frase corta</strong>. Suelen ser sustantivos: objetos, eventos, procesos. Ejemplo: <code>Autorregulación</code>, <code>Motivación</code>.</p>
+        </div>
+        <div class="card conector">
+          <div class="card-icon">↔️</div>
+          <h3>Conectores <span class="eng-tag">linking words</span></h3>
+          <p>Palabras o frases que <strong>unen dos conceptos</strong> y explican la relación entre ellos. Ejemplo: <code>incluye</code>, <code>influye en</code>, <code>requiere</code>.</p>
+        </div>
+        <div class="card proposicion">
+          <div class="card-icon">💬</div>
+          <h3>Proposiciones <span class="eng-tag">propositions</span></h3>
+          <p>Ideas completas que surgen al leer: <strong>Concepto + Conector + Concepto</strong>. Ejemplo: "El aprendizaje efectivo <em>requiere</em> autorregulación".</p>
+        </div>
+      </div>
+
+      <div class="glossary">
+        <p style="grid-column: 1/-1; font-weight: 600; color: var(--text); margin-bottom: 2px;">🇬🇧 Vocabulario académico que vas a usar mucho <span class="eng">· Academic vocabulary you'll use a lot</span></p>
+        <div class="glossary-item"><span class="en">concept map</span><span class="sep">→</span><span class="es">mapa conceptual</span></div>
+        <div class="glossary-item"><span class="en">root concept</span><span class="sep">→</span><span class="es">concepto raíz (el de arriba de todo)</span></div>
+        <div class="glossary-item"><span class="en">linking word</span><span class="sep">→</span><span class="es">conector</span></div>
+        <div class="glossary-item"><span class="en">hierarchy</span><span class="sep">→</span><span class="es">jerarquía (niveles, de general a específico)</span></div>
+        <div class="glossary-item"><span class="en">cross-link</span><span class="sep">→</span><span class="es">conexión cruzada (entre ramas distintas)</span></div>
+        <div class="glossary-item"><span class="en">to derive from</span><span class="sep">→</span><span class="es">derivarse de / desprenderse de</span></div>
+      </div>
+
+      <div class="diagram">
+        <p class="diagram-title">Cómo se forma una proposición</p>
+        <svg width="720" height="160" viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg">
+          <!-- Concept 1 -->
+          <rect x="40" y="50" width="160" height="60" rx="12" fill="#181c28" stroke="#7c6cf0" stroke-width="2"/>
+          <text x="120" y="77" text-anchor="middle" fill="#7c6cf0" font-size="11" font-family="DM Sans, sans-serif" font-weight="600">CONCEPTO</text>
+          <text x="120" y="98" text-anchor="middle" fill="#e8ecf4" font-size="14" font-family="DM Sans, sans-serif">Aprendizaje efectivo</text>
+
+          <!-- Arrow + connector -->
+          <line x1="210" y1="80" x2="280" y2="80" stroke="#3dd6c8" stroke-width="2" marker-end="url(#arrow)"/>
+          <rect x="285" y="58" width="120" height="44" rx="10" fill="rgba(61,214,200,0.15)" stroke="#3dd6c8" stroke-width="1.5"/>
+          <text x="345" y="77" text-anchor="middle" fill="#3dd6c8" font-size="11" font-family="DM Sans, sans-serif" font-weight="600">CONECTOR</text>
+          <text x="345" y="94" text-anchor="middle" fill="#e8ecf4" font-size="13" font-family="DM Sans, sans-serif">requiere</text>
+          <line x1="410" y1="80" x2="480" y2="80" stroke="#3dd6c8" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Concept 2 -->
+          <rect x="490" y="50" width="160" height="60" rx="12" fill="#181c28" stroke="#7c6cf0" stroke-width="2"/>
+          <text x="570" y="77" text-anchor="middle" fill="#7c6cf0" font-size="11" font-family="DM Sans, sans-serif" font-weight="600">CONCEPTO</text>
+          <text x="570" y="98" text-anchor="middle" fill="#e8ecf4" font-size="14" font-family="DM Sans, sans-serif">Autorregulación</text>
+
+          <!-- Result -->
+          <text x="360" y="145" text-anchor="middle" fill="#f5b942" font-size="13" font-family="DM Sans, sans-serif">→ Proposición: "El aprendizaje efectivo requiere autorregulación"</text>
+
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3dd6c8"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="callout callout-reflect">
+        <span class="callout-icon">🪞</span>
+        <div>
+          <strong>Activa tus conocimientos previos</strong>
+          <p>¿Has hecho mapas conceptuales antes? ¿Para qué te sirvieron? ¿Qué te costó más: encontrar conceptos, elegir conectores o organizar las relaciones? Ten presente lo que ya sabes antes de continuar.</p>
+        </div>
+      </div>
+
+      <div class="diagram">
+        <p class="diagram-title">Regla de oro: conceptos ≠ oraciones</p>
+        <svg width="680" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Wrong -->
+          <rect x="20" y="20" width="300" height="70" rx="10" fill="rgba(244,114,182,0.1)" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <text x="170" y="48" text-anchor="middle" fill="#f472b6" font-size="12" font-family="DM Sans, sans-serif" font-weight="600">✗ NO es un concepto (es una oración)</text>
+          <text x="170" y="72" text-anchor="middle" fill="#8b95a8" font-size="13" font-family="DM Sans, sans-serif">"Los estudiantes necesitan autorregularse"</text>
+
+          <!-- Arrow down -->
+          <text x="170" y="110" text-anchor="middle" fill="#8b95a8" font-size="22">↓</text>
+          <text x="170" y="130" text-anchor="middle" fill="#4ade80" font-size="12" font-family="DM Sans, sans-serif">Descomponer en conceptos + conector</text>
+
+          <!-- Right -->
+          <rect x="360" y="140" width="130" height="44" rx="8" fill="#181c28" stroke="#7c6cf0" stroke-width="1.5"/>
+          <text x="425" y="167" text-anchor="middle" fill="#e8ecf4" font-size="13" font-family="DM Sans, sans-serif">Estudiantes</text>
+
+          <rect x="510" y="148" width="80" height="28" rx="6" fill="rgba(61,214,200,0.15)" stroke="#3dd6c8" stroke-width="1"/>
+          <text x="550" y="167" text-anchor="middle" fill="#3dd6c8" font-size="12" font-family="DM Sans, sans-serif">necesitan</text>
+
+          <rect x="610" y="140" width="50" height="44" rx="8" fill="#181c28" stroke="#7c6cf0" stroke-width="1.5"/>
+          <text x="635" y="160" text-anchor="middle" fill="#e8ecf4" font-size="10" font-family="DM Sans, sans-serif">Autorregu-</text>
+          <text x="635" y="174" text-anchor="middle" fill="#e8ecf4" font-size="10" font-family="DM Sans, sans-serif">lación</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- EJEMPLO SIMPLE -->
+    <section id="ejemplo-simple">
+      <p class="section-label">Antes de complicarnos <span class="eng">· Before it gets complicated</span></p>
+      <h2>Un ejemplo bien fácil, para entender el truco</h2>
+      <p class="section-intro">Más abajo vas a ver un mapa conceptual "de verdad", con hartas cajitas — puede verse intimidante. Antes de eso, miremos uno mini, sobre algo que todos conocemos: las frutas. La idea es que veas el truco funcionando en algo simple, antes de verlo en algo largo.</p>
+
+      <div class="diagram">
+        <p class="diagram-title">Mapa mini — Tipos de fruta</p>
+        <svg width="640" height="300" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+          <defs>
+            <filter id="glowSimple" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- Root -->
+          <ellipse cx="320" cy="42" rx="85" ry="30" fill="#7c6cf0" filter="url(#glowSimple)"/>
+          <text x="320" y="48" text-anchor="middle" fill="white" font-size="15" font-weight="700">Frutas</text>
+
+          <!-- Root -> level 1 -->
+          <line x1="320" y1="72" x2="170" y2="112" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="320" y1="72" x2="470" y2="112" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="255" y="80" width="130" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="320" y="95" text-anchor="middle" fill="#3dd6c8" font-size="11">se dividen en</text>
+
+          <!-- Level 1 (concepts) -->
+          <rect x="100" y="112" width="140" height="44" rx="10" fill="#181c28" stroke="#f5b942" stroke-width="1.5"/>
+          <text x="170" y="139" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="600">Cítricas</text>
+
+          <rect x="400" y="112" width="140" height="44" rx="10" fill="#181c28" stroke="#f5b942" stroke-width="1.5"/>
+          <text x="470" y="139" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="600">Dulces</text>
+
+          <!-- Level 1 -> level 2 -->
+          <line x1="170" y1="156" x2="95" y2="212" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="170" y1="156" x2="225" y2="212" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="120" y="176" width="100" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="170" y="191" text-anchor="middle" fill="#3dd6c8" font-size="11">por ejemplo</text>
+
+          <line x1="470" y1="156" x2="395" y2="212" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="470" y1="156" x2="525" y2="212" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="420" y="176" width="100" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="470" y="191" text-anchor="middle" fill="#3dd6c8" font-size="11">por ejemplo</text>
+
+          <!-- Level 2 (examples: dashed border = distinto a un concepto) -->
+          <rect x="40" y="212" width="110" height="40" rx="8" fill="#13161f" stroke="#8b95a8" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="95" y="236" text-anchor="middle" fill="#8b95a8" font-size="12">Limón</text>
+
+          <rect x="170" y="212" width="110" height="40" rx="8" fill="#13161f" stroke="#8b95a8" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="225" y="236" text-anchor="middle" fill="#8b95a8" font-size="12">Naranja</text>
+
+          <rect x="340" y="212" width="110" height="40" rx="8" fill="#13161f" stroke="#8b95a8" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="395" y="236" text-anchor="middle" fill="#8b95a8" font-size="12">Plátano</text>
+
+          <rect x="470" y="212" width="110" height="40" rx="8" fill="#13161f" stroke="#8b95a8" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <text x="525" y="236" text-anchor="middle" fill="#8b95a8" font-size="12">Manzana</text>
+
+          <!-- Legend -->
+          <rect x="40" y="270" width="15" height="15" rx="3" fill="#181c28" stroke="#f5b942" stroke-width="1.5"/>
+          <text x="63" y="282" fill="#8b95a8" font-size="11">Concepto</text>
+          <rect x="160" y="270" width="15" height="15" rx="3" fill="#13161f" stroke="#8b95a8" stroke-width="1.3" stroke-dasharray="3 2"/>
+          <text x="183" y="282" fill="#8b95a8" font-size="11">Ejemplo (se dibuja distinto)</text>
+        </svg>
+      </div>
+
+      <p style="margin: 20px 0 8px; font-weight: 600;">Ahora léelo en voz alta, siguiendo las líneas <span class="eng">(y de paso, practica cómo suena en inglés):</span></p>
+      <div class="grid-2">
+        <div class="card" style="padding: 16px 20px;">
+          <p style="margin:0;">🍊 "<strong>Frutas</strong> se dividen en <strong>Cítricas</strong>"</p>
+          <p class="eng" style="margin-top:4px;">"<strong>Fruit</strong> divides into <strong>Citrus fruits</strong>"</p>
+        </div>
+        <div class="card" style="padding: 16px 20px;">
+          <p style="margin:0;">🍎 "<strong>Frutas</strong> se dividen en <strong>Dulces</strong>"</p>
+          <p class="eng" style="margin-top:4px;">"<strong>Fruit</strong> divides into <strong>Sweet fruits</strong>"</p>
+        </div>
+        <div class="card" style="padding: 16px 20px;">
+          <p style="margin:0;">🍋 "<strong>Cítricas</strong>, por ejemplo, <strong>Limón</strong>"</p>
+          <p class="eng" style="margin-top:4px;">"<strong>Citrus fruits</strong>, for example, <strong>Lemon</strong>"</p>
+        </div>
+        <div class="card" style="padding: 16px 20px;">
+          <p style="margin:0;">🍌 "<strong>Dulces</strong>, por ejemplo, <strong>Plátano</strong>"</p>
+          <p class="eng" style="margin-top:4px;">"<strong>Sweet fruits</strong>, for example, <strong>Banana</strong>"</p>
+        </div>
+      </div>
+
+      <div class="callout callout-reflect" style="margin-top: 24px;">
+        <span class="callout-icon">✅</span>
+        <div>
+          <strong>Eso es todo. En serio. <span class="eng-tag">that's it, really</span></strong>
+          <p>Un mapa conceptual grande —como el que viene más abajo, sobre un texto de universidad— es exactamente lo mismo que este, repetido muchas veces: cajita, línea con una palabra, cajita. Si entendiste el de las frutas, ya sabes leer cualquier mapa conceptual, sin importar qué tan grande se vea.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASOS -->
+    <section id="pasos">
+      <p class="section-label">Metodología <span class="eng">· Methodology</span></p>
+      <h2>Cómo construir tu mapa: 5 pasos</h2>
+      <p class="section-intro">Sigue este proceso en orden. Cada paso construye sobre el anterior.</p>
+
+      <!-- Flow diagram -->
+      <div class="diagram">
+        <p class="diagram-title">Flujo del proceso</p>
+        <svg width="800" height="100" viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="stepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7c6cf0"/>
+              <stop offset="100%" stop-color="#3dd6c8"/>
+            </linearGradient>
+          </defs>
+          <g font-family="DM Sans, sans-serif" font-size="11" fill="#e8ecf4">
+            <rect x="10" y="30" width="130" height="40" rx="8" fill="#181c28" stroke="url(#stepGrad)" stroke-width="1.5"/>
+            <text x="75" y="55" text-anchor="middle">1. Pregunta</text>
+            <text x="155" y="55" fill="#3dd6c8" font-size="18">→</text>
+
+            <rect x="165" y="30" width="130" height="40" rx="8" fill="#181c28" stroke="url(#stepGrad)" stroke-width="1.5"/>
+            <text x="230" y="55" text-anchor="middle">2. Conceptos</text>
+            <text x="310" y="55" fill="#3dd6c8" font-size="18">→</text>
+
+            <rect x="320" y="30" width="130" height="40" rx="8" fill="#181c28" stroke="url(#stepGrad)" stroke-width="1.5"/>
+            <text x="385" y="55" text-anchor="middle">3. Relaciones</text>
+            <text x="465" y="55" fill="#3dd6c8" font-size="18">→</text>
+
+            <rect x="475" y="30" width="130" height="40" rx="8" fill="#181c28" stroke="url(#stepGrad)" stroke-width="1.5"/>
+            <text x="540" y="55" text-anchor="middle">4. Consolidar</text>
+            <text x="620" y="55" fill="#3dd6c8" font-size="18">→</text>
+
+            <rect x="630" y="30" width="130" height="40" rx="8" fill="#181c28" stroke="url(#stepGrad)" stroke-width="1.5"/>
+            <text x="695" y="55" text-anchor="middle">5. Revisar</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Hazte una pregunta sobre el texto <span class="eng-sub">Ask a reading question</span></h3>
+            <p>Antes de leer, pregúntate algo como "¿de qué se trata esto?" o "¿por qué pasa esto?". Esa pregunta funciona como un <strong>colador</strong>: todo lo que ayude a responderla, entra al mapa; lo demás, se queda afuera. Al final, tu mapa debería poder responder esa pregunta con solo mirarlo.</p>
+            <div class="callout callout-example">
+              <span class="callout-icon">📖</span>
+              <div>
+                <strong>Ejemplo: la pregunta cambia todo</strong>
+                <p><code>¿Qué es la motivación?</code> → mapa definicional (concepto central + características).<br>
+                <code>¿Cómo influye la motivación en el rendimiento académico?</code> → mapa causal (motivación → factores → resultados).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Busca las palabras clave <span class="eng-sub">Identify the key concepts</span></h3>
+            <p>Lee el texto de nuevo y subraya las palabras o ideas que se relacionen con tu pregunta (casi siempre son sustantivos: cosas, procesos, personas). Anota entre <strong>15 y 25</strong>. Después ordénalas de más general a más específica — como cuando ordenas ropa: primero "ropa", después "poleras", después "la polera roja".</p>
+            <div class="callout callout-example">
+              <span class="callout-icon">📝</span>
+              <div>
+                <strong>Ejemplo: "Dificultades de aprendizaje en estudiantes universitarios de primer año" (Pérez et al., 2013)</strong>
+                <div class="concept-list">
+                  <span class="concept-tag root">Aprendizaje efectivo</span>
+                  <span class="concept-tag">Autorregulación</span>
+                  <span class="concept-tag">Exigencias universitarias</span>
+                  <span class="concept-tag">Menor contacto alumno-profesor</span>
+                  <span class="concept-tag">Variedad de métodos evaluativos</span>
+                  <span class="concept-tag">Mayor exigencia en evaluación</span>
+                  <span class="concept-tag">Aspectos motivacionales</span>
+                  <span class="concept-tag">Autoconcepto del estudiante</span>
+                  <span class="concept-tag">Disposición hacia el logro</span>
+                  <span class="concept-tag">Estrategias de aprendizaje</span>
+                  <span class="concept-tag">Estrategias cognitivas</span>
+                  <span class="concept-tag">Estrategias metacognitivas</span>
+                  <span class="concept-tag">Procesos de autorregulación</span>
+                  <span class="concept-tag">Establecimiento de objetivos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Conecta las palabras con líneas (y explica cada línea) <span class="eng-sub">Link the concepts with labeled lines</span></h3>
+            <p>Escoge la palabra más general de tu lista: esa va arriba de todo, como la "abuela". El resto se va acomodando debajo, según de cuál se desprende. Y esto es lo más importante de todo el proceso: <strong>encima de cada línea escribe una palabra</strong> que diga cómo se relacionan las dos cajitas que conecta (como "incluye", "causa", "es parte de"). Sin esa palabra, la línea no significa nada.</p>
+
+            <div class="compare">
+              <div class="compare-box bad">
+                <h4>✗ Mapa lineal (solo árbol)</h4>
+                <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="20" r="14" fill="#7c6cf0"/>
+                  <line x1="100" y1="34" x2="60" y2="70" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="100" y1="34" x2="140" y2="70" stroke="#4a5568" stroke-width="1.5"/>
+                  <circle cx="60" cy="80" r="12" fill="#181c28" stroke="#f472b6" stroke-width="1.5"/>
+                  <circle cx="140" cy="80" r="12" fill="#181c28" stroke="#f472b6" stroke-width="1.5"/>
+                  <line x1="60" y1="92" x2="40" y2="120" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="60" y1="92" x2="80" y2="120" stroke="#4a5568" stroke-width="1.5"/>
+                  <circle cx="40" cy="130" r="10" fill="#181c28" stroke="#4a5568"/>
+                  <circle cx="80" cy="130" r="10" fill="#181c28" stroke="#4a5568"/>
+                  <text x="100" y="155" text-anchor="middle" fill="#8b95a8" font-size="10" font-family="DM Sans, sans-serif">Sin conexiones cruzadas</text>
+                </svg>
+              </div>
+              <div class="compare-box good">
+                <h4>✓ Mapa en red (recomendado)</h4>
+                <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="25" r="14" fill="#7c6cf0"/>
+                  <circle cx="50" cy="80" r="12" fill="#181c28" stroke="#4ade80" stroke-width="1.5"/>
+                  <circle cx="150" cy="80" r="12" fill="#181c28" stroke="#4ade80" stroke-width="1.5"/>
+                  <circle cx="75" cy="130" r="10" fill="#181c28" stroke="#4ade80" stroke-width="1.5"/>
+                  <circle cx="125" cy="130" r="10" fill="#181c28" stroke="#4ade80" stroke-width="1.5"/>
+                  <line x1="100" y1="39" x2="50" y2="68" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="100" y1="39" x2="150" y2="68" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="50" y1="92" x2="75" y2="120" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="150" y1="92" x2="125" y2="120" stroke="#4a5568" stroke-width="1.5"/>
+                  <line x1="50" y1="86" x2="125" y2="124" stroke="#3dd6c8" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <line x1="150" y1="86" x2="75" y2="124" stroke="#3dd6c8" stroke-width="1.5" stroke-dasharray="4 3"/>
+                  <text x="100" y="155" text-anchor="middle" fill="#4ade80" font-size="10" font-family="DM Sans, sans-serif">Relaciones entre niveles</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="callout callout-tip">
+              <span class="callout-icon">💡</span>
+              <div>
+                <strong>Truco: usa papelitos antes de dibujar el mapa "final"</strong>
+                <p>Escribe cada palabra en un post-it (o un papelito cualquiera) y pégalos en una mesa, pared o pizarra. Así puedes moverlos, juntarlos y volver a acomodarlos todas las veces que quieras, sin tener que borrar nada — como armar un rompecabezas, hasta que las piezas calcen. Recién cuando estés conforme, lo pasas a limpio (a mano o en un programa como CmapTools).</p>
+              </div>
+            </div>
+
+            <div class="diagram">
+              <p class="diagram-title">Así se ve: moviendo papelitos hasta que tengan sentido</p>
+              <svg width="720" height="270" viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+                <!-- ANTES: pizarra con notas sueltas y desordenadas -->
+                <g>
+                  <rect x="10" y="10" width="290" height="230" rx="12" fill="#13161f" stroke="#2a3144" stroke-width="1.5"/>
+                  <text x="155" y="34" text-anchor="middle" fill="#8b95a8" font-size="12" font-weight="600">ANTES — ideas sueltas</text>
+
+                  <!-- pins -->
+                  <g stroke="#4a5568" stroke-width="1">
+                    <line x1="70" y1="70" x2="55" y2="95"/>
+                    <line x1="205" y1="60" x2="225" y2="85"/>
+                    <line x1="60" y1="160" x2="45" y2="185"/>
+                    <line x1="220" y1="175" x2="235" y2="150"/>
+                    <line x1="140" y1="120" x2="130" y2="145"/>
+                  </g>
+
+                  <!-- scattered sticky notes, slightly rotated -->
+                  <g>
+                    <rect x="30" y="55" width="80" height="50" rx="4" fill="#f5b942" transform="rotate(-8 70 80)"/>
+                    <text x="70" y="84" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600" transform="rotate(-8 70 80)">Conceptos</text>
+                  </g>
+                  <g>
+                    <rect x="175" y="45" width="80" height="50" rx="4" fill="#f472b6" transform="rotate(6 215 70)"/>
+                    <text x="215" y="74" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600" transform="rotate(6 215 70)">Conectores</text>
+                  </g>
+                  <g>
+                    <rect x="20" y="150" width="80" height="50" rx="4" fill="#3dd6c8" transform="rotate(5 60 175)"/>
+                    <text x="60" y="179" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600" transform="rotate(5 60 175)">Motivación</text>
+                  </g>
+                  <g>
+                    <rect x="190" y="145" width="80" height="50" rx="4" fill="#4ade80" transform="rotate(-6 230 170)"/>
+                    <text x="230" y="174" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600" transform="rotate(-6 230 170)">Aprendizaje</text>
+                  </g>
+                  <g>
+                    <rect x="105" y="105" width="80" height="50" rx="4" fill="#7c6cf0" transform="rotate(-3 145 130)"/>
+                    <text x="145" y="134" text-anchor="middle" fill="white" font-size="11" font-weight="600" transform="rotate(-3 145 130)">Autorreg.</text>
+                  </g>
+                </g>
+
+                <!-- Arrow -->
+                <g>
+                  <line x1="315" y1="125" x2="395" y2="125" stroke="#8b95a8" stroke-width="2" marker-end="url(#arrowSticky)"/>
+                  <text x="355" y="112" text-anchor="middle" fill="#8b95a8" font-size="11">las mueves</text>
+                  <text x="355" y="145" text-anchor="middle" fill="#8b95a8" font-size="11">y ordenas</text>
+                </g>
+                <defs>
+                  <marker id="arrowSticky" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+                    <path d="M0,0 L0,7 L9,3.5 z" fill="#8b95a8"/>
+                  </marker>
+                </defs>
+
+                <!-- DESPUÉS: pizarra con notas ordenadas en jerarquía -->
+                <g>
+                  <rect x="410" y="10" width="300" height="230" rx="12" fill="#13161f" stroke="#2a3144" stroke-width="1.5"/>
+                  <text x="560" y="34" text-anchor="middle" fill="#4ade80" font-size="12" font-weight="600">DESPUÉS — ya tienen orden</text>
+
+                  <g stroke="#4a5568" stroke-width="1">
+                    <line x1="555" y1="55" x2="545" y2="70"/>
+                    <line x1="475" y1="115" x2="465" y2="130"/>
+                    <line x1="635" y1="115" x2="645" y2="130"/>
+                    <line x1="475" y1="185" x2="465" y2="200"/>
+                    <line x1="635" y1="185" x2="645" y2="200"/>
+                  </g>
+
+                  <!-- root -->
+                  <rect x="520" y="55" width="80" height="42" rx="4" fill="#7c6cf0"/>
+                  <text x="560" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="600">Autorreg.</text>
+
+                  <!-- lines showing hierarchy -->
+                  <line x1="540" y1="97" x2="475" y2="115" stroke="#4a5568" stroke-width="1.3"/>
+                  <line x1="580" y1="97" x2="645" y2="115" stroke="#4a5568" stroke-width="1.3"/>
+
+                  <rect x="435" y="115" width="80" height="42" rx="4" fill="#f5b942"/>
+                  <text x="475" y="140" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Conceptos</text>
+
+                  <rect x="605" y="115" width="80" height="42" rx="4" fill="#f472b6"/>
+                  <text x="645" y="140" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Conectores</text>
+
+                  <line x1="475" y1="157" x2="475" y2="180" stroke="#4a5568" stroke-width="1.3"/>
+                  <line x1="645" y1="157" x2="645" y2="180" stroke="#4a5568" stroke-width="1.3"/>
+
+                  <rect x="435" y="180" width="80" height="42" rx="4" fill="#3dd6c8"/>
+                  <text x="475" y="205" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Motivación</text>
+
+                  <rect x="605" y="180" width="80" height="42" rx="4" fill="#4ade80"/>
+                  <text x="645" y="205" text-anchor="middle" fill="#1a1a2e" font-size="11" font-weight="600">Aprendizaje</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Revisa todo el mapa junto <span class="eng-sub">Review the map as a whole</span></h3>
+            <p>Da un paso atrás y mira el mapa completo. ¿Hay alguna idea de un lado que también se relacione con una idea del otro lado, aunque estén lejos? Dibuja esa conexión también, con una <strong>línea punteada</strong> para diferenciarla. Cuando estés conforme, pasa el mapa a limpio: a mano o con un programa. Si agregas <strong>ejemplos</strong>, dibújalos distinto a los conceptos (como en el mapa de las frutas de más arriba) para no confundirlos.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>Chequea con la lista de abajo <span class="eng-sub">Check it against the checklist</span></h3>
+            <p>Antes de darlo por terminado, repásalo con las 4 preguntas simples de la sección "Revisión", más abajo. Te toman un minuto y evitan los errores más comunes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EJEMPLO -->
+    <section id="ejemplo">
+      <p class="section-label">Práctica guiada <span class="eng">· Guided practice</span></p>
+      <h2>Ejemplo visual completo</h2>
+      <p class="section-intro">Mapa sobre qué hace efectivo el aprendizaje universitario, construido con los mismos conceptos listados en el paso 2. Cada línea lleva su conector en una etiqueta legible; las líneas punteadas son conexiones cruzadas entre ramas distintas.</p>
+
+      <div class="diagram">
+        <p class="diagram-title">Mapa conceptual — Aprendizaje efectivo en la universidad</p>
+        <svg class="map-large" width="1360" height="840" viewBox="0 0 1360 840" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+          <defs>
+            <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- ===== Root ===== -->
+          <ellipse cx="727" cy="55" rx="205" ry="38" fill="#7c6cf0" filter="url(#glow)"/>
+          <text x="727" y="51" text-anchor="middle" fill="white" font-size="15" font-weight="700">Aprendizaje efectivo</text>
+          <text x="727" y="70" text-anchor="middle" fill="white" font-size="12" font-weight="500" opacity="0.9">en la universidad</text>
+
+          <!-- ===== Root → Nivel 1 ===== -->
+          <line x1="600" y1="82" x2="333" y2="175" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="727" y1="93" x2="760" y2="175" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="854" y1="82" x2="1087" y2="175" stroke="#4a5568" stroke-width="1.5"/>
+
+          <rect x="391" y="117" width="150" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="466" y="132" text-anchor="middle" fill="#3dd6c8" font-size="11">se ve afectado por</text>
+          <rect x="703" y="123" width="80" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="743" y="138" text-anchor="middle" fill="#3dd6c8" font-size="11">requiere</text>
+          <rect x="925" y="117" width="90" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="970" y="132" text-anchor="middle" fill="#3dd6c8" font-size="11">depende de</text>
+
+          <!-- ===== Nivel 1 ===== -->
+          <rect x="193" y="175" width="280" height="52" rx="10" fill="#181c28" stroke="#f5b942" stroke-width="1.5"/>
+          <text x="333" y="207" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="600">Exigencias universitarias</text>
+
+          <rect x="635" y="175" width="250" height="52" rx="10" fill="#181c28" stroke="#7c6cf0" stroke-width="1.5"/>
+          <text x="760" y="207" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="600">Autorregulación</text>
+
+          <rect x="952" y="175" width="270" height="52" rx="10" fill="#181c28" stroke="#f5b942" stroke-width="1.5"/>
+          <text x="1087" y="207" text-anchor="middle" fill="#e8ecf4" font-size="13" font-weight="600">Aspectos motivacionales</text>
+
+          <!-- ===== Nivel 1 → Nivel 2 ===== -->
+          <line x1="333" y1="227" x2="120" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="333" y1="227" x2="335" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="333" y1="227" x2="545" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="293" y="247" width="80" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="333" y="262" text-anchor="middle" fill="#3dd6c8" font-size="11">incluye</text>
+
+          <line x1="760" y1="227" x2="760" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="718" y="247" width="85" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="760" y="262" text-anchor="middle" fill="#3dd6c8" font-size="11">comprende</text>
+
+          <line x1="1087" y1="227" x2="980" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="1087" y1="227" x2="1195" y2="290" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="1045" y="247" width="85" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="1087" y="262" text-anchor="middle" fill="#3dd6c8" font-size="11">comprende</text>
+
+          <!-- ===== Nivel 2 ===== -->
+          <rect x="20" y="290" width="200" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="120" y="310" text-anchor="middle" fill="#8b95a8" font-size="11">Menor contacto</text>
+          <text x="120" y="324" text-anchor="middle" fill="#8b95a8" font-size="11">alumno-profesor</text>
+
+          <rect x="235" y="290" width="200" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="335" y="310" text-anchor="middle" fill="#8b95a8" font-size="11">Variedad de métodos</text>
+          <text x="335" y="324" text-anchor="middle" fill="#8b95a8" font-size="11">evaluativos</text>
+
+          <rect x="450" y="290" width="190" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="545" y="310" text-anchor="middle" fill="#8b95a8" font-size="11">Mayor exigencia</text>
+          <text x="545" y="324" text-anchor="middle" fill="#8b95a8" font-size="11">en evaluación</text>
+
+          <rect x="655" y="290" width="210" height="48" rx="8" fill="#13161f" stroke="#7c6cf0"/>
+          <text x="760" y="318" text-anchor="middle" fill="#8b95a8" font-size="12">Estrategias de aprendizaje</text>
+
+          <rect x="880" y="290" width="200" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="980" y="310" text-anchor="middle" fill="#8b95a8" font-size="11">Autoconcepto del</text>
+          <text x="980" y="324" text-anchor="middle" fill="#8b95a8" font-size="11">estudiante</text>
+
+          <rect x="1095" y="290" width="200" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="1195" y="310" text-anchor="middle" fill="#8b95a8" font-size="11">Disposición hacia</text>
+          <text x="1195" y="324" text-anchor="middle" fill="#8b95a8" font-size="11">el logro</text>
+
+          <!-- ===== Nivel 2 → Nivel 3 (Autorregulación) ===== -->
+          <line x1="760" y1="338" x2="720" y2="390" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="760" y1="338" x2="940" y2="390" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="705" y="356" width="110" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="760" y="371" text-anchor="middle" fill="#3dd6c8" font-size="11">se dividen en</text>
+
+          <!-- ===== Nivel 3 ===== -->
+          <rect x="630" y="390" width="180" height="48" rx="8" fill="#13161f" stroke="#7c6cf0"/>
+          <text x="720" y="418" text-anchor="middle" fill="#8b95a8" font-size="12">Estrategias cognitivas</text>
+
+          <rect x="840" y="390" width="200" height="48" rx="8" fill="#13161f" stroke="#7c6cf0"/>
+          <text x="940" y="418" text-anchor="middle" fill="#8b95a8" font-size="12">Estrategias metacognitivas</text>
+
+          <!-- ===== Nivel 3 → Nivel 4 ===== -->
+          <line x1="940" y1="438" x2="895" y2="490" stroke="#4a5568" stroke-width="1.5"/>
+          <line x1="940" y1="438" x2="1130" y2="490" stroke="#4a5568" stroke-width="1.5"/>
+          <rect x="930" y="456" width="85" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="972" y="471" text-anchor="middle" fill="#3dd6c8" font-size="11">comprende</text>
+
+          <!-- ===== Nivel 4 ===== -->
+          <rect x="790" y="490" width="210" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="895" y="518" text-anchor="middle" fill="#8b95a8" font-size="12">Establecimiento de objetivos</text>
+
+          <rect x="1030" y="490" width="200" height="48" rx="8" fill="#13161f" stroke="#4a5568"/>
+          <text x="1130" y="518" text-anchor="middle" fill="#8b95a8" font-size="12">Evaluación para la mejora</text>
+
+          <!-- ===== Conexiones cruzadas (líneas punteadas) ===== -->
+          <path d="M 720 438 Q 770 465 820 438" fill="none" stroke="#3dd6c8" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <rect x="687" y="459" width="165" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="770" y="474" text-anchor="middle" fill="#3dd6c8" font-size="11">se apoyan mutuamente</text>
+
+          <path d="M 1040 414 Q 1090 370 980 338" fill="none" stroke="#3dd6c8" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <rect x="1015" y="365" width="90" height="22" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="1060" y="380" text-anchor="middle" fill="#3dd6c8" font-size="11">influye en</text>
+
+          <path d="M 545 338 C 650 850, 1500 850, 1195 338" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <rect x="834" y="710" width="380" height="24" rx="6" fill="#0c0e14" stroke="#2a3144"/>
+          <text x="1024" y="726" text-anchor="middle" fill="#f472b6" font-size="11">las exigencias externas impactan la motivación interna</text>
+
+          <!-- ===== Leyenda ===== -->
+          <rect x="20" y="760" width="1320" height="50" rx="10" fill="#13161f" stroke="#2a3144"/>
+          <circle cx="55" cy="785" r="9" fill="#7c6cf0"/>
+          <text x="72" y="789" fill="#8b95a8" font-size="11">Concepto raíz</text>
+          <rect x="200" y="776" width="18" height="18" rx="4" fill="#181c28" stroke="#f5b942"/>
+          <text x="228" y="789" fill="#8b95a8" font-size="11">Concepto principal</text>
+          <rect x="400" y="776" width="18" height="18" rx="4" fill="#13161f" stroke="#4a5568"/>
+          <text x="428" y="789" fill="#8b95a8" font-size="11">Concepto secundario</text>
+          <line x1="600" y1="785" x2="640" y2="785" stroke="#4a5568" stroke-width="1.5"/>
+          <text x="650" y="789" fill="#8b95a8" font-size="11">Jerarquía (con conector en la etiqueta)</text>
+          <line x1="990" y1="785" x2="1030" y2="785" stroke="#3dd6c8" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="1040" y="789" fill="#8b95a8" font-size="11">Conexión cruzada entre ramas</text>
+        </svg>
+      </div>
+
+      <div class="glossary">
+        <p style="grid-column: 1/-1; font-weight: 600; color: var(--text); margin-bottom: 2px;">🇬🇧 Los conectores de este mapa, en inglés <span class="eng">· This map's connectors, in English</span></p>
+        <div class="glossary-item"><span class="en">to include / to comprise</span><span class="sep">→</span><span class="es">incluye / comprende</span></div>
+        <div class="glossary-item"><span class="en">to require</span><span class="sep">→</span><span class="es">requiere</span></div>
+        <div class="glossary-item"><span class="en">to depend on</span><span class="sep">→</span><span class="es">depende de</span></div>
+        <div class="glossary-item"><span class="en">to divide into</span><span class="sep">→</span><span class="es">se dividen en</span></div>
+        <div class="glossary-item"><span class="en">to influence</span><span class="sep">→</span><span class="es">influye en</span></div>
+        <div class="glossary-item"><span class="en">to support each other</span><span class="sep">→</span><span class="es">se apoyan mutuamente</span></div>
+      </div>
+    </section>
+
+    <!-- EJERCICIO -->
+    <section id="ejercicio">
+      <p class="section-label">Practica tú mismo <span class="eng">· Practice on your own</span></p>
+      <h2>Ejercicio: crea tu mapa conceptual</h2>
+      <p class="section-intro">Lee el texto, identifica la pregunta de lectura, los conceptos clave y los conectores. Llena las casillas vacías y, al terminar, genera una imagen PNG para evaluarla con una IA.</p>
+
+      <div class="reading-box">
+        <strong>Texto de lectura <span class="eng">· Reading text</span></strong><br><br>
+        Las abejas obreras salen de su colmena en busca de flores llenas de néctar dulce. Cuando encuentran una flor, usan su larga lengua para recolectar el líquido y lo guardan en un estómago especial. Al regresar a la colmena, las abejas pasan el néctar de boca en boca para evaporar el agua y transformarlo en miel espesa. Finalmente, guardan la miel en los panales para que sirva de alimento a toda la familia durante el invierno.
+      </div>
+
+      <div class="glossary">
+        <p style="grid-column: 1/-1; font-weight: 600; color: var(--text); margin-bottom: 2px;">🇬🇧 Vocabulario del texto <span class="eng">· Text vocabulary</span></p>
+        <div class="glossary-item"><span class="en">hive</span><span class="sep">→</span><span class="es">colmena</span></div>
+        <div class="glossary-item"><span class="en">nectar</span><span class="sep">→</span><span class="es">néctar</span></div>
+        <div class="glossary-item"><span class="en">to gather / to collect</span><span class="sep">→</span><span class="es">recolectar</span></div>
+        <div class="glossary-item"><span class="en">honeycomb</span><span class="sep">→</span><span class="es">panal</span></div>
+        <div class="glossary-item"><span class="en">honey</span><span class="sep">→</span><span class="es">miel</span></div>
+      </div>
+
+      <div class="callout callout-tip">
+        <span class="callout-icon">✏️</span>
+        <div>
+          <strong>Instrucciones <span class="eng-sub">Instructions</span></strong>
+          <p>1) Escribe una <strong>pregunta de lectura</strong> que el mapa deba responder. 2) Completa los <strong>conceptos</strong> (palabras o frases cortas, no oraciones). 3) Escribe los <strong>conectores</strong> en letra pequeña entre cada par de conceptos. 4) Opcional: agrega una conexión cruzada entre conceptos de distinto nivel.</p>
+        </div>
+      </div>
+
+      <div class="exercise-workspace" id="map-builder">
+        <label class="field-label">Pregunta de lectura <span class="eng-tag">reading question</span></label>
+        <input type="text" class="map-input question-input" id="pregunta" placeholder="Ej: ¿Cómo las abejas producen miel?">
+
+        <div style="height: 28px;"></div>
+
+        <div class="map-node-group">
+          <label class="field-label">Concepto (raíz o inicio) <span class="eng-tag">root concept</span></label>
+          <input type="text" class="map-input root-concept" data-concept="0" placeholder="Concepto 1">
+
+          <div class="map-arrow">
+            <div class="arrow-line"></div>
+            <label class="field-label connector-label">Conector <span class="eng-tag">linking word</span></label>
+            <input type="text" class="map-input connector-input" data-connector="0" placeholder="ej: buscan">
+            <div class="arrow-line"></div>
+            <span>▼</span>
+          </div>
+
+          <label class="field-label">Concepto</label>
+          <input type="text" class="map-input" data-concept="1" placeholder="Concepto 2">
+
+          <div class="map-arrow">
+            <div class="arrow-line"></div>
+            <label class="field-label connector-label">Conector</label>
+            <input type="text" class="map-input connector-input" data-connector="1" placeholder="ej: recolectan">
+            <div class="arrow-line"></div>
+            <span>▼</span>
+          </div>
+
+          <label class="field-label">Concepto</label>
+          <input type="text" class="map-input" data-concept="2" placeholder="Concepto 3">
+
+          <div class="map-arrow">
+            <div class="arrow-line"></div>
+            <label class="field-label connector-label">Conector</label>
+            <input type="text" class="map-input connector-input" data-connector="2" placeholder="ej: transforman en">
+            <div class="arrow-line"></div>
+            <span>▼</span>
+          </div>
+
+          <label class="field-label">Concepto</label>
+          <input type="text" class="map-input" data-concept="3" placeholder="Concepto 4">
+
+          <div class="map-arrow">
+            <div class="arrow-line"></div>
+            <label class="field-label connector-label">Conector</label>
+            <input type="text" class="map-input connector-input" data-connector="3" placeholder="ej: almacenan en">
+            <div class="arrow-line"></div>
+            <span>▼</span>
+          </div>
+
+          <label class="field-label">Concepto (final)</label>
+          <input type="text" class="map-input" data-concept="4" placeholder="Concepto 5">
+        </div>
+
+        <div class="optional-cross">
+          <label class="field-label">Conexión cruzada (opcional — mejora tu mapa) <span class="eng-tag">cross-link, optional</span></label>
+          <p style="text-align:center; color: var(--text-muted); font-size: 14px; margin-bottom: 8px;">Relaciona dos conceptos que no están uno debajo del otro</p>
+          <div class="cross-row">
+            <input type="text" class="map-input" id="cross-a" placeholder="Concepto A">
+            <input type="text" class="map-input connector-input" id="cross-conn" placeholder="conector">
+            <span>↔</span>
+            <input type="text" class="map-input" id="cross-b" placeholder="Concepto B">
+          </div>
+        </div>
+      </div>
+
+      <div class="exercise-actions">
+        <button type="button" class="btn btn-export" id="btn-png">📷 Generar imagen PNG</button>
+        <button type="button" class="btn btn-prompt" id="btn-show-prompt">🤖 Ver prompt para evaluar con IA</button>
+      </div>
+
+      <div class="export-preview" id="export-preview">
+        <p class="field-label" style="color: var(--text-muted);">Vista previa — descarga y súbela a ChatGPT, Claude u otra IA junto con el prompt</p>
+        <img id="preview-img" alt="Vista previa del mapa conceptual">
+        <p><a id="download-link" class="btn btn-secondary" style="display:inline-flex; margin-top:8px;" download="mapa-conceptual-abejas.png">⬇ Descargar PNG</a></p>
+      </div>
+
+      <div class="prompt-box" id="prompt-box">
+        <div class="prompt-box-header">
+          <h3>Prompt para evaluar con otra IA</h3>
+          <button type="button" class="btn-copy" id="btn-copy-prompt">Copiar prompt</button>
+        </div>
+        <textarea id="prompt-text" readonly></textarea>
+        <p style="color: var(--text-muted); font-size: 13px; margin-top: 12px;">
+          <strong>Cómo usarlo:</strong> 1) Genera y descarga el PNG. 2) Copia este prompt. 3) En la IA, adjunta la imagen y pega el prompt. La IA evaluará tu mapa según los criterios de mapas conceptuales.
+        </p>
+      </div>
+    </section>
+
+    <!-- REVISIÓN -->
+    <section id="revision">
+      <p class="section-label">Control de calidad <span class="eng">· Quality check</span></p>
+      <h2>Pauta de revisión final</h2>
+      <p class="section-intro">Antes de entregar o usar tu mapa para estudiar, verifica estos cuatro puntos:</p>
+
+      <ul class="checklist">
+        <li><span class="check-mark">✓</span><span class="check-text">El mapa incluye una <strong>pregunta de lectura</strong> <span class="eng">(reading question)</span> clara y la responde de forma visual.</span></li>
+        <li><span class="check-mark">✓</span><span class="check-text">Todos los conceptos y proposiciones están <strong>relacionados con esa pregunta</strong>. No hay información irrelevante <span class="eng">(irrelevant information)</span>.</span></li>
+        <li><span class="check-mark">✓</span><span class="check-text">Entre cada par de conceptos conectados hay un <strong>conector explícito</strong> <span class="eng">(explicit linking word)</span> que permite leer proposiciones completas.</span></li>
+        <li><span class="check-mark">✓</span><span class="check-text">Existen relaciones entre <strong>diferentes niveles y jerarquías</strong> <span class="eng">(levels and hierarchies)</span>; el mapa no es un simple árbol vertical.</span></li>
+      </ul>
+
+      <div class="callout callout-tip" style="margin-top: 32px;">
+        <span class="callout-icon">🛠️</span>
+        <div>
+          <strong>Herramientas recomendadas <span class="eng-sub">Recommended tools</span></strong>
+          <p>Para la versión digital: <strong>CmapTools</strong> (gratuita, diseñada para mapas conceptuales), o alternativas como MindMeister, XMind o incluso FigJam / Miro con notas conectadas.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Guía educativa sobre mapas conceptuales · Basada en metodología de aprendizaje activo</p>
+    </div>
+  </footer>
+
+  <canvas id="export-canvas"></canvas>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const TEXTO_LECTURA = `Las abejas obreras salen de su colmena en busca de flores llenas de néctar dulce. Cuando encuentran una flor, usan su larga lengua para recolectar el líquido y lo guardan en un estómago especial. Al regresar a la colmena, las abejas pasan el néctar de boca en boca para evaporar el agua y transformarlo en miel espesa. Finalmente, guardan la miel en los panales para que sirva de alimento a toda la familia durante el invierno.`;
+
+    function getMapData() {
+      const pregunta = document.getElementById('pregunta').value.trim();
+      const concepts = [...document.querySelectorAll('[data-concept]')].map(el => el.value.trim());
+      const connectors = [...document.querySelectorAll('[data-connector]')].map(el => el.value.trim());
+      const crossA = document.getElementById('cross-a').value.trim();
+      const crossConn = document.getElementById('cross-conn').value.trim();
+      const crossB = document.getElementById('cross-b').value.trim();
+      return { pregunta, concepts, connectors, crossA, crossConn, crossB };
+    }
+
+    function wrapText(ctx, text, maxWidth) {
+      const words = text.split(' ');
+      const lines = [];
+      let line = '';
+      for (const word of words) {
+        const test = line ? line + ' ' + word : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = test;
+        }
+      }
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    function drawRoundedRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+
+    function generatePNG() {
+      const { pregunta, concepts, connectors, crossA, crossConn, crossB } = getMapData();
+
+      if (!pregunta && concepts.every(c => !c)) {
+        showToast('Completa al menos la pregunta y un concepto');
+        return null;
+      }
+
+      const canvas = document.getElementById('export-canvas');
+      const ctx = canvas.getContext('2d');
+      const W = 640;
+      const boxW = 300;
+      const boxH = 44;
+      const connH = 28;
+      const gap = 16;
+      const pad = 40;
+      const hasCross = crossA && crossConn && crossB;
+
+      let y = pad;
+      const centerX = W / 2;
+
+      ctx.font = '600 16px "DM Sans", sans-serif';
+      const qLines = pregunta ? wrapText(ctx, pregunta, W - pad * 2) : ['(Sin pregunta de lectura)'];
+      y += qLines.length * 22 + 20;
+
+      for (let i = 0; i < concepts.length; i++) {
+        y += boxH + gap;
+        if (i < connectors.length) y += connH + gap;
+      }
+      if (hasCross) y += 80;
+
+      canvas.width = W;
+      canvas.height = y + pad + 20;
+
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      y = pad;
+
+      ctx.fillStyle = '#1a1a2e';
+      ctx.font = '700 15px "DM Sans", sans-serif';
+      ctx.textAlign = 'center';
+      qLines.forEach((line, i) => {
+        ctx.fillText(line, centerX, y + i * 22);
+      });
+      y += qLines.length * 22 + 24;
+
+      ctx.textAlign = 'center';
+
+      for (let i = 0; i < concepts.length; i++) {
+        const text = concepts[i] || `[Concepto ${i + 1}]`;
+        const isRoot = i === 0;
+
+        if (isRoot) {
+          ctx.fillStyle = '#7c6cf0';
+          drawRoundedRect(ctx, centerX - boxW / 2, y, boxW, boxH, 10);
+          ctx.fill();
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '600 14px "DM Sans", sans-serif';
+        } else {
+          ctx.strokeStyle = '#7c6cf0';
+          ctx.lineWidth = 2;
+          ctx.fillStyle = '#f8f9fc';
+          drawRoundedRect(ctx, centerX - boxW / 2, y, boxW, boxH, 10);
+          ctx.fill();
+          ctx.stroke();
+          ctx.fillStyle = '#1a1a2e';
+          ctx.font = '500 14px "DM Sans", sans-serif';
+        }
+
+        const cLines = wrapText(ctx, text, boxW - 24);
+        const textY = y + boxH / 2 - ((cLines.length - 1) * 8);
+        cLines.forEach((line, li) => {
+          ctx.fillText(line, centerX, textY + li * 18);
+        });
+
+        y += boxH;
+
+        if (i < connectors.length) {
+          ctx.strokeStyle = '#94a3b8';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(centerX, y + 4);
+          ctx.lineTo(centerX, y + gap + 4);
+          ctx.stroke();
+
+          const conn = connectors[i] || '...';
+          ctx.fillStyle = '#0891b2';
+          ctx.font = 'italic 12px "DM Sans", sans-serif';
+          ctx.fillText(`(${conn})`, centerX, y + gap / 2 + 14);
+
+          ctx.fillStyle = '#64748b';
+          ctx.font = '14px "DM Sans", sans-serif';
+          ctx.fillText('▼', centerX, y + gap + 18);
+
+          y += gap + connH;
+        } else {
+          y += gap;
+        }
+      }
+
+      if (hasCross) {
+        y += 10;
+        ctx.setLineDash([6, 4]);
+        ctx.strokeStyle = '#0891b2';
+        ctx.lineWidth = 1.5;
+        const crossY = y + 20;
+        ctx.beginPath();
+        ctx.moveTo(centerX - 180, crossY);
+        ctx.lineTo(centerX + 180, crossY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = '#64748b';
+        ctx.font = '500 11px "DM Sans", sans-serif';
+        ctx.fillText('Conexión cruzada', centerX, y + 8);
+
+        ctx.fillStyle = '#1a1a2e';
+        ctx.font = '500 13px "DM Sans", sans-serif';
+        ctx.fillText(crossA, centerX - 120, crossY + 4);
+        ctx.fillStyle = '#0891b2';
+        ctx.font = 'italic 12px "DM Sans", sans-serif';
+        ctx.fillText(crossConn, centerX, crossY + 4);
+        ctx.fillStyle = '#1a1a2e';
+        ctx.font = '500 13px "DM Sans", sans-serif';
+        ctx.fillText(crossB, centerX + 120, crossY + 4);
+      }
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '400 10px "DM Sans", sans-serif';
+      ctx.fillText('Mapa conceptual — Ejercicio: Las abejas y la miel', centerX, canvas.height - 14);
+
+      return canvas.toDataURL('image/png');
+    }
+
+    function buildEvaluationPrompt() {
+      const { pregunta, concepts, connectors, crossA, crossConn, crossB } = getMapData();
+
+      const mapText = concepts.map((c, i) => {
+        let line = `- Concepto ${i + 1}: "${c || '(vacío)'}"`;
+        if (i < connectors.length) line += `\n  Conector hacia el siguiente: "${connectors[i] || '(vacío)'}"`;
+        return line;
+      }).join('\n');
+
+      const crossText = (crossA && crossB)
+        ? `\nConexión cruzada opcional: "${crossA}" —(${crossConn || '?'})→ "${crossB}"`
+        : '';
+
+      return `Eres un evaluador experto en mapas conceptuales. Tu tarea es analizar la imagen adjunta de un mapa conceptual elaborado por un estudiante, y también la transcripción textual que incluyo abajo. Evalúa la calidad del mapa según la metodología oficial descrita en este prompt.
+
+---
+
+## TEXTO FUENTE (lectura original)
+
+"${TEXTO_LECTURA}"
+
+---
+
+## TRANSCRIPCIÓN DEL MAPA DEL ESTUDIANTE
+
+Pregunta de lectura: "${pregunta || '(no escrita)'}"
+${mapText}${crossText}
+
+---
+
+## ¿QUÉ ES UN MAPA CONCEPTUAL?
+
+Un mapa conceptual es una herramienta visual que organiza ideas de un texto mediante conceptos conectados. Permite comprender mejor los planteamientos y recordar lo relevante de una lectura.
+
+### Componentes esenciales
+
+1. **Conceptos**: ideas centrales representadas con una palabra o frase corta (generalmente sustantivos). NO deben ser oraciones completas con sujeto y predicado.
+2. **Conectores**: palabras o frases que unen dos conceptos y especifican la relación entre ellos (ej: "incluye", "requiere", "transforma en", "sirve de").
+3. **Proposiciones**: afirmaciones que se forman al leer Concepto + Conector + Concepto (ej: "Las abejas obreras buscan néctar dulce").
+
+---
+
+## METODOLOGÍA: 5 PASOS PARA ELABORAR UN MAPA CONCEPTUAL
+
+**Paso 1 — Pregunta de lectura:** El mapa debe partir de una pregunta clara que guíe la selección de información. El mapa terminado debe responder esa pregunta.
+
+**Paso 2 — Conceptos clave:** Identificar entre 15 y 25 conceptos del texto (en mapas simples pueden ser menos). Ordenarlos de lo general a lo específico. Los conceptos NO son oraciones: si hay oraciones, deben descomponerse en conceptos más pequeños.
+
+**Paso 3 — Relaciones:** Establecer un concepto raíz y jerarquizar los demás. Cada par de conceptos conectados DEBE tener un conector explícito. El mapa NO debe ser solo un árbol lineal: deben existir relaciones entre conceptos de distintos niveles cuando sea pertinente.
+
+**Paso 4 — Consolidar:** Revisar, reorganizar y agregar conexiones cruzadas. Incluir ejemplos solo si se diferencian claramente de los conceptos.
+
+**Paso 5 — Revisar** con esta pauta de cotejo:
+- ¿El mapa incluye una pregunta de lectura que él mismo responde?
+- ¿Todos los conceptos y proposiciones se relacionan con esa pregunta (sin información irrelevante)?
+- ¿Existen conectores claros entre todos los conceptos, que permitan leer proposiciones completas?
+- ¿Hay relaciones entre diferentes niveles/jerarquías, o es solo un árbol vertical simple?
+
+---
+
+## INSTRUCCIONES DE EVALUACIÓN
+
+Analiza la imagen del mapa conceptual adjunta y entrega tu evaluación en el siguiente formato:
+
+### 1. Calificación general (0–10)
+Con una breve justificación.
+
+### 2. Pregunta de lectura
+- ¿Está presente y es adecuada para el texto?
+- ¿El mapa responde efectivamente a esa pregunta?
+
+### 3. Conceptos
+- ¿Son conceptos válidos (palabras/frases cortas) o son oraciones incorrectas?
+- ¿Están relacionados con la pregunta de lectura?
+- ¿Faltan conceptos importantes del texto?
+- ¿Hay conceptos irrelevantes?
+
+### 4. Conectores y proposiciones
+- ¿Todos los pares de conceptos tienen conectores?
+- ¿Los conectores son claros y gramaticalmente correctos al formar proposiciones?
+- Escribe 2–3 proposiciones que se lean del mapa y señala si son correctas.
+
+### 5. Estructura del mapa
+- ¿Tiene concepto raíz identificable?
+- ¿Hay jerarquía lógica (general → específico)?
+- ¿Es solo un árbol lineal o incluye conexiones cruzadas entre niveles?
+
+### 6. Cobertura del texto fuente
+- ¿El mapa representa el proceso descrito en el texto (salida de colmena → búsqueda de flores → recolección de néctar → transformación en miel → almacenamiento en panales → alimento de invierno)?
+
+### 7. Sugerencias concretas de mejora
+Lista 3–5 acciones específicas para mejorar el mapa.
+
+### 8. Ejemplo de corrección (opcional)
+Si hay errores graves, muestra cómo quedaría un concepto, conector o proposición corregida.
+
+Sé constructivo, específico y pedagógico. Evalúa el trabajo del estudiante, no solo describas la teoría.`;
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2800);
+    }
+
+    document.getElementById('btn-png').addEventListener('click', () => {
+      const dataUrl = generatePNG();
+      if (!dataUrl) return;
+
+      const preview = document.getElementById('export-preview');
+      const img = document.getElementById('preview-img');
+      const link = document.getElementById('download-link');
+
+      img.src = dataUrl;
+      link.href = dataUrl;
+      preview.classList.add('visible');
+      showToast('Imagen PNG generada');
+      preview.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    document.getElementById('btn-show-prompt').addEventListener('click', () => {
+      const box = document.getElementById('prompt-box');
+      const textarea = document.getElementById('prompt-text');
+      textarea.value = buildEvaluationPrompt();
+      box.classList.add('visible');
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    document.getElementById('btn-copy-prompt').addEventListener('click', async () => {
+      const textarea = document.getElementById('prompt-text');
+      if (!textarea.value) textarea.value = buildEvaluationPrompt();
+
+      try {
+        await navigator.clipboard.writeText(textarea.value);
+        const btn = document.getElementById('btn-copy-prompt');
+        btn.textContent = '¡Copiado!';
+        btn.classList.add('copied');
+        showToast('Prompt copiado al portapapeles');
+        setTimeout(() => {
+          btn.textContent = 'Copiar prompt';
+          btn.classList.remove('copied');
+        }, 2000);
+      } catch {
+        textarea.select();
+        document.execCommand('copy');
+        showToast('Prompt copiado');
+      }
+    });
+  </script>
+
+</body>
+</html>
