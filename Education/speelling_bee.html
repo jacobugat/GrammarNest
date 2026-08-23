@@ -518,15 +518,60 @@
   .start-practice-btn{width:100%; background:var(--accent); color:#1a1206; border:none; font-weight:700; font-size:14px; padding:13px; border-radius:12px; cursor:pointer;}
   .start-practice-btn:hover{filter:brightness(1.08);}
   .setting-group{width:100%; margin:0 0 16px; text-align:left;}
-  .setting-title{font-family:'JetBrains Mono', monospace; color:var(--text-faint); font-size:10px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:7px;}
-  .setting-options{display:grid; grid-template-columns:repeat(2,1fr); gap:7px;}
-  .setting-option{background:var(--bg-2); border:1px solid var(--border); color:var(--text-muted); border-radius:9px; padding:10px 8px; cursor:pointer; font:600 12px 'Public Sans', sans-serif;}
-  .setting-option.active{background:rgba(232,185,63,.12); border-color:var(--accent); color:var(--accent-soft);}
+  .setting-options{display:flex; flex-direction:column; gap:8px;}
+  .setting-option{
+    background:var(--bg-2);
+    border:1px solid var(--border);
+    color:var(--text-muted);
+    border-radius:10px;
+    padding:12px 16px;
+    cursor:pointer;
+    font:600 13px 'Public Sans', sans-serif;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:background .2s, border-color .2s, color .2s, transform .1s;
+    text-align:left;
+  }
+  .setting-option:hover{
+    border-color:var(--accent);
+    color:var(--accent-soft);
+    background:rgba(232,185,63,.06);
+  }
+  .setting-option.active{background:rgba(232,185,63,.14); border-color:var(--accent); color:var(--accent-soft);}
+  .setting-option::after{
+    content:"→";
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    opacity:.4;
+    transition:transform .2s, opacity .2s;
+  }
+  .setting-option:hover::after, .setting-option.active::after{
+    opacity:1;
+    transform:translateX(3px);
+  }
   .order-switch.is-disabled{opacity:.45; pointer-events:none;}
   .speed-control{width:100%; accent-color:var(--accent); cursor:pointer;}
   .speed-caption{display:flex; justify-content:space-between; color:var(--text-muted); font:11px 'JetBrains Mono', monospace; margin-top:6px;}
   .speed-inline{width:min(260px, 100%); margin-top:2px;}
   .speed-inline .setting-title{text-align:left;}
+
+  /* ---------- Level badge ---------- */
+  .level-badge{
+    display:inline-flex;
+    align-items:center;
+    padding:3px 9px;
+    background:rgba(232,185,63,.15);
+    border:1px solid var(--accent);
+    color:var(--accent-soft);
+    font-family:'JetBrains Mono', monospace;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    border-radius:20px;
+  }
+  .level-badge:empty{ display:none; }
 
   /* ---------- Study material ---------- */
   .study-material h2{font-family:'Fraunces', serif; font-size:27px; margin:10px 0 6px; text-align:center;}
@@ -538,6 +583,7 @@
   .study-word{color:var(--accent-soft); font:700 15px 'JetBrains Mono', monospace;}
   .study-translation{color:var(--text); font-size:13px; font-weight:600; margin-left:8px;}
   .study-example{display:block; color:var(--text-muted); font-size:12.5px; font-style:italic; margin-top:5px; line-height:1.45;}
+  .study-example-es{display:block; color:var(--text-faint); font-size:12px; margin-top:3px; line-height:1.45;}
   .study-empty{color:var(--text-faint); text-align:center; padding:22px 0; font-size:13px;}
 
   footer{
@@ -569,7 +615,7 @@
 <header>
   <div class="eyebrow"><span class="dot"></span>Spelling Bee · Escucha y escribe<span class="dot"></span></div>
   <h1>Entrena tu oído</h1>
-  <p class="sub">Primero repasa el abecedario; después escucha, deletrea y escribe las palabras.</p>
+  <p class="sub" id="headerSub">Material inicial del profesor: escucha, deletrea y escribe las palabras.</p>
   <div class="scoreboard">
     <span class="chip-ok" id="chip-ok">✓ 0</span>
     <span class="chip-bad" id="chip-bad">✕ 0</span>
@@ -596,20 +642,36 @@
       <div class="alphabet-grid" id="alphabetGrid" aria-label="Letras del alfabeto"></div>
       <div class="alphabet-status" id="alphabetStatus">Elige una letra para escucharla</div>
       <div class="setting-group">
-        <div class="setting-title">Modo</div>
+        <div class="setting-title">Elige un nivel para empezar →</div>
         <div class="setting-options">
-          <button type="button" class="setting-option active" id="practiceModeBtn">Práctica</button>
-          <button type="button" class="setting-option" id="examModeBtn">Examen</button>
+          <button type="button" class="setting-option active" id="setInicialBtn">Material inicial</button>
+          <button type="button" class="setting-option" id="setA1Btn">Nivel A1</button>
+          <button type="button" class="setting-option" id="setA2Btn">Nivel A2</button>
+          <button type="button" class="setting-option" id="setB1Btn">Nivel B1</button>
+          <button type="button" class="setting-option" id="setB2Btn">Nivel B2</button>
+          <button type="button" class="setting-option" id="setC1Btn">Nivel C1</button>
+          <button type="button" class="setting-option" id="setC2Btn">Nivel C2</button>
         </div>
       </div>
-      <button class="start-practice-btn" id="startPracticeBtn">Empezar práctica de palabras →</button>
     </div>
 
     <!-- STUDY MATERIAL -->
     <div class="card-face study-material is-hidden" id="studyMaterial">
       <div class="eyebrow"><span class="dot"></span>Temario<span class="dot"></span></div>
       <h2>Material de estudio</h2>
-      <p class="study-intro"><span id="studyCount">101</span> palabras para estudiar. Busca una palabra o recorre la lista completa.</p>
+      <p class="study-intro"><span id="studyCount">101</span> palabras para estudiar. Cambia de lista o busca una palabra.</p>
+      <div class="setting-group">
+        <div class="setting-title">Lista</div>
+        <div class="setting-options">
+          <button type="button" class="setting-option active" id="studySetInicialBtn">Material inicial</button>
+          <button type="button" class="setting-option" id="studySetA1Btn">Nivel A1</button>
+          <button type="button" class="setting-option" id="studySetA2Btn">Nivel A2</button>
+          <button type="button" class="setting-option" id="studySetB1Btn">Nivel B1</button>
+          <button type="button" class="setting-option" id="studySetB2Btn">Nivel B2</button>
+          <button type="button" class="setting-option" id="studySetC1Btn">Nivel C1</button>
+          <button type="button" class="setting-option" id="studySetC2Btn">Nivel C2</button>
+        </div>
+      </div>
       <input class="study-search" id="studySearch" type="search" placeholder="Buscar palabra o traducción..." autocomplete="off">
       <div class="study-list" id="studyList"></div>
       <button class="back-btn" id="studyBackBtn" type="button">← Volver al menú</button>
@@ -619,7 +681,10 @@
     <div class="card-face front is-hidden" id="frontFace">
       <div class="card-top">
         <span id="wordIndex">Palabra 1 de 101</span>
-        <button class="flip-hint-btn" id="flipBtn" title="Ver palabra, traducción y ejemplo">👁 ver tarjeta</button>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="level-badge" id="levelBadgeFront"></span>
+          <button class="flip-hint-btn" id="flipBtn" title="Ver palabra, traducción y ejemplo">👁 ver tarjeta</button>
+        </div>
       </div>
 
       <div class="play-zone">
@@ -666,7 +731,7 @@
     <div class="card-face back is-hidden" id="backFace">
       <div class="card-top">
         <span id="wordIndexBack">Palabra 1 de 101</span>
-        <span></span>
+        <span class="level-badge" id="levelBadgeBack"></span>
       </div>
       <div class="back-word" id="backWord">word</div>
       <div class="back-translation" id="backTranslation">traducción</div>
@@ -694,7 +759,7 @@
 <footer>hecho para practicar de oído, no de vista 🐝</footer>
 
 <script>
-const WORDS = [
+const WORDS_INITIAL = [
 ["Afraid","Asustado/a","She is afraid of spiders.","Ella le tiene miedo a las arañas."],
 ["Almost","Casi","I am almost ready.","Ya casi estoy listo/a."],
 ["Angry","Enojado/a","He was angry about the mistake.","Él estaba enojado por el error."],
@@ -798,6 +863,673 @@ const WORDS = [
 ["Vacation","Vacaciones","We are going on vacation next month.","Nos vamos de vacaciones el próximo mes."]
 ];
 
+const WORDS_A1 = [
+["a","un, una","I have a cat.","Tengo un gato."],
+["about","sobre, acerca de","This book is about animals.","Este libro es sobre animales."],
+["after","después de","We went home after school.","Fuimos a casa después del colegio."],
+["again","otra vez, de nuevo","Can you say that again, please?","¿Puedes decir eso otra vez, por favor?"],
+["all","todo, todos","All the children are playing.","Todos los niños están jugando."],
+["also","también","She speaks English and also Spanish.","Habla inglés y también español."],
+["and","y","I like tea and coffee.","Me gusta el té y el café."],
+["answer","respuesta / responder","Do you know the answer?","¿Sabes la respuesta?"],
+["ask","preguntar, pedir","Can I ask you a question?","¿Puedo hacerte una pregunta?"],
+["bad","malo","It was a bad day.","Fue un mal día."],
+["be","ser, estar","I want to be a teacher.","Quiero ser profesor."],
+["beautiful","hermoso, bello","The flowers are beautiful.","Las flores son hermosas."],
+["because","porque","I stayed home because it was raining.","Me quedé en casa porque estaba lloviendo."],
+["bed","cama","I go to bed at 10 p.m.","Me voy a la cama a las 10 p. m."],
+["before","antes de","Wash your hands before dinner.","Lávate las manos antes de la cena."],
+["big","grande","They live in a big house.","Viven en una casa grande."],
+["book","libro","I am reading a good book.","Estoy leyendo un buen libro."],
+["boy","niño, chico","The boy is playing football.","El niño está jugando al fútbol."],
+["brother","hermano","I have one brother and one sister.","Tengo un hermano y una hermana."],
+["bus","autobús","I go to school by bus.","Voy al colegio en autobús."],
+["buy","comprar","She wants to buy a new dress.","Quiere comprar un vestido nuevo."],
+["call","llamar","I will call you later.","Te llamaré más tarde."],
+["can","poder (habilidad)","I can swim very well.","Puedo nadar muy bien."],
+["car","coche","My father has a red car.","Mi padre tiene un coche rojo."],
+["child","niño, niña","The child is sleeping.","El niño está durmiendo."],
+["city","ciudad","London is a big city.","Londres es una ciudad grande."],
+["class","clase","Our English class starts at 9 a.m.","Nuestra clase de inglés empieza a las 9 a. m."],
+["come","venir","Come here, please.","Ven aquí, por favor."],
+["country","país","What is your favorite country?","¿Cuál es tu país favorito?"],
+["day","día","Have a nice day!","¡Que tengas un buen día!"],
+["different","diferente","My bag is different from yours.","Mi bolso es diferente del tuyo."],
+["do","hacer","I do my homework every evening.","Hago mis deberes todas las tardes."],
+["door","puerta","Please close the door.","Por favor, cierra la puerta."],
+["drink","bebida / beber","I drink water every day.","Bebo agua todos los días."],
+["eat","comer","We eat dinner at 8 p.m.","Cenamos a las 8 p. m."],
+["email","correo electrónico","I sent an email to my teacher.","Envié un correo electrónico a mi profesor."],
+["English","inglés","I am learning English.","Estoy aprendiendo inglés."],
+["evening","tarde-noche","Good evening! How are you?","¡Buenas tardes/noches! ¿Cómo estás?"],
+["every","cada, todo","I go to school every day.","Voy al colegio todos los días."],
+["family","familia","I have a small family.","Tengo una familia pequeña."],
+["father","padre","My father works in an office.","Mi padre trabaja en una oficina."],
+["find","encontrar","I can’t find my keys.","No encuentro mis llaves."],
+["food","comida","I like Italian food.","Me gusta la comida italiana."],
+["friend","amigo","She is my best friend.","Ella es mi mejor amiga."],
+["from","de, desde","I am from Spain.","Soy de España."],
+["girl","niña, chica","The girl is reading a book.","La niña está leyendo un libro."],
+["give","dar","Can you give me the pen, please?","¿Puedes darme el bolígrafo, por favor?"],
+["go","ir","I go to work by bus.","Voy al trabajo en autobús."],
+["good","bueno","She is a good student.","Ella es una buena estudiante."],
+["great","genial, estupendo","That’s a great idea!","¡Esa es una idea genial!"],
+["happy","feliz, contento","I am very happy today.","Hoy estoy muy feliz."],
+["have","tener","I have two brothers.","Tengo dos hermanos."],
+["he","él","He is my teacher.","Él es mi profesor."],
+["help","ayuda / ayudar","Can you help me, please?","¿Puedes ayudarme, por favor?"],
+["her","su, de ella","This is her bag.","Esta es su bolsa (de ella)."],
+["here","aquí","Come here, please.","Ven aquí, por favor."],
+["hi","hola (informal)","Hi! How are you?","¡Hola! ¿Cómo estás?"],
+["home","casa (hogar)","I go home after school.","Voy a casa después del colegio."],
+["house","casa (edificio)","They live in a small house.","Viven en una casa pequeña."],
+["how","cómo","How are you today?","¿Cómo estás hoy?"],
+["I","yo","I am a student.","Soy estudiante."],
+["important","importante","English is an important language.","El inglés es un idioma importante."],
+["in","en, dentro de","The book is in the bag.","El libro está en la bolsa."],
+["is","es, está (3.ª persona de “be”)","She is my sister.","Ella es mi hermana."],
+["it","eso, ello, lo/la (para cosas/animales)","I like this book. It is very interesting.","Me gusta este libro. Es muy interesante."],
+["job","trabajo, empleo","What is your job?","¿Cuál es tu trabajo?"],
+["know","saber, conocer","I know his name.","Sé su nombre."],
+["language","idioma, lengua","English is a useful language.","El inglés es un idioma útil."],
+["learn","aprender","I want to learn French.","Quiero aprender francés."],
+["like","gustar / como","I like chocolate.","Me gusta el chocolate."],
+["listen","escuchar","Listen to the teacher, please.","Escucha al profesor, por favor."],
+["live","vivir","I live in Madrid.","Vivo en Madrid."],
+["look","mirar, parecer","Look at that picture.","Mira esa imagen."],
+["make","hacer, fabricar","She can make a cake.","Ella puede hacer un pastel."],
+["man","hombre","The man is reading a newspaper.","El hombre está leyendo un periódico."],
+["many","muchos","There are many students in the class.","Hay muchos estudiantes en la clase."],
+["me","me, mí","Can you help me?","¿Puedes ayudarme?"],
+["morning","mañana (parte del día)","Good morning! How are you?","¡Buenos días! ¿Cómo estás?"],
+["mother","madre","My mother is a doctor.","Mi madre es médica."],
+["my","mi","This is my book.","Este es mi libro."],
+["name","nombre","What is your name?","¿Cuál es tu nombre?"],
+["need","necesitar","I need some water.","Necesito un poco de agua."],
+["new","nuevo","I have a new phone.","Tengo un teléfono nuevo."],
+["night","noche","Good night! Sleep well.","¡Buenas noches! Duerme bien."],
+["no","no","No, I don’t understand.","No, no entiendo."],
+["not","no (negación)","I am not tired.","No estoy cansado."],
+["now","ahora","I am busy now.","Ahora estoy ocupado."],
+["of","de","This is a photo of my family.","Esta es una foto de mi familia."],
+["old","viejo, mayor (edad)","How old are you?","¿Cuántos años tienes?"],
+["on","en, sobre (superficie)","The book is on the table.","El libro está sobre la mesa."],
+["one","uno","I have one brother.","Tengo un hermano."],
+["open","abierto / abrir","Please open the window.","Por favor, abre la ventana."],
+["or","o","Do you want tea or coffee?","¿Quieres té o café?"],
+["our","nuestro","This is our house.","Esta es nuestra casa."],
+["out","fuera","They are out at the moment.","Están fuera en este momento."],
+["over","sobre, encima de, más de","The plane flew over the city.","El avión voló sobre la ciudad."],
+["people","gente, personas","There are many people in the park.","Hay mucha gente en el parque."],
+["phone","teléfono","My phone is on the table.","Mi teléfono está sobre la mesa."],
+["place","lugar","This is a nice place.","Este es un lugar bonito."],
+["play","jugar, tocar (instrumento)","The children play in the garden.","Los niños juegan en el jardín."]
+];
+
+const WORDS_A2 = [
+["ability","capacidad, habilidad","She has the ability to speak three languages.","Tiene la capacidad de hablar tres idiomas."],
+["abroad","en el extranjero","He wants to study abroad next year.","Quiere estudiar en el extranjero el próximo año."],
+["accept","aceptar","I hope you will accept my invitation.","Espero que aceptes mi invitación."],
+["accident","accidente","There was a car accident near my house.","Hubo un accidente de coche cerca de mi casa."],
+["achieve","lograr, conseguir","She worked hard to achieve her goals.","Trabajó duro para lograr sus objetivos."],
+["act","actuar / acto","He acted very bravely during the fire.","Actuó con mucha valentía durante el incendio."],
+["active","activo","She leads an active lifestyle.","Lleva un estilo de vida activo."],
+["actually","en realidad, de hecho","I actually like cold weather.","En realidad me gusta el clima frío."],
+["add","añadir, agregar","Please add some sugar to my coffee.","Por favor, añade un poco de azúcar a mi café."],
+["address","dirección","What is your home address?","¿Cuál es tu dirección de casa?"],
+["adult","adulto","This film is only for adults.","Esta película es solo para adultos."],
+["advantage","ventaja","One advantage of living here is the low rent.","Una ventaja de vivir aquí es el alquiler bajo."],
+["adventure","aventura","Their trip was a real adventure.","Su viaje fue una verdadera aventura."],
+["advice","consejo","Can I give you some advice?","¿Puedo darte un consejo?"],
+["afford","permitirse (económicamente)","We can't afford a new car at the moment.","No podemos permitirnos un coche nuevo en este momento."],
+["afraid","asustado, con miedo","She is afraid of dogs.","Tiene miedo de los perros."],
+["after","después de, después","We went for a walk after dinner.","Fuimos a dar un paseo después de la cena."],
+["afternoon","tarde (después del mediodía)","I usually study in the afternoon.","Normalmente estudio por la tarde."],
+["again","otra vez, de nuevo","Can you say that again, please?","¿Puedes decir eso otra vez, por favor?"],
+["against","contra","They played against the best team.","Jugaron contra el mejor equipo."],
+["age","edad","What is your age?","¿Cuál es tu edad?"],
+["ago","hace (tiempo)","He left ten minutes ago.","Se fue hace diez minutos."],
+["agree","estar de acuerdo","I agree with you.","Estoy de acuerdo contigo."],
+["air","aire","The air in the mountains is very fresh.","El aire en las montañas es muy fresco."],
+["airport","aeropuerto","We arrived at the airport two hours early.","Llegamos al aeropuerto dos horas antes."],
+["all","todo, todos","All the students passed the exam.","Todos los estudiantes aprobaron el examen."],
+["allow","permitir","My parents don't allow me to stay out late.","Mis padres no me permiten quedarme fuera hasta tarde."],
+["almost","casi","It's almost time to go.","Es casi la hora de irse."],
+["alone","solo","She lives alone in a small flat.","Vive sola en un piso pequeño."],
+["along","a lo largo de, junto con","We walked along the beach.","Caminamos a lo largo de la playa."],
+["already","ya","I have already finished my homework.","Ya he terminado mis deberes."],
+["also","también","She speaks English and also French.","Habla inglés y también francés."],
+["always","siempre","He is always on time.","Siempre llega a tiempo."],
+["amazing","increíble, asombroso","The view from the top was amazing.","La vista desde la cima era increíble."],
+["among","entre (varios)","She was sitting among her friends.","Estaba sentada entre sus amigos."],
+["ancient","antiguo","We visited some ancient ruins.","Visitamos algunas ruinas antiguas."],
+["angry","enfadado, enojado","He was angry because he missed the bus.","Estaba enfadado porque perdió el autobús."],
+["animal","animal","What is your favorite animal?","¿Cuál es tu animal favorito?"],
+["another","otro, otra","Would you like another cup of tea?","¿Quieres otra taza de té?"],
+["answer","respuesta / responder","Do you know the answer to this question?","¿Sabes la respuesta a esta pregunta?"],
+["any","algún, alguno, ningún","Do you have any brothers or sisters?","¿Tienes algún hermano o hermana?"],
+["anyone","cualquiera, alguien","Did anyone call me?","¿Me llamó alguien?"],
+["anything","cualquier cosa, algo","You can ask me anything.","Puedes preguntarme cualquier cosa."],
+["apartment","apartamento, piso","They rent a small apartment in the city.","Alquilan un apartamento pequeño en la ciudad."],
+["appear","aparecer, parecer","He appeared very calm.","Parecía muy tranquilo."],
+["apple","manzana","I eat an apple every day.","Como una manzana cada día."],
+["area","área, zona","This is a quiet area.","Esta es una zona tranquila."],
+["argue","discutir, argumentar","They often argue about money.","A menudo discuten sobre dinero."],
+["arm","brazo","He broke his arm in the accident.","Se rompió el brazo en el accidente."],
+["around","alrededor, por ahí","We walked around the park.","Caminamos alrededor del parque."],
+["arrive","llegar","What time does the train arrive?","¿A qué hora llega el tren?"],
+["art","arte","She is interested in modern art.","Le interesa el arte moderno."],
+["article","artículo","I read an interesting article in the newspaper.","Leí un artículo interesante en el periódico."],
+["artist","artista","He is a famous artist.","Es un artista famoso."],
+["as","como, mientras, ya que","She works as a teacher.","Trabaja como profesora."],
+["ask","preguntar, pedir","Can I ask you a question?","¿Puedo hacerte una pregunta?"],
+["asleep","dormido","The baby is asleep.","El bebé está dormido."],
+["aspect","aspecto","One important aspect of the job is teamwork.","Un aspecto importante del trabajo es el trabajo en equipo."],
+["assistant","asistente, ayudante","She works as a teacher's assistant.","Trabaja como asistente de un profesor."],
+["at","en, a (lugar, hora)","I'll meet you at the station.","Te esperaré en la estación."],
+["atmosphere","atmósfera, ambiente","The atmosphere in the restaurant was very friendly.","El ambiente en el restaurante era muy agradable."],
+["attach","adjuntar, unir","Please attach your photo to the form.","Por favor, adjunta tu foto al formulario."],
+["attack","ataque / atacar","The dog attacked the intruder.","El perro atacó al intruso."],
+["attempt","intento / intentar","He made no attempt to hide his feelings.","No hizo ningún intento por ocultar sus sentimientos."],
+["attend","asistir (a un evento)","Did you attend the meeting yesterday?","¿Asististe a la reunión ayer?"],
+["attention","atención","Please pay attention to the teacher.","Por favor, presta atención al profesor."],
+["attitude","actitud","She has a very positive attitude.","Tiene una actitud muy positiva."],
+["attract","atraer","The festival attracts many tourists.","El festival atrae a muchos turistas."],
+["audience","audiencia, público","The audience clapped at the end.","El público aplaudió al final."],
+["author","autor","Who is the author of this book?","¿Quién es el autor de este libro?"],
+["available","disponible","Is this seat available?","¿Está disponible este asiento?"],
+["average","promedio / medio","The average temperature in July is 25°C.","La temperatura media en julio es de 25 °C."],
+["avoid","evitar","Try to avoid making the same mistake.","Intenta evitar cometer el mismo error."],
+["awake","despierto","I was awake all night.","Estuve despierto toda la noche."],
+["away","lejos, fuera","He went away for the weekend.","Se fue fuera el fin de semana."],
+["awful","terrible, horrible","The weather was awful last week.","El tiempo fue terrible la semana pasada."],
+["baby","bebé","The baby is sleeping.","El bebé está durmiendo."],
+["back","espalda, atrás / volver","My back hurts.","Me duele la espalda."],
+["bad","malo","It was a bad day.","Fue un mal día."],
+["bag","bolsa, bolso, mochila","She carried a heavy bag.","Llevaba una bolsa pesada."],
+["bake","hornear, cocer al horno","She likes to bake cakes at the weekend.","Le gusta hornear pasteles el fin de semana."],
+["balance","equilibrio / equilibrar","It's important to keep a balance between work and rest.","Es importante mantener un equilibrio entre el trabajo y el descanso."],
+["ball","pelota, bola","The children are playing with a ball.","Los niños están jugando con una pelota."],
+["bank","banco (entidad) / orilla","I need to go to the bank.","Necesito ir al banco."],
+["bar","barra, bar","We met at a small bar near the station.","Nos encontramos en un bar pequeño cerca de la estación."],
+["base","base","The company has its base in London.","La empresa tiene su base en Londres."],
+["basic","básico","You need to learn the basic rules first.","Primero necesitas aprender las reglas básicas."],
+["basin","lavabo, palangana","She washed her hands in the basin.","Se lavó las manos en el lavabo."],
+["basket","cesta, canasta","She put the fruit in a basket.","Puso la fruta en una cesta."],
+["bath","baño (en bañera)","I like to have a hot bath in the evening.","Me gusta tomar un baño caliente por la noche."],
+["bathroom","baño (cuarto de baño)","The bathroom is upstairs.","El baño está arriba."],
+["battery","batería, pila","The battery in my phone is dead.","La batería de mi teléfono está agotada."],
+["battle","batalla","The battle lasted for several hours.","La batalla duró varias horas."],
+["beach","playa","We spent the day at the beach.","Pasamos el día en la playa."],
+["bear","oso / soportar","There are bears in this forest.","Hay osos en este bosque."],
+["beat","golpear, latir / vencer","Our team beat theirs in the final.","Nuestro equipo les venció en la final."],
+["beautiful","hermoso, bello","The view from the hill is beautiful.","La vista desde la colina es hermosa."],
+["because","porque","I stayed at home because it was raining.","Me quedé en casa porque estaba lloviendo."],
+["become","llegar a ser, convertirse","He wants to become a doctor.","Quiere convertirse en médico."],
+["bed","cama","I go to bed at 11 p.m. every night.","Me voy a la cama a las 11 p. m. todas las noches."]
+];
+
+const WORDS_B1 = [
+["ability","capacidad, habilidad","She has the ability to learn languages quickly.","Tiene la capacidad de aprender idiomas rápidamente."],
+["abroad","en el extranjero","He is planning to study abroad next year.","Está planeando estudiar en el extranjero el próximo año."],
+["accept","aceptar","I hope you will accept my apology.","Espero que aceptes mi disculpa."],
+["accident","accidente","There was a serious accident on the motorway this morning.","Hubo un accidente grave en la autopista esta mañana."],
+["achieve","lograr, conseguir","She worked hard to achieve her goals.","Trabajó duro para lograr sus objetivos."],
+["activity","actividad","Outdoor activities are good for your health.","Las actividades al aire libre son buenas para tu salud."],
+["actual","real, verdadero","The actual cost was higher than we expected.","El coste real fue más alto de lo que esperábamos."],
+["advice","consejo","Can I give you some advice?","¿Puedo darte un consejo?"],
+["afford","permitirse (económicamente)","We can't afford to go on holiday this year.","No podemos permitirnos ir de vacaciones este año."],
+["against","contra","They played against the best team in the league.","Jugaron contra el mejor equipo de la liga."],
+["agree","estar de acuerdo","I agree with you on this point.","Estoy de acuerdo contigo en este punto."],
+["almost","casi","It's almost time to leave.","Es casi la hora de salir."],
+["alone","solo","She lives alone in a small apartment.","Vive sola en un apartamento pequeño."],
+["already","ya","I have already finished my homework.","Ya he terminado mis deberes."],
+["although","aunque","Although it was raining, we went for a walk.","Aunque llovía, fuimos a dar un paseo."],
+["amount","cantidad","A large amount of money was spent on the project.","Se gastó una gran cantidad de dinero en el proyecto."],
+["ancient","antiguo","We visited some ancient ruins on our trip.","Visitamos algunas ruinas antiguas en nuestro viaje."],
+["angry","enfadado, enojado","He was angry because he missed the bus.","Estaba enfadado porque perdió el autobús."],
+["anymore","ya no, más (en negaciones)","I don't live there anymore.","Ya no vivo allí."],
+["anyone","cualquiera, alguien","Did anyone see my keys?","¿Alguien ha visto mis llaves?"],
+["appear","aparecer, parecer","She appeared very calm during the interview.","Parecía muy tranquila durante la entrevista."],
+["apply","solicitar / aplicar","He applied for a job at the bank.","Solicitó un trabajo en el banco."],
+["argue","discutir, argumentar","They often argue about small things.","A menudo discuten por cosas pequeñas."],
+["arrange","organizar, arreglar","We need to arrange a meeting for next week.","Necesitamos organizar una reunión para la semana que viene."],
+["arrive","llegar","What time does the train arrive?","¿A qué hora llega el tren?"],
+["article","artículo","I read an interesting article in the newspaper.","Leí un artículo interesante en el periódico."],
+["asleep","dormido","The baby fell asleep during the flight.","El bebé se durmió durante el vuelo."],
+["attention","atención","Please pay attention to the instructions.","Por favor, presta atención a las instrucciones."],
+["audience","audiencia, público","The audience applauded at the end of the concert.","El público aplaudió al final del concierto."],
+["author","autor","Who is the author of this book?","¿Quién es el autor de este libro?"],
+["available","disponible","Is this seat available?","¿Está disponible este asiento?"],
+["avoid","evitar","Try to avoid making the same mistake again.","Intenta evitar cometer el mismo error otra vez."],
+["awful","terrible, horrible","The weather was awful last weekend.","El tiempo fue terrible el fin de semana pasado."],
+["balance","equilibrio / equilibrar","It's important to keep a balance between work and rest.","Es importante mantener un equilibrio entre el trabajo y el descanso."],
+["behave","comportarse","The children behaved very well at the party.","Los niños se comportaron muy bien en la fiesta."],
+["belong","pertenecer","This book belongs to my sister.","Este libro pertenece a mi hermana."],
+["benefit","beneficio / beneficiarse","Regular exercise has many health benefits.","Hacer ejercicio regularmente tiene muchos beneficios para la salud."],
+["besides","además, aparte de","Besides English, she speaks French and German.","Además de inglés, habla francés y alemán."],
+["between","entre","The meeting is between 2 and 4 p.m.","La reunión es entre las 2 y las 4 de la tarde."],
+["beyond","más allá de","The village is just beyond the hills.","El pueblo está justo más allá de las colinas."],
+["bill","cuenta, factura / billete","Can we have the bill, please?","¿Nos trae la cuenta, por favor?"],
+["borrow","pedir prestado","Can I borrow your pen for a moment?","¿Puedo pedirte prestado tu bolígrafo un momento?"],
+["both","ambos, los dos","Both students passed the exam.","Ambos estudiantes aprobaron el examen."],
+["bother","molestar, incomodar","I'm sorry to bother you, but I need some help.","Perdona por molestarte, pero necesito ayuda."],
+["brave","valiente","She was very brave during the emergency.","Fue muy valiente durante la emergencia."],
+["bright","brillante, luminoso / inteligente","The sun was bright and warm.","El sol estaba brillante y cálido."],
+["bring","traer","Don't forget to bring your passport.","No olvides traer tu pasaporte."],
+["build","construir","They plan to build a new school here.","Planean construir una nueva escuela aquí."],
+["busy","ocupado","I'm very busy at the moment.","Estoy muy ocupado en este momento."],
+["careful","cuidadoso, prudente","Be careful when you cross the street.","Ten cuidado al cruzar la calle."],
+["celebrate","celebrar","We celebrated her birthday with a big party.","Celebramos su cumpleaños con una gran fiesta."],
+["chance","oportunidad, posibilidad","This is your chance to show what you can do.","Esta es tu oportunidad de mostrar lo que puedes hacer."],
+["charge","cargar / cargo, precio","There is no charge for this service.","No hay cargo por este servicio."],
+["choice","elección","You have a choice between tea and coffee.","Tienes la opción de elegir entre té y café."],
+["clever","inteligente, hábil","She is a very clever student.","Es una estudiante muy inteligente."],
+["climb","escalar, subir","We climbed to the top of the hill.","Subimos hasta la cima de la colina."],
+["clothes","ropa","She bought some new clothes for the trip.","Compró ropa nueva para el viaje."],
+["collect","recoger, coleccionar","He collects stamps from different countries.","Colecciona sellos de diferentes países."],
+["college","universidad, centro de estudios superiores","She is studying biology at college.","Está estudiando biología en la universidad."],
+["common","común, frecuente","It's common to feel nervous before an exam.","Es común sentirse nervioso antes de un examen."],
+["compare","comparar","If you compare the two phones, you'll see the differences.","Si comparas los dos teléfonos, verás las diferencias."],
+["complain","quejarse","Several customers complained about the service.","Varios clientes se quejaron del servicio."],
+["complete","completar / completo","Please complete the form and return it.","Por favor, completa el formulario y devuélvelo."],
+["confident","seguro, confiado","She is confident about passing the exam.","Está segura de aprobar el examen."],
+["connect","conectar","Can you connect my phone to the Wi-Fi?","¿Puedes conectar mi teléfono al Wi-Fi?"],
+["contain","contener","This box contains old photographs.","Esta caja contiene fotografías antiguas."],
+["continue","continuar","The rain continued all day.","La lluvia continuó todo el día."],
+["control","control / controlar","He lost control of the car on the icy road.","Perdió el control del coche en la carretera helada."],
+["correct","correcto / corregir","Is this the correct answer?","¿Es esta la respuesta correcta?"],
+["cover","cubrir / portada","The mountains were covered with snow.","Las montañas estaban cubiertas de nieve."],
+["create","crear","Artists create beautiful works of art.","Los artistas crean bellas obras de arte."],
+["crime","crimen, delito","The police are investigating the crime.","La policía está investigando el crimen."],
+["crowd","multitud, gentío","A large crowd gathered in the square.","Una gran multitud se reunió en la plaza."],
+["culture","cultura","I'm interested in learning about other cultures.","Me interesa aprender sobre otras culturas."],
+["customer","cliente","The customer was very satisfied with the service.","El cliente estaba muy satisfecho con el servicio."],
+["daily","diario, a diario","Exercise should be part of your daily routine.","El ejercicio debería ser parte de tu rutina diaria."],
+["damage","daño / dañar","The storm caused a lot of damage to the houses.","La tormenta causó muchos daños a las casas."],
+["danger","peligro","Swimming here can be dangerous.","Nadar aquí puede ser peligroso."],
+["decide","decidir","Have you decided where to go on holiday?","¿Has decidido a dónde ir de vacaciones?"],
+["declare","declarar","He declared his love for her.","Declaró su amor por ella."],
+["decrease","disminuir / disminución","The number of students has decreased this year.","El número de estudiantes ha disminuido este año."],
+["deliver","entregar, repartir","They deliver pizzas to your door.","Reparten pizzas a tu puerta."],
+["demand","demanda / exigir","There is a high demand for this product.","Hay una gran demanda de este producto."],
+["depend","depender","It depends on the weather.","Depende del tiempo."],
+["describe","describir","Can you describe what happened?","¿Puedes describir lo que pasó?"],
+["design","diseño / diseñar","She designed the logo for the company.","Diseñó el logotipo de la empresa."],
+["develop","desarrollar","The company is developing a new product.","La empresa está desarrollando un nuevo producto."],
+["difference","diferencia","What is the difference between these two phones?","¿Cuál es la diferencia entre estos dos teléfonos?"],
+["difficult","difícil","The exam was more difficult than I expected.","El examen fue más difícil de lo que esperaba."],
+["direction","dirección, sentido","Can you give me directions to the station?","¿Puedes indicarme cómo llegar a la estación?"],
+["discover","descubrir","They discovered a small village near the lake.","Descubrieron un pequeño pueblo cerca del lago."],
+["disease","enfermedad","Scientists are researching this disease.","Los científicos están investigando esta enfermedad."],
+["distance","distancia","What is the distance between the two cities?","¿Cuál es la distancia entre las dos ciudades?"],
+["doubt","duda / dudar","I have some doubts about this plan.","Tengo algunas dudas sobre este plan."],
+["during","durante","He fell asleep during the film.","Se durmió durante la película."],
+["earn","ganar (dinero)","She earns a good salary in her new job.","Gana un buen sueldo en su nuevo trabajo."],
+["education","educación","Education is important for everyone.","La educación es importante para todos."],
+["effect","efecto","The medicine had a positive effect on his health.","El medicamento tuvo un efecto positivo en su salud."],
+["effort","esfuerzo","She made a great effort to finish on time.","Hizo un gran esfuerzo para terminar a tiempo."],
+["either","cualquiera de los dos / tampoco (en negaciones)","You can choose either option.","Puedes elegir cualquiera de las dos opciones."]
+];
+
+const WORDS_B2 = [
+["abandon","abandonar","They had to abandon their car because of the heavy snow.","Tuvieron que abandonar su coche debido a la fuerte nevada."],
+["absolute","absoluto, total","I have absolute confidence in her abilities.","Tengo absoluta confianza en sus habilidades."],
+["absorb","absorber","The soil absorbs water very quickly after rain.","El suelo absorbe el agua muy rápidamente después de la lluvia."],
+["abstract","abstracto / resumen","Love and freedom are abstract concepts.","El amor y la libertad son conceptos abstractos."],
+["academic","académico","She has a strong academic background in physics.","Tiene una sólida formación académica en física."],
+["acceptable","aceptable","The quality of the work was acceptable, but not excellent.","La calidad del trabajo era aceptable, pero no excelente."],
+["access","acceso / acceder","Students have free access to the library.","Los estudiantes tienen acceso gratuito a la biblioteca."],
+["accommodate","alojar, acomodar","The hotel can accommodate up to 200 guests.","El hotel puede alojar hasta 200 huéspedes."],
+["accompany","acompañar","Children must be accompanied by an adult.","Los niños deben ir acompañados de un adulto."],
+["accomplish","lograr, cumplir","She accomplished all her goals for the year.","Logró todos sus objetivos del año."],
+["account","cuenta / explicar (account for)","He has a bank account in London.","Tiene una cuenta bancaria en Londres."],
+["accurate","preciso, exacto","The information in the report is accurate and up to date.","La información del informe es precisa y está actualizada."],
+["achieve","lograr, conseguir","He achieved excellent results in his exams.","Consiguió resultados excelentes en sus exámenes."],
+["acquire","adquirir","She acquired a lot of experience during her internship.","Adquirió mucha experiencia durante sus prácticas."],
+["adapt","adaptar, adaptarse","It took him some time to adapt to the new school.","Le tomó algún tiempo adaptarse a la nueva escuela."],
+["adequate","adecuado, suficiente","The hotel rooms were adequate for our needs.","Las habitaciones del hotel eran adecuadas para nuestras necesidades."],
+["adjust","ajustar, adaptarse","You can adjust the height of the chair.","Puedes ajustar la altura de la silla."],
+["administration","administración","She works in the administration department.","Trabaja en el departamento de administración."],
+["admire","admirar","I really admire her determination.","Realmente admiro su determinación."],
+["admit","admitir","He admitted that he had made a mistake.","Admitió que había cometido un error."],
+["adopt","adoptar","They decided to adopt a child.","Decidieron adoptar un niño."],
+["advance","avanzar, avance","Technology has advanced rapidly in recent years.","La tecnología ha avanzado rápidamente en los últimos años."],
+["advantage","ventaja","One advantage of living here is the low cost of housing.","Una ventaja de vivir aquí es el bajo coste de la vivienda."],
+["adventure","aventura","Their trip to the mountains was a real adventure.","Su viaje a la montaña fue una verdadera aventura."],
+["affect","afectar","The weather can affect your mood.","El tiempo puede afectar a tu estado de ánimo."],
+["afford","permitirse (económicamente)","We can't afford to buy a new car right now.","No podemos permitirnos comprar un coche nuevo ahora mismo."],
+["agency","agencia","She found her job through a recruitment agency.","Encontró su trabajo a través de una agencia de empleo."],
+["agenda","agenda, orden del día","The first item on the agenda is the budget.","El primer punto de la agenda es el presupuesto."],
+["aggressive","agresivo","The dog became aggressive when strangers approached.","El perro se volvió agresivo cuando se acercaron extraños."],
+["agree","estar de acuerdo","I completely agree with your opinion.","Estoy completamente de acuerdo con tu opinión."],
+["agreement","acuerdo","They reached an agreement after long negotiations.","Llegaron a un acuerdo tras largas negociaciones."],
+["alert","alerta, alerta / alertar","The staff were alerted to the fire by the alarm.","El personal fue alertado del fuego por la alarma."],
+["alien","extranjero, alienígena / ajeno","The idea of working on Sundays is alien to him.","La idea de trabajar los domingos le resulta ajena."],
+["alike","similar, parecido","The two sisters look very much alike.","Las dos hermanas se parecen mucho."],
+["allocate","asignar, destinar","The school allocates extra resources to struggling students.","La escuela asigna recursos adicionales a los estudiantes con dificultades."],
+["allow","permitir","The museum does not allow photography inside.","El museo no permite hacer fotos en el interior."],
+["alternative","alternativo / alternativa","We need to find an alternative solution.","Necesitamos encontrar una solución alternativa."],
+["amaze","asombrar, sorprender","It amazes me how much she has improved.","Me asombra cuánto ha mejorado."],
+["ambition","ambición","His ambition is to become a doctor.","Su ambición es convertirse en médico."],
+["analyse","analizar","Scientists analysed the data from the experiment.","Los científicos analizaron los datos del experimento."],
+["ancestor","ancestro, antepasado","Many people are interested in tracing their ancestors.","Muchas personas están interesadas en rastrear a sus antepasados."],
+["ancient","antiguo","Rome is famous for its ancient monuments.","Roma es famosa por sus monumentos antiguos."],
+["annoy","molestar, fastidiar","It really annoys me when people are late.","Me molesta mucho cuando la gente llega tarde."],
+["annual","anual","The company holds an annual conference for employees.","La empresa organiza una conferencia anual para los empleados."],
+["anticipate","anticipar, esperar","We anticipate a large number of visitors this weekend.","Esperamos un gran número de visitantes este fin de semana."],
+["anxiety","ansiedad, inquietud","She felt a lot of anxiety before the exam.","Sintió mucha ansiedad antes del examen."],
+["anxious","ansioso, preocupado","He was anxious about the results of the test.","Estaba ansioso por los resultados de la prueba."],
+["apart","aparte, separado","They live apart but see each other often.","Viven por separado, pero se ven a menudo."],
+["apologize","disculparse, pedir perdón","He apologized for being late.","Se disculpó por llegar tarde."],
+["apparent","aparente, evidente","It soon became apparent that something was wrong.","Pronto se hizo evidente que algo iba mal."],
+["appeal","atractivo / apelar, resultar atractivo","The idea of traveling abroad appeals to many students.","La idea de viajar al extranjero resulta atractiva para muchos estudiantes."],
+["appear","aparecer, parecer","She appeared calm, but she was actually very nervous.","Parecía tranquila, pero en realidad estaba muy nerviosa."],
+["application","solicitud, aplicación","You must submit your application before the deadline.","Debes enviar tu solicitud antes de la fecha límite."],
+["apply","solicitar / aplicar","He applied for a job at the bank.","Solicitó un trabajo en el banco."],
+["appoint","nombrar, designar","They appointed her as the new manager.","La nombraron nueva gerente."],
+["appreciate","apreciar, valorar","I really appreciate your help.","Agradezco mucho tu ayuda."],
+["approach","enfoque, método / acercarse, abordar","We need a new approach to this problem.","Necesitamos un nuevo enfoque para este problema."],
+["appropriate","adecuado, apropiado","Please wear appropriate clothes for the event.","Por favor, lleva ropa adecuada para el evento."],
+["approve","aprobar","The committee approved the proposal.","El comité aprobó la propuesta."],
+["approximate","aproximado / aproximar","The approximate cost of the project is €10,000.","El coste aproximado del proyecto es de 10.000 €."],
+["argue","discutir, argumentar","They often argue about money.","A menudo discuten sobre dinero."],
+["argument","argumento, discusión","He presented a strong argument in favor of the plan.","Presentó un argumento sólido a favor del plan."],
+["arise","surgir, presentarse","Problems may arise during the implementation of the project.","Pueden surgir problemas durante la implementación del proyecto."],
+["arrange","organizar, arreglar","We need to arrange a meeting for next week.","Necesitamos organizar una reunión para la semana que viene."],
+["arrest","detener, arresto","The police arrested the suspect last night.","La policía detuvo al sospechoso anoche."],
+["artificial","artificial","The flowers look real, but they are artificial.","Las flores parecen reales, pero son artificiales."],
+["artistic","artístico","She has a very artistic personality.","Tiene una personalidad muy artística."],
+["aspect","aspecto","One important aspect of the job is teamwork.","Un aspecto importante del trabajo es el trabajo en equipo."],
+["assess","evaluar","Teachers assess students' progress regularly.","Los profesores evalúan el progreso de los estudiantes regularmente."],
+["assign","asignar","The teacher assigned a project to the class.","El profesor asignó un proyecto a la clase."],
+["assist","asistir, ayudar","The nurse assisted the doctor during the operation.","La enfermera asistió al médico durante la operación."],
+["assume","asumir, suponer","We cannot assume that everyone agrees.","No podemos asumir que todos están de acuerdo."],
+["assure","asegurar, garantizar","I can assure you that the information is correct.","Puedo asegurarte que la información es correcta."],
+["attach","adjuntar, unir","Please attach your CV to the email.","Por favor, adjunta tu currículum al correo."],
+["attempt","intento / intentar","He made no attempt to hide his feelings.","No hizo ningún intento por ocultar sus sentimientos."],
+["attend","asistir (a un evento)","Did you attend the conference last week?","¿Asististe a la conferencia la semana pasada?"],
+["attitude","actitud","Her positive attitude helps her overcome difficulties.","Su actitud positiva le ayuda a superar dificultades."],
+["attract","atraer","The festival attracts thousands of visitors every year.","El festival atrae a miles de visitantes cada año."],
+["attractive","atractivo","The apartment is very attractive and well located.","El apartamento es muy atractivo y está bien ubicado."],
+["authority","autoridad","The local authority is responsible for waste collection.","La autoridad local es responsable de la recogida de residuos."],
+["available","disponible","Is this seat available?","¿Está disponible este asiento?"],
+["average","promedio / medio","The average temperature in July is 25°C.","La temperatura media en julio es de 25 °C."],
+["avoid","evitar","Try to avoid making the same mistake again.","Intenta evitar cometer el mismo error otra vez."],
+["aware","consciente","Are you aware of the risks involved?","¿Eres consciente de los riesgos que implica?"],
+["background","antecedentes, trasfondo, fondo","She has a strong academic background.","Tiene una sólida formación académica."],
+["balance","equilibrio / equilibrar","It's important to maintain a balance between work and leisure.","Es importante mantener un equilibrio entre el trabajo y el ocio."],
+["ban","prohibición / prohibir","There is a ban on smoking in public places.","Hay una prohibición de fumar en lugares públicos."],
+["barely","apenas","He was barely able to walk after the accident.","Apenas podía caminar después del accidente."],
+["bargain","ganga / regatear","This jacket was a real bargain at only €20.","Esta chaqueta fue una verdadera ganga a solo 20 €."],
+["barrier","barrera","Language can be a barrier to communication.","El idioma puede ser una barrera para la comunicación."],
+["basic","básico","You need to learn the basic rules first.","Primero necesitas aprender las reglas básicas."],
+["basis","base","Trust is the basis of any good relationship.","La confianza es la base de cualquier buena relación."],
+["battle","batalla","The battle lasted for several hours.","La batalla duró varias horas."],
+["beam","viga / rayo / sonreír ampliamente","She beamed with pride when she heard the news.","Sonrió ampliamente de orgullo cuando escuchó la noticia."],
+["beneficial","beneficioso","Regular exercise is beneficial for your health.","Hacer ejercicio regularmente es beneficioso para tu salud."],
+["benefit","beneficio / beneficiarse","The new policy will benefit many families.","La nueva política beneficiará a muchas familias."],
+["bet","apuesta / apostar","He made a bet with his friend on the football match.","Hizo una apuesta con su amigo sobre el partido de fútbol."],
+["bias","sesgo, prejuicio","The article shows a clear bias towards one political party.","El artículo muestra un claro sesgo hacia un partido político."],
+["bind","atar, vincular","The contract binds both parties to certain obligations.","El contrato vincula a ambas partes a ciertas obligaciones."],
+["biological","biológico","The course covers biological, chemical, and physical processes.","El curso cubre procesos biológicos, químicos y físicos."]
+];
+
+const WORDS_C1 = [
+["acknowledge","reconocer, admitir","The company acknowledged that there had been serious mistakes.","La empresa reconoció que había habido errores graves."],
+["acquire","adquirir, conseguir","She acquired fluency in Spanish after living in Madrid for two years.","Adquirió fluidez en español después de vivir en Madrid dos años."],
+["adapt","adaptar, adecuarse","It took him a while to adapt to the new working environment.","Le tomó un tiempo adaptarse al nuevo entorno de trabajo."],
+["adequate","adecuado, suficiente","The hotel rooms were clean and adequate for our needs.","Las habitaciones del hotel estaban limpias y eran adecuadas para nuestras necesidades."],
+["advocate","defender, abogar por / defensor","She advocates stricter regulations on pollution.","Ella aboga por regulaciones más estrictas sobre la contaminación."],
+["aesthetic","estético, relacionado con la belleza","The building has both functional and aesthetic value.","El edificio tiene tanto valor funcional como estético."],
+["afford","permitirse (económicamente), ofrecer","Many families cannot afford to buy a house in this city.","Muchas familias no pueden permitirse comprar una casa en esta ciudad."],
+["aggregate","agregar, sumar / conjunto, total","The aggregate score determined the winner of the competition.","La puntuación total determinó al ganador de la competición."],
+["align","alinear, poner en línea / hacer coincidir","The company's goals are aligned with its environmental policy.","Los objetivos de la empresa están alineados con su política medioambiental."],
+["alleviate","aliviar, mitigar (dolor, problema)","The new measures aim to alleviate traffic congestion.","Las nuevas medidas buscan aliviar la congestión del tráfico."],
+["allocate","asignar, destinar","The government allocated extra funds to education.","El gobierno asignó fondos adicionales a la educación."],
+["alter","alterar, modificar","The original plan was altered due to unforeseen circumstances.","El plan original fue alterado debido a circunstancias imprevistas."],
+["ambition","ambición, aspiración","Her ambition is to become a research scientist.","Su ambición es convertirse en investigadora científica."],
+["ambiguous","ambiguo, poco claro","The instructions were ambiguous and caused confusion.","Las instrucciones eran ambiguas y causaron confusión."],
+["amend","enmendar, modificar (ley, texto)","Parliament voted to amend the existing legislation.","El parlamento votó enmendar la legislación existente."],
+["analogy","analogía, comparación","He used an analogy to explain the complex concept.","Usó una analogía para explicar el concepto complejo."],
+["anticipate","anticipar, esperar, prever","We anticipate a significant increase in demand next year.","Anticipamos un aumento significativo de la demanda el próximo año."],
+["apparent","aparente, evidente","It soon became apparent that something was wrong.","Pronto se hizo evidente que algo iba mal."],
+["appeal","atractivo, apelación / apelar, resultar atractivo","The idea of working abroad holds great appeal for many students.","La idea de trabajar en el extranjero tiene gran atractivo para muchos estudiantes."],
+["appreciate","apreciar, valorar / entender","I really appreciate your help with this project.","Agradezco mucho tu ayuda con este proyecto."],
+["approach","enfoque, método / acercarse, abordar","We need a new approach to solve this problem.","Necesitamos un nuevo enfoque para resolver este problema."],
+["appropriate","adecuado, apropiado / apropiarse","She wore clothes appropriate for the occasion.","Llevaba ropa adecuada para la ocasión."],
+["approve","aprobar, dar su visto bueno","The committee approved the proposal after a long discussion.","El comité aprobó la propuesta tras una larga discusión."],
+["arbitrary","arbitrario, aleatorio, sin criterio claro","The decision seemed arbitrary and unfair.","La decisión parecía arbitraria e injusta."],
+["articulate","articular, expresar con claridad","He struggled to articulate his thoughts during the interview.","Le costó articular sus pensamientos durante la entrevista."],
+["assess","evaluar, valorar","Teachers assess students' progress through regular tests.","Los profesores evalúan el progreso de los estudiantes mediante pruebas regulares."],
+["assert","afirmar, sostener con firmeza","She asserted her right to a fair trial.","Afirmó su derecho a un juicio justo."],
+["asset","activo, bien / ventaja, recurso valioso","Good communication skills are a valuable asset in any job.","Tener buenas habilidades de comunicación es un activo valioso en cualquier trabajo."],
+["assume","asumir, suponer","We cannot assume that everyone agrees with this policy.","No podemos asumir que todos están de acuerdo con esta política."],
+["attain","alcanzar, lograr (meta, nivel)","She attained a high level of proficiency in French.","Alcanzó un alto nivel de competencia en francés."],
+["attribute","atribuir / atributo, cualidad","He attributes his success to hard work and persistence.","Atribuye su éxito al trabajo duro y la persistencia."],
+["authentic","auténtico, genuino","The restaurant serves authentic Italian cuisine.","El restaurante sirve cocina italiana auténtica."],
+["autonomy","autonomía, independencia","Employees are given a high degree of autonomy in their work.","Se da a los empleados un alto grado de autonomía en su trabajo."],
+["aware","consciente, enterado","Are you aware of the risks involved in this investment?","¿Eres consciente de los riesgos que implica esta inversión?"],
+["barrier","barrera, obstáculo","Language can be a barrier to effective communication.","El idioma puede ser una barrera para la comunicación efectiva."],
+["bias","sesgo, prejuicio","The study was criticized for its gender bias.","El estudio fue criticado por su sesgo de género."],
+["bound","obligado, seguro / límite, frontera","She is bound to succeed if she keeps working this hard.","Es seguro que tendrá éxito si sigue trabajando tan duro."],
+["brief","breve, corto / resumir, informar","The meeting was short and brief.","La reunión fue corta y breve."],
+["bulk","mayor parte, volumen / bulto","The bulk of the work was completed ahead of schedule.","La mayor parte del trabajo se completó antes de lo previsto."],
+["burden","carga, peso / cargar","High taxes are a burden on small businesses.","Los impuestos altos son una carga para las pequeñas empresas."],
+["calculate","calcular","We need to calculate the total cost before making a decision.","Necesitamos calcular el coste total antes de tomar una decisión."],
+["capable","capaz, con capacidad","She is capable of handling complex projects on her own.","Es capaz de gestionar proyectos complejos por sí sola."],
+["capture","capturar, captar (atención, imagen)","The photograph captures the beauty of the landscape perfectly.","La fotografía capta la belleza del paisaje a la perfección."],
+["category","categoría, clase","Books are organized by category in the library.","Los libros están organizados por categoría en la biblioteca."],
+["caution","precaución, advertencia / advertir","He urged caution when interpreting the results.","Instó a la precaución al interpretar los resultados."],
+["characteristic","característica, rasgo / característico","One characteristic of her style is the use of bright colors.","Una característica de su estilo es el uso de colores brillantes."],
+["circumstance","circunstancia, situación","Under no circumstances should you share your password.","Bajo ninguna circunstancia debes compartir tu contraseña."],
+["cite","citar (fuente, ejemplo)","The author cites several studies to support her argument.","La autora cita varios estudios para apoyar su argumento."],
+["civil","civil, ciudadano / cívico","The country is trying to rebuild after the civil war.","El país intenta reconstruirse después de la guerra civil."],
+["clarify","aclarar, clarificar","Could you clarify what you mean by \"long-term strategy\"?","¿Podrías aclarar a qué te refieres con “estrategia a largo plazo”?"],
+["coherent","coherente, lógico","His argument was clear and coherent.","Su argumento era claro y coherente."],
+["collaborate","colaborar","The two companies decided to collaborate on the new project.","Las dos empresas decidieron colaborar en el nuevo proyecto."],
+["commence","comenzar, iniciar (formal)","Construction is scheduled to commence next month.","Está previsto que la construcción comience el próximo mes."],
+["commit","cometer (error, delito) / comprometerse","He was accused of committing a serious offense.","Fue acusado de cometer una infracción grave."],
+["commodity","mercancía, producto básico","Oil is one of the most traded commodities in the world.","El petróleo es una de las mercancías más comercializadas del mundo."],
+["compact","compacto, reducido / pacto, acuerdo","The apartment is small but compact and well designed.","El apartamento es pequeño pero compacto y bien diseñado."],
+["complement","complementar / complemento","The wine complements the flavor of the dish perfectly.","El vino complementa perfectamente el sabor del plato."],
+["complex","complejo, complicado","The human brain is an extremely complex organ.","El cerebro humano es un órgano extremadamente complejo."],
+["comply","cumplir, conformarse (con normas)","All employees must comply with safety regulations.","Todos los empleados deben cumplir las normas de seguridad."],
+["comprise","comprender, constar de","The committee comprises representatives from each department.","El comité está compuesto por representantes de cada departamento."],
+["conceive","concebir (idea, plan)","It is difficult to conceive of a world without electricity.","Es difícil concebir un mundo sin electricidad."],
+["concentrate","concentrar, concentrarse","She found it hard to concentrate with so much noise.","Le resultaba difícil concentrarse con tanto ruido."],
+["concept","concepto, idea","The concept of sustainability is central to the project.","El concepto de sostenibilidad es central en el proyecto."],
+["concern","preocupación, asunto / concernir, importar","There is growing concern about climate change.","Hay una creciente preocupación por el cambio climático."],
+["conclude","concluir, terminar / deducir","The report concludes that more research is needed.","El informe concluye que se necesita más investigación."],
+["conduct","llevar a cabo / conducta, comportamiento","The university will conduct a survey among students.","La universidad llevará a cabo una encuesta entre los estudiantes."],
+["confer","conferir, otorgar / consultar","The degree was conferred on her at the graduation ceremony.","El título le fue conferido en la ceremonia de graduación."],
+["confine","confinar, limitar","Please confine your comments to the topic under discussion.","Por favor, limita tus comentarios al tema en discusión."],
+["confirm","confirmar","The test results confirmed the initial diagnosis.","Los resultados de la prueba confirmaron el diagnóstico inicial."],
+["conflict","conflicto, enfrentamiento / entrar en conflicto","There is a conflict between the two departments.","Hay un conflicto entre los dos departamentos."],
+["confront","confrontar, hacer frente","The government must confront the issue of unemployment.","El gobierno debe hacer frente al problema del desempleo."],
+["consequence","consecuencia, resultado","She did not consider the consequences of her actions.","No consideró las consecuencias de sus acciones."],
+["conservative","conservador, tradicional","The company has a conservative approach to investment.","La empresa tiene un enfoque conservador de la inversión."],
+["considerable","considerable, importante","A considerable number of people attended the event.","Asistió al evento un número considerable de personas."],
+["consistent","consistente, coherente, constante","Her work has been consistently high quality.","Su trabajo ha sido constantemente de alta calidad."],
+["consolidate","consolidar, reforzar","The company aims to consolidate its position in the market.","La empresa busca consolidar su posición en el mercado."],
+["constitute","constituir, representar","Women constitute more than half of the workforce.","Las mujeres constituyen más de la mitad de la fuerza laboral."],
+["construct","construir / construcción","They plan to construct a new bridge over the river.","Planean construir un nuevo puente sobre el río."],
+["consult","consultar","You should consult a doctor if the symptoms persist.","Deberías consultar a un médico si los síntomas persisten."],
+["contemporary","contemporáneo, actual","The museum specializes in contemporary art.","El museo se especializa en arte contemporáneo."],
+["content","contenido / satisfecho, conforme","The website offers a wide range of content for learners.","El sitio web ofrece una amplia gama de contenido para estudiantes."],
+["context","contexto","You need to understand the historical context of the event.","Necesitas entender el contexto histórico del suceso."],
+["contract","contrato / contraer (enfermedad, deuda)","He signed a two-year contract with the company.","Firmó un contrato de dos años con la empresa."],
+["contradict","contradecir","The evidence seems to contradict his version of events.","La evidencia parece contradecir su versión de los hechos."],
+["contrast","contraste / contrastar","There is a sharp contrast between the two policies.","Hay un contraste marcado entre las dos políticas."],
+["contribute","contribuir","Many factors contributed to the success of the project.","Muchos factores contribuyeron al éxito del proyecto."],
+["convenience","comodidad, conveniencia","For your convenience, the office is open until 8 p.m.","Para su comodidad, la oficina está abierta hasta las 8 p. m."],
+["conventional","convencional, tradicional","She prefers conventional medicine to alternative treatments.","Prefiere la medicina convencional a los tratamientos alternativos."],
+["convey","transmitir, comunicar","The painting conveys a strong sense of loneliness.","El cuadro transmite una fuerte sensación de soledad."],
+["convince","convencer","It took a long time to convince him to change his mind.","Tardó mucho en convencerle de que cambiara de opinión."],
+["cooperate","cooperar","The two countries agreed to cooperate on security issues.","Los dos países acordaron cooperar en cuestiones de seguridad."],
+["cope","hacer frente, lidiar (con algo difícil)","She struggles to cope with the stress of her job.","Le cuesta lidiar con el estrés de su trabajo."],
+["core","núcleo, parte central / esencial","Respect for human rights is a core value of the organization.","El respeto a los derechos humanos es un valor central de la organización."],
+["corporate","corporativo, de empresa","He works in the corporate sector as a financial analyst.","Trabaja en el sector corporativo como analista financiero."],
+["correspond","corresponder, coincidir / mantener correspondencia","The results correspond closely to our predictions.","Los resultados se corresponden estrechamente con nuestras predicciones."],
+["criterion","criterio (pl. criteria)","What criteria will you use to evaluate the candidates?","¿Qué criterios usarás para evaluar a los candidatos."],
+["crucial","crucial, fundamental","It is crucial that we act quickly to prevent further damage.","Es crucial que actuemos rápidamente para evitar más daños."],
+["culture","cultura","The company has a strong culture of innovation.","La empresa tiene una fuerte cultura de innovación."],
+["current","actual, corriente / corriente (eléctrica, de agua)","The current situation requires immediate attention.","La situación actual requiere atención inmediata."],
+["debate","debate, discusión / debatir","There is an ongoing debate about the best teaching methods.","Hay un debate en curso sobre los mejores métodos de enseñanza."]
+];
+
+const WORDS_C2 = [
+["abate","disminuir, mitigar","The storm finally began to abate after three hours.","La tormenta finalmente comenzó a disminuir después de tres horas."],
+["aberration","anomalía, desviación","His violent behavior was an aberration; he is usually very calm.","Su comportamiento violento fue una anomalía; normalmente es muy tranquilo."],
+["abhor","detestar, abominar","She abhors any form of cruelty to animals.","Ella detesta cualquier forma de crueldad hacia los animales."],
+["abiding","duradero, permanente","He has an abiding love for classical music.","Él tiene un amor duradero por la música clásica."],
+["abject","miserable, abyecto","They lived in abject poverty, without basic necessities.","Vivían en una pobreza miserable, sin necesidades básicas."],
+["abjure","renunciar, abjurar","He was forced to abjure his former beliefs under pressure.","Fue obligado a renunciar a sus antiguas creencias bajo presión."],
+["abrogate","abolir, anular","The new government promised to abrogate the unjust laws.","El nuevo gobierno prometió anular las leyes injustas."],
+["abscond","huir, escaparse (con algo)","The manager absconded with the company's funds.","El gerente huyó con los fondos de la empresa."],
+["absolve","absolver, eximir","The investigation did not absolve him of all responsibility.","La investigación no lo eximió de toda responsabilidad."],
+["abstruse","abstruso, difícil de entender","The professor's lecture was so abstruse that few students understood it.","La conferencia del profesor fue tan abstrusa que pocos estudiantes la entendieron."],
+["accede","acceder, consentir","After much negotiation, the union acceded to the company's demands.","Tras mucha negociación, el sindicato accedió a las demandas de la empresa."],
+["accentuate","acentuar, resaltar","The lighting was designed to accentuate the painting's colors.","La iluminación fue diseñada para resaltar los colores del cuadro."],
+["acclaimed","aclamado, elogiado","The novel received widespread acclaim and became an instant bestseller.","La novela recibió grandes elogios y se convirtió en un éxito de ventas inmediato."],
+["accolade","galardón, reconocimiento","Winning the award was the highest accolade of her career.","Ganar el premio fue el máximo reconocimiento de su carrera."],
+["acrimonious","acrimonioso, amargo (discusión, tono)","Their divorce was long and acrimonious.","Su divorcio fue largo y amargo."],
+["admonish","advertir, reprender","The teacher admonished the students for talking during the exam.","El profesor reprendió a los estudiantes por hablar durante el examen."],
+["alacrity","prontitud, diligencia, entusiasmo","She accepted the invitation with alacrity.","Ella aceptó la invitación con entusiasmo."],
+["ameliorate","mejorar, aliviar (una situación)","The new policies aim to ameliorate living conditions in the city.","Las nuevas políticas buscan mejorar las condiciones de vida en la ciudad."],
+["amorphous","amorfo, sin forma definida","The cloud had an amorphous shape that kept changing.","La nube tenía una forma amorfa que cambiaba constantemente."],
+["anachronism","anacronismo","Using a typewriter in a modern office seems like an anachronism.","Usar una máquina de escribir en una oficina moderna parece un anacronismo."],
+["anomalous","anómalo, irregular","The test results were anomalous and had to be checked again.","Los resultados de la prueba fueron anómalos y tuvieron que revisarse."],
+["antipathy","antipatía, aversión","He felt a deep antipathy towards dishonest people.","Sentía una profunda antipatía hacia las personas deshonestas."],
+["apathy","apatía, indiferencia","Voter apathy is a serious problem in many democracies.","La apatía de los votantes es un problema grave en muchas democracias."],
+["appease","apaciguar, calmar","The government tried to appease the protesters with new promises.","El gobierno intentó apaciguar a los manifestantes con nuevas promesas."],
+["arbitrate","arbitrar, mediar","A neutral third party was called in to arbitrate the dispute.","Se llamó a una tercera parte neutral para arbitrar la disputa."],
+["arduous","arduo, difícil, laborioso","The climb was long and arduous, but the view was worth it.","La escalada fue larga y ardua, pero la vista valió la pena."],
+["articulate","articular, expresar con claridad","She struggled to articulate her feelings about the incident.","Le costó articular sus sentimientos sobre el incidente."],
+["ascetic","ascético, austero","He led an ascetic life, avoiding all luxuries.","Llevó una vida ascética, evitando todo lujo."],
+["assiduous","asiduo, diligente, constante","Her assiduous work ethic impressed her colleagues.","Su ética de trabajo asidua impresionó a sus colegas."],
+["attenuate","atenuar, debilitar","The drug is designed to attenuate the symptoms of the disease.","El medicamento está diseñado para atenuar los síntomas de la enfermedad."],
+["audacious","audaz, atrevido","The company made an audacious move into a new market.","La empresa hizo un movimiento audaz hacia un nuevo mercado."],
+["augment","aumentar, ampliar","They used extra staff to augment their existing team.","Usaron personal adicional para ampliar su equipo existente."],
+["auspicious","auspicioso, prometedor","The project started under auspicious circumstances.","El proyecto comenzó en circunstancias auspiciosas."],
+["avert","evitar, desviar","Quick action helped avert a major disaster.","Una acción rápida ayudó a evitar un gran desastre."],
+["banal","banal, trivial, corriente","The movie was full of banal dialogue and predictable scenes.","La película estaba llena de diálogos banales y escenas predecibles."],
+["bellicose","belicoso, agresivo","His bellicose tone made negotiations impossible.","Su tono belicoso hizo imposibles las negociaciones."],
+["benevolent","benévolo, bondadoso","The benevolent donor gave millions to charity.","El donante benévolo dio millones a organizaciones benéficas."],
+["bolster","reforzar, apoyar, fortalecer","The new evidence bolstered her argument.","La nueva evidencia reforzó su argumento."],
+["buoyant","boyante, optimista, alegre","Despite the crisis, the economy remained surprisingly buoyant.","A pesar de la crisis, la economía se mantuvo sorprendentemente boyante."],
+["cacophony","cacofonía, estruendo desagradable","A cacophony of car horns filled the street.","Una cacofonía de bocinas de coches llenó la calle."],
+["capitulate","capitular, rendirse","The army was forced to capitulate after weeks of fighting.","El ejército fue obligado a capitular después de semanas de combate."],
+["castigate","castigar severamente, reprender duramente","The report castigated the government for its inaction.","El informe reprendió duramente al gobierno por su inacción."],
+["caustic","cáustico, mordaz, corrosivo","He was known for his caustic sense of humor.","Era conocido por su sentido del humor mordaz."],
+["censure","censurar, reprobar formalmente","The committee voted to censure the member for misconduct.","El comité votó censurar al miembro por conducta indebida."],
+["clandestine","clandestino, secreto","They held clandestine meetings to plan the protest.","Celebraron reuniones clandestinas para planificar la protesta."],
+["coerce","coaccionar, obligar","He claimed he had been coerced into signing the document.","Afirmó que lo habían coaccionado para firmar el documento."],
+["cogent","convincente, sólido (argumento)","She presented a cogent argument in favor of the reform.","Presentó un argumento convincente a favor de la reforma."],
+["commensurate","proporcional, correspondiente","His salary was commensurate with his experience and skills.","Su salario era proporcional a su experiencia y habilidades."],
+["compendium","compendio, recopilación","The book is a compendium of modern philosophical thought.","El libro es un compendio del pensamiento filosófico moderno."],
+["complacent","complaciente, conformista, satisfecho en exceso","We cannot afford to be complacent about safety standards.","No podemos permitirnos ser complacientes con las normas de seguridad."],
+["concur","coincidir, estar de acuerdo","Most experts concur that the situation is getting worse.","La mayoría de los expertos coinciden en que la situación está empeorando."],
+["condone","tolerar, pasar por alto (algo malo)","The school does not condone bullying in any form.","La escuela no tolera el acoso escolar en ninguna forma."],
+["conducive","favorable, propicio","A quiet environment is conducive to studying.","Un entorno tranquilo es propicio para estudiar."],
+["conundrum","enigma, problema difícil, dilema","The shortage of housing is a complex conundrum for policymakers.","La escasez de vivienda es un dilema complejo para los responsables políticos."],
+["corroborate","corroborar, confirmar","Several witnesses corroborated his version of events.","Varios testigos corroboraron su versión de los hechos."],
+["cryptic","críptico, enigmático","She left a cryptic message that no one could understand.","Dejó un mensaje críptico que nadie pudo entender."],
+["culpable","culpable","The investigation found the driver culpable of negligence.","La investigación determinó que el conductor era culpable de negligencia."],
+["daunt","intimidar, amedrentar","The scale of the project did not daunt the team.","La magnitud del proyecto no intimidó al equipo."],
+["dearth","escasez, carestía","There is a dearth of reliable information on the topic.","Hay una escasez de información fiable sobre el tema."],
+["deferential","deferente, respetuoso","He spoke in a deferential tone to the senior professor.","Habló con un tono respetuoso al profesor de mayor rango."],
+["delineate","delinear, describir con precisión","The report delineates the main challenges facing the industry.","El informe describe los principales retos a los que se enfrenta la industria."],
+["demur","objetar, mostrar reservas","When asked to lead the project, she demurred, citing lack of time.","Cuando le pidieron liderar el proyecto, objetó, alegando falta de tiempo."],
+["denigrate","denigrar, menospreciar","It is unfair to denigrate someone's achievements.","Es injusto menospreciar los logros de alguien."],
+["despondent","desalentado, abatido, desesperanzado","After several rejections, he became increasingly despondent.","Tras varios rechazos, se volvió cada vez más desalentado."],
+["didactic","didáctico, moralizante","The novel is too didactic and lacks subtlety.","La novela es demasiado didáctica y carece de sutileza."],
+["diffident","tímido, reservado, poco seguro","She was diffident about expressing her opinions in meetings.","Era tímida a la hora de expresar sus opiniones en las reuniones."],
+["dilapidated","deteriorado, en ruinas","They bought a dilapidated house and renovated it completely.","Compraron una casa deteriorada y la renovaron por completo."],
+["disconcert","desconcertar, inquietar","His sudden change of attitude disconcerted everyone.","Su cambio repentino de actitud desconcertó a todos."],
+["disingenuous","poco sincero, hipócrita, fingido","His apology seemed disingenuous and insincere.","Su disculpa parecía poco sincera y fingida."],
+["disparate","dispar, muy diferente, heterogéneo","The group brought together people from disparate backgrounds.","El grupo reunió a personas de procedencias muy diferentes."],
+["disseminate","diseminar, difundir (información)","The organization works to disseminate accurate health information.","La organización trabaja para difundir información precisa sobre salud."],
+["dissonance","disonancia, desacuerdo","There was a clear dissonance between his words and actions.","Había una clara disonancia entre sus palabras y sus acciones."],
+["divergent","divergente, que se separa","The two theories offer divergent explanations of the phenomenon.","Las dos teorías ofrecen explicaciones divergentes del fenómeno."],
+["docile","dócil, manejable","The dog was calm and docile around children.","El perro era tranquilo y dócil con los niños."],
+["dogmatic","dogmático, rígido en sus creencias","He was too dogmatic to consider other points of view.","Era demasiado dogmático para considerar otros puntos de vista."],
+["dubious","dudoso, cuestionable","The company has a dubious reputation in the industry.","La empresa tiene una reputación cuestionable en el sector."],
+["ebullient","efervescente, entusiasta, exuberante","She was ebullient after receiving the good news.","Estaba eufórica después de recibir la buena noticia."],
+["eclectic","ecléctico, variado","His musical tastes are eclectic, ranging from jazz to rock.","Sus gustos musicales son eclécticos, desde el jazz hasta el rock."],
+["efface","borrar, hacer desaparecer","Time had effaced most of the inscription on the stone.","El tiempo había borrado la mayor parte de la inscripción en la piedra."],
+["effervescent","efervescente, burbujeante, animado","Her effervescent personality made her popular at parties.","Su personalidad efervescente la hacía popular en las fiestas."],
+["effrontery","desvergüenza, descaro","He had the effrontery to ask for a raise after being late every day.","Tuvo el descaro de pedir un aumento después de llegar tarde todos los días."],
+["effusive","efusivo, exuberante (en elogios, emociones)","She was effusive in her praise of the new manager.","Fue efusiva en sus elogios al nuevo director."],
+["elicit","elicitar, provocar, obtener (información, reacción)","The question was designed to elicit an honest response.","La pregunta estaba diseñada para provocar una respuesta sincera."],
+["elusive","escurridizo, difícil de alcanzar o definir","Success remained elusive despite years of hard work.","El éxito se mantuvo escurridizo a pesar de años de trabajo duro."],
+["emulate","emular, imitar (a menudo con admiración)","Young athletes try to emulate their idols.","Los jóvenes atletas intentan emular a sus ídolos."],
+["enervate","debilitar, agotar (física o moralmente)","The long negotiations enervated both sides.","Las largas negociaciones agotaron a ambas partes."],
+["engender","engendrar, causar, provocar","The policy engendered widespread criticism.","La política provocó críticas generalizadas."],
+["enigmatic","enigmático, misterioso","The artist led an enigmatic life, full of secrets.","El artista llevó una vida enigmática, llena de secretos."],
+["ephemeral","efímero, pasajero, de corta duración","Fashion trends are often ephemeral and quickly forgotten.","Las tendencias de moda suelen ser efímeras y rápidamente olvidadas."],
+["equivocal","equívoco, ambiguo","His answer was equivocal and satisfied no one.","Su respuesta fue ambigua y no satisfizo a nadie."],
+["erudite","erudito, muy culto","The professor gave an erudite lecture on ancient history.","El profesor dio una conferencia erudita sobre historia antigua."],
+["esoteric","esotérico, reservado a unos pocos","The discussion became increasingly esoteric and hard to follow.","La discusión se volvió cada vez más esotérica y difícil de seguir."],
+["evanescent","evanescente, fugaz, que se desvanece","The evanescent beauty of the sunset lasted only a few minutes.","La belleza fugaz del atardecer duró solo unos minutos."],
+["evocative","evocador","The smell of rain is evocative of childhood summers.","El olor a la lluvia es evocador de los veranos de la infancia."],
+["exacerbate","exacerbar, empeorar","His comments only served to exacerbate the tension.","Sus comentarios solo sirvieron para exacerbar la tensión."],
+["exasperate","exasperar, irritar mucho","His constant interruptions began to exasperate the speaker.","Sus constantes interrupciones comenzaron a exasperar al orador."],
+["expedite","agilizar, acelerar (un proceso)","We need to expedite the approval process to meet the deadline.","Necesitamos agilizar el proceso de aprobación para cumplir el plazo."],
+["explicit","explícito, claro y directo","The instructions were explicit and easy to follow.","Las instrucciones eran explícitas y fáciles de seguir."],
+["exemplify","ejemplificar, ser ejemplo de","This case exemplifies the problems with the current system.","Este caso ejemplifica los problemas del sistema actual."],
+["exhaustive","exhaustivo, completo, muy detallado","The report provides an exhaustive analysis of the data.","El informe ofrece un análisis exhaustivo de los datos."]
+];
+
+const SETS = {
+  inicial: {
+    id: 'inicial',
+    label: 'Material inicial',
+    words: WORDS_INITIAL,
+    subtitle: 'Material inicial del profesor: escucha, deletrea y escribe las palabras.'
+  },
+  a1: {
+    id: 'a1',
+    label: 'Nivel A1',
+    words: WORDS_A1,
+    subtitle: 'Nivel A1: 100 palabras con traducción y frase de ejemplo.'
+  },
+  a2: {
+    id: 'a2',
+    label: 'Nivel A2',
+    words: WORDS_A2,
+    subtitle: 'Nivel A2: 100 palabras con traducción y frase de ejemplo.'
+  },
+  b1: {
+    id: 'b1',
+    label: 'Nivel B1',
+    words: WORDS_B1,
+    subtitle: 'Nivel B1: 100 palabras con traducción y frase de ejemplo.'
+  },
+  b2: {
+    id: 'b2',
+    label: 'Nivel B2',
+    words: WORDS_B2,
+    subtitle: 'Nivel B2: 100 palabras con traducción y frase de ejemplo.'
+  },
+  c1: {
+    id: 'c1',
+    label: 'Nivel C1',
+    words: WORDS_C1,
+    subtitle: 'Nivel C1: 100 palabras con traducción y frase de ejemplo.'
+  },
+  c2: {
+    id: 'c2',
+    label: 'Nivel C2',
+    words: WORDS_C2,
+    subtitle: 'Nivel C2: 100 palabras con traducción y frase de ejemplo.'
+  }
+};
+
+function activeWords(){
+  return SETS[currentSetId].words;
+}
+
 function shuffle(arr){
   const a = arr.slice();
   for(let i=a.length-1;i>0;i--){
@@ -808,13 +1540,13 @@ function shuffle(arr){
 }
 
 let randomMode = false;
-let deck = WORDS.slice(); // keep the file's own order (alphabetical, A first) for abecedario practice
+let currentSetId = 'inicial';
+let deck = activeWords().slice();
 let idx = 0;
 let results = new Array(deck.length).fill(null); // null | 'correct' | 'wrong'
 let answered = false;
 let speaking = false;
 let practiceStarted = false;
-let examMode = false;
 let speechRate = 0.7;
 let speechRunId = 0;
 
@@ -825,14 +1557,28 @@ const els = {
   alphabetReview: document.getElementById('alphabetReview'),
   alphabetGrid: document.getElementById('alphabetGrid'),
   alphabetStatus: document.getElementById('alphabetStatus'),
-  startPracticeBtn: document.getElementById('startPracticeBtn'),
   studyMaterial: document.getElementById('studyMaterial'),
   studySearch: document.getElementById('studySearch'),
   studyList: document.getElementById('studyList'),
   studyCount: document.getElementById('studyCount'),
   studyBackBtn: document.getElementById('studyBackBtn'),
-  practiceModeBtn: document.getElementById('practiceModeBtn'),
-  examModeBtn: document.getElementById('examModeBtn'),
+  setInicialBtn: document.getElementById('setInicialBtn'),
+  setA1Btn: document.getElementById('setA1Btn'),
+  setA2Btn: document.getElementById('setA2Btn'),
+  setB1Btn: document.getElementById('setB1Btn'),
+  setB2Btn: document.getElementById('setB2Btn'),
+  setC1Btn: document.getElementById('setC1Btn'),
+  setC2Btn: document.getElementById('setC2Btn'),
+  studySetInicialBtn: document.getElementById('studySetInicialBtn'),
+  studySetA1Btn: document.getElementById('studySetA1Btn'),
+  studySetA2Btn: document.getElementById('studySetA2Btn'),
+  studySetB1Btn: document.getElementById('studySetB1Btn'),
+  studySetB2Btn: document.getElementById('studySetB2Btn'),
+  studySetC1Btn: document.getElementById('studySetC1Btn'),
+  studySetC2Btn: document.getElementById('studySetC2Btn'),
+  levelBadgeFront: document.getElementById('levelBadgeFront'),
+  levelBadgeBack: document.getElementById('levelBadgeBack'),
+  headerSub: document.getElementById('headerSub'),
   speedRange: document.getElementById('speedRange'),
   speedLabel: document.getElementById('speedLabel'),
   frontFace: document.getElementById('frontFace'),
@@ -882,11 +1628,12 @@ function stopActiveSpeech(){
 }
 
 function applyOrder(){
-  deck = (examMode || randomMode) ? shuffle(WORDS) : WORDS.slice();
+  const words = activeWords();
+  deck = randomMode ? shuffle(words) : words.slice();
   idx = 0;
   results = new Array(deck.length).fill(null);
-  els.orderLabelOff.classList.toggle('active', !randomMode && !examMode);
-  els.orderLabelOn.classList.toggle('active', randomMode || examMode);
+  els.orderLabelOff.classList.toggle('active', !randomMode);
+  els.orderLabelOn.classList.toggle('active', randomMode);
   els.doneScreen.classList.add('is-hidden');
   els.backFace.classList.add('is-hidden');
   els.studyMaterial.classList.add('is-hidden');
@@ -900,24 +1647,76 @@ function applyOrder(){
   }
 }
 
-function updateModeControls(){
-  els.practiceModeBtn.classList.toggle('active', !examMode);
-  els.examModeBtn.classList.toggle('active', examMode);
-  els.orderToggle.disabled = examMode;
-  els.orderSwitch.classList.toggle('is-disabled', examMode);
-  els.startPracticeBtn.textContent = examMode ? 'Comenzar examen →' : 'Empezar práctica de palabras →';
+function updateSetButtons(){
+  const btnMap = {
+    inicial: els.setInicialBtn,
+    a1: els.setA1Btn,
+    a2: els.setA2Btn,
+    b1: els.setB1Btn,
+    b2: els.setB2Btn,
+    c1: els.setC1Btn,
+    c2: els.setC2Btn
+  };
+  const studyBtnMap = {
+    inicial: els.studySetInicialBtn,
+    a1: els.studySetA1Btn,
+    a2: els.studySetA2Btn,
+    b1: els.studySetB1Btn,
+    b2: els.studySetB2Btn,
+    c1: els.studySetC1Btn,
+    c2: els.studySetC2Btn
+  };
+  ['inicial','a1','a2','b1','b2','c1','c2'].forEach(id => {
+    const isActive = currentSetId === id;
+    if(btnMap[id]) btnMap[id].classList.toggle('active', isActive);
+    if(studyBtnMap[id]) studyBtnMap[id].classList.toggle('active', isActive);
+  });
+  els.headerSub.textContent = SETS[currentSetId].subtitle;
 }
 
-els.practiceModeBtn.addEventListener('click', () => {
-  examMode = false;
-  updateModeControls();
+function selectSet(id){
+  currentSetId = id;
+  updateSetButtons();
   applyOrder();
-});
-els.examModeBtn.addEventListener('click', () => {
-  examMode = true;
-  updateModeControls();
+  renderStudyList(els.studySearch.value);
+}
+
+function updateLevelBadges(){
+  const label = SETS[currentSetId].label;
+  if(els.levelBadgeFront) els.levelBadgeFront.textContent = label;
+  if(els.levelBadgeBack)  els.levelBadgeBack.textContent  = label;
+}
+
+function startPractice(){
+  practiceStarted = true;
+  speechRunId++;
+  if('speechSynthesis' in window) speechSynthesis.cancel();
+  speaking = false;
+  els.scene.classList.remove('speaking');
+  els.alphabetReview.classList.add('is-hidden');
+  els.studyMaterial.classList.add('is-hidden');
+  updateLevelBadges();
   applyOrder();
-});
+}
+
+/* Level buttons in the alphabet-review panel → select + start practice immediately */
+els.setInicialBtn.addEventListener('click', () => { currentSetId = 'inicial'; updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setA1Btn.addEventListener('click',      () => { currentSetId = 'a1';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setA2Btn.addEventListener('click',      () => { currentSetId = 'a2';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setB1Btn.addEventListener('click',      () => { currentSetId = 'b1';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setB2Btn.addEventListener('click',      () => { currentSetId = 'b2';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setC1Btn.addEventListener('click',      () => { currentSetId = 'c1';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+els.setC2Btn.addEventListener('click',      () => { currentSetId = 'c2';      updateSetButtons(); renderStudyList(els.studySearch.value); startPractice(); });
+
+/* Level buttons in the study-material panel → only switch the list, no practice start */
+els.studySetInicialBtn.addEventListener('click', () => { selectSet('inicial'); els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetA1Btn.addEventListener('click',      () => { selectSet('a1');      els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetA2Btn.addEventListener('click',      () => { selectSet('a2');      els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetB1Btn.addEventListener('click',      () => { selectSet('b1');      els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetB2Btn.addEventListener('click',      () => { selectSet('b2');      els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetC1Btn.addEventListener('click',      () => { selectSet('c1');      els.studyMaterial.classList.remove('is-hidden'); });
+els.studySetC2Btn.addEventListener('click',      () => { selectSet('c2');      els.studyMaterial.classList.remove('is-hidden'); });
+
 function updateSpeedLabel(){
   const label = speechRate < 0.65 ? 'lenta' : speechRate > 0.95 ? 'rápida' : 'normal';
   els.speedLabel.textContent = `Velocidad: ${label} (${speechRate.toFixed(1)}×)`;
@@ -979,7 +1778,6 @@ function render(){
   els.backTranslation.textContent = translation;
   els.backExample.textContent = example;
   els.backExampleEs.textContent = exampleEs;
-  els.flipBtn.classList.toggle('is-hidden', examMode);
 
   els.input.value = '';
   els.input.disabled = false;
@@ -1062,17 +1860,18 @@ function buildAlphabetReview(){
 }
 
 function renderStudyList(query = ''){
+  const words = activeWords();
   const search = query.trim().toLowerCase();
-  const matches = WORDS.filter(([word, translation, example]) =>
-    `${word} ${translation} ${example}`.toLowerCase().includes(search)
+  const matches = words.filter(([word, translation, example, exampleEs]) =>
+    `${word} ${translation} ${example} ${exampleEs}`.toLowerCase().includes(search)
   );
   els.studyList.innerHTML = '';
-  els.studyCount.textContent = matches.length === WORDS.length ? WORDS.length : matches.length;
+  els.studyCount.textContent = matches.length === words.length ? words.length : matches.length;
   if(matches.length === 0){
     els.studyList.innerHTML = '<p class="study-empty">No encontramos esa palabra.</p>';
     return;
   }
-  matches.forEach(([word, translation, example]) => {
+  matches.forEach(([word, translation, example, exampleEs]) => {
     const item = document.createElement('div');
     item.className = 'study-item';
     const title = document.createElement('div');
@@ -1085,8 +1884,11 @@ function renderStudyList(query = ''){
     const exampleEl = document.createElement('span');
     exampleEl.className = 'study-example';
     exampleEl.textContent = example;
+    const exampleEsEl = document.createElement('span');
+    exampleEsEl.className = 'study-example-es';
+    exampleEsEl.textContent = exampleEs;
     title.append(wordEl, translationEl);
-    item.append(title, exampleEl);
+    item.append(title, exampleEl, exampleEsEl);
     els.studyList.appendChild(item);
   });
 }
@@ -1111,16 +1913,7 @@ els.materialBtn.addEventListener('click', openStudyMaterial);
 els.studySearch.addEventListener('input', () => renderStudyList(els.studySearch.value));
 els.studyBackBtn.addEventListener('click', () => els.menuBtn.click());
 
-els.startPracticeBtn.addEventListener('click', () => {
-  practiceStarted = true;
-  speechRunId++;
-  if('speechSynthesis' in window) speechSynthesis.cancel();
-  speaking = false;
-  els.scene.classList.remove('speaking');
-  els.alphabetReview.classList.add('is-hidden');
-  els.studyMaterial.classList.add('is-hidden');
-  applyOrder();
-});
+
 
 els.menuBtn.addEventListener('click', () => {
   speechRunId++;
@@ -1231,20 +2024,12 @@ function checkAnswer(){
   els.input.disabled = true;
   els.checkBtn.disabled = true;
 
-  if(examMode){
-    els.verdict.className = 'verdict neutral';
-    els.verdict.textContent = 'Respuesta registrada';
-    buildLetterRow(els.typedRow, typed, '', 'exam');
-    els.correctBlock.classList.add('is-hidden');
-    els.nextBtn.textContent = 'Siguiente pregunta →';
-  } else {
-    els.verdict.className = 'verdict ' + (isCorrect ? 'ok' : 'bad');
-    els.verdict.textContent = isCorrect ? '✓ ¡Correcto!' : '✕ No es correcto, revisa las letras';
-    buildLetterRow(els.typedRow, typed, word, 'typed');
-    buildLetterRow(els.correctRow, word, null, 'ref');
-    els.correctBlock.classList.remove('is-hidden');
-    els.nextBtn.textContent = 'Siguiente palabra →';
-  }
+  els.verdict.className = 'verdict ' + (isCorrect ? 'ok' : 'bad');
+  els.verdict.textContent = isCorrect ? '✓ ¡Correcto!' : '✕ No es correcto, revisa las letras';
+  buildLetterRow(els.typedRow, typed, word, 'typed');
+  buildLetterRow(els.correctRow, word, null, 'ref');
+  els.correctBlock.classList.remove('is-hidden');
+  els.nextBtn.textContent = 'Siguiente palabra →';
 
   els.resultPanel.classList.add('show');
   updateProgressCell(idx);
@@ -1267,7 +2052,6 @@ els.nextBtn.addEventListener('click', goNext);
 
 /* ---------- Flip (crossfade, auto-height) ---------- */
 function flip(){
-  if(examMode) return;
   els.frontFace.classList.add('fade-out');
   setTimeout(() => {
     els.frontFace.classList.add('is-hidden');
@@ -1293,16 +2077,6 @@ function showDone(){
   els.doneScreen.classList.remove('is-hidden');
 
   const ok = results.filter(r => r === 'correct').length;
-  if(examMode){
-    const grade = 1 + (ok / deck.length) * 4;
-    els.doneScore.textContent = grade.toFixed(1) + ' / 5';
-    els.doneTitle.textContent = 'Examen terminado';
-    els.doneText.textContent = `${ok} respuestas correctas de ${deck.length}.`;
-    els.missedList.innerHTML = '<div style="justify-content:center;color:var(--accent-soft);">Tu resultado se muestra sin revelar las respuestas.</div>';
-    els.restartBtn.textContent = 'Repetir examen';
-    return;
-  }
-
   els.doneScore.textContent = ok + ' / ' + deck.length;
   els.doneTitle.textContent = '¡Sesión terminada!';
   els.doneText.textContent = 'Aquí están las palabras que puedes repasar.';
