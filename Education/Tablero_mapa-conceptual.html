@@ -30,6 +30,13 @@
     padding:14px 22px; display:flex; align-items:center; gap:18px; flex-wrap:wrap; z-index:20;
   }
   .brand{display:flex; flex-direction:column; margin-right:4px;}
+  .back-link{
+    display:flex; align-items:center; gap:6px; text-decoration:none; color:var(--muted);
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600;
+    padding-right:16px; border-right:1px solid var(--panel-border); white-space:nowrap;
+    transition:color .15s ease;
+  }
+  .back-link:hover{color:var(--accent);}
   .brand .eyebrow{font-size:10px; letter-spacing:.18em; color:var(--string); text-transform:uppercase;}
   .brand h1{font-family:'Special Elite', monospace; font-size:19px; margin:2px 0 0; letter-spacing:.02em; color:var(--cream);}
   .divider{width:1px; height:32px; background:var(--panel-border);}
@@ -205,12 +212,37 @@
   .steps li b{color:var(--cream); display:block; margin-bottom:2px; font-size:12.5px;}
   .guide-close{position:absolute; top:16px; right:16px; background:none; border:none; color:var(--muted); font-size:18px; cursor:pointer;}
   .guide-close:hover{color:var(--cream);}
+
+  aside.practice{width:360px;}
+  .level-tabs{display:flex; gap:6px; margin:14px 0 12px;}
+  .level-tab{
+    flex:1; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.03em;
+    background:transparent; color:var(--muted); border:1px solid var(--panel-border);
+    padding:8px 4px; border-radius:5px; cursor:pointer; text-align:center; transition:all .15s ease;
+  }
+  .level-tab:hover{border-color:var(--accent); color:var(--accent);}
+  .level-tab.active{background:var(--accent); border-color:var(--accent); color:var(--accent-ink); font-weight:600;}
+  .prompt-panel{display:none;}
+  .prompt-panel.active{display:block;}
+  .prompt-panel textarea{
+    width:100%; min-height:260px; resize:vertical; font-family:'IBM Plex Mono',monospace; font-size:11.5px;
+    line-height:1.55; color:var(--cream); background:#141019; border:1px solid var(--panel-border);
+    border-radius:6px; padding:12px; margin-top:8px;
+  }
+  .btn-copy-prompt{
+    width:100%; margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; font-weight:600;
+    background:var(--accent); color:var(--accent-ink); border:1px solid var(--accent); border-radius:5px;
+    padding:9px; cursor:pointer; transition:filter .15s ease;
+  }
+  .btn-copy-prompt:hover{filter:brightness(1.08);}
+  .btn-copy-prompt.copied{background:var(--string); border-color:var(--string); color:#fff;}
 </style>
 </head>
 <body>
 <div class="app">
 
   <header class="toolbar">
+    <a href="mapa_conceptual.html" class="back-link" title="Volver a la guía de mapas conceptuales">↩ Guía</a>
     <div class="brand">
       <span class="eyebrow">Lectura activa · corcho digital</span>
       <h1>Tablero de Mapas Conceptuales</h1>
@@ -237,6 +269,7 @@
       <input type="file" id="photo-input" accept="image/*" style="display:none">
       <button class="btn" id="btn-photo">🖼 Añadir foto</button>
       <button class="btn" id="btn-guide">📖 Guía paso a paso</button>
+      <button class="btn" id="btn-practice">🤖 Practicar con textos IA</button>
       <button class="btn" id="btn-connect">🧵 Conectar conceptos</button>
       <button class="btn danger" id="btn-clear">🗑 Limpiar tablero</button>
       <button class="btn primary" id="btn-export">⇩ Exportar a PDF</button>
@@ -275,6 +308,52 @@
     <li><b>Consolida el mapa</b>Evita que sea solo un árbol: conecta niveles distintos entre sí.</li>
     <li><b>Revisa</b>¿Responde la pregunta? ¿Todo es relevante? ¿Todo concepto tiene conector?</li>
   </ol>
+</aside>
+
+<aside class="guide practice" id="practice">
+  <button class="guide-close" id="practice-close">×</button>
+  <span class="eyebrow">Practicar con IA</span>
+  <h2>Genera un texto para practicar</h2>
+  <p>Copia uno de estos prompts y pégalo en tu IA favorita (Claude, ChatGPT, etc.). Te dará un texto nuevo para leer y armar tu mapa en este tablero; cuando termines, le muestras tu mapa a la misma IA y te lo evalúa con nota de 1 a 5.</p>
+
+  <div class="level-tabs">
+    <button class="level-tab active" data-level="facil">Fácil</button>
+    <button class="level-tab" data-level="medio">Medio</button>
+    <button class="level-tab" data-level="avanzado">Avanzado</button>
+  </div>
+
+  <div class="prompt-panel active" id="panel-facil">
+    <textarea readonly>Quiero practicar haciendo mapas conceptuales. Escríbeme un texto breve (100-150 palabras), en español, con lenguaje sencillo, sobre un proceso o ciclo simple y concreto (por ejemplo: cómo funciona algo cotidiano, un ciclo natural, o una secuencia de pasos con inicio y final claros). Que tenga entre 5 y 8 ideas clave, en un solo nivel de dificultad, sin tecnicismos.
+
+No me des la lista de conceptos ni el mapa: solo el texto.
+
+Al final del texto, agrega exactamente esto: "Aquí está el texto. Haz tu mapa conceptual y cuando termines lo evaluamos juntos: te voy a poner una nota de 1 a 5."
+
+Cuando yo te muestre mi mapa (como imagen o descrito en palabras), evalúalo revisando: si identifiqué bien los conceptos, si los conectores de las líneas tienen sentido al leerse como frase, si el mapa responde una pregunta central, y si el inicio y el final del proceso quedaron bien marcados. Termina siempre dándome una nota de 1 a 5 y 2-3 sugerencias concretas para mejorar.</textarea>
+    <button type="button" class="btn-copy-prompt" data-target="panel-facil">Copiar prompt</button>
+  </div>
+
+  <div class="prompt-panel" id="panel-medio">
+    <textarea readonly>Quiero practicar haciendo mapas conceptuales. Escríbeme un texto de nivel intermedio (200-300 palabras), en español, sobre un tema con algo de profundidad (puede ser un tema escolar de ciencias, historia o sociedad). El texto debe tener una idea central con varias causas o factores, al menos una relación de causa-efecto o comparación, y algunas ideas secundarias que se desprendan de las principales — no una simple lista plana.
+
+No me des la lista de conceptos ni el mapa: solo el texto.
+
+Al final del texto, agrega exactamente esto: "Aquí está el texto. Haz tu mapa conceptual y cuando termines lo evaluamos juntos: te voy a poner una nota de 1 a 5."
+
+Cuando yo te muestre mi mapa (como imagen o descrito en palabras), evalúalo revisando: si los conceptos están bien elegidos y jerarquizados de lo general a lo específico, si cada conector arma una frase con sentido, si hay al menos una conexión cruzada entre ramas distintas, y si el mapa responde una pregunta de lectura clara. Termina siempre dándome una nota de 1 a 5 y 2-3 sugerencias concretas para mejorar.</textarea>
+    <button type="button" class="btn-copy-prompt" data-target="panel-medio">Copiar prompt</button>
+  </div>
+
+  <div class="prompt-panel" id="panel-avanzado">
+    <textarea readonly>Quiero practicar haciendo mapas conceptuales. Escríbeme un texto avanzado (350-450 palabras), en español, sobre un tema abstracto o académico (por ejemplo: un proceso psicológico, social, económico o científico con varias variables interrelacionadas). El texto debe tener una jerarquía de al menos 3-4 niveles, varias relaciones cruzadas posibles entre ramas distintas, y algún matiz o excepción que un lector distraído podría pasar por alto.
+
+No me des la lista de conceptos ni el mapa: solo el texto.
+
+Al final del texto, agrega exactamente esto: "Aquí está el texto. Haz tu mapa conceptual y cuando termines lo evaluamos juntos: te voy a poner una nota de 1 a 5."
+
+Cuando yo te muestre mi mapa (como imagen o descrito en palabras), evalúalo con exigencia de nivel avanzado: revisa la jerarquía completa, la precisión de cada conector, si capturé las relaciones cruzadas y los matices del texto, y si sobra o falta algún concepto. Termina siempre dándome una nota de 1 a 5 y 2-3 sugerencias concretas para mejorar.</textarea>
+    <button type="button" class="btn-copy-prompt" data-target="panel-avanzado">Copiar prompt</button>
+  </div>
 </aside>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -611,8 +690,43 @@
   });
 
   const guide = document.getElementById('guide');
-  document.getElementById('btn-guide').addEventListener('click', ()=>guide.classList.add('open'));
+  document.getElementById('btn-guide').addEventListener('click', ()=>{
+    practice.classList.remove('open');
+    guide.classList.add('open');
+  });
   document.getElementById('guide-close').addEventListener('click', ()=>guide.classList.remove('open'));
+
+  const practice = document.getElementById('practice');
+  document.getElementById('btn-practice').addEventListener('click', ()=>{
+    guide.classList.remove('open');
+    practice.classList.add('open');
+  });
+  document.getElementById('practice-close').addEventListener('click', ()=>practice.classList.remove('open'));
+
+  document.querySelectorAll('.level-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      document.querySelectorAll('.level-tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.prompt-panel').forEach(p=>p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-'+tab.dataset.level).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.btn-copy-prompt').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      const textarea = document.querySelector('#'+btn.dataset.target+' textarea');
+      try{
+        await navigator.clipboard.writeText(textarea.value);
+      }catch{
+        textarea.select();
+        document.execCommand('copy');
+      }
+      const original = btn.textContent;
+      btn.textContent = '¡Copiado!';
+      btn.classList.add('copied');
+      setTimeout(()=>{ btn.textContent = original; btn.classList.remove('copied'); }, 1800);
+    });
+  });
 
   document.getElementById('btn-export').addEventListener('click', async ()=>{
     const btn = document.getElementById('btn-export');
