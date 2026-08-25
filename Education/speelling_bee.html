@@ -701,7 +701,7 @@
         <button class="replay-btn" id="replayBtn">🔁 Escuchar de nuevo</button>
         <div class="speed-inline">
           <div class="setting-title" id="speedLabel">Velocidad: normal (0.7×)</div>
-          <input class="speed-control" id="speedRange" type="range" min="0.4" max="1.3" step="0.1" value="0.7" aria-labelledby="speedLabel">
+          <input class="speed-control" id="speedRange" type="range" min="0.3" max="1.3" step="0.1" value="0.6" aria-labelledby="speedLabel">
           <div class="speed-caption"><span>Lenta</span><span>Rápida</span></div>
         </div>
       </div>
@@ -1548,7 +1548,7 @@ let results = new Array(deck.length).fill(null); // null | 'correct' | 'wrong'
 let answered = false;
 let speaking = false;
 let practiceStarted = false;
-let speechRate = 0.7;
+let speechRate = 0.6;
 let speechRunId = 0;
 
 const els = {
@@ -1940,16 +1940,38 @@ function speakWord(word){
   speaking = true;
   els.scene.classList.add('speaking');
   els.replayBtn.disabled = true;
-  els.statusText.textContent = 'Deletreando...';
+  els.statusText.textContent = 'Escuchando la palabra...';
+
+  const u = makeUtterance(word, speechRate);
+  const finish = () => {
+    if(runId !== speechRunId) return;
+    speaking = false;
+    els.scene.classList.remove('speaking');
+    els.replayBtn.disabled = false;
+    els.statusText.textContent = 'Escribe la palabra que escuchaste';
+  };
+  u.onend = finish;
+  u.onerror = finish;
+  speechSynthesis.speak(u);
+}
+
+// Played automatically right after a correct answer: says the word,
+// then spells it letter by letter, then says the word once more.
+function playCorrectSequence(word){
+  if(!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const runId = ++speechRunId;
+  speaking = true;
+  els.scene.classList.add('speaking');
+  els.replayBtn.disabled = true;
 
   const letters = word.toUpperCase().split('');
   const queue = [];
-
-  // Round 1
-  letters.forEach(ch => queue.push({type:'letter', ch, round:1}));
-  queue.push({type:'pause', ms: 1800});
-  // Round 2 (second chance)
-  letters.forEach(ch => queue.push({type:'letter', ch, round:2}));
+  queue.push({type:'word', status:'¡Correcto! Escuchando la palabra...'});
+  queue.push({type:'pause', ms: 500});
+  letters.forEach(ch => queue.push({type:'letter', ch, status:'Deletreando...'}));
+  queue.push({type:'pause', ms: 500});
+  queue.push({type:'word', status:'Escuchando la palabra otra vez...'});
 
   let i = 0;
   function playNext(){
@@ -1958,24 +1980,20 @@ function speakWord(word){
       speaking = false;
       els.scene.classList.remove('speaking');
       els.replayBtn.disabled = false;
-      els.statusText.textContent = 'Escribe la palabra que escuchaste';
       return;
     }
     const item = queue[i]; i++;
     if(item.type === 'pause'){
-      els.statusText.textContent = 'Segunda oportunidad...';
       setTimeout(playNext, item.ms);
       return;
     }
-    // Never reveal the letter on screen — audio only.
-    els.statusText.textContent = item.round === 1 ? 'Deletreando...' : 'Repitiendo...';
-    const u = makeUtterance(LETTER_SOUNDS[item.ch] || item.ch, speechRate);
-    u.onend = () => {
-      if(runId === speechRunId) setTimeout(playNext, 130);
-    };
-    u.onerror = () => {
-      if(runId === speechRunId) setTimeout(playNext, 130);
-    };
+    els.statusText.textContent = item.status;
+    const text = item.type === 'letter' ? (LETTER_SOUNDS[item.ch] || item.ch) : word;
+    const u = makeUtterance(text, speechRate);
+    const gap = item.type === 'letter' ? 130 : 250;
+    const advance = () => { if(runId === speechRunId) setTimeout(playNext, gap); };
+    u.onend = advance;
+    u.onerror = advance;
     speechSynthesis.speak(u);
   }
   playNext();
@@ -2036,6 +2054,8 @@ function checkAnswer(){
   updateProgressCell(idx);
   updateScoreboard();
   els.nextBtn.focus();
+
+  if(isCorrect) playCorrectSequence(word);
 }
 
 els.form.addEventListener('submit', (e) => {
