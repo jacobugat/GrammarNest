@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808"><title>IT — Escape Room</title>
+<style>
+:root{color-scheme:dark;--bg:#070707;--panel:#111;--red:#b50918;--bright:#ef1728;--muted:#817d7e;--line:#292526}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:var(--bg);color:#f5f2f2;font-family:Arial,Helvetica,sans-serif}body{overflow:hidden}.app{position:relative;display:grid;place-items:center;width:100%;height:100%;min-height:420px;background:radial-gradient(ellipse at 50% 55%,#190a0b 0,#0b0808 34%,#070707 69%);isolation:isolate}.grain{position:absolute;inset:0;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E")}header{position:absolute;top:clamp(22px,5vh,54px);left:0;right:0;text-align:center;z-index:2}header .eyebrow{font-size:11px;letter-spacing:.42em;color:#b3a6a6;text-transform:uppercase}header h1{font-weight:500;letter-spacing:.23em;font-size:clamp(15px,2vw,22px);margin:11px 0 0;color:#eee}header h1 span{color:var(--bright)}.clock{font-variant-numeric:tabular-nums;line-height:.85;font-weight:700;letter-spacing:-.075em;font-size:clamp(110px,27vw,380px);color:#f3eeee;text-shadow:0 0 65px #b5091824;transition:opacity .3s,transform .3s}.clock.urgent{color:#fa2837;text-shadow:0 0 55px #f00a1e45}.stage{position:relative;z-index:1;width:100%;height:100%;display:grid;place-items:center}.video-layer{position:absolute;inset:0;display:grid;place-items:center;background:#000;z-index:3;opacity:0;visibility:hidden;transition:opacity .75s ease,visibility 0s linear .75s}.video-layer.show{opacity:1;visibility:visible;transition:opacity .75s ease}.video-layer video{width:100%;height:100%;object-fit:contain;background:#000}.video-tag{position:absolute;top:24px;left:26px;color:#fff;background:#080808b8;border:1px solid #ffffff26;padding:9px 12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;z-index:1}.gameover{display:none;position:absolute;inset:0;z-index:5;place-items:center;background:#070707;text-align:center}.gameover.show{display:grid}.gameover strong{font-size:clamp(60px,15vw,190px);font-weight:900;letter-spacing:.06em;color:var(--bright);text-shadow:0 0 55px #e00a2155}.controls{position:absolute;bottom:clamp(24px,5vh,52px);left:0;right:0;z-index:6;display:flex;justify-content:center;align-items:center;gap:12px;transition:opacity .25s}.controls.hidden{opacity:0;pointer-events:none}.btn{height:46px;min-width:104px;padding:0 18px;border:1px solid #393132;background:#111;color:#f4eeee;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:.2s}.btn:hover{border-color:var(--bright);background:#1a0b0d}.btn.primary{background:var(--red);border-color:var(--red)}.btn.primary:hover{background:#d00e20}.sound{position:absolute;bottom:30px;left:26px;z-index:6;color:#766f70;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.sound::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin:0 9px 1px 0;box-shadow:0 0 9px var(--red)}.fullscreen{position:absolute;right:24px;bottom:24px;z-index:6;border:0;background:transparent;color:#777;padding:10px;cursor:pointer;font-size:18px}.fullscreen:hover{color:#fff}.paused .clock{opacity:.65}.paused .controls{}.state{position:absolute;top:calc(50% + clamp(65px,14vw,190px));font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--muted)}.clock-wrap{display:grid;justify-items:center;gap:24px}.hint{position:absolute;top:25px;right:26px;color:#564f50;font-size:10px;letter-spacing:.14em}.pulse{animation:pulse 1.2s ease-in-out infinite}@keyframes pulse{50%{opacity:.55}}@media(max-width:620px){.clock{font-size:clamp(100px,27vw,180px)}.controls{bottom:70px;gap:7px}.btn{min-width:0;padding:0 12px}.sound{bottom:22px;left:14px}.fullscreen{right:10px;bottom:12px}.hint{display:none}}
+</style>
+</head>
+<body>
+<main class="app" id="app"><div class="grain"></div>
+<header><div class="eyebrow">Escape Room Experience</div><h1><span>IT</span> &nbsp;·&nbsp; COUNTDOWN</h1></header>
+<div class="hint">SPACE · PAUSE &nbsp;&nbsp; F · FULL SCREEN</div>
+<section class="stage" aria-live="polite">
+  <div class="clock-wrap" id="clockWrap"><div class="clock" id="clock">10:00</div><div class="state" id="state">Ready to begin</div></div>
+  <div class="video-layer" id="videoLayer"><div class="video-tag" id="videoTag">Look closely</div><video id="clip" playsinline preload="auto"></video></div>
+  <div class="gameover" id="gameover"><strong>GAME OVER</strong></div>
+</section>
+<div class="sound" id="soundStatus">Loading soundtrack…</div>
+<div class="controls" id="controls"><button class="btn" id="soundBtn">Enable sound</button><button class="btn primary" id="startBtn">Start</button><button class="btn" id="pauseBtn" disabled>Pause</button><button class="btn" id="resetBtn">Reset</button></div>
+<button class="fullscreen" id="fullBtn" title="Full screen" aria-label="Full screen">⛶</button>
+<audio id="music" preload="auto"></audio>
+</main>
+<script>
+(()=>{
+  const TOTAL=10*60, FIRST_AT=8*60, SECOND_AT=2*60;
+  const CLIP_PRELUDE=2, CLIP_FADE=1.8;
+  const tracks={intro:'media/every-27-years.mp3',deadlights:'media/deadlights.mp3',eggboy:'media/egg-boy.mp3',dance:'media/pennywise-dance.mp3'};
+  const names={intro:'Every 27 Years',deadlights:'Deadlights',eggboy:'Egg Boy',dance:'The Pennywise Dance'};
+  const clipSrc='media/pennywise.mp4';
+  const $=id=>document.getElementById(id), app=$('app'), clock=$('clock'), state=$('state'), music=$('music'), clip=$('clip');
+  let remaining=TOTAL,running=false,lastTick=0,raf=0,clipMode='',mode='idle',currentTrack='';
+  let eventOneDone=false,eventTwoDone=false,secondVideoDone=false,endTimer=0,hideUiTimer,musicSuppressed=false,muted=false,soundUnlocked=false,musicTransitioning=false,musicToken=0;
+  clip.volume=1;clip.muted=false;
+  const fmt=s=>{s=Math.max(0,Math.floor(s));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`};
+  function paint(){clock.textContent=fmt(remaining);clock.classList.toggle('urgent',remaining<=60);document.title=`${fmt(remaining)} — IT Escape Room`;}
+  function setState(t){state.textContent=t;}
+  function cancelFade(el){if(el._fadeRaf){cancelAnimationFrame(el._fadeRaf);el._fadeRaf=0;}}
+  function fadeVolume(el,target,duration,done){
+    cancelFade(el);const from=el.volume,started=performance.now();
+    if(duration<=0){el.volume=target;if(done)done();return;}
+    const step=now=>{const progress=Math.min(1,(now-started)/duration);el.volume=from+(target-from)*progress;if(progress<1)el._fadeRaf=requestAnimationFrame(step);else{el._fadeRaf=0;el.volume=target;if(done)done();}};
+    el._fadeRaf=requestAnimationFrame(step);
+  }
+  function showTrackStatus(){
+    $('soundStatus').textContent=muted?'Sound muted':`${mode==='idle'?'Pre-game soundtrack':'Soundtrack'} · ${names[currentTrack]||'Ready'}`;
+    $('soundBtn').textContent=muted?'Unmute':'Mute';
+  }
+  function changeMusic(key,restart=true,duration=1100){
+    const token=++musicToken;musicTransitioning=true;
+    const loadTrack=()=>{
+      if(token!==musicToken)return;
+      music.pause();currentTrack=key;music.src=tracks[key];if(restart)music.currentTime=0;music.volume=0;
+      const result=music.play();
+      if(result&&result.then)result.then(()=>{if(token!==musicToken)return;soundUnlocked=true;musicTransitioning=false;if(musicSuppressed){music.pause();music.volume=0;return;}showTrackStatus();if(!muted)fadeVolume(music,1,duration);else music.volume=1;})
+        .catch(()=>{musicTransitioning=false;$('soundStatus').textContent='Sound is blocked · Select Enable sound';$('soundBtn').textContent='Enable sound';});
+      else{soundUnlocked=true;musicTransitioning=false;showTrackStatus();if(!muted)fadeVolume(music,1,duration);else music.volume=1;}
+    };
+    if(music.src&&!music.paused&&!musicSuppressed)fadeVolume(music,0,duration,()=>{music.pause();loadTrack();});
+    else{cancelFade(music);loadTrack();}
+  }
+  function startCountdownMusic(){
+    musicToken++;cancelFade(music);musicTransitioning=true;musicSuppressed=false;
+    music.pause();currentTrack='deadlights';music.src=tracks.deadlights;music.currentTime=0;music.volume=0;
+    const result=music.play();
+    if(result&&result.then)result.then(()=>{soundUnlocked=true;musicTransitioning=false;showTrackStatus();if(!muted)fadeVolume(music,1,500);else music.volume=1;})
+      .catch(()=>{musicTransitioning=false;$('soundStatus').textContent='Sound is blocked · Select Enable sound';$('soundBtn').textContent='Enable sound';});
+    else{soundUnlocked=true;musicTransitioning=false;showTrackStatus();if(!muted)fadeVolume(music,1,500);else music.volume=1;}
+  }
+  function startGameOverMusic(){
+    musicToken++;cancelFade(music);musicTransitioning=true;musicSuppressed=false;
+    music.pause();currentTrack='intro';music.src=tracks.intro;music.currentTime=0;music.volume=0;
+    const result=music.play();
+    if(result&&result.then)result.then(()=>{soundUnlocked=true;musicTransitioning=false;showTrackStatus();if(!muted)fadeVolume(music,1,500);else music.volume=1;})
+      .catch(()=>{musicTransitioning=false;$('soundStatus').textContent='Sound is blocked · Select Enable sound';$('soundBtn').textContent='Enable sound';});
+    else{soundUnlocked=true;musicTransitioning=false;showTrackStatus();if(!muted)fadeVolume(music,1,500);else music.volume=1;}
+  }
+  function nextMusic(){if(secondVideoDone)changeMusic(currentTrack==='dance'?'eggboy':'dance',true,900);else changeMusic('deadlights',true,1000);}
+  music.addEventListener('ended',()=>{
+    if(musicTransitioning||musicSuppressed)return;
+    if(mode==='idle'||mode==='gameover')changeMusic('intro',true,900);
+    else if(mode==='countdown')nextMusic();
+  });
+  function queueClip(which,start,end){
+    musicSuppressed=true;musicToken++;musicTransitioning=false;cancelFade(music);
+    fadeVolume(music,0,CLIP_FADE*1000,()=>{music.pause();beginClip(which,start,end);});
+  }
+  function beginClip(which,start,end){
+    clipMode=which;clip.src=clipSrc;clip.currentTime=start;clip.volume=1;clip.muted=false;
+    $('videoLayer').classList.add('show');$('videoTag').textContent=which==='first'?'Look closely':'The clock keeps running';
+    let fadingOut=false,clipEnded=false;
+    clip.onloadedmetadata=()=>{clip.currentTime=start;};
+    clip.ontimeupdate=()=>{
+      if(!fadingOut&&clip.currentTime>=end-1.15){fadingOut=true;fadeVolume(clip,0,1050);}
+      if(!clipEnded&&clip.currentTime>=end){clipEnded=true;finishClip(which);}
+    };
+    if(running){clip.muted=false;clip.volume=1;clip.play().catch(()=>document.getElementById('videoTag').textContent='Video playback was blocked');}
+  }
+  function finishClip(which){
+    if(clipMode!==which)return;
+    clip.pause();clip.onloadedmetadata=null;clip.ontimeupdate=null;$('videoLayer').classList.remove('show');clipMode='';clip.volume=1;clip.muted=false;
+    if(which==='first'){musicSuppressed=false;changeMusic('deadlights',true,1500);}else{musicSuppressed=false;secondVideoDone=true;changeMusic('dance',true,1100);}
+    if(running){setState(which==='first'?'The countdown continues':'');tick();}
+  }
+  function triggerEvents(){
+    if(!eventOneDone&&remaining<=FIRST_AT+CLIP_PRELUDE){eventOneDone=true;queueClip('first',17,74);return true;}
+    if(!eventTwoDone&&remaining<=SECOND_AT){eventTwoDone=true;queueClip('second',104,199);return true;}
+    return false;
+  }
+  function tick(now){
+    cancelAnimationFrame(raf);if(!running||mode!=='countdown')return;
+    now=now||performance.now();const elapsed=Math.floor((now-lastTick)/1000);
+    if(elapsed>0){remaining=Math.max(0,remaining-elapsed);lastTick+=elapsed*1000;paint();if(triggerEvents()){if(running)raf=requestAnimationFrame(tick);return;}if(remaining<=0){finishGame();return;}}
+    raf=requestAnimationFrame(tick);
+  }
+  function start(){
+    if(mode==='gameover')return;
+    if(mode==='idle'){mode='countdown';startCountdownMusic();$('startBtn').textContent='Started';}
+    running=true;lastTick=performance.now();$('pauseBtn').disabled=false;$('pauseBtn').textContent='Pause';
+    if(clipMode){clip.muted=false;clip.volume=1;clip.play().catch(()=>{});}
+    else setState('');
+    if(music.paused&&!muted&&!musicSuppressed&&!musicTransitioning)music.play().catch(()=>{});
+    tick();
+  }
+  function pause(){
+    if(running){running=false;cancelAnimationFrame(raf);music.pause();if(clipMode)clip.pause();setState(clipMode?'Video paused':'Paused');$('pauseBtn').textContent='Resume';}
+    else if(mode==='countdown')start();
+  }
+  function finishGame(){
+    running=false;mode='gameover';cancelAnimationFrame(raf);clip.pause();$('videoLayer').classList.remove('show');clipMode='';musicSuppressed=false;
+    $('gameover').classList.add('show');setState('');$('pauseBtn').disabled=true;$('startBtn').textContent='Start';
+    startGameOverMusic();clearTimeout(endTimer);endTimer=setTimeout(()=>resetToIdle(false),5000);
+  }
+  function resetToIdle(restartMusic=true){
+    clearTimeout(endTimer);cancelAnimationFrame(raf);cancelFade(music);cancelFade(clip);musicToken++;musicTransitioning=false;remaining=TOTAL;running=false;mode='idle';clipMode='';musicSuppressed=false;
+    eventOneDone=false;eventTwoDone=false;secondVideoDone=false;clip.pause();clip.removeAttribute('src');clip.load();clip.volume=1;clip.muted=false;
+    $('videoLayer').classList.remove('show');$('gameover').classList.remove('show');
+    $('pauseBtn').disabled=true;$('pauseBtn').textContent='Pause';$('startBtn').textContent='Start';setState('Ready to begin');paint();
+    if(restartMusic)changeMusic('intro',true,1100);else showTrackStatus();
+  }
+  $('startBtn').addEventListener('click',start);$('pauseBtn').addEventListener('click',pause);$('resetBtn').addEventListener('click',()=>resetToIdle(true));
+  $('soundBtn').addEventListener('click',()=>{
+    if(!soundUnlocked||muted){
+      muted=false;music.muted=false;
+      if(clipMode||musicSuppressed){showTrackStatus();return;}
+      if(music.paused)music.play().then(()=>{soundUnlocked=true;showTrackStatus();fadeVolume(music,1,800);}).catch(()=>{$('soundStatus').textContent='Sound is blocked · Select Enable sound';$('soundBtn').textContent='Enable sound';});
+      else showTrackStatus();
+    }else{muted=true;music.muted=true;showTrackStatus();}
+  });
+  $('fullBtn').addEventListener('click',()=>{if(!document.fullscreenElement)app.requestFullscreen?.();else document.exitFullscreen?.();});
+  document.addEventListener('keydown',e=>{if(e.code==='Space'){e.preventDefault();if(running)pause();else start();}if(e.key.toLowerCase()==='f')$('fullBtn').click();if(e.key.toLowerCase()==='r')resetToIdle(true);});
+  app.addEventListener('mousemove',()=>{$('controls').classList.remove('hidden');clearTimeout(hideUiTimer);if(running)hideUiTimer=setTimeout(()=>$('controls').classList.add('hidden'),5000);});
+  paint();changeMusic('intro',true,0);
+})();
+</script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
