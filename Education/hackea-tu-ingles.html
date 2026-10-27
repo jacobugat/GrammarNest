@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b1020">
+    <meta name="description"
+        content="Guía práctica para aprender el verbo to be con subtítulos, clips cortos y escenas de cine.">
+    <title>Hackea tu inglés · GrammarNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b1020;
+            --surface: #111a2d;
+            --surface2: #17223a;
+            --line: #26334a;
+            --text: #f1f5fb;
+            --muted: #a5b2c8;
+            --mint: #8ce4cb;
+            --mint-dim: #8ce4cb1c;
+            --lilac: #b7a6ff;
+            --amber: #ffd28b;
+            --sans: 'DM Sans', system-ui, sans-serif;
+            --display: Manrope, var(--sans);
+            --mono: 'DM Mono', monospace
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(ellipse at 80% 0%, #24205055, transparent 38rem), radial-gradient(ellipse at 8% 12%, #14433b45, transparent 32rem), var(--bg);
+            color: var(--text);
+            font: 16px/1.65 var(--sans);
+            -webkit-font-smoothing: antialiased
+        }
+
+        a {
+            color: var(--mint);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        ::selection {
+            background: #8ce4cb55
+        }
+
+        .wrap {
+            width: min(1050px, calc(100% - 40px));
+            margin: auto
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            border-bottom: 1px solid #ffffff12;
+            background: #0b1020dc;
+            backdrop-filter: blur(16px)
+        }
+
+        .nav {
+            height: 66px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .brand {
+            font: 800 1.04rem var(--display);
+            letter-spacing: -.04em;
+            color: var(--text)
+        }
+
+        .brand b {
+            color: var(--mint)
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 24px;
+            font-size: .88rem;
+            color: var(--muted)
+        }
+
+        .navlinks a {
+            color: inherit
+        }
+
+        .hero {
+            padding: 76px 0 52px;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 36px;
+            align-items: center
+        }
+
+        .eyebrow,
+        .kicker {
+            font: 500 .75rem var(--mono);
+            letter-spacing: .11em;
+            text-transform: uppercase;
+            color: var(--mint)
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0
+        }
+
+        .hero h1 {
+            font: 700 clamp(2.8rem, 6.5vw, 5rem)/1.04 var(--display);
+            letter-spacing: -.065em;
+            max-width: 780px;
+            margin: 18px 0
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--mint)
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 1.12rem;
+            max-width: 61ch;
+            margin-bottom: 24px
+        }
+
+        .tags {
+            display: flex;
+            gap: 9px;
+            flex-wrap: wrap
+        }
+
+        .tag {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 5px 11px;
+            color: #d6deeb;
+            font-size: .82rem
+        }
+
+        .hero-card {
+            border: 1px solid #8ce4cb38;
+            background: linear-gradient(145deg, #142638, #141a30);
+            border-radius: 20px;
+            padding: 23px;
+            box-shadow: 0 20px 60px #0003
+        }
+
+        .hero-card .icon {
+            font-size: 2rem
+        }
+
+        .hero-card strong {
+            display: block;
+            font: 700 1.2rem var(--display);
+            margin: 14px 0 3px
+        }
+
+        .hero-card p {
+            color: var(--muted);
+            font-size: .9rem;
+            margin: 0
+        }
+
+        .hero-card .time {
+            font: 500 .76rem var(--mono);
+            color: var(--mint);
+            margin-top: 18px
+        }
+
+        .jump {
+            display: inline-flex;
+            margin-top: 27px;
+            padding: 11px 16px;
+            background: var(--mint);
+            color: #0b1718;
+            border-radius: 9px;
+            font-weight: 700;
+            font-size: .92rem
+        }
+
+        .jump:hover {
+            filter: brightness(1.07);
+            text-decoration: none
+        }
+
+        .section {
+            padding: 56px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 26px
+        }
+
+        .section-head h2 {
+            font: 700 clamp(1.65rem, 4vw, 2.4rem)/1.15 var(--display);
+            letter-spacing: -.045em;
+            margin: 8px 0
+        }
+
+        .section-head p {
+            max-width: 54ch;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .phase {
+            display: grid;
+            grid-template-columns: 58px 1fr;
+            gap: 20px;
+            padding: 25px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .phase:first-child {
+            border: 0
+        }
+
+        .phase-num {
+            font: 500 1.35rem var(--mono);
+            color: var(--mint)
+        }
+
+        .phase h3 {
+            font: 700 1.15rem var(--display);
+            margin-bottom: 6px
+        }
+
+        .phase p {
+            color: var(--muted);
+            margin: 0 0 12px
+        }
+
+        .phase .aside {
+            border-left: 2px solid var(--lilac);
+            padding: 7px 0 7px 14px;
+            color: #d3caff;
+            font-size: .92rem
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .card {
+            background: linear-gradient(145deg, var(--surface), #10182a);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 22px
+        }
+
+        .card h3 {
+            font: 700 1rem var(--display);
+            margin: 10px 0 6px
+        }
+
+        .card p {
+            font-size: .91rem;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .card .emoji {
+            font-size: 1.35rem
+        }
+
+        .steps {
+            counter-reset: step;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px
+        }
+
+        .step {
+            counter-increment: step;
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px 20px 20px 62px
+        }
+
+        .step:before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            left: 18px;
+            top: 20px;
+            color: var(--mint);
+            font: 500 .82rem var(--mono)
+        }
+
+        .step h3 {
+            font-size: .98rem;
+            margin: 0 0 7px
+        }
+
+        .step p {
+            font-size: .9rem;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .code {
+            margin-top: 15px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: #0b1222;
+            padding: 16px 18px;
+            color: #d6def0;
+            font: 400 .84rem/1.8 var(--mono);
+            overflow-wrap: anywhere
+        }
+
+        .code .label {
+            color: var(--mint)
+        }
+
+        .promptbox {
+            margin-top: 18px;
+            padding: 19px;
+            border-radius: 13px;
+            background: var(--mint-dim);
+            border: 1px solid #8ce4cb42
+        }
+
+        .promptbox p {
+            margin: 0;
+            color: #e5fff7
+        }
+
+        .promptbox .label {
+            font: 500 .73rem var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--mint);
+            margin-bottom: 8px
+        }
+
+        .copyrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 16px
+        }
+
+        .copybtn {
+            flex: none;
+            border: 1px solid #8ce4cb66;
+            color: var(--mint);
+            background: #0b1020;
+            border-radius: 8px;
+            padding: 7px 10px;
+            cursor: pointer;
+            font: 500 .78rem var(--sans)
+        }
+
+        .copybtn:hover {
+            background: #18312e
+        }
+
+        .grammar {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px;
+            align-items: stretch
+        }
+
+        .tablebox,
+        .note {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--surface)
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        th {
+            font: 500 .75rem var(--mono);
+            letter-spacing: .05em;
+            color: var(--mint);
+            background: #ffffff05
+        }
+
+        td {
+            font-size: .91rem
+        }
+
+        tr:last-child td {
+            border-bottom: 0
+        }
+
+        .note {
+            padding: 21px
+        }
+
+        .note h3 {
+            font: 700 1rem var(--display);
+            margin-bottom: 8px
+        }
+
+        .note p,
+        .note li {
+            font-size: .9rem;
+            color: var(--muted)
+        }
+
+        .note ul {
+            padding-left: 19px;
+            margin-bottom: 0
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 13px
+        }
+
+        .skill {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 20px;
+            background: var(--surface)
+        }
+
+        .skill .num {
+            font: 500 .78rem var(--mono);
+            color: var(--lilac)
+        }
+
+        .skill h3 {
+            font: 700 1rem var(--display);
+            margin: 7px 0
+        }
+
+        .skill p {
+            font-size: .88rem;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .callout {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            border: 1px solid #ffd28b44;
+            background: #ffd28b0d;
+            border-radius: 13px;
+            padding: 18px 20px;
+            margin-top: 20px
+        }
+
+        .callout b {
+            color: var(--amber)
+        }
+
+        .callout p {
+            font-size: .9rem;
+            color: #ddd5c7;
+            margin: 0
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+        }
+
+        .check {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 11px;
+            background: var(--surface);
+            color: #dce5f3;
+            font-size: .91rem
+        }
+
+        .check input {
+            margin-top: 5px;
+            accent-color: var(--mint);
+            width: 16px;
+            height: 16px;
+            flex: none
+        }
+
+        .check:has(input:checked) {
+            border-color: #8ce4cb66;
+            color: var(--muted)
+        }
+
+        .check:has(input:checked) span {
+            text-decoration: line-through;
+            text-decoration-color: #8ce4cb88
+        }
+
+        .footer {
+            border-top: 1px solid var(--line);
+            padding: 26px 0 45px;
+            color: var(--muted);
+            font-size: .83rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .footer strong {
+            color: var(--text)
+        }
+
+        @media(max-width:700px) {
+            .nav {
+                height: 58px
+            }
+
+            .navlinks {
+                gap: 12px;
+                font-size: .78rem
+            }
+
+            .navlinks a:nth-child(2) {
+                display: none
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 54px 0 36px;
+                gap: 20px
+            }
+
+            .hero-card {
+                max-width: none
+            }
+
+            .section {
+                padding: 42px 0
+            }
+
+            .section-head {
+                display: block
+            }
+
+            .section-head p {
+                margin-top: 10px
+            }
+
+            .cards,
+            .steps,
+            .grammar,
+            .skill-grid,
+            .checklist {
+                grid-template-columns: 1fr
+            }
+
+            .phase {
+                grid-template-columns: 40px 1fr;
+                gap: 12px
+            }
+
+            .footer {
+                display: block
+            }
+
+            .footer span {
+                display: block;
+                margin-top: 5px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="wrap nav"><a class="brand" href="../index.html">Grammar<b>Nest</b> <span
+                    style="color:var(--muted);font-weight:500">/ Education</span></a>
+            <nav class="navlinks" aria-label="Navegación principal"><a href="#metodo">El método</a><a
+                    href="#laboratorio">Laboratorio</a><a href="#viernes">Presentación</a></nav>
+        </div>
+    </header>
+    <main class="wrap" id="inicio">
+        <section class="hero">
+            <div>
+                <div class="eyebrow">Inglés A1 · Aprendizaje con cine</div>
+                <h1>Hackea tu inglés<br>con <em>subtítulos</em><br>y clips de cine.</h1>
+                <p class="lead">Convierte una escena que te encanta en tu propio laboratorio de inglés. Encuentra el
+                    verbo <i>to be</i>, entiende por qué se usa y practícalo con tus ojos, oídos y voz.</p>
+                <div class="tags"><span class="tag">🎬 Clips de 1–2 min</span><span class="tag">📘 Verbo to be ·
+                        A1</span><span class="tag">🎧 Listening + speaking</span></div><a class="jump"
+                    href="#metodo">Empezar la misión <span aria-hidden="true">&nbsp;→</span></a>
+            </div>
+            <aside class="hero-card"><span class="icon" aria-hidden="true">✦</span><strong>Tu gusto es el
+                    material.</strong>
+                <p>Elige una película o serie que te interese. Una escena breve basta para descubrir inglés real en
+                    contexto.</p>
+                <div class="time">UNA ESCENA · CUATRO HABILIDADES</div>
+            </aside>
+        </section>
+        <section class="section" id="metodo">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">01 / Cambio de chip</div>
+                    <h2>Deja de esperar la lección perfecta.</h2>
+                </div>
+                <p>En vez de depender solo del libro, aprende a buscar ejemplos en las historias que ya te gustan. Tú
+                    eliges el contenido; la gramática se vuelve algo que puedes ver y escuchar.</p>
+            </div>
+            <div class="cards">
+                <article class="card"><span class="emoji">🧭</span>
+                    <h3>Tú diriges tu aprendizaje</h3>
+                    <p>Escoge la película, serie o escena que te dé curiosidad. El interés te ayuda a volver a
+                        practicar.</p>
+                </article>
+                <article class="card"><span class="emoji">🔬</span>
+                    <h3>Una misión pequeña y concreta</h3>
+                    <p>Trabaja con un clip de solo uno o dos minutos y busca una cosa: frases con <i>to be</i> de nivel
+                        inicial.</p>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="extraccion">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">02 / Protocolo de extracción</div>
+                    <h2>Encuentra la frase y su momento.</h2>
+                </div>
+                <p>Sigue los pasos en orden. Un archivo de subtítulos permite localizar el diálogo; la escena te ayuda a
+                    entenderlo.</p>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <h3>Elige una escena breve</h3>
+                    <p>Abre tu película favorita en la plataforma o reproductor que uses. Escoge un fragmento de
+                        <strong>1–2 minutos como máximo</strong>.</p>
+                </article>
+                <article class="step">
+                    <h3>Consigue subtítulos en .srt</h3>
+                    <p>Busca un archivo de subtítulos autorizado para esa película, en formato <code>.srt</code>.
+                        Comprueba que el idioma y la versión coincidan con el video.</p>
+                </article>
+                <article class="step">
+                    <h3>Entiende el archivo</h3>
+                    <p>Un <code>.srt</code> es texto plano: cada bloque tiene un número, un inicio y fin con marcas de
+                        tiempo, y el diálogo correspondiente.</p>
+                    <div class="code"><span class="label">1</span><br>00:02:14,200 --&gt; 00:02:16,000<br>I'm right
+                        here.</div>
+                </article>
+                <article class="step">
+                    <h3>Filtra con IA</h3>
+                    <p>Comparte el texto del subtítulo con una IA y pídele solo frases A1 con <i>to be</i>, conservando
+                        texto y marcas de tiempo.</p>
+                </article>
+                <article class="step">
+                    <h3>Salta al momento exacto</h3>
+                    <p>Usa el tiempo del subtítulo para buscar la línea en el video. La marca suele indicar dónde
+                        aparece la frase; verifica la sincronización por si la edición difiere.</p>
+                </article>
+                <article class="step">
+                    <h3>Prepara tu mini clip</h3>
+                    <p>Reproduce unos segundos antes y después de la frase. Mantén la práctica acotada y repite el
+                        fragmento según lo necesites.</p>
+                </article>
+            </div>
+            <div class="promptbox">
+                <div class="copyrow">
+                    <div>
+                        <div class="label">Prompt listo para copiar</div>
+                        <p id="prompt">Analiza el archivo de subtítulos que te comparto. Extrae únicamente las frases en
+                            inglés que contengan el verbo <i>to be</i> (am, is, are y sus contracciones) y que sean
+                            adecuadas para nivel A1. Conserva cada frase exactamente como aparece, incluye su marca de
+                            tiempo de inicio en minutos y segundos, y organiza el resultado en una tabla. No inventes
+                            frases ni marcas de tiempo. Si una línea es ambigua, indícalo.</p>
+                    </div><button class="copybtn" id="copyPrompt" type="button">Copiar prompt</button>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="laboratorio">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">03 / Laboratorio de contexto</div>
+                    <h2>La gramática vive en la escena.</h2>
+                </div>
+                <p>Primero mira y escucha lo que sucede. Después conecta la frase con su significado: no hace falta
+                    memorizar una regla sin contexto.</p>
+            </div>
+            <div class="grammar">
+                <div class="tablebox">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SUJETO</th>
+                                <th>TO BE</th>
+                                <th>EJEMPLO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>I</td>
+                                <td>am → <strong>I'm</strong></td>
+                                <td>I'm scared. <span style="color:var(--muted)">Tengo miedo.</span></td>
+                            </tr>
+                            <tr>
+                                <td>You / We / They</td>
+                                <td>are → <strong>you're / we're / they're</strong></td>
+                                <td>You're here. <span style="color:var(--muted)">Estás aquí.</span></td>
+                            </tr>
+                            <tr>
+                                <td>He / She / It</td>
+                                <td>is → <strong>he's / she's / it's</strong></td>
+                                <td>It's cold. <span style="color:var(--muted)">Hace frío / Está frío.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <aside class="note">
+                    <h3>Pregúntate mientras miras</h3>
+                    <ul>
+                        <li>¿Quién habla y de quién habla?</li>
+                        <li>¿Describe identidad, estado o lugar?</li>
+                        <li>¿Qué pasa justo antes y después?</li>
+                        <li>¿La forma está contraída al hablar?</li>
+                    </ul>
+                </aside>
+            </div>
+            <div class="callout"><span aria-hidden="true">✎</span>
+                <p><b>Anótalo a mano.</b> Escribe la frase completa exactamente como se dijo y añade una nota sobre
+                    quién habla, qué ocurre y qué significa allí. Así guardas el uso real, no solo una regla.</p>
+            </div>
+        </section>
+        <section class="section" id="practica">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">04 / Triángulo de poder</div>
+                    <h2>Un clip. Tres habilidades.</h2>
+                </div>
+                <p>Reutiliza el mismo fragmento para entrenar pronunciación, escucha y comprensión de forma activa.</p>
+            </div>
+            <div class="skill-grid">
+                <article class="skill">
+                    <div class="num">01 — SPEAKING</div>
+                    <h3>Haz shadowing</h3>
+                    <p>Escucha la frase y repítela casi al mismo tiempo que el actor. Imita ritmo, entonación, velocidad
+                        y contracciones como <i>I'm</i> o <i>you're</i>.</p>
+                </article>
+                <article class="skill">
+                    <div class="num">02 — LISTENING ACTIVO</div>
+                    <h3>Escucha sin leer</h3>
+                    <p>Oculta los subtítulos y reproduce el clip. Anota las palabras que logras captar, aunque no estés
+                        seguro.</p>
+                </article>
+                <article class="skill">
+                    <div class="num">03 — VERIFICACIÓN</div>
+                    <h3>Comprueba y ajusta</h3>
+                    <p>Activa los subtítulos y compara. Corrige lo que oíste y vuelve a escuchar para notar cómo suenan
+                        las palabras conectadas.</p>
+                </article>
+            </div>
+            <div class="callout"><span aria-hidden="true">◎</span>
+                <p><b>Repite en pequeño.</b> Puedes escuchar primero, repetir con el audio y, al final, intentarlo sin
+                    mirar el texto. Si una frase es difícil, divídela en trozos.</p>
+            </div>
+        </section>
+        <section class="section" id="viernes">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">05 / Evaluación dinámica</div>
+                    <h2>Viernes: comparte tu hallazgo.</h2>
+                </div>
+                <p>En lugar de un examen de opción múltiple, cada estudiante enseña brevemente su proceso y demuestra lo
+                    que practicó.</p>
+            </div>
+            <div class="cards">
+                <article class="card"><span class="emoji">📓</span>
+                    <h3>Tu cuaderno</h3>
+                    <p>Muestra las frases escritas a mano y las notas sobre su contexto.</p>
+                </article>
+                <article class="card"><span class="emoji">🎞️</span>
+                    <h3>Tu clip</h3>
+                    <p>Presenta el fragmento corto elegido y ubica la frase en la escena.</p>
+                </article>
+                <article class="card"><span class="emoji">🗣️</span>
+                    <h3>Tu explicación</h3>
+                    <p>Cuenta cómo encontraste la frase y por qué el personaje usó <i>to be</i> en ese momento.</p>
+                </article>
+                <article class="card"><span class="emoji">🎙️</span>
+                    <h3>Tu demostración</h3>
+                    <p>Haz shadowing durante unos segundos y comparte qué fue lo más fácil o difícil de imitar.</p>
+                </article>
+            </div>
+        </section>
+        <section class="section" id="lista">
+            <div class="section-head">
+                <div>
+                    <div class="kicker">Tu checklist</div>
+                    <h2>Una misión a la vez.</h2>
+                </div>
+                <p>Marca cada paso al terminarlo. Las casillas se guardan en este navegador.</p>
+            </div>
+            <div class="checklist"><label class="check"><input type="checkbox" data-task="clip"><span>Elegí una escena
+                        de 1–2 minutos.</span></label><label class="check"><input type="checkbox"
+                        data-task="srt"><span>Encontré subtítulos .srt que coinciden.</span></label><label
+                    class="check"><input type="checkbox" data-task="filter"><span>Filtré frases A1 con <i>to be</i> y
+                        tiempos.</span></label><label class="check"><input type="checkbox"
+                        data-task="context"><span>Miré el contexto y anoté las frases.</span></label><label
+                    class="check"><input type="checkbox" data-task="shadow"><span>Practiqué shadowing con el
+                        fragmento.</span></label><label class="check"><input type="checkbox"
+                        data-task="listen"><span>Escuché sin subtítulos y comprobé.</span></label></div>
+        </section>
+        <footer class="footer"><strong>GrammarNest <span style="color:var(--mint)">·</span> Aprende desde lo que te
+                gusta.</strong><span>Inglés A1 · Verbo to be · Método de clips cortos</span></footer>
+    </main>
+    <script>
+        const promptText = document.getElementById('prompt').innerText;
+        document.getElementById('copyPrompt').addEventListener('click', async () => { const btn = document.getElementById('copyPrompt'); try { await navigator.clipboard.writeText(promptText); btn.textContent = '¡Copiado!'; } catch { btn.textContent = 'Selecciona el texto'; } setTimeout(() => btn.textContent = 'Copiar prompt', 1800); });
+        document.querySelectorAll('[data-task]').forEach(box => { const key = 'grammarnest-cine-' + box.dataset.task; box.checked = localStorage.getItem(key) === 'true'; box.addEventListener('change', () => localStorage.setItem(key, box.checked)); });
+    </script>
+</body>
+
+</html>
