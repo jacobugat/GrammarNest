@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1b1031">
+  <meta name="description" content="A colorful 15-minute 80s and 90s pop culture countdown challenge.">
+  <title>Pop Culture Countdown · 80s & 90s</title>
+  <style>
+    :root{color-scheme:dark;--ink:#fff9ff;--muted:#d8c9e9;--pink:#ff4fc8;--aqua:#54f4e5;--yellow:#ffe45c;--purple:#9165ff;--night:#120d27;--line:#ffffff30}
+    *{box-sizing:border-box}
+    html,body{margin:0;min-width:320px;min-height:100%;background:var(--night);color:var(--ink);font-family:"Trebuchet MS",Arial,sans-serif}
+    body{overflow:hidden}
+    button{font:inherit}
+    .scene{position:relative;isolation:isolate;display:grid;min-height:100svh;place-items:center;overflow:hidden;padding:38px 20px;background:radial-gradient(ellipse at 50% 8%,#733ab566,transparent 45%),radial-gradient(ellipse at 15% 95%,#fd4ba644,transparent 34%),radial-gradient(ellipse at 92% 90%,#31dfd244,transparent 35%),linear-gradient(145deg,#17102f,#24103c 52%,#10192d)}
+    .scene:before{position:absolute;inset:0;z-index:-2;content:"";background-image:url("media/pop-art-collage.svg");background-position:center;background-size:min(1250px,100vw) auto;background-repeat:no-repeat;opacity:.31;mix-blend-mode:screen;pointer-events:none}
+    .scene:after{position:absolute;inset:0;z-index:-1;content:"";background-image:radial-gradient(#fff9 0.7px,transparent 0.8px);background-size:9px 9px;opacity:.08;pointer-events:none;mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent)}
+    .spark{position:absolute;color:var(--yellow);font-size:clamp(26px,5vw,62px);text-shadow:0 0 20px currentColor;animation:twinkle 2.6s ease-in-out infinite alternate;pointer-events:none}
+    .spark.one{top:9%;left:8%}.spark.two{top:15%;right:10%;color:var(--aqua);animation-delay:.5s}.spark.three{right:8%;bottom:13%;color:var(--pink);animation-delay:1s}.spark.four{left:11%;bottom:12%;color:#fff;animation-delay:1.4s}
+    @keyframes twinkle{to{transform:rotate(28deg) scale(.72);opacity:.62}}
+    .layout{width:min(820px,100%);position:relative;z-index:1}
+    .topline{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:15px;color:var(--aqua);font-size:11px;font-weight:900;letter-spacing:.32em;text-align:center;text-transform:uppercase}
+    .topline:before,.topline:after{width:34px;height:2px;background:var(--pink);content:"";box-shadow:0 0 12px var(--pink)}
+    h1{margin:0;text-align:center;font-size:clamp(34px,7vw,72px);font-weight:1000;line-height:.95;letter-spacing:-.06em;text-transform:uppercase;text-shadow:0 3px 0 #6535b7,0 8px 32px #ff4fc85c}
+    h1 span{display:block;color:var(--yellow);font-size:.55em;letter-spacing:.18em;margin-top:13px;text-shadow:0 0 22px #ffe45c55}
+    .sticker-row{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:21px 0 24px}
+    .sticker{padding:6px 12px;border:1px solid #ffffff55;border-radius:999px;background:#18102dcc;color:#fff;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 4px 0 #090717}
+    .sticker:nth-child(1){color:var(--aqua);transform:rotate(-3deg)}.sticker:nth-child(2){color:var(--pink);transform:rotate(2deg)}.sticker:nth-child(3){color:var(--yellow);transform:rotate(-2deg)}
+    .console{position:relative;overflow:hidden;padding:clamp(24px,5vw,50px);border:1px solid #ffffff70;border-radius:28px;background:linear-gradient(145deg,#281b49ee,#17102deF 67%,#21132fee);box-shadow:0 25px 90px #070516a8,0 0 0 5px #ff4fc815,0 0 55px #54f4e51a;backdrop-filter:blur(12px)}
+    .console:before{position:absolute;inset:9px;border:1px solid #ffffff1c;border-radius:21px;content:"";pointer-events:none}
+    .console-head{position:relative;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--muted);font-size:10px;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+    .live{display:flex;align-items:center;gap:8px;color:var(--aqua)}.live i{width:8px;height:8px;border-radius:50%;background:var(--aqua);box-shadow:0 0 14px var(--aqua);animation:blink 1s steps(2) infinite}
+    @keyframes blink{50%{opacity:.3}}
+    .timer{position:relative;margin:20px 0 15px;color:#fff;font-size:clamp(90px,22vw,218px);font-weight:1000;line-height:.92;letter-spacing:-.09em;text-align:center;font-variant-numeric:tabular-nums;text-shadow:0 0 30px #ff4fc855,0 0 74px #54f4e522;transition:color .2s,text-shadow .2s}
+    .timer.urgent{color:#ffe45c;text-shadow:0 0 25px #ff4fc8,0 0 65px #ff4fc899;animation:urgentPulse .85s ease-in-out infinite alternate}
+    @keyframes urgentPulse{to{transform:scale(1.025)}}
+    .progress{height:7px;overflow:hidden;margin:0 2px 13px;border-radius:99px;background:#ffffff20}
+    .progress span{display:block;width:100%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--aqua),var(--purple),var(--pink),var(--yellow));box-shadow:0 0 16px #ff4fc8;transition:width .2s linear}
+    .status{min-height:18px;color:#e5d9f1;font-size:11px;letter-spacing:.16em;text-align:center;text-transform:uppercase}
+    .track{min-height:20px;margin-top:8px;color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:.08em;text-align:center}
+    .controls{position:relative;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .btn{min-width:116px;padding:12px 17px;border:1px solid #ffffff55;border-radius:999px;background:#ffffff0b;color:var(--ink);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .18s,border-color .18s,filter .18s}
+    .btn:hover:not(:disabled){transform:translateY(-2px);border-color:var(--aqua);filter:brightness(1.15)}
+    .btn:disabled{opacity:.42;cursor:not-allowed}
+    .btn.primary{border:0;background:linear-gradient(100deg,#ff4fc8,#a45cff 58%,#54f4e5);color:#1b1031;box-shadow:0 7px 25px #ff4fc844}
+    .btn.sound{color:var(--aqua)}
+    .hint{margin:18px 0 0;color:#b8aaca;font-size:10px;letter-spacing:.14em;text-align:center;text-transform:uppercase}
+    .result{position:absolute;inset:0;z-index:4;display:grid;place-items:center;padding:24px;background:#120d27f4;opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+    .result.show{opacity:1;visibility:visible}
+    .result-inner{text-align:center}
+    .result-title{color:var(--pink);font-size:clamp(64px,15vw,160px);font-weight:1000;line-height:.95;letter-spacing:.015em;text-shadow:0 0 25px #ff4fc8,0 0 75px #ff4fc877;animation:popIn .75s cubic-bezier(.2,1.5,.4,1) both}
+    .credit{margin-top:22px;color:var(--yellow);font-size:clamp(18px,4vw,42px);font-weight:900;letter-spacing:.14em;text-shadow:0 0 22px #ffe45c55;opacity:0;transform:translateY(14px);transition:opacity .9s,transform .9s}
+    .credit.show{opacity:1;transform:translateY(0)}
+    @keyframes popIn{from{transform:scale(.65) rotate(-4deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+    .corner-note{position:absolute;bottom:18px;left:0;right:0;color:#ddcfea99;font-size:9px;font-weight:800;letter-spacing:.25em;text-align:center;text-transform:uppercase}
+    @media(max-width:600px){.scene{padding:22px 14px}.topline{font-size:9px}.sticker-row{margin:17px 0}.console{padding:26px 18px 24px;border-radius:22px}.console:before{inset:7px;border-radius:16px}.console-head{font-size:8px;letter-spacing:.13em}.timer{font-size:clamp(82px,23vw,142px);margin:26px 0 18px}.controls{gap:8px}.btn{min-width:calc(50% - 8px);padding:12px 10px}.btn.sound{min-width:100%}.hint{font-size:8px;line-height:1.7}.spark.one{left:3%;top:6%}.spark.two{right:3%;top:7%}.spark.three{right:4%;bottom:6%}.spark.four{left:4%;bottom:7%}.corner-note{display:none}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="scene" id="scene">
+    <span class="spark one" aria-hidden="true">✦</span><span class="spark two" aria-hidden="true">✧</span><span class="spark three" aria-hidden="true">✦</span><span class="spark four" aria-hidden="true">✧</span>
+    <div class="layout">
+      <div class="topline">A totally rad classroom challenge</div>
+      <h1>Pop Culture<span>Countdown</span></h1>
+      <div class="sticker-row" aria-label="80s and 90s edition"><span class="sticker">Big hair</span><span class="sticker">Mixtapes</span><span class="sticker">Pop icons</span></div>
+      <section class="console" aria-live="polite">
+        <div class="console-head"><span>80s &amp; 90s Edition</span><span class="live"><i></i><span id="liveLabel">Ready to play</span></span></div>
+        <div class="timer" id="timer">15:00</div>
+        <div class="progress" aria-label="Time remaining"><span id="progress"></span></div>
+        <div class="status" id="status">Your 15-minute challenge starts when you press play</div>
+        <div class="track" id="trackName">Four retro hits · One big challenge</div>
+        <div class="controls">
+          <button class="btn sound" id="soundBtn" type="button">Sound On</button>
+          <button class="btn primary" id="startBtn" type="button">Start Challenge</button>
+          <button class="btn" id="pauseBtn" type="button" disabled>Pause</button>
+          <button class="btn" id="resetBtn" type="button">Reset</button>
+        </div>
+        <p class="hint">Space to pause · F for full screen</p>
+      </section>
+    </div>
+    <div class="result" id="result" aria-live="assertive">
+      <div class="result-inner"><div class="result-title" id="resultTitle">GAME OVER</div><div class="credit" id="credit">By Karol &amp; Tania</div></div>
+    </div>
+    <div class="corner-note">Press reset to play again · Turn up the volume</div>
+    <audio id="music" preload="auto"></audio>
+  </main>
+  <script>
+    (()=>{
+      const TOTAL=15*60;
+      const playlist=[
+        {name:"Everybody Wants to Rule the World",src:"media/everybody-wants-to-rule-the-world.mp3"},
+        {name:"Just an Illusion",src:"media/just-an-illusion.mp3"},
+        {name:"Girls Just Want to Have Fun",src:"media/girls-just-want-to-have-fun.mp3"},
+        {name:"Billie Jean",src:"media/billie-jean.mp3"}
+      ];
+      const $=id=>document.getElementById(id),audio=$("music"),timer=$("timer"),progress=$("progress");
+      let remaining=TOTAL*1000,lastTick=0,raf=0,running=false,mode="idle",trackIndex=0,muted=false,creditTimer=0;
+      function format(ms){const seconds=Math.max(0,Math.ceil(ms/1000));return `${String(Math.floor(seconds/60)).padStart(2,"0")}:${String(seconds%60).padStart(2,"0")}`;}
+      function render(){timer.textContent=format(remaining);timer.classList.toggle("urgent",remaining<=60_000);progress.style.width=`${Math.max(0,remaining/(TOTAL*1000)*100)}%`;document.title=`${format(remaining)} · Pop Culture Countdown`;}
+      function setTrackLabel(){ $("trackName").textContent=muted?"Sound muted":`Now playing · ${playlist[trackIndex].name}`; }
+      function playTrack(index){
+        trackIndex=(index+playlist.length)%playlist.length;
+        audio.pause();audio.src=playlist[trackIndex].src;audio.currentTime=0;audio.volume=muted?0:1;
+        setTrackLabel();
+        audio.play().catch(()=>{$("trackName").textContent="Tap Sound On to enable the soundtrack";});
+      }
+      audio.addEventListener("ended",()=>{if(running&&mode==="playing")playTrack(trackIndex+1);});
+      function tick(now){
+        if(!running||mode!=="playing")return;
+        const elapsed=now-lastTick;lastTick=now;remaining=Math.max(0,remaining-elapsed);render();
+        if(remaining<=0){finish();return;}
+        raf=requestAnimationFrame(tick);
+      }
+      function start(){
+        if(mode==="gameover")return;
+        if(mode==="idle"){mode="playing";trackIndex=-1;playTrack(0);$("startBtn").textContent="In Progress";$("status").textContent="The clock is ticking. Keep the energy up!";$("liveLabel").textContent="Challenge live";}
+        running=true;lastTick=performance.now();$("pauseBtn").disabled=false;$("pauseBtn").textContent="Pause";
+        if(audio.paused&&!muted)audio.play().catch(()=>{});
+        cancelAnimationFrame(raf);raf=requestAnimationFrame(tick);
+      }
+      function pause(){
+        if(running){running=false;cancelAnimationFrame(raf);audio.pause();$("pauseBtn").textContent="Resume";$("status").textContent="Paused — catch your breath!";$("liveLabel").textContent="On pause";}
+        else if(mode==="playing"){start();$("status").textContent="Back in the game!";$("liveLabel").textContent="Challenge live";}
+      }
+      function finish(){
+        running=false;mode="gameover";cancelAnimationFrame(raf);audio.pause();audio.currentTime=0;
+        $("liveLabel").textContent="Challenge complete";$("status").textContent="Time is up!";$("trackName").textContent="Thanks for playing";
+        $("pauseBtn").disabled=true;$("startBtn").textContent="Challenge Complete";$("startBtn").disabled=true;
+        $("result").classList.add("show");$("resultTitle").style.display="";$("credit").classList.remove("show");clearTimeout(creditTimer);creditTimer=setTimeout(()=>{$("resultTitle").style.display="none";$("credit").classList.add("show");},5000);
+      }
+      function reset(){
+        clearTimeout(creditTimer);cancelAnimationFrame(raf);audio.pause();audio.removeAttribute("src");audio.load();
+        remaining=TOTAL*1000;running=false;mode="idle";trackIndex=0;
+        $("result").classList.remove("show");$("resultTitle").style.display="";$("credit").classList.remove("show");
+        $("pauseBtn").disabled=true;$("pauseBtn").textContent="Pause";$("startBtn").disabled=false;$("startBtn").textContent="Start Challenge";
+        $("status").textContent="Your 15-minute challenge starts when you press play";$("liveLabel").textContent="Ready to play";$("trackName").textContent="Four retro hits · One big challenge";render();
+      }
+      $("startBtn").addEventListener("click",start);$("pauseBtn").addEventListener("click",pause);$("resetBtn").addEventListener("click",reset);
+      $("soundBtn").addEventListener("click",()=>{muted=!muted;audio.volume=muted?0:1;$("soundBtn").textContent=muted?"Sound Off":"Sound On";setTrackLabel();});
+      $("scene").addEventListener("mousemove",()=>{});
+      $("scene").addEventListener("dblclick",()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();});
+      document.addEventListener("keydown",event=>{if(event.code==="Space"){event.preventDefault();if(running)pause();else if(mode==="playing")start();}if(event.key.toLowerCase()==="f"){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}if(event.key.toLowerCase()==="r")reset();});
+      render();
+    })();
+  </script>
+</body>
+</html>
