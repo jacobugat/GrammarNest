@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¿Por qué cuesta hablar?</title>
+<style>
+:root{color-scheme:dark;--bg:#14141a;--tx:#e8e6df;--mu:#a09e96;--pn:#252530;--ac:#B4B2A9;box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+body{height:100vh;height:100dvh;overflow:hidden}
+main{height:100%;max-width:1600px;margin:0 auto;padding:14px 24px 18px;display:flex;flex-direction:column;position:relative}
+header{display:grid;grid-template-columns:1fr auto;grid-template-areas:"title lang" "sub lang";align-items:center;column-gap:24px;flex:0 0 auto}
+h1{grid-area:title;font-size:clamp(22px,2.2vw,32px);font-weight:600;line-height:1.2;margin:0 0 3px}
+p.sub{grid-area:sub;margin:0;color:var(--mu);font-size:14px}
+.lg{grid-area:lang;display:flex;gap:6px}.lg button{background:#1f1f29;color:var(--mu);border:1px solid #3a3a46;border-radius:16px;padding:5px 14px;font:inherit;font-size:13px;cursor:pointer}.lg button.on{background:#e8e6df;color:#14141a;border-color:#e8e6df}
+.map-wrap{flex:1;min-height:0;position:relative;margin-top:8px}
+svg{display:block;width:100%;height:100%;margin:0 auto}
+svg g[data-k]{cursor:pointer;outline:none}svg g[data-k] rect,svg g[data-k] circle{stroke-width:1;transition:stroke-width .15s}svg g[data-k]:hover rect,svg g[data-k]:hover circle{stroke-width:2}svg g.sel rect,svg g.sel circle{stroke-width:3;stroke:#fff}svg g[data-k]:focus-visible rect,svg g[data-k]:focus-visible circle{stroke-width:3;stroke:#fff}svg text{font-family:inherit;pointer-events:none}.ts{font-size:14px}.th{font-size:17px;font-weight:600}
+.purple rect{fill:#3C3489;stroke:#AFA9EC}.purple text{fill:#CECBF6}.coral rect{fill:#712B13;stroke:#F0997B}.coral text{fill:#F5C4B3}.teal rect{fill:#085041;stroke:#5DCAA5}.teal text{fill:#9FE1CB}.amber rect{fill:#633806;stroke:#EF9F27}.amber text{fill:#FAC775}.gray circle{fill:#444441;stroke:#B4B2A9}.gray text{fill:#D3D1C7}
+#panel{position:absolute;z-index:2;display:none;width:min(270px,calc(100vw - 32px));padding:12px 15px;background:var(--pn);border:1px solid #454552;border-left:4px solid var(--ac);border-radius:12px;box-shadow:0 12px 34px #0009;pointer-events:none;transform:translate(12px,-50%)}#panel.visible{display:block}#panel small{display:block;color:var(--mu);font-size:12px}#panel h2{font-size:16px;font-weight:600;line-height:1.25;margin:3px 0 5px}#panel p{margin:0;font-size:13px;line-height:1.45;color:#e3e1db}
+@media(max-width:760px){body{height:auto;min-height:100vh;overflow:auto}main{min-height:100vh;height:auto;padding:14px 14px 20px}header{grid-template-columns:1fr;grid-template-areas:"lang" "title" "sub";gap:8px}.lg{justify-self:end}.map-wrap{height:min(72vh,680px);min-height:460px;margin-top:12px}svg{height:100%}#panel{position:fixed;left:50%!important;top:auto!important;bottom:14px;transform:translateX(-50%);width:min(440px,calc(100vw - 28px));pointer-events:none}}
+@media(max-width:480px){.map-wrap{height:560px;min-height:560px}svg{min-width:720px;transform:translateX(calc((100% - 720px)/2));}}
+/* Visual polish: editor-inspired dark workspace */
+:root{--bg:#0b1020;--tx:#e7ecf7;--mu:#95a3bb;--pn:#151d30;--ac:#91a7ff}
+html,body{background:radial-gradient(ellipse at 50% 44%,#192642 0%,#0c1324 56%,#080c17 100%);color:var(--tx)}
+main{padding-top:18px}
+header{padding:12px 16px 15px;border:1px solid #ffffff12;border-radius:16px;background:linear-gradient(135deg,#141f35ed,#101829e8);box-shadow:0 12px 36px #0003;position:relative}
+header:after{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:0 4px 4px 0;background:linear-gradient(#74d9d0,#a494ff)}
+.toolbar{grid-area:lang;display:flex;align-items:center;gap:18px}.back{display:inline-flex;align-items:center;gap:8px;color:#c8d5f1;text-decoration:none;font-size:13px;padding:7px 11px;border:1px solid #ffffff16;border-radius:9px;background:#ffffff07;transition:.18s}.back span{font-size:18px;color:#73d8d0}.back:hover{color:#fff;background:#a494ff18;border-color:#a494ff70;transform:translateX(-2px)}
+h1{letter-spacing:-.035em}.sub{letter-spacing:.01em}
+.lg button{background:#10182a;color:#aab7cf;border-color:#ffffff1c;border-radius:9px;padding:6px 11px;transition:.18s}.lg button:hover{border-color:#91a7ff88;color:#eef2ff}.lg button.on{background:#a494ff;color:#101326;border-color:#b9aeff;font-weight:650}
+.map-wrap{margin-top:14px;border:1px solid #ffffff12;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#101a2dcc,#0d1525dd);box-shadow:0 18px 48px #0004,inset 0 1px #ffffff08;isolation:isolate}
+.map-wrap:before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(#8ca3d00b 1px,transparent 1px),linear-gradient(90deg,#8ca3d00b 1px,transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse at center,#000 0%,transparent 80%)}
+svg g[data-k]{filter:drop-shadow(0 5px 9px #0005)}svg g[data-k] rect,svg g[data-k] circle{transition:filter .18s,stroke-width .18s,opacity .18s}svg g[data-k]:hover{filter:drop-shadow(0 0 10px #a494ff66)}svg g.sel{filter:drop-shadow(0 0 12px #a494ff77)}
+#panel{background:linear-gradient(145deg,#1c2942,#151e31);border-color:#ffffff24;box-shadow:0 16px 42px #0009,0 0 0 1px #a494ff12;backdrop-filter:blur(14px)}#panel h2{color:#f1f4ff}#panel p{color:#c2cde1}
+@media(max-width:760px){header{grid-template-areas:"lang" "title" "sub"}.toolbar{justify-content:space-between}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="toolbar"><a class="back" href="../index.html" aria-label="Volver a GrammarNest"><span aria-hidden="true">←</span><b>GrammarNest</b></a><div class="lg"><button id="bes" class="on" onclick="setLang('es')">Español</button><button id="ben" onclick="setLang('en')">English</button></div></div>
+<h1 id="h1">¿Por qué cuesta hablar?</h1>
+<p class="sub" id="sb">Causas de la dificultad para hablar, en inglés o en cualquier idioma. Haz clic en un concepto para ver una explicación breve.</p></header>
+<div class="map-wrap"><svg id="map" viewBox="0 0 1200 700" role="img" aria-label="Mapa mental de las causas de la dificultad para hablar"></svg>
+<section id="panel" aria-live="polite"><small id="pc">Mapa mental</small><h2 id="pt">Dificultad para hablar</h2><p id="px"></p></section></div>
+</main>
+<script>
+var I={
+centro:['Dificultad para hablar','Hablar exige que cerebro, cuerpo, emociones y entorno funcionen juntos. Si uno falla, la voz se bloquea, en español o en inglés.'],
+psico:['Psicológicas','El cuerpo está bien, pero las emociones frenan la voz: miedo, vergüenza o presión hacen que la persona se calle aunque sepa qué decir.'],
+neuro:['Neurológicas y físicas','Algo físico o neurológico afecta producir o procesar el habla. Pasa en cualquier idioma, incluido el materno.'],
+cogn:['Cognitivas','Hablar un idioma nuevo exige buscar palabras, armar gramática y pronunciar al mismo tiempo. Si la mente se sobrecarga, se frena.'],
+ento:['Entorno y enseñanza','El ambiente de aprendizaje y la cultura influyen en si la persona se atreve a hablar.'],
+fa:['Filtro afectivo','Hipótesis de Krashen: la ansiedad, el estrés o la baja motivación funcionan como un filtro que bloquea lo que se aprende y lo que se produce. Con más calma, más aprendizaje.'],
+an:['Ansiedad al idioma','Miedo específico a hablar en un idioma extranjero frente a otros (Horwitz). Genera nervios y bloqueo.'],
+bu:['Burlas o trauma','Si alguien se rio o corrigió con dureza el acento o los errores, la persona aprende a callar para no repetirlo.'],
+pe:['Perfeccionismo','Solo se habla cuando la frase sale perfecta. Como casi nunca sale, no se dice nada.'],
+mu:['Mutismo selectivo','Trastorno de ansiedad: la persona sí puede hablar, pero se paraliza en ciertos lugares, como la escuela o con desconocidos.'],
+af:['Afasia','Daño en las áreas del lenguaje del cerebro. Puede costar formar frases (Broca) o entender (Wernicke).'],
+ap:['Apraxia del habla','El cerebro no coordina bien los músculos para pronunciar. La persona entiende y sabe qué decir, pero no le sale.'],
+di:['Disartria','Debilidad o mala coordinación de los músculos de la boca y la voz, por ejemplo tras un golpe o por Parkinson.'],
+go:['Golpe o accidente','Un traumatismo craneal o un ACV puede dañar el lenguaje o el habla, en cualquier idioma.'],
+dl:['Dislexia / TLD','Diferencias en cómo el cerebro procesa los sonidos y ordena el lenguaje. Encontrar y armar las palabras cuesta más.'],
+so:['Sobrecarga mental','Hablar exige buscar la palabra, armar la gramática, pronunciar y atender al otro a la vez. Si la memoria de trabajo se llena, se frena.'],
+tr:['Traducir del español','Pensar en español y traducir en tiempo real genera pausas y fricción.'],
+fv:['Falta de vocabulario','Faltan palabras activas o hay bloqueos al recordarlas, el típico “lo tengo en la punta de la lengua”.'],
+pa:['Poca automatización','Se aprendió la regla como teoría, pero no como hábito. Para hablar fluido hay que practicar hasta que salga solo.'],
+pr:['Profe hipercorrector','Si se corrige cada error o el grupo es muy competitivo, el estudiante prefiere no arriesgarse.'],
+po:['Poca práctica oral','Solo leer y hacer ejercicios no entrena la boca. Para hablar hay que hablar.'],
+ps:['Presión social','Miedo a quedar mal frente al grupo o a que lo juzguen por equivocarse.'],
+cu:['Cultura del silencio','En algunas culturas equivocarse en público o destacar se ve mal, y eso refuerza el silencio.']
+};
+var B=[
+{k:'psico',c:'purple',x:38,y:42,L:['fa','an','bu','pe','mu'],col:'#AFA9EC'},
+{k:'neuro',c:'coral',x:38,y:365,L:['af','ap','di','go','dl'],col:'#F0997B'},
+{k:'cogn',c:'teal',x:852,y:42,L:['so','tr','fv','pa'],col:'#5DCAA5'},
+{k:'ento',c:'amber',x:852,y:365,L:['pr','po','ps','cu'],col:'#EF9F27'}];
+var col={centro:'#B4B2A9'};
+var s='';
+function ln(x1,y1,x2,y2,color){return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="'+color+'" stroke-width="2" opacity=".55"/>';}
+B.forEach(function(b){var right=b.x>600,cx=right?852:348,hy=b.y+18;
+s+=ln(right?684:516,350,right?cx:348,hy,b.col);});
+s+='<g class="gray" data-k="centro" tabindex="0" role="button"><circle cx="600" cy="350" r="84"/><text class="th" x="600" y="340" text-anchor="middle" dominant-baseline="central">Dificultad</text><text class="th" x="600" y="364" text-anchor="middle" dominant-baseline="central">para hablar</text></g>';
+B.forEach(function(b){col[b.k]=b.col;var cx=b.x+145;
+s+='<g class="'+b.c+'" data-k="'+b.k+'" tabindex="0" role="button"><rect x="'+b.x+'" y="'+b.y+'" width="290" height="36" rx="10"/><text class="th" x="'+cx+'" y="'+(b.y+18)+'" text-anchor="middle" dominant-baseline="central">'+I[b.k][0]+'</text></g>';
+b.L.forEach(function(k,i){col[k]=b.col;var y=b.y+48+i*43;
+s+='<g class="'+b.c+'" data-k="'+k+'" tabindex="0" role="button"><rect x="'+b.x+'" y="'+y+'" width="290" height="35" rx="9"/><text class="ts" x="'+cx+'" y="'+(y+17.5)+'" text-anchor="middle" dominant-baseline="central">'+I[k][0]+'</text></g>';});});var map=document.getElementById('map');map.innerHTML=s;
+var cat={};B.forEach(function(b){cat[b.k]='Rama';b.L.forEach(function(k){cat[k]=I[b.k][0]});});
+function show(k){
+map.querySelectorAll('.sel').forEach(function(e){e.classList.remove('sel')});
+var g=map.querySelector('[data-k="'+k+'"]');if(g)g.classList.add('sel');
+document.getElementById('pt').textContent=I[k][0];
+document.getElementById('px').textContent=I[k][1];
+last=k;var par=null;B.forEach(function(b){if(b.L.indexOf(k)>-1)par=b.k;});document.getElementById('pc').textContent=k==='centro'?T[cur].mc:par?T[cur].in+I[par][0]:T[cur].rm;
+var panel=document.getElementById('panel');panel.style.borderLeftColor=col[k]||'#B4B2A9';panel.classList.add('visible');var box=g.getBoundingClientRect(),wrap=document.querySelector('.map-wrap').getBoundingClientRect();var left=box.right-wrap.left+6,top=box.top-wrap.top+box.height/2;if(left+280>wrap.width)left=box.left-wrap.left-285;panel.style.left=Math.max(4,left)+'px';panel.style.top=Math.max(70,Math.min(wrap.height-70,top))+'px';}
+var hideTimer=null,panel=document.getElementById('panel');
+function cancelHide(){if(hideTimer){clearTimeout(hideTimer);hideTimer=null;}}
+function scheduleHide(){cancelHide();hideTimer=setTimeout(function(){panel.classList.remove('visible');hideTimer=null;},180);}
+map.addEventListener('click',function(e){var g=e.target.closest('[data-k]');if(g){cancelHide();show(g.getAttribute('data-k'));}else panel.classList.remove('visible');});
+map.addEventListener('pointerout',function(e){var g=e.target.closest('[data-k]');if(g&&!g.contains(e.relatedTarget))scheduleHide();});
+panel.addEventListener('pointerenter',cancelHide);panel.addEventListener('pointerleave',scheduleHide);
+document.addEventListener('keydown',function(e){if(e.key==='Escape')panel.classList.remove('visible');});
+map.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){var g=e.target.closest('[data-k]');if(g){e.preventDefault();show(g.getAttribute('data-k'));}}});
+var EN={
+centro:['Difficulty speaking','Speaking needs brain, body, emotions and environment working together. If one fails, the voice gets blocked, in Spanish or in English.'],
+psico:['Psychological','The body is fine, but emotions hold the voice back: fear, shame or pressure make a person stay silent even when they know what to say.'],
+neuro:['Neurological','Something physical or neurological affects how speech is produced or processed. It happens in any language, including the native one.'],
+cogn:['Cognitive','Speaking a new language means finding words, building grammar and pronouncing all at once. If the mind overloads, speech stalls.'],
+ento:['Environment','The learning setting and the culture shape whether a person dares to speak.'],
+fa:['Affective filter','Krashen’s hypothesis: anxiety, stress or low motivation act like a filter that blocks what is learned and what is produced. Calmer learners acquire more.'],
+an:['Language anxiety','A specific fear of speaking a foreign language in front of others (Horwitz). It causes nerves and blocking.'],
+bu:['Mockery or trauma','If someone laughed at or harshly corrected an accent or mistakes, the person learns to stay quiet to avoid it happening again.'],
+pe:['Perfectionism','The person only speaks when the sentence is perfect. Since it rarely is, nothing gets said.'],
+mu:['Selective mutism','An anxiety disorder: the person can speak, but freezes in certain places, such as school or around strangers.'],
+af:['Aphasia','Damage to the brain’s language areas. Forming sentences (Broca) or understanding them (Wernicke) can become hard.'],
+ap:['Apraxia of speech','The brain doesn’t coordinate the muscles needed to pronounce words. The person understands and knows what to say, but it won’t come out.'],
+di:['Dysarthria','Weakness or poor coordination of the mouth and voice muscles, for example after a head injury or with Parkinson’s.'],
+go:['Injury or accident','A head injury or a stroke can damage language or speech, in any language.'],
+dl:['Dyslexia / DLD','Differences in how the brain processes sounds and orders language. Finding and assembling words takes more effort.'],
+so:['Mental overload','Speaking means finding the word, building grammar, pronouncing and listening at the same time. When working memory fills up, speech stalls.'],
+tr:['Translating from L1','Thinking in Spanish and translating in real time causes pauses and friction.'],
+fv:['Vocabulary gaps','Few active words, or trouble retrieving them, the classic “tip of the tongue” moment.'],
+pa:['Little automaticity','The rule was learned as theory, not as a habit. Fluent speech needs practice until it comes out on its own.'],
+pr:['Harsh correction','When every mistake is corrected, or the group is very competitive, students prefer not to take risks.'],
+po:['Little oral practice','Reading and doing exercises alone doesn’t train the mouth. To speak, you have to speak.'],
+ps:['Social pressure','Fear of looking bad in front of the group or being judged for making mistakes.'],
+cu:['Culture of silence','In some cultures, making mistakes in public or standing out is frowned upon, which reinforces silence.']
+};
+var ES=I,cur='es',last='centro';
+var T={es:{mc:'Mapa mental',rm:'Rama principal',in:'Dentro de: ',h:'¿Por qué cuesta hablar?',s:'Causas de la dificultad para hablar, en inglés o en cualquier idioma. Haz clic en un concepto para ver una explicación breve.',al:'Mapa mental de las causas de la dificultad para hablar',c1:'Dificultad',c2:'para hablar'},en:{mc:'Mind map',rm:'Main branch',in:'Part of: ',h:'Why is speaking hard?',s:'Causes of difficulty speaking, in English or any language. Select a concept to see a short explanation.',al:'Mind map of the causes of difficulty speaking',c1:'Difficulty',c2:'speaking'}};
+function setLang(l){cur=l;I=l==='en'?EN:ES;
+document.documentElement.lang=l;document.title=T[l].h;
+document.getElementById('h1').textContent=T[l].h;
+document.getElementById('sb').textContent=T[l].s;
+map.setAttribute('aria-label',T[l].al);
+document.getElementById('bes').className=l==='es'?'on':'';
+document.getElementById('ben').className=l==='en'?'on':'';
+map.querySelectorAll('g[data-k]').forEach(function(g){var k=g.getAttribute('data-k'),t=g.querySelectorAll('text');
+if(k==='centro'){t[0].textContent=T[l].c1;t[1].textContent=T[l].c2;}else{t[0].textContent=I[k][0];}});
+show(last);}
+show('centro');
+</script>
+</body>
+</html>
