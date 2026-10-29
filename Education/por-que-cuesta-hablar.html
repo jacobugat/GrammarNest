@@ -35,15 +35,25 @@ h1{letter-spacing:-.035em}.sub{letter-spacing:.01em}
 svg g[data-k]{filter:drop-shadow(0 5px 9px #0005)}svg g[data-k] rect,svg g[data-k] circle{transition:filter .18s,stroke-width .18s,opacity .18s}svg g[data-k]:hover{filter:drop-shadow(0 0 10px #a494ff66)}svg g.sel{filter:drop-shadow(0 0 12px #a494ff77)}
 #panel{background:linear-gradient(145deg,#1c2942,#151e31);border-color:#ffffff24;box-shadow:0 16px 42px #0009,0 0 0 1px #a494ff12;backdrop-filter:blur(14px)}#panel h2{color:#f1f4ff}#panel p{color:#c2cde1}
 @media(max-width:760px){header{grid-template-areas:"lang" "title" "sub"}.toolbar{justify-content:space-between}}
+/* Self-assessment */
+.test-open{justify-self:start;border:1px solid #8c83f966;border-radius:9px;background:linear-gradient(135deg,#8e82f5,#6f79df);color:#101326;padding:8px 13px;font:inherit;font-size:13px;font-weight:750;cursor:pointer;box-shadow:0 5px 18px #8177eb38;transition:.18s}.test-open:hover{transform:translateY(-1px);filter:brightness(1.1)}
+dialog{width:min(780px,calc(100vw - 28px));max-height:min(90vh,900px);padding:0;border:1px solid #7183ab55;border-radius:20px;background:#10192a;color:#e7ecf7;box-shadow:0 30px 100px #000b}dialog::backdrop{background:#050915c9;backdrop-filter:blur(5px)}.test-shell{padding:26px clamp(18px,4vw,38px) 30px;max-height:min(90vh,900px);overflow:auto}.test-top{display:flex;justify-content:space-between;gap:20px;padding-bottom:20px;border-bottom:1px solid #ffffff15}.test-kicker{font-size:10px;letter-spacing:.16em;font-weight:800;color:#85d8d2}.test-top h2{font-size:clamp(23px,4vw,31px);letter-spacing:-.04em;margin:7px 0 5px}.test-top p{margin:0;color:#9eacc3;font-size:14px}.test-close{flex:0 0 38px;width:38px;height:38px;border:1px solid #ffffff20;border-radius:11px;background:#ffffff08;color:#dce5f7;font-size:25px;cursor:pointer}.test-close:hover{background:#ffffff17}
+.question{padding:17px 0;border-bottom:1px solid #ffffff12}.question legend{display:block;width:100%;font-size:15px;font-weight:550;line-height:1.45;margin:0 0 12px;padding:0}.answers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.answers label{position:relative;cursor:pointer}.answers input{position:absolute;opacity:0;pointer-events:none}.answers span{display:block;height:100%;padding:9px 8px;border:1px solid #ffffff18;border-radius:10px;background:#ffffff05;color:#aebbd0;text-align:center;font-size:12px;line-height:1.25;transition:.16s}.answers label:hover span{border-color:#8c83f977;color:#e5e9f7}.answers input:checked+span{border-color:#a494ff;background:#8d82f52a;color:#f1efff;box-shadow:inset 0 0 0 1px #a494ff44}.answers input:focus-visible+span{outline:2px solid #88dbd3;outline-offset:2px}.test-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:20px}.test-actions>span{font-size:11px;color:#8492aa}.test-submit,.test-retry{border:0;border-radius:10px;background:#a494ff;color:#101326;padding:11px 15px;font:inherit;font-size:13px;font-weight:750;cursor:pointer}.test-submit span{margin-left:12px}.test-results{padding-top:22px}.result-intro{margin:0 0 15px;color:#bdc8dc;font-size:14px}.result-card{padding:14px 15px;margin:10px 0;border:1px solid #ffffff15;border-left:3px solid var(--result-color,#91a7ff);border-radius:12px;background:#ffffff06}.result-card h3{margin:0 0 4px;font-size:15px}.result-card p{margin:0;color:#aebbd0;font-size:13px;line-height:1.5}.result-card .score{float:right;color:#96a6c2;font-size:11px}.result-note{margin:18px 0;padding:13px 15px;border:1px solid #71d7cf33;border-radius:12px;background:#58cfc10b;color:#bfcedd;font-size:12px;line-height:1.55}.result-footer{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.test-retry{background:#ffffff12;color:#dce5f7;border:1px solid #ffffff1c}.test-results[hidden]{display:none}
+@media(max-width:760px){.test-open{grid-area:auto;margin:0}.toolbar{display:flex;flex-wrap:wrap}.toolbar .test-open{order:3;width:100%}.toolbar .lg{margin-left:auto}.test-actions{align-items:flex-start;flex-direction:column}.answers span{font-size:11px;padding:8px 4px}}
 </style>
 </head>
 <body>
 <main>
-<header><div class="toolbar"><a class="back" href="../index.html" aria-label="Volver a GrammarNest"><span aria-hidden="true">←</span><b>GrammarNest</b></a><div class="lg"><button id="bes" class="on" onclick="setLang('es')">Español</button><button id="ben" onclick="setLang('en')">English</button></div></div>
+<header><div class="toolbar"><a class="back" href="../index.html" aria-label="Volver a GrammarNest"><span aria-hidden="true">←</span><b>GrammarNest</b></a><button class="test-open" type="button" onclick="openTest()">✦ Haz el test</button><div class="lg"><button id="bes" class="on" onclick="setLang('es')">Español</button><button id="ben" onclick="setLang('en')">English</button></div></div>
 <h1 id="h1">¿Por qué cuesta hablar?</h1>
 <p class="sub" id="sb">Causas de la dificultad para hablar, en inglés o en cualquier idioma. Haz clic en un concepto para ver una explicación breve.</p></header>
 <div class="map-wrap"><svg id="map" viewBox="0 0 1200 700" role="img" aria-label="Mapa mental de las causas de la dificultad para hablar"></svg>
 <section id="panel" aria-live="polite"><small id="pc">Mapa mental</small><h2 id="pt">Dificultad para hablar</h2><p id="px"></p></section></div>
+<dialog id="testDialog" aria-labelledby="testTitle">
+  <div class="test-shell"><div class="test-top"><div><span class="test-kicker">AUTOEVALUACIÓN · 3 MIN</span><h2 id="testTitle">¿Qué te está frenando al hablar?</h2><p>Piensa en cómo te ha ido durante las últimas dos semanas. No hay respuestas correctas.</p></div><button class="test-close" type="button" onclick="closeTest()" aria-label="Cerrar test">×</button></div>
+  <form id="testForm"><div id="questionList"></div><div class="test-actions"><button class="test-submit" type="submit">Ver mis resultados <span>→</span></button><span>12 preguntas · tus respuestas no se guardan</span></div></form>
+  <section id="testResults" class="test-results" aria-live="polite" hidden></section></div>
+</dialog>
 </main>
 <script>
 var I={
@@ -139,6 +149,33 @@ document.getElementById('ben').className=l==='en'?'on':'';
 map.querySelectorAll('g[data-k]').forEach(function(g){var k=g.getAttribute('data-k'),t=g.querySelectorAll('text');
 if(k==='centro'){t[0].textContent=T[l].c1;t[1].textContent=T[l].c2;}else{t[0].textContent=I[k][0];}});
 show(last);}
+var testAreas=[
+{id:'emocional',title:'Emociones y confianza',color:'#b4a5ff',tip:'Practica en pasos pequeños: graba un audio de 30 segundos a solas, luego compártelo con alguien de confianza. Habla para comunicar una idea, no para sonar perfecto.'},
+{id:'mental',title:'Carga mental y vocabulario',color:'#70d7c4',tip:'Reduce tareas simultáneas: prepara 5 frases útiles, cuenta una idea con palabras sencillas y practica recuperar vocabulario sin traducir cada frase.'},
+{id:'practica',title:'Práctica y automatización',color:'#f4b486',tip:'Programa 5–10 minutos de habla diaria. Repite una misma actividad varias veces: describir tu día, resumir un video o responder una pregunta.'},
+{id:'entorno',title:'Entorno y enseñanza',color:'#f3d16d',tip:'Busca una conversación sin interrupciones ni corrección constante. Pide que te dejen terminar y que al final comenten solo una cosa para mejorar.'}
+];
+var testQuestions=[
+{a:0,q:'Me pongo nervioso/a o me bloqueo cuando tengo que hablar frente a otras personas.'},
+{a:0,q:'Me callo por miedo a equivocarme, sonar extraño/a o recibir críticas.'},
+{a:0,q:'Espero tener la frase perfecta antes de decirla.'},
+{a:1,q:'Traduzco mentalmente desde el español y eso hace que me detenga.'},
+{a:1,q:'Sé palabras o reglas, pero me cuesta encontrarlas y usarlas mientras hablo.'},
+{a:1,q:'Al hablar, me cuesta pensar en qué decir, cómo decirlo y escuchar al mismo tiempo.'},
+{a:2,q:'Practico poco hablar en voz alta; hago más lectura, ejercicios o estudio de reglas.'},
+{a:2,q:'Me cuesta hablar con fluidez si no he preparado de antemano lo que voy a decir.'},
+{a:2,q:'Aunque entiendo bastante, me falta práctica para responder espontáneamente.'},
+{a:3,q:'El ambiente, el grupo o la persona con quien hablo me hacen sentir juzgado/a.'},
+{a:3,q:'Me corrigen tanto o tan rápido que pierdo el hilo y prefiero dejar de hablar.'},
+{a:3,q:'No tengo un espacio seguro y frecuente donde pueda practicar sin presión.'}
+];
+function openTest(){var d=document.getElementById('testDialog');document.getElementById('testResults').hidden=true;document.getElementById('testForm').hidden=false;d.showModal();}
+function closeTest(){document.getElementById('testDialog').close();}
+function renderQuestions(){var labels=['Nunca','A veces','A menudo','Casi siempre'];document.getElementById('questionList').innerHTML=testQuestions.map(function(item,i){return '<fieldset class="question"><legend>'+ (i+1)+'. '+item.q+'</legend><div class="answers">'+labels.map(function(label,n){return '<label><input type="radio" name="q'+i+'" value="'+n+'" required><span>'+label+'</span></label>';}).join('')+'</div></fieldset>';}).join('');}
+function renderResults(){var scores=testAreas.map(function(){return 0;});testQuestions.forEach(function(q,i){var selected=document.querySelector('input[name="q'+i+'"]:checked');scores[q.a]+=Number(selected.value);});var order=testAreas.map(function(area,i){return {area:area,score:scores[i]};}).sort(function(a,b){return b.score-a.score;});var max=order[0].score;var intro=max>=6?'Estas son las áreas que más podrían estar interfiriendo ahora. Empieza por la primera y vuelve a hacer el test después de practicar unas semanas.':max>=3?'No aparece una barrera muy marcada. Puedes empezar por las áreas con más puntaje y observar en qué situaciones te sientes mejor.':'Tus respuestas muestran pocas barreras frecuentes. Mantén la práctica y usa estas ideas para seguir ganando soltura.';var cards=order.map(function(item){var level=item.score>=6?'Prioridad alta':item.score>=3?'Para fortalecer':'Punto a favor';return '<article class="result-card" style="--result-color:'+item.area.color+'"><span class="score">'+item.score+'/9 · '+level+'</span><h3>'+item.area.title+'</h3><p>'+item.area.tip+'</p></article>';}).join('');document.getElementById('testForm').hidden=true;var results=document.getElementById('testResults');results.innerHTML='<p class="result-intro">'+intro+'</p>'+cards+'<p class="result-note"><strong>Importante:</strong> este test es una guía educativa, no diagnostica trastornos. Si hablar o comprender también se ha vuelto difícil en tu lengua materna, el cambio apareció de repente o afecta mucho tu vida diaria, consulta a un profesional de salud o del habla y lenguaje.</p><div class="result-footer"><button class="test-retry" type="button" onclick="restartTest()">Volver a responder</button><button class="test-submit" type="button" onclick="closeTest()">Listo</button></div>';results.hidden=false;results.scrollIntoView({behavior:'smooth',block:'start'});}
+function restartTest(){document.getElementById('testForm').reset();document.getElementById('testForm').hidden=false;document.getElementById('testResults').hidden=true;document.querySelector('.test-shell').scrollTop=0;}
+renderQuestions();document.getElementById('testForm').addEventListener('submit',function(e){e.preventDefault();if(!this.reportValidity())return;renderResults();});
+document.getElementById('testDialog').addEventListener('click',function(e){if(e.target===this)closeTest();});
 show('centro');
 </script>
 </body>
