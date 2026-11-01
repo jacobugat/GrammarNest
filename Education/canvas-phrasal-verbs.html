@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="Canvas educativo para un manual complementario de phrasal verbs con lectura, recuperación activa y repetición espaciada para estudiantes de inglés de la Universidad La Gran Colombia.">
+  <title>Canvas educativo · Vocabulario en acción</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111318;
+      --surface: #1b1e25;
+      --surface-2: #22262f;
+      --ink: #f5f1e9;
+      --muted: #b7b4ae;
+      --line: #393c43;
+      --gold: #eacb77;
+      --orange: #e89b6d;
+      --green: #9dbb8f;
+      --blue: #9eb8cf;
+      --rose: #d89c9a;
+      --lilac: #baa7d5;
+    }
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(ellipse at 12% 0%, #48381f55, transparent 32rem), radial-gradient(ellipse at 94% 12%, #32334470, transparent 30rem), var(--bg);
+      font: 15px/1.62 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color: inherit }
+    .wrap { width: min(1240px, calc(100% - 52px)); margin: auto }
+    .topbar { position: sticky; top: 0; z-index: 5; border-bottom: 1px solid #ffffff15; background: #111318eb; backdrop-filter: blur(18px) }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px }
+    .brand { color: var(--ink); text-decoration: none; font-weight: 850; letter-spacing: -.035em }
+    .brand span { color: var(--gold) }
+    .back { color: var(--muted); text-decoration: none; font-size: .88rem }
+    .back:hover { color: var(--gold) }
+    .hero { padding: clamp(56px, 8vw, 92px) 0 40px }
+    .eyebrow, .kicker { color: var(--gold); font-size: .72rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase }
+    h1, h2, h3, p { margin-top: 0 }
+    h1 { max-width: 950px; margin: 13px 0; font-size: clamp(2.8rem, 7vw, 5.8rem); line-height: .98; letter-spacing: -.07em }
+    h1 em { color: var(--orange); font-style: normal }
+    .hero-lead { max-width: 850px; margin: 0; color: var(--muted); font-size: 1.05rem }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px }
+    .meta span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: #ddd8ce; font-size: .77rem }
+    .course-note { display: flex; justify-content: space-between; align-items: center; gap: 22px; margin: 0 auto 34px; padding: 15px 18px; border: 1px solid #eacb7740; border-radius: 12px; background: #eacb7709; color: #ded8ca; font-size: .87rem }
+    .course-note strong { color: var(--gold) }
+    .course-note span:last-child { text-align: right; color: var(--muted) }
+    .canvas-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 15px }
+    .canvas-head h2 { margin: 6px 0 0; font-size: clamp(1.8rem, 3vw, 2.35rem); line-height: 1.05; letter-spacing: -.05em }
+    .canvas-head p { max-width: 445px; margin: 0; color: var(--muted); font-size: .86rem }
+    .canvas {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-rows: minmax(235px, auto) minmax(235px, auto) minmax(180px, auto);
+      grid-template-areas: "partners activities value relationships segments" "partners resources value channels segments" "costs costs costs revenue revenue";
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #ffffff1a;
+      border-radius: 19px;
+      background: #0b0d11aa;
+      box-shadow: 0 28px 90px #0005;
+    }
+    .block { position: relative; overflow: hidden; padding: 19px 18px 18px; border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: 13px; background: linear-gradient(145deg, #24272f, #1a1d23 78%); }
+    .block::after { content: attr(data-number); position: absolute; right: 12px; top: 4px; color: color-mix(in srgb, var(--accent) 12%, transparent); font: 850 3.2rem/1 ui-monospace, Consolas, monospace; pointer-events: none }
+    .block-partners { grid-area: partners; --accent: var(--lilac) }
+    .block-activities { grid-area: activities; --accent: var(--orange) }
+    .block-value { grid-area: value; --accent: var(--gold); background: linear-gradient(155deg, #383326, #25231d 76%) }
+    .block-relationships { grid-area: relationships; --accent: var(--green) }
+    .block-segments { grid-area: segments; --accent: var(--rose) }
+    .block-resources { grid-area: resources; --accent: var(--blue) }
+    .block-channels { grid-area: channels; --accent: #d9a9c2 }
+    .block-costs { grid-area: costs; --accent: #cf947f }
+    .block-revenue { grid-area: revenue; --accent: #abc57e }
+    .block-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; margin-bottom: 11px }
+    .block-icon { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid color-mix(in srgb, var(--accent) 52%, transparent); border-radius: 8px; color: var(--accent); font-size: .85rem }
+    .block-label { color: var(--accent); font-size: .64rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase }
+    .block h3 { position: relative; z-index: 1; margin: 0 0 9px; font-size: 1.04rem; line-height: 1.24; letter-spacing: -.025em }
+    .block p, .block li { color: #c5c3bf; font-size: .81rem; line-height: 1.52 }
+    .block p { margin: 0 }
+    .block p + p { margin-top: 9px }
+    .block ul { margin: 0; padding-left: 16px }
+    .block li + li { margin-top: 5px }
+    .block .note { margin-top: 11px; padding-top: 9px; border-top: 1px solid #ffffff18; color: #e3d7bd; font-size: .74rem }
+    .foundation { padding: 76px 0 28px }
+    .foundation-head { max-width: 760px; margin-bottom: 24px }
+    .foundation-head h2 { margin: 7px 0 10px; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -.055em; line-height: 1.05 }
+    .foundation-head p { margin: 0; color: var(--muted) }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px }
+    .principle { padding: 19px; border: 1px solid var(--line); border-radius: 13px; background: linear-gradient(150deg, var(--surface-2), var(--surface)) }
+    .principle .principle-no { color: var(--gold); font: 750 .69rem ui-monospace, Consolas, monospace; letter-spacing: .1em }
+    .principle h3 { margin: 8px 0 6px; font-size: .99rem }
+    .principle p { margin: 0; color: var(--muted); font-size: .81rem }
+    .method-note { display: grid; grid-template-columns: auto 1fr; gap: 14px; margin-top: 14px; padding: 18px 20px; border: 1px solid #9eb8cf42; border-radius: 13px; background: #9eb8cf09 }
+    .method-note b { color: var(--blue); font-size: 1.15rem }
+    .method-note p { margin: 0; color: #d0d0cc; font-size: .84rem }
+    .author-card { display: flex; justify-content: space-between; align-items: center; gap: 22px; margin: 30px auto 70px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: #ffffff05 }
+    .author-card strong { display: block; color: var(--ink); font-size: .96rem }
+    .author-card span { color: var(--muted); font-size: .81rem }
+    .academic-tag { padding: 7px 10px; border: 1px solid #eacb7740; border-radius: 999px; color: var(--gold) !important; font-size: .72rem !important; white-space: nowrap }
+    footer { border-top: 1px solid var(--line); padding: 23px 0 35px; color: var(--muted); font-size: .84rem }
+    @media (max-width: 980px) {
+      .canvas { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto; grid-template-areas: "value value segments" "activities resources segments" "partners relationships channels" "costs costs revenue" }
+      .block { min-height: 210px }
+      .block-value, .block-partners, .block-segments, .block-costs, .block-revenue { min-height: 190px }
+      .principles { grid-template-columns: repeat(2, 1fr) }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: calc(100% - 34px) }
+      .nav { min-height: 58px }
+      .hero { padding-top: 58px }
+      .course-note, .canvas-head, .author-card { align-items: flex-start; flex-direction: column }
+      .course-note span:last-child { text-align: left }
+      .canvas-head p { max-width: none }
+      .canvas { grid-template-columns: 1fr 1fr; grid-template-areas: "value value" "segments segments" "activities resources" "relationships channels" "partners partners" "costs costs" "revenue revenue"; gap: 8px; padding: 8px }
+      .block, .block-value, .block-partners, .block-segments, .block-costs, .block-revenue { min-height: 0 }
+      .block { padding: 17px 15px }
+      .block-value { min-height: 225px }
+      .block-segments, .block-partners, .block-costs, .block-revenue { min-height: 165px }
+      .principles { grid-template-columns: 1fr }
+      .foundation { padding-top: 58px }
+      .author-card { gap: 10px }
+    }
+    @media (max-width: 390px) {
+      .canvas { grid-template-columns: 1fr; grid-template-areas: "value" "segments" "activities" "resources" "relationships" "channels" "partners" "costs" "revenue" }
+      .block { min-height: auto !important }
+      .block-value { min-height: 0 }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegación">
+      <a class="brand" href="../index.html">Grammar<span>Nest</span></a>
+      <a class="back" href="../index.html#idiomas">← Volver a Idiomas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="eyebrow">Canvas educativo · Prototipo académico</div>
+      <h1>Vocabulario <em>en acción</em></h1>
+      <p class="hero-lead">Un manual complementario para ampliar el vocabulario de phrasal verbs mediante lecturas, práctica espaciada y recuperación activa.</p>
+      <div class="meta" aria-label="Alcance del manual"><span>100 phrasal verbs</span><span>20 unidades</span><span>25 sesiones</span><span>15 lecturas</span><span>20–30 min por sesión</span></div>
+    </section>
+
+    <section class="wrap course-note" aria-label="Contexto académico">
+      <span><strong>Trabajo para la asignatura Teorías del Aprendizaje.</strong> Recurso gratuito dirigido a estudiantes de cualquier asignatura de inglés de la Universidad La Gran Colombia.</span>
+      <span>Propuesta académica individual; no es un programa oficial ni representa una alianza institucional.</span>
+    </section>
+
+    <section class="wrap" aria-labelledby="canvas-title">
+      <div class="canvas-head">
+        <div><div class="kicker">Los nueve bloques</div><h2 id="canvas-title">Modelo Canvas del recurso</h2></div>
+        <p>Un complemento de estudio para estudiantes que quieren ampliar y usar phrasal verbs en inglés, con la lectura como hilo conductor.</p>
+      </div>
+
+      <div class="canvas">
+        <article class="block block-partners" data-number="08">
+          <div class="block-top"><span class="block-icon">↔</span><span class="block-label">Red de apoyo</span></div>
+          <h3>Aliados clave</h3>
+          <p>No se definen aliados institucionales para este trabajo académico individual.</p>
+          <p class="note">La Universidad La Gran Colombia es el contexto del público objetivo, no un aliado oficial declarado.</p>
+        </article>
+
+        <article class="block block-activities" data-number="07">
+          <div class="block-top"><span class="block-icon">✳</span><span class="block-label">Qué se hace</span></div>
+          <h3>Actividades clave</h3>
+          <ul>
+            <li>Presentar expresiones con significado, ejemplo y contexto.</li>
+            <li>Programar su reaparición en distintas sesiones.</li>
+            <li>Proponer lectura, recuperación, escritura propia y práctica opcional con gestos e imágenes.</li>
+            <li>Ofrecer clave de respuestas, seguimiento y diario de errores.</li>
+          </ul>
+        </article>
+
+        <article class="block block-value" data-number="02">
+          <div class="block-top"><span class="block-icon">✦</span><span class="block-label">Beneficio central</span></div>
+          <h3>Propuesta de valor</h3>
+          <p>Un complemento de lectura para aprender y recuperar phrasal verbs en contexto, más allá de memorizar traducciones aisladas.</p>
+          <ul style="margin-top:10px">
+            <li>100 expresiones distribuidas en 20 unidades.</li>
+            <li>15 lecturas y 25 sesiones breves de práctica.</li>
+            <li>Repetición espaciada y recuerdo activo con pistas que se retiran gradualmente.</li>
+            <li>Ejemplos, situaciones y elaboración de frases propias.</li>
+            <li>Gestos inspirados en TPR e imágenes mentales como apoyos opcionales.</li>
+          </ul>
+          <p class="note">Complementa la exposición al inglés y la conversación; no pretende reemplazarlas ni ser el único método.</p>
+        </article>
+
+        <article class="block block-relationships" data-number="04">
+          <div class="block-top"><span class="block-icon">◎</span><span class="block-label">Acompañamiento</span></div>
+          <h3>Relación con estudiantes</h3>
+          <p>Práctica autónoma que se puede distribuir al ritmo de cada estudiante. Cada sesión invita a intentar recordar antes de consultar la clave.</p>
+          <p class="note">El seguimiento y el diario de errores ayudan a decidir qué expresiones volver a practicar.</p>
+        </article>
+
+        <article class="block block-segments" data-number="01">
+          <div class="block-top"><span class="block-icon">◉</span><span class="block-label">Para quién</span></div>
+          <h3>Segmentos de estudiantes</h3>
+          <p>Estudiantes de cualquier asignatura de inglés de la Universidad La Gran Colombia que quieran ampliar su vocabulario de phrasal verbs.</p>
+          <p class="note">Puede resultar especialmente atractivo para quienes disfrutan aprender mediante lecturas. No se fija una edad ni un requisito previo de dominio.</p>
+        </article>
+
+        <article class="block block-resources" data-number="06">
+          <div class="block-top"><span class="block-icon">▤</span><span class="block-label">Con qué</span></div>
+          <h3>Recursos clave</h3>
+          <ul>
+            <li>El manual y su selección de 100 phrasal verbs.</li>
+            <li>Unidades, sesiones, lecturas y ejemplos contextualizados.</li>
+            <li>Gestos TPR opcionales, imágenes, clave de respuestas y tablas de seguimiento.</li>
+            <li>El Canvas web como presentación del prototipo.</li>
+          </ul>
+        </article>
+
+        <article class="block block-channels" data-number="03">
+          <div class="block-top"><span class="block-icon">⌁</span><span class="block-label">Cómo se encuentra</span></div>
+          <h3>Canales</h3>
+          <p>Página en la sección Education, enlazada desde el inicio de GrammarNest.</p>
+          <p class="note">El manual se organiza para el estudio individual y puede usarse junto con las asignaturas de inglés.</p>
+        </article>
+
+        <article class="block block-costs" data-number="09">
+          <div class="block-top"><span class="block-icon">−</span><span class="block-label">Recursos necesarios</span></div>
+          <h3>Estructura de costos</h3>
+          <p>No se presenta presupuesto ni costo monetario calculado. El Canvas describe una tarea académica, no un servicio en operación.</p>
+          <p class="note">El diseño contempla elaboración de contenidos, preparación de lecturas y publicación web; no se asignan valores económicos.</p>
+        </article>
+
+        <article class="block block-revenue" data-number="05">
+          <div class="block-top"><span class="block-icon">＋</span><span class="block-label">Sostenibilidad</span></div>
+          <h3>Fuentes de ingresos</h3>
+          <p>No hay ingresos previstos. El recurso se plantea como gratuito para el público definido y no como una oferta comercial.</p>
+          <p class="note">No se proponen pagos, suscripciones ni patrocinios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap foundation" aria-labelledby="foundation-title">
+      <div class="foundation-head">
+        <div class="kicker">Fundamento pedagógico</div>
+        <h2 id="foundation-title">Las decisiones detrás del manual</h2>
+        <p>La propuesta combina hallazgos de adquisición de vocabulario y psicología cognitiva. Los intervalos de práctica son decisiones de diseño del manual, no una receta universal.</p>
+      </div>
+      <div class="principles">
+        <article class="principle"><div class="principle-no">01 / CONTEXTO Y FRECUENCIA</div><h3>Aprender expresiones en uso</h3><p>Los phrasal verbs se presentan con un significado principal, frase y situación. La selección de sentidos frecuentes se apoya en Garnier y Schmitt (2015); el equilibrio entre input, output, estudio explícito y fluidez se relaciona con Nation (2007) y Schmitt (2008).</p></article>
+        <article class="principle"><div class="principle-no">02 / PRÁCTICA DISTRIBUIDA</div><h3>Volver a una expresión con el tiempo</h3><p>Ebbinghaus (1885/1913), Cepeda et al. (2006) y Dunlosky et al. (2013) sustentan la distribución de la práctica. En este manual, las reapariciones n + 1, n + 2, n + 3, n + 5 y n + 8 son una decisión de diseño inspirada en esa evidencia.</p></article>
+        <article class="principle"><div class="principle-no">03 / RECUPERACIÓN ACTIVA</div><h3>Intentar recordar antes de releer</h3><p>Roediger y Karpicke (2006), Karpicke y Roediger (2008), Bjork (1994) y Bjork y Bjork (2011) fundamentan los intentos de recuerdo y las dificultades deseables: un esfuerzo que puede apoyar una retención más duradera.</p></article>
+        <article class="principle"><div class="principle-no">04 / MOVIMIENTO E IMAGEN</div><h3>Asociar el significado con el cuerpo</h3><p>La codificación dual de Paivio (1986) y la Respuesta Física Total de Asher (1969) inspiran gestos e imágenes mentales. El manual los ofrece como apoyos opcionales y reconoce que la evidencia de su efecto específico es más limitada que la del espaciado y la recuperación.</p></article>
+        <article class="principle"><div class="principle-no">05 / ELABORACIÓN Y TRANSFERENCIA</div><h3>Producir ejemplos propios</h3><p>El procesamiento profundo (Craik y Lockhart, 1972) y la carga de implicación (Hulstijn y Laufer, 2001) respaldan actividades donde el estudiante crea oraciones, preguntas y situaciones personales.</p></article>
+        <article class="principle"><div class="principle-no">06 / RETIRADA DE AYUDAS</div><h3>Pasar de pistas a producción independiente</h3><p>Andamiaje y zona de desarrollo próximo (Wood et al., 1976; Vygotsky, 1978), fading (Renkl y Atkinson, 2003) e inversión de la pericia (Kalyuga et al., 2003) inspiran la reducción gradual de modelos y pistas.</p></article>
+      </div>
+      <aside class="method-note"><b>i</b><p>El manual señala que la mayoría de los estudios citados se hizo en contextos distintos. La eficacia del diseño completo debe comprobarse con estudiantes; la versión se plantea como prototipo para evaluación, no como resultado ya validado.</p></aside>
+    </section>
+
+    <section class="wrap author-card" aria-label="Autoría del trabajo">
+      <div><strong>Jhon Carlos Sandoval Romero</strong><span>Estudiante de Licenciatura en Lenguas Modernas con énfasis en Inglés · Universidad La Gran Colombia</span></div>
+      <span class="academic-tag">Tarea · Teorías del Aprendizaje</span>
+    </section>
+  </main>
+  <footer><div class="wrap">Canvas educativo · Vocabulario en acción · Recurso académico gratuito.</div></footer>
+</body>
+</html>

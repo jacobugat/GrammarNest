@@ -1,0 +1,1770 @@
+[Normal] VOCABULARIO EN ACCIÓN
+[Normal] Libro de adquisición y recuperación activa del vocabulario en inglés
+[Normal] Volumen 1 · Phrasal verbs
+[Normal] 100 phrasal verbs · 20 unidades · 25 sesiones de práctica · 15 lecturas
+[Normal] Leer · Observar · Moverse · Imaginar · Recordar · Responder · Escribir · Usar
+[Normal] Prototipo de páginas para evaluación con estudiantes
+[Heading 1] Antes de empezar: separables e inseparables
+[Normal] Un phrasal verb es un verbo con una partícula (up, off, in, out…) que juntos forman un significado nuevo: get up = levantarse. Algunos aceptan el objeto en medio y otros no. Por eso cada phrasal verb de este libro lleva un símbolo que te dice de cuál tipo es:
+[TABLA]
+Símbolo | Tipo | Cómo funciona
+↔ | Separable | El objeto puede ir en medio o después de la partícula. / turn off the light  =  turn the light off / Si el objeto es un pronombre (it, them, him, her, me, you, us), va siempre en medio. Correcto: turn it off. Incorrecto: turn off it.
+ | Inseparable | El verbo y la partícula nunca se separan; el objeto va después. / look after my brother  →  look after him / Correcto: look after him. Incorrecto: look him after. / Aquí entran también los que no llevan objeto (get up, hang out) y los de tres palabras (come up with). Algunos, como look after o believe in, son técnicamente verbos preposicionales; en este libro se estudian igual.
+[/TABLA]
+[Heading 2] Cómo recordarlo
+[List Paragraph] Pregúntate: ¿puedo meter el objeto en medio? Si puedes, es ↔. Si no, es .
+[List Paragraph] Con los ↔, si el objeto es un pronombre, ponlo siempre en medio: pick it up, call it off.
+[List Paragraph] Si un verbo tiene un uso con objeto y otro sin objeto (take off: «quitarse algo» y «despegar»), el símbolo indica el uso con objeto. En los demás casos corresponde al significado que trae el libro.
+[List Paragraph] Verás el símbolo junto a cada phrasal verb en las tablas de expresiones nuevas, en la Fase 5, en el seguimiento y en la clave, y la leyenda está en el encabezado de cada página. En las recuperaciones no aparece: ahí lo recuerdas tú.
+[Heading 1] 1. Cómo funciona este libro
+[Normal] Este libro no es un diccionario. Cada expresión aparece varias veces, en páginas distintas y con actividades distintas, para que pases de reconocerla a recuperarla y usarla de forma espontánea. La repetición no consiste en copiar o leer lo mismo muchas veces, sino en recordar la expresión mediante tareas variadas.
+[Heading 2] Objetivo
+[Normal] Facilitar la retención a largo plazo y la producción espontánea mediante repetición espaciada, recuperación activa, asociación multimodal y transferencia de las expresiones a contextos personales y comunicativos.
+[Heading 2] Principios
+[List Paragraph] Aprendizaje contextualizado: cada expresión llega con una frase, una situación y una asociación, no como una traducción aislada.
+[List Paragraph] Repetición espaciada: una expresión reaparece después de intervalos crecientes, mezclada con vocabulario nuevo y con una actividad diferente.
+[List Paragraph] Recuperación activa: primero intentas recordar y después compruebas la respuesta en la clave del final.
+[List Paragraph] Asociación mediante movimiento y visualización: gestos inspirados en TPR y escenas mentales. Son apoyos opcionales, no obligatorios.
+[List Paragraph] Elaboración personal y transferencia: escribes tus propias oraciones, preguntas y situaciones.
+[List Paragraph] Retirada progresiva de las ayudas: cada vez hay menos pistas, traducciones, gestos y modelos.
+[Heading 2] Las seis fases de cada expresión
+[TABLA]
+Fase | Qué haces | Dónde aparece
+1. Presentación | Lees el significado y un ejemplo, y lo dices en voz alta. | Sesión n (expresiones nuevas)
+2. Asociación | Haces el gesto o imaginas la escena mientras dices la expresión. | Sesión n (expresiones nuevas)
+3. Recuperación con apoyo | Completas una frase con el significado y las letras iniciales como pista. | Sesión n + 1
+4. Recuperación sin apoyo | Ves solo el significado en español y recuerdas la expresión. | Sesión n + 2
+5. Elaboración y transferencia | Creas una oración propia, una pregunta o una situación. | Sesión n + 3
+6. Recuperación diferida | Completas frases sin letras iniciales, mezcladas con otras unidades. | Sesiones n + 5 y n + 8
+[/TABLA]
+[Normal] Las fases son un modelo orientativo: no todas las expresiones necesitan exactamente las mismas actividades.
+[Heading 1] 2. Cómo usar las sesiones
+[List Paragraph] Haz una sesión por día o por sesión de estudio. Cada una tarda unos 20–30 minutos.
+[List Paragraph] En cada recuperación, intenta responder antes de mirar la clave. Después compara y corrige.
+[List Paragraph] Marca cómo te fue en cada ítem: sin pista, con pista o no recordé. Las expresiones que no recordaste deben ir al diario de errores.
+[List Paragraph] Los gestos y las visualizaciones son opcionales, pero son más útiles cuando los haces en voz alta.
+[List Paragraph] Las sesiones finales de consolidación no traen vocabulario nuevo: solo cierran las fases pendientes.
+[List Paragraph] Después de cada cuatro unidades hay una lectura (después de las sesiones 5, 9, 13, 17 y 21) con los phrasal verbs de esas unidades. En cada espacio tienes el significado en español arriba y ninguna letra de pista: recuerda la expresión, conjúgala y escríbela. Al final del libro hay diez lecturas más para inspirar, con verbos de todas las unidades mezclados.
+[List Paragraph] Este libro complementa la exposición real al idioma y la conversación; no los reemplaza.
+[Heading 2] Niveles de dominio (para la tabla de seguimiento)
+[TABLA]
+Nivel | Significa que…
+Reconocimiento | Comprendo la expresión cuando la veo o la escucho.
+Recuperación con ayuda | Puedo producirla cuando recibo una pista.
+Recuperación independiente | Puedo recordarla sin consultar el modelo.
+Uso contextualizado | Puedo utilizarla en una situación diferente.
+Uso espontáneo | Puedo recuperarla durante una conversación sin depender del libro.
+[/TABLA]
+[Normal] Son indicadores prácticos de progreso, no niveles oficiales ni una garantía de dominio permanente. Las expresiones difíciles deben reaparecer antes; las fáciles pueden revisarse después de intervalos más amplios.
+[Heading 1] 3. Fundamentación teórica
+[Normal] Este libro no parte de una sola teoría, sino de un conjunto de hallazgos de la investigación sobre adquisición de vocabulario en segunda lengua y de la psicología cognitiva de la memoria. Esta sección explica en qué se apoya cada decisión de diseño (la elección de las expresiones, la repetición espaciada, la recuperación activa, los gestos, las tareas de elaboración y la retirada de ayudas) y hasta dónde llega ese respaldo.
+[Heading 2] Por qué phrasal verbs
+[Normal] Los phrasal verbs (verbo + partícula) son muy frecuentes en el inglés hablado e informal y, a la vez, difíciles para quien aprende: existen miles y su significado no siempre se deduce de sus partes. Existen listas de los más frecuentes, pero Garnier y Schmitt (2015) advierten que no tienen en cuenta la polisemia: los más comunes tienen en promedio más de cinco sentidos, por lo que proponen priorizar sus sentidos más frecuentes. Siguiendo esa lógica, el libro trabaja expresiones de uso corriente y presenta cada una con un significado principal dentro de una frase y una situación concretas, no como una traducción aislada.
+[Heading 2] Aprendizaje contextualizado e intencional
+[Normal] Aprender vocabulario requiere encuentros repetidos y variados con cada expresión, tanto en el uso real del idioma como en el estudio deliberado (Nation, 2007; Schmitt, 2008). Nation (2007) propone que un buen programa equilibre cuatro líneas: input centrado en el significado, producción centrada en el significado, estudio centrado en la lengua y desarrollo de la fluidez. Este libro trabaja sobre todo la tercera, y sus lecturas y tareas de uso personal se acercan a las demás. Por eso se aclara que complementa la exposición real al idioma y la conversación, y no las reemplaza.
+[Heading 2] Repetición espaciada
+[Normal] Desde los trabajos de Ebbinghaus (1885/1913) se sabe que lo aprendido se olvida con rapidez si no se revisa. En una revisión cuantitativa de estudios con tareas de recuerdo verbal, Cepeda et al. (2006) encontraron que distribuir la práctica en el tiempo produce mejor retención que concentrarla, y que el intervalo ideal entre repasos depende de cuánto tiempo se quiere recordar el material. Dunlosky et al. (2013) valoran la práctica distribuida como una de las técnicas de estudio de mayor utilidad. En el libro, cada expresión reaparece en las sesiones n + 1, n + 2, n + 3, n + 5 y n + 8, mezclada con otras unidades. Estos intervalos concretos son una decisión de diseño inspirada en esos hallazgos, no una prescripción de la literatura.
+[Heading 2] Recuperación activa
+[Normal] Intentar recordar fortalece la memoria más que volver a leer. Roediger y Karpicke (2006) mostraron que hacer pruebas de recuerdo mejora la retención a largo plazo frente a releer el material, y Karpicke y Roediger (2008), trabajando con pares de palabras de otra lengua, concluyeron que la recuperación repetida es decisiva para el aprendizaje. De ahí la regla central del libro: primero intenta recordar y solo después consulta la clave. Bjork (1994) y Bjork y Bjork (2011) llaman «dificultades deseables» a las condiciones que hacen el estudio más esforzado en el momento, como espaciar y recuperar, pero lo vuelven más duradero.
+[Heading 2] Asociación mediante movimiento y visualización
+[Normal] La teoría de la codificación dual (Paivio, 1986) sostiene que la información se recuerda mejor cuando se representa de forma verbal y también como imagen. Los gestos inspirados en la Respuesta Física Total (TPR; Asher, 1969) y la visualización guiada buscan crear esa segunda representación. En el libro son apoyos opcionales porque la evidencia sobre su efecto específico en el vocabulario es más limitada que la del espaciado y la recuperación.
+[Heading 2] Elaboración y transferencia
+[Normal] Procesar el significado de una expresión con profundidad deja huellas más duraderas que procesarla de forma superficial (Craik & Lockhart, 1972). En vocabulario, la hipótesis de la carga de implicación (Hulstijn & Laufer, 2001) plantea que se retiene mejor cuando la tarea exige necesidad, búsqueda y evaluación, como ocurre al usar la expresión para producir un texto propio. Por eso la fase 5 pide oraciones, preguntas y situaciones personales en lugar de copiar el ejemplo.
+[Heading 2] Retirada progresiva de las ayudas
+[Normal] En las primeras fases el libro ofrece significado, ejemplo, gesto e iniciales; después solo el significado, y al final frases sin pistas. Esta secuencia se relaciona con la idea de andamiaje (Wood et al., 1976), vinculada a la zona de desarrollo próximo de Vygotsky (1978), y, por analogía, con el fading de Renkl y Atkinson (2003), que sustituye de manera gradual los ejemplos resueltos por problemas que el estudiante resuelve solo. Además, el efecto de inversión de la pericia (Kalyuga et al., 2003) advierte que las ayudas útiles para quien empieza pueden volverse innecesarias, o incluso perjudiciales, cuando ya domina el contenido. Por eso las expresiones difíciles deben reaparecer antes y las fáciles pueden revisarse después.
+[Heading 2] Resumen: decisión de diseño y sustento
+[TABLA]
+Decisión de diseño | Principio | Fuentes principales
+Fases 3, 4 y 6: recuperación con apoyo, sin apoyo y diferida | Práctica de recuperación | Roediger & Karpicke (2006); Karpicke & Roediger (2008)
+Reaparición en las sesiones n + 1 a n + 8 | Práctica distribuida | Cepeda et al. (2006); Dunlosky et al. (2013)
+Fase 2: gestos y visualización | Codificación dual; TPR | Paivio (1986); Asher (1969)
+Fase 5: oraciones y preguntas propias | Procesamiento profundo; carga de implicación | Craik & Lockhart (1972); Hulstijn & Laufer (2001)
+Menos pistas a medida que avanzan las fases | Andamiaje y fading; inversión de la pericia | Wood et al. (1976); Renkl & Atkinson (2003); Kalyuga et al. (2003)
+Cada expresión con frase y situación; selección por frecuencia | Vocabulario en contexto; listas de frecuencia | Nation (2007); Garnier & Schmitt (2015)
+[/TABLA]
+[Heading 2] Alcances y límites
+[Normal] El modelo integra principios con respaldo empírico, pero la mayoría de esos estudios se hizo con materiales y contextos distintos a los de este libro. La eficacia del diseño completo (las seis fases, los intervalos y los niveles de dominio) debe comprobarse con estudiantes, que es el propósito de esta versión de prototipo.
+[Normal] Las citas siguen el formato APA 7.ª edición; las referencias completas están al final del libro.
+[Heading 1] Sesión 1 · Unidad 1
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Deal with  | Ocuparse de | She deals with all the customer emails. | Junta las manos y "toma" un montón de papeles imaginarios hacia ti.
+Get in  | Entrar / Subir | Please get in; the car is ready. | Agáchate como si entraras a un coche y cierra una puerta imaginaria.
+Get up  | Levantarse | I get up at six every day. | Pasa de estar sentado a estar de pie, estirando los brazos.
+Set up ↔ | Organizar | We set up the tables before the party. | Coloca objetos imaginarios sobre una mesa, uno por uno.
+Look into  | Estudiar / Analizar | The police will look into the problem. | Inclínate y mira dentro de una caja imaginaria con la mano en visera.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Deal with, Get in, Get up. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 2 · Unidad 2
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Take over ↔ | Tomar el control / Hacerse cargo | He took over the company last year. | Estira las manos y agarra un volante imaginario que era de otra persona.
+Take off ↔ | Quitarse (ropa) / Despegar | The plane takes off at noon. | Con la mano plana, haz subir un avión en diagonal.
+Try on ↔ | Probarse (ropa) | Can I try on this jacket? | Finge ponerte una chaqueta y mírate en un espejo.
+Put off ↔ | Posponer | Don't put off your homework. | Empuja un objeto imaginario lejos de ti sobre la mesa.
+Look after  | Cuidar a alguien | She looks after her little brother. | Mece a un bebé imaginario con ambos brazos.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Take over, Take off, Try on. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 1)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She d____ w___ all the customer emails.  (Ocuparse de) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Please g__ i__; the car is ready.  (Entrar / Subir) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I g__ u__ at six every day.  (Levantarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We s__ u__ the tables before the party.  (Organizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | The police will l___ i___ the problem.  (Estudiar / Analizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 3 · Unidad 3
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Bring out ↔ | Sacar / Presentar | The company will bring out a new phone. | Saca algo de detrás de tu espalda y muéstralo al frente.
+Bring up ↔ | Sacar un tema / Mencionar | Don't bring up that topic at dinner. | Sube la mano desde abajo, como levantando un tema hasta la mesa.
+Come along  | Acompañar / Venir | Do you want to come along? | Haz señas con la mano para que alguien te siga.
+Go through  | Pasar por / Atravesar | We went through a long tunnel. | Atraviesa con una mano un aro hecho con la otra.
+Throw away ↔ | Tirar (a la basura) | I threw away the old magazines. | Lanza un papel imaginario a un cubo de basura.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Bring out, Bring up, Come along. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 2)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | He t___ o___ the company last year.  (Tomar el control / Hacerse cargo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | The plane t____ o__ at noon.  (Quitarse (ropa) / Despegar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Can I t__ o__ this jacket?  (Probarse (ropa)) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Don't p__ o__ your homework.  (Posponer) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | She l____ a____ her little brother.  (Cuidar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 1)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Ocuparse de |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Entrar / Subir |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Levantarse |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Organizar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Estudiar / Analizar |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 4 · Unidad 4
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Cut down  | Reducir | I'm trying to cut down on sugar. | Haz tijera con dos dedos y baja la mano.
+Come up with  | Proponer / Idear | She came up with a great idea. | Señala tu cabeza y sube un dedo, como una bombilla que se enciende.
+Hang on  | Esperar / Aguardar | Hang on, I'm almost ready. | Levanta la palma de la mano al frente, como pidiendo un momento.
+Press on  | Seguir adelante | It was hard, but we pressed on. | Empuja una pared imaginaria con ambas manos mientras avanzas.
+Keep up with  | Seguirle el ritmo a alguien | I can't keep up with you; you walk too fast. | Camina rápido en el sitio mirando a alguien que va adelante.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Cut down, Come up with, Hang on. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 3)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | The company will b____ o__ a new phone.  (Sacar / Presentar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Don't b____ u__ that topic at dinner.  (Sacar un tema / Mencionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Do you want to c___ a____?  (Acompañar / Venir) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We w___ t______ a long tunnel.  (Pasar por / Atravesar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I t____ a___ the old magazines.  (Tirar (a la basura)) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 2)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Tomar el control / Hacerse cargo |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Quitarse (ropa) / Despegar |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Probarse (ropa) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Posponer |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Cuidar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 1)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Deal with  — Escribe una oración sobre algo que hiciste esta semana usando «deal with».
+[Normal] 2. Get in  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «get in».
+[Normal] 3. Get up  — Escribe una pregunta que le harías a alguien usando «get up».
+[Normal] 4. Set up ↔ — Escribe una oración sobre tus planes futuros con «set up».
+[Normal] 5. Look into  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “The police will look into the problem.”
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 5 · Unidad 5
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Take on ↔ | Asumir / Hacerse cargo de | She took on a new project. | Levanta una caja pesada imaginaria y cárgala en tus brazos.
+Give up  | Rendirse | Don't give up; you're almost there. | Levanta ambas manos como en señal de rendición.
+Carry out ↔ | Llevar a cabo | They carried out the plan perfectly. | Lleva una bandeja imaginaria hacia afuera con cuidado.
+Get along  | Llevarse bien | My sister and I get along well. | Camina con las dos manos juntas, una al lado de la otra.
+Think over ↔ | Meditar / Reflexionar | I need to think over your offer. | Pon un dedo en la sien y gira la mirada hacia arriba.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Take on, Give up, Carry out. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 4)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'm trying to c__ d___ on sugar.  (Reducir) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | She c___ u__ w___ a great idea.  (Proponer / Idear) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | H___ o__, I'm almost ready.  (Esperar / Aguardar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | It was hard, but we p______ o__.  (Seguir adelante) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I can't k___ u__ w___ you; you walk too fast.  (Seguirle el ritmo a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 3)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Sacar / Presentar |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Sacar un tema / Mencionar |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Acompañar / Venir |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Pasar por / Atravesar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Tirar (a la basura) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 2)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Take over ↔ — Escribe una oración sobre algo que hiciste esta semana usando «take over».
+[Normal] 2. Take off ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «take off».
+[Normal] 3. Try on ↔ — Escribe una pregunta que le harías a alguien usando «try on».
+[Normal] 4. Put off ↔ — Escribe una oración sobre tus planes futuros con «put off».
+[Normal] 5. Look after  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “She looks after her little brother.”
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Lectura 1 · My First Week at La Gran Colombia
+[Normal] Vida universitaria · primera semana en Lenguas Modernas · Unidades 1–4
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] My name is Camila, and I am a first-year student of Modern Languages in Bogotá. On my first Monday I  at five because the trip to the university takes more than an hour. Since it was a special day, I  four shirts before I chose one. When the bus arrived, it was so full that I almost couldn't .
+[Normal] In the classroom, the professor asked us to  the chairs in a circle. It was warm, so I  my jacket. The professor said she would  any question about the schedule, and when a student asked about the library, she promised to  it. She also explained that she would  the grammar class until the new teacher arrived.
+[Normal] The first reading was long and difficult. I was afraid that I couldn't  the group, but I told myself to . During the break I ran after a classmate and shouted, “!”
+[Normal] That classmate was Daniel. He  a plan: study together every afternoon. He invited me to  to the library, and we  the first chapter line by line. I  my biggest problem, vocabulary, and Daniel  a notebook full of colors and drawings. “You should  on translations,” he said, “and never  your mistakes.” I decided not to  my homework anymore. Daniel could not stay long because he has to  his little sister in the afternoons, but my first week ended better than I expected.
+[Normal] Aciertos: ______ / 20        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Mi turno: escribe dos o tres oraciones en inglés sobre esta lectura o sobre tu propia experiencia, usando al menos dos de los phrasal verbs.
+[Heading 1] Sesión 6 · Unidad 6
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Take something off ↔ | Quitarse algo | He took off his watch before swimming. | Finge desabrochar un reloj o quitar una prenda de tu cuerpo.
+Tidy up ↔ | Ordenar / Asear | Let's tidy up before the guests arrive. | Recoge objetos del suelo y colócalos en su lugar.
+Check something out ↔ | Revisar / Echar un vistazo | I'll check out the website tonight. | Acércate a algo imaginario y míralo con atención, de lado a lado.
+Find out ↔ | Averiguar / Descubrir | I want to find out the truth. | Mira con una lupa imaginaria y abre las manos al descubrir.
+Work out  | Hacer ejercicio | He works out at the gym three times a week. | Levanta unas pesas imaginarias con ambos brazos.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Take something off, Tidy up, Check something out. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 5)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She t___ o__ a new project.  (Asumir / Hacerse cargo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Don't g___ u__; you're almost there.  (Rendirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | They c______ o__ the plan perfectly.  (Llevar a cabo) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | My sister and I g__ a____ well.  (Llevarse bien) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I need to t____ o___ your offer.  (Meditar / Reflexionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 4)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Reducir |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Proponer / Idear |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Esperar / Aguardar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Seguir adelante |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Seguirle el ritmo a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 3)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Bring out ↔ — Escribe una oración sobre algo que hiciste esta semana usando «bring out».
+[Normal] 2. Bring up ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «bring up».
+[Normal] 3. Come along  — Escribe una pregunta que le harías a alguien usando «come along».
+[Normal] 4. Go through  — Escribe una oración sobre tus planes futuros con «go through».
+[Normal] 5. Throw away ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I threw away the old magazines.”
+[Normal] Fase 6 · Recuperación diferida (unidades 1)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She __________ all the customer emails.  (Ocuparse de) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | The police will __________ the problem.  (Estudiar / Analizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We __________ the tables before the party.  (Organizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Please __________; the car is ready.  (Entrar / Subir) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I __________ at six every day.  (Levantarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 7 · Unidad 7
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Hang out  | Pasar el rato | We hang out at the park on Sundays. | Apóyate relajado en una pared imaginaria con los brazos cruzados.
+Believe in  | Creer en alguien | I believe in you. | Pon la mano en el pecho y luego señala a la otra persona.
+Go back  | Volver / Regresar | We went back to the hotel. | Camina unos pasos y da media vuelta.
+Give something away ↔ | Regalar / Dar algo | She gave away her old clothes. | Extiende los brazos entregando bolsas imaginarias a otros.
+Care for  | Preocuparse por alguien | He cares for his grandmother. | Pon ambas manos sobre el corazón.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Hang out, Believe in, Go back. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 6)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | He t___ o__ his watch before swimming.  (Quitarse algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Let's t___ u__ before the guests arrive.  (Ordenar / Asear) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I'll c____ o__ the website tonight.  (Revisar / Echar un vistazo) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I want to f___ o__ the truth.  (Averiguar / Descubrir) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He w____ o__ at the gym three times a week.  (Hacer ejercicio) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 5)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Asumir / Hacerse cargo de |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Rendirse |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Llevar a cabo |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Llevarse bien |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Meditar / Reflexionar |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 4)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Cut down  — Escribe una oración sobre algo que hiciste esta semana usando «cut down».
+[Normal] 2. Come up with  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «come up with».
+[Normal] 3. Hang on  — Escribe una pregunta que le harías a alguien usando «hang on».
+[Normal] 4. Press on  — Escribe una oración sobre tus planes futuros con «press on».
+[Normal] 5. Keep up with  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I can't keep up with you; you walk too fast.”
+[Normal] Fase 6 · Recuperación diferida (unidades 2)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | He __________ the company last year.  (Tomar el control / Hacerse cargo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | The plane __________ at noon.  (Quitarse (ropa) / Despegar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | She __________ her little brother.  (Cuidar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Can I __________ this jacket?  (Probarse (ropa)) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Don't __________ your homework.  (Posponer) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 8 · Unidad 8
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Hurry up  | Darse prisa | Hurry up! We're late. | Mira tu reloj de muñeca y mueve la mano rápido para apurar.
+Stay over  | Quedarse a dormir | My friend stayed over last night. | Junta las manos bajo la mejilla, como durmiendo en casa ajena.
+Watch out  | Tener cuidado | Watch out! The floor is wet. | Extiende la palma al frente y abre bien los ojos.
+Pick up ↔ | Recoger / Comprar | I'll pick up some bread on my way home. | Agáchate y recoge algo del suelo.
+Cheer up  | Animarse | Cheer up! Things will get better. | Sube las comisuras de la boca con los dedos y levanta los brazos.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Hurry up, Stay over, Watch out. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 7)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | We h___ o__ at the park on Sundays.  (Pasar el rato) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I b______ i__ you.  (Creer en alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We w___ b___ to the hotel.  (Volver / Regresar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | She g___ a___ her old clothes.  (Regalar / Dar algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He c____ f__ his grandmother.  (Preocuparse por alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 6)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Quitarse algo |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Ordenar / Asear |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Revisar / Echar un vistazo |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Averiguar / Descubrir |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Hacer ejercicio |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 5)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Take on ↔ — Escribe una oración sobre algo que hiciste esta semana usando «take on».
+[Normal] 2. Give up  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «give up».
+[Normal] 3. Carry out ↔ — Escribe una pregunta que le harías a alguien usando «carry out».
+[Normal] 4. Get along  — Escribe una oración sobre tus planes futuros con «get along».
+[Normal] 5. Think over ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I need to think over your offer.”
+[Normal] Fase 6 · Recuperación diferida (unidades 3)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | Don't __________ that topic at dinner.  (Sacar un tema / Mencionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Do you want to __________?  (Acompañar / Venir) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I __________ the old magazines.  (Tirar (a la basura)) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We __________ a long tunnel.  (Pasar por / Atravesar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | The company will __________ a new phone.  (Sacar / Presentar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 9 · Unidad 9
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Calm down  | Calmarse | Calm down and tell me what happened. | Baja las palmas lentamente mientras respiras hondo.
+Come over  | Venir / Pasarse | Why don't you come over tonight? | Invita con la mano hacia ti, como llamando a alguien a tu casa.
+Drop by  | Pasar por (algún lugar) | I'll drop by your office later. | Deja "caer" una mano sobre la mesa, rápido, como una visita corta.
+Catch up with  | Alcanzar / Volver a verse | I'd love to catch up with you this week. | Da unos pasos rápidos y toca el hombro de alguien.
+Ask someone out ↔ | Invitar a salir a alguien | He finally asked out his classmate. | Extiende la mano con la palma hacia arriba, como una invitación.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Calm down, Come over, Drop by. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 8)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | H____ u__! We're late.  (Darse prisa) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | My friend s_____ o___ last night.  (Quedarse a dormir) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | W____ o__! The floor is wet.  (Tener cuidado) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'll p___ u__ some bread on my way home.  (Recoger / Comprar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | C____ u__! Things will get better.  (Animarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 7)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Pasar el rato |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Creer en alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Volver / Regresar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Regalar / Dar algo |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Preocuparse por alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 6)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Take something off ↔ — Escribe una oración sobre algo que hiciste esta semana usando «take something off».
+[Normal] 2. Tidy up ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «tidy up».
+[Normal] 3. Check something out ↔ — Escribe una pregunta que le harías a alguien usando «check something out».
+[Normal] 4. Find out ↔ — Escribe una oración sobre tus planes futuros con «find out».
+[Normal] 5. Work out  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “He works out at the gym three times a week.”
+[Normal] Fase 6 · Recuperación diferida (unidades 4 y 1)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She __________ all the customer emails.  (Ocuparse de) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | She __________ a great idea.  (Proponer / Idear) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | __________, I'm almost ready.  (Esperar / Aguardar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I can't __________ you; you walk too fast.  (Seguirle el ritmo a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I __________ at six every day.  (Levantarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | Please __________; the car is ready.  (Entrar / Subir) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | We __________ the tables before the party.  (Organizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | It was hard, but we __________.  (Seguir adelante) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I'm trying to __________ on sugar.  (Reducir) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | The police will __________ the problem.  (Estudiar / Analizar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Lectura 2 · The Conversation Club
+[Normal] Aprendizaje de idiomas · práctica docente con principiantes · Unidades 5–8
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] In our second semester, our teacher asked us to  a new project: an English conversation club for beginners. At first I wanted to  because I had never taught before, so I asked for one night to  the idea. The next day, my team and I met to  the plan. We  very well, and that makes teamwork much easier. First, we needed to  what the students wanted to learn, so we made a short survey, and we  several free apps for practice.
+[Normal] On the first day we arrived early to  the room. It was raining, so the students  their wet coats at the door. One student, Laura, was so nervous that she almost cried. I tried to  Laura with a joke and told her, “I  you.” Suddenly the floor was wet and a boy almost fell. “!” I shouted. Everyone laughed, and the class began.
+[Normal] After the club, my teammate Sofia, who  every morning, said, “, or we'll miss lunch!” Sofia is a very kind person who  her grandmother at home. On weekends we  in a café near the historic center. Before our final presentation, a friend  at my house so we could practice. In the morning I  some coffee on the way, and after the presentation we  to the classroom and  our old books to the students.
+[Normal] Aciertos: ______ / 20        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Mi turno: escribe dos o tres oraciones en inglés sobre esta lectura o sobre tu propia experiencia, usando al menos dos de los phrasal verbs.
+[Heading 1] Sesión 10 · Unidad 10
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Meet up with  | Reunirse / Encontrarse | I'm meeting up with my cousins on Friday. | Acerca tus dos manos desde lados opuestos hasta juntarlas.
+Pick someone up ↔ | Recoger a alguien | I'll pick up my sister at the airport. | Finge abrir la puerta de un coche y hacer señas para que alguien suba.
+Get by  | Arreglárselas | I get by on a small salary. | Haz equilibrio con los brazos, como sobre una cuerda floja.
+Pay back ↔ | Pagar / Saldar una deuda | I will pay back the money tomorrow. | Cuenta billetes imaginarios y devuélvelos a una mano abierta.
+Pay off ↔ | Saldar / Liquidar | She finally paid off her loan. | Tacha algo en el aire con un gesto firme de "terminado".
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Meet up with, Pick someone up, Get by. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 9)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | C___ d___ and tell me what happened.  (Calmarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Why don't you c___ o___ tonight?  (Venir / Pasarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I'll d___ b__ your office later.  (Pasar por (algún lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'd love to c____ u__ w___ you this week.  (Alcanzar / Volver a verse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He finally a____ o__ his classmate.  (Invitar a salir a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 8)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Darse prisa |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Quedarse a dormir |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Tener cuidado |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Recoger / Comprar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Animarse |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 7)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Hang out  — Escribe una oración sobre algo que hiciste esta semana usando «hang out».
+[Normal] 2. Believe in  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «believe in».
+[Normal] 3. Go back  — Escribe una pregunta que le harías a alguien usando «go back».
+[Normal] 4. Give something away ↔ — Escribe una oración sobre tus planes futuros con «give something away».
+[Normal] 5. Care for  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “He cares for his grandmother.”
+[Normal] Fase 6 · Recuperación diferida (unidades 5 y 2)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | The plane __________ at noon.  (Quitarse (ropa) / Despegar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | They __________ the plan perfectly.  (Llevar a cabo) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I need to __________ your offer.  (Meditar / Reflexionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Can I __________ this jacket?  (Probarse (ropa)) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | She __________ her little brother.  (Cuidar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | Don't __________ your homework.  (Posponer) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | Don't __________; you're almost there.  (Rendirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | My sister and I __________ well.  (Llevarse bien) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | He __________ the company last year.  (Tomar el control / Hacerse cargo) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | She __________ a new project.  (Asumir / Hacerse cargo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 11 · Unidad 11
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Save up  | Ahorrar | I'm saving up for a new laptop. | Mete monedas imaginarias en una alcancía, una por una.
+Put aside ↔ | Apartar / Reservar | Try to put aside some money each month. | Separa un montón imaginario y colócalo a un lado.
+Cut back  | Recortar / Reducir gastos | We need to cut back on spending. | Con tijeras imaginarias, recorta hacia ti un borde.
+Call off ↔ | Cancelar | They called off the match because of rain. | Cruza los brazos en X, como cancelando.
+Do something over ↔ | Hacer algo de nuevo | I had to do over the whole exercise. | Dibuja un círculo con el dedo y vuelve a empezar desde el inicio.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Save up, Put aside, Cut back. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 10)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'm m______ u__ w___ my cousins on Friday.  (Reunirse / Encontrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I'll p___ u__ my sister at the airport.  (Recoger a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I g__ b__ on a small salary.  (Arreglárselas) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I will p__ b___ the money tomorrow.  (Pagar / Saldar una deuda) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | She finally p___ o__ her loan.  (Saldar / Liquidar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 9)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Calmarse |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Venir / Pasarse |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Pasar por (algún lugar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Alcanzar / Volver a verse |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Invitar a salir a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 8)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Hurry up  — Escribe una oración sobre algo que hiciste esta semana usando «hurry up».
+[Normal] 2. Stay over  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «stay over».
+[Normal] 3. Watch out  — Escribe una pregunta que le harías a alguien usando «watch out».
+[Normal] 4. Pick up ↔ — Escribe una oración sobre tus planes futuros con «pick up».
+[Normal] 5. Cheer up  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “Cheer up! Things will get better.”
+[Normal] Fase 6 · Recuperación diferida (unidades 6 y 3)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'll __________ the website tonight.  (Revisar / Echar un vistazo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | He __________ at the gym three times a week.  (Hacer ejercicio) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Let's __________ before the guests arrive.  (Ordenar / Asear) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | He __________ his watch before swimming.  (Quitarse algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I want to __________ the truth.  (Averiguar / Descubrir) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I __________ the old magazines.  (Tirar (a la basura)) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | The company will __________ a new phone.  (Sacar / Presentar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | We __________ a long tunnel.  (Pasar por / Atravesar) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | Don't __________ that topic at dinner.  (Sacar un tema / Mencionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | Do you want to __________?  (Acompañar / Venir) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 12 · Unidad 12
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Figure something out ↔ | Averiguar / Resolver algo | I can't figure out this problem. | Junta piezas de un rompecabezas imaginario hasta que encajen.
+Pass out  | Desmayarse | He passed out because of the heat. | Deja caer los brazos y la cabeza hacia adelante, con cuidado.
+Back someone up ↔ | Respaldar a alguien | She backed up her friend in the meeting. | Pon una mano detrás de la espalda de alguien, como sosteniéndolo.
+Break down  | Descomponerse | Our car broke down on the highway. | Levanta las manos al capó imaginario y deja caer los hombros.
+Dive into  | Sumergirse en (un tema/acción) | She dived into her studies. | Junta las manos sobre la cabeza y "zambúllete" hacia el frente.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Figure something out, Pass out, Back someone up. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 11)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'm s_____ u__ for a new laptop.  (Ahorrar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Try to p__ a____ some money each month.  (Apartar / Reservar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We need to c__ b___ on spending.  (Recortar / Reducir gastos) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | They c_____ o__ the match because of rain.  (Cancelar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I had to d__ o___ the whole exercise.  (Hacer algo de nuevo) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 10)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Reunirse / Encontrarse |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Recoger a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Arreglárselas |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Pagar / Saldar una deuda |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Saldar / Liquidar |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 9)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Calm down  — Escribe una oración sobre algo que hiciste esta semana usando «calm down».
+[Normal] 2. Come over  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «come over».
+[Normal] 3. Drop by  — Escribe una pregunta que le harías a alguien usando «drop by».
+[Normal] 4. Catch up with  — Escribe una oración sobre tus planes futuros con «catch up with».
+[Normal] 5. Ask someone out ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “He finally asked out his classmate.”
+[Normal] Fase 6 · Recuperación diferida (unidades 7 y 4)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I can't __________ you; you walk too fast.  (Seguirle el ritmo a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | It was hard, but we __________.  (Seguir adelante) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We __________ at the park on Sundays.  (Pasar el rato) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | __________, I'm almost ready.  (Esperar / Aguardar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He __________ his grandmother.  (Preocuparse por alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I __________ you.  (Creer en alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | I'm trying to __________ on sugar.  (Reducir) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | We __________ to the hotel.  (Volver / Regresar) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | She __________ her old clothes.  (Regalar / Dar algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | She __________ a great idea.  (Proponer / Idear) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 13 · Unidad 13
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Come across  | Encontrarse con alguien | I came across an old photo yesterday. | Camina y detente de golpe, sorprendido, al ver algo.
+Pick out ↔ | Elegir algo | Can you pick out a gift for her? | Señala y toma una cosa entre varias en una mesa imaginaria.
+Put up with  | Tolerar | I can't put up with this noise. | Aprieta los dientes, cierra los puños y aguanta con los hombros tensos.
+Butt in  | Entrometerse | Don't butt in when adults are talking. | Mete tu mano entre otras dos que "conversan".
+Chicken out  | Acobardarse | He wanted to jump, but he chickened out. | Da un paso hacia el borde y retrocede, con los codos como alas.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Come across, Pick out, Put up with. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 12)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I can't f_____ o__ this problem.  (Averiguar / Resolver algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | He p_____ o__ because of the heat.  (Desmayarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | She b_____ u__ her friend in the meeting.  (Respaldar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Our car b____ d___ on the highway.  (Descomponerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | She d____ i___ her studies.  (Sumergirse en (un tema/acción)) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 11)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Ahorrar |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Apartar / Reservar |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Recortar / Reducir gastos |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Cancelar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Hacer algo de nuevo |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 10)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Meet up with  — Escribe una oración sobre algo que hiciste esta semana usando «meet up with».
+[Normal] 2. Pick someone up ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «pick someone up».
+[Normal] 3. Get by  — Escribe una pregunta que le harías a alguien usando «get by».
+[Normal] 4. Pay back ↔ — Escribe una oración sobre tus planes futuros con «pay back».
+[Normal] 5. Pay off ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “She finally paid off her loan.”
+[Normal] Fase 6 · Recuperación diferida (unidades 8 y 5)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | Don't __________; you're almost there.  (Rendirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | __________! We're late.  (Darse prisa) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | __________! Things will get better.  (Animarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | They __________ the plan perfectly.  (Llevar a cabo) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | My friend __________ last night.  (Quedarse a dormir) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | My sister and I __________ well.  (Llevarse bien) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | I need to __________ your offer.  (Meditar / Reflexionar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | __________! The floor is wet.  (Tener cuidado) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I'll __________ some bread on my way home.  (Recoger / Comprar) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | She __________ a new project.  (Asumir / Hacerse cargo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Lectura 3 · My Job at the Language Academy
+[Normal] Mundo laboral · primer trabajo como profesor de inglés · Unidades 9–12
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] In my third year, I got a part-time job at a small language academy. The salary was low, so I had to  carefully. I wanted to  for a trip to Canada, so I decided to  a little money every week and  on snacks and taxis. I also had to  my cousin, who had lent me money for books, and later I managed to  a small loan.
+[Normal] My first week was stressful. The projector  in the middle of a class, and a student started to panic. I told her to . Then I tried to  the problem, but I couldn't, and my boss had to . That same week the coordinator had to  the evening class because of a storm, and a student who felt dizzy almost  in the hallway. After the storm, my brother  at the academy. That night I had to  my whole lesson plan, and I  grammar books to improve my explanations.
+[Normal] The academy was also a happy place. Our colleague Mateo finally  the receptionist, and she said yes. On Fridays we  other teachers, and we  old friends from the university. Sometimes a former classmate  to say hello, and sometimes the teachers  to my apartment for dinner.
+[Normal] Aciertos: ______ / 20        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Mi turno: escribe dos o tres oraciones en inglés sobre esta lectura o sobre tu propia experiencia, usando al menos dos de los phrasal verbs.
+[Heading 1] Sesión 14 · Unidad 14
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Come about  | Suceder / Surgir | How did this problem come about? | Con las manos, haz brotar algo desde abajo hacia arriba.
+Turn on ↔ | Encender | Please turn on the light. | Gira un interruptor imaginario hacia arriba.
+Turn off ↔ | Apagar | Turn off your phone, please. | Gira un interruptor imaginario hacia abajo.
+Get on  | Subirse (a un transporte) | We got on the bus at nine. | Sube un escalón imaginario con una pierna.
+Get off  | Bajarse (de un transporte) | I get off at the next stop. | Baja un escalón imaginario con una pierna.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Come about, Turn on, Turn off. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 13)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I c___ a_____ an old photo yesterday.  (Encontrarse con alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Can you p___ o__ a gift for her?  (Elegir algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I can't p__ u__ w___ this noise.  (Tolerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Don't b___ i__ when adults are talking.  (Entrometerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He wanted to jump, but he c________ o__.  (Acobardarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 12)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Averiguar / Resolver algo |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Desmayarse |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Respaldar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Descomponerse |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Sumergirse en (un tema/acción) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 11)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Save up  — Escribe una oración sobre algo que hiciste esta semana usando «save up».
+[Normal] 2. Put aside ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «put aside».
+[Normal] 3. Cut back  — Escribe una pregunta que le harías a alguien usando «cut back».
+[Normal] 4. Call off ↔ — Escribe una oración sobre tus planes futuros con «call off».
+[Normal] 5. Do something over ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I had to do over the whole exercise.”
+[Normal] Fase 6 · Recuperación diferida (unidades 9 y 6)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | Let's __________ before the guests arrive.  (Ordenar / Asear) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I'll __________ the website tonight.  (Revisar / Echar un vistazo) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | He __________ at the gym three times a week.  (Hacer ejercicio) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Why don't you __________ tonight?  (Venir / Pasarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I want to __________ the truth.  (Averiguar / Descubrir) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I'd love to __________ you this week.  (Alcanzar / Volver a verse) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | He finally __________ his classmate.  (Invitar a salir a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | __________ and tell me what happened.  (Calmarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I'll __________ your office later.  (Pasar por (algún lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | He __________ his watch before swimming.  (Quitarse algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 15 · Unidad 15
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Slow down  | Frenar / Reducir la velocidad | You're driving too fast; slow down! | Pisa el freno imaginario y baja las manos despacio.
+Speed up  | Acelerar | The driver sped up on the highway. | Pisa el acelerador imaginario y mueve las manos cada vez más rápido.
+Turn up ↔ | Subir el volumen / el calor | Can you turn up the music? | Gira una perilla imaginaria hacia la derecha.
+Turn down ↔ | Bajar el volumen / Rechazar | He turned down the job offer. | Gira una perilla hacia la izquierda y aleja una oferta con la mano.
+Dress up  | Vestirse de gala | We dressed up for the wedding. | Ajústate una corbata o un vestido imaginarios, con elegancia.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Slow down, Speed up, Turn up. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 14)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | How did this problem c___ a____?  (Suceder / Surgir) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Please t___ o__ the light.  (Encender) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | T___ o__ your phone, please.  (Apagar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We g__ o__ the bus at nine.  (Subirse (a un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I g__ o__ at the next stop.  (Bajarse (de un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 13)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Encontrarse con alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Elegir algo |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Tolerar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Entrometerse |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Acobardarse |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 12)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Figure something out ↔ — Escribe una oración sobre algo que hiciste esta semana usando «figure something out».
+[Normal] 2. Pass out  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «pass out».
+[Normal] 3. Back someone up ↔ — Escribe una pregunta que le harías a alguien usando «back someone up».
+[Normal] 4. Break down  — Escribe una oración sobre tus planes futuros con «break down».
+[Normal] 5. Dive into  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “She dived into her studies.”
+[Normal] Fase 6 · Recuperación diferida (unidades 10 y 7)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She __________ her old clothes.  (Regalar / Dar algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I __________ on a small salary.  (Arreglárselas) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | He __________ his grandmother.  (Preocuparse por alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | She finally __________ her loan.  (Saldar / Liquidar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I __________ you.  (Creer en alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I will __________ the money tomorrow.  (Pagar / Saldar una deuda) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | We __________ at the park on Sundays.  (Pasar el rato) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | I'm __________ my cousins on Friday.  (Reunirse / Encontrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I'll __________ my sister at the airport.  (Recoger a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | We __________ to the hotel.  (Volver / Regresar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 16 · Unidad 16
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Dress down  | Vestirse casual | On Fridays, we dress down at work. | Afloja la corbata y sube las mangas.
+Get together  | Reunirse | Let's get together next weekend. | Junta las dos manos hasta unir los dedos.
+Go out  | Salir | They go out every Saturday night. | Camina hacia una puerta imaginaria y ábrela.
+Stay in  | Quedarse en casa | I'd rather stay in tonight. | Siéntate, cruza las piernas y finge ver una película.
+Drop someone off ↔ | Dejar a alguien en algún sitio | I'll drop off the kids at school. | Detén un coche imaginario y haz bajar a alguien con la mano.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Dress down, Get together, Go out. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 15)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | You're driving too fast; s___ d___!  (Frenar / Reducir la velocidad) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | The driver s___ u__ on the highway.  (Acelerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Can you t___ u__ the music?  (Subir el volumen / el calor) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | He t_____ d___ the job offer.  (Bajar el volumen / Rechazar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | We d______ u__ for the wedding.  (Vestirse de gala) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 14)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Suceder / Surgir |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Encender |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Apagar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Subirse (a un transporte) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Bajarse (de un transporte) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 13)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Come across  — Escribe una oración sobre algo que hiciste esta semana usando «come across».
+[Normal] 2. Pick out ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «pick out».
+[Normal] 3. Put up with  — Escribe una pregunta que le harías a alguien usando «put up with».
+[Normal] 4. Butt in  — Escribe una oración sobre tus planes futuros con «butt in».
+[Normal] 5. Chicken out  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “He wanted to jump, but he chickened out.”
+[Normal] Fase 6 · Recuperación diferida (unidades 11 y 8)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | We need to __________ on spending.  (Recortar / Reducir gastos) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | __________! The floor is wet.  (Tener cuidado) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I had to __________ the whole exercise.  (Hacer algo de nuevo) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'm __________ for a new laptop.  (Ahorrar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | __________! Things will get better.  (Animarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | My friend __________ last night.  (Quedarse a dormir) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | Try to __________ some money each month.  (Apartar / Reservar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | I'll __________ some bread on my way home.  (Recoger / Comprar) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | __________! We're late.  (Darse prisa) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | They __________ the match because of rain.  (Cancelar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 17 · Unidad 17
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Check in  | Registrarse | We checked in at the hotel at noon. | Entrega un pasaporte imaginario en un mostrador.
+Check out  | Salir (de un hotel/lugar) | We checked out at ten. | Devuelve una llave imaginaria en el mostrador.
+Get someone down ↔ | Desanimar a alguien | The long winter gets everyone down. | Deja caer los hombros y baja la mirada.
+Put something in ↔ | Poner algo en | She put the keys in her bag. | Deja caer un objeto en una bolsa imaginaria.
+Take it out of ↔ | Sacar algo de | He took the money out of his wallet. | Saca un billete de un bolsillo imaginario.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Check in, Check out, Get someone down. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 16)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | On Fridays, we d____ d___ at work.  (Vestirse casual) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Let's g__ t_______ next weekend.  (Reunirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | They g__ o__ every Saturday night.  (Salir) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'd rather s___ i__ tonight.  (Quedarse en casa) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I'll d___ o__ the kids at school.  (Dejar a alguien en algún sitio) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 15)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Frenar / Reducir la velocidad |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Acelerar |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Subir el volumen / el calor |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Bajar el volumen / Rechazar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Vestirse de gala |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 14)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Come about  — Escribe una oración sobre algo que hiciste esta semana usando «come about».
+[Normal] 2. Turn on ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «turn on».
+[Normal] 3. Turn off ↔ — Escribe una pregunta que le harías a alguien usando «turn off».
+[Normal] 4. Get on  — Escribe una oración sobre tus planes futuros con «get on».
+[Normal] 5. Get off  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I get off at the next stop.”
+[Normal] Fase 6 · Recuperación diferida (unidades 12 y 9)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | He finally __________ his classmate.  (Invitar a salir a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | She __________ her studies.  (Sumergirse en (un tema/acción)) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I can't __________ this problem.  (Averiguar / Resolver algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Why don't you __________ tonight?  (Venir / Pasarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | __________ and tell me what happened.  (Calmarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | He __________ because of the heat.  (Desmayarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | I'd love to __________ you this week.  (Alcanzar / Volver a verse) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | She __________ her friend in the meeting.  (Respaldar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | Our car __________ on the highway.  (Descomponerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | I'll __________ your office later.  (Pasar por (algún lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Lectura 4 · A Walking Tour of La Candelaria
+[Normal] Turismo · recorrido por el centro histórico de Bogotá · Unidades 13–16
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] For our tourism practice, my group designed a walking tour of La Candelaria, the historic center of Bogotá. On Saturday morning we  to practice. Our teacher told us to  because we would walk for hours, but she asked us to  a little for the final presentation. We  the bus early and  near the Plaza de Bolívar.
+[Normal] The tourists arrived, and Daniel started the tour. The speaker was too quiet, so he decided to  the microphone and  the volume. At the Chorro de Quevedo, a tourist asked how the tradition of telling the legend of the city , and I explained it slowly. A street musician was playing very loudly, so we asked him to  his music for a minute. Then a man in the street  to tell his own version of the story, and everybody laughed.
+[Normal] While we walked, I  a small bookstore with old maps in the window. One tourist wanted to buy a souvenir, and I helped her  a handmade bag. Another tourist said, “Please ; I can't understand you.” But we only had two hours, so later we had to  to reach the Gold Museum. We had to  the cold wind and the rain, and Sofia was afraid to speak English in front of the crowd, but she did not . At the end, Daniel  the microphone.
+[Normal] After the tour, some of us wanted to  because of the rain, but most of us decided to  for hot chocolate with cheese. Finally, Sofia's father  at home. It was a long day, but we learned that a good guide needs language, culture and a lot of patience.
+[Normal] Aciertos: ______ / 20        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Mi turno: escribe dos o tres oraciones en inglés sobre esta lectura o sobre tu propia experiencia, usando al menos dos de los phrasal verbs.
+[Heading 1] Sesión 18 · Unidad 18
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Wake up  | Despertar | I wake up early on weekdays. | Abre los ojos de golpe y estira los brazos.
+Break up  | Romper (una relación) | They broke up last year. | Junta las manos y sepáralas lentamente hacia lados opuestos.
+Make up something ↔ | Inventar algo | He always makes up excuses. | Teje con los dedos algo en el aire, como una historia.
+Carry on  | Continuar | Please carry on with your work. | Haz un gesto de "sigan" con la mano hacia adelante.
+Ask about  | Preguntar sobre | She asked about the schedule. | Levanta la mano como pidiendo la palabra y señala un horario.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Wake up, Break up, Make up something. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 17)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | We c______ i__ at the hotel at noon.  (Registrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | We c______ o__ at ten.  (Salir (de un hotel/lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | The long winter g___ everyone d___.  (Desanimar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | She p__ the keys i__ her bag.  (Poner algo en) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He t___ the money o__ o__ his wallet.  (Sacar algo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 16)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Vestirse casual |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Reunirse |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Salir |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Quedarse en casa |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Dejar a alguien en algún sitio |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 15)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Slow down  — Escribe una oración sobre algo que hiciste esta semana usando «slow down».
+[Normal] 2. Speed up  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «speed up».
+[Normal] 3. Turn up ↔ — Escribe una pregunta que le harías a alguien usando «turn up».
+[Normal] 4. Turn down ↔ — Escribe una oración sobre tus planes futuros con «turn down».
+[Normal] 5. Dress up  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “We dressed up for the wedding.”
+[Normal] Fase 6 · Recuperación diferida (unidades 13 y 10)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'll __________ my sister at the airport.  (Recoger a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I can't __________ this noise.  (Tolerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | She finally __________ her loan.  (Saldar / Liquidar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I will __________ the money tomorrow.  (Pagar / Saldar una deuda) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | He wanted to jump, but he __________.  (Acobardarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | Can you __________ a gift for her?  (Elegir algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | Don't __________ when adults are talking.  (Entrometerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | I'm __________ my cousins on Friday.  (Reunirse / Encontrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I __________ on a small salary.  (Arreglárselas) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | I __________ an old photo yesterday.  (Encontrarse con alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 19 · Unidad 19
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Warm up  | Calentar (pre-ejercicio) | We warm up before every game. | Rota los brazos y trota suavemente en el sitio.
+Let someone down ↔ | Decepcionar a alguien | I don't want to let you down. | Sostén algo con ambas manos y suéltalo, bajando la mirada.
+Look for  | Buscar | I'm looking for my keys. | Con la mano en visera, gira la cabeza a ambos lados.
+Go off  | Sonar (una alarma) | My alarm went off at six. | Cierra los puños y ábrelos, como una alarma que explota.
+Wake someone up ↔ | Despertar a alguien | Don't wake the baby up. | Toca suavemente el hombro de alguien dormido.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Warm up, Let someone down, Look for. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 18)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I w___ u__ early on weekdays.  (Despertar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | They b____ u__ last year.  (Romper (una relación)) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | He always m____ u__ excuses.  (Inventar algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Please c____ o__ with your work.  (Continuar) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | She a____ a____ the schedule.  (Preguntar sobre) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 17)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Registrarse |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Salir (de un hotel/lugar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Desanimar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Poner algo en |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Sacar algo de |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 16)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Dress down  — Escribe una oración sobre algo que hiciste esta semana usando «dress down».
+[Normal] 2. Get together  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «get together».
+[Normal] 3. Go out  — Escribe una pregunta que le harías a alguien usando «go out».
+[Normal] 4. Stay in  — Escribe una oración sobre tus planes futuros con «stay in».
+[Normal] 5. Drop someone off ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I'll drop off the kids at school.”
+[Normal] Fase 6 · Recuperación diferida (unidades 14 y 11)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I'm __________ for a new laptop.  (Ahorrar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Try to __________ some money each month.  (Apartar / Reservar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | They __________ the match because of rain.  (Cancelar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Please __________ the light.  (Encender) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I __________ at the next stop.  (Bajarse (de un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I had to __________ the whole exercise.  (Hacer algo de nuevo) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | __________ your phone, please.  (Apagar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | How did this problem __________?  (Suceder / Surgir) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | We __________ the bus at nine.  (Subirse (a un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | We need to __________ on spending.  (Recortar / Reducir gastos) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 20 · Unidad 20
+[Normal] Fases 1 y 2 · Expresiones nuevas
+[Normal] Lee cada expresión, di el ejemplo en voz alta y haz el gesto mientras la pronuncias. El gesto es opcional.
+[TABLA]
+Expresión | Significado | Ejemplo | Gesto TPR
+Put on ↔ | Ponerse (ropa) | He put on his coat. | Finge meter los brazos en un abrigo y subir el cierre.
+Heat up ↔ | Calentar (comida) | I'll heat up the soup. | Acerca las manos a un fuego imaginario y revuelve.
+Gobble up ↔ | Devorar | The kids gobbled up all the pizza. | Mete comida imaginaria a la boca con ambas manos, muy rápido.
+Eat out  | Comer fuera | We eat out every Friday. | Finge abrir la puerta de un restaurante, sentarte y llevarte el tenedor a la boca.
+Fill up ↔ | Llenar | I'll fill up the water bottles. | Sostén una botella imaginaria bajo un grifo y sube la mano a medida que se llena.
+[/TABLA]
+[Normal] Visualización guiada (opcional). Cierra los ojos 20 segundos e imagina una escena donde aparezcan estas acciones: Eat out, Gobble up, Fill up. ¿Dónde estás? ¿Quién está contigo? Escribe una frase en inglés con lo que viste.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 19)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | We w___ u__ before every game.  (Calentar (pre-ejercicio)) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I don't want to l__ you d___.  (Decepcionar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | I'm l______ f__ my keys.  (Buscar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | My alarm w___ o__ at six.  (Sonar (una alarma)) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Don't w___ the baby u__.  (Despertar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 18)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Despertar |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Romper (una relación) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Inventar algo |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Continuar |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Preguntar sobre |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 17)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Check in  — Escribe una oración sobre algo que hiciste esta semana usando «check in».
+[Normal] 2. Check out  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «check out».
+[Normal] 3. Get someone down ↔ — Escribe una pregunta que le harías a alguien usando «get someone down».
+[Normal] 4. Put something in ↔ — Escribe una oración sobre tus planes futuros con «put something in».
+[Normal] 5. Take it out of ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “He took the money out of his wallet.”
+[Normal] Fase 6 · Recuperación diferida (unidades 15 y 12)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | You're driving too fast; __________!  (Frenar / Reducir la velocidad) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | He __________ the job offer.  (Bajar el volumen / Rechazar) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We __________ for the wedding.  (Vestirse de gala) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I can't __________ this problem.  (Averiguar / Resolver algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Can you __________ the music?  (Subir el volumen / el calor) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | She __________ her studies.  (Sumergirse en (un tema/acción)) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | The driver __________ on the highway.  (Acelerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | She __________ her friend in the meeting.  (Respaldar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | He __________ because of the heat.  (Desmayarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | Our car __________ on the highway.  (Descomponerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 21 · Consolidación
+[Normal] No hay vocabulario nuevo en esta sesión. Completa las recuperaciones pendientes.
+[Normal] Fase 3 · Recuperación con apoyo (unidad 20)
+[Normal] Completa cada frase con la expresión. Tienes el significado y las letras iniciales. Si quieres, haz el gesto antes de escribir.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | He p__ o__ his coat.  (Ponerse (ropa)) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | I'll h___ u__ the soup.  (Calentar (comida)) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | The kids g______ u__ all the pizza.  (Devorar) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We e__ o__ every Friday.  (Comer fuera) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I'll f___ u__ the water bottles.  (Llenar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 19)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Calentar (pre-ejercicio) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Decepcionar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Buscar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Sonar (una alarma) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Despertar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 18)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Wake up  — Escribe una oración sobre algo que hiciste esta semana usando «wake up».
+[Normal] 2. Break up  — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «break up».
+[Normal] 3. Make up something ↔ — Escribe una pregunta que le harías a alguien usando «make up something».
+[Normal] 4. Carry on  — Escribe una oración sobre tus planes futuros con «carry on».
+[Normal] 5. Ask about  — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “She asked about the schedule.”
+[Normal] Fase 6 · Recuperación diferida (unidades 16 y 13)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | Don't __________ when adults are talking.  (Entrometerse) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | On Fridays, we __________ at work.  (Vestirse casual) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Let's __________ next weekend.  (Reunirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'd rather __________ tonight.  (Quedarse en casa) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I __________ an old photo yesterday.  (Encontrarse con alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | They __________ every Saturday night.  (Salir) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | Can you __________ a gift for her?  (Elegir algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | I'll __________ the kids at school.  (Dejar a alguien en algún sitio) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I can't __________ this noise.  (Tolerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | He wanted to jump, but he __________.  (Acobardarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Lectura 5 · A Weekend in Villa de Leyva
+[Normal] Viajes · salida de fin de semestre con la clase · Unidades 17–20
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] At the end of the semester, our class took a weekend trip to Villa de Leyva. We arrived at the hostel at noon and  at the front desk. The receptionist spoke quickly, so we had to  the breakfast hours twice. I  the safe in our room, and later I  there before dinner.
+[Normal] That night we decided to , so we  a restaurant in the main square and  a huge pizza. Then we played a game: each person had to  a short story in English using five new words. A friend told us that he and his girlfriend had , and the cold rain  even more. I felt that I had  because I hadn't noticed earlier that he was sad.
+[Normal] On Sunday my alarm  at six, and I  in the dark. I tried not to  my roommates, so I  my boots quietly. In the kitchen, our friend  the leftover soup, and I  my water bottle. We  with some stretching before the walk. The path was muddy, but we decided to . In the afternoon we  of the hostel and took the bus back to Bogotá.
+[Normal] Aciertos: ______ / 20        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Mi turno: escribe dos o tres oraciones en inglés sobre esta lectura o sobre tu propia experiencia, usando al menos dos de los phrasal verbs.
+[Heading 1] Sesión 22 · Consolidación
+[Normal] No hay vocabulario nuevo en esta sesión. Completa las recuperaciones pendientes.
+[Normal] Fase 4 · Recuperación sin apoyo (unidad 20)
+[Normal] Solo tienes el significado. Escribe la expresión en inglés y, si puedes, dila en voz alta con una oración corta.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Ponerse (ropa) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Calentar (comida) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Devorar |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Comer fuera |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Llenar |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Fase 5 · Elaboración y transferencia (unidad 19)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Warm up  — Escribe una oración sobre algo que hiciste esta semana usando «warm up».
+[Normal] 2. Let someone down ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «let someone down».
+[Normal] 3. Look for  — Escribe una pregunta que le harías a alguien usando «look for».
+[Normal] 4. Go off  — Escribe una oración sobre tus planes futuros con «go off».
+[Normal] 5. Wake someone up ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “Don't wake the baby up.”
+[Normal] Fase 6 · Recuperación diferida (unidades 17 y 14)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | The long winter __________ everyone __________.  (Desanimar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | He __________ the money __________ his wallet.  (Sacar algo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | She __________ the keys __________ her bag.  (Poner algo en) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We __________ at the hotel at noon.  (Registrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | How did this problem __________?  (Suceder / Surgir) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I __________ at the next stop.  (Bajarse (de un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | We __________ at ten.  (Salir (de un hotel/lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | Please __________ the light.  (Encender) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | We __________ the bus at nine.  (Subirse (a un transporte)) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | __________ your phone, please.  (Apagar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 23 · Consolidación
+[Normal] No hay vocabulario nuevo en esta sesión. Completa las recuperaciones pendientes.
+[Normal] Fase 5 · Elaboración y transferencia (unidad 20)
+[Normal] Usa la expresión en algo tuyo. No copies el ejemplo. Si puedes, dilo también en voz alta.
+[Normal] 1. Put on ↔ — Escribe una oración sobre algo que hiciste esta semana usando «put on».
+[Normal] 2. Heat up ↔ — Cuéntale a un amigo, en dos oraciones, una situación real en la que usarías «heat up».
+[Normal] 3. Gobble up ↔ — Escribe una pregunta que le harías a alguien usando «gobble up».
+[Normal] 4. Eat out  — Escribe una oración sobre tus planes futuros con «eat out».
+[Normal] 5. Fill up ↔ — Transforma la oración: cambia el sujeto o el tiempo verbal. Original: “I'll fill up the water bottles.”
+[Normal] Fase 6 · Recuperación diferida (unidades 18 y 15)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | I __________ early on weekdays.  (Despertar) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | You're driving too fast; __________!  (Frenar / Reducir la velocidad) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Can you __________ the music?  (Subir el volumen / el calor) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | We __________ for the wedding.  (Vestirse de gala) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Please __________ with your work.  (Continuar) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | The driver __________ on the highway.  (Acelerar) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | They __________ last year.  (Romper (una relación)) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | She __________ the schedule.  (Preguntar sobre) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | He always __________ excuses.  (Inventar algo) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | He __________ the job offer.  (Bajar el volumen / Rechazar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 24 · Consolidación
+[Normal] No hay vocabulario nuevo en esta sesión. Completa las recuperaciones pendientes.
+[Normal] Fase 6 · Recuperación diferida (unidades 19 y 16)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | My alarm __________ at six.  (Sonar (una alarma)) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Don't __________ the baby __________.  (Despertar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | They __________ every Saturday night.  (Salir) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | I'd rather __________ tonight.  (Quedarse en casa) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | I don't want to __________ you __________.  (Decepcionar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | I'll __________ the kids at school.  (Dejar a alguien en algún sitio) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | On Fridays, we __________ at work.  (Vestirse casual) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | We __________ before every game.  (Calentar (pre-ejercicio)) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | Let's __________ next weekend.  (Reunirse) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | I'm __________ my keys.  (Buscar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Sesión 25 · Consolidación
+[Normal] No hay vocabulario nuevo en esta sesión. Completa las recuperaciones pendientes.
+[Normal] Fase 6 · Recuperación diferida (unidades 20 y 17)
+[Normal] Estas expresiones llevan varias sesiones sin aparecer. Intenta completar cada frase sin mirar páginas anteriores. Solo tienes el significado.
+[TABLA]
+# | Frase | Mi respuesta | ¿Cómo me fue?
+1 | She __________ the keys __________ her bag.  (Poner algo en) |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | He __________ his coat.  (Ponerse (ropa)) |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | We __________ every Friday.  (Comer fuera) |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | The long winter __________ everyone __________.  (Desanimar a alguien) |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | We __________ at ten.  (Salir (de un hotel/lugar)) |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | He __________ the money __________ his wallet.  (Sacar algo de) |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | I'll __________ the water bottles.  (Llenar) |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | We __________ at the hotel at noon.  (Registrarse) |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | I'll __________ the soup.  (Calentar (comida)) |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | The kids __________ all the pizza.  (Devorar) |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Normal] Mi cuaderno
+[Normal] Registra lo que pasó hoy.
+[Normal] ¿Qué expresiones recordé sin mirar?
+[Normal] ¿Qué error cometí o qué expresión necesito practicar más? (pásala al diario de errores)
+[Heading 1] Recuperación acumulativa final
+[Normal] Una expresión de cada unidad, mezcladas, con solo el significado. Escribe la expresión en inglés sin consultar nada. Después compara con la clave.
+[TABLA]
+# | Significado en español | Mi respuesta (en inglés) | ¿Cómo me fue?
+1 | Venir / Pasarse |  | ☐ sin pista  ☐ con pista  ☐ no
+2 | Vestirse casual |  | ☐ sin pista  ☐ con pista  ☐ no
+3 | Acobardarse |  | ☐ sin pista  ☐ con pista  ☐ no
+4 | Decepcionar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+5 | Encender |  | ☐ sin pista  ☐ con pista  ☐ no
+6 | Desanimar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+7 | Quitarse algo |  | ☐ sin pista  ☐ con pista  ☐ no
+8 | Volver / Regresar |  | ☐ sin pista  ☐ con pista  ☐ no
+9 | Proponer / Idear |  | ☐ sin pista  ☐ con pista  ☐ no
+10 | Llevarse bien |  | ☐ sin pista  ☐ con pista  ☐ no
+11 | Bajar el volumen / Rechazar |  | ☐ sin pista  ☐ con pista  ☐ no
+12 | Ocuparse de |  | ☐ sin pista  ☐ con pista  ☐ no
+13 | Animarse |  | ☐ sin pista  ☐ con pista  ☐ no
+14 | Preguntar sobre |  | ☐ sin pista  ☐ con pista  ☐ no
+15 | Pagar / Saldar una deuda |  | ☐ sin pista  ☐ con pista  ☐ no
+16 | Tirar (a la basura) |  | ☐ sin pista  ☐ con pista  ☐ no
+17 | Respaldar a alguien |  | ☐ sin pista  ☐ con pista  ☐ no
+18 | Ahorrar |  | ☐ sin pista  ☐ con pista  ☐ no
+19 | Probarse (ropa) |  | ☐ sin pista  ☐ con pista  ☐ no
+20 | Devorar |  | ☐ sin pista  ☐ con pista  ☐ no
+[/TABLA]
+[Heading 1] Lecturas para inspirar
+[Normal] Estas diez lecturas cuentan historias de vida universitaria, pedagogía y amor por enseñar. Mezclan phrasal verbs de todas las unidades, así que funcionan como una recuperación diferida: ya no sabes de qué unidad viene cada uno. Mencionan a pedagogos como Paulo Freire, Moacir Gadotti, Comenius, Dewey, Piaget, Vygotsky y Bruner. Los personajes y las situaciones son ficticios, y las ideas de los pedagogos aparecen resumidas de forma muy general.
+[TABLA]
+# | Título | Tema
+6 | The Book That Changed My Mind | Amor por la lectura · una tarde en la biblioteca y un libro de Paulo Freire
+7 | A History of Ideas | Historia de la pedagogía · Comenius y la mirada de Moacir Gadotti
+8 | Learning by Doing | Práctica docente · Dewey, un colegio público de Bogotá y un plan que falla
+9 | The Zone of Proximal Development | Teorías del aprendizaje · Vygotsky y el poder de aprender con otros
+10 | Little Scientists | Piaget y la infancia · una escuela primaria y una obra de teatro
+11 | The Student Who Never Spoke | Enseñanza · Bruner, la paciencia y un niño que encontró su voz
+12 | The Circle of Dialogue | Filosofía y vida universitaria · un círculo de conversación inspirado en Freire
+13 | A Letter to a Future Teacher | Vocación docente · una carta de Camila a un estudiante de primer semestre
+14 | The Teacher Who Dared | Pedagogía y comunidad · una maestra rural y la idea de la escuela ciudadana
+15 | Graduation Day | Cierre de la carrera · el día de la graduación y el comienzo de una vida docente
+[/TABLA]
+[Heading 1] Lectura 6 · The Book That Changed My Mind
+[Normal] Amor por la lectura · una tarde en la biblioteca y un libro de Paulo Freire
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] In my second year I had a problem: I read only because my professors told me to. One rainy afternoon I went to the library to  a grammar book, but instead I  a small yellow book about education. I  that book almost by chance. Its first pages said that we read the world before we read words. It was an idea of Paulo Freire, the Brazilian educator.
+[Normal] I  the book until the library closed. Then I wanted to  more, so I  the library computer to see what else Freire and other educators had written. That night I  my notes twice and could not sleep.
+[Normal] The next day I  Freire in class, and my classmates listened with interest. I needed time to  everything, but one thing was clear: reading was not only a duty, it was a door. Since then I  the power of one good book to change a student's life.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: What book or idea has changed the way you see learning? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 7 · A History of Ideas
+[Normal] Historia de la pedagogía · Comenius y la mirada de Moacir Gadotti
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] On Tuesdays we had History of Pedagogy. One morning the bus was late and I had to  to class. I tried to  quietly, but the door was noisy and everyone turned around. The professor only smiled. She had already  the projector.
+[Normal] She  the lights and began a story that traveled from ancient Greece to the modern school. She told us about Moacir Gadotti, a Brazilian educator who worked closely with Paulo Freire and wrote about the history of pedagogical ideas. At first she spoke so quickly that I could not  her, so a student asked her to .
+[Normal] When we reached Comenius and his dream of teaching everything to everyone, the discussion began to , because everybody wanted to talk. The professor  an old school notebook from the 1950s and passed it around. Then she asked each group to  one pedagogue and present the next week. At the end she  the projector and said, “Every idea was once a student's question.”
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: Which pedagogue would you like to study more, and why? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 8 · Learning by Doing
+[Normal] Práctica docente · Dewey, un colegio público de Bogotá y un plan que falla
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] In my fourth semester I had to  my first teaching practice in a public school in Bogotá. John Dewey said that we learn by doing, and now I had to do it. I had planned a listening game, but when I arrived the children were very noisy. For a moment I wanted to  and go home, but the class was waiting.
+[Normal] I took a breath and asked the children to . Then the speaker  in the middle of my activity. I had to  the problem alone, so I decided to  and sing the song myself. The children laughed and sang with me. When their teacher returned, she  in front of the principal and said that a plan can fail while a class succeeds.
+[Normal] I  the rest of the lesson with paper and my own voice. At the end I  the papers from the floor, and that night I  my first plan and wrote a better one. I learned that a teacher also learns by doing.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: Describe a time when learning by doing taught you more than a book. Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 9 · The Zone of Proximal Development
+[Normal] Teorías del aprendizaje · Vygotsky y el poder de aprender con otros
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] In Learning Theories class we studied Vygotsky, who said that people learn better with the help of others. Daniel and I  very well, so we decided to test his idea. Every Thursday we  Laura, a shy classmate who was failing grammar and wanted to . We tried to  Laura with jokes and small victories.
+[Normal] Laura could not  the past perfect, so Daniel suggested, “Let's , but this time together.” Then we  a card game to practice the verbs. On Saturdays we  at the library cafeteria, and before the exam Laura  at my house. A month later she had  the rest of the class. She did not need us anymore, and that was the best part.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: Who helps you learn better? How can you help someone else? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 10 · Little Scientists
+[Normal] Piaget y la infancia · una escuela primaria y una obra de teatro
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] Every Wednesday I  a bus and  near a small primary school. A father  his son at the gate every morning, and I  the youngest group until class began. Piaget believed that children build knowledge by exploring, so my job was to  them and give them questions, not only answers.
+[Normal] For the end-of-year festival, the children prepared a play about scientists. A boy  a huge white coat, and a girl  paper glasses. They wanted to  as Marie Curie and Newton, and they argued about who would be who. On Fridays they could  and wear their favorite clothes, but on the day of the play everyone looked like a real scientist. When the show ended, they  their costumes slowly, as if they did not want the day to finish.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: How can a teacher help children build knowledge by themselves? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 11 · The Student Who Never Spoke
+[Normal] Enseñanza · Bruner, la paciencia y un niño que encontró su voz
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] At my practice school there was a boy named Julián who never spoke in English class. Other children  whenever he tried, and he believed that his English was bad. That really , and I did not want to . One day I decided to  his hobbies, and his eyes lit up: he loved football.
+[Normal] Bruner called it scaffolding: the teacher gives temporary help until the student can walk alone. So I made a rule: nobody could laugh at mistakes, and I would not  anyone who did. We  with a song, and then Julián  a funny story about a dragon who played football. He spoke slowly, with a small voice, but he spoke.
+[Normal] “, teacher! I have one more story,” he said when the bell rang. The class clapped, and somebody asked me to  the music so we could celebrate. The following week I proposed a storytelling club, and the principal did not  the idea. She approved it.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: How can a teacher make a quiet student feel safe to speak? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 12 · The Circle of Dialogue
+[Normal] Filosofía y vida universitaria · un círculo de conversación inspirado en Freire
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] Every Friday afternoon, a small group  in an old classroom for what we called the Circle of Dialogue. Students from any semester could , and some professors sometimes  just to listen. There was one rule: nobody had the last word. Paulo Freire defended dialogue in education, and we wanted to practice it.
+[Normal] One night a first-year student asked how the idea of the school itself , and the question started a two-hour conversation about history, power, childhood and hope. Nobody looked at their phones. Nobody wanted to leave.
+[Normal] Some people wanted to  the circle until midnight, while others  to buy hot chocolate for everyone. Before leaving, a girl said to me, “Why don't you  tomorrow? My family has a library full of old books.” That is how the circle grew: one invitation at a time.
+[Normal] Aciertos: ______ / 7        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: Why is dialogue important in education? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 13 · A Letter to a Future Teacher
+[Normal] Vocación docente · una carta de Camila a un estudiante de primer semestre
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] Dear first-year student,
+[Normal] When I began this degree, I was afraid that I did not belong here. Now, near the end, I want to tell you a few things I learned. Every morning I  before the sun and ask myself why I want to teach. Write that reason down, and never  your dreams for a better moment.
+[Normal] In my first presentation I almost  from nerves, but I , and those five minutes taught me more than a whole book.  for the voice that says you are not good enough.  on comparing yourself with others; each teacher grows at a different speed. When you feel lost,  to your books, to your notes and to the reason you began.
+[Normal] your knowledge generously: a teacher who shares becomes richer. One day you will  a class of your own and  the room before the children arrive, and you will understand that teaching is an act of hope.
+[Normal] With all my heart, Camila
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: What advice would you give a first-year student? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 14 · The Teacher Who Dared
+[Normal] Pedagogía y comunidad · una maestra rural y la idea de la escuela ciudadana
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] One October afternoon, a visiting teacher named Marta spoke to us at the university. She works in a small rural school with no library and fifty children. “At the beginning I had to  with a very small salary,” she said, “but I wanted my students to read.”
+[Normal] She decided to  for books. Every month she  a little money, and she had to  on her own expenses. A neighbor lent her some money, and later she managed to  him. Years later she was able to  the small loan she took to build a shelf. She  a wooden box, and every morning she  the closet and opened it in the middle of the classroom.
+[Normal] “When the rain was too strong, I did not  the class,” Marta said. “I  the smallest children at their houses myself.” She told us that her school tries to follow the idea of a citizen school, an idea linked to Moacir Gadotti, where students learn to take part in their community. When she finished, nobody moved. We understood that a teacher with few resources can still open worlds.
+[Normal] Aciertos: ______ / 10        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: What can a teacher do with very few resources? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Lectura 15 · Graduation Day
+[Normal] Cierre de la carrera · el día de la graduación y el comienzo de una vida docente
+[Normal] Lectura con recuperación activa
+[Normal] Lee el texto. En cada espacio tienes el significado en español arriba y ninguna letra de pista. Recuerda el phrasal verb, conjúgalo si hace falta y escríbelo. No uses la clave hasta terminar.
+[Normal] Graduation day finally arrived. My parents had traveled from another city, and they  at a small hotel the night before. I  before my alarm , so I decided to  for twenty minutes to calm my nerves. Then I tried not to  my little brother, who was sleeping on the sofa, and my dad  the leftover soup for an early breakfast. We all  it in five minutes.
+[Normal] At the ceremony I saw my whole journey: the rainy afternoon in the library, the practice school, the Circle of Dialogue. A classmate  the girl he liked, and she said yes in front of everyone. A couple of friends had  during the degree, but they hugged each other like old friends.
+[Normal] The next day my parents had to  early, and their plane  at noon. I watched it go and felt sad but very proud. I was not only a student anymore. I was a teacher, and the learning had just begun.
+[Normal] Aciertos: ______ / 11        Expresiones que fallé (pásalas al diario de errores): ____________________
+[Normal] Para pensar y escribir: What kind of teacher do you want to be in ten years? Responde en inglés, en dos o tres oraciones, usando al menos dos phrasal verbs.
+[Heading 1] Seguimiento del aprendizaje
+[Normal] Marca ☑ el nivel que alcanzas en cada expresión. Vuelve a esta tabla cada vez que termines una sesión.
+[TABLA]
+# | Expresión | Reconoci-miento | Con ayuda | Independiente | Contextualizado | Espontáneo
+1 | Deal with  | ☐ | ☐ | ☐ | ☐ | ☐
+2 | Get in  | ☐ | ☐ | ☐ | ☐ | ☐
+3 | Get up  | ☐ | ☐ | ☐ | ☐ | ☐
+4 | Set up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+5 | Look into  | ☐ | ☐ | ☐ | ☐ | ☐
+6 | Take over ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+7 | Take off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+8 | Try on ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+9 | Put off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+10 | Look after  | ☐ | ☐ | ☐ | ☐ | ☐
+11 | Bring out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+12 | Bring up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+13 | Come along  | ☐ | ☐ | ☐ | ☐ | ☐
+14 | Go through  | ☐ | ☐ | ☐ | ☐ | ☐
+15 | Throw away ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+16 | Cut down  | ☐ | ☐ | ☐ | ☐ | ☐
+17 | Come up with  | ☐ | ☐ | ☐ | ☐ | ☐
+18 | Hang on  | ☐ | ☐ | ☐ | ☐ | ☐
+19 | Press on  | ☐ | ☐ | ☐ | ☐ | ☐
+20 | Keep up with  | ☐ | ☐ | ☐ | ☐ | ☐
+21 | Take on ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+22 | Give up  | ☐ | ☐ | ☐ | ☐ | ☐
+23 | Carry out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+24 | Get along  | ☐ | ☐ | ☐ | ☐ | ☐
+25 | Think over ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+26 | Take something off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+27 | Tidy up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+28 | Check something out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+29 | Find out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+30 | Work out  | ☐ | ☐ | ☐ | ☐ | ☐
+31 | Hang out  | ☐ | ☐ | ☐ | ☐ | ☐
+32 | Believe in  | ☐ | ☐ | ☐ | ☐ | ☐
+33 | Go back  | ☐ | ☐ | ☐ | ☐ | ☐
+34 | Give something away ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+35 | Care for  | ☐ | ☐ | ☐ | ☐ | ☐
+36 | Hurry up  | ☐ | ☐ | ☐ | ☐ | ☐
+37 | Stay over  | ☐ | ☐ | ☐ | ☐ | ☐
+38 | Watch out  | ☐ | ☐ | ☐ | ☐ | ☐
+39 | Pick up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+40 | Cheer up  | ☐ | ☐ | ☐ | ☐ | ☐
+41 | Calm down  | ☐ | ☐ | ☐ | ☐ | ☐
+42 | Come over  | ☐ | ☐ | ☐ | ☐ | ☐
+43 | Drop by  | ☐ | ☐ | ☐ | ☐ | ☐
+44 | Catch up with  | ☐ | ☐ | ☐ | ☐ | ☐
+45 | Ask someone out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+46 | Meet up with  | ☐ | ☐ | ☐ | ☐ | ☐
+47 | Pick someone up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+48 | Get by  | ☐ | ☐ | ☐ | ☐ | ☐
+49 | Pay back ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+50 | Pay off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+51 | Save up  | ☐ | ☐ | ☐ | ☐ | ☐
+52 | Put aside ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+53 | Cut back  | ☐ | ☐ | ☐ | ☐ | ☐
+54 | Call off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+55 | Do something over ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+56 | Figure something out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+57 | Pass out  | ☐ | ☐ | ☐ | ☐ | ☐
+58 | Back someone up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+59 | Break down  | ☐ | ☐ | ☐ | ☐ | ☐
+60 | Dive into  | ☐ | ☐ | ☐ | ☐ | ☐
+61 | Come across  | ☐ | ☐ | ☐ | ☐ | ☐
+62 | Pick out ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+63 | Put up with  | ☐ | ☐ | ☐ | ☐ | ☐
+64 | Butt in  | ☐ | ☐ | ☐ | ☐ | ☐
+65 | Chicken out  | ☐ | ☐ | ☐ | ☐ | ☐
+66 | Come about  | ☐ | ☐ | ☐ | ☐ | ☐
+67 | Turn on ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+68 | Turn off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+69 | Get on  | ☐ | ☐ | ☐ | ☐ | ☐
+70 | Get off  | ☐ | ☐ | ☐ | ☐ | ☐
+71 | Slow down  | ☐ | ☐ | ☐ | ☐ | ☐
+72 | Speed up  | ☐ | ☐ | ☐ | ☐ | ☐
+73 | Turn up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+74 | Turn down ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+75 | Dress up  | ☐ | ☐ | ☐ | ☐ | ☐
+76 | Dress down  | ☐ | ☐ | ☐ | ☐ | ☐
+77 | Get together  | ☐ | ☐ | ☐ | ☐ | ☐
+78 | Go out  | ☐ | ☐ | ☐ | ☐ | ☐
+79 | Stay in  | ☐ | ☐ | ☐ | ☐ | ☐
+80 | Drop someone off ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+81 | Check in  | ☐ | ☐ | ☐ | ☐ | ☐
+82 | Check out  | ☐ | ☐ | ☐ | ☐ | ☐
+83 | Get someone down ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+84 | Put something in ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+85 | Take it out of ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+86 | Wake up  | ☐ | ☐ | ☐ | ☐ | ☐
+87 | Break up  | ☐ | ☐ | ☐ | ☐ | ☐
+88 | Make up something ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+89 | Carry on  | ☐ | ☐ | ☐ | ☐ | ☐
+90 | Ask about  | ☐ | ☐ | ☐ | ☐ | ☐
+91 | Warm up  | ☐ | ☐ | ☐ | ☐ | ☐
+92 | Let someone down ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+93 | Look for  | ☐ | ☐ | ☐ | ☐ | ☐
+94 | Go off  | ☐ | ☐ | ☐ | ☐ | ☐
+95 | Wake someone up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+96 | Put on ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+97 | Heat up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+98 | Gobble up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+99 | Eat out  | ☐ | ☐ | ☐ | ☐ | ☐
+100 | Fill up ↔ | ☐ | ☐ | ☐ | ☐ | ☐
+[/TABLA]
+[Heading 1] Diario de errores y dificultades
+[Normal] Anota las expresiones que no recordaste o en las que te equivocaste. Estas deben volver a practicarse antes que las demás.
+[TABLA]
+Expresión | Error que cometí | Corrección | ¿La puedo usar en otro contexto?
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+ |  |  | 
+[/TABLA]
+[Heading 1] Clave de respuestas
+[Normal] Úsala después de intentar responder. Las respuestas aparecen resaltadas dentro de la oración modelo.
+[TABLA]
+Expresión | Significado | Oración modelo
+Unidad 1 | Unidad 1 | Unidad 1
+Deal with  | Ocuparse de | She deals with all the customer emails.
+Get in  | Entrar / Subir | Please get in; the car is ready.
+Get up  | Levantarse | I get up at six every day.
+Set up ↔ | Organizar | We set up the tables before the party.
+Look into  | Estudiar / Analizar | The police will look into the problem.
+Unidad 2 | Unidad 2 | Unidad 2
+Take over ↔ | Tomar el control / Hacerse cargo | He took over the company last year.
+Take off ↔ | Quitarse (ropa) / Despegar | The plane takes off at noon.
+Try on ↔ | Probarse (ropa) | Can I try on this jacket?
+Put off ↔ | Posponer | Don't put off your homework.
+Look after  | Cuidar a alguien | She looks after her little brother.
+Unidad 3 | Unidad 3 | Unidad 3
+Bring out ↔ | Sacar / Presentar | The company will bring out a new phone.
+Bring up ↔ | Sacar un tema / Mencionar | Don't bring up that topic at dinner.
+Come along  | Acompañar / Venir | Do you want to come along?
+Go through  | Pasar por / Atravesar | We went through a long tunnel.
+Throw away ↔ | Tirar (a la basura) | I threw away the old magazines.
+Unidad 4 | Unidad 4 | Unidad 4
+Cut down  | Reducir | I'm trying to cut down on sugar.
+Come up with  | Proponer / Idear | She came up with a great idea.
+Hang on  | Esperar / Aguardar | Hang on, I'm almost ready.
+Press on  | Seguir adelante | It was hard, but we pressed on.
+Keep up with  | Seguirle el ritmo a alguien | I can't keep up with you; you walk too fast.
+Unidad 5 | Unidad 5 | Unidad 5
+Take on ↔ | Asumir / Hacerse cargo de | She took on a new project.
+Give up  | Rendirse | Don't give up; you're almost there.
+Carry out ↔ | Llevar a cabo | They carried out the plan perfectly.
+Get along  | Llevarse bien | My sister and I get along well.
+Think over ↔ | Meditar / Reflexionar | I need to think over your offer.
+Unidad 6 | Unidad 6 | Unidad 6
+Take something off ↔ | Quitarse algo | He took off his watch before swimming.
+Tidy up ↔ | Ordenar / Asear | Let's tidy up before the guests arrive.
+Check something out ↔ | Revisar / Echar un vistazo | I'll check out the website tonight.
+Find out ↔ | Averiguar / Descubrir | I want to find out the truth.
+Work out  | Hacer ejercicio | He works out at the gym three times a week.
+Unidad 7 | Unidad 7 | Unidad 7
+Hang out  | Pasar el rato | We hang out at the park on Sundays.
+Believe in  | Creer en alguien | I believe in you.
+Go back  | Volver / Regresar | We went back to the hotel.
+Give something away ↔ | Regalar / Dar algo | She gave away her old clothes.
+Care for  | Preocuparse por alguien | He cares for his grandmother.
+Unidad 8 | Unidad 8 | Unidad 8
+Hurry up  | Darse prisa | Hurry up! We're late.
+Stay over  | Quedarse a dormir | My friend stayed over last night.
+Watch out  | Tener cuidado | Watch out! The floor is wet.
+Pick up ↔ | Recoger / Comprar | I'll pick up some bread on my way home.
+Cheer up  | Animarse | Cheer up! Things will get better.
+Unidad 9 | Unidad 9 | Unidad 9
+Calm down  | Calmarse | Calm down and tell me what happened.
+Come over  | Venir / Pasarse | Why don't you come over tonight?
+Drop by  | Pasar por (algún lugar) | I'll drop by your office later.
+Catch up with  | Alcanzar / Volver a verse | I'd love to catch up with you this week.
+Ask someone out ↔ | Invitar a salir a alguien | He finally asked out his classmate.
+Unidad 10 | Unidad 10 | Unidad 10
+Meet up with  | Reunirse / Encontrarse | I'm meeting up with my cousins on Friday.
+Pick someone up ↔ | Recoger a alguien | I'll pick up my sister at the airport.
+Get by  | Arreglárselas | I get by on a small salary.
+Pay back ↔ | Pagar / Saldar una deuda | I will pay back the money tomorrow.
+Pay off ↔ | Saldar / Liquidar | She finally paid off her loan.
+Unidad 11 | Unidad 11 | Unidad 11
+Save up  | Ahorrar | I'm saving up for a new laptop.
+Put aside ↔ | Apartar / Reservar | Try to put aside some money each month.
+Cut back  | Recortar / Reducir gastos | We need to cut back on spending.
+Call off ↔ | Cancelar | They called off the match because of rain.
+Do something over ↔ | Hacer algo de nuevo | I had to do over the whole exercise.
+Unidad 12 | Unidad 12 | Unidad 12
+Figure something out ↔ | Averiguar / Resolver algo | I can't figure out this problem.
+Pass out  | Desmayarse | He passed out because of the heat.
+Back someone up ↔ | Respaldar a alguien | She backed up her friend in the meeting.
+Break down  | Descomponerse | Our car broke down on the highway.
+Dive into  | Sumergirse en (un tema/acción) | She dived into her studies.
+Unidad 13 | Unidad 13 | Unidad 13
+Come across  | Encontrarse con alguien | I came across an old photo yesterday.
+Pick out ↔ | Elegir algo | Can you pick out a gift for her?
+Put up with  | Tolerar | I can't put up with this noise.
+Butt in  | Entrometerse | Don't butt in when adults are talking.
+Chicken out  | Acobardarse | He wanted to jump, but he chickened out.
+Unidad 14 | Unidad 14 | Unidad 14
+Come about  | Suceder / Surgir | How did this problem come about?
+Turn on ↔ | Encender | Please turn on the light.
+Turn off ↔ | Apagar | Turn off your phone, please.
+Get on  | Subirse (a un transporte) | We got on the bus at nine.
+Get off  | Bajarse (de un transporte) | I get off at the next stop.
+Unidad 15 | Unidad 15 | Unidad 15
+Slow down  | Frenar / Reducir la velocidad | You're driving too fast; slow down!
+Speed up  | Acelerar | The driver sped up on the highway.
+Turn up ↔ | Subir el volumen / el calor | Can you turn up the music?
+Turn down ↔ | Bajar el volumen / Rechazar | He turned down the job offer.
+Dress up  | Vestirse de gala | We dressed up for the wedding.
+Unidad 16 | Unidad 16 | Unidad 16
+Dress down  | Vestirse casual | On Fridays, we dress down at work.
+Get together  | Reunirse | Let's get together next weekend.
+Go out  | Salir | They go out every Saturday night.
+Stay in  | Quedarse en casa | I'd rather stay in tonight.
+Drop someone off ↔ | Dejar a alguien en algún sitio | I'll drop off the kids at school.
+Unidad 17 | Unidad 17 | Unidad 17
+Check in  | Registrarse | We checked in at the hotel at noon.
+Check out  | Salir (de un hotel/lugar) | We checked out at ten.
+Get someone down ↔ | Desanimar a alguien | The long winter gets everyone down.
+Put something in ↔ | Poner algo en | She put the keys in her bag.
+Take it out of ↔ | Sacar algo de | He took the money out of his wallet.
+Unidad 18 | Unidad 18 | Unidad 18
+Wake up  | Despertar | I wake up early on weekdays.
+Break up  | Romper (una relación) | They broke up last year.
+Make up something ↔ | Inventar algo | He always makes up excuses.
+Carry on  | Continuar | Please carry on with your work.
+Ask about  | Preguntar sobre | She asked about the schedule.
+Unidad 19 | Unidad 19 | Unidad 19
+Warm up  | Calentar (pre-ejercicio) | We warm up before every game.
+Let someone down ↔ | Decepcionar a alguien | I don't want to let you down.
+Look for  | Buscar | I'm looking for my keys.
+Go off  | Sonar (una alarma) | My alarm went off at six.
+Wake someone up ↔ | Despertar a alguien | Don't wake the baby up.
+Unidad 20 | Unidad 20 | Unidad 20
+Put on ↔ | Ponerse (ropa) | He put on his coat.
+Heat up ↔ | Calentar (comida) | I'll heat up the soup.
+Gobble up ↔ | Devorar | The kids gobbled up all the pizza.
+Eat out  | Comer fuera | We eat out every Friday.
+Fill up ↔ | Llenar | I'll fill up the water bottles.
+[/TABLA]
+[Heading 2] Clave de las lecturas
+[Normal] Lectura 1 · My First Week at La Gran Colombia
+[Normal] My name is Camila, and I am a first-year student of Modern Languages in Bogotá. On my first Monday I got up at five because the trip to the university takes more than an hour. Since it was a special day, I tried on four shirts before I chose one. When the bus arrived, it was so full that I almost couldn't get in.
+[Normal] In the classroom, the professor asked us to set up the chairs in a circle. It was warm, so I took off my jacket. The professor said she would deal with any question about the schedule, and when a student asked about the library, she promised to look into it. She also explained that she would take over the grammar class until the new teacher arrived.
+[Normal] The first reading was long and difficult. I was afraid that I couldn't keep up with the group, but I told myself to press on. During the break I ran after a classmate and shouted, “Hang on!”
+[Normal] That classmate was Daniel. He came up with a plan: study together every afternoon. He invited me to come along to the library, and we went through the first chapter line by line. I brought up my biggest problem, vocabulary, and Daniel brought out a notebook full of colors and drawings. “You should cut down on translations,” he said, “and never throw away your mistakes.” I decided not to put off my homework anymore. Daniel could not stay long because he has to look after his little sister in the afternoons, but my first week ended better than I expected.
+[Normal] Lectura 2 · The Conversation Club
+[Normal] In our second semester, our teacher asked us to take on a new project: an English conversation club for beginners. At first I wanted to give up because I had never taught before, so I asked for one night to think over the idea. The next day, my team and I met to carry out the plan. We get along very well, and that makes teamwork much easier. First, we needed to find out what the students wanted to learn, so we made a short survey, and we checked out several free apps for practice.
+[Normal] On the first day we arrived early to tidy up the room. It was raining, so the students took off their wet coats at the door. One student, Laura, was so nervous that she almost cried. I tried to cheer up Laura with a joke and told her, “I believe in you.” Suddenly the floor was wet and a boy almost fell. “Watch out!” I shouted. Everyone laughed, and the class began.
+[Normal] After the club, my teammate Sofia, who works out every morning, said, “Hurry up, or we'll miss lunch!” Sofia is a very kind person who cares for her grandmother at home. On weekends we hang out in a café near the historic center. Before our final presentation, a friend stayed over at my house so we could practice. In the morning I picked up some coffee on the way, and after the presentation we went back to the classroom and gave away our old books to the students.
+[Normal] Lectura 3 · My Job at the Language Academy
+[Normal] In my third year, I got a part-time job at a small language academy. The salary was low, so I had to get by carefully. I wanted to save up for a trip to Canada, so I decided to put aside a little money every week and cut back on snacks and taxis. I also had to pay back my cousin, who had lent me money for books, and later I managed to pay off a small loan.
+[Normal] My first week was stressful. The projector broke down in the middle of a class, and a student started to panic. I told her to calm down. Then I tried to figure out the problem, but I couldn't, and my boss had to back me up. That same week the coordinator had to call off the evening class because of a storm, and a student who felt dizzy almost passed out in the hallway. After the storm, my brother picked me up at the academy. That night I had to do over my whole lesson plan, and I dived into grammar books to improve my explanations.
+[Normal] The academy was also a happy place. Our colleague Mateo finally asked out the receptionist, and she said yes. On Fridays we met up with other teachers, and we caught up with old friends from the university. Sometimes a former classmate dropped by to say hello, and sometimes the teachers came over to my apartment for dinner.
+[Normal] Lectura 4 · A Walking Tour of La Candelaria
+[Normal] For our tourism practice, my group designed a walking tour of La Candelaria, the historic center of Bogotá. On Saturday morning we got together to practice. Our teacher told us to dress down because we would walk for hours, but she asked us to dress up a little for the final presentation. We got on the bus early and got off near the Plaza de Bolívar.
+[Normal] The tourists arrived, and Daniel started the tour. The speaker was too quiet, so he decided to turn on the microphone and turn up the volume. At the Chorro de Quevedo, a tourist asked how the tradition of telling the legend of the city came about, and I explained it slowly. A street musician was playing very loudly, so we asked him to turn down his music for a minute. Then a man in the street butted in to tell his own version of the story, and everybody laughed.
+[Normal] While we walked, I came across a small bookstore with old maps in the window. One tourist wanted to buy a souvenir, and I helped her pick out a handmade bag. Another tourist said, “Please slow down; I can't understand you.” But we only had two hours, so later we had to speed up to reach the Gold Museum. We had to put up with the cold wind and the rain, and Sofia was afraid to speak English in front of the crowd, but she did not chicken out. At the end, Daniel turned off the microphone.
+[Normal] After the tour, some of us wanted to stay in because of the rain, but most of us decided to go out for hot chocolate with cheese. Finally, Sofia's father dropped us off at home. It was a long day, but we learned that a good guide needs language, culture and a lot of patience.
+[Normal] Lectura 5 · A Weekend in Villa de Leyva
+[Normal] At the end of the semester, our class took a weekend trip to Villa de Leyva. We arrived at the hostel at noon and checked in at the front desk. The receptionist spoke quickly, so we had to ask about the breakfast hours twice. I put my phone in the safe in our room, and later I took it out of there before dinner.
+[Normal] That night we decided to eat out, so we looked for a restaurant in the main square and gobbled up a huge pizza. Then we played a game: each person had to make up a short story in English using five new words. A friend told us that he and his girlfriend had broken up, and the cold rain got him down even more. I felt that I had let him down because I hadn't noticed earlier that he was sad.
+[Normal] On Sunday my alarm went off at six, and I woke up in the dark. I tried not to wake up my roommates, so I put on my boots quietly. In the kitchen, our friend heated up the leftover soup, and I filled up my water bottle. We warmed up with some stretching before the walk. The path was muddy, but we decided to carry on. In the afternoon we checked out of the hostel and took the bus back to Bogotá.
+[Normal] Lectura 6 · The Book That Changed My Mind
+[Normal] In my second year I had a problem: I read only because my professors told me to. One rainy afternoon I went to the library to look for a grammar book, but instead I came across a small yellow book about education. I picked out that book almost by chance. Its first pages said that we read the world before we read words. It was an idea of Paulo Freire, the Brazilian educator.
+[Normal] I dived into the book until the library closed. Then I wanted to find out more, so I checked out the library computer to see what else Freire and other educators had written. That night I went through my notes twice and could not sleep.
+[Normal] The next day I brought up Freire in class, and my classmates listened with interest. I needed time to think over everything, but one thing was clear: reading was not only a duty, it was a door. Since then I believe in the power of one good book to change a student's life.
+[Normal] Lectura 7 · A History of Ideas
+[Normal] On Tuesdays we had History of Pedagogy. One morning the bus was late and I had to hurry up to class. I tried to get in quietly, but the door was noisy and everyone turned around. The professor only smiled. She had already set up the projector.
+[Normal] She turned on the lights and began a story that traveled from ancient Greece to the modern school. She told us about Moacir Gadotti, a Brazilian educator who worked closely with Paulo Freire and wrote about the history of pedagogical ideas. At first she spoke so quickly that I could not keep up with her, so a student asked her to slow down.
+[Normal] When we reached Comenius and his dream of teaching everything to everyone, the discussion began to speed up, because everybody wanted to talk. The professor brought out an old school notebook from the 1950s and passed it around. Then she asked each group to look into one pedagogue and present the next week. At the end she turned off the projector and said, “Every idea was once a student's question.”
+[Normal] Lectura 8 · Learning by Doing
+[Normal] In my fourth semester I had to take on my first teaching practice in a public school in Bogotá. John Dewey said that we learn by doing, and now I had to do it. I had planned a listening game, but when I arrived the children were very noisy. For a moment I wanted to chicken out and go home, but the class was waiting.
+[Normal] I took a breath and asked the children to calm down. Then the speaker broke down in the middle of my activity. I had to deal with the problem alone, so I decided to press on and sing the song myself. The children laughed and sang with me. When their teacher returned, she backed me up in front of the principal and said that a plan can fail while a class succeeds.
+[Normal] I carried out the rest of the lesson with paper and my own voice. At the end I picked up the papers from the floor, and that night I threw away my first plan and wrote a better one. I learned that a teacher also learns by doing.
+[Normal] Lectura 9 · The Zone of Proximal Development
+[Normal] In Learning Theories class we studied Vygotsky, who said that people learn better with the help of others. Daniel and I get along very well, so we decided to test his idea. Every Thursday we met up with Laura, a shy classmate who was failing grammar and wanted to give up. We tried to cheer up Laura with jokes and small victories.
+[Normal] Laura could not figure out the past perfect, so Daniel suggested, “Let's do it over, but this time together.” Then we came up with a card game to practice the verbs. On Saturdays we hung out at the library cafeteria, and before the exam Laura stayed over at my house. A month later she had caught up with the rest of the class. She did not need us anymore, and that was the best part.
+[Normal] Lectura 10 · Little Scientists
+[Normal] Every Wednesday I got on a bus and got off near a small primary school. A father dropped off his son at the gate every morning, and I looked after the youngest group until class began. Piaget believed that children build knowledge by exploring, so my job was to care for them and give them questions, not only answers.
+[Normal] For the end-of-year festival, the children prepared a play about scientists. A boy tried on a huge white coat, and a girl put on paper glasses. They wanted to dress up as Marie Curie and Newton, and they argued about who would be who. On Fridays they could dress down and wear their favorite clothes, but on the day of the play everyone looked like a real scientist. When the show ended, they took off their costumes slowly, as if they did not want the day to finish.
+[Normal] Lectura 11 · The Student Who Never Spoke
+[Normal] At my practice school there was a boy named Julián who never spoke in English class. Other children butted in whenever he tried, and he believed that his English was bad. That really got him down, and I did not want to let him down. One day I decided to ask about his hobbies, and his eyes lit up: he loved football.
+[Normal] Bruner called it scaffolding: the teacher gives temporary help until the student can walk alone. So I made a rule: nobody could laugh at mistakes, and I would not put up with anyone who did. We warmed up with a song, and then Julián made up a funny story about a dragon who played football. He spoke slowly, with a small voice, but he spoke.
+[Normal] “Hang on, teacher! I have one more story,” he said when the bell rang. The class clapped, and somebody asked me to turn up the music so we could celebrate. The following week I proposed a storytelling club, and the principal did not turn down the idea. She approved it.
+[Normal] Lectura 12 · The Circle of Dialogue
+[Normal] Every Friday afternoon, a small group got together in an old classroom for what we called the Circle of Dialogue. Students from any semester could come along, and some professors sometimes dropped by just to listen. There was one rule: nobody had the last word. Paulo Freire defended dialogue in education, and we wanted to practice it.
+[Normal] One night a first-year student asked how the idea of the school itself came about, and the question started a two-hour conversation about history, power, childhood and hope. Nobody looked at their phones. Nobody wanted to leave.
+[Normal] Some people wanted to stay in the circle until midnight, while others went out to buy hot chocolate for everyone. Before leaving, a girl said to me, “Why don't you come over tomorrow? My family has a library full of old books.” That is how the circle grew: one invitation at a time.
+[Normal] Lectura 13 · A Letter to a Future Teacher
+[Normal] Dear first-year student,
+[Normal] When I began this degree, I was afraid that I did not belong here. Now, near the end, I want to tell you a few things I learned. Every morning I get up before the sun and ask myself why I want to teach. Write that reason down, and never put off your dreams for a better moment.
+[Normal] In my first presentation I almost passed out from nerves, but I carried on, and those five minutes taught me more than a whole book. Watch out for the voice that says you are not good enough. Cut down on comparing yourself with others; each teacher grows at a different speed. When you feel lost, go back to your books, to your notes and to the reason you began.
+[Normal] Give away your knowledge generously: a teacher who shares becomes richer. One day you will take over a class of your own and tidy up the room before the children arrive, and you will understand that teaching is an act of hope.
+[Normal] With all my heart, Camila
+[Normal] Lectura 14 · The Teacher Who Dared
+[Normal] One October afternoon, a visiting teacher named Marta spoke to us at the university. She works in a small rural school with no library and fifty children. “At the beginning I had to get by with a very small salary,” she said, “but I wanted my students to read.”
+[Normal] She decided to save up for books. Every month she put aside a little money, and she had to cut back on her own expenses. A neighbor lent her some money, and later she managed to pay back him. Years later she was able to pay off the small loan she took to build a shelf. She put the books in a wooden box, and every morning she took it out of the closet and opened it in the middle of the classroom.
+[Normal] “When the rain was too strong, I did not call off the class,” Marta said. “I picked up the smallest children at their houses myself.” She told us that her school tries to follow the idea of a citizen school, an idea linked to Moacir Gadotti, where students learn to take part in their community. When she finished, nobody moved. We understood that a teacher with few resources can still open worlds.
+[Normal] Lectura 15 · Graduation Day
+[Normal] Graduation day finally arrived. My parents had traveled from another city, and they checked in at a small hotel the night before. I woke up before my alarm went off, so I decided to work out for twenty minutes to calm my nerves. Then I tried not to wake up my little brother, who was sleeping on the sofa, and my dad heated up the leftover soup for an early breakfast. We all gobbled up it in five minutes.
+[Normal] At the ceremony I saw my whole journey: the rainy afternoon in the library, the practice school, the Circle of Dialogue. A classmate asked out the girl he liked, and she said yes in front of everyone. A couple of friends had broken up during the degree, but they hugged each other like old friends.
+[Normal] The next day my parents had to check out early, and their plane took off at noon. I watched it go and felt sad but very proud. I was not only a student anymore. I was a teacher, and the learning had just begun.
+[Heading 1] Referencias
+[Normal] Asher, J. J. (1969). The total physical response approach to second language learning. The Modern Language Journal, 53(1), 3–17. https://doi.org/10.2307/322091
+[Normal] Bjork, E. L., & Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. In M. A. Gernsbacher, R. W. Pew, L. M. Hough, & J. R. Pomerantz (Eds.), Psychology and the real world: Essays illustrating fundamental contributions to society (pp. 56–64). Worth Publishers.
+[Normal] Bjork, R. A. (1994). Memory and metamemory considerations in the training of human beings. In J. Metcalfe & A. P. Shimamura (Eds.), Metacognition: Knowing about knowing (pp. 185–205). MIT Press.
+[Normal] Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. Psychological Bulletin, 132(3), 354–380. https://doi.org/10.1037/0033-2909.132.3.354
+[Normal] Craik, F. I. M., & Lockhart, R. S. (1972). Levels of processing: A framework for memory research. Journal of Verbal Learning and Verbal Behavior, 11(6), 671–684. https://doi.org/10.1016/S0022-5371(72)80001-X
+[Normal] Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. Psychological Science in the Public Interest, 14(1), 4–58. https://doi.org/10.1177/1529100612453266
+[Normal] Ebbinghaus, H. (1913). Memory: A contribution to experimental psychology (Original work published 1885)
+[Normal] Garnier, M., & Schmitt, N. (2015). The PHaVE List: A pedagogical list of phrasal verbs and their most frequent meaning senses. Language Teaching Research, 19(6), 645–666. https://doi.org/10.1177/1362168814559798
+[Normal] Hulstijn, J. H., & Laufer, B. (2001). Some empirical evidence for the involvement load hypothesis in vocabulary acquisition. Language Learning, 51(3), 539–558. https://doi.org/10.1111/0023-8333.00164
+[Normal] Kalyuga, S., Ayres, P., Chandler, P., & Sweller, J. (2003). The expertise reversal effect. Educational Psychologist, 38(1), 23–31. https://doi.org/10.1207/S15326985EP3801_4
+[Normal] Karpicke, J. D., & Roediger, H. L., III. (2008). The critical importance of retrieval for learning. Science, 319(5865), 966–968. https://doi.org/10.1126/science.1152408
+[Normal] Nation, I. S. P. (2007). The four strands. Innovation in Language Learning and Teaching, 1(1), 2–13. https://doi.org/10.2167/illt039.0
+[Normal] Paivio, A. (1986). Mental representations: A dual coding approach. Oxford University Press.
+[Normal] Renkl, A., & Atkinson, R. K. (2003). Structuring the transition from example study to problem solving in cognitive skill acquisition: A cognitive load perspective. Educational Psychologist, 38(1), 15–22. https://doi.org/10.1207/S15326985EP3801_3
+[Normal] Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. Psychological Science, 17(3), 249–255. https://doi.org/10.1111/j.1467-9280.2006.01693.x
+[Normal] Schmitt, N. (2008). Review article: Instructed second language vocabulary learning. Language Teaching Research, 12(3), 329–363. https://doi.org/10.1177/1362168808089921
+[Normal] Vygotsky, L. S. (1978). Mind in society: The development of higher psychological processes (M. Cole, V. John-Steiner, S. Scribner, & E. Souberman, Eds.). Harvard University Press.
+[Normal] Wood, D., Bruner, J. S., & Ross, G. (1976). The role of tutoring in problem solving. Journal of Child Psychology and Psychiatry, 17(2), 89–100. https://doi.org/10.1111/j.1469-7610.1976.tb00381.x
