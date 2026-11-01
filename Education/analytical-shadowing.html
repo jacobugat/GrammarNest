@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11151b">
+  <meta name="description" content="Analytical Shadowing: dictado, análisis, ensayo en voz alta y shadowing grabado para descubrir tus errores antes de imitar.">
+  <title>Analytical Shadowing · SpeakLoop</title>
+  <style>
+    :root { color-scheme: dark; --bg:#11151b; --panel:#1a222b; --panel2:#202a35; --ink:#f4f1e8; --muted:#b8c1c5; --line:#39444d; --mint:#77e0c0; --orange:#ffb66e; --blue:#83b9ff }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; color:var(--ink); background:radial-gradient(ellipse at 8% -5%,#17453b 0,transparent 32rem),radial-gradient(ellipse at 100% 25%,#55341d 0,transparent 30rem),var(--bg); font:16px/1.68 Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif }
+    a { color:inherit }
+    .wrap { width:min(1120px,calc(100% - 48px)); margin:auto }
+    .bar { position:sticky; top:0; z-index:5; border-bottom:1px solid #ffffff18; background:#11151be8; backdrop-filter:blur(16px) }
+    .nav { min-height:64px; display:flex; justify-content:space-between; align-items:center; gap:20px }
+    .brand { color:var(--ink); text-decoration:none; font-weight:850; letter-spacing:-.04em }
+    .brand b { color:var(--mint) }
+    .back { color:var(--muted); text-decoration:none; font-size:.9rem }
+    .back:hover { color:var(--ink) }
+    .hero { padding:clamp(65px,10vw,118px) 0 56px; position:relative; overflow:hidden }
+    .overline,.label { color:var(--mint); text-transform:uppercase; letter-spacing:.15em; font-size:.74rem; font-weight:800 }
+    h1,h2,h3,p { margin-top:0 }
+    h1 { max-width:850px; margin:16px 0; font-size:clamp(3rem,8.2vw,6.2rem); line-height:.94; letter-spacing:-.075em }
+    h1 span { color:var(--orange) }
+    .intro { max-width:690px; color:var(--muted); font-size:1.12rem; margin:0 }
+    .author { margin-top:18px; color:#e6ddd0; font-size:.88rem }
+    .wave { position:absolute; right:0; top:42px; width:min(33vw,340px); opacity:.54; pointer-events:none }
+    .section { margin:0 auto 76px }
+    .section-head { max-width:750px; margin-bottom:24px }
+    h2 { margin:8px 0 10px; font-size:clamp(1.9rem,4vw,3rem); letter-spacing:-.055em; line-height:1.08 }
+    .section-head p { margin-bottom:0; color:var(--muted) }
+    .why { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:26px; border:1px solid var(--line); border-radius:20px; background:linear-gradient(145deg,#1d3030,#20262b 68%,#32251d) }
+    .why h2 { grid-column:1/-1; max-width:740px }
+    .why p { margin:0; color:#d1d8d6 }
+    .why .label { grid-column:1/-1; margin-bottom:-10px }
+    .flow { display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-radius:18px; overflow:hidden; background:#ffffff05 }
+    .flow-step { position:relative; padding:19px 20px 21px; border-right:1px solid var(--line) }
+    .flow-step:last-child { border:0 }
+    .flow-step:not(:last-child)::after { content:""; position:absolute; right:-7px; top:30px; width:12px; height:12px; border-top:2px solid var(--orange); border-right:2px solid var(--orange); transform:rotate(45deg); z-index:1 }
+    .flow-num { display:block; color:var(--orange); font:700 .8rem ui-monospace,Consolas,monospace; letter-spacing:.08em }
+    .flow-step strong { display:block; margin-top:9px; font-size:.98rem }
+    .flow-step small { display:block; margin-top:4px; color:var(--muted); line-height:1.4 }
+    .steps { display:grid; grid-template-columns:repeat(2,1fr); gap:15px; counter-reset:step }
+    .step { min-height:220px; position:relative; padding:25px 25px 24px 78px; border:1px solid var(--line); border-radius:16px; background:linear-gradient(145deg,var(--panel2),var(--panel)); counter-increment:step }
+    .step::before { content:"0" counter(step); position:absolute; left:23px; top:23px; color:var(--orange); font:800 1.15rem ui-monospace,Consolas,monospace }
+    .step h3 { margin:0 0 9px; font-size:1.2rem }
+    .step p { color:var(--muted); margin:0 }
+    .step p+p { margin-top:10px }
+    .notebook { position:relative; overflow:hidden; padding:clamp(24px,5vw,42px); border:1px solid #77e0c04c; border-radius:22px; background:linear-gradient(130deg,#18322f,#1b2528 60%,#292319) }
+    .notebook::after { content:"✎"; position:absolute; right:24px; top:5px; color:#77e0c01f; font-size:9rem; line-height:1; transform:rotate(-15deg); pointer-events:none }
+    .notebook h2 { max-width:680px }
+    .notebook > p { max-width:800px; color:#d0d9d4 }
+    .anchors { position:relative; z-index:1; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:22px }
+    .anchor { padding:16px; border:1px solid #ffffff20; border-radius:13px; background:#111b1bcc }
+    .anchor b { display:block; color:var(--mint); margin-bottom:5px }
+    .anchor span { color:#d5d9d4; font-size:.88rem }
+    .example { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.2fr 1fr 1.25fr; gap:10px; margin-top:12px }
+    .example > div { padding:14px; border-radius:10px; background:#0e1716b8; color:#e7eee9; font-size:.9rem }
+    .example .phrase { color:var(--orange); font-weight:800 }
+    .dimensions { display:grid; grid-template-columns:repeat(4,1fr); gap:12px }
+    .dimension { padding:20px; border-top:3px solid var(--mint); border-radius:3px 3px 13px 13px; background:var(--panel) }
+    .dimension:nth-child(2) { border-color:var(--orange) }
+    .dimension:nth-child(3) { border-color:var(--blue) }
+    .dimension:nth-child(4) { border-color:#d49bff }
+    .dimension h3 { margin:0 0 7px; font-size:.95rem; letter-spacing:.08em }
+    .dimension p { margin:0; color:var(--muted); font-size:.9rem }
+    .footer { border-top:1px solid var(--line); padding:26px 0 40px; color:var(--muted); font-size:.9rem }
+    @media(max-width:760px) { .wrap{width:calc(100% - 36px)} .wave{width:190px;top:24px;right:-22px;opacity:.3} .flow{grid-template-columns:1fr 1fr} .flow-step:nth-child(2){border-right:0} .flow-step:nth-child(-n+2){border-bottom:1px solid var(--line)} .flow-step:not(:last-child)::after{display:none} .steps{grid-template-columns:1fr} .anchors,.dimensions{grid-template-columns:1fr 1fr} .example{grid-template-columns:1fr 1fr} }
+    @media(max-width:480px) { .nav{align-items:flex-start;flex-direction:column;justify-content:center;padding:10px 0;gap:2px} .why{grid-template-columns:1fr} .why h2,.why .label{grid-column:auto} .flow{grid-template-columns:1fr} .flow-step{border-right:0;border-bottom:1px solid var(--line)} .flow-step:last-child{border-bottom:0} .anchors,.dimensions,.example{grid-template-columns:1fr} .section{margin-bottom:58px} }
+  </style>
+</head>
+<body>
+  <header class="bar"><nav class="wrap nav" aria-label="Navegación">
+    <a class="brand" href="../index.html">Grammar<b>Nest</b></a>
+    <a class="back" href="metodo-speakloop.html">← Volver al método SpeakLoop</a>
+  </nav></header>
+  <main>
+    <section class="wrap hero">
+      <svg class="wave" viewBox="0 0 360 150" fill="none" aria-hidden="true"><path d="M4 78h39l18-37 29 76 32-98 35 96 27-65 21 28h32l18-45 24 69 20-42h57" stroke="#77e0c0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 132h350" stroke="#ffb66e" stroke-width="2" stroke-dasharray="7 9"/></svg>
+      <div class="overline">SpeakLoop · Paso 01</div>
+      <h1>Analytical<br><span>Shadowing</span></h1>
+      <p class="intro">Dictado → Análisis → Ensayo → Shadowing grabado. Un método para descubrir tus errores antes de imitar.</p>
+      <div class="author">Autor: Jhon Carlos Sandoval Romero</div>
+    </section>
+
+    <section class="wrap section why" aria-labelledby="why">
+      <div class="label">Primero descubre, luego imita</div>
+      <h2 id="why">¿Por qué “analítico”?</h2>
+      <p>El shadowing a ciegas suele ser confuso: repites sin saber qué estás fallando. En el shadowing analítico primero descubres y corriges tus errores, y solo después imitas.</p>
+      <p>Así el ejercicio deja de ser repetición y se convierte en un proceso consciente: oyes, analizas, preparas la boca y ejecutas.</p>
+    </section>
+
+    <section class="wrap section" aria-labelledby="cycle">
+      <div class="section-head"><div class="label">El ciclo de 4 pasos</div><h2 id="cycle">Escucha. Descifra. Prepara. Imita.</h2><p>Avanza en orden para saber qué buscar antes de grabarte siguiendo el audio.</p></div>
+      <div class="flow" aria-label="Dictado, análisis y registro, ensayo en voz alta, shadowing grabado">
+        <div class="flow-step"><span class="flow-num">01 / OÍDO</span><strong>Dictado</strong><small>Escucha sin subtítulos</small></div>
+        <div class="flow-step"><span class="flow-num">02 / LÁPIZ</span><strong>Análisis y registro</strong><small>Marca errores y vocabulario</small></div>
+        <div class="flow-step"><span class="flow-num">03 / BOCA</span><strong>Ensayo en voz alta</strong><small>Prepara los movimientos</small></div>
+        <div class="flow-step"><span class="flow-num">04 / AUDIO</span><strong>Shadowing grabado</strong><small>Imita y recibe feedback</small></div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-label="Detalle de los cuatro pasos">
+      <div class="steps">
+        <article class="step"><h3>Dictado</h3><p>Escucha el audio en bruto y escribe lo que oyes, sin subtítulos. Choca con los sonidos reales, equivócate y descifra las uniones.</p><p>Al final, corrige con los subtítulos.</p></article>
+        <article class="step"><h3>Análisis y registro</h3><p>Marca tus errores y trampas, como problemas de elisión de la /t/. Pasa tu error más crítico a tu cuaderno.</p><p>Aquí también registras el vocabulario nuevo.</p></article>
+        <article class="step"><h3>Ensayo en voz alta</h3><p>Lee el texto pausadamente aplicando las correcciones, antes de correr contra el audio.</p><p>Calientas lengua, labios y mandíbula para movimientos nuevos.</p></article>
+        <article class="step"><h3>Shadowing grabado</h3><p>Imita el audio y grábate. Ya sabes qué esperar, así que te concentras solo en fluidez, ritmo y entonación.</p><p>Luego envías el audio grabado a la IA para recibir retroalimentación.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap section notebook" aria-labelledby="anchor-title">
+      <div class="label">Después del dictado · registra y ancla</div>
+      <h2 id="anchor-title">Lleva cada descubrimiento a tu cuaderno.</h2>
+      <p>Cuando termines el <i>English dictation</i> y corrijas con los subtítulos, anota a mano cada frase o palabra nueva que no sabías. Llénalo así: escribe la frase, defínela con tus palabras, inventa un gesto (TPR) y crea una imagen mental (aprendizaje visual). Haz el gesto y evoca la imagen cada vez que la releas.</p>
+      <div class="anchors">
+        <div class="anchor"><b>Frase o vocabulario nuevo</b><span>to blurt out</span></div>
+        <div class="anchor"><b>Significado propio</b><span>to say something suddenly, without thinking</span></div>
+        <div class="anchor"><b>Anclaje TPR · gesto</b><span>Te tapas la boca con la mano justo después de decirla.</span></div>
+        <div class="anchor"><b>Anclaje visual · imagen</b><span>Te imaginas soltando un secreto en plena cena familiar.</span></div>
+      </div>
+      <div class="example" aria-label="Ejemplo de registro de to blurt out">
+        <div class="phrase">to blurt out</div><div>Decir algo de repente, sin pensarlo.</div><div>Taparte la boca justo después.</div><div>Imaginar que sueltas un secreto en una cena familiar.</div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="four-fronts">
+      <div class="section-head"><div class="label">Por qué funciona</div><h2 id="four-fronts">El idioma entra por cuatro frentes.</h2></div>
+      <div class="dimensions">
+        <article class="dimension"><h3>AUDITIVO</h3><p>El dictado te enfrenta a los sonidos reales y a las uniones entre palabras.</p></article>
+        <article class="dimension"><h3>COGNITIVO</h3><p>Analizar el error y escribirlo a mano lo vuelve consciente.</p></article>
+        <article class="dimension"><h3>VISUAL</h3><p>Subtítulos, texto e imágenes mentales fijan el vocabulario.</p></article>
+        <article class="dimension"><h3>MUSCULAR</h3><p>El ensayo, el shadowing y el TPR entrenan boca y cuerpo.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap">SpeakLoop · Oyes, analizas, preparas la boca y ejecutas.</div></footer>
+</body>
+</html>

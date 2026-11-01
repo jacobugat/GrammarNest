@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b110f">
+  <meta name="description" content="Método SpeakLoop: práctica oral de idiomas con shadowing analítico, conversaciones con IA y speaking clubs.">
+  <title>Método SpeakLoop · GrammarNest</title>
+  <style>
+    :root { color-scheme:dark; --bg:#0b110f; --panel:#141d19; --panel2:#1b2822; --ink:#f5f2e8; --muted:#b4c0b6; --line:#334139; --lime:#c9f27a; --coral:#ff9875; --sand:#e7d8bd }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; background:radial-gradient(ellipse at 82% 2%,#293c2b 0,transparent 30rem),radial-gradient(ellipse at 7% 35%,#2b241a 0,transparent 25rem),var(--bg); color:var(--ink); font:16px/1.68 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif }
+    a { color:inherit }
+    .wrap { width:min(1160px,calc(100% - 56px)); margin:auto }
+    .topbar { position:sticky; top:0; z-index:3; border-bottom:1px solid #ffffff12; background:#0b110fe8; backdrop-filter:blur(18px) }
+    .nav { min-height:70px; display:flex; align-items:center; justify-content:space-between; gap:22px }
+    .brand { display:flex; align-items:center; gap:11px; color:var(--ink); text-decoration:none; font-weight:850; letter-spacing:-.04em }
+    .brand-mark { display:grid; width:31px; height:31px; place-items:center; border-radius:10px; background:var(--lime); color:#10170d; font-size:.92rem }
+    .brand small { display:block; color:var(--muted); font-size:.62rem; font-weight:650; letter-spacing:.14em; text-transform:uppercase }
+    .navlinks { display:flex; align-items:center; gap:24px; color:var(--muted); font-size:.86rem }
+    .navlinks a { text-decoration:none }
+    .navlinks a:hover { color:var(--lime) }
+    .navlinks .back { padding:8px 12px; border:1px solid var(--line); border-radius:999px }
+    .hero { display:grid; grid-template-columns:1.04fr .96fr; gap:50px; align-items:center; padding:clamp(64px,9vw,112px) 0 88px }
+    .eyebrow,.kicker { color:var(--lime); font-size:.73rem; font-weight:850; letter-spacing:.16em; text-transform:uppercase }
+    h1,h2,h3,p { margin-top:0 }
+    h1 { max-width:680px; margin:18px 0 22px; font-size:clamp(3.25rem,7vw,6rem); line-height:.96; letter-spacing:-.075em }
+    h1 em { display:block; color:var(--coral); font-style:normal }
+    .lead { max-width:620px; color:var(--muted); font-size:1.12rem; margin-bottom:24px }
+    .byline { display:flex; align-items:center; gap:10px; color:var(--sand); font-size:.87rem }
+    .byline::before { content:""; width:27px; height:1px; background:var(--coral) }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:27px }
+    .hero-meta span { padding:7px 10px; border:1px solid var(--line); border-radius:999px; color:#d1d9cc; font-size:.75rem }
+    .cycle-art { position:relative; min-height:430px; overflow:hidden; border:1px solid #ffffff16; border-radius:28px; background:radial-gradient(circle at center,#26352a 0,#17211b 44%,#111814 100%); box-shadow:0 28px 80px #0003 }
+    .cycle-art::before,.cycle-art::after { content:""; position:absolute; inset:50% auto auto 50%; width:310px; height:310px; border:1px solid #c9f27a3b; border-radius:50%; transform:translate(-50%,-50%) }
+    .cycle-art::after { width:235px; height:235px; border-color:#ff987533; border-style:dashed }
+    .orbit-center { position:absolute; z-index:1; left:50%; top:50%; display:grid; width:138px; height:138px; place-content:center; text-align:center; border:1px solid #c9f27a88; border-radius:50%; background:#121a15; box-shadow:0 0 45px #c9f27a14; transform:translate(-50%,-50%) }
+    .orbit-center strong { color:var(--lime); font-size:1.2rem; letter-spacing:-.04em }
+    .orbit-center span { color:var(--muted); font-size:.69rem; text-transform:uppercase; letter-spacing:.1em }
+    .orbit-node { position:absolute; z-index:2; width:174px; padding:13px 15px; border:1px solid #ffffff24; border-radius:13px; background:#202b23; box-shadow:0 12px 30px #0004 }
+    .orbit-node small { display:block; color:var(--coral); font-size:.62rem; font-weight:850; letter-spacing:.12em }
+    .orbit-node b { display:block; margin-top:3px; font-size:.88rem; line-height:1.3 }
+    .node-one { top:27px; left:50%; transform:translateX(-50%) }
+    .node-two { right:17px; bottom:48px }
+    .node-three { left:17px; bottom:48px }
+    .orbit-caption { position:absolute; right:22px; top:20px; color:#738176; font:700 .62rem ui-monospace,Consolas,monospace; letter-spacing:.13em }
+    .section { margin:0 auto 94px; scroll-margin-top:100px }
+    .section-head { max-width:740px; margin-bottom:27px }
+    h2 { margin:9px 0 13px; font-size:clamp(2rem,4.3vw,3.3rem); line-height:1.04; letter-spacing:-.06em }
+    .section-head p { max-width:640px; color:var(--muted); margin:0 }
+    .challenge { display:grid; grid-template-columns:.78fr 1.22fr; gap:35px; align-items:start; padding:35px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line) }
+    .challenge-title { color:var(--coral); font:750 .76rem ui-monospace,Consolas,monospace; letter-spacing:.12em; text-transform:uppercase }
+    .challenge h2 { max-width:390px; margin:12px 0 0; font-size:clamp(1.8rem,3.4vw,2.55rem) }
+    .challenge-copy { max-width:720px; color:#d0d8cf; font-size:1rem }
+    .challenge-copy p { margin:0 }
+    .challenge-copy p+p { margin-top:13px }
+    .loop-list { border-top:1px solid var(--line) }
+    .practice { display:grid; grid-template-columns:75px 1fr 1fr; gap:22px; padding:29px 0 31px; border-bottom:1px solid var(--line) }
+    .practice-num { color:var(--lime); font:750 1rem ui-monospace,Consolas,monospace; padding-top:3px }
+    .practice h3 { margin:0; font-size:1.3rem; letter-spacing:-.035em }
+    .practice-copy p { color:var(--muted); margin:0 }
+    .practice-copy p+p { margin-top:9px }
+    .loop-return { display:flex; justify-content:space-between; gap:20px; align-items:center; padding:19px 22px; border:1px solid #c9f27a40; border-radius:14px; background:#c9f27a09; color:#e7eddd }
+    .loop-return strong { color:var(--lime) }
+    .loop-return .arrow { color:var(--coral); font-size:1.45rem }
+    .tip { display:grid; grid-template-columns:140px 1fr; gap:20px; align-items:center; margin-top:13px; padding:22px 24px; border:1px solid #ff98754a; border-radius:14px; background:#ff98750a }
+    .tip-label { color:var(--coral); font:800 .72rem ui-monospace,Consolas,monospace; letter-spacing:.1em; text-transform:uppercase }
+    .tip p { margin:0; color:#e3ddd1 }
+    .why { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line) }
+    .why-card { padding:22px 20px 24px 0; margin-right:20px; border-right:1px solid var(--line) }
+    .why-card:last-child { border:0; margin:0 }
+    .why-card .index { color:var(--coral); font:750 .69rem ui-monospace,Consolas,monospace }
+    .why-card h3 { margin:11px 0 9px; font-size:1.02rem; letter-spacing:-.02em }
+    .why-card p { color:var(--muted); font-size:.9rem; margin:0 }
+    .resources { display:grid; grid-template-columns:1fr 1fr; gap:12px }
+    .resource { display:grid; grid-template-columns:44px 1fr auto; gap:15px; align-items:center; padding:18px 19px; border:1px solid var(--line); border-radius:14px; background:linear-gradient(110deg,#17201a,#141a16) }
+    .resource-num { color:var(--lime); font:750 .8rem ui-monospace,Consolas,monospace }
+    .resource h3 { margin:0 0 3px; font-size:1rem }
+    .resource p { margin:0; color:var(--muted); font-size:.83rem }
+    .resource-link { padding:9px 11px; border-radius:8px; background:var(--lime); color:#11170d; font-size:.76rem; font-weight:850; text-decoration:none; white-space:nowrap }
+    .resource-link:hover { background:#dcff9a }
+    footer { border-top:1px solid var(--line); padding:24px 0 38px; color:var(--muted); font-size:.88rem }
+    @media(max-width:900px) { .hero{grid-template-columns:1fr  .85fr;gap:25px}.cycle-art{min-height:390px}.cycle-art::before{width:275px;height:275px}.cycle-art::after{width:205px;height:205px}.orbit-node{width:157px}.node-two{right:9px}.node-three{left:9px}.why{grid-template-columns:1fr 1fr}.why-card:nth-child(2){border-right:0;margin-right:0}.why-card:nth-child(-n+2){border-bottom:1px solid var(--line)} }
+    @media(max-width:720px) { .wrap{width:calc(100% - 38px)}.nav{min-height:0;padding:10px 0;flex-wrap:wrap;gap:9px}.navlinks{width:100%;justify-content:space-between;gap:10px;font-size:.78rem}.navlinks>a:not(.back){display:block}.hero{grid-template-columns:1fr;padding:65px 0 72px}.cycle-art{min-height:405px}.practice{grid-template-columns:54px 1fr;gap:12px}.practice-copy{grid-column:2}.resources{grid-template-columns:1fr}.section{margin-bottom:72px} }
+    @media(max-width:480px) { .nav{min-height:0}.navlinks{justify-content:flex-start;flex-wrap:wrap;font-size:.76rem}.cycle-art{min-height:350px}.cycle-art::before{width:250px;height:250px}.cycle-art::after{width:188px;height:188px}.orbit-center{width:112px;height:112px}.orbit-center strong{font-size:1rem}.orbit-node{width:142px;padding:10px 11px}.orbit-node b{font-size:.78rem}.node-one{top:22px}.node-two{right:7px;bottom:37px}.node-three{left:7px;bottom:37px}.orbit-caption{right:12px;top:11px;font-size:.52rem}.challenge{grid-template-columns:1fr;gap:15px}.why{grid-template-columns:1fr}.why-card,.why-card:nth-child(2){padding:19px 0;margin:0;border-right:0;border-bottom:1px solid var(--line)}.why-card:last-child{border:0}.loop-return{align-items:flex-start}.tip{grid-template-columns:1fr;gap:7px}.resource{grid-template-columns:34px 1fr}.resource-link{grid-column:2;justify-self:start} }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="../index.html"><span class="brand-mark">S</span><span>SpeakLoop<small>Práctica oral</small></span></a>
+      <div class="navlinks"><a href="#ciclo">El ciclo</a><a href="#funciona">Por qué funciona</a><a href="#materiales">Recursos</a><a class="back" href="../index.html#docentes">GrammarNest ↗</a></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Método de práctica · 01 / SpeakLoop</div>
+        <h1>Aprende a hablar.<em>Hablando y escuchando.</em></h1>
+        <p class="lead">Un ciclo de práctica oral que combina analytical shadowing, conversación con IA y speaking clubs para que cada vuelta te ayude a avanzar a tu ritmo.</p>
+        <div class="byline">Creado por Jhon Carlos Sandoval Romero</div>
+        <div class="hero-meta"><span>Sin niveles prefijados</span><span>Práctica a tu ritmo</span><span>3 momentos conectados</span></div>
+      </div>
+      <div class="cycle-art" role="img" aria-label="Diagrama del ciclo SpeakLoop: analytical shadowing, conversación con IA y speaking clubs se repiten en una secuencia continua">
+        <div class="orbit-caption">UN CICLO CONTINUO</div>
+        <div class="orbit-center"><strong>SpeakLoop</strong><span>repite el ciclo</span></div>
+        <div class="orbit-node node-one"><small>01 · DETECTA</small><b>Analytical shadowing</b></div>
+        <div class="orbit-node node-two"><small>02 · PRACTICA</small><b>Conversación con IA</b></div>
+        <div class="orbit-node node-three"><small>03 · APLICA</small><b>Speaking clubs</b></div>
+      </div>
+    </section>
+
+    <section class="wrap section challenge" aria-labelledby="bloqueo">
+      <div><div class="challenge-title">El punto de partida</div><h2 id="bloqueo">¿Entiendes el idioma, pero te bloqueas al hablar?</h2></div>
+      <div class="challenge-copy"><p>Le pasa a mucha gente: lee, escucha y estudia gramática, pero a la hora de hablar se bloquea o le da miedo equivocarse. SpeakLoop es un ciclo para practicar hablando, a tu ritmo, y mejorar un poco más con cada vuelta.</p><p>El shadowing, las conversaciones y los speaking clubs son útiles, pero por sí solos pueden dejar un <i>noticing gap</i>: no reconoces tus propios errores. Ahí entra la IA, que te señala lo que tú no alcanzas a notar.</p></div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="ciclo">
+      <div class="section-head">
+        <div class="kicker">01 — 02 — 03</div>
+        <h2 id="ciclo">Tres prácticas. Un ciclo que se repite.</h2>
+        <p>Descubre qué puedes mejorar, practica con guía y lleva lo aprendido a una conversación real. Después vuelve al inicio con nuevos apuntes.</p>
+      </div>
+      <div class="loop-list">
+        <article class="practice"><div class="practice-num">01</div><h3>Analytical shadowing</h3><div class="practice-copy"><p>Elige un fragmento de video y sigue cuatro pasos: dictado, análisis, ensayo en voz alta y shadowing grabado. Primero descubres y corriges tus errores; solo después imitas.</p><p>Envía el audio grabado a la IA que prefieras y pídele que te señale un máximo de tres cosas por mejorar.</p></div></article>
+        <article class="practice"><div class="practice-num">02</div><h3>Conversación con IA</h3><div class="practice-copy"><p>Mantén una conversación oral con la IA sobre un tema que te interese y grábala.</p><p>Al terminar, envía el audio y pídele que corrija tu pronunciación, tu gramática y las frases que no suenan nativas.</p></div></article>
+        <article class="practice"><div class="practice-num">03</div><h3>Speaking clubs</h3><div class="practice-copy"><p>Ve a un speaking club y habla con espontaneidad: sin grabar y sin corregir a nadie. Aquí no se evalúa nada; pones en práctica lo aprendido con personas reales.</p><p>Después, con los puntos que anotaste, vuelves al paso 1.</p></div></article>
+      </div>
+      <div class="loop-return"><span><strong>La siguiente vuelta empieza con lo que anotaste.</strong><br>Cada ciclo te ayuda a notar, practicar y aplicar algo nuevo.</span><span class="arrow" aria-hidden="true">↶</span></div>
+      <aside class="tip"><div class="tip-label">Tip de<br>consolidación</div><p>Lleva un registro escrito a mano de las retroalimentaciones de la IA en un cuaderno. El método propone que hacerlo favorece la memorización, el sueño y el aprendizaje.</p></aside>
+    </section>
+
+    <section class="wrap section" aria-labelledby="funciona">
+      <div class="section-head">
+        <div class="kicker">La idea detrás del método</div>
+        <h2 id="funciona">¿Por qué funciona?</h2>
+      </div>
+      <div class="why">
+        <article class="why-card"><span class="index">01 / NOTAR</span>
+          <h3>Detectas lo que antes pasaba inadvertido</h3>
+          <p>En las etapas de analytical shadowing y conversación con IA, la retroalimentación ayuda a reconocer el <i>noticing gap</i>: tus fallos se vuelven visibles y puedes corregirlos.</p>
+        </article>
+        <article class="why-card"><span class="index">02 / ESCUCHAR</span>
+          <h3>Practicas con tu propio audio</h3>
+          <p>La práctica guiada con grabaciones tuyas permite escuchar y trabajar sobre tu producción oral.</p>
+        </article>
+        <article class="why-card"><span class="index">03 / CONECTAR</span>
+          <h3>Lo llevas a una interacción real</h3>
+          <p>En el speaking club aplicas lo aprendido con personas, espontáneamente y sin presión de evaluación ni correcciones.</p>
+        </article>
+        <article class="why-card"><span class="index">04 / REPETIR</span>
+          <h3>Avanzas vuelta a vuelta</h3>
+          <p>En lugar de repetir errores sin darte cuenta, SpeakLoop te ayuda a detectarlos, corregirlos y aplicarlos de inmediato. Cada repetición entrena a tu cerebro para pensar y hablar en el idioma de forma natural.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="materiales">
+      <div class="section-head">
+        <div class="kicker">Materiales de apoyo</div>
+        <h2 id="materiales">Profundiza y lleva tu registro.</h2>
+        <p>Abre las dos guías complementarias para profundizar en el shadowing y llevar un registro de cada ciclo.</p>
+      </div>
+      <div class="resources">
+        <article class="resource"><span class="resource-num">A</span>
+          <div>
+            <h3>Analytical Shadowing</h3>
+            <p>El dictado, análisis, ensayo y shadowing grabado en una guía paso a paso.</p>
+          </div>
+          <a class="resource-link" href="analytical-shadowing.html">Abrir página →</a>
+        </article>
+        <article class="resource"><span class="resource-num">B</span>
+          <div>
+            <h3>Cuaderno SpeakLoop</h3>
+            <p>Una bitácora a mano para registrar errores, vocabulario y anclajes de memoria.</p>
+          </div>
+          <a class="resource-link" href="cuaderno-speakloop.html">Abrir página →</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">GrammarNest · Método SpeakLoop · Práctica oral a tu ritmo.</div>
+  </footer>
+</body>
+
+</html>
