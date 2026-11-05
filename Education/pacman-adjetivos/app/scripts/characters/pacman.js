@@ -237,10 +237,16 @@ class Pacman {
 
     if (this.moving) {
       const gridPosition = this.characterUtil.determineGridPosition(this.position, this.scaledTileSize);
+      const snappedPosition = this.characterUtil.snapToGrid(
+        gridPosition,
+        this.direction,
+        this.scaledTileSize,
+      );
+      const atGridCenter = Math.abs(this.position.top - snappedPosition.top) < 0.01
+        && Math.abs(this.position.left - snappedPosition.left) < 0.01;
 
-      if (JSON.stringify(this.position) === JSON.stringify(
-        this.characterUtil.snapToGrid(gridPosition, this.direction, this.scaledTileSize),
-      )) {
+      if (atGridCenter) {
+        this.position = snappedPosition;
         this.position = this.handleSnappedMovement(elapsedMs);
       } else {
         this.position = this.handleUnsnappedMovement(gridPosition, elapsedMs);

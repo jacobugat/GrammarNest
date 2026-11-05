@@ -57,7 +57,7 @@ class GameCoordinator {
 
     this.maxFps = 120;
     this.tileSize = 8;
-    this.scale = this.determineScale(1);
+    this.scale = this.determineScale();
     this.scaledTileSize = this.tileSize * this.scale;
     this.firstGame = true;
 
@@ -83,7 +83,7 @@ class GameCoordinator {
 
     this.practiceDeck = window.PRACTICE_PHRASES || [];
     this.questionIndex = -1;
-    this.phrasesPerScene = 10;
+    this.phrasesPerScene = 5;
     this.pendingBatchTransition = false;
     this.pendingRoundCompletion = false;
     this.fruitSpawnQueue = [];
@@ -92,13 +92,15 @@ class GameCoordinator {
     this.mazeArray.forEach((row, rowIndex) => {
       this.mazeArray[rowIndex] = row[0].split('');
     });
-    // Reclaim three original power-pellet spots as regular paths.
-    [[3, 26], [23, 1], [23, 26]].forEach(([row, column]) => {
-      if (this.mazeArray[row][column] === 'O') this.mazeArray[row][column] = 'o';
+    // Use one central siren pellet and four answer fruits in the maze corners.
+    this.mazeArray.forEach((row) => {
+      row.forEach((cell, column) => {
+        if (cell === 'O') row[column] = 'o';
+      });
     });
+    this.mazeArray[17][21] = 'O';
     [
-      [3, 26], [5, 12], [8, 24], [14, 6], [17, 21],
-      [23, 1], [23, 26], [26, 12], [29, 24],
+      [5, 3], [5, 24], [29, 3], [29, 24],
     ].forEach(([row, column]) => {
       if (this.mazeArray[row][column] === 'o') this.mazeArray[row][column] = 'F';
     });
@@ -121,7 +123,7 @@ class GameCoordinator {
    * Recursive method which determines the largest possible scale the game's graphics can use
    * @param {Number} scale
    */
-  determineScale(scale) {
+  determineScale() {
     const availableScreenHeight = Math.min(
       document.documentElement.clientHeight,
       window.innerHeight || 0,
@@ -130,22 +132,17 @@ class GameCoordinator {
       document.documentElement.clientWidth,
       window.innerWidth || 0,
     );
-    const scaledTileSize = this.tileSize * scale;
-
-    // The original Pac-Man game leaves 5 tiles of height (3 above, 2 below) surrounding the
-    // maze for the UI. See app\style\graphics\spriteSheets\references\mazeGridSystemReference.png
-    // for reference.
+    // Reserve room for the score row and the two rows below the maze. Fractional scaling
+    // avoids leaving a large unused strip on shorter laptop displays.
     const mazeTileHeight = this.mazeArray.length + 5;
     const mazeTileWidth = this.mazeArray[0][0].split('').length;
-
-    if (
-      scaledTileSize * mazeTileHeight < availableScreenHeight
-      && scaledTileSize * mazeTileWidth < availableScreenWidth
-    ) {
-      return this.determineScale(scale + 1);
-    }
-
-    return scale - 1;
+    const maxTileSize = Math.min(
+      (availableScreenHeight * 0.96) / mazeTileHeight,
+      (availableScreenWidth * 0.96) / mazeTileWidth,
+    );
+    const pixelRatio = window.devicePixelRatio || 1;
+    const physicalTileSize = Math.floor(maxTileSize * pixelRatio) / pixelRatio;
+    return Math.max(1, physicalTileSize / this.tileSize);
   }
 
   /**
@@ -631,7 +628,7 @@ class GameCoordinator {
    * Starts a round in a reading pause, then resumes only after the player is ready
    * @param {Boolean} initialStart - Plays the start sound for the first round
    */
-  startGameplay(initialStart) {
+  startGameplay(initialStart, pauseForLesson = true) {
     if (initialStart) {
       this.soundManager.play('game_start');
     }
@@ -648,7 +645,23 @@ class GameCoordinator {
     this.idleGhosts = [this.pinky, this.inky, this.clyde];
     this.ghostCycle('scatter');
     this.releaseGhost();
-    this.pauseForReading();
+    if (pauseForLesson) {
+      this.pauseForReading();
+    } else {
+      this.readingPauseActive = false;
+      this.allowPause = true;
+      this.allowKeyPresses = true;
+      this.allowPacmanMovement = true;
+      this.pacman.moving = true;
+      this.ghosts.forEach((ghost) => { ghost.moving = true; });
+      this.readingStatus.hidden = true;
+      this.readingPlayButton.hidden = true;
+      this.lessonCard.classList.remove('reading-active');
+      this.pausedText.style.visibility = 'hidden';
+      this.pauseButton.innerHTML = 'pause';
+      this.activeTimers.forEach((timer) => timer.resume());
+      this.gameEngine.start();
+    }
   }
 
   pauseForReading() {
@@ -823,14 +836,27 @@ class GameCoordinator {
    * @param {Event} e - The keydown event to evaluate
    */
   handleKeyDown(e) {
-    if (e.keyCode === 27) {
+    if (e.keyCode === 27 || e.key === 'Escape') {
       // ESC key
       this.handlePauseKey();
-    } else if (e.keyCode === 81) {
+    } else if (e.keyCode === 81 || (e.key || '').toLowerCase() === 'q') {
       // Q
       this.soundButtonClick();
-    } else if (this.movementKeys[e.keyCode]) {
-      this.changeDirection(this.movementKeys[e.keyCode]);
+    } else {
+      const direction = this.movementKeys[e.keyCode] || {
+        ArrowUp: 'up',
+        ArrowDown: 'down',
+        ArrowLeft: 'left',
+        ArrowRight: 'right',
+        w: 'up',
+        s: 'down',
+        a: 'left',
+        d: 'right',
+      }[(e.key || '').length === 1 ? e.key.toLowerCase() : e.key];
+      if (direction) {
+        if (e.cancelable) e.preventDefault();
+        this.changeDirection(direction);
+      }
     }
   }
 
@@ -1187,6 +1213,9 @@ class GameCoordinator {
    * the player has remaining lives.
    */
   deathSequence() {
+    this.resumeAfterDeath = this.gameEngine.running
+      && !this.readingPauseActive
+      && this.allowPacmanMovement;
     this.allowPause = false;
     this.cutscene = true;
     this.soundManager.setCutscene(this.cutscene);
@@ -1230,7 +1259,9 @@ class GameCoordinator {
             this.ghostCollisionShieldActive = false;
             this.createFruit();
 
-            this.startGameplay();
+            const resumeAfterDeath = this.resumeAfterDeath;
+            this.resumeAfterDeath = false;
+            this.startGameplay(false, !resumeAfterDeath);
           }, 500);
         }, 2250);
       } else {
