@@ -1008,10 +1008,10 @@ module GameStartr {
 
             // Canvas, context, imageData
             thing.canvas = thing.GameStarter.createCanvas(
-                thing.spritewidthpixels, thing.spriteheightpixels, 1, true
-                );
+                thing.spritewidthpixels, thing.spriteheightpixels
+            );
             thing.context = <CanvasRenderingContext2D>thing.canvas.getContext("2d");
-            thing.imageData = thing.context.getImageData(0, 0, thing.spritewidthpixels, thing.spriteheightpixels);
+            thing.imageData = thing.context.createImageData(thing.spritewidthpixels, thing.spriteheightpixels);
 
             if (thing.opacity !== 1) {
                 thing.GameStarter.setOpacity(thing, thing.opacity);

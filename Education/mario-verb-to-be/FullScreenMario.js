@@ -5607,7 +5607,9 @@ var PixelRendr;
          * @param {HTMLImageElement} image
          */
         PixelRendr.prototype.imageGetData = function (image) {
-            var canvas = document.createElement("canvas"), context = canvas.getContext("2d");
+            var canvas = document.createElement("canvas"), context = canvas.getContext("2d", {
+                "willReadFrequently": true
+            });
             canvas.width = image.width;
             canvas.height = image.height;
             context.drawImage(image, 0, 0);
@@ -6657,8 +6659,8 @@ var PixelDrawr;
             }
         };
         /**
-         * Simply draws a thing's sprite to its canvas by getting and setting
-         * a canvas::imageData object via context.getImageData(...).
+         * Simply draws a thing's sprite to its canvas by creating and setting
+         * a canvas::imageData object.
          *
          * @param {Thing} thing   A Thing whose canvas must be updated.
          */
@@ -6668,7 +6670,7 @@ var PixelDrawr;
                 return;
             }
             // Retrieve the imageData from the Thing's canvas & renderingContext
-            var canvas = thing.canvas, context = thing.context, imageData = context.getImageData(0, 0, canvas[this.keyWidth], canvas[this.keyHeight]);
+            var canvas = thing.canvas, context = thing.context, imageData = context.createImageData(canvas[this.keyWidth], canvas[this.keyHeight]);
             // Copy the thing's sprite to that imageData and into the contextz
             this.PixelRender.memcpyU8(thing.sprite, imageData.data);
             context.putImageData(imageData, 0, 0);
@@ -6697,7 +6699,7 @@ var PixelDrawr;
                 canvas = this.createCanvas(thing.spritewidth * this.unitsize, thing.spriteheight * this.unitsize);
                 context = canvas.getContext("2d");
                 // Copy over this sprite's information the same way as refillThingCanvas
-                imageData = context.getImageData(0, 0, canvas[this.keyWidth], canvas[this.keyHeight]);
+                imageData = context.createImageData(canvas[this.keyWidth], canvas[this.keyHeight]);
                 this.PixelRender.memcpyU8(spritesRaw.sprites[i], imageData.data);
                 context.putImageData(imageData, 0, 0);
                 // Record the canvas and context in thing.sprites
@@ -13262,7 +13264,7 @@ var GameStartr;
             // Canvas, context, imageData
             thing.canvas = thing.GameStarter.createCanvas(thing.spritewidthpixels, thing.spriteheightpixels);
             thing.context = thing.canvas.getContext("2d");
-            thing.imageData = thing.context.getImageData(0, 0, thing.spritewidthpixels, thing.spriteheightpixels);
+            thing.imageData = thing.context.createImageData(thing.spritewidthpixels, thing.spriteheightpixels);
             if (thing.opacity !== 1) {
                 thing.GameStarter.setOpacity(thing, thing.opacity);
             }

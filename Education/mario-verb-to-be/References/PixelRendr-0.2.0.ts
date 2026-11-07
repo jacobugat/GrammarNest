@@ -1188,7 +1188,9 @@ module PixelRendr {
          */
         private imageGetData(image: HTMLImageElement): number[] {
             var canvas: HTMLCanvasElement = document.createElement("canvas"),
-                context: CanvasRenderingContext2D = <CanvasRenderingContext2D>canvas.getContext("2d");
+                context: CanvasRenderingContext2D = <CanvasRenderingContext2D>(<any>canvas).getContext("2d", {
+                    "willReadFrequently": true
+                });
 
             canvas.width = image.width;
             canvas.height = image.height;

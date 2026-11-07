@@ -2,9 +2,12 @@
     var startButton = document.getElementById("start-button");
     var startScreen = document.getElementById("start-screen");
     var pauseOverlay = document.getElementById("pause-overlay");
+    var completionOverlay = document.getElementById("completion-overlay");
     var pauseBtn = document.getElementById("btn-pause-game");
     var resumeBtn = document.getElementById("btn-resume-overlay");
     var theoryPauseBtn = document.getElementById("btn-theory-from-pause");
+    var returnGrammarBtn = document.getElementById("btn-return-grammar");
+    var replayWorldBtn = document.getElementById("btn-replay-world");
     var theoryBtn = document.getElementById("btn-show-theory");
     var screenModeBtn = document.getElementById("btn-screen-mode");
     var pauseSentenceDisplay = document.getElementById("pause-sentence-display");
@@ -22,6 +25,7 @@
 
     var started = false;
     var lastPauseToggle = 0;
+    var worldComplete = false;
 
     // Modos de pantalla disponibles: Panorámico 16:9 (768px), Ultra Panorámico (896px) y Clásico 4:3 (512px)
     var SCREEN_MODES = [
@@ -233,7 +237,7 @@
      * el estado visual del botón y el overlay de información pedagógica.
      */
     function togglePause(forceState) {
-        if (!started || !window.FSM || !window.FSM.GamesRunner) {
+        if (worldComplete || !started || !window.FSM || !window.FSM.GamesRunner) {
             return;
         }
 
@@ -305,11 +309,84 @@
         }
     }
 
+    function finishMissionAndReturnToGrammar() {
+        if (worldComplete) {
+            return;
+        }
+        worldComplete = true;
+        window.FSM.GamesRunner.pause();
+        if (window.FSM.AudioPlayer && typeof window.FSM.AudioPlayer.pauseTheme === "function") {
+            window.FSM.AudioPlayer.pauseTheme();
+        }
+        if (pauseOverlay) {
+            pauseOverlay.hidden = true;
+        }
+        if (completionOverlay) {
+            completionOverlay.hidden = true;
+        }
+        returnToGrammar();
+        startButton.textContent = "MISIÓN COMPLETADA";
+        startButton.disabled = true;
+    }
+
+    function installWorldLimit() {
+        var proto = FullScreenMario.FullScreenMario.prototype;
+        if (proto.grammarNestWorldLimitInstalled) {
+            return;
+        }
+
+        var originalSetMap = proto.setMap;
+        proto.setMap = function (name) {
+            if (started && name != null && String(name) !== "1-1") {
+                finishMissionAndReturnToGrammar();
+                return;
+            }
+            return originalSetMap.apply(this, arguments);
+        };
+        proto.grammarNestWorldLimitInstalled = true;
+    }
+
+    function returnToGrammar() {
+        if (completionOverlay) {
+            completionOverlay.hidden = true;
+        }
+        startScreen.hidden = false;
+        startButton.textContent = "▶ VOLVER AL JUEGO";
+        startScreen.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+
+    function replayWorld() {
+        worldComplete = false;
+        if (completionOverlay) {
+            completionOverlay.hidden = true;
+        }
+        if (startScreen) {
+            startScreen.hidden = true;
+        }
+        if (pauseOverlay) {
+            pauseOverlay.hidden = true;
+        }
+        if (window.FSM) {
+            window.FSM.gameStart();
+            window.FSM.GamesRunner.play();
+            if (window.FSM.AudioPlayer && typeof window.FSM.AudioPlayer.resumeTheme === "function") {
+                window.FSM.AudioPlayer.resumeTheme();
+            }
+        }
+        if (pauseBtn) {
+            pauseBtn.textContent = "⏸️ PAUSA";
+            pauseBtn.classList.remove("paused");
+        }
+    }
+
     /**
      * Iniciar o reanudar el juego desde la pantalla pedagógica
      */
     function startGame() {
         if (started) {
+            if (worldComplete) {
+                return;
+            }
             startScreen.hidden = true;
             togglePause(false);
             return;
@@ -325,6 +402,7 @@
                 }, FullScreenMario.FullScreenMario.settings.ui, true)
             );
 
+            window.FSM.GamesRunner.pause();
             window.FSM.GamesRunner.setSpeed(1);
             warmPlayerRunSprites();
             window.FSM.AudioPlayer.setMutedOff();
@@ -333,10 +411,12 @@
                 window.EnglishGrammarGame.init(window.FSM);
             }
 
+            installWorldLimit();
             startFpsMeter();
             fitStage();
             window.addEventListener("resize", fitStage);
 
+            window.FSM.GamesRunner.play();
             document.body.className += " playing";
             startScreen.hidden = true;
             startButton.disabled = false;
@@ -375,6 +455,14 @@
             startScreen.hidden = false;
             startButton.textContent = "▶ VOLVER AL JUEGO";
         });
+    }
+
+    if (returnGrammarBtn) {
+        returnGrammarBtn.addEventListener("click", returnToGrammar);
+    }
+
+    if (replayWorldBtn) {
+        replayWorldBtn.addEventListener("click", replayWorld);
     }
 
     // Conectar botón Grammar Focus de la barra superior de misión

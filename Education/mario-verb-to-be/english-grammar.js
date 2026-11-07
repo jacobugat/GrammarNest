@@ -23,7 +23,7 @@
             failText: "¡Cuidado! Con 'She' se usa 'is'. ¡Busca el bloque [ is ]!",
             blockTargets: [
                 { mapX: 624, text: "is", isCorrect: true },
-                { mapX: 632, text: "are", isCorrect: false }
+                { mapX: 648, text: "are", isCorrect: false }
             ]
         },
         {
@@ -34,8 +34,8 @@
             failText: "¡Cuidado! Con 'They' se usa 'are'. ¡Busca el bloque [ are ]!",
             blockTargets: [
                 { mapX: 800, text: "is", isCorrect: false },
-                // Bloque 808 tiene la Estrella: ¡al darle a 'are' Mario se vuelve invencible!
-                { mapX: 808, text: "are", isCorrect: true }
+                // Bloque 832 tiene la Estrella: ¡al darle a 'are' Mario se vuelve invencible!
+                { mapX: 832, text: "are", isCorrect: true }
             ]
         },
         {
@@ -58,7 +58,7 @@
             failText: "¡BONUS! 'Your' indica posesión de la clase. ¡Busca [ Your ]!",
             blockTargets: [
                 { mapX: 1032, text: "Your", isCorrect: true },
-                { mapX: 1040, text: "You're", isCorrect: false }
+                { mapX: 1080, text: "You're", isCorrect: false }
             ]
         },
         {
@@ -83,26 +83,40 @@
         missionHintEl: null,
         missionScoreEl: null,
         activeBlocks: [],
-        lastBumpTimestamp: 0
+        lastBumpTimestamp: 0,
+        challengeAdvanceTimeout: null,
+        challengeGeneration: 0,
+        awaitingRespawn: false,
+        lifecycleHooksInstalled: false,
+        blockCollisionHooksInstalled: false,
+        playerSpawnHookInstalled: false,
+        updateLoopStarted: false
     };
 
     function init(fsmInstance) {
+        var isNewGame = state.fsm !== fsmInstance;
         state.fsm = fsmInstance;
 
-        // Hook en colisiones inferiores y física de bloques
-        hookBlockCollisions(fsmInstance);
-
-        // Hook en ciclo de vida del juego (muertes, reinicios, cambios de mapa)
-        hookLifeCycleEvents(fsmInstance);
+        if (!state.blockCollisionHooksInstalled) {
+            hookBlockCollisions(fsmInstance);
+            state.blockCollisionHooksInstalled = true;
+        }
+        if (!state.lifecycleHooksInstalled) {
+            hookLifeCycleEvents(fsmInstance);
+            state.lifecycleHooksInstalled = true;
+        }
+        hookPlayerDeath(fsmInstance.player);
 
         // Configurar capa de interfaz
         setupUI();
 
-        // Iniciar retos desde el principio
-        resetAllChallenges();
-
-        // Bucle continuo de renderizado y detección de colisiones
-        startUpdateLoop();
+        if (isNewGame) {
+            resetAllChallenges();
+        }
+        if (!state.updateLoopStarted) {
+            state.updateLoopStarted = true;
+            startUpdateLoop();
+        }
     }
 
     function hookLifeCycleEvents(fsmInstance) {
@@ -111,8 +125,9 @@
         // 1. Hook en setMap (reinicio de nivel al morir o cambiar de mapa)
         var origProtoSetMap = proto.setMap;
         proto.setMap = function () {
+            var result = origProtoSetMap.apply(this, arguments);
             resetAllChallenges();
-            return origProtoSetMap.apply(this, arguments);
+            return result;
         };
 
         // 2. Hook en setLocation (cuando se reposiciona el jugador o se recarga el área)
@@ -134,19 +149,48 @@
         // 4. Hook en gameStart
         var origProtoGameStart = proto.gameStart;
         proto.gameStart = function () {
+            state.awaitingRespawn = false;
             resetAllChallenges();
             return origProtoGameStart.apply(this, arguments);
         };
 
-        // 5. Hook en killPlayer (al morir Mario, limpiar etiquetas flotantes de inmediato)
-        var origKillPlayer = proto.killPlayer;
-        proto.killPlayer = function (thing, big) {
-            clearActiveLabels();
-            return origKillPlayer.apply(this, arguments);
+        // Player.death is captured from the prototype when each player is created,
+        // so wrap both the current player and future respawns directly.
+        hookPlayerDeath(fsmInstance.player);
+        if (!state.playerSpawnHookInstalled) {
+            var origAddPlayer = proto.addPlayer;
+            proto.addPlayer = function () {
+                var player = origAddPlayer.apply(this, arguments);
+                hookPlayerDeath(player);
+                return player;
+            };
+            state.playerSpawnHookInstalled = true;
+        }
+    }
+
+    function hookPlayerDeath(player) {
+        if (!player || player.grammarDeathHookInstalled || typeof player.death !== "function") {
+            return;
+        }
+
+        var originalDeath = player.death;
+        player.death = function (thing, big) {
+            var isPowerDown = thing && !big && thing.power > 1;
+            if (!isPowerDown) {
+                state.awaitingRespawn = true;
+                resetAllChallenges();
+            }
+            return originalDeath.apply(this, arguments);
         };
+        player.grammarDeathHookInstalled = true;
     }
 
     function resetAllChallenges() {
+        if (state.challengeAdvanceTimeout !== null) {
+            window.clearTimeout(state.challengeAdvanceTimeout);
+            state.challengeAdvanceTimeout = null;
+        }
+        state.challengeGeneration += 1;
         state.currentChallengeIndex = 0;
         state.score = 0;
         state.lastBumpTimestamp = 0;
@@ -166,6 +210,10 @@
 
     function setupUI() {
         var stage = document.querySelector("#game .EightBitter");
+        if (stage && state.labelsLayer && state.labelsLayer.parentNode !== stage) {
+            clearActiveLabels();
+            state.labelsLayer = null;
+        }
         if (stage && !state.labelsLayer) {
             state.labelsLayer = document.createElement("div");
             state.labelsLayer.id = "grammar-labels-layer";
@@ -226,9 +274,17 @@
 
     function startUpdateLoop() {
         function tick() {
-            if (state.fsm && state.fsm.GroupHolder) {
+            if (state.fsm && state.fsm.GroupHolder &&
+                    !(state.fsm.GamesRunner && state.fsm.GamesRunner.getPaused())) {
+                if (state.awaitingRespawn) {
+                    if (!state.fsm.player || !state.fsm.isThingAlive(state.fsm.player)) {
+                        window.requestAnimationFrame(tick);
+                        return;
+                    }
+                    state.awaitingRespawn = false;
+                    resetAllChallenges();
+                }
                 ensureLabelsLayer();
-                checkPlayerRespawn();
                 detectAndAttachBlocks();
                 updateLabelPositions();
                 checkPlayerHeadCollisions();
@@ -239,38 +295,16 @@
         window.requestAnimationFrame(tick);
     }
 
-    // Failsafe continuo: detecta si Mario reapareció al inicio del nivel tras morir
-    function checkPlayerRespawn() {
-        if (!state.fsm || !state.fsm.player) {
-            return;
-        }
-
-        var player = state.fsm.player;
-        if (!state.fsm.isThingAlive(player)) {
-            return;
-        }
-
-        var unitsize = state.fsm.unitsize || 4;
-        var screenLeft = (state.fsm.MapScreener && state.fsm.MapScreener.left) || 0;
-        var playerMapX = Math.round((player.left + screenLeft) / unitsize);
-
-        // Si Mario está en la zona de inicio (< 35 unidades de mapa, aprox primeros 140px)
-        // pero el reto actual no es el inicial (0), significa que Mario reapareció tras morir.
-        if (playerMapX < 35 && (state.currentChallengeIndex > 0 || state.score > 0)) {
-            resetAllChallenges();
-        }
-    }
-
     function ensureLabelsLayer() {
-        if (!state.labelsLayer || !state.labelsLayer.parentNode) {
-            var stage = document.querySelector("#game .EightBitter");
-            if (stage) {
-                state.labelsLayer = document.createElement("div");
-                state.labelsLayer.id = "grammar-labels-layer";
-                state.labelsLayer.className = "grammar-labels-layer";
-                stage.appendChild(state.labelsLayer);
-            }
+        var stage = document.querySelector("#game .EightBitter");
+        if (!stage || (state.labelsLayer && state.labelsLayer.parentNode === stage)) {
+            return;
         }
+        clearActiveLabels();
+        state.labelsLayer = document.createElement("div");
+        state.labelsLayer.id = "grammar-labels-layer";
+        state.labelsLayer.className = "grammar-labels-layer";
+        stage.appendChild(state.labelsLayer);
     }
 
     function detectAndAttachBlocks() {
@@ -354,14 +388,14 @@
     }
 
     function updateLabelPositions() {
-        var unitsize = (state.fsm && state.fsm.unitsize) || 4;
         var screenWidth = (state.fsm && state.fsm.MapScreener && state.fsm.MapScreener.width) || 768;
+        var solids = state.fsm && state.fsm.GroupHolder && state.fsm.GroupHolder.getSolidGroup();
 
         for (var i = state.activeBlocks.length - 1; i >= 0; i -= 1) {
             var ab = state.activeBlocks[i];
             var block = ab.block;
 
-            if (block.alive === false) {
+            if (block.alive === false || !solids || solids.indexOf(block) === -1) {
                 if (ab.labelEl && ab.labelEl.parentNode) {
                     ab.labelEl.parentNode.removeChild(ab.labelEl);
                 }
@@ -372,8 +406,8 @@
             // Visible en pantalla (adaptado al ancho panorámico del juego)
             if (block.left > -70 && block.left < screenWidth + 70) {
                 ab.labelEl.style.display = "block";
-                var blockMidX = block.left + (block.width * unitsize) / 2;
-                ab.labelEl.style.left = Math.round(blockMidX - ab.labelEl.offsetWidth / 2) + "px";
+                var blockMidX = (block.left + block.right) / 2;
+                ab.labelEl.style.left = Math.round(blockMidX) + "px";
                 ab.labelEl.style.top = Math.round(block.top - 26) + "px";
             } else {
                 ab.labelEl.style.display = "none";
@@ -595,9 +629,15 @@
                 }
             });
 
-            // Pasar al siguiente reto tras 1.2 segundos
-            window.setTimeout(function () {
-                setChallenge(state.currentChallengeIndex + 1);
+            // Advance only if this challenge is still active after the delay.
+            var generation = state.challengeGeneration;
+            state.challengeAdvanceTimeout = window.setTimeout(function () {
+                state.challengeAdvanceTimeout = null;
+                if (state.challengeGeneration === generation &&
+                        state.currentChallengeIndex === challenge.id &&
+                        challenge.completed) {
+                    setChallenge(challenge.id + 1);
+                }
             }, 1200);
 
             return true;

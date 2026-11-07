@@ -859,7 +859,8 @@ body.playing #game {
     pointer-events: none;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.08s ease-out;
+    transform: translateX(-50%);
+    transition: top 0.08s ease-out;
 }
 
 .label-pill {

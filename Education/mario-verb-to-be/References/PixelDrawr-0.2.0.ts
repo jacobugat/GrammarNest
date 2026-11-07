@@ -581,8 +581,8 @@ module PixelDrawr {
         }
 
         /**
-         * Simply draws a thing's sprite to its canvas by getting and setting
-         * a canvas::imageData object via context.getImageData(...).
+         * Simply draws a thing's sprite to its canvas by creating and setting
+         * a canvas::imageData object.
          * 
          * @param {Thing} thing   A Thing whose canvas must be updated.
          */
@@ -595,7 +595,7 @@ module PixelDrawr {
             // Retrieve the imageData from the Thing's canvas & renderingContext
             var canvas: HTMLCanvasElement = thing.canvas,
                 context: CanvasRenderingContext2D = thing.context,
-                imageData: ImageData = context.getImageData(0, 0, canvas[this.keyWidth], canvas[this.keyHeight]);
+            imageData: ImageData = context.createImageData(canvas[this.keyWidth], canvas[this.keyHeight]);
 
             // Copy the thing's sprite to that imageData and into the contextz
             this.PixelRender.memcpyU8(<Uint8ClampedArray>thing.sprite, imageData.data);
@@ -636,7 +636,7 @@ module PixelDrawr {
                 context = <CanvasRenderingContext2D>canvas.getContext("2d");
 
                 // Copy over this sprite's information the same way as refillThingCanvas
-                imageData = context.getImageData(0, 0, canvas[this.keyWidth], canvas[this.keyHeight]);
+                imageData = context.createImageData(canvas[this.keyWidth], canvas[this.keyHeight]);
                 this.PixelRender.memcpyU8(spritesRaw.sprites[i], imageData.data);
                 context.putImageData(imageData, 0, 0);
 
