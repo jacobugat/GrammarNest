@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mario · Mundo 1</title>
+    <link href="index.css" rel="stylesheet">
+    <link rel="shortcut icon" href="Theme/Mario.gif">
+</head>
+<body>
+    <main id="game" aria-label="Juego de Mario"></main>
+    <div id="controls" aria-hidden="true"></div>
+    <output id="fps-meter" aria-live="off" hidden>FPS --</output>
+
+    <!-- Banner Superior de Misión en Tiempo Real (Sin Pausa) -->
+    <header id="english-mission-bar" class="english-mission-bar">
+        <div class="mission-top-row">
+            <span class="mission-badge">MISIÓN DE INGLÉS</span>
+            <span id="mission-score" class="mission-score">Aciertos: 0 / 6</span>
+            <div class="mission-actions-row">
+                <button id="btn-pause-game" type="button" class="mission-btn btn-pause" title="Pausar o reanudar el juego (Tecla P o Esc)">⏸️ PAUSA</button>
+                <button id="btn-screen-mode" type="button" class="mission-btn btn-screen" title="Cambiar formato de pantalla">📐 16:9 WIDE</button>
+                <button id="btn-show-theory" type="button" class="mission-btn btn-theory" title="Ver ficha y explicación gramatical">📖 GRAMMAR FOCUS</button>
+                <a href="../../index.html" class="mission-home-link">← GrammarNest</a>
+            </div>
+        </div>
+        <div id="mission-sentence" class="mission-sentence">You <span class="blank">___</span> from Brazil.</div>
+        <div id="mission-hint" class="mission-hint">Salta y revienta el bloque con tu cabeza: [is] o [are]</div>
+    </header>
+
+    <!-- Overlay de Pausa Arcade -->
+    <div id="pause-overlay" class="pause-overlay" hidden>
+        <div class="pause-card">
+            <div class="pause-header-badge">PAUSA</div>
+            <h2>JUEGO EN PAUSA</h2>
+            <div class="pause-instruction-box">
+                <p class="pause-box-title">Frase del reto actual:</p>
+                <div id="pause-sentence-display" class="pause-sentence-text">You ___ from Brazil.</div>
+                <p id="pause-hint-display" class="pause-hint-text">Salta y revienta el bloque con tu cabeza</p>
+            </div>
+            <div class="pause-buttons-row">
+                <button id="btn-resume-overlay" type="button" class="btn-pause-action btn-resume">
+                    ▶ REANUDAR (P)
+                </button>
+                <button id="btn-theory-from-pause" type="button" class="btn-pause-action btn-theory-pause">
+                    📖 VER GRAMMAR FOCUS
+                </button>
+            </div>
+            <p class="pause-keys-tip">Presiona <strong>P</strong> o <strong>Escape</strong> para pausar o reanudar</p>
+        </div>
+    </div>
+
+    <!-- Pantalla Inicial Pedagógica: Ficha Bibliográfica y Explicación de Gramática -->
+    <section id="start-screen" class="theory-screen" aria-label="Inicio y Clase de Gramática">
+        <div class="theory-container">
+            <!-- Barra superior -->
+            <header class="theory-header">
+                <div class="theory-branding">
+                    <span class="theory-badge">GRAMMARNEST · APRENDIZAJE DE IDIOMAS</span>
+                    <span class="theory-source-tag">Cambridge University Press · Interchange Level 1</span>
+                </div>
+                <a href="../../index.html" class="theory-back-link">← Volver a GrammarNest</a>
+            </header>
+
+            <!-- Título de la Unidad -->
+            <div class="theory-hero">
+                <div class="unit-tag">UNIT 1 · WHERE ARE YOU FROM?</div>
+                <h1>CLASE DE INGLÉS: CONTEXTO Y GRAMÁTICA</h1>
+                <p class="theory-subtitle">Pág. 2: Conversation "Please call me Alexa" (Listening) · Pág. 3: Grammar Focus (Statements with be; possessive adjectives)</p>
+            </div>
+
+            <!-- SECCIÓN 1: APRENDIZAJE EN CONTEXTO REAL & LISTENING (PÁG. 2) -->
+            <div class="theory-section-header listening-section-header">
+                <span class="section-kicker">PRÁCTICA AUDITIVA Y CONTEXTO REAL (PÁG. 2)</span>
+                <h2>1. Conversation: "Please call me Alexa"</h2>
+                <p class="section-kicker-sub">
+                    Escucha el audio oficial del libro y observa cómo se utilizan de forma natural el <strong>verbo to be</strong> y los <strong>adjetivos posesivos</strong> en una conversación cotidiana entre compañeros de clase.
+                </p>
+            </div>
+
+            <div class="theory-card conversation-card">
+                <div class="conversation-header-row">
+                    <div class="conversation-title-area">
+                        <span class="conversation-badge">EXERCISE 1 · CONVERSATION</span>
+                        <h3>"Please call me Alexa"</h3>
+                        <span class="listen-instruction">🎧 Listen and practice · Cambridge University Press</span>
+                    </div>
+                    <div class="dialogue-legend">
+                        <span class="legend-pill pill-be">🟦 Verbo To Be / Contracción</span>
+                        <span class="legend-pill pill-poss">🟪 Adjetivo Posesivo</span>
+                    </div>
+                </div>
+
+                <!-- Reproductor de Audio Multimedia -->
+                <div class="conversation-player-box">
+                    <audio id="conversation-audio" src="Sounds/conversation_unit1.mp3" preload="metadata"></audio>
+                    
+                    <div class="player-controls-bar">
+                        <button id="btn-audio-play" type="button" class="btn-audio-toggle" title="Reproducir o pausar audio">
+                            <span id="btn-audio-icon" class="audio-btn-icon">▶</span>
+                            <span id="btn-audio-text">REPRODUCIR AUDIO</span>
+                        </button>
+
+                        <div class="audio-timeline-wrap">
+                            <div class="audio-time-row">
+                                <span id="audio-time-current">0:00</span>
+                                <span class="audio-time-sep">/</span>
+                                <span id="audio-time-total">--:--</span>
+                            </div>
+                            <input id="audio-seek-slider" type="range" class="audio-slider" min="0" max="100" value="0" step="0.1" aria-label="Progreso del audio">
+                        </div>
+
+                        <div class="audio-tools-wrap">
+                            <label for="audio-speed-select" class="audio-tool-label">Velocidad:</label>
+                            <select id="audio-speed-select" class="audio-speed-select" title="Velocidad de reproducción">
+                                <option value="0.8">0.8x (Lento)</option>
+                                <option value="1" selected>1.0x (Normal)</option>
+                                <option value="1.2">1.2x (Rápido)</option>
+                            </select>
+                            <button id="btn-audio-restart" type="button" class="btn-audio-restart" title="Reiniciar audio al principio">↺ Reiniciar</button>
+                        </div>
+                    </div>
+                    <p id="audio-status" class="audio-status" role="status" aria-live="polite">Listo para escuchar</p>
+                </div>
+
+                <!-- Transcripción del Diálogo por Turnos -->
+                <div class="dialogue-container">
+                    <div class="dialogue-columns-grid">
+                        <!-- Columna Izquierda: Arturo y Alexa (Parte 1) -->
+                        <div class="dialogue-column">
+                            <!-- Turno 1 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        Hello, <span class="hl-be">I'm</span> Arturo Valdez.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 2 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        Hi. <span class="hl-poss">My</span> name <span class="hl-be">is</span> Alexandra Costa, but please call me Alexa.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 3 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        OK. Where <span class="hl-be">are</span> you from, Alexa?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 4 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        Brazil. How about you?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 5 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        <span class="hl-be">I'm</span> from Mexico.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 6 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        Oh, I love Mexico! <span class="hl-be">It's</span> really beautiful. Oh, good. Soo-jin <span class="hl-be">is</span> here.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Arturo y Alexa (Parte 2) -->
+                        <div class="dialogue-column">
+                            <!-- Turno 7 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        <span class="hl-be">Who's</span> Soo-jin?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 8 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        <span class="hl-be">She's</span> <span class="hl-poss">my</span> classmate. <span class="hl-be">We're</span> in the same business class.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 9 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        Where<span class="hl-be">'s</span> she from?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 10 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        South Korea. Let's go and say hello. Sorry, <span class="hl-be">what's</span> <span class="hl-poss">your</span> last name again? Vargas?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 11 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble">
+                                        Actually, <span class="hl-be">it's</span> Valdez.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 12 -->
+                            <div class="dialogue-turn speaker-alexa">
+                                <div class="speaker-avatar alexa-avatar" title="Alexandra Costa">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Alexa:</span>
+                                    <div class="dialogue-bubble">
+                                        How do you spell that?
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Turno 13 -->
+                            <div class="dialogue-turn speaker-arturo">
+                                <div class="speaker-avatar arturo-avatar" title="Arturo Valdez">A</div>
+                                <div class="dialogue-content">
+                                    <span class="speaker-name">Arturo:</span>
+                                    <div class="dialogue-bubble spelling-bubble">
+                                        <strong>V - A - L - D - E - Z.</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: EXPLICACIÓN GRAMATICAL (PÁG. 3) -->
+            <div class="theory-section-header">
+                <span class="section-kicker">EXPLICACIÓN DE LA REGLA FORMAL (PÁG. 3)</span>
+                <h2>2. Grammar Focus: Verbo To Be y Adjetivos Posesivos</h2>
+            </div>
+
+            <div class="grammar-columns">
+                <!-- Columna 1: Statements with be -->
+                <div class="theory-card grammar-col">
+                    <div class="col-header col-blue">
+                        <span class="col-icon">💬</span>
+                        <h3>Statements with be</h3>
+                    </div>
+                    <ul class="grammar-statements-list">
+                        <li><strong>I'm</strong> from Mexico.</li>
+                        <li><strong>You're</strong> from Brazil.</li>
+                        <li><strong>He's</strong> from Japan.</li>
+                        <li><strong>She's</strong> a business student.</li>
+                        <li><strong>It's</strong> an exciting city.</li>
+                        <li><strong>We're</strong> in the same class.</li>
+                        <li><strong>They're</strong> my classmates.</li>
+                    </ul>
+                </div>
+
+                <!-- Columna 2: Contractions of be -->
+                <div class="theory-card grammar-col">
+                    <div class="col-header col-green">
+                        <span class="col-icon">🔄</span>
+                        <h3>Contractions of be</h3>
+                    </div>
+                    <div class="contractions-list">
+                        <div class="contra-item"><code>I'm</code> <span class="eq">=</span> <code>I am</code></div>
+                        <div class="contra-item"><code>you're</code> <span class="eq">=</span> <code>you are</code></div>
+                        <div class="contra-item"><code>she's</code> <span class="eq">=</span> <code>she is</code></div>
+                        <div class="contra-item"><code>he's</code> <span class="eq">=</span> <code>he is</code></div>
+                        <div class="contra-item"><code>it's</code> <span class="eq">=</span> <code>it is</code></div>
+                        <div class="contra-item"><code>we're</code> <span class="eq">=</span> <code>we are</code></div>
+                        <div class="contra-item"><code>they're</code> <span class="eq">=</span> <code>they are</code></div>
+                    </div>
+                </div>
+
+                <!-- Columna 3: Possessive adjectives -->
+                <div class="theory-card grammar-col">
+                    <div class="col-header col-purple">
+                        <span class="col-icon">🏷️</span>
+                        <h3>Possessive adjectives</h3>
+                    </div>
+                    <div class="possessive-grid">
+                        <span class="pos-badge">my</span>
+                        <span class="pos-badge">your</span>
+                        <span class="pos-badge">his</span>
+                        <span class="pos-badge">her</span>
+                        <span class="pos-badge">its</span>
+                        <span class="pos-badge">our</span>
+                        <span class="pos-badge">their</span>
+                    </div>
+                    <p class="grammar-col-desc">Adjetivos que acompañan al sustantivo para indicar pertenencia o relación.</p>
+                </div>
+            </div>
+
+            <!-- Panel de GRAMMAR PLUS -->
+            <div class="theory-card grammar-plus-card">
+                <div class="plus-header-row">
+                    <span class="plus-pill">GRAMMAR PLUS</span>
+                    <h3>Statements with be; possessive adjectives</h3>
+                </div>
+                <div class="plus-rule-callout">
+                    <span class="alert-icon">⚠️</span>
+                    <p><strong>Don't confuse contractions of be with possessive adjectives:</strong></p>
+                </div>
+                <div class="plus-examples-container">
+                    <!-- Ejemplo 1 -->
+                    <div class="plus-example-card">
+                        <div class="example-line correct">
+                            <span class="icon-check">✔</span>
+                            <span><strong>You're</strong> a student.</span>
+                            <span class="expl-note">(You are)</span>
+                        </div>
+                        <div class="example-line correct">
+                            <span class="icon-check">✔</span>
+                            <span><strong>Your</strong> class is English 1.</span>
+                            <span class="expl-note">(Posesivo)</span>
+                        </div>
+                        <div class="example-line wrong">
+                            <span class="icon-cross">✖</span>
+                            <span><em>(NOT: You're class is English 1.)</em></span>
+                        </div>
+                    </div>
+                    <!-- Ejemplo 2 -->
+                    <div class="plus-example-card">
+                        <div class="example-line correct">
+                            <span class="icon-check">✔</span>
+                            <span><strong>He's</strong> my classmate.</span>
+                            <span class="expl-note">(He is)</span>
+                        </div>
+                        <div class="example-line correct">
+                            <span class="icon-check">✔</span>
+                            <span><strong>His</strong> name is Ricardo.</span>
+                            <span class="expl-note">(Posesivo)</span>
+                        </div>
+                        <div class="example-line wrong">
+                            <span class="icon-cross">✖</span>
+                            <span><em>(NOT: He's name is Ricardo.)</em></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: REFERENCIA BIBLIOGRÁFICA OFICIAL (AL FINAL, ANTES DE JUGAR) -->
+            <div class="theory-card biblio-card">
+                <div class="card-title-row">
+                    <span class="card-icon">📚</span>
+                    <h2>Referencia Bibliográfica Oficial</h2>
+                </div>
+                <div class="biblio-grid">
+                    <div class="biblio-item"><strong>Título del libro:</strong> <span>Interchange Level 1 Student’s Book with Online Self-Study and Online Workbook</span></div>
+                    <div class="biblio-item"><strong>Edición:</strong> <span>Fifth Edition (5.ª edición)</span></div>
+                    <div class="biblio-item"><strong>Autores:</strong> <span>Jack C. Richards; con Jonathan Hull y Susan Proctor</span></div>
+                    <div class="biblio-item"><strong>Editorial:</strong> <span>Cambridge University Press</span></div>
+                    <div class="biblio-item"><strong>Año de publicación:</strong> <span>2017</span></div>
+                    <div class="biblio-item"><strong>Unidad:</strong> <span>Unit 1: Where are you from?</span></div>
+                    <div class="biblio-item"><strong>Páginas de la unidad:</strong> <span>2–7 (Pág. 2: Conversation · Pág. 3: Grammar Focus)</span></div>
+                    <div class="biblio-item"><strong>Página del GRAMMAR FOCUS:</strong> <span>3</span></div>
+                    <div class="biblio-item"><strong>Tema gramatical:</strong> <span>Statements with be; possessive adjectives</span></div>
+                    <div class="biblio-item"><strong>ISBN del Student’s Book:</strong> <span>978-1-316-62031-1</span></div>
+                    <div class="biblio-item"><strong>Idioma:</strong> <span>Inglés americano</span></div>
+                    <div class="biblio-item"><strong>Nivel:</strong> <span>A2 (CEFR)</span></div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: PANEL DE ENTRADA AL JUEGO -->
+            <div class="play-launch-card">
+                <div class="play-launch-header">
+                    <span class="star-icon">⭐</span>
+                    <h3>¡MOMENTO DE JUGAR Y PRACTICAR!</h3>
+                    <span class="star-icon">⭐</span>
+                </div>
+                <p class="play-launch-text">
+                    Mario recorrerá el Mundo 1-1 con los enunciados reales de la conversación y del Grammar Focus. En la parte superior verás las frases incompletas. Salta y revienta con tu cabeza el bloque con la opción correcta (<strong>is</strong>, <strong>are</strong>, <strong>am</strong>, <strong>Your</strong>, <strong>His</strong>) para ganar champiñones, estrellas y avanzar.
+                </p>
+                <div class="play-button-wrap">
+                    <button id="start-button" class="btn-play-game" type="button">
+                        ▶ INICIAR JUEGO (START)
+                    </button>
+                </div>
+                <div class="controls-guide">
+                    <span>← → Caminar</span> <span>·</span> <span>↑ Saltar</span> <span>·</span> <span>Shift Correr</span> <span>·</span> <span>P / Esc Pausa</span>
+                </div>
+            </div>
+            <div class="canvas-pdf-row">
+                <a class="canvas-pdf-download" href="../Modelo-Canvas-Gamificacion-Educativa.pdf" download>
+                    ↓ DESCARGAR MODELO CANVAS EDUCATIVO (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="References/UserWrappr-0.2.0.js" type="text/javascript"></script>
+    <script src="FullScreenMario.js" type="text/javascript"></script>
+    <script src="settings/audio.js" type="text/javascript"></script>
+    <script src="settings/collisions.js" type="text/javascript"></script>
+    <script src="settings/editor.js" type="text/javascript"></script>
+    <script src="settings/generator.js" type="text/javascript"></script>
+    <script src="settings/groups.js" type="text/javascript"></script>
+    <script src="settings/events.js" type="text/javascript"></script>
+    <script src="settings/input.js" type="text/javascript"></script>
+    <script src="settings/maps.js" type="text/javascript"></script>
+    <script src="settings/mods.js" type="text/javascript"></script>
+    <script src="settings/objects.js" type="text/javascript"></script>
+    <script src="settings/quadrants.js" type="text/javascript"></script>
+    <script src="settings/renderer.js" type="text/javascript"></script>
+    <script src="settings/runner.js" type="text/javascript"></script>
+    <script src="settings/sprites.js" type="text/javascript"></script>
+    <script src="settings/statistics.js" type="text/javascript"></script>
+    <script src="settings/ui.js" type="text/javascript"></script>
+    <script src="english-grammar.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>

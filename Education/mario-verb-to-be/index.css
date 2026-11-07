@@ -1,0 +1,1263 @@
+@font-face {
+    font-family: 'Press Start';
+    src: url('Fonts/pressstart2p-webfont.woff') format('woff');
+    font-display: swap;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #050505;
+    color: #fff;
+    font-family: 'Press Start', monospace;
+}
+
+#game {
+    display: none;
+    position: fixed;
+    inset: 0;
+    place-items: center;
+    overflow: hidden;
+    background: #050505;
+}
+
+body.playing #game {
+    display: grid;
+}
+
+#game .EightBitter {
+    margin: 0 !important;
+    transform-origin: center;
+}
+
+#game canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#controls {
+    display: none !important;
+}
+
+/* ==========================================================
+   PANTALLA PEDAGÓGICA Y TEÓRICA (PRE-GAME SCREEN)
+   ========================================================== */
+
+#start-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 950;
+    background: #070b14;
+    overflow-y: auto;
+    color: #f1f5f9;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+#start-screen[hidden] {
+    display: none !important;
+}
+
+.theory-container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+    box-sizing: border-box;
+}
+
+/* Encabezado */
+.theory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.theory-branding {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.theory-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #0070ec;
+    color: #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+}
+
+.theory-source-tag {
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.theory-back-link {
+    color: #63dbd0;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(99, 219, 208, 0.3);
+    transition: all 0.2s;
+}
+
+.theory-back-link:hover {
+    background: rgba(99, 219, 208, 0.12);
+    border-color: #63dbd0;
+}
+
+/* Hero / Títulos */
+.theory-hero {
+    margin-bottom: 24px;
+}
+
+.unit-tag {
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.theory-hero h1 {
+    margin: 0 0 6px;
+    color: #ffcc33;
+    font-family: 'Press Start', monospace;
+    font-size: clamp(18px, 3.5vw, 26px);
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+
+.theory-subtitle {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 15px;
+}
+
+/* Tarjetas Genéricas */
+.theory-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+/* Ficha Bibliográfica */
+.biblio-card {
+    padding: 22px 24px;
+    border-left: 4px solid #38bdf8;
+}
+
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-icon {
+    font-size: 22px;
+}
+
+.card-title-row h2 {
+    margin: 0;
+    font-size: 17px;
+    color: #f8fafc;
+    font-weight: 700;
+}
+
+.biblio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 10px 24px;
+}
+
+.biblio-item {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.biblio-item strong {
+    color: #38bdf8;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.biblio-item span {
+    color: #f1f5f9;
+}
+
+/* Encabezado de Sección Gramatical */
+.theory-section-header {
+    margin: 32px 0 16px;
+}
+
+.section-kicker {
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.theory-section-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #f8fafc;
+    font-weight: 700;
+}
+
+/* Columnas de Gramática */
+.grammar-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.grammar-col {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-header {
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.col-header h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.2px;
+}
+
+.col-blue {
+    background: #0369a1;
+}
+
+.col-green {
+    background: #15803d;
+}
+
+.col-purple {
+    background: #6d28d9;
+}
+
+.col-icon {
+    font-size: 16px;
+}
+
+.grammar-statements-list {
+    margin: 0;
+    padding: 16px 20px;
+    list-style: none;
+}
+
+.grammar-statements-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    font-size: 14px;
+    color: #e2e8f0;
+}
+
+.grammar-statements-list li:last-child {
+    border-bottom: none;
+}
+
+.grammar-statements-list li strong {
+    color: #ffcc33;
+    font-weight: 700;
+}
+
+/* Contractions */
+.contractions-list {
+    padding: 14px 20px;
+}
+
+.contra-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.contra-item code {
+    color: #4ade80;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.contra-item .eq {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* Possessives */
+.possessive-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 18px 20px 10px;
+}
+
+.pos-badge {
+    background: #7c3aed;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.grammar-col-desc {
+    padding: 0 20px 16px;
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* GRAMMAR PLUS CARD */
+.grammar-plus-card {
+    border: 2px solid #f59e0b;
+    background: linear-gradient(145deg, #181511 0%, #0f172a 100%);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
+    padding: 22px 24px;
+}
+
+.plus-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.plus-pill {
+    padding: 4px 10px;
+    background: #f59e0b;
+    color: #000;
+    font-family: 'Press Start', monospace;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.plus-header-row h3 {
+    margin: 0;
+    color: #ffedd5;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.plus-rule-callout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.plus-rule-callout .alert-icon {
+    font-size: 18px;
+}
+
+.plus-rule-callout p {
+    margin: 0;
+    color: #fed7aa;
+    font-size: 14px;
+}
+
+.plus-examples-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.plus-example-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.example-line {
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+}
+
+.example-line.correct {
+    color: #86efac;
+}
+
+.example-line.correct strong {
+    color: #4ade80;
+    text-decoration: underline;
+}
+
+.example-line.wrong {
+    color: #fca5a5;
+    padding-top: 6px;
+    margin-top: 4px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.icon-check {
+    color: #4ade80;
+    font-weight: bold;
+}
+
+.icon-cross {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.expl-note {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-left: auto;
+}
+
+/* Play Launch Card (Call to Action) */
+.play-launch-card {
+    margin-top: 36px;
+    background: #0f172a;
+    border: 3px solid #ffcc33;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 204, 51, 0.25);
+}
+
+.play-launch-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.pixel-star, .star-icon {
+    font-size: 20px;
+    animation: starPulse 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes starPulse {
+    from { transform: scale(1); filter: drop-shadow(0 0 2px #ffcc33); }
+    to { transform: scale(1.2); filter: drop-shadow(0 0 8px #ffcc33); }
+}
+
+.play-launch-header h3 {
+    margin: 0;
+    color: #ffcc33;
+    font-family: 'Press Start', monospace;
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.4;
+}
+
+.play-launch-text {
+    max-width: 640px;
+    margin: 0 auto 24px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.btn-play-game {
+    display: inline-block;
+    min-width: 280px;
+    padding: 18px 36px;
+    background: #c83220;
+    color: #fff;
+    border: 4px solid #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 6px 6px 0 #703000;
+    transition: all 0.15s;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.btn-play-game:hover,
+.btn-play-game:focus-visible {
+    background: #e53935;
+    outline: 3px solid #ffcc33;
+    outline-offset: 4px;
+    transform: translateY(-2px);
+    box-shadow: 8px 8px 0 #703000;
+}
+
+.controls-guide {
+    margin-top: 20px;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.controls-guide span {
+    color: #ffcc33;
+    font-weight: 700;
+}
+
+#fps-meter {
+    position: fixed;
+    z-index: 100;
+    left: 10px;
+    bottom: 10px;
+    padding: 8px 10px;
+    border: 1px solid #777;
+    background: rgba(0, 0, 0, .8);
+    color: #9eff9e;
+    font: 9px/1.4 monospace;
+    pointer-events: none;
+}
+
+#fps-meter[hidden] {
+    display: none;
+}
+
+/* ==========================================================
+   BANNER DE MISIÓN EN TIEMPO REAL (IN-GAME ARCADE)
+   ========================================================== */
+
+.english-mission-bar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: min(95vw, 840px);
+    padding: 10px 18px 8px;
+    box-sizing: border-box;
+    border: 3px solid #ffcc33;
+    background: rgba(10, 10, 10, 0.94);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7), 0 0 12px rgba(255, 204, 51, 0.3);
+    text-align: center;
+    pointer-events: none;
+    font-family: 'Press Start', monospace;
+}
+
+.mission-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 9px;
+    gap: 8px;
+}
+
+.mission-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.mission-actions-row button,
+.mission-actions-row a {
+    pointer-events: auto;
+}
+
+.mission-btn {
+    pointer-events: auto;
+    font-family: 'Press Start', monospace;
+    font-size: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    image-rendering: pixelated;
+    transition: all 0.15s ease;
+}
+
+.btn-pause {
+    background: #e11d48;
+    color: #fff;
+    border-color: #fda4af;
+}
+
+.btn-pause:hover {
+    background: #f43f5e;
+}
+
+.btn-pause.paused {
+    background: #16a34a;
+    border-color: #86efac;
+    animation: pauseBtnBlink 0.8s infinite alternate;
+}
+
+@keyframes pauseBtnBlink {
+    from { opacity: 0.85; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1.05); }
+}
+
+.btn-screen {
+    background: #334155;
+    color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.btn-screen:hover {
+    background: #475569;
+}
+
+.btn-theory {
+    background: #0284c7;
+    color: #fff;
+    border-color: #7dd3fc;
+}
+
+.btn-theory:hover {
+    background: #0369a1;
+}
+
+.mission-home-link {
+    color: #63dbd0;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 6px;
+    transition: color 0.2s;
+}
+
+.mission-home-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Overlay de Pausa Arcade */
+.pause-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: grid;
+    place-items: center;
+}
+
+.pause-overlay[hidden] {
+    display: none !important;
+}
+
+.pause-card {
+    width: min(90vw, 540px);
+    background: #0f172a;
+    border: 4px solid #ffcc33;
+    border-radius: 14px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 204, 51, 0.25);
+    color: #f1f5f9;
+}
+
+.pause-header-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #ffcc33;
+    color: #000;
+    font-family: 'Press Start', monospace;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.pause-card h2 {
+    font-family: 'Press Start', monospace;
+    font-size: 17px;
+    color: #fff;
+    margin: 8px 0 18px;
+    line-height: 1.4;
+}
+
+.pause-instruction-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 22px;
+}
+
+.pause-box-title {
+    margin: 0 0 6px;
+    font-size: 11px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pause-sentence-text {
+    font-size: 17px;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.pause-hint-text {
+    margin: 0;
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+.pause-buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.btn-pause-action {
+    font-family: 'Press Start', monospace;
+    font-size: 11px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    transition: transform 0.15s, background 0.2s;
+}
+
+.btn-resume {
+    background: #16a34a;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.4);
+}
+
+.btn-resume:hover {
+    background: #22c55e;
+    transform: translateY(-2px);
+}
+
+.btn-theory-pause {
+    background: #0284c7;
+    color: #fff;
+}
+
+.btn-theory-pause:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+.pause-keys-tip {
+    margin: 0;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.pause-keys-tip strong {
+    color: #ffcc33;
+}
+
+.mission-badge {
+    padding: 3px 8px;
+    background: #0070ec;
+    color: #fff;
+    border: 1px solid #fff;
+    letter-spacing: 1px;
+}
+
+.mission-score {
+    color: #ffcc33;
+    font-size: 10px;
+}
+
+.mission-sentence {
+    margin: 4px 0 6px;
+    color: #fff;
+    font-size: clamp(11px, 2.4vw, 15px);
+    line-height: 1.6;
+}
+
+.mission-sentence .blank {
+    display: inline-block;
+    min-width: 48px;
+    padding: 0 4px;
+    border-bottom: 3px dashed #ffcc33;
+    color: #ffcc33;
+}
+
+.mission-sentence .blank.filled {
+    border-bottom: 3px solid #76ff03;
+    color: #76ff03;
+}
+
+.mission-hint {
+    color: #bbb;
+    font-size: 8px;
+    line-height: 1.5;
+    transition: color 0.2s;
+}
+
+.mission-hint.correct {
+    color: #76ff03 !important;
+    font-weight: bold;
+}
+
+.mission-hint.wrong {
+    color: #ff5252 !important;
+    font-weight: bold;
+}
+
+/* ==========================================================
+   RÓTULOS FLOTANTES SOBRE LOS BLOQUES (DENTRO DE .EightBitter)
+   ========================================================== */
+
+.grammar-labels-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.block-grammar-label {
+    position: absolute;
+    pointer-events: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.08s ease-out;
+}
+
+.label-pill {
+    display: inline-block;
+    padding: 3px 7px;
+    background: #c83220;
+    color: #fff;
+    border: 2px solid #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 9px;
+    box-shadow: 2px 2px 0 #000;
+    letter-spacing: 0.5px;
+    image-rendering: pixelated;
+}
+
+.label-pill.correct {
+    background: #2e7d32 !important;
+    border-color: #76ff03 !important;
+    color: #fff !important;
+    transform: scale(1.15);
+    box-shadow: 0 0 10px #76ff03;
+}
+
+.label-pill.wrong {
+    background: #b71c1c !important;
+    border-color: #ff5252 !important;
+    color: #ffcdd2 !important;
+    animation: shakePill 0.35s ease;
+}
+
+@keyframes shakePill {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+.label-arrow {
+    display: block;
+    margin: 1px auto 0;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #fff;
+}
+
+.canvas-pdf-row {
+    margin: 24px 0 0;
+    text-align: center;
+}
+
+.canvas-pdf-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 9px 13px;
+    border: 3px solid #fff;
+    background: #ffcc33;
+    color: #141414;
+    box-shadow: 4px 4px 0 #703000;
+    font-family: 'Press Start', monospace;
+    font-size: 9px;
+    line-height: 1.7;
+    text-decoration: none;
+}
+
+.canvas-pdf-download:hover,
+.canvas-pdf-download:focus-visible {
+    background: #ffe16b;
+    outline: 3px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .canvas-pdf-download {
+        max-width: 100%;
+        font-size: 7px;
+    }
+}
+
+/* Listening arcade panel */
+.listening-section-header {
+    padding: 14px 16px;
+    border-left: 5px solid #ffcc33;
+    background: repeating-linear-gradient(135deg, rgba(255, 204, 51, 0.07) 0 8px, transparent 8px 16px), #10131d;
+}
+
+.listening-section-header .section-kicker {
+    color: #76ff03;
+    font-family: 'Press Start', monospace;
+    font-size: 8px;
+    line-height: 1.8;
+    letter-spacing: 0;
+}
+
+.listening-section-header h2 {
+    color: #ffcc33;
+    font-family: 'Press Start', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.listening-section-header .section-kicker-sub {
+    max-width: 760px;
+    margin: 8px 0 0;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.conversation-card {
+    border: 3px solid #ffcc33;
+    border-radius: 4px;
+    background: #10131d;
+    box-shadow: 6px 6px 0 #703000, 0 0 24px rgba(255, 204, 51, 0.12);
+}
+
+.conversation-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 22px;
+    border-bottom: 2px solid rgba(255, 204, 51, 0.35);
+    background: repeating-linear-gradient(90deg, rgba(4, 76, 158, 0.22) 0 24px, transparent 24px 48px), #080d18;
+}
+
+.conversation-title-area {
+    min-width: 0;
+}
+
+.conversation-badge {
+    display: inline-block;
+    padding: 7px 9px;
+    border: 2px solid #fff;
+    background: #c83220;
+    color: #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 8px;
+    line-height: 1.6;
+    box-shadow: 3px 3px 0 #703000;
+}
+
+.conversation-title-area h3 {
+    margin: 14px 0 5px;
+    color: #ffcc33;
+    font-family: 'Press Start', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.listen-instruction {
+    color: #7dd3fc;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dialogue-legend {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+.legend-pill {
+    padding: 7px 9px;
+    border: 2px solid #64748b;
+    border-radius: 2px;
+    background: #172033;
+    color: #e2e8f0;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pill-be { border-color: #38bdf8; }
+.pill-poss { border-color: #c084fc; }
+
+.conversation-player-box {
+    margin: 18px 20px;
+    padding: 16px;
+    border: 2px solid #38bdf8;
+    background: repeating-linear-gradient(0deg, rgba(56, 189, 248, 0.04) 0 2px, transparent 2px 5px), #080d16;
+    box-shadow: inset 0 0 0 3px rgba(56, 189, 248, 0.08);
+}
+
+.player-controls-bar {
+    display: grid;
+    grid-template-columns: auto minmax(140px, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.btn-audio-toggle,
+.btn-audio-restart {
+    min-height: 42px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    color: #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 9px;
+    cursor: pointer;
+    transition: transform 0.12s, filter 0.12s;
+}
+
+.btn-audio-toggle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 12px;
+    background: #c83220;
+    box-shadow: 4px 4px 0 #703000;
+}
+
+.btn-audio-toggle.is-playing {
+    background: #15803d;
+    box-shadow: 4px 4px 0 #064e3b;
+}
+
+.btn-audio-toggle:hover,
+.btn-audio-restart:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+.btn-audio-toggle:focus-visible,
+.btn-audio-restart:focus-visible,
+.audio-speed-select:focus-visible,
+.audio-slider:focus-visible {
+    outline: 3px solid #ffcc33;
+    outline-offset: 3px;
+}
+
+.audio-btn-icon {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+.audio-timeline-wrap {
+    min-width: 0;
+}
+
+.audio-time-row {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    color: #ffcc33;
+    font: 12px/1.4 'Courier New', monospace;
+}
+
+.audio-time-sep { color: #64748b; }
+
+.audio-slider {
+    display: block;
+    width: 100%;
+    height: 24px;
+    margin: 2px 0 0;
+    accent-color: #ffcc33;
+    cursor: pointer;
+}
+
+.audio-tools-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.audio-tool-label {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.audio-speed-select {
+    min-height: 36px;
+    max-width: 145px;
+    padding: 5px 7px;
+    border: 1px solid #64748b;
+    border-radius: 2px;
+    background: #172033;
+    color: #f8fafc;
+    font-size: 12px;
+}
+
+.btn-audio-restart {
+    min-height: 36px;
+    padding: 7px 9px;
+    background: #075985;
+    font-size: 8px;
+}
+
+.audio-status {
+    min-height: 18px;
+    margin: 10px 0 0;
+    color: #76ff03;
+    font: 10px/1.6 'Press Start', monospace;
+}
+
+.audio-status.is-error {
+    color: #ff7272;
+}
+
+.dialogue-container {
+    padding: 0 20px 22px;
+}
+
+.dialogue-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.dialogue-column {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+}
+
+.dialogue-turn {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #334155;
+    background: #151b28;
+}
+
+.speaker-avatar {
+    display: grid;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 2px solid #fff;
+    color: #fff;
+    font-family: 'Press Start', monospace;
+    font-size: 12px;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+.arturo-avatar { background: #075985; }
+.alexa-avatar { background: #7e22ce; }
+
+.dialogue-content { min-width: 0; }
+
+.speaker-name {
+    display: block;
+    margin-bottom: 4px;
+    color: #ffcc33;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.dialogue-bubble {
+    color: #e2e8f0;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.hl-be {
+    padding: 1px 3px;
+    background: rgba(56, 189, 248, 0.18);
+    color: #7dd3fc;
+    font-weight: 800;
+}
+
+.hl-poss {
+    padding: 1px 3px;
+    background: rgba(192, 132, 252, 0.16);
+    color: #d8b4fe;
+    font-weight: 800;
+}
+
+.spelling-bubble strong {
+    color: #76ff03;
+    font-family: 'Press Start', monospace;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+    .conversation-player-box {
+        margin: 14px 12px;
+        padding: 12px;
+    }
+
+    .player-controls-bar {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .btn-audio-toggle { width: 100%; }
+    .audio-tools-wrap { justify-content: space-between; }
+    .dialogue-container { padding: 0 12px 16px; }
+    .dialogue-columns-grid { grid-template-columns: 1fr; }
+    .conversation-header-row { padding: 16px; }
+}
