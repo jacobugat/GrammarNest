@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10120f">
+  <meta name="description" content="Practica listening con cinco frases que suenan distinto en el inglés rápido.">
+  <title>Listening, decoded · GrammarNest</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10120f;
+      --panel: #191c17;
+      --panel-raised: #20241d;
+      --ink: #f2f1e8;
+      --muted: #aaa99d;
+      --line: #383b30;
+      --lime: #d3f36b;
+      --orange: #ff9a67;
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 82% 5%, #38411f70, transparent 33rem),
+        radial-gradient(ellipse at 0% 85%, #44251738, transparent 32rem),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    button { font: inherit; color: inherit }
+    .shell { width: min(940px, calc(100% - 40px)); margin: auto; padding: 22px 0 42px }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px }
+    .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 800; letter-spacing: -.04em }
+    .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 11px; background: var(--lime); color: #171a11; font-size: 19px }
+    .back { color: var(--muted); text-decoration: none; font-size: .88rem }
+    .back:hover, .back:focus-visible { color: var(--lime) }
+    .intro { padding: clamp(48px, 9vw, 88px) 0 35px; position: relative }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--lime); text-transform: uppercase; font: 750 .72rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .14em }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--lime) }
+    h1 { margin: 16px 0 13px; max-width: 720px; font-size: clamp(3rem, 9vw, 6.4rem); line-height: .91; letter-spacing: -.085em }
+    h1 span { color: var(--lime) }
+    .intro p { max-width: 590px; margin: 0; color: var(--muted); font-size: 1.05rem }
+    .session { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 0 0 12px; color: var(--muted); font: .75rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .07em; text-transform: uppercase }
+    .session strong { color: var(--ink); font-weight: 600 }
+    .progress { height: 3px; margin-bottom: 20px; overflow: hidden; background: #303329; border-radius: 4px }
+    .progress-fill { width: 20%; height: 100%; background: var(--lime); transition: width .3s ease }
+    .card-wrap { perspective: 1300px }
+    .flashcard {
+      display: block;
+      position: relative;
+      width: 100%;
+      min-height: clamp(360px, 53vh, 470px);
+      padding: 0;
+      border: 0;
+      border-radius: 22px;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform .62s cubic-bezier(.2, .75, .2, 1);
+    }
+    .flashcard.is-flipped { transform: rotateY(180deg) }
+    .face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: clamp(24px, 5vw, 45px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, #24271f 0%, #191c17 58%, #171a15 100%);
+      box-shadow: 0 24px 70px #0005;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .face::after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      right: -120px;
+      bottom: -155px;
+      border: 1px solid #d3f36b2c;
+      border-radius: 50%;
+      box-shadow: 0 0 0 25px #d3f36b08, 0 0 0 50px #d3f36b06;
+      pointer-events: none;
+    }
+    .answer-face {
+      transform: rotateY(180deg);
+      border-color: #69743b;
+      background: linear-gradient(135deg, #292e1c, #1a1e16 68%, #191813);
+    }
+    .card-meta { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font: .72rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase }
+    .card-meta span:last-child { color: var(--lime) }
+    .card-content { position: relative; z-index: 1; padding: 28px 0 }
+    .prompt-label { display: block; margin-bottom: 17px; color: var(--orange); font: 750 .72rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .13em; text-transform: uppercase }
+    .phrase { display: block; max-width: 760px; font-size: clamp(2.15rem, 6vw, 4.65rem); line-height: 1.06; letter-spacing: -.065em; font-weight: 740 }
+    .phrase.correct { color: var(--lime) }
+    .reason { display: block; max-width: 680px; margin-top: 20px; color: #d1d0c4; font-size: clamp(.98rem, 2.2vw, 1.1rem); line-height: 1.7 }
+    .flip-hint { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: .83rem }
+    .flip-hint b { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid #555849; border-radius: 50%; color: var(--lime); font-size: .9rem }
+    .controls { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 10px; margin-top: 14px }
+    .control {
+      min-height: 54px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #191c17;
+      cursor: pointer;
+      transition: border-color .2s, transform .2s, background .2s;
+    }
+    .control:hover { border-color: #747763; transform: translateY(-2px) }
+    .control:focus-visible, .flashcard:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px }
+    .control.primary { border-color: var(--lime); background: var(--lime); color: #171a11; font-weight: 800 }
+    .control.primary:hover { background: #e0ff7b }
+    .extras { display: flex; justify-content: center; gap: 10px; margin-top: 13px }
+    .text-control { border: 0; padding: 7px 10px; background: transparent; color: var(--muted); font-size: .82rem; cursor: pointer }
+    .text-control:hover { color: var(--lime) }
+    .hintline { margin: 18px 0 0; color: #77796e; text-align: center; font-size: .75rem }
+    @media (max-width: 560px) {
+      .shell { width: min(100% - 28px, 940px); padding-top: 14px }
+      .intro { padding-top: 55px }
+      .flashcard { min-height: 390px }
+      .face { border-radius: 18px }
+      .controls { grid-template-columns: .8fr 1.4fr .8fr; gap: 7px }
+      .control { min-height: 52px; padding: 4px; font-size: .86rem }
+      .session { font-size: .68rem }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">↗</span><span>GrammarNest</span></a>
+      <a class="back" href="../index.html">← Recursos educativos</a>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div class="eyebrow">Listening lab / práctica 01</div>
+      <h1 id="page-title">Listening,<br><span>decoded.</span></h1>
+      <p>¿Qué escuchaste realmente? Pon a prueba tu oído con frases que se transforman cuando el inglés se habla rápido.</p>
+    </section>
+
+    <section aria-label="Tarjetas de práctica">
+      <div class="session"><span>Frase <strong id="counter">01 / 05</strong></span><span>Escucha · interpreta · corrige</span></div>
+      <div class="progress" role="progressbar" aria-label="Progreso de tarjetas" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="card-wrap">
+        <button class="flashcard" id="flashcard" type="button" aria-label="Mostrar la frase correcta y la explicación" aria-pressed="false">
+          <span class="face question-face">
+            <span class="card-meta"><span id="question-number">Caso 01</span><span>Lo que oí</span></span>
+            <span class="card-content"><span class="prompt-label">Tu transcripción</span><span class="phrase" id="heard"></span></span>
+            <span class="flip-hint"><b aria-hidden="true">↻</b> Toca la tarjeta para revelar la respuesta</span>
+          </span>
+          <span class="face answer-face">
+            <span class="card-meta"><span id="answer-number">Caso 01</span><span>La frase real</span></span>
+            <span class="card-content"><span class="prompt-label">En inglés natural</span><span class="phrase correct" id="correct"></span><span class="reason" id="reason"></span></span>
+            <span class="flip-hint"><b aria-hidden="true">↻</b> Toca para volver a la frase que oíste</span>
+          </span>
+        </button>
+      </div>
+      <div class="controls" aria-label="Controles de tarjetas">
+        <button class="control" id="previous" type="button" aria-label="Tarjeta anterior">← Anterior</button>
+        <button class="control primary" id="reveal" type="button" aria-controls="flashcard">Revelar respuesta</button>
+        <button class="control" id="next" type="button" aria-label="Siguiente tarjeta">Siguiente →</button>
+      </div>
+      <div class="extras">
+        <button class="text-control" id="shuffle" type="button">⤨ Mezclar tarjetas</button>
+        <button class="text-control" id="reset" type="button">Reiniciar orden</button>
+      </div>
+      <p class="hintline">Consejo: intenta decir la frase correcta en voz alta antes de pasar a la siguiente.</p>
+    </section>
+  </main>
+  <script>
+    const cards = [
+      {
+        heard: "what did you get up do?",
+        correct: "what did you get up to?",
+        reason: "Confundí “to” con “do”. La pronunciación reducida de “to” en habla rápida me hizo escuchar una consonante más fuerte de lo que realmente era."
+      },
+      {
+        heard: "I just kind of hang out",
+        correct: "I just kind of hung out",
+        reason: "No capté la diferencia entre “hang” y “hung”. El sonido de la vocal fue muy sutil para mí en velocidad natural."
+      },
+      {
+        heard: "when I get home",
+        correct: "when I went home",
+        reason: "Escuché “get” en lugar de “went”. La reducción y el enlace entre palabras hicieron difícil identificar el tiempo verbal correcto."
+      },
+      {
+        heard: "wanna the next",
+        correct: "wanted an egg",
+        reason: "Este fue especialmente difícil. Interpreté varios sonidos enlazados como “wanna the next”, pero en realidad eran las palabras “wanted an egg” pronunciadas rápidamente."
+      },
+      {
+        heard: "Man I wanna make ones those",
+        correct: "Man, I'm gonna make one of those",
+        reason: "Confundí “one of those” debido a la reducción y el enlace natural del habla. No reconocí la expresión completa en velocidad normal."
+      }
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const heard = document.getElementById("heard");
+    const correct = document.getElementById("correct");
+    const reason = document.getElementById("reason");
+    const counter = document.getElementById("counter");
+    const progress = document.querySelector(".progress");
+    const progressFill = document.getElementById("progress-fill");
+    const reveal = document.getElementById("reveal");
+    let order = cards.map((_, index) => index);
+    let current = 0;
+
+    function render() {
+      const card = cards[order[current]];
+      const position = String(current + 1).padStart(2, "0");
+      heard.textContent = card.heard;
+      correct.textContent = card.correct;
+      reason.textContent = card.reason;
+      counter.textContent = `${position} / ${String(cards.length).padStart(2, "0")}`;
+      document.getElementById("question-number").textContent = `Caso ${position}`;
+      document.getElementById("answer-number").textContent = `Caso ${position}`;
+      progress.setAttribute("aria-valuenow", String(current + 1));
+      progressFill.style.width = `${((current + 1) / cards.length) * 100}%`;
+      flashcard.classList.remove("is-flipped");
+      flashcard.setAttribute("aria-pressed", "false");
+      flashcard.setAttribute("aria-label", `Caso ${current + 1}: mostrar la frase correcta y la explicación`);
+      reveal.textContent = "Revelar respuesta";
+    }
+
+    function flipCard() {
+      const flipped = flashcard.classList.toggle("is-flipped");
+      flashcard.setAttribute("aria-pressed", String(flipped));
+      flashcard.setAttribute("aria-label", flipped ? "Volver a la frase que oíste" : "Mostrar la frase correcta y la explicación");
+      reveal.textContent = flipped ? "Volver a lo que oí" : "Revelar respuesta";
+    }
+
+    function move(step) {
+      current = (current + step + cards.length) % cards.length;
+      render();
+    }
+
+    flashcard.addEventListener("click", flipCard);
+    reveal.addEventListener("click", flipCard);
+    document.getElementById("previous").addEventListener("click", () => move(-1));
+    document.getElementById("next").addEventListener("click", () => move(1));
+    document.getElementById("shuffle").addEventListener("click", () => {
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      current = 0;
+      render();
+    });
+    document.getElementById("reset").addEventListener("click", () => {
+      order = cards.map((_, index) => index);
+      current = 0;
+      render();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key === "ArrowRight") move(1);
+      if (event.key === "ArrowLeft") move(-1);
+      if (event.key === " " && event.target === document.body) {
+        event.preventDefault();
+        flipCard();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

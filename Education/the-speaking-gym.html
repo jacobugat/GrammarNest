@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Speaking Gym · GrammarNest</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090D16',
+                        darkCard: '#111827',
+                        darkBorder: '#1F2937',
+                        cyanGlow: '#06B6D4',
+                        roseGlow: '#F43F5E',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Glowing & Glassmorphism Effects */
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+        }
+        .glow-rose {
+            box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.25);
+        }
+        .text-glow-cyan {
+            text-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06B6D4;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-100 font-sans min-h-screen antialiased flex flex-col selection:bg-cyan-500 selection:text-black">
+
+    <!-- TOP NAVIGATION / HEADER -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-black text-black text-xl shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-dumbbell text-slate-950"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                        THE SPEAKING GYM <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Motor Learning Protocol</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Por qué el entrenamiento articular previo supera a la conversación directa</p>
+                </div>
+            </div>
+
+            <nav class="flex items-center gap-1 sm:gap-2 bg-slate-900/90 p-1.5 rounded-xl border border-slate-800 text-xs sm:text-sm">
+                <a href="../index.html#docentes" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-cyan-400">← GrammarNest</a>
+                <a href="#comparison" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-cyan-400">Comparativa</a>
+                <a href="#gym-routine" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-cyan-400">Simulador de Rutina</a>
+                <a href="#theories" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-cyan-400">Bases Científicas</a>
+                <a href="#chunks-vault" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition text-slate-300 hover:text-cyan-400">Vault de Chunks</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-16">
+
+        <!-- HERO SECTION -->
+        <section class="relative overflow-hidden rounded-3xl glass-card border border-slate-800 p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="space-y-6 max-w-3xl relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    Neurociencia Cognitiva & Fonética Articulatoria
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    El lenguaje es una <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">habilidad motora</span>, no solo una disciplina académica.
+                </h2>
+                <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                    Lanzarte a hablar directo con hablantes nativos o asistentes de IA sin acondicionamiento muscular previo sobrecarga tu memoria de trabajo y te mantiene en un **nivel plano constante**. El **Speaking Gym** automatiza el tracto vocal mediante repetición rítmica de alta frecuencia e imprime bloques nativos (*chunks*) directamente en tu memoria procedimental.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2 justify-center md:justify-start">
+                    <a href="#gym-routine" class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+                        <i class="fa-solid fa-play"></i> Iniciar Sesión de Rutina
+                    </a>
+                    <a href="#comparison" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold transition">
+                        Ver Comparativa de Métodos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Stats Widget -->
+            <div class="w-full md:w-80 space-y-4 relative z-10 shrink-0">
+                <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 space-y-3">
+                    <div class="flex justify-between items-center text-xs font-semibold text-slate-400">
+                        <span>Carga Cognitiva en Vivo</span>
+                        <span class="text-rose-400 font-mono">Alta (85%)</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-rose-500 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500">Con "Práctica Directa" sin calentamiento.</p>
+                </div>
+
+                <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-5 space-y-3">
+                    <div class="flex justify-between items-center text-xs font-semibold text-slate-400">
+                        <span>Automatización Mecánica (*Gym*)</span>
+                        <span class="text-cyan-400 font-mono">Optima (95%)</span>
+                    </div>
+                    <div class="w-full bg-slate-800 rounded-full h-2">
+                        <div class="bg-cyan-400 h-2 rounded-full" style="width: 95%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500">Tras repetición monótona y rápida de chunks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: COMPARATIVE METHODOLOGY -->
+        <section id="comparison" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Análisis Comparativo de Enfoques</h3>
+                <p class="text-slate-400 text-sm">¿Por qué improvisar conversaciones directamente genera estancamiento mientras el entrenamiento gimnástico libera tu fluidez?</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- METHOD A: DIRECT PRACTICE TRAP -->
+                <div class="glass-card rounded-2xl border border-rose-900/40 p-6 md:p-8 space-y-6 glow-rose relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 px-4 py-1.5 bg-rose-500/20 text-rose-300 text-xs font-bold rounded-bl-xl border-l border-b border-rose-500/30">
+                        MÉTODO A: EL TRAPEZOIDE PLANO
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center text-2xl border border-rose-500/20">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-rose-200">Práctica Directa e Inmediata (AI Chat / Intercambios)</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Lanzarse a hablar directamente sin preparación articular. Se intenta pensar qué decir, construir gramática desde cero, recordar vocabulario y articular sonidos al mismo tiempo.
+                        </p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                                <span><strong>Alta Fricción Cognitiva:</strong> El cerebro se satura traduciendo mentalmente desde el español.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                                <span><strong>Velocidad Lenta y Titubeo:</strong> Hablas con pausas constantes al tener que armar oraciones como piezas de LEGO.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                                <span><strong>Sin Memoria Muscular:</strong> La mandíbula y la lengua se sienten torpes o trancadas al intentar sonar nativo.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-xmark text-rose-400 mt-1 shrink-0"></i>
+                                <span><strong>Techo de Fluidez:</strong> Te mantienes en un nivel plano funcional pero básico sin progresar en prosodia ni naturalidad.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-rose-900/30 bg-rose-950/20 p-4 rounded-xl">
+                        <p class="text-xs text-rose-300 italic">
+                            "Hablar por hablar sin condicionamiento previo es como pretender tocar un concierto de piano sin haber practicado las escalas jamás."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- METHOD B: THE SPEAKING GYM -->
+                <div class="glass-card rounded-2xl border border-cyan-500/40 p-6 md:p-8 space-y-6 glow-cyan relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 px-4 py-1.5 bg-cyan-500/20 text-cyan-300 text-xs font-bold rounded-bl-xl border-l border-b border-cyan-500/30">
+                        MÉTODO B: EL SPEAKING GYM (RECOMENDADO)
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-2xl border border-cyan-500/20">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-cyan-200">Gimnasia Fonética y Repetición de Chunks</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Acondicionamiento físico del tracto vocal en solitario antes de la interacción. Repetición acelerada (10-20x) de frases nativas completas hasta provocar fatiga muscular.
+                        </p>
+                        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-cyan-400 mt-1 shrink-0"></i>
+                                <span><strong>Automatización Motora:</strong> Entrena la mandíbula, labios y lengua para ejecutar combinaciones de sonidos nativos sin esfuerzo.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-cyan-400 mt-1 shrink-0"></i>
+                                <span><strong>Instalación de Bloques (*Chunks*):</strong> Almacenas oraciones completas (*It turns out that...*) que se recuperan sin pensar.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-cyan-400 mt-1 shrink-0"></i>
+                                <span><strong>Efecto Priming (Cebado Neuronal):</strong> Horas después, tus vías sinápticas están calientes y el lenguaje fluye solo.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-cyan-400 mt-1 shrink-0"></i>
+                                <span><strong>Cero Estrés Social:</strong> Eliminas la ansiedad de evaluación durante la fase de adquisición física.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pt-4 border-t border-cyan-900/30 bg-cyan-950/20 p-4 rounded-xl">
+                        <p class="text-xs text-cyan-300 italic">
+                            "Repetir rápido como un loro con el ritmo adecuado transfiere el idioma de la gramática analítica a la memoria procedimental."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: INTERACTIVE GYM SESSION ROUTINE SIMULATOR -->
+        <section id="gym-routine" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Simulador de Entrenador de Speaking Gym</h3>
+                <p class="text-slate-400 text-sm">Ejecuta tu rutina guiada de 15 minutos de acondicionamiento articular antes de hablar en vivo.</p>
+            </div>
+
+            <div class="glass-card rounded-3xl border border-slate-800 p-6 md:p-10 space-y-8">
+                <!-- Step Selector Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="routine-step-buttons">
+                    <button onclick="setRoutineStep(0)" class="step-btn px-4 py-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-300 text-left font-semibold transition flex flex-col gap-1">
+                        <span class="text-xs text-slate-400">FASE 1 (Min 0-3)</span>
+                        <span class="text-sm">1. Activación Vocal</span>
+                    </button>
+                    <button onclick="setRoutineStep(1)" class="step-btn px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:text-slate-200 text-left font-semibold transition flex flex-col gap-1">
+                        <span class="text-xs text-slate-400">FASE 2 (Min 3-8)</span>
+                        <span class="text-sm">2. Repetición Rápida (10-20x)</span>
+                    </button>
+                    <button onclick="setRoutineStep(2)" class="step-btn px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:text-slate-200 text-left font-semibold transition flex flex-col gap-1">
+                        <span class="text-xs text-slate-400">FASE 3 (Min 8-12)</span>
+                        <span class="text-sm">3. Integración en Cadena</span>
+                    </button>
+                    <button onclick="setRoutineStep(3)" class="step-btn px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:text-slate-200 text-left font-semibold transition flex flex-col gap-1">
+                        <span class="text-xs text-slate-400">FASE 4 (Min 12-15)</span>
+                        <span class="text-sm">4. Self-Talk Fluido</span>
+                    </button>
+                </div>
+
+                <!-- Active Step Card & Interactive Timer Grid -->
+                <div class="grid lg:grid-cols-3 gap-8 items-start">
+                    <!-- Instruction Display -->
+                    <div class="lg:col-span-2 bg-slate-950/80 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <span id="step-badge" class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 text-xs font-bold">FASE 1 DE 4</span>
+                            <h4 id="step-title" class="text-xl font-bold text-white">Calentamiento Mecánico y Articular</h4>
+                        </div>
+
+                        <p id="step-description" class="text-slate-300 text-sm leading-relaxed">
+                            Mueve la mandíbula lateralmente, exagera vocales y realiza zumbidos de labios (*lip trills*) para activar los músculos del rostro y desacostumbrarlos del español.
+                        </p>
+
+                        <div class="space-y-3 bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+                            <h5 class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Acciones Concretas a Ejecutar:</h5>
+                            <ul id="step-checklist" class="space-y-2 text-xs text-slate-300">
+                                <!-- JS Populated -->
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 text-xs text-amber-300 flex items-start gap-3">
+                            <i class="fa-solid fa-lightbulb text-base mt-0.5 shrink-0"></i>
+                            <span id="step-tip">Sentirás ligera fatiga o rigidez en los labios o mejillas. Esa molestia es la señal de que los músculos están registrando el nuevo movimiento.</span>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Stopwatch & Counter Widget -->
+                    <div class="bg-slate-950/90 border border-cyan-500/30 rounded-2xl p-6 text-center space-y-6 glow-cyan">
+                        <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Cronómetro de Gimnasio</h5>
+                        
+                        <div class="font-mono text-5xl font-black text-white tracking-widest" id="timer-display">
+                            03:00
+                        </div>
+
+                        <!-- Progress Circle or Bar -->
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                            <div id="timer-progress" class="bg-cyan-400 h-full transition-all duration-300" style="width: 100%;"></div>
+                        </div>
+
+                        <!-- Rep Counter (Useful for Step 2) -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-3 flex justify-between items-center">
+                            <span class="text-xs text-slate-400 font-medium">Contador de Repeticiones:</span>
+                            <div class="flex items-center gap-3">
+                                <button onclick="adjustReps(-1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold">-</button>
+                                <span id="rep-count" class="font-mono text-lg font-bold text-cyan-400">0</span>
+                                <button onclick="adjustReps(1)" class="w-7 h-7 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Timer Controls -->
+                        <div class="flex gap-2">
+                            <button id="start-btn" onclick="toggleTimer()" class="flex-1 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> Iniciar
+                            </button>
+                            <button onclick="resetTimer()" class="px-4 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl transition">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THEORETICAL FOUNDATIONS & RESEARCHERS -->
+        <section id="theories" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Sustento Científico y Teorías Cognitivas</h3>
+                <p class="text-slate-400 text-sm">¿Por qué funciona este método? Investigaciones en adquisición de lenguaje, lingüística de corpus y neurobiología.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Theory Card 1 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-brain"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Neurobiología</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Memoria Procedimental vs. Declarativa</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        El aprendizaje explícito de gramática usa la memoria declarativa. El habla fluida en tiempo real opera en la **memoria procedimental** (el mismo sistema usado para montar bicicleta). La repetición muscular traslada los patrones al sistema procedimental.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigador Clave:</div>
+                        <div>Dr. Michael T. Ullman (Universidad de Georgetown)</div>
+                        <div class="italic text-slate-500">"The Declarative/Procedural Model of Language" (2001)</div>
+                    </div>
+                </div>
+
+                <!-- Theory Card 2 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-cubes"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Lingüística de Corpus</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">El Enfoque Lexical (The Lexical Approach)</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Los hablantes nativos no crean oraciones palabra por palabra; recuerdan **bloques prefabricados (*chunks*)**. Aprender y repetir unidades lexicales completas permite construir y desarmar frases con fluidez sin pensar en reglas.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigadores Clave:</div>
+                        <div>Michael Lewis / Nattinger & DeCarrico</div>
+                        <div class="italic text-slate-500">"The Lexical Approach: The State of ELT" (1993)</div>
+                    </div>
+                </div>
+
+                <!-- Theory Card 3 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-gears"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Aprendizaje Motor</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Teoría del Programa Motor Fonético</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        La articulación del habla es una de las tareas motoras más complejas del ser humano. Al igual que en el entrenamiento deportivo, requiere **repetición masiva (*overlearning*)** para refinar los programas motores del tracto vocal.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigadores Clave:</div>
+                        <div>Richard Schmidt / Willem Levelt</div>
+                        <div class="italic text-slate-500">"Speaking: From Intention to Articulation" (1989)</div>
+                    </div>
+                </div>
+
+                <!-- Theory Card 4 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-microchip"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Psicología Cognitiva</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Teoría de la Carga Cognitiva</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Si tu memoria de trabajo está ocupada intentando pronunciar o unir palabras, te quedas sin capacidad para pensar en las ideas. La automatización motora libera el 90% de la carga cognitiva para la conversación real.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigador Clave:</div>
+                        <div>John Sweller</div>
+                        <div class="italic text-slate-500">"Cognitive Load Theory" (1988)</div>
+                    </div>
+                </div>
+
+                <!-- Theory Card 5 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-wave-square"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Cebado Neuronal</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">Facilitación y Priming Auditivo-Motor</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Practicar frases intensamente unas horas antes activa los nodos neuronales fonéticos. Cuando entras al salón de clases horas después, las vías de acceso están pre-activadas (*primed*) para disparar de inmediato.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigador Clave:</div>
+                        <div>D.E. Meyer & R.W. Schvaneveldt</div>
+                        <div class="italic text-slate-500">"Facilitation in recognizing pairs of words" (1971)</div>
+                    </div>
+                </div>
+
+                <!-- Theory Card 6 -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-4 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between">
+                        <span class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-black transition">
+                            <i class="fa-solid fa-music"></i>
+                        </span>
+                        <span class="text-xs font-mono text-slate-500">Fonética Rítmica</span>
+                    </div>
+                    <h4 class="text-lg font-bold text-white">El Modelo Prosódico & Stress-Timing</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        El inglés es un idioma con tiempo acentuado (*stress-timed*). Repetir rápido como una canción fuerza a la boca a aplicar reducciones fonéticas naturales (*contractions, weak forms, linking*) de forma involuntaria.
+                    </p>
+                    <div class="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 space-y-1">
+                        <div class="font-semibold text-cyan-400">Investigadores Clave:</div>
+                        <div>David Abercrombie / Peter Roach</div>
+                        <div class="italic text-slate-500">"Phonetics and Phonology of Rhythm"</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INTERACTIVE CHUNKS VAULT & MARKDOWN GENERATOR -->
+        <section id="chunks-vault" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h3 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Bóveda de Chunks y Generador de Plantilla</h3>
+                <p class="text-slate-400 text-sm">Organiza tus frases nativas para las sesiones de repetición y copia tu rutina en formato Markdown.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Chunks Manager -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-6">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group text-cyan-400"></i> Tus Chunks Activos
+                        </h4>
+                        <span class="text-xs text-slate-500">Agrega o selecciona frases nativas</span>
+                    </div>
+
+                    <!-- Input form -->
+                    <div class="flex gap-2">
+                        <input type="text" id="chunk-input" placeholder="Ej: As far as I'm concerned..." class="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-cyan-500">
+                        <button onclick="addChunk()" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl text-sm transition">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+
+                    <!-- List of Chunks -->
+                    <div id="chunks-list" class="space-y-2 max-h-60 overflow-y-auto pr-1">
+                        <!-- Default chunks injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Export Markdown Card -->
+                <div class="glass-card rounded-2xl border border-slate-800 p-6 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-file-code text-cyan-400"></i> Exportar Resumen a tu Repositorio
+                            </h4>
+                            <button onclick="copyMarkdown()" class="text-xs px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 border border-slate-700 transition flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i> <span id="copy-text">Copiar Markdown</span>
+                            </button>
+                        </div>
+                        <p class="text-xs text-slate-400">Copia esta estructura lista en Markdown para guardarla en tu GitHub o sistema de notas personal.</p>
+                        <textarea id="markdown-output" readonly class="w-full h-48 bg-slate-950 border border-slate-800 rounded-xl p-3 font-mono text-xs text-slate-300 focus:outline-none resize-none"></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p>The Speaking Gym Protocol &copy; 2026. Basado en principios de aprendizaje motor fonético y memoria procedimental.</p>
+        <p class="text-slate-600">Diseñado para optimizar el rendimiento en vivo reduciendo la fricción cognitiva.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // ROUTINE SIMULATOR DATA & LOGIC
+        const routineSteps = [
+            {
+                badge: "FASE 1 DE 4 (MINUTO 0 AL 3)",
+                title: "Calentamiento Mecánico y Articular",
+                desc: "Mueve la mandíbula lateralmente, exagera vocales y realiza zumbidos de labios (lip trills) para activar los músculos del rostro y desacostumbrarlos del español.",
+                checklist: [
+                    "Estiramiento de mandíbula (lado a lado) por 1 minuto.",
+                    "Vocalización rritmica con zumbidos (brrr/mmm) para activar resonancia.",
+                    "Exageración amplia de gestos faciales."
+                ],
+                tip: "Sentirás ligera fatiga o rigidez en los labios o mejillas. Esa molestia es la señal de que los músculos están registrando el nuevo movimiento.",
+                duration: 180
+            },
+            {
+                badge: "FASE 2 DE 4 (MINUTO 3 AL 8)",
+                title: "Martilleo de Chunks (Repetición Rápida 10-20x)",
+                desc: "Toma frases nativas de alta frecuencia. Repítelas en voz alta lo más rápido posible, como si fuera una canción o trabalenguas, sintiendo la velocidad del tracto vocal.",
+                checklist: [
+                    "Selecciona 3 a 4 chunks nativos (ej: 'It turns out that...').",
+                    "Repite cada frase 15 a 20 veces a máxima velocidad rítmica.",
+                    "Busca la unión natural de palabras (linking) sin hacer pausas."
+                ],
+                tip: "No traduzcas mentalmente. Enfócate exclusivamente en la música, el ritmo y el movimiento veloz de la lengua.",
+                duration: 300
+            },
+            {
+                badge: "FASE 3 DE 4 (MINUTO 8 AL 12)",
+                title: "Integración en Cadena (Oraciones Completas)",
+                desc: "Mete los chunks previamente calentados dentro de oraciones más largas y completas para conectar el músculo con la sintaxis.",
+                checklist: [
+                    "Conecta el chunk con una idea completa.",
+                    "Di la oración 5 veces seguidas con entonación natural.",
+                    "Asegúrate de no tropezar entre el chunk y la idea nueva."
+                ],
+                tip: "La oración debe sonar como una sola ráfaga continua de sonido, no como palabras separadas.",
+                duration: 240
+            },
+            {
+                badge: "FASE 4 DE 4 (MINUTO 12 AL 15)",
+                title: "Self-Talk Fluido (Simulación en Solitario)",
+                desc: "Habla solo durante 3 minutos continuos sobre cualquier tema. Obliga a tu boca a usar los chunks que acabas de calentar con la inercia del movimiento.",
+                checklist: [
+                    "Elige un tema (lo que harás hoy, tu opinión de algo, etc.).",
+                    "Habla en voz alta sin parar a corregir errores gramaticales.",
+                    "Deja que la inercia motora tome el control."
+                ],
+                tip: "Al llegar a una conversación real horas después, tus vías neuronales estarán pre-calentadas y listas para disparar.",
+                duration: 180
+            }
+        ];
+
+        let currentStepIdx = 0;
+        let timerSeconds = routineSteps[0].duration;
+        let timerInterval = null;
+        let isTimerRunning = false;
+        let repCount = 0;
+
+        function setRoutineStep(idx) {
+            currentStepIdx = idx;
+            const step = routineSteps[idx];
+
+            // Update UI buttons styling
+            const buttons = document.querySelectorAll('#routine-step-buttons button');
+            buttons.forEach((btn, i) => {
+                if (i === idx) {
+                    btn.className = "step-btn px-4 py-3 rounded-xl border border-cyan-500 bg-cyan-500/10 text-cyan-300 text-left font-semibold transition flex flex-col gap-1";
+                } else {
+                    btn.className = "step-btn px-4 py-3 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:text-slate-200 text-left font-semibold transition flex flex-col gap-1";
+                }
+            });
+
+            // Update Step Text Content
+            document.getElementById('step-badge').innerText = step.badge;
+            document.getElementById('step-title').innerText = step.title;
+            document.getElementById('step-description').innerText = step.desc;
+            document.getElementById('step-tip').innerText = step.tip;
+
+            const checklistEl = document.getElementById('step-checklist');
+            checklistEl.innerHTML = step.checklist.map(item => `
+                <li class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-cyan-400 text-xs"></i>
+                    <span>${item}</span>
+                </li>
+            `).join('');
+
+            // Reset Timer for this step
+            resetTimer();
+        }
+
+        function updateTimerDisplay() {
+            const mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+            const secs = (timerSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${mins}:${secs}`;
+
+            const total = routineSteps[currentStepIdx].duration;
+            const pct = (timerSeconds / total) * 100;
+            document.getElementById('timer-progress').style.width = `${pct}%`;
+        }
+
+        function toggleTimer() {
+            if (isTimerRunning) {
+                clearInterval(timerInterval);
+                isTimerRunning = false;
+                document.getElementById('start-btn').innerHTML = `<i class="fa-solid fa-play"></i> Reanudar`;
+                document.getElementById('start-btn').classList.replace('bg-amber-500', 'bg-cyan-500');
+            } else {
+                isTimerRunning = true;
+                document.getElementById('start-btn').innerHTML = `<i class="fa-solid fa-pause"></i> Pausar`;
+                document.getElementById('start-btn').classList.replace('bg-cyan-500', 'bg-amber-500');
+
+                timerInterval = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        updateTimerDisplay();
+                    } else {
+                        clearInterval(timerInterval);
+                        isTimerRunning = false;
+                        document.getElementById('start-btn').innerHTML = `<i class="fa-solid fa-check"></i> Completado`;
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isTimerRunning = false;
+            timerSeconds = routineSteps[currentStepIdx].duration;
+            document.getElementById('start-btn').innerHTML = `<i class="fa-solid fa-play"></i> Iniciar`;
+            document.getElementById('start-btn').className = "flex-1 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold rounded-xl transition flex items-center justify-center gap-2";
+            updateTimerDisplay();
+        }
+
+        function adjustReps(val) {
+            repCount = Math.max(0, repCount + val);
+            document.getElementById('rep-count').innerText = repCount;
+        }
+
+        // CHUNKS VAULT LOGIC
+        let activeChunks = [
+            "As far as I'm concerned...",
+            "What I'm trying to get at is...",
+            "It turns out that...",
+            "At the end of the day...",
+            "If you come to think about it..."
+        ];
+
+        function renderChunks() {
+            const list = document.getElementById('chunks-list');
+            list.innerHTML = activeChunks.map((chunk, index) => `
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200">
+                    <span class="font-mono text-cyan-300">"${chunk}"</span>
+                    <button onclick="removeChunk(${index})" class="text-slate-500 hover:text-rose-400 transition">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            `).join('');
+            updateMarkdownOutput();
+        }
+
+        function addChunk() {
+            const input = document.getElementById('chunk-input');
+            const val = input.value.trim();
+            if (val) {
+                activeChunks.push(val);
+                input.value = '';
+                renderChunks();
+            }
+        }
+
+        function removeChunk(idx) {
+            activeChunks.splice(idx, 1);
+            renderChunks();
+        }
+
+        function updateMarkdownOutput() {
+            const chunksText = activeChunks.map(c => `- "${c}"`).join('\n');
+            const md = `# The Speaking Gym Protocol: Motor Learning vs. Direct Practice
+
+## 💡 Filosofía
+El habla fluida es una habilidad motora articulatoria almacenada en la **memoria procedimental**, no una traducción analítica en tiempo real.
+
+## 🏋️ Rutina Diaria de 15 Minutos (Calentamiento Fonético)
+1. **0-3 min:** Calentamiento muscular facial & Lip Trills.
+2. **3-8 min:** Repetición rápida (15-20x) de chunks nativos a ritmo continuo.
+3. **8-12 min:** Integración de bloques en oraciones completas.
+4. **12-15 min:** Self-talk en solitario a velocidad ininterrumpida.
+
+## 🎯 Chunks Activos para Repetición Rápida
+${chunksText}
+
+## 📚 Sustento Académico
+- **Michael Ullman:** Modelo Declarativo/Procedimental de Lenguaje.
+- **Michael Lewis:** The Lexical Approach (Bloques Lexicales).
+- **John Sweller:** Cognitive Load Theory (Reducción de carga mental).
+`;
+            document.getElementById('markdown-output').value = md;
+        }
+
+        function copyMarkdown() {
+            const copyText = document.getElementById('markdown-output');
+            copyText.select();
+            document.execCommand('copy');
+            
+            const btnLabel = document.getElementById('copy-text');
+            btnLabel.innerText = "¡Copiado!";
+            setTimeout(() => {
+                btnLabel.innerText = "Copiar Markdown";
+            }, 2000);
+        }
+
+        // INITIALIZATION
+        window.onload = function() {
+            setRoutineStep(0);
+            renderChunks();
+        };
+    </script>
+</body>
+</html>

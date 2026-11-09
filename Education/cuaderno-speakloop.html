@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17131d">
+  <meta name="description" content="Cuaderno SpeakLoop: una bitácora a mano para ordenar correcciones, aprender vocabulario y construir anclajes de memoria sin niveles prefijados.">
+  <title>Cuaderno SpeakLoop · Bitácora de práctica</title>
+  <style>
+    :root { color-scheme:dark; --bg:#17131d; --panel:#211a28; --panel2:#2b2232; --ink:#fff6e8; --muted:#c4b8c8; --line:#493a4c; --lime:#c7f36c; --coral:#ff9f91; --lav:#c7a7ff; --paper:#f4ead8; --paper-ink:#342d39 }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:radial-gradient(circle at 88% 0,#483252 0,transparent 34rem),radial-gradient(circle at 2% 40%,#3d4724 0,transparent 25rem),var(--bg);font:16px/1.68 Inter,ui-sans-serif,system-ui,"Segoe UI",sans-serif}
+    a{color:inherit}.wrap{width:min(1100px,calc(100% - 48px));margin:auto}
+    .top{position:sticky;top:0;z-index:4;border-bottom:1px solid #ffffff18;background:#17131de8;backdrop-filter:blur(16px)}
+    .nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{color:var(--ink);font-weight:850;letter-spacing:-.04em;text-decoration:none}.brand span{color:var(--lime)}.back{color:var(--muted);text-decoration:none;font-size:.9rem}.back:hover{color:var(--ink)}
+    .hero{padding:clamp(62px,10vw,112px) 0 52px;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}
+    .eyebrow,.kicker{color:var(--lime);font-size:.74rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}h1{font-size:clamp(3.2rem,8vw,6rem);line-height:.93;letter-spacing:-.075em;margin:13px 0 17px}h1 span{color:var(--coral)}
+    .lead{color:var(--muted);font-size:1.1rem;margin-bottom:12px}.author{color:#eadde9;font-size:.88rem}
+    .paper-art{position:relative;min-height:280px;display:grid;place-items:center;isolation:isolate}
+    .paper-art::before,.paper-art::after{content:"";position:absolute;width:210px;height:255px;border-radius:12px;transform:rotate(-10deg);background:#7b4e77;z-index:-2;box-shadow:0 24px 45px #0005}
+    .paper-art::after{transform:rotate(7deg);background:#8b7148;z-index:-1}
+    .paper{width:220px;min-height:258px;padding:24px 20px;color:var(--paper-ink);background:repeating-linear-gradient(to bottom,var(--paper) 0,var(--paper) 29px,#cfc4b4 30px);border-radius:8px;box-shadow:0 22px 50px #0006;transform:rotate(-2deg)}
+    .paper small{display:block;color:#895c82;font-size:.64rem;letter-spacing:.12em;font-weight:900}.paper strong{display:block;margin:11px 0;color:#49344b;font:800 1.35rem/1.05 Georgia,serif}.paper .scribble{color:#6c4c76;font:italic 1rem Georgia,serif}.paper .check{margin-top:14px;color:#986b47;font-size:.82rem}
+    .section{margin:0 auto 74px}.head{max-width:780px;margin-bottom:24px}h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.08;letter-spacing:-.05em;margin:7px 0 10px}.head p{color:var(--muted);margin:0}
+    .quote{padding:23px 25px;border-left:4px solid var(--coral);border-radius:0 15px 15px 0;background:#ff9f9110;color:#f2e8eb;font:italic 1.1rem/1.55 Georgia,serif}
+    .rule{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;padding:25px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(135deg,#33273a,#24212c)}
+    .rule h3{margin:0 0 9px;font-size:1.15rem}.rule p{color:var(--muted);margin:0}.page-drawing{position:relative;min-height:245px;padding:23px 18px 18px 45px;border-radius:11px;background:repeating-linear-gradient(to bottom,#f6eddd 0,#f6eddd 30px,#d9cbb9 31px);box-shadow:0 14px 30px #0004;color:var(--paper-ink);transform:rotate(-1deg)}
+    .page-drawing::before{content:"";position:absolute;left:31px;top:0;bottom:0;width:2px;background:#e78f8b}.page-drawing h4{font:800 1rem Georgia,serif;margin:0 0 10px;color:#513e55}.page-drawing p{font:italic .92rem Georgia,serif;margin:0 0 8px}.page-drawing .arrow{color:#ad5f67;font-weight:900}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.category{padding:22px;border:1px solid var(--line);border-radius:15px;background:var(--panel)}.category:nth-child(1){border-top:3px solid var(--coral)}.category:nth-child(2){border-top:3px solid var(--lime)}.category:nth-child(3){border-top:3px solid var(--lav)}.category .num{font-size:.7rem;letter-spacing:.14em;color:var(--muted);font-weight:800}.category h3{margin:8px 0;font-size:1.13rem}.category p{margin:0;color:var(--muted);font-size:.93rem}.example{margin-top:12px;padding:12px;border-radius:10px;background:#ffffff08;color:#f5eee5;font-size:.9rem}.example b{color:var(--lime)}
+    .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:17px}.why-card{padding:23px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.why-card h3{margin-bottom:8px}.why-card p{color:var(--muted);margin:0}.fossil{border-color:#ff9f9155;background:linear-gradient(140deg,#38272e,#281f2b)}
+    .vocab{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.vocab-step{min-height:135px;padding:17px;border:1px solid var(--line);border-radius:14px;background:var(--panel2)}.vocab-step b{display:block;color:var(--lime);margin-bottom:8px}.vocab-step span{color:#e3d9e4;font-size:.9rem}.word-example{margin-top:14px;display:grid;grid-template-columns:.8fr 1.2fr 1fr 1.2fr;gap:10px}.word-example div{padding:14px;border-radius:12px;background:#c7f36c0c;border:1px solid #c7f36c24;color:#e9e0e8;font-size:.88rem}.word-example .word{color:var(--coral);font-weight:850}
+    .research{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.research-card{padding:24px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.research-card h3{margin:0 0 11px}.research-card p{color:var(--muted);margin:0 0 10px}.research-card p:last-child{margin-bottom:0}.memory-example{margin-top:13px;padding:14px;border-radius:11px;background:#c7f36c0d;color:#e7edda;font:700 .9rem ui-monospace,Consolas,monospace}.memory-example span{color:var(--lime)}
+    .theory{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.theory article{padding:19px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,var(--panel2),var(--panel))}.theory h3{font-size:1rem;margin-bottom:7px;color:var(--lav)}.theory p{color:var(--muted);font-size:.9rem;margin:0}.takeaway{margin-top:17px;padding:22px 24px;border:1px solid #c7f36c4d;border-radius:15px;background:#c7f36c0b;color:#e8eedc}
+    .levels{display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;align-items:center;padding:clamp(23px,4vw,36px);border:1px solid #c7f36c42;border-radius:20px;background:linear-gradient(125deg,#293226,#282130)}.levels h2{color:var(--lime)}.levels p{margin:0;color:#e0d9e3}.sequence{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.sequence span{padding:8px 11px;border:1px solid #ffffff2c;border-radius:999px;background:#17151dcc;color:#fff0e5;font-size:.84rem}.sequence i{color:var(--coral);font-style:normal}
+    footer{border-top:1px solid var(--line);padding:25px 0 38px;color:var(--muted);font-size:.9rem}
+    @media(max-width:760px){.wrap{width:calc(100% - 36px)}.hero{grid-template-columns:1fr;padding-top:62px}.paper-art{min-height:270px}.rule,.why-grid,.research,.levels{grid-template-columns:1fr}.categories,.theory{grid-template-columns:1fr}.vocab{grid-template-columns:1fr 1fr}.word-example{grid-template-columns:1fr 1fr}.section{margin-bottom:58px}}
+    @media(max-width:480px){.nav{align-items:flex-start;flex-direction:column;justify-content:center;padding:10px 0;gap:2px}.vocab,.word-example{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="top"><nav class="wrap nav" aria-label="Navegación"><a class="brand" href="../index.html">Grammar<span>Nest</span></a><a class="back" href="metodo-speakloop.html">← Volver al método SpeakLoop</a></nav></header>
+  <main>
+    <section class="wrap hero">
+      <div><div class="eyebrow">SpeakLoop · Cuaderno de práctica</div><h1>Escribe.<br><span>Ancla.</span><br>Recuerda.</h1><p class="lead">Cómo registrar lo que aprendes, a mano y sin niveles.</p><div class="author">Autor: Jhon Carlos Sandoval Romero</div></div>
+      <div class="paper-art" role="img" aria-label="Ilustración de un cuaderno con notas de pronunciación, gramática y vocabulario"><div class="paper"><small>BITÁCORA SPEAKLOOP</small><strong>Lo que noto,<br>lo puedo cambiar.</strong><div class="scribble">I agree ✓<br>to shiver →</div><div class="check">gesto + imagen = recuerdo</div></div></div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="handwriting">
+      <div class="head"><div class="kicker">Un cuaderno escrito a puño y letra</div><h2 id="handwriting">Convierte la retroalimentación en una práctica propia.</h2></div>
+      <div class="rule">
+        <div><p>Al finalizar cada ciclo, registra a mano en un único cuaderno las retroalimentaciones de la IA. Escribir con tu propio puño y letra te fuerza a procesar y digerir cada corrección.</p><p style="margin-top:12px">De nada sirve adquirir el libro más completo si no lo vives: el verdadero conocimiento no se consume, se construye. Divide cada página en tres secciones:</p></div>
+        <div class="page-drawing" role="img" aria-label="Dibujo de una página de cuaderno dividida en tres secciones">
+          <h4>Después de cada ciclo</h4><p>01 · Pronunciación __________________</p><p>02 · Errores gramaticales _____________</p><p>03 · Frases poco nativas ______________</p><p class="arrow">✎ Una corrección a la vez</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="sections">
+      <div class="head"><div class="kicker">Tres secciones por página</div><h2 id="sections">Ordena las correcciones por tipo.</h2></div>
+      <div class="categories">
+        <article class="category"><div class="num">01 / SONIDO</div><h3>Pronunciación</h3><p>Palabras que dijiste mal o con otra entonación. Escribe cómo suenan bien y repítelas en voz alta.</p><div class="example"><b>Ejemplo:</b> “comfortable” → /ˈkʌmftəbl/, no “com-for-ta-ble”.</div></article>
+        <article class="category"><div class="num">02 / ESTRUCTURA</div><h3>Errores gramaticales</h3><p>Errores de estructura: tiempos verbales, preposiciones, artículos y orden de las palabras. Escribe la forma correcta.</p><div class="example"><b>Ejemplo:</b> “I am agree” → “I agree”.</div></article>
+        <article class="category"><div class="num">03 / NATURALIDAD</div><h3>Frases poco nativas</h3><p>Frases traducidas literalmente del español o que un nativo no diría así. Escribe cómo lo diría él.</p><div class="example"><b>Ejemplo:</b> “I have 30 years” → “I’m 30”.</div></article>
+      </div>
+      <div class="why-grid" style="margin-top:16px"><article class="why-card fossil"><h3>¿Por qué separarlas?</h3><p>Para evitar la fosilización: cuando un error se repite tantas veces que se vuelve hábito y deja de corregirse. Separado, ves qué tipo de error se repite, atacas uno a la vez y notas tu progreso.</p></article><article class="why-card"><h3>Un error visible se puede trabajar</h3><p>El registro ayuda a detectar patrones y elegir una corrección concreta cada vez, en lugar de dejar que el mismo error se vuelva costumbre.</p></article></div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="vocab">
+      <div class="head"><div class="kicker">Vocabulario nuevo</div><h2 id="vocab">Escríbelo y ánclalo.</h2><p class="muted">Cada palabra, expresión o bloque de oraciones nuevas va al cuaderno. Llénalo en cuatro pasos:</p></div>
+      <div class="vocab">
+        <div class="vocab-step"><b>01 · Escribe</b><span>La palabra o frase.</span></div>
+        <div class="vocab-step"><b>02 · Define</b><span>Con tus propias palabras, idealmente en el idioma que aprendes.</span></div>
+        <div class="vocab-step"><b>03 · Gesto</b><span>Inventa un anclaje corporal que represente el significado.</span></div>
+        <div class="vocab-step"><b>04 · Visualiza</b><span>Redacta un hecho o escena visual para recordarlo.</span></div>
+      </div>
+      <div class="word-example" aria-label="Ejemplo para la expresión to shiver">
+        <div class="word">to shiver</div><div>to shake slightly because you are cold</div><div>Te abrazas y tiemblas mientras la dices.</div><div>Te imaginas en Canadá viendo tu primera nevada.</div>
+      </div>
+      <div class="quote" style="margin-top:16px">Haz el gesto cada vez que releas la palabra: el cuerpo y la imagen le dan a tu memoria más caminos para encontrarla.</div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="chunks">
+      <div class="head"><div class="kicker">El porqué de este método y su respaldo</div><h2 id="chunks">Piensa en bloques de significado.</h2></div>
+      <div class="research">
+        <article class="research-card"><h3>¿Qué es un <i>chunk</i>?</h3><p>Una unidad de significado de varias palabras que la mente procesa y almacena como una sola entidad o “bloque”. Puede ser una frase larga que suena como un solo sonido rápido, por ejemplo:</p><p><strong>“Do you do what I ask you to do?”</strong></p><p>No es necesariamente un phrasal verb.</p></article>
+        <article class="research-card"><h3>Memoria y agrupación</h3><p>Miller (1956) propuso que la memoria a corto plazo sostiene solo 5 a 9 unidades. Para superar ese límite, la mente agrupa datos en bloques con significado.</p><div class="memory-example">3-0-1-5-4-2-8-9-7-6 <span>→</span> 301-542-8976<br><small>10 datos agrupados en 3 bloques</small></div></article>
+        <article class="research-card" style="grid-column:1/-1"><h3>Enfoque léxico</h3><p>Sinclair (1991) y Lewis (1993), al analizar conversaciones reales, hallaron que los nativos no construyen oraciones palabra por palabra, sino con piezas prefabricadas. Para Lewis, el lenguaje son bloques gramaticalizados, no gramática con palabras sueltas.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="theories">
+      <div class="head"><div class="kicker">Ideas relacionadas</div><h2 id="theories">Cuerpo, gesto e imagen también enseñan.</h2></div>
+      <div class="theory">
+        <article><h3>TPRS · Total Physical Response Storytelling</h3><p>Ray &amp; Seely (2012); Asher (1969). La representación física del significado permite captar el lenguaje directamente, sin traducción.</p></article>
+        <article><h3>Codificación doble</h3><p>Paivio (1986). Integrar estímulos verbales y kinestésico-visuales crea huellas de memoria independientes pero interconectadas.</p></article>
+        <article><h3>Cognición encarnada</h3><p>Goldin-Meadow (2010); Lakoff &amp; Johnson (1980). El gesto y el cuerpo participan en el aprendizaje y en la construcción del significado.</p></article>
+      </div>
+      <div class="takeaway">Simular la acción e imaginar la escena es un mecanismo de anclaje cognitivo, no un simple apoyo recreativo: mejora el <i>intake</i>, la retención a largo plazo y la disponibilidad del vocabulario en la producción oral espontánea.</div>
+    </section>
+
+    <section class="wrap section levels" aria-labelledby="no-levels">
+      <div><div class="kicker">SpeakLoop · A tu ritmo</div><h2 id="no-levels">Aquí no hay niveles.</h2></div>
+      <div><p>Un niño no aprende por escalones ni niveles prefijados: aprende conectando con su entorno —escucha, imita, hace gestos, mira y visualiza. SpeakLoop adopta ese mismo principio.</p><p style="margin-top:12px">En lugar de un temario estático, tu bitácora se llena con tus propias vivencias, necesidades y descubrimientos en cada ciclo: tu progreso sigue el ritmo de tu vida, no el de un libro de texto.</p><div class="sequence" aria-label="Escucha, imita, gesticula, mira y visualiza"><span>Escucha</span><i>→</i><span>Imita</span><i>→</i><span>Haz gestos</span><i>→</i><span>Mira y visualiza</span></div></div>
+    </section>
+  </main>
+  <footer><div class="wrap">SpeakLoop · Tu bitácora recoge lo que vives y descubres en cada ciclo.</div></footer>
+</body>
+</html>

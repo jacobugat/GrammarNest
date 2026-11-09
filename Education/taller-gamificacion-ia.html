@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d19">
+  <meta name="description" content="Taller práctico para crear videojuegos educativos retro con inteligencia artificial y enseñar inglés mediante gamificación.">
+  <title>Taller práctico · Gamificación e IA para enseñar inglés</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090d19;
+      --surface: #11192d;
+      --surface-2: #192542;
+      --ink: #f3f6ff;
+      --muted: #afbbd5;
+      --violet: #a494ff;
+      --cyan: #63dbd0;
+      --line: rgba(255, 255, 255, .12)
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 8% 0, #29345e 0, transparent 34rem), radial-gradient(circle at 95% 18%, #153b4c 0, transparent 30rem), var(--bg);
+      color: var(--ink);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif
+    }
+    a { color: inherit }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: auto }
+    .topbar {
+      position: sticky; top: 0; z-index: 2;
+      border-bottom: 1px solid var(--line);
+      background: #090d19e8; backdrop-filter: blur(16px)
+    }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 20px }
+    .brand { color: var(--ink); font-weight: 850; letter-spacing: -.04em; text-decoration: none }
+    .brand span { color: var(--cyan) }
+    .back { color: var(--muted); text-decoration: none; font-size: .92rem }
+    .back:hover { color: var(--ink) }
+    .hero { padding: clamp(72px, 12vw, 132px) 0 68px }
+    .eyebrow, .kicker {
+      color: var(--cyan); font-size: .78rem; font-weight: 800;
+      letter-spacing: .13em; text-transform: uppercase
+    }
+    h1, h2, h3, p { margin-top: 0 }
+    h1 {
+      max-width: 900px; margin: 15px 0 20px;
+      font-size: clamp(2.8rem, 7vw, 5.6rem); line-height: 1;
+      letter-spacing: -.065em
+    }
+    h1 em { color: var(--violet); font-style: normal }
+    .lead { max-width: 720px; color: var(--muted); font-size: 1.15rem; margin-bottom: 27px }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px }
+    .tag { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; color: #dce5f7; font-size: .88rem }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px }
+    .button {
+      display: inline-block; padding: 12px 17px; border-radius: 10px;
+      background: var(--violet); color: #0b0d19; font-weight: 750; text-decoration: none
+    }
+    .button:hover { filter: brightness(1.08) }
+    .section { margin: 0 auto 76px }
+    .section-head { max-width: 730px; margin-bottom: 25px }
+    h2 { margin: 8px 0 10px; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.05em }
+    .section-head p, .muted { color: var(--muted) }
+    .outcome {
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 26px; align-items: center;
+      padding: clamp(24px, 5vw, 42px); border: 1px solid var(--line); border-radius: 20px;
+      background: linear-gradient(135deg, #23204a, #143541)
+    }
+    .outcome h2 { max-width: 630px }
+    .outcome p { color: #d7e1f3; margin-bottom: 0 }
+    .outcome-aside { border-left: 1px solid #ffffff38; padding-left: 24px }
+    .outcome-aside strong { display: block; font-size: 1.15rem; margin-bottom: 5px }
+    .outcome-aside span { color: #d7e1f3; font-size: .94rem }
+    .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px }
+    .module {
+      min-height: 210px; padding: 23px; border: 1px solid var(--line); border-radius: 16px;
+      background: linear-gradient(150deg, var(--surface-2), var(--surface))
+    }
+    .module-num { color: var(--cyan); font-size: .78rem; font-weight: 800; letter-spacing: .1em }
+    .module h3 { margin: 11px 0 8px; font-size: 1.2rem; letter-spacing: -.025em }
+    .module p { color: var(--muted); margin-bottom: 0; font-size: .95rem }
+    .details { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px }
+    .detail { padding: 23px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface) }
+    .detail h3 { margin-bottom: 9px }
+    .detail ul { margin: 0; padding-left: 20px; color: var(--muted) }
+    .detail li + li { margin-top: 5px }
+    .footer { border-top: 1px solid var(--line); padding: 25px 0 38px; color: var(--muted); font-size: .9rem }
+    @media (max-width: 680px) {
+      .wrap { width: calc(100% - 36px) }
+      .nav { min-height: 60px }
+      .hero { padding: 68px 0 48px }
+      .outcome, .modules, .details { grid-template-columns: 1fr }
+      .outcome-aside { border-left: 0; border-top: 1px solid #ffffff38; padding: 18px 0 0 }
+      .section { margin-bottom: 58px }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegación">
+      <a class="brand" href="../index.html">Grammar<span>Nest</span></a>
+      <a class="back" href="../index.html#docentes">← Volver a recursos docentes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="eyebrow">Taller práctico · Aprender haciendo</div>
+      <h1>Crea videojuegos retro<br><em>para enseñar inglés.</em></h1>
+      <p class="lead">Usa herramientas de inteligencia artificial para diseñar un juego educativo, comprender su estructura y llevarlo a la web. Empiezas desde cero y terminas con un prototipo propio.</p>
+      <div class="tags" aria-label="Características del taller">
+        <span class="tag">🕹️ Gamificación</span>
+        <span class="tag">✦ IA para crear</span>
+        <span class="tag">Principiante · sin experiencia previa</span>
+        <span class="tag">Presencial · 3 a 4 horas</span>
+      </div>
+      <div class="actions">
+        <a class="button" href="propuesta-taller-gamificacion-ia.pdf" download>Descargar propuesta del taller (PDF) ↓</a>
+      </div>
+    </section>
+
+    <section class="wrap section outcome" aria-labelledby="resultado">
+      <div>
+        <div class="kicker">El resultado</div>
+        <h2 id="resultado">De una idea de clase a un juego que puedes compartir.</h2>
+        <p>Construye un prototipo de videojuego retro —por ejemplo, un arcade inspirado en Galaxian— para practicar phrasal verbs, vocabulario o gramática en contexto.</p>
+      </div>
+      <div class="outcome-aside">
+        <strong>Al terminar, podrás</strong>
+        <span>Probar tu juego en el navegador y publicarlo gratis con GitHub Pages para usarlo en clase.</span>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="ruta">
+      <div class="section-head">
+        <div class="kicker">Ruta del taller</div>
+        <h2 id="ruta">Cuatro módulos, un proyecto real.</h2>
+        <p>Una sesión guiada que combina configuración, diseño pedagógico, creación con IA y publicación.</p>
+      </div>
+      <div class="modules">
+        <article class="module">
+          <div class="module-num">MÓDULO 01</div>
+          <h3>Prepara tu entorno digital</h3>
+          <p>Crea una cuenta y un repositorio en GitHub, recorre Visual Studio Code y conoce la estructura básica de una página y un videojuego 2D.</p>
+        </article>
+        <article class="module">
+          <div class="module-num">MÓDULO 02</div>
+          <h3>Diseña prompts para juegos</h3>
+          <p>Aprende a pedirle a un asistente de IA la lógica del juego y convierte los objetivos del inglés en reglas e interacciones.</p>
+        </article>
+        <article class="module">
+          <div class="module-num">MÓDULO 03</div>
+          <h3>Construye un prototipo arcade</h3>
+          <p>Crea un juego retro estilo Galaxian: el jugador identifica la respuesta correcta para el significado o complemento de un phrasal verb.</p>
+        </article>
+        <article class="module">
+          <div class="module-num">MÓDULO 04</div>
+          <h3>Personaliza y publica</h3>
+          <p>Adapta el proyecto a tu currículo, resuelve errores con acompañamiento y publícalo gratis en GitHub Pages.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" aria-labelledby="preparacion">
+      <div class="section-head">
+        <div class="kicker">Antes de empezar</div>
+        <h2 id="preparacion">¿Qué necesitas?</h2>
+      </div>
+      <div class="details">
+        <article class="detail">
+          <h3>Para participar</h3>
+          <ul>
+            <li>Un computador portátil personal.</li>
+            <li>Acceso estable a Internet.</li>
+            <li>Un navegador actualizado, como Chrome o Edge.</li>
+          </ul>
+        </article>
+        <article class="detail">
+          <h3>No necesitas saber programar</h3>
+          <ul>
+            <li>El taller es para principiantes y parte desde cero.</li>
+            <li>Se trabajará con GitHub, Visual Studio Code y asistentes de IA, como Codex o Cursor.</li>
+            <li>Debes poder crear cuentas gratuitas en las herramientas utilizadas.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">GrammarNest · Gamificación e inteligencia artificial para la enseñanza del inglés.</div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10130f">
+  <meta name="description" content="Catálogo de recursos de GrammarNest: práctica de inglés, juegos educativos, speaking y materiales para docentes.">
+  <title>Recursos educativos · GrammarNest</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #10130f;
+      --panel: #191d18;
+      --panel-raised: #20251e;
+      --ink: #f2f1e8;
+      --muted: #aaa99d;
+      --line: #363b31;
+      --lime: #d3f36b;
+      --orange: #ffa174;
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 86% 0%, #39432167, transparent 34rem),
+        radial-gradient(ellipse at 0% 57%, #482b1d35, transparent 35rem),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    a { color: inherit }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: auto }
+    .topbar { border-bottom: 1px solid var(--line); background: #10130fe8; backdrop-filter: blur(14px) }
+    .nav { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 18px }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 850; letter-spacing: -.04em }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--lime); color: #14170e; font-size: 19px }
+    .home { color: var(--muted); text-decoration: none; font-size: .9rem }
+    .home:hover, .home:focus-visible { color: var(--lime) }
+    .hero { padding: clamp(62px, 10vw, 108px) 0 52px }
+    .eyebrow { color: var(--lime); font: 750 .74rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .15em; text-transform: uppercase }
+    h1 { max-width: 860px; margin: 14px 0 18px; font-size: clamp(3.2rem, 9vw, 7rem); line-height: .91; letter-spacing: -.085em }
+    h1 span { color: var(--lime) }
+    .intro { max-width: 690px; color: var(--muted); font-size: 1.08rem; margin: 0 }
+    .quicklinks { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px }
+    .quicklinks a { padding: 8px 13px; border: 1px solid var(--line); border-radius: 30px; color: var(--muted); text-decoration: none; font-size: .83rem }
+    .quicklinks a:hover { border-color: var(--lime); color: var(--lime) }
+    .section { margin: 0 auto 62px; scroll-margin-top: 24px }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 18px; padding-bottom: 15px; border-bottom: 1px solid var(--line) }
+    .section-head h2 { margin: 7px 0 0; font-size: clamp(1.7rem, 4vw, 2.7rem); line-height: 1.05; letter-spacing: -.06em }
+    .section-head p { max-width: 400px; margin: 0; color: var(--muted); font-size: .9rem }
+    .kicker { color: var(--orange); font: 750 .69rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px }
+    .card {
+      display: flex;
+      min-height: 194px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: linear-gradient(145deg, #1d211a, #171a15);
+      text-decoration: none;
+      transition: border-color .2s, transform .2s, background .2s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #747d50; background: linear-gradient(145deg, #24291c, #191c16) }
+    .card:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px }
+    .icon { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 14px; border: 1px solid #59613a; border-radius: 12px; background: #d3f36b13; font-size: 19px }
+    .card h3 { margin: 0 0 7px; font-size: 1.08rem; line-height: 1.3; letter-spacing: -.025em }
+    .card p { margin: 0 0 17px; color: var(--muted); font-size: .88rem; line-height: 1.55 }
+    .go { margin-top: auto; color: var(--lime); font-size: .8rem; font-weight: 750 }
+    footer { padding: 24px 0 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: .83rem }
+    footer a { color: var(--lime); text-decoration: none }
+    @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+    @media (max-width: 560px) {
+      .wrap { width: calc(100% - 30px) }
+      .hero { padding-top: 56px }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 8px }
+      .grid { grid-template-columns: 1fr }
+      .card { min-height: 170px }
+      .section { margin-bottom: 48px }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">↗</span><span>GrammarNest</span></a>
+      <a class="home" href="../index.html">← Volver a la página principal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero">
+      <div class="eyebrow">GrammarNest / biblioteca educativa</div>
+      <h1>Aprende.<br><span>Practica. Enseña.</span></h1>
+      <p class="intro">Un espacio para explorar los proyectos de inglés y educación. Elige una ruta según lo que quieras practicar o preparar.</p>
+      <nav class="quicklinks" aria-label="Categorías de recursos">
+        <a href="#speaking">Listening &amp; speaking</a>
+        <a href="#practice">Juegos &amp; práctica</a>
+        <a href="#teaching">Pedagogía &amp; docencia</a>
+      </nav>
+    </section>
+
+    <section class="wrap section" id="speaking" aria-labelledby="speaking-title">
+      <div class="section-head">
+        <div><div class="kicker">01 / uso real del idioma</div><h2 id="speaking-title">Listening &amp; speaking</h2></div>
+        <p>Entrena el oído, la pronunciación y la expresión oral con estrategias y actividades guiadas.</p>
+      </div>
+      <div class="grid">
+        <a class="card" href="listening-decoded.html"><span class="icon">🎧</span><h3>Listening, decoded</h3><p>Descifra cinco frases del inglés rápido y descubre cómo la reducción y el enlace pueden engañar al oído.</p><span class="go">Practicar listening →</span></a>
+        <a class="card" href="shadowing.html"><span class="icon">🎙️</span><h3>Práctica de shadowing</h3><p>Entrena ritmo, entonación y pronunciación con el método de cuatro pasos y ejercicios de audio.</p><span class="go">Abrir práctica →</span></a>
+        <a class="card" href="analytical-shadowing.html"><span class="icon">〰️</span><h3>Analytical Shadowing</h3><p>Descubre tus errores al escuchar, analiza el habla conectada y practica antes de imitar.</p><span class="go">Explorar el método →</span></a>
+        <a class="card" href="aprende-ingles-con-cine.html"><span class="icon">🎬</span><h3>Aprende inglés con cine</h3><p>Aprende el verbo to be en contexto con subtítulos, clips breves, shadowing y escucha activa.</p><span class="go">Abrir laboratorio →</span></a>
+        <a class="card" href="metodo-speakloop.html"><span class="icon">🔁</span><h3>Método SpeakLoop</h3><p>Un ciclo para practicar speaking con shadowing analítico, conversación con IA y speaking clubs.</p><span class="go">Conocer SpeakLoop →</span></a>
+        <a class="card" href="cuaderno-speakloop.html"><span class="icon">📓</span><h3>Cuaderno SpeakLoop</h3><p>Material de apoyo para organizar las prácticas y registrar el progreso de SpeakLoop.</p><span class="go">Abrir cuaderno →</span></a>
+        <a class="card" href="the-speaking-gym.html"><span class="icon">🏋️</span><h3>The Speaking Gym</h3><p>Entrena el habla como habilidad motora con calentamiento, chunks nativos y una rutina breve.</p><span class="go">Entrar al gimnasio →</span></a>
+        <a class="card" href="por-que-cuesta-hablar.html"><span class="icon">🗣️</span><h3>¿Por qué cuesta hablar?</h3><p>Explora factores psicológicos, cognitivos, físicos y del entorno que pueden dificultar el habla.</p><span class="go">Abrir mapa interactivo →</span></a>
+      </div>
+    </section>
+
+    <section class="wrap section" id="practice" aria-labelledby="practice-title">
+      <div class="section-head">
+        <div><div class="kicker">02 / aprender haciendo</div><h2 id="practice-title">Juegos &amp; práctica</h2></div>
+        <p>Repasa vocabulario, gramática y expresiones con tarjetas y experiencias interactivas.</p>
+      </div>
+      <div class="grid">
+        <a class="card" href="expresiones-idiomaticas.html"><span class="icon">🗂️</span><h3>Expresiones idiomáticas</h3><p>Aprende expresiones comunes del inglés estadounidense por su significado real, con flashcards.</p><span class="go">Abrir flashcards →</span></a>
+        <a class="card" href="speelling_bee.html"><span class="icon">🐝</span><h3>Spelling Bee</h3><p>Practica el abecedario, el deletreo de palabras y el modo examen.</p><span class="go">Abrir Spelling Bee →</span></a>
+        <a class="card" href="mario-verb-to-be/index.html"><span class="icon">🍄</span><h3>Super Mario · Verb to Be</h3><p>Practica afirmaciones con be, contracciones y posesivos en una aventura de plataformas.</p><span class="go">Jugar →</span></a>
+        <a class="card" href="pacman-adjetivos/index.html"><span class="icon">🟡</span><h3>Adjective Arcade</h3><p>Practica adjetivos, comparativos y superlativos en un laberinto arcade.</p><span class="go">Jugar Adjective Arcade →</span></a>
+        <a class="card" href="phrasal-verbs/index.html"><span class="icon">🧊</span><h3>Phrasal Verbs · Arcade</h3><p>Practica phrasal verbs con retos, música de 8 bits y una aventura con Mario.</p><span class="go">Jugar →</span></a>
+        <a class="card" href="galaxian-phrasal/index.html"><span class="icon">👾</span><h3>Galaxian · Phrasal Verbs</h3><p>Defiende la galaxia y dispara a la traducción correcta de cada phrasal verb.</p><span class="go">Iniciar misión →</span></a>
+      </div>
+    </section>
+
+    <section class="wrap section" id="teaching" aria-labelledby="teaching-title">
+      <div class="section-head">
+        <div><div class="kicker">03 / ideas para el aula</div><h2 id="teaching-title">Pedagogía &amp; docencia</h2></div>
+        <p>Guías y propuestas para reflexionar sobre educación, diseñar actividades y llevar ideas a clase.</p>
+      </div>
+      <div class="grid">
+        <a class="card" href="mapa_conceptual.html"><span class="icon">🗺️</span><h3>Mapa conceptual</h3><p>Guía paso a paso para construir mapas conceptuales, con ejemplos, plantilla y pauta de revisión.</p><span class="go">Abrir guía →</span></a>
+        <a class="card" href="pensamiento-pedagogico-critico.html"><span class="icon">💡</span><h3>Pensamiento pedagógico crítico</h3><p>Recorre las diapositivas en orden, con navegación interactiva y notas de apoyo.</p><span class="go">Abrir presentación →</span></a>
+        <a class="card" href="escuela-nueva-aprendizaje-ingles.html"><span class="icon">🌱</span><h3>Escuela Nueva y aprendizaje del inglés</h3><p>Lectura guiada de Gadotti (2003) y sus posibles aplicaciones al aula de inglés.</p><span class="go">Explorar lectura →</span></a>
+        <a class="card" href="taller-gamificacion-ia.html"><span class="icon">🕹️</span><h3>Taller: Gamificación e IA</h3><p>Crea desde cero un videojuego retro para enseñar inglés y publícalo en la web.</p><span class="go">Conocer el taller →</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer><div class="wrap">GrammarNest · <a href="../index.html">Volver a la página principal</a></div></footer>
+</body>
+</html>

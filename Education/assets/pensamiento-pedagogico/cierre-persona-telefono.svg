@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="85" y1="50" x2="1360" y2="790" gradientUnits="userSpaceOnUse"><stop stop-color="#182423"/><stop offset=".53" stop-color="#101719"/><stop offset="1" stop-color="#141522"/></linearGradient>
+    <linearGradient id="glow" x1="690" y1="130" x2="1320" y2="730" gradientUnits="userSpaceOnUse"><stop stop-color="#9DD9C7" stop-opacity=".19"/><stop offset="1" stop-color="#A999EF" stop-opacity=".04"/></linearGradient>
+    <linearGradient id="accent" x1="921" y1="375" x2="1220" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#B6E4D1"/><stop offset="1" stop-color="#D8EBA0"/></linearGradient>
+    <filter id="blur" x="857" y="152" width="701" height="702" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="65"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1440v810H0z"/>
+  <circle cx="1207" cy="503" r="285" fill="url(#glow)"/>
+  <circle cx="1207" cy="503" r="220" fill="#A8D9CD" fill-opacity=".16" filter="url(#blur)"/>
+  <path d="M0 683c300-63 489-71 718-36 228 36 495 15 722-39v202H0V683Z" fill="#080C0E" fill-opacity=".33"/>
+  <text x="82" y="88" fill="#A8D9CD" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">PREGUNTA PARA DEBATIR  /  OPEN QUESTION</text>
+  <text x="82" y="174" fill="#F1F1E9" font-family="Georgia,serif" font-size="58" letter-spacing="-1.8">¿Quién forma hoy</text>
+  <text x="82" y="244" fill="#F1F1E9" font-family="Georgia,serif" font-size="58" letter-spacing="-1.8">nuestra manera de ver?</text>
+  <text x="85" y="290" fill="#A7B0AD" font-family="Arial,sans-serif" font-size="19" letter-spacing="1.5">THREE PAIRS · UNA PREGUNTA CRÍTICA</text>
+
+  <g transform="translate(82 359)">
+    <rect width="360" height="185" rx="17" fill="#192122" stroke="#647674" stroke-opacity=".45" stroke-width="2"/>
+    <circle cx="60" cy="66" r="29" fill="#273536"/>
+    <path d="M42 74V53l18-13 18 13v21M49 74V61h10v13M65 74V56h9v18" stroke="#BDD1C5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="119" cy="61" r="11" stroke="#D8D5C9" stroke-width="3"/>
+    <path d="M99 101c2-16 10-23 20-23s18 7 20 23M116 101v-8M142 101c1-11 7-17 15-17s14 6 15 17M147 57a10 10 0 1 0 20 0 10 10 0 0 0-20 0" stroke="#D8D5C9" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="141" fill="#EDF0E7" font-family="Georgia,serif" font-size="28">Iglesia–familia</text>
+    <text x="30" y="165" fill="#91A09A" font-family="Arial,sans-serif" font-size="14" letter-spacing="1">EL BINOMIO ANTERIOR · GADOTTI</text>
+  </g>
+  <path d="M457 450h61m-13-13 13 13-13 13" stroke="#A8D9CD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(542 359)">
+    <rect width="360" height="185" rx="17" fill="#1B2425" stroke="#94BBAE" stroke-opacity=".52" stroke-width="2"/>
+    <circle cx="60" cy="66" r="29" fill="#283A37"/>
+    <path d="M40 73V52h40v21M47 73V59h7v7h-7m14 7V59h7v7h-7m14 7V59h7v7h-7M40 51l20-12 20 12" stroke="#C6E0D2" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="119" cy="61" r="11" stroke="#E1DED2" stroke-width="3"/>
+    <path d="M99 101c2-16 10-23 20-23s18 7 20 23M116 101v-8M142 101c1-11 7-17 15-17s14 6 15 17M147 57a10 10 0 1 0 20 0 10 10 0 0 0-20 0" stroke="#E1DED2" stroke-width="3" stroke-linecap="round"/>
+    <text x="28" y="141" fill="#EDF0E7" font-family="Georgia,serif" font-size="28">Escuela–familia</text>
+    <text x="30" y="165" fill="#A8D9CD" font-family="Arial,sans-serif" font-size="14" letter-spacing="1">EL BINOMIO QUE ANALIZA LA DIAP. 06</text>
+  </g>
+  <path d="M917 450h61m-13-13 13 13-13 13" stroke="#DAE6AD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g transform="translate(1002 337)">
+    <rect width="359" height="229" rx="19" fill="#202624" stroke="url(#accent)" stroke-opacity=".87" stroke-width="2"/>
+    <circle cx="80" cy="84" r="34" fill="#293936"/>
+    <circle cx="80" cy="72" r="11" stroke="#D7E8D6" stroke-width="3"/>
+    <path d="M58 111c2-17 10-25 22-25s20 8 22 25" stroke="#D7E8D6" stroke-width="3" stroke-linecap="round"/>
+    <rect x="142" y="48" width="41" height="69" rx="7" stroke="#E2EBC7" stroke-width="3"/>
+    <path d="M154 58h17m-17 42h17" stroke="#E2EBC7" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M199 81h27m-11-11 11 11-11 11" stroke="#D5EF9C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="25" y="159" fill="#F0F1E9" font-family="Georgia,serif" font-size="29">¿Persona–teléfono?</text>
+    <text x="28" y="190" fill="#D5EF9C" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.4">HIPÓTESIS · NOT A FACT</text>
+  </g>
+  <text x="84" y="643" fill="#F1F1E9" font-family="Georgia,serif" font-size="27">¿Qué influye en nuestra atención, hábitos e ideas?</text>
+  <text x="85" y="682" fill="#AAB3AF" font-family="Arial,sans-serif" font-size="18">La pregunta no prueba un reemplazo: invita a mirar quién comunica, qué recomienda y con qué intereses.</text>
+  <path d="M84 729h1274" stroke="#FFFFFF" stroke-opacity=".13"/>
+  <text x="85" y="766" fill="#95AAA1" font-family="Arial,sans-serif" font-size="16" letter-spacing="1.1">MIRA  ·  PREGUNTA  ·  CONTRASTA EVIDENCIAS</text>
+  <text x="1356" y="767" text-anchor="end" fill="#95AAA1" font-family="Arial,sans-serif" font-size="16" letter-spacing="1.1">CRITICAL REFLECTION</text>
+</svg>

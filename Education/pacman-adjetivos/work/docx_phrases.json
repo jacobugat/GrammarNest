@@ -1,0 +1,3502 @@
+[
+  {
+    "number": 1,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The house is big.",
+    "spanish": "La casa es grande."
+  },
+  {
+    "number": 2,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "My cat is small.",
+    "spanish": "Mi gato es pequeño."
+  },
+  {
+    "number": 3,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The water is cold.",
+    "spanish": "El agua está fría."
+  },
+  {
+    "number": 4,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The soup is hot.",
+    "spanish": "La sopa está caliente."
+  },
+  {
+    "number": 5,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "This book is new.",
+    "spanish": "Este libro es nuevo."
+  },
+  {
+    "number": 6,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "That car is old.",
+    "spanish": "Ese carro es viejo."
+  },
+  {
+    "number": 7,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "She is happy today.",
+    "spanish": "Ella está feliz hoy."
+  },
+  {
+    "number": 8,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "He is tall.",
+    "spanish": "Él es alto."
+  },
+  {
+    "number": 9,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The sofa is soft.",
+    "spanish": "El sofá es suave."
+  },
+  {
+    "number": 10,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The test is easy.",
+    "spanish": "El examen es fácil."
+  },
+  {
+    "number": 11,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The bag is heavy.",
+    "spanish": "La bolsa es pesada."
+  },
+  {
+    "number": 12,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The street is quiet.",
+    "spanish": "La calle es tranquila."
+  },
+  {
+    "number": 13,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "My room is clean.",
+    "spanish": "Mi habitación está limpia."
+  },
+  {
+    "number": 14,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The park is beautiful.",
+    "spanish": "El parque es hermoso."
+  },
+  {
+    "number": 15,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The cake is sweet.",
+    "spanish": "La torta es dulce."
+  },
+  {
+    "number": 16,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The tea is good.",
+    "spanish": "El té es bueno."
+  },
+  {
+    "number": 17,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The movie is long.",
+    "spanish": "La película es larga."
+  },
+  {
+    "number": 18,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The pencil is short.",
+    "spanish": "El lápiz es corto."
+  },
+  {
+    "number": 19,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "My sister is kind.",
+    "spanish": "Mi hermana es amable."
+  },
+  {
+    "number": 20,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The sky is blue.",
+    "spanish": "El cielo es azul."
+  },
+  {
+    "number": 21,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The flowers are pretty.",
+    "spanish": "Las flores son bonitas."
+  },
+  {
+    "number": 22,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The bed is comfortable.",
+    "spanish": "La cama es cómoda."
+  },
+  {
+    "number": 23,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "This apple is fresh.",
+    "spanish": "Esta manzana está fresca."
+  },
+  {
+    "number": 24,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The table is round.",
+    "spanish": "La mesa es redonda."
+  },
+  {
+    "number": 25,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The market is busy.",
+    "spanish": "El mercado está concurrido."
+  },
+  {
+    "number": 26,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "My phone is fast.",
+    "spanish": "Mi teléfono es rápido."
+  },
+  {
+    "number": 27,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The river is wide.",
+    "spanish": "El río es ancho."
+  },
+  {
+    "number": 28,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The soup is delicious.",
+    "spanish": "La sopa es deliciosa."
+  },
+  {
+    "number": 29,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The coat is warm.",
+    "spanish": "El abrigo es abrigado."
+  },
+  {
+    "number": 30,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The class is interesting.",
+    "spanish": "La clase es interesante."
+  },
+  {
+    "number": 31,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The room is bright.",
+    "spanish": "La habitación es luminosa."
+  },
+  {
+    "number": 32,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The box is empty.",
+    "spanish": "La caja está vacía."
+  },
+  {
+    "number": 33,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The glass is full.",
+    "spanish": "El vaso está lleno."
+  },
+  {
+    "number": 34,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "My friend is funny.",
+    "spanish": "Mi amigo es divertido."
+  },
+  {
+    "number": 35,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The bus is slow.",
+    "spanish": "El bus es lento."
+  },
+  {
+    "number": 36,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The garden is green.",
+    "spanish": "El jardín es verde."
+  },
+  {
+    "number": 37,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "This shirt is cheap.",
+    "spanish": "Esta camisa es barata."
+  },
+  {
+    "number": 38,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The restaurant is nice.",
+    "spanish": "El restaurante es agradable."
+  },
+  {
+    "number": 39,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The teacher is friendly.",
+    "spanish": "La profesora es amigable."
+  },
+  {
+    "number": 40,
+    "level": "A1",
+    "kind": "adjectives",
+    "english": "The old chair is plain, but it is comfortable.",
+    "spanish": "La silla vieja es sencilla, pero es cómoda."
+  },
+  {
+    "number": 41,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My house is bigger than your house.",
+    "spanish": "Mi casa es más grande que tu casa."
+  },
+  {
+    "number": 42,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This bag is smaller than that bag.",
+    "spanish": "Esta bolsa es más pequeña que esa bolsa."
+  },
+  {
+    "number": 43,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Today is colder than yesterday.",
+    "spanish": "Hoy hace más frío que ayer."
+  },
+  {
+    "number": 44,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The soup is hotter than the tea.",
+    "spanish": "La sopa está más caliente que el té."
+  },
+  {
+    "number": 45,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My phone is newer than my laptop.",
+    "spanish": "Mi teléfono es más nuevo que mi portátil."
+  },
+  {
+    "number": 46,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This car is older than that car.",
+    "spanish": "Este carro es más viejo que ese carro."
+  },
+  {
+    "number": 47,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "She is taller than her brother.",
+    "spanish": "Ella es más alta que su hermano."
+  },
+  {
+    "number": 48,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "I am shorter than my father.",
+    "spanish": "Soy más bajo que mi papá."
+  },
+  {
+    "number": 49,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The sofa is softer than the chair.",
+    "spanish": "El sofá es más suave que la silla."
+  },
+  {
+    "number": 50,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This exercise is easier than the last one.",
+    "spanish": "Este ejercicio es más fácil que el último."
+  },
+  {
+    "number": 51,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The red bag is heavier than the blue bag.",
+    "spanish": "La bolsa roja es más pesada que la bolsa azul."
+  },
+  {
+    "number": 52,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My street is quieter than the main road.",
+    "spanish": "Mi calle es más tranquila que la avenida principal."
+  },
+  {
+    "number": 53,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This park is prettier than that park.",
+    "spanish": "Este parque es más bonito que ese parque."
+  },
+  {
+    "number": 54,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The cake is sweeter than the cookies.",
+    "spanish": "La torta es más dulce que las galletas."
+  },
+  {
+    "number": 55,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Your idea is better than mine.",
+    "spanish": "Tu idea es mejor que la mía."
+  },
+  {
+    "number": 56,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This movie is longer than the other one.",
+    "spanish": "Esta película es más larga que la otra."
+  },
+  {
+    "number": 57,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The bus is slower than the train.",
+    "spanish": "El bus es más lento que el tren."
+  },
+  {
+    "number": 58,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The train is faster than the bus.",
+    "spanish": "El tren es más rápido que el bus."
+  },
+  {
+    "number": 59,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My room is cleaner than before.",
+    "spanish": "Mi habitación está más limpia que antes."
+  },
+  {
+    "number": 60,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This shirt is cheaper than that shirt.",
+    "spanish": "Esta camisa es más barata que esa camisa."
+  },
+  {
+    "number": 61,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The hotel is nicer than the hostel.",
+    "spanish": "El hotel es más agradable que el hostal."
+  },
+  {
+    "number": 62,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Tom is funnier than Mark.",
+    "spanish": "Tom es más divertido que Mark."
+  },
+  {
+    "number": 63,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The lake is wider than the river.",
+    "spanish": "El lago es más ancho que el río."
+  },
+  {
+    "number": 64,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This chair is more comfortable than that chair.",
+    "spanish": "Esta silla es más cómoda que esa silla."
+  },
+  {
+    "number": 65,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Summer is warmer than spring.",
+    "spanish": "El verano es más cálido que la primavera."
+  },
+  {
+    "number": 66,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The dog is bigger than the cat.",
+    "spanish": "El perro es más grande que el gato."
+  },
+  {
+    "number": 67,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My bag is lighter than your bag.",
+    "spanish": "Mi bolsa es más liviana que tu bolsa."
+  },
+  {
+    "number": 68,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The kitchen is brighter than the living room.",
+    "spanish": "La cocina es más luminosa que la sala."
+  },
+  {
+    "number": 69,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This lesson is more interesting than the last lesson.",
+    "spanish": "Esta lección es más interesante que la última lección."
+  },
+  {
+    "number": 70,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Apples are cheaper than mangoes.",
+    "spanish": "Las manzanas son más baratas que los mangos."
+  },
+  {
+    "number": 71,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My coffee is stronger than your coffee.",
+    "spanish": "Mi café es más fuerte que tu café."
+  },
+  {
+    "number": 72,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The mountain is higher than the hill.",
+    "spanish": "La montaña es más alta que la colina."
+  },
+  {
+    "number": 73,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The hill is lower than the mountain.",
+    "spanish": "La colina es más baja que la montaña."
+  },
+  {
+    "number": 74,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This road is safer than that road.",
+    "spanish": "Este camino es más seguro que ese camino."
+  },
+  {
+    "number": 75,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "English is easier than I thought.",
+    "spanish": "El inglés es más fácil de lo que pensaba."
+  },
+  {
+    "number": 76,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My teacher is younger than my mother.",
+    "spanish": "Mi profesor es más joven que mi mamá."
+  },
+  {
+    "number": 77,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "My grandfather is older than my grandmother.",
+    "spanish": "Mi abuelo es mayor que mi abuela."
+  },
+  {
+    "number": 78,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The apple is fresher than the banana.",
+    "spanish": "La manzana está más fresca que el banano."
+  },
+  {
+    "number": 79,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This pool is deeper than that pool.",
+    "spanish": "Esta piscina es más profunda que esa piscina."
+  },
+  {
+    "number": 80,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "This table is bigger than that table.",
+    "spanish": "Esta mesa es más grande que esa mesa."
+  },
+  {
+    "number": 81,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Our class is smaller than your class.",
+    "spanish": "Nuestra clase es más pequeña que tu clase."
+  },
+  {
+    "number": 82,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "Monday is busier than Sunday.",
+    "spanish": "El lunes es más ocupado que el domingo."
+  },
+  {
+    "number": 83,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The soup is better today than yesterday.",
+    "spanish": "La sopa está mejor hoy que ayer."
+  },
+  {
+    "number": 84,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The bed is bigger than the sofa.",
+    "spanish": "La cama es más grande que el sofá."
+  },
+  {
+    "number": 85,
+    "level": "A1",
+    "kind": "comparatives",
+    "english": "The pillow is softer than the blanket.",
+    "spanish": "La almohada es más suave que la cobija."
+  },
+  {
+    "number": 86,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the biggest house on the street.",
+    "spanish": "Esta es la casa más grande de la calle."
+  },
+  {
+    "number": 87,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "My cat is the smallest pet in the house.",
+    "spanish": "Mi gato es la mascota más pequeña de la casa."
+  },
+  {
+    "number": 88,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "Today is the coldest day of the year.",
+    "spanish": "Hoy es el día más frío del año."
+  },
+  {
+    "number": 89,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the hottest day of the summer.",
+    "spanish": "Este es el día más caluroso del verano."
+  },
+  {
+    "number": 90,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "Anna is the tallest girl in the class.",
+    "spanish": "Anna es la niña más alta de la clase."
+  },
+  {
+    "number": 91,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the newest book in the library.",
+    "spanish": "Este es el libro más nuevo de la biblioteca."
+  },
+  {
+    "number": 92,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "That is the oldest tree in the park.",
+    "spanish": "Ese es el árbol más viejo del parque."
+  },
+  {
+    "number": 93,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the best pizza in the city.",
+    "spanish": "Esta es la mejor pizza de la ciudad."
+  },
+  {
+    "number": 94,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "It is the longest movie of the year.",
+    "spanish": "Es la película más larga del año."
+  },
+  {
+    "number": 95,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "He is the youngest student in the group.",
+    "spanish": "Él es el estudiante más joven del grupo."
+  },
+  {
+    "number": 96,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "She is the oldest person in my family.",
+    "spanish": "Ella es la persona mayor de mi familia."
+  },
+  {
+    "number": 97,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the cheapest shirt in the store.",
+    "spanish": "Esta es la camisa más barata de la tienda."
+  },
+  {
+    "number": 98,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the most beautiful park in town.",
+    "spanish": "Este es el parque más hermoso del pueblo."
+  },
+  {
+    "number": 99,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The blue bag is the lightest.",
+    "spanish": "La bolsa azul es la más liviana."
+  },
+  {
+    "number": 100,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The red bag is the heaviest.",
+    "spanish": "La bolsa roja es la más pesada."
+  },
+  {
+    "number": 101,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the quietest room in the house.",
+    "spanish": "Esta es la habitación más tranquila de la casa."
+  },
+  {
+    "number": 102,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The train is the fastest way to travel.",
+    "spanish": "El tren es la forma más rápida de viajar."
+  },
+  {
+    "number": 103,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "Sunday is the happiest day of the week.",
+    "spanish": "El domingo es el día más feliz de la semana."
+  },
+  {
+    "number": 104,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the sweetest cake I know.",
+    "spanish": "Esta es la torta más dulce que conozco."
+  },
+  {
+    "number": 105,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the easiest exercise.",
+    "spanish": "Este es el ejercicio más fácil."
+  },
+  {
+    "number": 106,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The kitchen is the brightest room.",
+    "spanish": "La cocina es la habitación más luminosa."
+  },
+  {
+    "number": 107,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "My brother is the funniest person I know.",
+    "spanish": "Mi hermano es la persona más divertida que conozco."
+  },
+  {
+    "number": 108,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the most comfortable chair in the house.",
+    "spanish": "Esta es la silla más cómoda de la casa."
+  },
+  {
+    "number": 109,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The tallest building in the city is here.",
+    "spanish": "El edificio más alto de la ciudad está aquí."
+  },
+  {
+    "number": 110,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the deepest lake in the country.",
+    "spanish": "Este es el lago más profundo del país."
+  },
+  {
+    "number": 111,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "It is the shortest way to school.",
+    "spanish": "Es el camino más corto a la escuela."
+  },
+  {
+    "number": 112,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The freshest fruit is at the market.",
+    "spanish": "La fruta más fresca está en el mercado."
+  },
+  {
+    "number": 113,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the safest street in the neighborhood.",
+    "spanish": "Esta es la calle más segura del barrio."
+  },
+  {
+    "number": 114,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "The most interesting class is English.",
+    "spanish": "La clase más interesante es inglés."
+  },
+  {
+    "number": 115,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "July is the warmest month in my city.",
+    "spanish": "Julio es el mes más cálido de mi ciudad."
+  },
+  {
+    "number": 116,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the cleanest beach in the country.",
+    "spanish": "Esta es la playa más limpia del país."
+  },
+  {
+    "number": 117,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "Mrs. Brown is the friendliest teacher.",
+    "spanish": "La señora Brown es la profesora más amigable."
+  },
+  {
+    "number": 118,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the nicest hotel in town.",
+    "spanish": "Este es el hotel más agradable del pueblo."
+  },
+  {
+    "number": 119,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the strongest coffee on the menu.",
+    "spanish": "Este es el café más fuerte del menú."
+  },
+  {
+    "number": 120,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "It is the busiest market in the city.",
+    "spanish": "Es el mercado más concurrido de la ciudad."
+  },
+  {
+    "number": 121,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "My room is the smallest room in the house.",
+    "spanish": "Mi habitación es la más pequeña de la casa."
+  },
+  {
+    "number": 122,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the longest river in the country.",
+    "spanish": "Este es el río más largo del país."
+  },
+  {
+    "number": 123,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "That is the highest mountain in the area.",
+    "spanish": "Esa es la montaña más alta de la zona."
+  },
+  {
+    "number": 124,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "This is the softest blanket I have.",
+    "spanish": "Esta es la cobija más suave que tengo."
+  },
+  {
+    "number": 125,
+    "level": "A1",
+    "kind": "superlatives",
+    "english": "Saturday was the sunniest day of the week.",
+    "spanish": "El sábado fue el día más soleado de la semana."
+  },
+  {
+    "number": 126,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The hotel is very comfortable and modern.",
+    "spanish": "El hotel es muy cómodo y moderno."
+  },
+  {
+    "number": 127,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "This restaurant is famous for its delicious food.",
+    "spanish": "Este restaurante es famoso por su comida deliciosa."
+  },
+  {
+    "number": 128,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The city center is crowded on weekends.",
+    "spanish": "El centro de la ciudad está lleno de gente los fines de semana."
+  },
+  {
+    "number": 129,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "Her new apartment is spacious and bright.",
+    "spanish": "Su nuevo apartamento es amplio y luminoso."
+  },
+  {
+    "number": 130,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The museum is free and very popular.",
+    "spanish": "El museo es gratis y muy popular."
+  },
+  {
+    "number": 131,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "My grandmother's house is peaceful and cozy.",
+    "spanish": "La casa de mi abuela es tranquila y acogedora."
+  },
+  {
+    "number": 132,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The red dress is expensive, but it is elegant.",
+    "spanish": "El vestido rojo es caro, pero es elegante."
+  },
+  {
+    "number": 133,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "This app is useful and easy to use.",
+    "spanish": "Esta aplicación es útil y fácil de usar."
+  },
+  {
+    "number": 134,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The market is full of colorful fruit.",
+    "spanish": "El mercado está lleno de frutas coloridas."
+  },
+  {
+    "number": 135,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The lesson was long, but it was interesting.",
+    "spanish": "La lección fue larga, pero fue interesante."
+  },
+  {
+    "number": 136,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "He is a polite and helpful neighbor.",
+    "spanish": "Él es un vecino cortés y servicial."
+  },
+  {
+    "number": 137,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The beach is clean, wide, and sunny.",
+    "spanish": "La playa es limpia, amplia y soleada."
+  },
+  {
+    "number": 138,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "Our teacher is patient and very organized.",
+    "spanish": "Nuestra profesora es paciente y muy organizada."
+  },
+  {
+    "number": 139,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "It is an important day for my family.",
+    "spanish": "Es un día importante para mi familia."
+  },
+  {
+    "number": 140,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "This soup is healthy and tasty.",
+    "spanish": "Esta sopa es saludable y sabrosa."
+  },
+  {
+    "number": 141,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The old library is quiet and comfortable.",
+    "spanish": "La biblioteca antigua es silenciosa y cómoda."
+  },
+  {
+    "number": 142,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The weather is mild and pleasant today.",
+    "spanish": "El clima está templado y agradable hoy."
+  },
+  {
+    "number": 143,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "My new shoes are light and comfortable.",
+    "spanish": "Mis zapatos nuevos son livianos y cómodos."
+  },
+  {
+    "number": 144,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "That is a lovely idea.",
+    "spanish": "Esa es una idea encantadora."
+  },
+  {
+    "number": 145,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The trip was exciting and unforgettable.",
+    "spanish": "El viaje fue emocionante e inolvidable."
+  },
+  {
+    "number": 146,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The traditional dance is lively and colorful.",
+    "spanish": "El baile tradicional es animado y colorido."
+  },
+  {
+    "number": 147,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The children are curious and energetic.",
+    "spanish": "Los niños son curiosos y enérgicos."
+  },
+  {
+    "number": 148,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "This sweater is soft and warm.",
+    "spanish": "Este suéter es suave y abrigado."
+  },
+  {
+    "number": 149,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The bakery is small, but it is very popular.",
+    "spanish": "La panadería es pequeña, pero es muy popular."
+  },
+  {
+    "number": 150,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The view from the hill is amazing.",
+    "spanish": "La vista desde la colina es increíble."
+  },
+  {
+    "number": 151,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The train station is large and modern.",
+    "spanish": "La estación de tren es grande y moderna."
+  },
+  {
+    "number": 152,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "She feels proud of her work.",
+    "spanish": "Ella se siente orgullosa de su trabajo."
+  },
+  {
+    "number": 153,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The lamp is old-fashioned, but it looks charming.",
+    "spanish": "La lámpara es anticuada, pero se ve encantadora."
+  },
+  {
+    "number": 154,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "The garden is peaceful and full of life.",
+    "spanish": "El jardín es tranquilo y está lleno de vida."
+  },
+  {
+    "number": 155,
+    "level": "A2",
+    "kind": "adjectives",
+    "english": "This is a simple and delicious recipe.",
+    "spanish": "Esta es una receta sencilla y deliciosa."
+  },
+  {
+    "number": 156,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This apartment is more modern than my old apartment.",
+    "spanish": "Este apartamento es más moderno que mi apartamento anterior."
+  },
+  {
+    "number": 157,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The new sofa is more comfortable than the old one.",
+    "spanish": "El sofá nuevo es más cómodo que el viejo."
+  },
+  {
+    "number": 158,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Public transport is more convenient than driving.",
+    "spanish": "El transporte público es más conveniente que conducir."
+  },
+  {
+    "number": 159,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This museum is more interesting than the zoo.",
+    "spanish": "Este museo es más interesante que el zoológico."
+  },
+  {
+    "number": 160,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The second lesson was more difficult than the first.",
+    "spanish": "La segunda lección fue más difícil que la primera."
+  },
+  {
+    "number": 161,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Bogotá is bigger than my hometown.",
+    "spanish": "Bogotá es más grande que mi ciudad natal."
+  },
+  {
+    "number": 162,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The coast is warmer than the mountains.",
+    "spanish": "La costa es más cálida que las montañas."
+  },
+  {
+    "number": 163,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This hotel is less expensive than that one.",
+    "spanish": "Este hotel es menos costoso que ese."
+  },
+  {
+    "number": 164,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The blue jacket is less heavy than the black one.",
+    "spanish": "La chaqueta azul es menos pesada que la negra."
+  },
+  {
+    "number": 165,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This street is less crowded than the main avenue.",
+    "spanish": "Esta calle está menos llena de gente que la avenida principal."
+  },
+  {
+    "number": 166,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My bag is as big as yours.",
+    "spanish": "Mi bolsa es tan grande como la tuya."
+  },
+  {
+    "number": 167,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This pizza is as good as the one at the restaurant.",
+    "spanish": "Esta pizza es tan buena como la del restaurante."
+  },
+  {
+    "number": 168,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "She is as tall as her mother.",
+    "spanish": "Ella es tan alta como su mamá."
+  },
+  {
+    "number": 169,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The bus is as fast as the taxi in this area.",
+    "spanish": "El bus es tan rápido como el taxi en esta zona."
+  },
+  {
+    "number": 170,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My room is not as big as your room.",
+    "spanish": "Mi habitación no es tan grande como tu habitación."
+  },
+  {
+    "number": 171,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This book is not as long as that one.",
+    "spanish": "Este libro no es tan largo como ese."
+  },
+  {
+    "number": 172,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The tea is not as hot as the coffee.",
+    "spanish": "El té no está tan caliente como el café."
+  },
+  {
+    "number": 173,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This exercise is not as difficult as it looks.",
+    "spanish": "Este ejercicio no es tan difícil como parece."
+  },
+  {
+    "number": 174,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The hotel is much nicer than the hostel.",
+    "spanish": "El hotel es mucho más agradable que el hostal."
+  },
+  {
+    "number": 175,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This laptop is a little cheaper than that one.",
+    "spanish": "Esta portátil es un poco más barata que esa."
+  },
+  {
+    "number": 176,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The weather is a bit warmer today.",
+    "spanish": "El clima está un poco más cálido hoy."
+  },
+  {
+    "number": 177,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My new phone is much faster than my old phone.",
+    "spanish": "Mi teléfono nuevo es mucho más rápido que mi teléfono viejo."
+  },
+  {
+    "number": 178,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The park is a lot greener in spring.",
+    "spanish": "El parque es mucho más verde en primavera."
+  },
+  {
+    "number": 179,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "It is getting colder every day.",
+    "spanish": "Cada día hace más frío."
+  },
+  {
+    "number": 180,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The days are getting longer.",
+    "spanish": "Los días se están haciendo más largos."
+  },
+  {
+    "number": 181,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My English is getting better.",
+    "spanish": "Mi inglés está mejorando."
+  },
+  {
+    "number": 182,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The city is getting bigger and busier.",
+    "spanish": "La ciudad se está haciendo más grande y más ocupada."
+  },
+  {
+    "number": 183,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This chair is better than that chair for working.",
+    "spanish": "Esta silla es mejor que esa silla para trabajar."
+  },
+  {
+    "number": 184,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The food here is better than the food at the cafeteria.",
+    "spanish": "La comida de aquí es mejor que la de la cafetería."
+  },
+  {
+    "number": 185,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The weather is better in the morning.",
+    "spanish": "El clima es mejor en la mañana."
+  },
+  {
+    "number": 186,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Today was better than I expected.",
+    "spanish": "Hoy fue mejor de lo que esperaba."
+  },
+  {
+    "number": 187,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The second house is bigger and brighter than the first.",
+    "spanish": "La segunda casa es más grande y más luminosa que la primera."
+  },
+  {
+    "number": 188,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Trains are safer than cars.",
+    "spanish": "Los trenes son más seguros que los carros."
+  },
+  {
+    "number": 189,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Walking is healthier than sitting all day.",
+    "spanish": "Caminar es más saludable que estar sentado todo el día."
+  },
+  {
+    "number": 190,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This path is shorter than the other one.",
+    "spanish": "Este sendero es más corto que el otro."
+  },
+  {
+    "number": 191,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The market is cheaper than the supermarket.",
+    "spanish": "El mercado es más barato que el supermercado."
+  },
+  {
+    "number": 192,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My cousin is more patient than I am.",
+    "spanish": "Mi primo es más paciente que yo."
+  },
+  {
+    "number": 193,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This restaurant is more popular than that café.",
+    "spanish": "Este restaurante es más popular que ese café."
+  },
+  {
+    "number": 194,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The hotel room is quieter than the lobby.",
+    "spanish": "La habitación del hotel es más silenciosa que el lobby."
+  },
+  {
+    "number": 195,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Her garden is prettier than mine.",
+    "spanish": "Su jardín es más bonito que el mío."
+  },
+  {
+    "number": 196,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This sweater is warmer than my jacket.",
+    "spanish": "Este suéter es más abrigado que mi chaqueta."
+  },
+  {
+    "number": 197,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The movie was funnier than the book.",
+    "spanish": "La película fue más divertida que el libro."
+  },
+  {
+    "number": 198,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The new library is larger than the old one.",
+    "spanish": "La nueva biblioteca es más grande que la antigua."
+  },
+  {
+    "number": 199,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Fresh juice is tastier than bottled juice.",
+    "spanish": "El jugo natural es más sabroso que el jugo embotellado."
+  },
+  {
+    "number": 200,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My brother is more organized than me.",
+    "spanish": "Mi hermano es más organizado que yo."
+  },
+  {
+    "number": 201,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The mountain road is narrower than the highway.",
+    "spanish": "La carretera de montaña es más angosta que la autopista."
+  },
+  {
+    "number": 202,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "This lamp is less attractive than that one, but it is more useful.",
+    "spanish": "Esta lámpara es menos atractiva que esa, pero es más útil."
+  },
+  {
+    "number": 203,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "The old house is plainer than the new one, but it is more charming.",
+    "spanish": "La casa vieja es más sencilla que la nueva, pero es más encantadora."
+  },
+  {
+    "number": 204,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "Spring is more colorful than winter.",
+    "spanish": "La primavera es más colorida que el invierno."
+  },
+  {
+    "number": 205,
+    "level": "A2",
+    "kind": "comparatives",
+    "english": "My new desk is higher than my old desk.",
+    "spanish": "Mi escritorio nuevo es más alto que mi escritorio viejo."
+  },
+  {
+    "number": 206,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most comfortable hotel in the city.",
+    "spanish": "Este es el hotel más cómodo de la ciudad."
+  },
+  {
+    "number": 207,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the most popular restaurant in my neighborhood.",
+    "spanish": "Es el restaurante más popular de mi barrio."
+  },
+  {
+    "number": 208,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "She is the most helpful person in the office.",
+    "spanish": "Ella es la persona más servicial de la oficina."
+  },
+  {
+    "number": 209,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "That was the most interesting lesson of the week.",
+    "spanish": "Esa fue la lección más interesante de la semana."
+  },
+  {
+    "number": 210,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most beautiful place I know.",
+    "spanish": "Este es el lugar más hermoso que conozco."
+  },
+  {
+    "number": 211,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most delicious soup I have ever eaten.",
+    "spanish": "Esta es la sopa más deliciosa que he comido."
+  },
+  {
+    "number": 212,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the most modern building in town.",
+    "spanish": "Es el edificio más moderno del pueblo."
+  },
+  {
+    "number": 213,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most useful app on my phone.",
+    "spanish": "Esta es la aplicación más útil de mi teléfono."
+  },
+  {
+    "number": 214,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "Today is the most important day of the course.",
+    "spanish": "Hoy es el día más importante del curso."
+  },
+  {
+    "number": 215,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the least expensive hotel on this street.",
+    "spanish": "Este es el hotel menos costoso de esta calle."
+  },
+  {
+    "number": 216,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the least crowded beach in the area.",
+    "spanish": "Esta es la playa menos llena de gente de la zona."
+  },
+  {
+    "number": 217,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the least difficult exercise in the book.",
+    "spanish": "Es el ejercicio menos difícil del libro."
+  },
+  {
+    "number": 218,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "Sunday is the least busy day for me.",
+    "spanish": "El domingo es el día menos ocupado para mí."
+  },
+  {
+    "number": 219,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "She is the best student in our class.",
+    "spanish": "Ella es la mejor estudiante de nuestra clase."
+  },
+  {
+    "number": 220,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the best coffee in the city.",
+    "spanish": "Este es el mejor café de la ciudad."
+  },
+  {
+    "number": 221,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It was the best trip of my life.",
+    "spanish": "Fue el mejor viaje de mi vida."
+  },
+  {
+    "number": 222,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The best time to visit is in spring.",
+    "spanish": "La mejor época para visitar es en primavera."
+  },
+  {
+    "number": 223,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "Mount Everest is the highest mountain in the world.",
+    "spanish": "El monte Everest es la montaña más alta del mundo."
+  },
+  {
+    "number": 224,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The Amazon is one of the longest rivers in the world.",
+    "spanish": "El Amazonas es uno de los ríos más largos del mundo."
+  },
+  {
+    "number": 225,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "Colombia is one of the most beautiful countries in South America.",
+    "spanish": "Colombia es uno de los países más hermosos de Sudamérica."
+  },
+  {
+    "number": 226,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is one of the oldest churches in the city.",
+    "spanish": "Esta es una de las iglesias más antiguas de la ciudad."
+  },
+  {
+    "number": 227,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is one of the most famous museums in the country.",
+    "spanish": "Es uno de los museos más famosos del país."
+  },
+  {
+    "number": 228,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "He is the tallest player on the team.",
+    "spanish": "Él es el jugador más alto del equipo."
+  },
+  {
+    "number": 229,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "She is the youngest person in the group.",
+    "spanish": "Ella es la persona más joven del grupo."
+  },
+  {
+    "number": 230,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the quietest park in the city.",
+    "spanish": "Este es el parque más silencioso de la ciudad."
+  },
+  {
+    "number": 231,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the cleanest street in the neighborhood.",
+    "spanish": "Es la calle más limpia del barrio."
+  },
+  {
+    "number": 232,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the safest route to the school.",
+    "spanish": "Esta es la ruta más segura a la escuela."
+  },
+  {
+    "number": 233,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The fastest way to the airport is by taxi.",
+    "spanish": "La forma más rápida de llegar al aeropuerto es en taxi."
+  },
+  {
+    "number": 234,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The cheapest fruit this month is banana.",
+    "spanish": "La fruta más barata este mes es el banano."
+  },
+  {
+    "number": 235,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the warmest coat in the store.",
+    "spanish": "Este es el abrigo más caliente de la tienda."
+  },
+  {
+    "number": 236,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "That was the funniest movie of the year.",
+    "spanish": "Esa fue la película más divertida del año."
+  },
+  {
+    "number": 237,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "My grandmother makes the tastiest cake in the family.",
+    "spanish": "Mi abuela hace la torta más sabrosa de la familia."
+  },
+  {
+    "number": 238,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the healthiest breakfast on the menu.",
+    "spanish": "Este es el desayuno más saludable del menú."
+  },
+  {
+    "number": 239,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the largest library in the country.",
+    "spanish": "Es la biblioteca más grande del país."
+  },
+  {
+    "number": 240,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the smallest café I have ever visited.",
+    "spanish": "Este es el café más pequeño que he visitado."
+  },
+  {
+    "number": 241,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The most colorful market is in the old town.",
+    "spanish": "El mercado más colorido está en el casco antiguo."
+  },
+  {
+    "number": 242,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It is the friendliest city I have ever visited.",
+    "spanish": "Es la ciudad más amigable que he visitado."
+  },
+  {
+    "number": 243,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the nicest gift I have ever received.",
+    "spanish": "Este es el regalo más lindo que he recibido."
+  },
+  {
+    "number": 244,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most peaceful corner of the house.",
+    "spanish": "Este es el rincón más tranquilo de la casa."
+  },
+  {
+    "number": 245,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "The oldest lamp in the house is also the most charming.",
+    "spanish": "La lámpara más antigua de la casa también es la más encantadora."
+  },
+  {
+    "number": 246,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the most old-fashioned shop in town, and I love it.",
+    "spanish": "Esta es la tienda más anticuada del pueblo, y me encanta."
+  },
+  {
+    "number": 247,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "It was the longest day of my trip, but also the most exciting.",
+    "spanish": "Fue el día más largo de mi viaje, pero también el más emocionante."
+  },
+  {
+    "number": 248,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "My room is the brightest room in the apartment.",
+    "spanish": "Mi habitación es la más luminosa del apartamento."
+  },
+  {
+    "number": 249,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "This is the softest sofa in the shop.",
+    "spanish": "Este es el sofá más suave de la tienda."
+  },
+  {
+    "number": 250,
+    "level": "A2",
+    "kind": "superlatives",
+    "english": "That was the easiest test of the semester.",
+    "spanish": "Ese fue el examen más fácil del semestre."
+  },
+  {
+    "number": 251,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The hotel was surprisingly comfortable and very quiet.",
+    "spanish": "El hotel fue sorprendentemente cómodo y muy silencioso."
+  },
+  {
+    "number": 252,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The documentary was fascinating and well made.",
+    "spanish": "El documental fue fascinante y estuvo bien hecho."
+  },
+  {
+    "number": 253,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "I was impressed by how organized the event was.",
+    "spanish": "Me impresionó lo organizado que estaba el evento."
+  },
+  {
+    "number": 254,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The new neighborhood is quite safe and fairly quiet.",
+    "spanish": "El barrio nuevo es bastante seguro y relativamente tranquilo."
+  },
+  {
+    "number": 255,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "She gave us a warm, genuine welcome.",
+    "spanish": "Ella nos dio una bienvenida cálida y genuina."
+  },
+  {
+    "number": 256,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "It was a rewarding and unforgettable experience.",
+    "spanish": "Fue una experiencia gratificante e inolvidable."
+  },
+  {
+    "number": 257,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The instructions were clear and easy to follow.",
+    "spanish": "Las instrucciones eran claras y fáciles de seguir."
+  },
+  {
+    "number": 258,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "He is a reliable and hardworking colleague.",
+    "spanish": "Él es un colega confiable y trabajador."
+  },
+  {
+    "number": 259,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The small café has a cozy and relaxing atmosphere.",
+    "spanish": "La pequeña cafetería tiene un ambiente acogedor y relajante."
+  },
+  {
+    "number": 260,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The results were encouraging and better than expected.",
+    "spanish": "Los resultados fueron alentadores y mejores de lo esperado."
+  },
+  {
+    "number": 261,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "I felt relaxed after the long, peaceful walk.",
+    "spanish": "Me sentí relajado después del largo y tranquilo paseo."
+  },
+  {
+    "number": 262,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "It is an extremely useful skill to have.",
+    "spanish": "Es una habilidad extremadamente útil."
+  },
+  {
+    "number": 263,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The presentation was clear, creative, and engaging.",
+    "spanish": "La presentación fue clara, creativa y cautivadora."
+  },
+  {
+    "number": 264,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "My grandfather is a wise and generous man.",
+    "spanish": "Mi abuelo es un hombre sabio y generoso."
+  },
+  {
+    "number": 265,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The old wooden table is sturdy and full of character.",
+    "spanish": "La vieja mesa de madera es resistente y tiene mucho carácter."
+  },
+  {
+    "number": 266,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The town is charming, especially in the evening.",
+    "spanish": "El pueblo es encantador, especialmente por la tarde."
+  },
+  {
+    "number": 267,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "We were pleasantly surprised by the quality of the service.",
+    "spanish": "Nos sorprendió gratamente la calidad del servicio."
+  },
+  {
+    "number": 268,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The garden looked lovely, with its bright, fragrant flowers.",
+    "spanish": "El jardín se veía precioso, con sus flores brillantes y fragantes."
+  },
+  {
+    "number": 269,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The novel is thought-provoking and beautifully written.",
+    "spanish": "La novela invita a la reflexión y está bellamente escrita."
+  },
+  {
+    "number": 270,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "It was a thoughtful gesture from my neighbors.",
+    "spanish": "Fue un gesto atento de mis vecinos."
+  },
+  {
+    "number": 271,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The room is small but surprisingly practical.",
+    "spanish": "La habitación es pequeña, pero sorprendentemente práctica."
+  },
+  {
+    "number": 272,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "I am quite confident about the interview tomorrow.",
+    "spanish": "Estoy bastante seguro de la entrevista de mañana."
+  },
+  {
+    "number": 273,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The weather was ideal for a day at the beach.",
+    "spanish": "El clima fue ideal para un día en la playa."
+  },
+  {
+    "number": 274,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The students are enthusiastic and eager to learn.",
+    "spanish": "Los estudiantes son entusiastas y están ansiosos por aprender."
+  },
+  {
+    "number": 275,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The trip was tiring, but it was totally worth it.",
+    "spanish": "El viaje fue agotador, pero valió totalmente la pena."
+  },
+  {
+    "number": 276,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The apartment is rather small, but it is well located.",
+    "spanish": "El apartamento es algo pequeño, pero está bien ubicado."
+  },
+  {
+    "number": 277,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "His explanation was simple, direct, and convincing.",
+    "spanish": "Su explicación fue simple, directa y convincente."
+  },
+  {
+    "number": 278,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "This little lamp is plain, but it gives a gentle, warm light.",
+    "spanish": "Esta lamparita es sencilla, pero da una luz suave y cálida."
+  },
+  {
+    "number": 279,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "The view from the top is absolutely stunning.",
+    "spanish": "La vista desde la cima es absolutamente impresionante."
+  },
+  {
+    "number": 280,
+    "level": "B1",
+    "kind": "adjectives",
+    "english": "I find this exercise challenging but enjoyable.",
+    "spanish": "Encuentro este ejercicio desafiante pero agradable."
+  },
+  {
+    "number": 281,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The more I practice, the more confident I feel.",
+    "spanish": "Cuanto más practico, más seguro me siento."
+  },
+  {
+    "number": 282,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The earlier we leave, the better.",
+    "spanish": "Cuanto antes salgamos, mejor."
+  },
+  {
+    "number": 283,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The more you read, the richer your vocabulary becomes.",
+    "spanish": "Cuanto más lees, más rico se vuelve tu vocabulario."
+  },
+  {
+    "number": 284,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The older I get, the more patient I become.",
+    "spanish": "Cuanto mayor me hago, más paciente me vuelvo."
+  },
+  {
+    "number": 285,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The sooner you start, the easier it will be.",
+    "spanish": "Cuanto antes empieces, más fácil será."
+  },
+  {
+    "number": 286,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The warmer the weather, the busier the beach.",
+    "spanish": "Cuanto más cálido el clima, más concurrida la playa."
+  },
+  {
+    "number": 287,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This apartment is twice as big as my old one.",
+    "spanish": "Este apartamento es el doble de grande que el anterior."
+  },
+  {
+    "number": 288,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Her house is three times as expensive as mine.",
+    "spanish": "Su casa es tres veces más costosa que la mía."
+  },
+  {
+    "number": 289,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The new train is slightly faster than the old one.",
+    "spanish": "El tren nuevo es ligeramente más rápido que el viejo."
+  },
+  {
+    "number": 290,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The second option is far more practical than the first.",
+    "spanish": "La segunda opción es mucho más práctica que la primera."
+  },
+  {
+    "number": 291,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This route is considerably shorter than the other.",
+    "spanish": "Esta ruta es considerablemente más corta que la otra."
+  },
+  {
+    "number": 292,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The hotel was nowhere near as expensive as I expected.",
+    "spanish": "El hotel no fue ni de lejos tan costoso como esperaba."
+  },
+  {
+    "number": 293,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The test was not nearly as hard as I feared.",
+    "spanish": "El examen no fue ni de cerca tan difícil como temía."
+  },
+  {
+    "number": 294,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The city is becoming more and more modern.",
+    "spanish": "La ciudad se está volviendo cada vez más moderna."
+  },
+  {
+    "number": 295,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "My English is getting better and better.",
+    "spanish": "Mi inglés es cada vez mejor."
+  },
+  {
+    "number": 296,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The days are getting shorter and shorter.",
+    "spanish": "Los días son cada vez más cortos."
+  },
+  {
+    "number": 297,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The traffic is less heavy than it used to be.",
+    "spanish": "El tráfico es menos pesado de lo que solía ser."
+  },
+  {
+    "number": 298,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This café is much quieter than it was last year.",
+    "spanish": "Esta cafetería es mucho más tranquila que el año pasado."
+  },
+  {
+    "number": 299,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The new software is easier to use than the previous version.",
+    "spanish": "El software nuevo es más fácil de usar que la versión anterior."
+  },
+  {
+    "number": 300,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "It was more relaxing than I imagined.",
+    "spanish": "Fue más relajante de lo que imaginaba."
+  },
+  {
+    "number": 301,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The movie was a lot more emotional than the trailer suggested.",
+    "spanish": "La película fue mucho más emotiva de lo que sugería el tráiler."
+  },
+  {
+    "number": 302,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Please arrange the chairs as neatly as possible.",
+    "spanish": "Por favor, organiza las sillas lo más ordenadamente posible."
+  },
+  {
+    "number": 303,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Come as early as you can.",
+    "spanish": "Ven lo más temprano que puedas."
+  },
+  {
+    "number": 304,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Her presentation was just as convincing as his.",
+    "spanish": "Su presentación fue igual de convincente que la de él."
+  },
+  {
+    "number": 305,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The two hotels are equally comfortable, but one is cheaper.",
+    "spanish": "Los dos hoteles son igual de cómodos, pero uno es más barato."
+  },
+  {
+    "number": 306,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This neighborhood is safer than it was five years ago.",
+    "spanish": "Este barrio es más seguro que hace cinco años."
+  },
+  {
+    "number": 307,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Cycling is a cleaner way to travel than driving.",
+    "spanish": "Andar en bicicleta es una forma más limpia de viajar que conducir."
+  },
+  {
+    "number": 308,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The countryside is far more peaceful than the city.",
+    "spanish": "El campo es mucho más tranquilo que la ciudad."
+  },
+  {
+    "number": 309,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Online classes are more flexible than traditional ones.",
+    "spanish": "Las clases en línea son más flexibles que las tradicionales."
+  },
+  {
+    "number": 310,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The second book was more thought-provoking than the first.",
+    "spanish": "El segundo libro fue más inspirador a la reflexión que el primero."
+  },
+  {
+    "number": 311,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "His new job is better paid than his previous one.",
+    "spanish": "Su nuevo trabajo está mejor pagado que el anterior."
+  },
+  {
+    "number": 312,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The house is smaller than it looks in the photos.",
+    "spanish": "La casa es más pequeña de lo que parece en las fotos."
+  },
+  {
+    "number": 313,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Tea is gentler on the stomach than coffee.",
+    "spanish": "El té es más suave para el estómago que el café."
+  },
+  {
+    "number": 314,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This chair is lower than I would like.",
+    "spanish": "Esta silla es más baja de lo que me gustaría."
+  },
+  {
+    "number": 315,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The soup tastes better the next day.",
+    "spanish": "La sopa sabe mejor al día siguiente."
+  },
+  {
+    "number": 316,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The lake looks even more beautiful at sunrise.",
+    "spanish": "El lago se ve aún más hermoso al amanecer."
+  },
+  {
+    "number": 317,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The new bridge is much wider than the old one.",
+    "spanish": "El puente nuevo es mucho más ancho que el viejo."
+  },
+  {
+    "number": 318,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This version of the story is a bit more optimistic.",
+    "spanish": "Esta versión de la historia es un poco más optimista."
+  },
+  {
+    "number": 319,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The service was noticeably friendlier than last time.",
+    "spanish": "El servicio fue notablemente más amable que la última vez."
+  },
+  {
+    "number": 320,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "She seems more relaxed than she was yesterday.",
+    "spanish": "Ella parece más relajada que ayer."
+  },
+  {
+    "number": 321,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The old lamp is less modern, but it is warmer and more charming.",
+    "spanish": "La lámpara vieja es menos moderna, pero es más cálida y encantadora."
+  },
+  {
+    "number": 322,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The older sofa is less fashionable than the new one, but it is far more comfortable.",
+    "spanish": "El sofá más viejo es menos a la moda que el nuevo, pero es mucho más cómodo."
+  },
+  {
+    "number": 323,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The smaller room is less bright, but it is more peaceful.",
+    "spanish": "La habitación más pequeña es menos luminosa, pero es más tranquila."
+  },
+  {
+    "number": 324,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "This route is less direct, but it is more scenic.",
+    "spanish": "Esta ruta es menos directa, pero es más pintoresca."
+  },
+  {
+    "number": 325,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The museum is bigger than I remembered.",
+    "spanish": "El museo es más grande de lo que recordaba."
+  },
+  {
+    "number": 326,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "Your pronunciation is clearer than it was last month.",
+    "spanish": "Tu pronunciación es más clara que el mes pasado."
+  },
+  {
+    "number": 327,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The harder you work, the more satisfied you feel.",
+    "spanish": "Cuanto más duro trabajas, más satisfecho te sientes."
+  },
+  {
+    "number": 328,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The less you worry, the more you enjoy the trip.",
+    "spanish": "Cuanto menos te preocupas, más disfrutas el viaje."
+  },
+  {
+    "number": 329,
+    "level": "B1",
+    "kind": "comparatives",
+    "english": "The town is calmer in the morning than in the evening.",
+    "spanish": "El pueblo es más tranquilo por la mañana que por la tarde."
+  },
+  {
+    "number": 330,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is by far the most comfortable bed I have ever slept in.",
+    "spanish": "Esta es, de lejos, la cama más cómoda en la que he dormido."
+  },
+  {
+    "number": 331,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is easily the best restaurant in the neighborhood.",
+    "spanish": "Es fácilmente el mejor restaurante del barrio."
+  },
+  {
+    "number": 332,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "She is by far the most creative person in our team.",
+    "spanish": "Ella es, de lejos, la persona más creativa de nuestro equipo."
+  },
+  {
+    "number": 333,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "That was the most relaxing weekend I have had in years.",
+    "spanish": "Ese fue el fin de semana más relajante que he tenido en años."
+  },
+  {
+    "number": 334,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is one of the most fascinating books I have ever read.",
+    "spanish": "Es uno de los libros más fascinantes que he leído."
+  },
+  {
+    "number": 335,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is one of the friendliest towns in the region.",
+    "spanish": "Este es uno de los pueblos más amigables de la región."
+  },
+  {
+    "number": 336,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It was the most rewarding experience of my life.",
+    "spanish": "Fue la experiencia más gratificante de mi vida."
+  },
+  {
+    "number": 337,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the second largest city in the country.",
+    "spanish": "Esta es la segunda ciudad más grande del país."
+  },
+  {
+    "number": 338,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the third highest mountain in the area.",
+    "spanish": "Es la tercera montaña más alta de la zona."
+  },
+  {
+    "number": 339,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the least crowded time of the day to visit.",
+    "spanish": "Esta es la hora del día menos concurrida para visitar."
+  },
+  {
+    "number": 340,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the least expensive option, and also the most practical.",
+    "spanish": "Es la opción menos costosa, y también la más práctica."
+  },
+  {
+    "number": 341,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "The least difficult part of the course is the first unit.",
+    "spanish": "La parte menos difícil del curso es la primera unidad."
+  },
+  {
+    "number": 342,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the most reliable car I have ever owned.",
+    "spanish": "Este es el carro más confiable que he tenido."
+  },
+  {
+    "number": 343,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "He is the most generous person I know.",
+    "spanish": "Él es la persona más generosa que conozco."
+  },
+  {
+    "number": 344,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "The most challenging part of the project is the beginning.",
+    "spanish": "La parte más desafiante del proyecto es el comienzo."
+  },
+  {
+    "number": 345,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It was the most memorable concert of the year.",
+    "spanish": "Fue el concierto más memorable del año."
+  },
+  {
+    "number": 346,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the most affordable hotel in the city center.",
+    "spanish": "Este es el hotel más asequible del centro de la ciudad."
+  },
+  {
+    "number": 347,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "She is the most patient teacher I have ever had.",
+    "spanish": "Ella es la profesora más paciente que he tenido."
+  },
+  {
+    "number": 348,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the quietest and most peaceful part of the island.",
+    "spanish": "Esta es la parte más silenciosa y tranquila de la isla."
+  },
+  {
+    "number": 349,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the cleanest and best organized market I have visited.",
+    "spanish": "Es el mercado más limpio y mejor organizado que he visitado."
+  },
+  {
+    "number": 350,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is one of the most beautiful sunsets I have ever seen.",
+    "spanish": "Este es uno de los atardeceres más hermosos que he visto."
+  },
+  {
+    "number": 351,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is one of the most useful apps for learning languages.",
+    "spanish": "Es una de las aplicaciones más útiles para aprender idiomas."
+  },
+  {
+    "number": 352,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "That was without doubt the tastiest meal of the trip.",
+    "spanish": "Esa fue, sin duda, la comida más sabrosa del viaje."
+  },
+  {
+    "number": 353,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It was the warmest welcome we had received anywhere.",
+    "spanish": "Fue la bienvenida más cálida que habíamos recibido en cualquier lugar."
+  },
+  {
+    "number": 354,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "The most important thing is to enjoy the process.",
+    "spanish": "Lo más importante es disfrutar el proceso."
+  },
+  {
+    "number": 355,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the most practical solution we have found so far.",
+    "spanish": "Esta es la solución más práctica que hemos encontrado hasta ahora."
+  },
+  {
+    "number": 356,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "She gave the most convincing speech of the evening.",
+    "spanish": "Ella dio el discurso más convincente de la noche."
+  },
+  {
+    "number": 357,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the oldest and most charming café in town.",
+    "spanish": "Es la cafetería más antigua y encantadora del pueblo."
+  },
+  {
+    "number": 358,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "The plainest room in the house turned out to be the most comfortable.",
+    "spanish": "La habitación más sencilla de la casa resultó ser la más cómoda."
+  },
+  {
+    "number": 359,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the most old-fashioned lamp I own, and it is my favorite.",
+    "spanish": "Esta es la lámpara más anticuada que tengo, y es mi favorita."
+  },
+  {
+    "number": 360,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "He gave the simplest and clearest explanation.",
+    "spanish": "Él dio la explicación más simple y clara."
+  },
+  {
+    "number": 361,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the largest and brightest room in the hotel.",
+    "spanish": "Es la habitación más grande y luminosa del hotel."
+  },
+  {
+    "number": 362,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the shortest and safest way home.",
+    "spanish": "Este es el camino más corto y seguro a casa."
+  },
+  {
+    "number": 363,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It was the busiest day of the entire week.",
+    "spanish": "Fue el día más ocupado de toda la semana."
+  },
+  {
+    "number": 364,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "That was by far the funniest movie of the year.",
+    "spanish": "Esa fue, de lejos, la película más divertida del año."
+  },
+  {
+    "number": 365,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the most colorful festival in the country.",
+    "spanish": "Es el festival más colorido del país."
+  },
+  {
+    "number": 366,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the best-organized event I have ever attended.",
+    "spanish": "Este es el evento mejor organizado al que he asistido."
+  },
+  {
+    "number": 367,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the most efficient way to learn new vocabulary.",
+    "spanish": "Es la forma más eficiente de aprender vocabulario nuevo."
+  },
+  {
+    "number": 368,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "She is the most hardworking student in the group.",
+    "spanish": "Ella es la estudiante más trabajadora del grupo."
+  },
+  {
+    "number": 369,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "The most comfortable seats are at the front.",
+    "spanish": "Los asientos más cómodos están al frente."
+  },
+  {
+    "number": 370,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the healthiest dish on the whole menu.",
+    "spanish": "Es el plato más saludable de todo el menú."
+  },
+  {
+    "number": 371,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the tallest tree in the entire park.",
+    "spanish": "Este es el árbol más alto de todo el parque."
+  },
+  {
+    "number": 372,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It was the longest but most enjoyable journey of my life.",
+    "spanish": "Fue el viaje más largo pero más agradable de mi vida."
+  },
+  {
+    "number": 373,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "This is the warmest and softest blanket we have.",
+    "spanish": "Esta es la cobija más cálida y suave que tenemos."
+  },
+  {
+    "number": 374,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "He is easily the most helpful neighbor on the street.",
+    "spanish": "Él es fácilmente el vecino más servicial de la calle."
+  },
+  {
+    "number": 375,
+    "level": "B1",
+    "kind": "superlatives",
+    "english": "It is the most welcoming place I have ever stayed in.",
+    "spanish": "Es el lugar más acogedor en el que me he hospedado."
+  },
+  {
+    "number": 376,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The proposal was ambitious yet perfectly realistic.",
+    "spanish": "La propuesta fue ambiciosa pero perfectamente realista."
+  },
+  {
+    "number": 377,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "Her approach to teaching is both rigorous and compassionate.",
+    "spanish": "Su enfoque de la enseñanza es a la vez riguroso y compasivo."
+  },
+  {
+    "number": 378,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The restored building is remarkably elegant and surprisingly functional.",
+    "spanish": "El edificio restaurado es notablemente elegante y sorprendentemente funcional."
+  },
+  {
+    "number": 379,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "It was a subtle but meaningful improvement.",
+    "spanish": "Fue una mejora sutil pero significativa."
+  },
+  {
+    "number": 380,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The atmosphere in the village was serene and deeply welcoming.",
+    "spanish": "El ambiente en el pueblo era sereno y profundamente acogedor."
+  },
+  {
+    "number": 381,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "He is an insightful, articulate, and open-minded speaker.",
+    "spanish": "Él es un orador perspicaz, elocuente y de mente abierta."
+  },
+  {
+    "number": 382,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The garden is delightfully unpredictable and wonderfully diverse.",
+    "spanish": "El jardín es deliciosamente impredecible y maravillosamente diverso."
+  },
+  {
+    "number": 383,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The results were remarkable and highly encouraging.",
+    "spanish": "Los resultados fueron notables y muy alentadores."
+  },
+  {
+    "number": 384,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "Their hospitality was generous beyond all expectations.",
+    "spanish": "Su hospitalidad fue generosa más allá de toda expectativa."
+  },
+  {
+    "number": 385,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The instructions seemed complicated at first, but they were actually quite straightforward.",
+    "spanish": "Las instrucciones parecían complicadas al principio, pero en realidad eran bastante sencillas."
+  },
+  {
+    "number": 386,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The novel is rich, layered, and deeply moving.",
+    "spanish": "La novela es rica, con muchas capas y profundamente conmovedora."
+  },
+  {
+    "number": 387,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "She remained calm and composed throughout the discussion.",
+    "spanish": "Ella se mantuvo tranquila y serena durante toda la discusión."
+  },
+  {
+    "number": 388,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The old lamp is simple, almost austere, yet strangely charming.",
+    "spanish": "La lámpara vieja es simple, casi austera, pero extrañamente encantadora."
+  },
+  {
+    "number": 389,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "It was an unexpectedly fruitful and enlightening conversation.",
+    "spanish": "Fue una conversación inesperadamente fructífera e iluminadora."
+  },
+  {
+    "number": 390,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The view from the terrace was breathtaking and utterly peaceful.",
+    "spanish": "La vista desde la terraza era impresionante y totalmente tranquila."
+  },
+  {
+    "number": 391,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The new policy is flexible, transparent, and easy to apply.",
+    "spanish": "La nueva política es flexible, transparente y fácil de aplicar."
+  },
+  {
+    "number": 392,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "His writing is elegant, precise, and refreshingly honest.",
+    "spanish": "Su escritura es elegante, precisa y refrescantemente honesta."
+  },
+  {
+    "number": 393,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The exhibition was thoughtfully designed and genuinely inspiring.",
+    "spanish": "La exposición estuvo cuidadosamente diseñada y fue genuinamente inspiradora."
+  },
+  {
+    "number": 394,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The plan sounds reasonable, practical, and cost-effective.",
+    "spanish": "El plan suena razonable, práctico y rentable."
+  },
+  {
+    "number": 395,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "Our guide was knowledgeable, witty, and endlessly patient.",
+    "spanish": "Nuestro guía era conocedor, ingenioso e infinitamente paciente."
+  },
+  {
+    "number": 396,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The city is vibrant, diverse, and full of unexpected surprises.",
+    "spanish": "La ciudad es vibrante, diversa y está llena de sorpresas inesperadas."
+  },
+  {
+    "number": 397,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "It was a modest but tasteful celebration.",
+    "spanish": "Fue una celebración modesta pero de buen gusto."
+  },
+  {
+    "number": 398,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The design is minimalist, yet warm and inviting.",
+    "spanish": "El diseño es minimalista, pero cálido y acogedor."
+  },
+  {
+    "number": 399,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The lecture was dense but remarkably clear.",
+    "spanish": "La conferencia fue densa pero notablemente clara."
+  },
+  {
+    "number": 400,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "Her voice was soft, steady, and reassuring.",
+    "spanish": "Su voz era suave, firme y tranquilizadora."
+  },
+  {
+    "number": 401,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The solution is elegant, efficient, and surprisingly simple.",
+    "spanish": "La solución es elegante, eficiente y sorprendentemente simple."
+  },
+  {
+    "number": 402,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The traditional recipe is hearty, aromatic, and deeply satisfying.",
+    "spanish": "La receta tradicional es contundente, aromática y profundamente satisfactoria."
+  },
+  {
+    "number": 403,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "They were grateful for the thoughtful and discreet support.",
+    "spanish": "Estaban agradecidos por el apoyo atento y discreto."
+  },
+  {
+    "number": 404,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "The old furniture looks worn, but it is solid and full of charm.",
+    "spanish": "Los muebles viejos se ven gastados, pero son sólidos y están llenos de encanto."
+  },
+  {
+    "number": 405,
+    "level": "B2",
+    "kind": "adjectives",
+    "english": "It was a refreshing, honest, and constructive exchange of ideas.",
+    "spanish": "Fue un intercambio de ideas refrescante, honesto y constructivo."
+  },
+  {
+    "number": 406,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The sooner we adapt, the smoother the transition will be.",
+    "spanish": "Cuanto antes nos adaptemos, más fluida será la transición."
+  },
+  {
+    "number": 407,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The more carefully you plan, the fewer problems you will face.",
+    "spanish": "Cuanto más cuidadosamente planees, menos problemas enfrentarás."
+  },
+  {
+    "number": 408,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The less you rely on translation, the faster you will improve.",
+    "spanish": "Cuanto menos dependas de la traducción, más rápido mejorarás."
+  },
+  {
+    "number": 409,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The deeper we explored the town, the more charming it became.",
+    "spanish": "Cuanto más explorábamos el pueblo, más encantador se volvía."
+  },
+  {
+    "number": 410,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The results were considerably better than anyone had predicted.",
+    "spanish": "Los resultados fueron considerablemente mejores de lo que nadie había predicho."
+  },
+  {
+    "number": 411,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This approach is no less effective than the traditional one.",
+    "spanish": "Este enfoque no es menos eficaz que el tradicional."
+  },
+  {
+    "number": 412,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The new model is markedly quieter and far more efficient.",
+    "spanish": "El modelo nuevo es notablemente más silencioso y mucho más eficiente."
+  },
+  {
+    "number": 413,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The second draft is far clearer and more persuasive than the first.",
+    "spanish": "El segundo borrador es mucho más claro y persuasivo que el primero."
+  },
+  {
+    "number": 414,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "It is increasingly difficult to find a quiet place in the city.",
+    "spanish": "Es cada vez más difícil encontrar un lugar tranquilo en la ciudad."
+  },
+  {
+    "number": 415,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The tools are becoming ever more accessible and user-friendly.",
+    "spanish": "Las herramientas son cada vez más accesibles y fáciles de usar."
+  },
+  {
+    "number": 416,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "Life in the countryside is considerably slower and more peaceful.",
+    "spanish": "La vida en el campo es considerablemente más lenta y tranquila."
+  },
+  {
+    "number": 417,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "His explanation was far from as simple as he claimed, but it was more convincing than mine.",
+    "spanish": "Su explicación estuvo lejos de ser tan simple como decía, pero fue más convincente que la mía."
+  },
+  {
+    "number": 418,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The renovated room is not nearly as dark as it used to be.",
+    "spanish": "La habitación renovada no es ni de cerca tan oscura como solía ser."
+  },
+  {
+    "number": 419,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The festival is twice as lively as it was last year.",
+    "spanish": "El festival es el doble de animado que el año pasado."
+  },
+  {
+    "number": 420,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This laptop is marginally heavier but substantially more powerful.",
+    "spanish": "Esta portátil es un poco más pesada, pero sustancialmente más potente."
+  },
+  {
+    "number": 421,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The more flexible schedule made the course noticeably more enjoyable.",
+    "spanish": "El horario más flexible hizo el curso notablemente más agradable."
+  },
+  {
+    "number": 422,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The new library is far more spacious and better lit than the old one.",
+    "spanish": "La nueva biblioteca es mucho más espaciosa y mejor iluminada que la antigua."
+  },
+  {
+    "number": 423,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "Her second novel is no less moving than her first.",
+    "spanish": "Su segunda novela no es menos conmovedora que la primera."
+  },
+  {
+    "number": 424,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The hotel was a good deal more comfortable than we had expected.",
+    "spanish": "El hotel fue bastante más cómodo de lo que esperábamos."
+  },
+  {
+    "number": 425,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This version of the plan is considerably more realistic than the earlier one.",
+    "spanish": "Esta versión del plan es considerablemente más realista que la anterior."
+  },
+  {
+    "number": 426,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The result was nowhere near as complicated as it first appeared.",
+    "spanish": "El resultado no fue ni de lejos tan complicado como parecía al principio."
+  },
+  {
+    "number": 427,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The younger students were more curious and more willing to experiment.",
+    "spanish": "Los estudiantes más jóvenes eran más curiosos y estaban más dispuestos a experimentar."
+  },
+  {
+    "number": 428,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The simpler the design, the more elegant the result.",
+    "spanish": "Cuanto más simple el diseño, más elegante el resultado."
+  },
+  {
+    "number": 429,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The more varied your reading, the broader your perspective.",
+    "spanish": "Cuanto más variada tu lectura, más amplia tu perspectiva."
+  },
+  {
+    "number": 430,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This neighborhood is gradually becoming more vibrant and more welcoming.",
+    "spanish": "Este barrio se está volviendo gradualmente más vibrante y acogedor."
+  },
+  {
+    "number": 431,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The climate here is far milder than in the mountains.",
+    "spanish": "El clima de aquí es mucho más templado que el de las montañas."
+  },
+  {
+    "number": 432,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "It was a little less formal than I had imagined, and much more enjoyable.",
+    "spanish": "Fue un poco menos formal de lo que había imaginado, y mucho más agradable."
+  },
+  {
+    "number": 433,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The new route is slightly longer, but it is considerably more scenic.",
+    "spanish": "La nueva ruta es un poco más larga, pero considerablemente más pintoresca."
+  },
+  {
+    "number": 434,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "Their service is by no means as slow as people say.",
+    "spanish": "Su servicio no es, de ningún modo, tan lento como dice la gente."
+  },
+  {
+    "number": 435,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The older building is less modern but has a much more distinctive character.",
+    "spanish": "El edificio más antiguo es menos moderno, pero tiene un carácter mucho más distintivo."
+  },
+  {
+    "number": 436,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The plain wooden chair is less showy than the leather one, yet far more comfortable.",
+    "spanish": "La silla de madera sencilla es menos llamativa que la de cuero, pero mucho más cómoda."
+  },
+  {
+    "number": 437,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "Public spaces are far more welcoming than they were a decade ago.",
+    "spanish": "Los espacios públicos son mucho más acogedores que hace una década."
+  },
+  {
+    "number": 438,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The explanation was easier to follow than the textbook.",
+    "spanish": "La explicación fue más fácil de seguir que el libro de texto."
+  },
+  {
+    "number": 439,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The sooner you ask for feedback, the more useful it will be.",
+    "spanish": "Cuanto antes pidas retroalimentación, más útil será."
+  },
+  {
+    "number": 440,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The film is more subtle and more rewarding on a second viewing.",
+    "spanish": "La película es más sutil y más gratificante al verla por segunda vez."
+  },
+  {
+    "number": 441,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "His attitude became more positive and more open as the weeks passed.",
+    "spanish": "Su actitud se volvió más positiva y más abierta con el paso de las semanas."
+  },
+  {
+    "number": 442,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The new teacher is every bit as patient as the previous one.",
+    "spanish": "La nueva profesora es igual de paciente que la anterior."
+  },
+  {
+    "number": 443,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This café is quieter and more relaxed than any other in the area.",
+    "spanish": "Esta cafetería es más tranquila y relajada que cualquier otra de la zona."
+  },
+  {
+    "number": 444,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The second solution is more elegant, though slightly more expensive.",
+    "spanish": "La segunda solución es más elegante, aunque un poco más costosa."
+  },
+  {
+    "number": 445,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The views are even more impressive in person than in the photographs.",
+    "spanish": "Las vistas son aún más impresionantes en persona que en las fotografías."
+  },
+  {
+    "number": 446,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The better prepared you are, the calmer you will feel.",
+    "spanish": "Cuanto mejor preparado estés, más tranquilo te sentirás."
+  },
+  {
+    "number": 447,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The final version is far more concise and a lot easier to understand.",
+    "spanish": "La versión final es mucho más concisa y mucho más fácil de entender."
+  },
+  {
+    "number": 448,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "It was a much warmer and more generous welcome than we had hoped for.",
+    "spanish": "Fue una bienvenida mucho más cálida y generosa de lo que esperábamos."
+  },
+  {
+    "number": 449,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The island is markedly greener and more peaceful in the rainy season.",
+    "spanish": "La isla es notablemente más verde y tranquila en la temporada de lluvias."
+  },
+  {
+    "number": 450,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The more transparent the process, the more trust people place in it.",
+    "spanish": "Cuanto más transparente el proceso, más confianza depositan las personas en él."
+  },
+  {
+    "number": 451,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The new menu is lighter, fresher, and noticeably healthier.",
+    "spanish": "El menú nuevo es más ligero, más fresco y notablemente más saludable."
+  },
+  {
+    "number": 452,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The garden looks even more inviting in the early morning light.",
+    "spanish": "El jardín se ve aún más acogedor con la luz de la madrugada."
+  },
+  {
+    "number": 453,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "This chair is hardly as stylish as that one, but it is infinitely more comfortable.",
+    "spanish": "Esta silla apenas es tan elegante como aquella, pero es infinitamente más cómoda."
+  },
+  {
+    "number": 454,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "My understanding of the topic is much deeper than it was a year ago.",
+    "spanish": "Mi comprensión del tema es mucho más profunda que hace un año."
+  },
+  {
+    "number": 455,
+    "level": "B2",
+    "kind": "comparatives",
+    "english": "The more open the conversation, the more productive the outcome.",
+    "spanish": "Cuanto más abierta la conversación, más productivo el resultado."
+  },
+  {
+    "number": 456,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is arguably the most elegant building in the entire city.",
+    "spanish": "Este es posiblemente el edificio más elegante de toda la ciudad."
+  },
+  {
+    "number": 457,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "She is by far the most insightful speaker I have ever heard.",
+    "spanish": "Ella es, con diferencia, la oradora más perspicaz que he escuchado."
+  },
+  {
+    "number": 458,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was undoubtedly the most rewarding project of my career.",
+    "spanish": "Fue sin duda el proyecto más gratificante de mi carrera."
+  },
+  {
+    "number": 459,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is quite possibly the most peaceful place on the planet.",
+    "spanish": "Este es muy posiblemente el lugar más tranquilo del planeta."
+  },
+  {
+    "number": 460,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "Of all the options, this is by far the least complicated.",
+    "spanish": "De todas las opciones, esta es, con diferencia, la menos complicada."
+  },
+  {
+    "number": 461,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was the least expensive and yet the most satisfying meal of the trip.",
+    "spanish": "Fue la comida menos costosa y, sin embargo, la más satisfactoria del viaje."
+  },
+  {
+    "number": 462,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "He is the least pretentious and most genuine person I know.",
+    "spanish": "Él es la persona menos pretenciosa y más genuina que conozco."
+  },
+  {
+    "number": 463,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is the most thoughtfully designed public space in the country.",
+    "spanish": "Es el espacio público mejor pensado del país."
+  },
+  {
+    "number": 464,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most compelling argument I have heard all year.",
+    "spanish": "Este es el argumento más convincente que he escuchado en todo el año."
+  },
+  {
+    "number": 465,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "Hands down, it was the most inspiring lecture of the semester.",
+    "spanish": "Sin lugar a dudas, fue la conferencia más inspiradora del semestre."
+  },
+  {
+    "number": 466,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most remarkable collection of paintings in the region.",
+    "spanish": "Esta es la colección de pinturas más notable de la región."
+  },
+  {
+    "number": 467,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was the most unexpectedly moving performance I have ever attended.",
+    "spanish": "Fue la presentación más inesperadamente conmovedora a la que he asistido."
+  },
+  {
+    "number": 468,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is by far the most efficient method we have tested.",
+    "spanish": "Es, con diferencia, el método más eficiente que hemos probado."
+  },
+  {
+    "number": 469,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most meticulously restored house in the neighborhood.",
+    "spanish": "Esta es la casa restaurada con más esmero del barrio."
+  },
+  {
+    "number": 470,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "Of everyone on the team, she is the most dependable and the most generous.",
+    "spanish": "De todo el equipo, ella es la más confiable y la más generosa."
+  },
+  {
+    "number": 471,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is easily the most spacious and best-lit room in the building.",
+    "spanish": "Esta es fácilmente la habitación más amplia y mejor iluminada del edificio."
+  },
+  {
+    "number": 472,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is widely considered the most beautiful valley in the country.",
+    "spanish": "Se considera ampliamente el valle más hermoso del país."
+  },
+  {
+    "number": 473,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was the most memorable and most heartwarming gathering of the year.",
+    "spanish": "Fue la reunión más memorable y más reconfortante del año."
+  },
+  {
+    "number": 474,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "That was by far the least stressful trip we have ever taken.",
+    "spanish": "Ese fue, con diferencia, el viaje menos estresante que hemos hecho."
+  },
+  {
+    "number": 475,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "He gave the most balanced and thoughtful answer of the whole panel.",
+    "spanish": "Él dio la respuesta más equilibrada y reflexiva de todo el panel."
+  },
+  {
+    "number": 476,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most versatile and user-friendly tool on the market.",
+    "spanish": "Esta es la herramienta más versátil y fácil de usar del mercado."
+  },
+  {
+    "number": 477,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is the most welcoming and best-run guesthouse we have ever visited.",
+    "spanish": "Es la casa de huéspedes más acogedora y mejor administrada que hemos visitado."
+  },
+  {
+    "number": 478,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This old lamp is the plainest object in the house and, strangely, the most charming.",
+    "spanish": "Esta lámpara vieja es el objeto más sencillo de la casa y, curiosamente, el más encantador."
+  },
+  {
+    "number": 479,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "The most worn-looking chair in the room is, in fact, the most comfortable.",
+    "spanish": "La silla de aspecto más gastado de la habitación es, en realidad, la más cómoda."
+  },
+  {
+    "number": 480,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is probably the most old-fashioned shop in town, and certainly the most beloved.",
+    "spanish": "Probablemente es la tienda más anticuada del pueblo, y ciertamente la más querida."
+  },
+  {
+    "number": 481,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "That was the most sensible decision we could have made.",
+    "spanish": "Esa fue la decisión más sensata que pudimos haber tomado."
+  },
+  {
+    "number": 482,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is one of the most breathtaking views I have ever had the privilege to see.",
+    "spanish": "Es una de las vistas más impresionantes que he tenido el privilegio de ver."
+  },
+  {
+    "number": 483,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most carefully written report of the entire series.",
+    "spanish": "Este es el informe más cuidadosamente escrito de toda la serie."
+  },
+  {
+    "number": 484,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "She is quite simply the most talented musician in our school.",
+    "spanish": "Ella es, sencillamente, la música más talentosa de nuestra escuela."
+  },
+  {
+    "number": 485,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This was the most refreshing change we could have hoped for.",
+    "spanish": "Este fue el cambio más refrescante que pudimos haber esperado."
+  },
+  {
+    "number": 486,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is the most affordable yet most reliable option available.",
+    "spanish": "Es la opción más asequible y a la vez más confiable disponible."
+  },
+  {
+    "number": 487,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "Of all the seasons, autumn is the most colorful and the most tranquil.",
+    "spanish": "De todas las estaciones, el otoño es la más colorida y la más tranquila."
+  },
+  {
+    "number": 488,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "The finest meals are often the simplest ones.",
+    "spanish": "Las mejores comidas suelen ser las más sencillas."
+  },
+  {
+    "number": 489,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the best-preserved village in the entire region.",
+    "spanish": "Este es el pueblo mejor conservado de toda la región."
+  },
+  {
+    "number": 490,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is the most efficiently organized event I have ever attended.",
+    "spanish": "Es el evento más eficientemente organizado al que he asistido."
+  },
+  {
+    "number": 491,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "That was the most delightful surprise of the whole trip.",
+    "spanish": "Esa fue la sorpresa más encantadora de todo el viaje."
+  },
+  {
+    "number": 492,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the least crowded and most pleasant time of the year to visit.",
+    "spanish": "Esta es la época del año menos concurrida y más agradable para visitar."
+  },
+  {
+    "number": 493,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "He is, in my view, the most open-minded and fair-minded teacher at the school.",
+    "spanish": "Él es, en mi opinión, el profesor más abierto y justo de la escuela."
+  },
+  {
+    "number": 494,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the most intuitive interface I have used.",
+    "spanish": "Esta es la interfaz más intuitiva que he usado."
+  },
+  {
+    "number": 495,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was the most gracious and most generous gesture imaginable.",
+    "spanish": "Fue el gesto más elegante y generoso que se pueda imaginar."
+  },
+  {
+    "number": 496,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "The most valuable lesson I learned was also the simplest.",
+    "spanish": "La lección más valiosa que aprendí también fue la más sencilla."
+  },
+  {
+    "number": 497,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It is, by common agreement, the most comfortable train line in the country.",
+    "spanish": "Es, por consenso general, la línea de tren más cómoda del país."
+  },
+  {
+    "number": 498,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is without question the most welcoming community I have ever joined.",
+    "spanish": "Esta es, sin duda alguna, la comunidad más acogedora a la que me he unido."
+  },
+  {
+    "number": 499,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "This is the clearest and most helpful explanation I have read so far.",
+    "spanish": "Esta es la explicación más clara y útil que he leído hasta ahora."
+  },
+  {
+    "number": 500,
+    "level": "B2",
+    "kind": "superlatives",
+    "english": "It was the most reassuring news we had received all year.",
+    "spanish": "Fue la noticia más tranquilizadora que habíamos recibido en todo el año."
+  }
+]

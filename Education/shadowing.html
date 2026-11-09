@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Método Shadowing — IAidiomas</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12131c;
+    --bg-2: #191b28;
+    --bg-3: #21243380;
+    --line: rgba(255,255,255,0.09);
+    --ink: #ECE9E1;
+    --ink-dim: #9C9CB2;
+    --amber: #E3A23B;
+    --amber-dim: #E3A23B33;
+    --violet: #8A8CF0;
+    --violet-dim: #8A8CF022;
+    --radius: 14px;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Work Sans", -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:var(--sans); line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--amber-dim); }
+  a{ color:var(--amber); }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- NAV ---------- */
+  header.top{
+    position:sticky; top:0; z-index:20;
+    background:rgba(18,19,28,0.85); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{
+    max-width:920px; margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{ font-family:var(--serif); font-size:1.15rem; font-weight:500; color:var(--ink); text-decoration:none;}
+  .brand span{ color:var(--amber); }
+  .navlinks{ display:flex; gap:22px; font-size:0.92rem; }
+  .navlinks a{ color:var(--ink-dim); text-decoration:none; }
+  .navlinks a:hover{ color:var(--ink); }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:76px 0 40px; }
+  .hero h1{
+    font-family:var(--serif); font-weight:500; font-size:clamp(2.2rem,5vw,3.4rem);
+    line-height:1.12; margin:0 0 22px; max-width:14ch;
+  }
+  .hero p.lead{ font-size:1.1rem; color:var(--ink-dim); max-width:52ch; margin:0 0 34px;}
+  .wave{
+    display:flex; align-items:flex-end; gap:4px; height:64px; margin:8px 0 44px;
+  }
+  .wave i{
+    display:block; width:5px; border-radius:3px;
+    background:linear-gradient(180deg, var(--amber), var(--violet));
+    animation: bounce 1.4s ease-in-out infinite;
+    opacity:0.85;
+  }
+  @keyframes bounce{
+    0%,100%{ height:10px; } 50%{ height:var(--h,50px); }
+  }
+  @media (prefers-reduced-motion: reduce){ .wave i{ animation:none; height:30px;} }
+
+  .videoblock{
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    background:var(--bg-2); margin-bottom:12px;
+  }
+  .videoblock .ratio{ position:relative; padding-top:56.25%; }
+  .videoblock iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .videocred{ font-size:0.85rem; color:var(--ink-dim); margin:0 0 70px; }
+
+  /* ---------- SECTION HEADS ---------- */
+  section{ padding:10px 0 64px; border-top:1px solid var(--line); }
+  .sectionhead h2{
+    font-family:var(--serif); font-weight:500; font-size:1.9rem; margin:44px 0 14px;
+  }
+  .sectionhead p{ color:var(--ink-dim); max-width:60ch; margin:0 0 34px; }
+
+  /* ---------- STEPS TIMELINE ---------- */
+  .steps{ display:flex; flex-direction:column; gap:0; }
+  .step{
+    display:grid; grid-template-columns:56px 1fr; gap:20px;
+    padding:26px 0; border-top:1px solid var(--line);
+    position:relative;
+  }
+  .step:first-child{ border-top:none; }
+  .stepnum{
+    font-family:var(--serif); font-size:1.6rem; color:var(--amber);
+    line-height:1; padding-top:2px;
+  }
+  .step h3{ margin:0 0 8px; font-size:1.15rem; font-weight:600; }
+  .step p{ margin:0 0 12px; color:var(--ink-dim); }
+  .example{
+    background:var(--bg-2); border:1px solid var(--line); border-radius:10px;
+    padding:10px 12px 10px 10px; font-size:0.95rem; color:var(--ink);
+    display:flex; align-items:center; gap:12px;
+  }
+  .example em{ color:var(--ink-dim); font-style:normal; }
+  .examplePlay{
+    width:32px; height:32px; border-radius:50%; border:1px solid var(--line);
+    background:var(--bg); color:var(--ink); cursor:pointer; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:0.8rem;
+    transition:.15s;
+  }
+  .examplePlay:hover{ border-color:var(--amber); color:var(--amber); }
+  .examplePlay.playingdemo{ border-color:var(--amber); color:var(--amber); background:var(--amber-dim); }
+
+  /* ---------- PRACTICE LAB ---------- */
+  .lab{
+    background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px;
+  }
+  .tabbar{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+  .tabbtn{
+    font-family:var(--sans); font-size:0.9rem; font-weight:600;
+    padding:9px 16px; border-radius:999px; border:1px solid var(--line);
+    background:transparent; color:var(--ink-dim); cursor:pointer;
+    transition:.15s;
+  }
+  .tabbtn.active{ background:var(--amber-dim); border-color:var(--amber); color:var(--amber); }
+  .tabbtn:hover:not(.active){ color:var(--ink); border-color:#ffffff30; }
+
+  .stepnote{
+    font-size:0.92rem; color:var(--ink-dim); border-left:2px solid var(--amber);
+    padding:4px 0 4px 14px; margin-bottom:22px; min-height:44px;
+  }
+
+  .controlsrow{
+    display:flex; flex-wrap:wrap; gap:22px; align-items:center;
+    margin-bottom:24px; padding-bottom:22px; border-bottom:1px solid var(--line);
+  }
+  .ctrl{ display:flex; flex-direction:column; gap:6px; font-size:0.82rem; color:var(--ink-dim); }
+  .ctrl input[type=range]{ width:140px; accent-color: var(--amber); }
+  .ctrl select{
+    background:var(--bg); color:var(--ink); border:1px solid var(--line);
+    border-radius:8px; padding:6px 10px; font-family:var(--sans); font-size:0.85rem;
+  }
+
+  .setpicker{ display:flex; gap:8px; margin-left:auto; flex-wrap:wrap; }
+  .setbtn{
+    font-size:0.82rem; padding:7px 12px; border-radius:8px; border:1px solid var(--line);
+    background:transparent; color:var(--ink-dim); cursor:pointer;
+  }
+  .setbtn.active{ border-color:var(--violet); color:var(--violet); background:var(--violet-dim); }
+
+  .phraselist{ display:flex; flex-direction:column; gap:10px; margin-bottom:22px; }
+  .phrase{
+    display:flex; align-items:center; gap:14px;
+    background:var(--bg); border:1px solid var(--line); border-radius:10px;
+    padding:14px 16px;
+  }
+  .phrase.playing{ border-color:var(--amber); }
+  .phrase .idx{ font-family:var(--serif); color:var(--ink-dim); width:22px; text-align:right; flex-shrink:0; }
+  .phrase .txt{ flex:1; font-size:1rem; }
+  .playbtn{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
+    background:var(--bg-2); color:var(--ink); cursor:pointer; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:0.9rem;
+    transition:.15s;
+  }
+  .playbtn:hover{ border-color:var(--amber); color:var(--amber); }
+
+  .sessionrow{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .btn{
+    font-family:var(--sans); font-weight:600; font-size:0.92rem;
+    padding:12px 22px; border-radius:9px; border:1px solid var(--amber);
+    background:var(--amber); color:#191204; cursor:pointer;
+  }
+  .btn.secondary{ background:transparent; color:var(--ink); border-color:var(--line); }
+  .btn:disabled{ opacity:0.4; cursor:default; }
+  .statustxt{ font-size:0.85rem; color:var(--ink-dim); }
+
+  /* ---------- CUSTOM TEXT ---------- */
+  .customwrap{ margin-top:34px; padding-top:28px; border-top:1px solid var(--line); }
+  .customwrap h3{ font-size:1.05rem; margin:0 0 6px; }
+  .customwrap p{ color:var(--ink-dim); font-size:0.9rem; margin:0 0 14px; }
+  textarea{
+    width:100%; min-height:110px; background:var(--bg); color:var(--ink);
+    border:1px solid var(--line); border-radius:10px; padding:14px;
+    font-family:var(--sans); font-size:0.95rem; resize:vertical;
+  }
+  .custombtns{ display:flex; gap:10px; margin-top:12px; flex-wrap:wrap; }
+
+  /* ---------- HOW-TO ---------- */
+  .howto{ display:grid; grid-template-columns:1fr; gap:14px; }
+  .howto .step{ grid-template-columns:56px 1fr; }
+
+  footer{ padding:40px 0 70px; color:var(--ink-dim); font-size:0.85rem; }
+  footer a{ color:var(--ink-dim); }
+
+  @media (max-width:640px){
+    .setpicker{ margin-left:0; width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="navrow">
+    <a class="brand" href="#top">IA<span>idiomas</span> · Shadowing</a>
+    <nav class="navlinks">
+      <a href="#metodo">El método</a>
+      <a href="#lab">Práctica</a>
+      <a href="#howto">Con cualquier video</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" id="top">
+    <h1>Deja de sonar robótico. Empieza a sonar como un hablante nativo.</h1>
+    <p class="lead">Un método de cuatro pasos —humming, mumbling, imitating y shadowing— para entrenar el ritmo, el acento tónico y la entonación del inglés usando cualquier video que elijas.</p>
+    <div class="wave" id="wave" aria-hidden="true"></div>
+
+    <div class="videoblock">
+      <div class="ratio">
+        <iframe src="https://www.youtube.com/embed/D_VNmOO3OU8?start=72" title="Fluency Lab — Keith Speaking Academy" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <p class="videocred">Basado en «Fluency Lab: Sound & Rhythm» de Keith Speaking Academy. Los ejemplos de práctica de abajo vienen directamente de este video.</p>
+  </section>
+
+  <section id="metodo">
+    <div class="sectionhead">
+      <h2>El método en cuatro pasos</h2>
+      <p>Cada paso te acerca un poco más al inglés real. La idea es no pensar en el significado hasta el final: primero el oído, después la boca, y solo al final la mente.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="stepnum">01</div>
+        <div>
+          <h3>Humming — la melodía</h3>
+          <p>Escucha la frase y repítela tarareando (hmm-hmm o dee-dee), sin usar palabras. Solo te concentras en el ritmo y la entonación, sin la carga mental del significado.</p>
+          <div class="example" data-step="humming" data-phrase="Hello again.">
+            <button class="examplePlay" aria-label="Escuchar ejemplo de humming">▶</button>
+            <span>Hello again. → <em>dee-dee-dee-dee</em></span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepnum">02</div>
+        <div>
+          <h3>Mumbling — la forma</h3>
+          <p>Repite la frase murmurando, sin pronunciar las palabras con claridad. Se distingue la forma y las contracciones, pero todavía no es inglés nítido.</p>
+          <div class="example" data-step="mumbling" data-phrase="Would you like another cup of tea?">
+            <button class="examplePlay" aria-label="Escuchar ejemplo de mumbling">▶</button>
+            <span>Would you like another cup of tea? → <em>casi audible, forma reconocible</em></span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepnum">03</div>
+        <div>
+          <h3>Imitating — la copia exacta</h3>
+          <p>Ahora sí: escucha y repite exactamente las mismas palabras, con pausa entre cada frase. Sigue sin pensar en el significado; solo copia el sonido.</p>
+          <div class="example" data-step="imitating" data-phrase="I'm so pleased that you're learning English.">
+            <button class="examplePlay" aria-label="Escuchar ejemplo de imitating">▶</button>
+            <span>I'm so pleased that you're learning English. <em>(escuchas → pausa → repites igual)</em></span>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="stepnum">04</div>
+        <div>
+          <h3>Shadowing — en tiempo real</h3>
+          <p>Hablas al mismo tiempo que el audio, un segundo detrás, sin pausas. Es la combinación de todo lo anterior aplicada de corrido sobre el texto completo.</p>
+          <div class="example" data-step="shadowing" data-phrase="Hello again. How's it going? I'm so pleased that you're learning English. Good job.">
+            <button class="examplePlay" aria-label="Escuchar ejemplo de shadowing">▶</button>
+            <span>El audio no se detiene — tú tampoco.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="sectionhead">
+      <h2>Laboratorio de práctica</h2>
+      <p>Elige un paso, escucha cada frase con voz nativa sintetizada y practica en voz alta. Ajusta la velocidad si vas empezando.</p>
+    </div>
+
+    <div class="lab">
+      <div class="tabbar" id="tabbar">
+        <button class="tabbtn active" data-step="humming">1 · Humming</button>
+        <button class="tabbtn" data-step="mumbling">2 · Mumbling</button>
+        <button class="tabbtn" data-step="imitating">3 · Imitating</button>
+        <button class="tabbtn" data-step="shadowing">4 · Shadowing</button>
+      </div>
+
+      <div class="stepnote" id="stepnote"></div>
+
+      <div class="controlsrow">
+        <div class="ctrl">
+          Velocidad <span id="rateval">0.9x</span>
+          <input type="range" id="rate" min="0.5" max="1.3" step="0.05" value="0.9">
+        </div>
+        <div class="ctrl">
+          Repeticiones por frase
+          <input type="range" id="reps" min="1" max="4" step="1" value="2">
+        </div>
+        <div class="ctrl">
+          Voz
+          <select id="voiceSelect"></select>
+        </div>
+        <div class="setpicker" id="setpicker">
+          <button class="setbtn active" data-set="greeting">Saludo</button>
+          <button class="setbtn" data-set="tea">Invitación al té</button>
+        </div>
+      </div>
+
+      <div class="phraselist" id="phraselist"></div>
+
+      <div class="sessionrow">
+        <button class="btn" id="sessionBtn">Iniciar sesión completa</button>
+        <button class="btn secondary" id="stopBtn" disabled>Detener</button>
+        <span class="statustxt" id="statustxt">Listo para empezar.</span>
+      </div>
+
+      <div class="customwrap">
+        <h3>Practica con tu propio texto</h3>
+        <p>Pega la transcripción de cualquier video (por ejemplo, desde los subtítulos de YouTube) y practícala con el mismo método.</p>
+        <textarea id="customText" placeholder="Pega aquí un párrafo o transcripción en inglés..."></textarea>
+        <div class="custombtns">
+          <button class="btn secondary" id="loadCustom">Cargar este texto</button>
+          <button class="btn secondary" id="clearCustom">Volver a los ejemplos</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="howto">
+    <div class="sectionhead">
+      <h2>Cómo aplicarlo a cualquier video</h2>
+      <p>Esta página funciona con cualquier fuente de audio en inglés, no solo con el ejemplo de arriba.</p>
+    </div>
+    <div class="howto">
+      <div class="step">
+        <div class="stepnum">1</div>
+        <div><h3>Consigue la transcripción</h3><p>En YouTube, abre "Mostrar transcripción" bajo el video y copia el texto, o usa los subtítulos automáticos.</p></div>
+      </div>
+      <div class="step">
+        <div class="stepnum">2</div>
+        <div><h3>Pégala en el laboratorio</h3><p>Usa el campo "Practica con tu propio texto" de arriba para cargar ese fragmento.</p></div>
+      </div>
+      <div class="step">
+        <div class="stepnum">3</div>
+        <div><h3>Recorre los cuatro pasos</h3><p>Practica humming → mumbling → imitating → shadowing sobre las mismas frases, en ese orden.</p></div>
+      </div>
+      <div class="step">
+        <div class="stepnum">4</div>
+        <div><h3>Vuelve al video original</h3><p>Cierra el ciclo escuchando el video real y haciendo shadowing directamente sobre la voz auténtica del hablante.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Método basado en el video "Fluency Lab" de Keith Speaking Academy · Herramienta de práctica — IAidiomas
+  </footer>
+</div>
+
+<script>
+// ---------- Sound wave decoration ----------
+const wave = document.getElementById('wave');
+for(let i=0;i<28;i++){
+  const bar = document.createElement('i');
+  const h = 18 + Math.random()*46;
+  bar.style.setProperty('--h', h+'px');
+  bar.style.animationDelay = (Math.random()*1.4)+'s';
+  wave.appendChild(bar);
+}
+
+// ---------- Data ----------
+const SETS = {
+  greeting: [
+    "Hello again.",
+    "How's it going?",
+    "I'm so pleased that you're learning English.",
+    "Good job."
+  ],
+  tea: [
+    "Hello there.",
+    "How you doing?",
+    "Would you like another cup of tea?",
+    "Yeah, I'll get you a cup of tea, mate."
+  ]
+};
+
+const STEP_INFO = {
+  humming: {
+    label: "Humming",
+    note: "Escucha la frase y repítela solo tarareando (hmm-hmm o dee-dee). No uses palabras: concéntrate únicamente en el ritmo y la entonación.",
+    autoAdvance: false
+  },
+  mumbling: {
+    label: "Mumbling",
+    note: "Escucha y repite murmurando la frase, sin pronunciar las palabras con claridad. Busca la forma general del sonido, no la precisión.",
+    autoAdvance: false
+  },
+  imitating: {
+    label: "Imitating",
+    note: "Escucha la frase completa, haz una pausa y repítela exactamente igual, palabra por palabra.",
+    autoAdvance: false
+  },
+  shadowing: {
+    label: "Shadowing",
+    note: "Reproduce el audio y habla al mismo tiempo, un segundo detrás, sin pausas entre frases.",
+    autoAdvance: true
+  }
+};
+
+let currentStep = 'humming';
+let currentSetName = 'greeting';
+let currentPhrases = SETS.greeting.slice();
+let voices = [];
+let sessionRunning = false;
+let sessionCancelled = false;
+
+const phraselist = document.getElementById('phraselist');
+const stepnote = document.getElementById('stepnote');
+const rateInput = document.getElementById('rate');
+const rateval = document.getElementById('rateval');
+const repsInput = document.getElementById('reps');
+const voiceSelect = document.getElementById('voiceSelect');
+const statustxt = document.getElementById('statustxt');
+const sessionBtn = document.getElementById('sessionBtn');
+const stopBtn = document.getElementById('stopBtn');
+
+function loadVoices(){
+  voices = speechSynthesis.getVoices().filter(v => v.lang.startsWith('en'));
+  if(voices.length === 0){ voices = speechSynthesis.getVoices(); }
+  voiceSelect.innerHTML = '';
+  voices.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `${v.name} (${v.lang})`;
+    voiceSelect.appendChild(opt);
+  });
+  const usVoice = voices.findIndex(v => v.lang === 'en-US');
+  if(usVoice >= 0) voiceSelect.value = usVoice;
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function countSyllables(word){
+  word = word.toLowerCase().replace(/[^a-z]/g,'');
+  if(!word) return 1;
+  const matches = word.match(/[aeiouy]+/g);
+  let count = matches ? matches.length : 1;
+  if(word.endsWith('e') && !word.endsWith('le') && count > 1) count--;
+  return Math.max(count, 1);
+}
+
+function syllableFillFor(phrase, filler){
+  return phrase.split(/\s+/).map(w => {
+    const punct = (w.match(/[.,!?]+$/) || [''])[0];
+    const clean = w.replace(/[.,!?]+$/, '');
+    if(!clean) return w;
+    const syl = countSyllables(clean);
+    return Array(syl).fill(filler).join('-') + punct;
+  }).join(' ');
+}
+
+function playExampleDemo(step, phrase, btn){
+  try{
+    speechSynthesis.cancel();
+    let text = phrase;
+    let pitch = 1, rate = parseFloat(rateInput.value) || 0.9, volume = 1;
+    if(step === 'humming'){
+      text = syllableFillFor(phrase, 'dee');
+      pitch = 1.05;
+    } else if(step === 'mumbling'){
+      text = syllableFillFor(phrase, 'mm');
+      pitch = 0.82;
+      volume = 0.6;
+    } else if(step === 'shadowing'){
+      rate = Math.max(rate, 1);
+    }
+    const utt = new SpeechSynthesisUtterance(text);
+    const v = voices[voiceSelect.value];
+    if(v){ utt.voice = v; utt.lang = v.lang; } else { utt.lang = 'en-US'; }
+    utt.rate = rate; utt.pitch = pitch; utt.volume = volume;
+    btn.classList.add('playingdemo');
+    utt.onend = () => btn.classList.remove('playingdemo');
+    utt.onerror = () => btn.classList.remove('playingdemo');
+    speechSynthesis.speak(utt);
+  }catch(e){
+    statustxt.textContent = 'El navegador no pudo reproducir el ejemplo.';
+  }
+}
+
+document.querySelectorAll('.example[data-step]').forEach(el => {
+  const btn = el.querySelector('.examplePlay');
+  btn.addEventListener('click', () => {
+    playExampleDemo(el.dataset.step, el.dataset.phrase, btn);
+  });
+});
+
+function speak(text, onend){
+  try{
+    speechSynthesis.cancel();
+    const utt = new SpeechSynthesisUtterance(text);
+    const v = voices[voiceSelect.value];
+    if(v) utt.voice = v;
+    utt.rate = parseFloat(rateInput.value);
+    utt.lang = v ? v.lang : 'en-US';
+    utt.onend = onend || null;
+    speechSynthesis.speak(utt);
+  }catch(e){
+    statustxt.textContent = 'El navegador no pudo reproducir audio.';
+  }
+}
+
+function renderPhrases(){
+  phraselist.innerHTML = '';
+  currentPhrases.forEach((p, idx) => {
+    const row = document.createElement('div');
+    row.className = 'phrase';
+    row.dataset.idx = idx;
+    row.innerHTML = `
+      <span class="idx">${idx+1}</span>
+      <span class="txt">${p}</span>
+      <button class="playbtn" aria-label="Reproducir">▶</button>
+    `;
+    row.querySelector('.playbtn').addEventListener('click', () => {
+      highlightRow(idx);
+      speak(p, () => row.classList.remove('playing'));
+    });
+    phraselist.appendChild(row);
+  });
+}
+
+function highlightRow(idx){
+  document.querySelectorAll('.phrase').forEach(r => r.classList.remove('playing'));
+  const row = phraselist.querySelector(`[data-idx="${idx}"]`);
+  if(row) row.classList.add('playing');
+}
+
+function setStep(step){
+  currentStep = step;
+  document.querySelectorAll('.tabbtn').forEach(b => b.classList.toggle('active', b.dataset.step === step));
+  stepnote.textContent = STEP_INFO[step].note;
+}
+
+function setSet(name){
+  currentSetName = name;
+  currentPhrases = SETS[name].slice();
+  document.querySelectorAll('.setbtn').forEach(b => b.classList.toggle('active', b.dataset.set === name));
+  renderPhrases();
+}
+
+document.getElementById('tabbar').addEventListener('click', e => {
+  const btn = e.target.closest('.tabbtn');
+  if(btn) setStep(btn.dataset.step);
+});
+document.getElementById('setpicker').addEventListener('click', e => {
+  const btn = e.target.closest('.setbtn');
+  if(btn) setSet(btn.dataset.set);
+});
+rateInput.addEventListener('input', () => { rateval.textContent = parseFloat(rateInput.value).toFixed(2)+'x'; });
+
+document.getElementById('loadCustom').addEventListener('click', () => {
+  const raw = document.getElementById('customText').value.trim();
+  if(!raw) return;
+  const parts = raw.match(/[^.!?]+[.!?]*/g) || [raw];
+  currentPhrases = parts.map(s => s.trim()).filter(Boolean);
+  document.querySelectorAll('.setbtn').forEach(b => b.classList.remove('active'));
+  renderPhrases();
+  statustxt.textContent = `Texto propio cargado (${currentPhrases.length} frases).`;
+});
+document.getElementById('clearCustom').addEventListener('click', () => {
+  document.getElementById('customText').value = '';
+  setSet(currentSetName);
+  statustxt.textContent = 'Volviste a los ejemplos del video.';
+});
+
+async function pause(ms){ return new Promise(r => setTimeout(r, ms)); }
+
+async function runSession(){
+  sessionRunning = true;
+  sessionCancelled = false;
+  sessionBtn.disabled = true;
+  stopBtn.disabled = false;
+  const reps = parseInt(repsInput.value, 10);
+  const info = STEP_INFO[currentStep];
+
+  for(let idx=0; idx<currentPhrases.length && !sessionCancelled; idx++){
+    highlightRow(idx);
+    const text = currentPhrases[idx];
+    const repeatCount = info.autoAdvance ? 1 : reps;
+    for(let r=0; r<repeatCount && !sessionCancelled; r++){
+      statustxt.textContent = `${STEP_INFO[currentStep].label} — frase ${idx+1}/${currentPhrases.length}${repeatCount>1 ? ' · repetición '+(r+1)+'/'+repeatCount : ''}`;
+      await new Promise(resolve => speak(text, resolve));
+      if(!info.autoAdvance) await pause(900);
+    }
+  }
+  document.querySelectorAll('.phrase').forEach(r => r.classList.remove('playing'));
+  statustxt.textContent = sessionCancelled ? 'Sesión detenida.' : 'Sesión completa. ¡Buen trabajo!';
+  sessionBtn.disabled = false;
+  stopBtn.disabled = true;
+  sessionRunning = false;
+}
+
+sessionBtn.addEventListener('click', () => { if(!sessionRunning) runSession(); });
+stopBtn.addEventListener('click', () => {
+  sessionCancelled = true;
+  speechSynthesis.cancel();
+  stopBtn.disabled = true;
+});
+
+// init
+setStep('humming');
+renderPhrases();
+</script>
+
+</body>
+</html>
