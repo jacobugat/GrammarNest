@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#130f1b">
+  <meta name="description" content="Practica 98 phrasal verbs con flashcards, traducciones y ejemplos reales en inglés.">
+  <title>Phrasal verbs · Flashcards | GrammarNest</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #130f1b;
+      --panel: #1d1727;
+      --panel-raised: #261d33;
+      --ink: #fff8f1;
+      --muted: #b7aabc;
+      --line: #40334d;
+      --coral: #ff806f;
+      --lilac: #c9a5ff;
+      --peach: #ffc9b8;
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 82% 18%, #693b7933, transparent 34rem),
+        radial-gradient(ellipse at 6% 73%, #b34a5220, transparent 30rem),
+        var(--bg);
+      color: var(--ink);
+      font: 16px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    button, a { font: inherit }
+    a { color: inherit }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--coral); outline-offset: 4px }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto }
+    .topbar { border-bottom: 1px solid var(--line); background: #130f1be8; backdrop-filter: blur(14px) }
+    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 850; letter-spacing: -.04em; text-decoration: none }
+    .brand-mark { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 12px; background: var(--coral); color: #281321; font: 900 1.1rem Georgia, serif }
+    .brand small { display: block; color: var(--muted); font: 700 .62rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .13em; text-transform: uppercase }
+    .back { color: var(--muted); font-size: .85rem; text-decoration: none }
+    .back:hover { color: var(--lilac) }
+    .hero { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: clamp(45px, 8vw, 82px) 0 34px }
+    .eyebrow, .micro-label { color: var(--lilac); font: 800 .69rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .16em; text-transform: uppercase }
+    h1 { margin: 12px 0 13px; font: 700 clamp(2.7rem, 7vw, 5.7rem)/.93 Georgia, "Times New Roman", serif; letter-spacing: -.075em }
+    h1 span { color: var(--coral); font-style: italic }
+    .intro { max-width: 570px; margin: 0; color: var(--muted); font-size: 1rem }
+    .deck-total { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; background: #20192a; color: var(--muted); font-size: .8rem }
+    .deck-total strong { color: var(--peach); font: 700 1.8rem/.9 Georgia, serif }
+    .study-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(250px, .65fr); align-items: stretch; gap: 17px; padding-bottom: 54px }
+    .study-panel, .memory-panel { border: 1px solid var(--line); border-radius: 23px; background: linear-gradient(145deg, #211a2c, #191421); box-shadow: 0 22px 65px #08060d55 }
+    .study-panel { padding: clamp(16px, 3vw, 27px) }
+    .study-head { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-bottom: 14px }
+    .study-head .micro-label { color: var(--peach) }
+    .position { color: var(--muted); font: 750 .76rem ui-monospace, SFMono-Regular, Consolas, monospace }
+    .position b { color: var(--ink) }
+    .progress { height: 5px; margin-bottom: 19px; overflow: hidden; border-radius: 9px; background: #382d42 }
+    .progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--lilac), var(--coral)); transition: width .3s ease }
+    .card-scene { position: relative; perspective: 1300px }
+    .card-scene::before, .card-scene::after { position: absolute; z-index: 0; width: 82px; height: 82px; border: 1px solid #c9a5ff40; border-radius: 50%; content: ""; pointer-events: none }
+    .card-scene::before { top: 8%; right: 3%; box-shadow: 0 0 0 13px #c9a5ff0a, 0 0 0 27px #c9a5ff08 }
+    .card-scene::after { bottom: 8%; left: 3%; width: 34px; height: 34px; border-color: #ff806f70; box-shadow: 0 0 0 10px #ff806f0b }
+    .flashcard {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      min-height: clamp(265px, 33vw, 350px);
+      padding: 0;
+      border: 0;
+      border-radius: 19px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transform-style: preserve-3d;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card-inner { position: absolute; inset: 0; display: block; border-radius: inherit; transform-style: preserve-3d; transition: transform .62s cubic-bezier(.2,.72,.2,1) }
+    .flashcard.is-flipped .card-inner { transform: rotateY(180deg) }
+    .card-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      padding: clamp(25px, 5vw, 48px);
+      border: 1px solid #ffffff25;
+      border-radius: inherit;
+      background:
+        radial-gradient(circle at 88% 11%, #c9a5ff20 0 2px, transparent 3px 20px),
+        radial-gradient(ellipse at 100% 100%, #ff806f19, transparent 50%),
+        linear-gradient(145deg, #342440, #251c31 64%, #211827);
+      box-shadow: inset 0 1px #ffffff12, 0 15px 32px #0a071044;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .card-face::before { position: absolute; right: -80px; bottom: -132px; width: 280px; height: 280px; border: 1px solid #c9a5ff20; border-radius: 50%; box-shadow: 0 0 0 17px #c9a5ff08, 0 0 0 36px #c9a5ff07; content: ""; pointer-events: none }
+    .card-face.back { transform: rotateY(180deg); background: radial-gradient(ellipse at 90% 8%, #ff806f24, transparent 43%), linear-gradient(145deg, #30223a, #251b30 64%, #201923) }
+    .face-top { position: absolute; top: 23px; left: 25px; display: flex; align-items: center; gap: 8px; color: var(--lilac); font: 800 .65rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .13em; text-transform: uppercase }
+    .face-top::before { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 13px #ff806fbb; content: "" }
+    .card-word { position: relative; z-index: 1; display: block; max-width: 100%; overflow-wrap: anywhere; color: var(--ink); font: 700 clamp(2.2rem, 6vw, 4.5rem)/1 Georgia, "Times New Roman", serif; letter-spacing: -.055em }
+    .card-translation { position: relative; z-index: 1; display: block; max-width: 560px; margin-top: 21px; color: var(--peach); font-size: clamp(1.05rem, 2.5vw, 1.45rem); font-weight: 650; line-height: 1.3 }
+    .card-divider { position: relative; z-index: 1; display: block; width: 47px; height: 2px; margin: 23px 0 13px; background: var(--coral) }
+    .card-cue { position: relative; z-index: 1; display: block; color: #c1b4c6; font-size: .8rem }
+    .example { position: relative; z-index: 1; display: block; max-width: 650px; color: var(--ink); font: 600 clamp(1.35rem, 3.5vw, 2.3rem)/1.32 Georgia, "Times New Roman", serif; letter-spacing: -.025em }
+    .example-intro { position: relative; z-index: 1; display: block; margin-top: 17px; color: var(--peach); font-size: .8rem; font-weight: 650 }
+    .flip-hint { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 12px 0 15px; color: var(--muted); font-size: .76rem; text-align: center }
+    .flip-hint b { color: var(--lilac); font-size: .95rem }
+    .controls { display: grid; grid-template-columns: 1fr auto 1fr; gap: 9px }
+    .control {
+      min-height: 45px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #2a2135;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: .84rem;
+      font-weight: 750;
+      transition: transform .15s, border-color .15s, background .15s;
+    }
+    .control:hover { transform: translateY(-2px); border-color: #9975ba; background: #352741 }
+    .control.primary { min-width: 130px; border-color: var(--coral); background: var(--coral); color: #29141f }
+    .control.primary:hover { border-color: #ffb1a3; background: #ff9888 }
+    .control:disabled { opacity: .48; cursor: default; transform: none }
+    .recall-actions { display: none; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 10px }
+    .study-panel.is-flipped .recall-actions { display: grid }
+    .control.remember { border-color: #936fc0; color: #ead9ff }
+    .control.remember:hover { border-color: var(--lilac); background: #39294c }
+    .study-tools { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #ffffff12 }
+    .learned-count { color: var(--muted); font-size: .76rem }
+    .learned-count b { color: var(--lilac) }
+    .shuffle { padding: 5px 0; border: 0; background: none; color: var(--peach); cursor: pointer; font-size: .78rem; font-weight: 750 }
+    .shuffle:hover { color: #fff }
+    .memory-panel { position: relative; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; padding: clamp(23px, 3vw, 32px) }
+    .memory-panel::after { position: absolute; right: -86px; bottom: 45px; width: 200px; height: 200px; border: 1px solid #ff806f29; border-radius: 50%; box-shadow: 0 0 0 20px #ff806f08, 0 0 0 42px #ff806f06; content: ""; pointer-events: none }
+    .memory-panel h2 { margin: 12px 0 10px; font: 700 clamp(1.65rem, 3vw, 2.35rem)/1 Georgia, "Times New Roman", serif; letter-spacing: -.05em }
+    .memory-panel h2 em { color: var(--coral); font-weight: 500 }
+    .memory-intro { margin: 0 0 24px; color: var(--muted); font-size: .86rem }
+    .steps { display: grid; gap: 17px; margin: 0; padding: 0; list-style: none }
+    .steps li { display: grid; grid-template-columns: 30px 1fr; gap: 11px; align-items: start; color: #e7deeb; font-size: .83rem }
+    .step-number { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid #725a85; border-radius: 9px; color: var(--lilac); font: 800 .7rem ui-monospace, SFMono-Regular, Consolas, monospace }
+    .steps strong { display: block; margin-bottom: 2px; color: var(--ink); font-size: .85rem }
+    .memory-note { position: relative; z-index: 1; margin-top: 27px; padding: 14px 15px; border-left: 2px solid var(--coral); border-radius: 0 10px 10px 0; background: #ff806f0c; color: var(--peach); font-size: .8rem }
+    .memory-note strong { color: var(--coral) }
+    footer { padding: 20px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem }
+    footer a { color: var(--lilac); text-decoration: none }
+
+    @media (max-width: 760px) {
+      .hero { align-items: flex-start; flex-direction: column; gap: 18px }
+      .study-layout { grid-template-columns: 1fr }
+      .memory-panel { min-height: auto }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 11px }
+      .steps li { grid-template-columns: 27px 1fr; gap: 8px; font-size: .75rem }
+      .step-number { width: 25px; height: 25px }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: calc(100% - 30px) }
+      .nav { min-height: 60px }
+      .back { font-size: .76rem }
+      .hero { padding-top: 46px }
+      .deck-total { padding: 8px 11px }
+      .study-panel { padding: 13px }
+      .flashcard { min-height: 275px }
+      .card-face { padding: 24px }
+      .face-top { top: 18px; left: 20px }
+      .controls { grid-template-columns: 1fr 1.1fr 1fr; gap: 6px }
+      .control { padding: 8px 6px; font-size: .76rem }
+      .control.primary { min-width: 0 }
+      .recall-actions { grid-template-columns: 1fr }
+      .steps { grid-template-columns: 1fr; gap: 13px }
+      .steps li { grid-template-columns: 28px 1fr; font-size: .8rem }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">g</span><span>GrammarNest<small>English memory lab</small></span></a>
+      <a class="back" href="index.html">← Catálogo Education</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow">Práctica de recuperación · Inglés</div>
+        <h1 id="page-title">Phrasal verbs<br><span>que se quedan.</span></h1>
+        <p class="intro">Imagina una situación donde usarías cada verbo. Después, voltea la tarjeta y encuentra una frase real en inglés.</p>
+      </div>
+      <div class="deck-total"><strong>98</strong><span>tarjetas<br>para recordar</span></div>
+    </section>
+
+    <section class="study-layout" aria-label="Práctica de flashcards">
+      <div class="study-panel">
+        <div class="study-head">
+          <span class="micro-label">Tu sesión de estudio</span>
+          <span class="position" aria-live="polite">TARJETA <b id="position">1</b> / 98</span>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Tarjetas dominadas" aria-valuemin="0" aria-valuemax="98" aria-valuenow="0"><span id="mastery-bar"></span></div>
+
+        <div class="card-scene">
+          <button class="flashcard" id="flashcard" type="button" aria-pressed="false" aria-label="Voltear tarjeta: deal with">
+            <span class="card-inner">
+              <span class="card-face front" id="front-face">
+                <span class="face-top">Lado A · piensa primero</span>
+                <span class="card-word" id="verb">deal with</span>
+                <span class="card-translation" id="translation">lidiar con / ocuparse de</span>
+                <span class="card-divider"></span>
+                <span class="card-cue">¿Qué situación te ayuda a recordar este verbo?</span>
+              </span>
+              <span class="card-face back" id="back-face" aria-hidden="true">
+                <span class="face-top">Lado B · en contexto</span>
+                <span class="example" id="example">I got bigger things to deal with.</span>
+                <span class="example-intro">Escucha el verbo dentro de la frase.</span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <p class="flip-hint"><b aria-hidden="true">↻</b> Toca la tarjeta o pulsa «Voltear» para ver el ejemplo en inglés.</p>
+        <div class="controls" aria-label="Controles de tarjetas">
+          <button class="control" id="previous" type="button" aria-label="Tarjeta anterior">← Anterior</button>
+          <button class="control primary" id="flip" type="button">Voltear tarjeta</button>
+          <button class="control" id="next" type="button" aria-label="Tarjeta siguiente">Siguiente →</button>
+        </div>
+        <div class="recall-actions" id="recall-actions" aria-label="Autoevaluación de la tarjeta">
+          <button class="control remember" id="remember" type="button">La recordé · siguiente</button>
+          <button class="control" id="review" type="button">Repasar luego · siguiente</button>
+        </div>
+        <div class="study-tools">
+          <span class="learned-count">Dominadas: <b id="mastery-count">0 / 98</b></span>
+          <button class="shuffle" id="shuffle" type="button">⤨ Barajar tarjetas</button>
+        </div>
+      </div>
+
+      <aside class="memory-panel" aria-labelledby="memory-title">
+        <div>
+          <div class="eyebrow">Un pequeño ritual</div>
+          <h2 id="memory-title">No leas.<br><em>Recuerda.</em></h2>
+          <p class="memory-intro">Recordar activamente una respuesta ayuda a fijarla mejor que volver a leerla.</p>
+          <ol class="steps">
+              <li><span class="step-number">01</span><span><strong>Mira</strong>Lee el phrasal verb y su traducción.</span></li>
+              <li><span class="step-number">02</span><span><strong>Imagina</strong>Crea una escena o una frase propia.</span></li>
+            <li><span class="step-number">03</span><span><strong>Conecta</strong>Voltea y lee el ejemplo con intención.</span></li>
+          </ol>
+        </div>
+        <div class="memory-note"><strong>Una frase, una escena.</strong> Imagina lo que ocurre en el ejemplo: ese contexto será tu pista para recordarlo.</div>
+      </aside>
+    </section>
+  </main>
+
+  <footer><div class="wrap">GrammarNest · <a href="index.html">Volver al catálogo educativo</a></div></footer>
+
+  <script>
+    "use strict";
+    const cards = [
+      ["deal with", "lidiar con / ocuparse de", "I got bigger things to deal with."],
+      ["get in", "entrar / subirse (a un vehículo)", "Get in the truck."],
+      ["get up", "levantarse", "I get up at 6:00 a.m. every morning."],
+      ["set up", "organizar / programar", "When do you think we could set up a meeting?"],
+      ["look into", "investigar / examinar", "I will look into this complaint."],
+      ["take over", "hacerse cargo de", "I'm asking you to take over the show for six weeks."],
+      ["take off", "quitarse (ropa) / despegar", "Why don't you take off your shoes?"],
+      ["try on", "probarse (ropa)", "Let's try on the veil."],
+      ["put off", "posponer / aplazar", "We put this off long enough."],
+      ["look after", "cuidar a / ocuparse de", "I'm going to look after my grandmother tonight."],
+      ["bring out", "sacar / traer", "Let's bring out the cake."],
+      ["bring up", "mencionar / sacar un tema", "Angela does bring up a good point."],
+      ["come along", "acompañar / venir con", "Would you like to come along?"],
+      ["go through", "pasar por (una experiencia) / repasar", "I didn't want you to go through this alone."],
+      ["throw away", "tirar a la basura", "Don't throw away my stuff."],
+      ["cut down (on)", "reducir (el consumo de)", "I gotta cut down on coffee."],
+      ["come up with", "idear / se te ocurre", "I'm trying to come up with a plan."],
+      ["hang on", "esperar un momento / aguantar", "Hang on a minute."],
+      ["press on", "seguir adelante", "We should really press on."],
+      ["keep up with", "seguir el ritmo de", "She's always so hard to keep up with."],
+      ["take on", "asumir / aceptar (un trabajo)", "I'm going to take on a new project."],
+      ["give up", "rendirse / darse por vencido", "Don't give up yet."],
+      ["carry out", "llevar a cabo / cumplir", "I can carry out your request."],
+      ["get along", "llevarse bien", "You two seem to get along pretty well."],
+      ["think over", "reflexionar / pensarlo bien", "I need some time to think over your offer."],
+      ["take something off", "quitarse algo", "Take your hat off."],
+      ["tidy up", "ordenar / arreglar", "I'm just trying to tidy up."],
+      ["check something out", "echar un vistazo / revisar", "I just wanted to check the place out."],
+      ["find out", "averiguar / descubrir", "How did you find out?"],
+      ["work out", "hacer ejercicio", "I work out at home."],
+      ["hang out", "pasar el rato / salir con amigos", "Do you want to hang out tonight?"],
+      ["believe in", "creer en", "I believe in you."],
+      ["go back", "volver / regresar", "I have to go back to work."],
+      ["give something away", "regalar", "I was gonna give it away, would you like it?"],
+      ["care for", "cuidar de / sentir cariño por", "I really care for you."],
+      ["hurry up", "apurarse / darse prisa", "Hurry up before I change my mind."],
+      ["stay over", "quedarse a dormir", "Could I stay over tonight?"],
+      ["watch out", "tener cuidado", "You better watch out."],
+      ["pick up", "recoger / comprar de paso", "I need to pick up some eggs."],
+      ["cheer up", "animar / alegrar", "This will definitely cheer you up."],
+      ["calm down", "calmarse", "Why don't you just calm down?"],
+      ["come over", "venir (a casa de alguien)", "Do you want to come over for Christmas?"],
+      ["drop by", "pasar de visita", "Feel free to drop by anytime."],
+      ["catch up with", "ponerse al día con / alcanzar a", "I'll catch up with you later."],
+      ["ask someone out", "invitar a salir (cita)", "Hey, ask her out."],
+      ["meet up with", "quedar con / encontrarse con", "I meet up with my friends every weekend."],
+      ["pick someone up", "recoger a alguien", "I'll pick you up at five."],
+      ["get by", "arreglárselas / sobrevivir", "How do you get by?"],
+      ["pay back", "devolver (dinero)", "I'll pay back the loan."],
+      ["pay off", "saldar / pagar por completo", "You could pay off your mortgage."],
+      ["save up", "ahorrar", "I'm trying to save up for a car next summer."],
+      ["put aside", "apartar / guardar", "I put aside some money for a house."],
+      ["cut back", "reducir / recortar", "You should cut back on your spending."],
+      ["call off", "cancelar", "We have to call it off."],
+      ["do something over", "rehacer / repetir", "We can do it over."],
+      ["figure something out", "resolver / entender", "Can you figure that out?"],
+      ["pass out", "desmayarse", "I feel like I'm gonna pass out."],
+      ["back someone up", "respaldar / apoyar", "Okay, I'll back you up."],
+      ["break down", "averiarse / derrumbarse", "Did your car break down outside?"],
+      ["dive into", "sumergirse en / meterse de lleno en", "Let's dive into it."],
+      ["come across", "encontrarse con / toparse con", "I came across an old friend today."],
+      ["pick out", "escoger / elegir", "You could pick out the colors beforehand."],
+      ["put up with", "soportar / aguantar", "I can't put up with him any longer."],
+      ["butt in", "interrumpir / entrometerse", "Sorry, I didn't mean to butt in."],
+      ["chicken out", "acobardarse / echarse para atrás", "Don't chicken out now."],
+      ["come about", "suceder / ocurrir", "How did the accident come about?"],
+      ["turn on", "encender", "Turn on the lights."],
+      ["turn off", "apagar", "Turn off the TV."],
+      ["get on", "subirse (a un bus, avión, tren)", "I gotta get on the plane."],
+      ["get off", "bajarse (de un bus, avión, tren)", "You need to get off the train."],
+      ["slow down", "reducir la velocidad / ir más despacio", "I would have slowed down."],
+      ["speed up", "acelerar", "When I was younger I just wanted time to speed up."],
+      ["turn up", "subir (volumen, calefacción)", "Turn up the volume."],
+      ["turn down", "bajar (volumen) / rechazar", "Don't turn down my music."],
+      ["dress up", "arreglarse / vestirse elegante", "She'll probably dress up."],
+      ["dress down", "vestirse informal", "You might want to dress down for now."],
+      ["get together", "reunirse / juntarse", "Maybe we can get together sometime."],
+      ["go out", "salir (a divertirse)", "Let's go out dancing."],
+      ["stay in", "quedarse en casa", "I'm gonna stay in tonight."],
+      ["drop someone off", "dejar a alguien (en un lugar)", "Can you drop me off at work?"],
+      ["check in", "registrarse / hacer el check-in", "You can check in at the front desk."],
+      ["check out", "hacer el check-out / salir (de un hotel)", "I'd like to check out, please."],
+      ["get someone down", "deprimir / desanimar", "Don't let the bugs get you down."],
+      ["put something in", "meter / poner dentro", "I would put it in the bank."],
+      ["take something out", "sacar", "Take it out of your pocket."],
+      ["wake up", "despertarse", "I usually wake up early."],
+      ["break up", "terminar (una relación)", "They broke up last week."],
+      ["make something up", "inventar", "Don't believe him, he made it up."],
+      ["carry on", "continuar / seguir", "Okay, let's carry on."],
+      ["ask about", "preguntar por / sobre", "Does he ever ask about me?"],
+      ["warm up", "calentar (antes de ejercicio)", "Don't forget to warm up before swimming."],
+      ["let someone down", "decepcionar / fallarle a alguien", "Don't let me down."],
+      ["look for", "buscar", "I'm looking for my keys."],
+      ["go off", "sonar (alarma) / estallar", "My alarm goes off at 5:00 a.m."],
+      ["wake someone up", "despertar a alguien", "I can wake you up for family breakfast if you like."],
+      ["put on", "ponerse (ropa)", "Put on your coat."],
+      ["heat up", "calentar (comida)", "I heat up lasagna."],
+      ["gobble up", "devorar / comer rápido", "Time to gobble up your lunch."]
+    ];
+
+    const flashcard = document.getElementById("flashcard");
+    const studyPanel = document.querySelector(".study-panel");
+    const frontFace = document.getElementById("front-face");
+    const backFace = document.getElementById("back-face");
+    const progress = document.querySelector(".progress");
+    const progressBar = document.getElementById("mastery-bar");
+    const mastered = new Set();
+    let order = cards.map((_, index) => index);
+    let position = 0;
+    let isFlipped = false;
+
+    function currentCard() {
+      return cards[order[position]];
+    }
+
+    function render() {
+      const [verb, translation, example] = currentCard();
+      document.getElementById("verb").textContent = verb;
+      document.getElementById("translation").textContent = translation;
+      document.getElementById("example").textContent = example;
+      document.getElementById("position").textContent = String(position + 1);
+      document.getElementById("mastery-count").textContent = `${mastered.size} / ${cards.length}`;
+      progressBar.style.width = `${mastered.size / cards.length * 100}%`;
+      progress.setAttribute("aria-valuenow", String(mastered.size));
+      document.getElementById("previous").disabled = position === 0;
+      document.getElementById("next").disabled = position === order.length - 1;
+      const ending = position === order.length - 1 ? "terminar" : "siguiente";
+      document.getElementById("remember").textContent = `La recordé · ${ending}`;
+      document.getElementById("review").textContent = `Repasar luego · ${ending}`;
+      flashcard.setAttribute("aria-label", `Voltear tarjeta: ${verb}`);
+      setFlipped(false);
+    }
+
+    function setFlipped(flipped) {
+      isFlipped = flipped;
+      studyPanel.classList.toggle("is-flipped", flipped);
+      flashcard.classList.toggle("is-flipped", flipped);
+      flashcard.setAttribute("aria-pressed", String(flipped));
+      frontFace.setAttribute("aria-hidden", String(flipped));
+      backFace.setAttribute("aria-hidden", String(!flipped));
+      document.getElementById("flip").textContent = flipped ? "Volver al verbo" : "Voltear tarjeta";
+      flashcard.setAttribute("aria-label", flipped
+        ? `Volver al phrasal verb: ${currentCard()[0]}`
+        : `Voltear tarjeta: ${currentCard()[0]}`);
+    }
+
+    function moveTo(nextPosition) {
+      if (nextPosition < 0 || nextPosition >= order.length) return;
+      position = nextPosition;
+      render();
+    }
+
+    function markAndContinue(remembered) {
+      const cardIndex = order[position];
+      if (remembered) mastered.add(cardIndex);
+      else mastered.delete(cardIndex);
+      document.getElementById("mastery-count").textContent = `${mastered.size} / ${cards.length}`;
+      progressBar.style.width = `${mastered.size / cards.length * 100}%`;
+      progress.setAttribute("aria-valuenow", String(mastered.size));
+      if (position < order.length - 1) moveTo(position + 1);
+    }
+
+    flashcard.addEventListener("click", () => setFlipped(!isFlipped));
+    document.getElementById("flip").addEventListener("click", () => setFlipped(!isFlipped));
+    document.getElementById("previous").addEventListener("click", () => moveTo(position - 1));
+    document.getElementById("next").addEventListener("click", () => moveTo(position + 1));
+    document.getElementById("remember").addEventListener("click", () => markAndContinue(true));
+    document.getElementById("review").addEventListener("click", () => markAndContinue(false));
+
+    document.getElementById("shuffle").addEventListener("click", () => {
+      for (let index = order.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [order[index], order[randomIndex]] = [order[randomIndex], order[index]];
+      }
+      position = 0;
+      render();
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveTo(position - 1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveTo(position + 1);
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
