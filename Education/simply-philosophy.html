@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#091512">
+  <meta name="description" content="Simply Philosophy: guided readings.">
+  <title>Simply Philosophy · Guided readings</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b111a;--panel:#111c28;--panel2:#192a39;--ink:#edf2f2;--muted:#a8b8c5;--line:#2d4051;--mint:#79d3d5;--acid:#efbd76;--blue:#9ab8ef}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 82% 0,#16364a70,transparent 38rem),radial-gradient(ellipse at 3% 60%,#192e453b,transparent 32rem),var(--bg);color:var(--ink);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+    .topbar{border-bottom:1px solid var(--line);background:#0b111ae8;backdrop-filter:blur(14px)}
+    .nav{min-height:66px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;letter-spacing:-.04em;text-decoration:none}
+    .mark{display:grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--mint);color:#10202a}
+    .back{color:var(--muted);font-size:.86rem;text-decoration:none}
+    .back:hover,.back:focus-visible{color:var(--mint)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(32px,5vw,60px);align-items:center;padding:clamp(58px,8vw,92px) 0 72px}
+    .eyebrow,.label{color:var(--mint);font:700 .7rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase}
+    h1{max-width:660px;margin:18px 0 22px;font:500 clamp(3rem,6.2vw,5.4rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.035em}
+    h1 span{color:var(--acid)}
+    .intro{max-width:540px;margin:0;color:var(--muted);font-size:1.08rem;line-height:1.75}
+    .hero-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+    .button{display:inline-flex;align-items:center;gap:11px;padding:13px 17px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font-size:.88rem;font-weight:700;text-decoration:none;transition:transform .2s,border-color .2s}
+    .button.primary{border-color:var(--mint);background:var(--mint);color:#10202a}
+    .button:hover{transform:translateY(-2px);border-color:var(--mint)}
+    .hero-figure{position:relative;min-width:0;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--panel);box-shadow:0 28px 75px #0006}
+    .hero-figure img{display:block;width:100%;height:clamp(300px,38vw,440px);object-fit:cover;opacity:.9}
+    .hero-figure::after{position:absolute;inset:55% 0 0;content:"";background:linear-gradient(transparent,#07111dcc);pointer-events:none}
+    .hero-figure figcaption{position:absolute;z-index:1;right:15px;bottom:13px;left:15px;color:#e0e9ed;font-size:.72rem}
+    .hero-figure figcaption a{color:var(--mint)}
+    .section{margin:0 auto 62px;scroll-margin-top:25px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;padding-bottom:15px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+    h2{margin:6px 0 0;font:500 clamp(1.8rem,4vw,2.65rem)/1.15 Georgia,"Times New Roman",serif;letter-spacing:-.025em}
+    .section-head p{max-width:380px;margin:0;color:var(--muted);font-size:.88rem}
+    .lesson{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:26px 28px;border:1px solid #3b586e;border-radius:14px;background:linear-gradient(120deg,#142536,#111c28 72%,#142334);text-decoration:none;transition:transform .2s,border-color .2s}
+    .lesson:hover{transform:translateY(-3px);border-color:var(--mint)}
+    .lesson:focus-visible,.button:focus-visible,.back:focus-visible{outline:3px solid var(--acid);outline-offset:3px}
+    .lesson-tag{color:var(--acid);font:700 .68rem ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase}
+    .lesson h3{margin:7px 0;font-size:clamp(1.35rem,3.8vw,2rem);letter-spacing:-.04em}
+    .lesson p{margin:0;color:var(--muted);font-size:.91rem}
+    .arrow{display:grid;place-items:center;width:46px;height:46px;border:1px solid #42657a;border-radius:50%;color:var(--acid);font-size:1.35rem}
+    .note{padding:18px 20px;border-left:3px solid var(--blue);border-radius:0 12px 12px 0;background:#11201e;color:var(--muted);font-size:.9rem}
+    .note strong{color:var(--ink)}
+    footer{padding:24px 0 35px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
+    footer a{color:var(--mint);text-decoration:none}
+    @media(max-width:700px){.hero{grid-template-columns:1fr;gap:24px;padding-top:48px;padding-bottom:50px}.hero-figure img{height:210px}.section-head{align-items:flex-start;flex-direction:column;gap:8px}.lesson{padding:20px}.wrap{width:calc(100% - 30px)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html"><span class="mark" aria-hidden="true">⌁</span>GrammarNest</a>
+      <a class="back" href="index.html">← Educational resources</a>
+    </nav>
+  </header>
+  <main>
+    <section class="wrap hero" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow">Guided readings</div>
+        <h1 id="page-title">Simply<br><span>Philosophy.</span></h1>
+        <p class="intro">Simply Philosophy: Guided Readings</p>
+        <div class="hero-links">
+          <a class="button primary" href="simply-philosophy-area-1-science-part-1.html">AREA 1 · Science, part 1 <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Science laboratory glassware" fetchpriority="high">
+        <figcaption>Image: <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash License</a>.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap section" id="classes" aria-labelledby="classes-title">
+      <div class="section-head">
+        <div><div class="label">Guided readings</div><h2 id="classes-title">Classes</h2></div>
+        <p>Simply Philosophy: Guided Readings</p>
+      </div>
+      <a class="lesson" href="simply-philosophy-area-1-science-part-1.html">
+        <div>
+          <div class="lesson-tag">AREA 1 · Science · Part 1</div>
+          <h3>Science</h3>
+          <p>Academic vocabulary · Pseudosciences · Scientific method</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+  <footer><div class="wrap">GrammarNest · <a href="index.html">Educational resources</a></div></footer>
+</body>
+</html>

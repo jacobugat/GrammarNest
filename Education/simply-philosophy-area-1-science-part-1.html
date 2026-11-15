@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Simply Philosophy: Guided Readings. Area 1 Science, part 1.">
+<title>Area 1 Science, part 1 · Simply Philosophy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --page:#e8edf1; --paper:#fbfcfc; --grid:#dfe7ec; --ink:#14263a; --muted:#566a7c;
+  --line:#c9d5dd; --cobalt:#2c55c9; --deep:#0f2742; --mark:#ffd95e; --sky:#cfe0ff;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:grid;grid-template-rows:52px minmax(0,1fr) 68px;background:var(--page);color:var(--ink);font-family:var(--sans);line-height:1.6;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px}
+
+.top{width:min(1180px,calc(100% - 32px));margin:auto;display:flex;align-items:center;justify-content:space-between;font-size:.85rem}
+.top a{text-decoration:none;color:var(--muted)}
+.top a:hover{color:var(--cobalt)}
+.brand{font-family:var(--serif);font-size:1.1rem;color:var(--ink)!important;font-weight:500}
+.count{color:var(--muted);font-variant-numeric:tabular-nums}
+
+.stage{width:min(1180px,calc(100% - 32px));margin:0 auto;min-height:0;display:flex;align-items:center}
+.slide{width:100%;height:100%;max-height:700px;overflow:auto;border-radius:18px;background:
+  linear-gradient(var(--grid) 1px,transparent 1px) 0 0/34px 34px,
+  linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/34px 34px,var(--paper);
+  border:1px solid var(--line);box-shadow:0 18px 50px -24px #14263a55;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px);align-items:center;padding:clamp(26px,5vw,72px)}
+.slide[hidden]{display:none}
+.slide>*{min-width:0}
+.slide{overflow-x:hidden}
+.slide.enter{animation:in .35s ease both}
+@keyframes in{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+
+h1,h2{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+h2{font-size:clamp(2rem,4.4vw,3.5rem)}
+.lead{margin:16px 0 0;color:var(--muted);font-size:1.02rem;max-width:30ch}
+
+/* cover */
+.cover{background:var(--deep);border-color:var(--deep);color:#f2f6fa;padding:0;gap:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr);overflow:hidden}
+.cover .txt{padding:clamp(28px,6vw,80px)}
+.cover .series{margin:0 0 22px;color:#9fb6d3;font-size:.95rem}
+.cover h1{font-size:clamp(3.6rem,10vw,8rem);line-height:.95}
+.cover .part{margin:22px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,2rem);color:var(--mark)}
+.cover figure{margin:0;position:relative;height:100%;min-height:200px}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover figcaption{position:absolute;right:12px;bottom:10px;padding:2px 9px;border-radius:99px;background:#0f2742cc;color:#dbe6f2;font-size:.7rem}
+.cover figcaption a{text-underline-offset:3px}
+
+/* quote */
+.quote{margin:0;position:relative;padding-top:54px;font-family:var(--serif);font-size:clamp(1.25rem,2.5vw,1.9rem);line-height:1.5}
+.quote::before{content:"\201C";position:absolute;top:-18px;left:-4px;font-size:7rem;line-height:1;color:var(--cobalt);opacity:.9}
+.cite{margin:20px 0 0;padding-top:14px;border-top:2px solid var(--cobalt);display:inline-block;color:var(--muted);font-size:.92rem}
+
+/* vocab */
+.vocab{margin:0;display:grid}
+.vocab div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.vocab div:first-child{border-top:1px solid var(--line)}
+.vocab dt{font-family:var(--serif);font-size:clamp(1.25rem,2.3vw,1.75rem);font-weight:500;line-height:1.2}
+.vocab dd{margin:0;color:var(--muted);font-size:1rem}
+
+/* pseudosciences */
+.pair{display:grid;gap:16px}
+.pair div{padding:clamp(16px,2.4vw,30px);border-radius:14px;background:var(--sky);font-family:var(--serif);font-size:clamp(1.3rem,2.7vw,2.2rem);line-height:1.15;overflow-wrap:anywhere;hyphens:auto}
+.pair div:nth-child(2){background:var(--mark)}
+
+/* method */
+.def{margin:20px 0 0;font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.45rem);line-height:1.6;max-width:34em}
+.def b{font-weight:500;background:linear-gradient(transparent 58%,var(--mark) 58%)}
+.photo{margin:0;border-radius:14px;overflow:hidden;height:100%;max-height:440px;min-height:180px;border:1px solid var(--line)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* question + photos */
+.ask{display:grid;place-items:center;height:100%;min-height:180px;max-height:440px;border-radius:14px;background:var(--cobalt);color:#fff;font-family:var(--serif);font-size:clamp(7rem,18vw,13rem);line-height:1}
+.photo{background:var(--sky)}
+.photo.short{height:clamp(110px,24vh,200px);min-height:0;margin-bottom:16px}
+.stack{display:grid;gap:0;align-content:center}
+.quote p{margin:0}.quote p+p{margin-top:.8em}
+.quote{padding-top:58px}
+
+/* young learners */
+.hint-label{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--cobalt)}
+.terms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.terms div{display:flex;align-items:flex-end;min-height:clamp(100px,18vh,160px);padding:20px 22px;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:inset 0 6px 0 var(--cobalt);font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.1}
+.terms div:nth-child(2){box-shadow:inset 0 6px 0 var(--mark)}
+.terms div:nth-child(3){box-shadow:inset 0 6px 0 #55b7a4}
+.terms div:nth-child(4){box-shadow:inset 0 6px 0 #e58a6e}
+
+/* references */
+.refs{margin:0;display:grid;gap:0}
+.refs div{padding:16px 0;border-bottom:1px solid var(--line)}
+.refs div:first-child{border-top:1px solid var(--line)}
+.refs dt{color:var(--muted);font-size:.9rem}
+.refs dd{margin:2px 0 0;font-family:var(--serif);font-size:1.25rem}
+.refs a{color:var(--cobalt);text-underline-offset:4px}
+
+/* footer controls */
+.bar{width:min(1180px,calc(100% - 32px));margin:auto;display:flex;align-items:center;gap:14px}
+.nav{flex:0 0 auto;height:42px;padding:0 18px;border:1px solid var(--line);border-radius:99px;background:var(--paper);font-weight:500;font-size:.92rem;transition:background .15s,border-color .15s}
+.nav:hover:not(:disabled){border-color:var(--cobalt);background:#fff}
+.nav.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.nav.primary:hover:not(:disabled){background:#1f43a8}
+.nav:disabled{opacity:.35;cursor:default}
+.dots{flex:1;display:flex;gap:6px}
+.dots button{flex:1;height:26px;padding:0;border:0;background:none;position:relative}
+.dots button::after{content:"";position:absolute;left:0;right:0;top:11px;height:4px;border-radius:4px;background:var(--line);transition:background .2s}
+.dots button:hover::after{background:#9db0c0}
+.dots button[aria-current="step"]::after{background:var(--cobalt)}
+
+@media(max-width:760px){
+  body{grid-template-rows:46px minmax(0,1fr) 62px}
+  .slide{grid-template-columns:1fr;align-content:start;gap:22px;padding:26px 22px;max-height:none}
+  .cover{grid-template-columns:1fr;grid-template-rows:auto 150px;align-content:stretch}
+  .cover .txt{padding:28px 24px 8px}
+  .cover figure{min-height:0}
+  .vocab div{grid-template-columns:1fr;gap:2px;padding:12px 0}
+  .photo{max-height:180px}
+  .pair{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .pair div{font-size:1.15rem;padding:14px}
+  .nav{padding:0 14px}
+}
+@media(prefers-reduced-motion:reduce){.slide.enter{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="simply-philosophy.html">Simply Philosophy</a>
+  <span class="count"><span id="cur">1</span> of <span id="tot">8</span></span>
+  <a href="simply-philosophy.html">All classes</a>
+</header>
+
+<main class="stage" id="stage">
+  <article class="slide cover" aria-label="Area 1 Science">
+    <div class="txt">
+      <p class="series">Simply Philosophy: Guided Readings</p>
+      <h1>Area 1<br>Science</h1>
+      <p class="part">Part 1</p>
+    </div>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Science laboratory glassware" fetchpriority="high">
+      <figcaption>Image: <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash License</a></figcaption>
+    </figure>
+  </article>
+
+  <article class="slide" aria-label="The reading" hidden>
+    <div>
+      <h2>What makes good science?</h2>
+      <p class="lead">The reading</p>
+    </div>
+    <div>
+      <blockquote class="quote"><p>The reading selections in this Area deal with our ongoing attempts to understand what makes good science.</p><p>They focus on the question: is there a distinctive method followed by good or successful science, and if there is, what is it?</p></blockquote>
+      <p class="cite">(Wilson, 2003, p. 1)</p>
+    </div>
+  </article>
+
+  <article class="slide" aria-label="Academic Vocabulary and Expressions, part 1" hidden>
+    <div>
+      <h2>Academic Vocabulary and Expressions</h2>
+      <p class="lead">Part 1 of 2</p>
+    </div>
+    <dl class="vocab">
+      <div><dt>Reading selections</dt><dd>Textos de lectura</dd></div>
+      <div><dt>Deal with</dt><dd>Abordan</dd></div>
+      <div><dt>Ongoing</dt><dd>Permanente</dd></div>
+      <div><dt>Focus on</dt><dd>Centrarse en</dd></div>
+      <div><dt>Good science</dt><dd>Ciencia rigurosa / válida (validez y confiabilidad)</dd></div>
+    </dl>
+  </article>
+
+  <article class="slide" aria-label="Academic Vocabulary and Expressions, part 2" hidden>
+    <div>
+      <h2>Academic Vocabulary and Expressions</h2>
+      <p class="lead">Part 2 of 2</p>
+    </div>
+    <dl class="vocab">
+      <div><dt>Is there...?</dt><dd>¿Existe...?</dd></div>
+      <div><dt>Distinctive</dt><dd>Característico / Particular</dd></div>
+      <div><dt>Followed by</dt><dd>Seguido por / Siga</dd></div>
+      <div><dt>Good or successful science</dt><dd>Ciencia buena o exitosa</dd></div>
+      <div><dt>If there is</dt><dd>Si existe / Y de ser así</dd></div>
+    </dl>
+  </article>
+
+  <article class="slide" aria-label="Question: pseudosciences" hidden>
+    <h2>Which disciplines are considered pseudosciences or lack scientific validation, and why?</h2>
+    <div class="ask" aria-hidden="true">?</div>
+  </article>
+
+  <article class="slide" aria-label="Answer: pseudosciences" hidden>
+    <div>
+      <h2>Pseudosciences</h2>
+      <p class="lead">Disciplines that lack scientific validation</p>
+    </div>
+    <div class="stack">
+      <figure class="photo short"><img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Night sky full of stars" loading="lazy" onerror="this.remove()"></figure>
+      <div class="pair" style="grid-template-columns:repeat(2,minmax(0,1fr))"><div>Astrology</div><div>Parapsychology</div></div>
+    </div>
+  </article>
+
+  <article class="slide" aria-label="Question: scientific method" hidden>
+    <h2>What is a scientific method?</h2>
+    <div class="ask" aria-hidden="true">?</div>
+  </article>
+
+  <article class="slide" aria-label="Answer: scientific method" hidden>
+    <div>
+      <h2>The scientific method</h2>
+      <p class="def">The scientific method, developed in the 17th century, is a way of problem-solving by making a <b>hypothesis</b> and then <b>testing</b> it, a way of thinking that values <b>observation</b> and <b>data</b> instead of fanciful ideas about the order of things.</p>
+    </div>
+    <figure class="photo"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Science laboratory" loading="lazy" onerror="this.remove()"></figure>
+  </article>
+
+  <article class="slide" aria-label="Young learners" hidden>
+    <div>
+      <h2>How can you break down these concepts for young learners?</h2>
+      <p class="lead">Use these hints to explain each idea in simple words.</p>
+    </div>
+    <div>
+      <p class="hint-label">Hints / clues</p>
+      <div class="terms">
+        <div>Hypothesis</div>
+        <div>Testing</div>
+        <div>Observation</div>
+        <div>Data</div>
+      </div>
+    </div>
+  </article>
+
+  <article class="slide" aria-label="References" hidden>
+    <div>
+      <h2>References</h2>
+    </div>
+    <dl class="refs">
+      <div><dt>Book</dt><dd>Wilson, B. (2003). <i>Simply philosophy: Guided readings</i>. Edinburgh University Press.</dd></div>
+      <div><dt>Dictionary</dt><dd><a href="https://www.vocabulary.com/dictionary/" target="_blank" rel="noopener noreferrer">Vocabulary.com Dictionary</a></dd></div>
+      <div><dt>Images</dt><dd><a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash License</a></dd></div>
+    </dl>
+  </article>
+</main>
+
+<footer class="bar">
+  <button class="nav" id="prev" type="button">Back</button>
+  <nav class="dots" id="dots" aria-label="Go to slide"></nav>
+  <button class="nav primary" id="next" type="button">Next</button>
+</footer>
+
+<script>
+(()=>{
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=document.getElementById('dots');
+  const prev=document.getElementById('prev'), next=document.getElementById('next');
+  const cur=document.getElementById('cur');
+  document.getElementById('tot').textContent=slides.length;
+  let i=0;
+  slides.forEach((s,n)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.setAttribute('aria-label','Go to slide '+(n+1)+': '+s.getAttribute('aria-label'));
+    b.addEventListener('click',()=>show(n));
+    dots.append(b);
+  });
+  const btns=[...dots.children];
+  function show(n,animate=true){
+    i=Math.max(0,Math.min(n,slides.length-1));
+    slides.forEach((s,k)=>{
+      s.hidden=k!==i;
+      s.classList.remove('enter');
+      if(k===i&&animate){void s.offsetWidth;s.classList.add('enter');s.scrollTop=0}
+    });
+    btns.forEach((b,k)=>k===i?b.setAttribute('aria-current','step'):b.removeAttribute('aria-current'));
+    cur.textContent=i+1;
+    prev.disabled=i===0;
+    next.disabled=i===slides.length-1;
+    document.title=slides[i].getAttribute('aria-label')+' · Simply Philosophy';
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){}
+  }
+  prev.addEventListener('click',()=>show(i-1));
+  next.addEventListener('click',()=>show(i+1));
+  document.addEventListener('keydown',e=>{
+    if(e.altKey||e.ctrlKey||e.metaKey) return;
+    if(e.key==='ArrowRight'||e.key==='PageDown') show(i+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp') show(i-1);
+    if(e.key==='Home') show(0);
+    if(e.key==='End') show(slides.length-1);
+  });
+  let x0=null;
+  const stage=document.getElementById('stage');
+  stage.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  stage.addEventListener('touchend',e=>{
+    if(x0===null) return;
+    const dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>60) show(i+(dx<0?1:-1));
+  });
+  const start=parseInt(location.hash.slice(1),10);
+  show(start>0?start-1:0,false);
+})();
+</script>
+</body>
+</html>
