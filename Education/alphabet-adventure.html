@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff9ed">
+  <meta name="description" content="Listen, repeat, and explore every letter of the English alphabet.">
+  <title>Alphabet Adventure · GrammarNest</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #263248;
+      --muted: #647087;
+      --paper: #fff9ed;
+      --blue: #5578ed;
+      --pink: #f27b91;
+      --yellow: #ffd35a;
+      --mint: #65cdb0;
+      --purple: #a88be8;
+      --line: #e8e2d5;
+    }
+
+    * { box-sizing: border-box }
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 8% 12%, #f8d8dd 0 7rem, transparent 7.1rem),
+        radial-gradient(circle at 94% 31%, #d8f1e7 0 9rem, transparent 9.1rem),
+        var(--paper);
+      color: var(--ink);
+      font: 16px/1.5 "Trebuchet MS", "Segoe UI", sans-serif;
+    }
+    button { font: inherit }
+    .wrap { width: min(1050px, calc(100% - 36px)); margin: 0 auto }
+    .topbar { padding: 18px 0 }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 16px }
+    .brand { color: var(--ink); font-size: 1.05rem; font-weight: 900; text-decoration: none }
+    .brand-mark { display: inline-grid; place-items: center; width: 34px; height: 34px; margin-right: 7px; border-radius: 12px; background: var(--yellow); vertical-align: middle }
+    .back { color: var(--muted); font-weight: 750; text-decoration: none }
+    .back:hover, .back:focus-visible { color: var(--blue) }
+    main { padding: 20px 0 60px }
+    .hero { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 26px; padding: 22px 0 24px }
+    .eyebrow { color: #825fc5; font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase }
+    h1 { margin: 8px 0 8px; font-size: clamp(2.6rem, 8vw, 5.3rem); line-height: .98; letter-spacing: -.06em }
+    h1 span { color: var(--blue) }
+    .intro { max-width: 560px; margin: 0; color: var(--muted); font-size: 1.08rem }
+    .hero-badge { display: grid; place-items: center; width: 142px; height: 142px; border: 8px solid #fff; border-radius: 43% 57% 52% 48% / 54% 44% 56% 46%; background: var(--yellow); box-shadow: 0 8px 0 #eab943; color: #343148; font-size: 5rem; font-weight: 1000; transform: rotate(5deg) }
+    .activity {
+      overflow: hidden;
+      border: 2px solid #fff;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: 0 12px 0 #e9e3d8, 0 20px 40px #3e506012;
+    }
+    .activity-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 26px; background: #f0edff }
+    .activity-head h2 { margin: 0 0 4px; font-size: clamp(1.2rem, 3vw, 1.7rem); line-height: 1.2 }
+    .activity-head p { margin: 0; color: var(--muted) }
+    .part-tag { display: grid; flex: 0 0 54px; place-items: center; height: 54px; border-radius: 17px; background: var(--purple); color: #fff; font-size: 1.6rem; font-weight: 950 }
+    .audio-box { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 15px; padding: 18px 26px; border-bottom: 1px solid var(--line) }
+    .listen-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; background: #ddf5ed; font-size: 1.5rem }
+    .audio-copy strong { display: block; margin-bottom: 6px }
+    audio { display: block; width: 100%; height: 40px }
+    .prompt { margin: 0; color: var(--muted); font-size: .93rem }
+    .alphabet { padding: 23px 26px 26px }
+    .alphabet-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px }
+    .alphabet-top h3 { margin: 0; font-size: 1.15rem }
+    .tip { margin: 0; color: var(--muted); font-size: .85rem }
+    .letter-grid { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: 8px }
+    .letter-card { min-width: 0; overflow: hidden; border: 2px solid transparent; border-radius: 15px; background: var(--tile); box-shadow: 0 3px 0 color-mix(in srgb, var(--tile) 74%, #46516a) }
+    .letter-button { display: grid; place-items: center; width: 100%; min-width: 0; min-height: 82px; padding: 3px; border: 0; background: transparent; color: var(--ink); font-size: clamp(2rem, 4vw, 3rem); font-weight: 1000; cursor: pointer; transition: background .16s, color .16s, transform .16s }
+    .letter-button:hover { background: #ffffff70 }
+    .letter-button:focus-visible { position: relative; z-index: 1; outline: 3px solid var(--blue); outline-offset: -3px }
+    .letter-button:active { transform: scale(.92) }
+    .letter-card.vowel { border-color: #efb93b; background: #fff2bd; box-shadow: 0 3px 0 #e8c15d }
+    .letter-card.is-active { border-color: #29364d; background: var(--blue); box-shadow: 0 4px 0 #3f5fcb; animation: pop .38s ease-out }
+    .letter-card.is-active .letter-button { color: #fff }
+    .letter-card.is-speaking { outline: 4px solid #f27b91; outline-offset: 3px }
+    @keyframes pop { 50% { transform: scale(1.1) rotate(-2deg) } }
+    .status { min-height: 28px; margin: 16px 0 0; color: var(--muted); font-weight: 750; text-align: center }
+    .status[data-state="active"] { color: #3e61d0 }
+    .status[data-state="error"] { color: #b3324a }
+    .footer-note { padding: 17px 26px; background: #fffae9; color: #74643b; font-size: .88rem; text-align: center }
+    .footer-note strong { color: #4a3e20 }
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr auto }
+      .hero-badge { width: 100px; height: 100px; font-size: 3.8rem }
+      .letter-grid { grid-template-columns: repeat(7, minmax(0, 1fr)) }
+    }
+    @media (max-width: 480px) {
+      .wrap { width: calc(100% - 24px) }
+      .topbar { padding: 12px 0 }
+      .hero { grid-template-columns: 1fr; padding-top: 16px }
+      .hero-badge { display: none }
+      .activity-head, .audio-box, .alphabet { padding-right: 16px; padding-left: 16px }
+      .activity-head { align-items: flex-start }
+      .alphabet-top { align-items: flex-start; flex-direction: column }
+      .letter-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px }
+      .letter-button { min-height: 58px }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">↗</span>GrammarNest</a>
+      <a class="back" href="index.html">← Education library</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow">A little listening adventure</div>
+        <h1 id="page-title">Meet the <span>letters!</span></h1>
+        <p class="intro">Listen to the recording and repeat these letters after the speaker. Tap any letter to hear it again!</p>
+      </div>
+      <div class="hero-badge" aria-hidden="true">A</div>
+    </section>
+
+    <section class="activity" aria-labelledby="activity-title">
+      <div class="activity-head">
+        <div>
+          <h2 id="activity-title">Ready, little explorers?</h2>
+          <p>Follow the bright letters and say them out loud.</p>
+        </div>
+        <div class="part-tag" aria-label="Exercise A">A</div>
+      </div>
+      <div class="audio-box">
+        <div class="listen-icon" aria-hidden="true">🎧</div>
+        <div class="audio-copy">
+          <strong>Listen and repeat</strong>
+          <audio id="alphabet-audio" controls preload="metadata" aria-label="Alphabet recording, exercise A">
+            <source src="assets/alphabet-exercise-a.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+          <p class="prompt">The matching letter will light up as you listen.</p>
+        </div>
+      </div>
+      <div class="alphabet">
+        <div class="alphabet-top">
+          <h3>The whole alphabet!</h3>
+          <p class="tip">Tap a letter to hear its name.</p>
+        </div>
+        <div class="letter-grid" id="letter-grid" aria-label="Interactive English alphabet"></div>
+        <p class="status" id="activity-status" role="status" aria-live="polite">A to Z is ready! Press play or tap a letter.</p>
+      </div>
+      <div class="footer-note"><strong>Grown-up tip:</strong> The golden letters are vowels — A, E, I, O, U.</div>
+    </section>
+  </main>
+
+  <script>
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const vowels = new Set(['A', 'E', 'I', 'O', 'U']);
+    const colors = ['#dff4ef', '#e9e5ff', '#ffe6d8', '#e2efff', '#fde2eb', '#e8f2d5', '#fff0c8'];
+    const audio = document.getElementById('alphabet-audio');
+    const grid = document.getElementById('letter-grid');
+    const status = document.getElementById('activity-status');
+    const letterCards = [];
+    let activeUtterance = null;
+    let activeIndex = -1;
+    const letterStartTimes = [
+      22.66, 24.09, 25.50, 27.01, 28.45, 29.93, 31.43, 32.91, 34.41,
+      36.09, 37.70, 39.17, 40.85, 42.37, 43.91, 45.08, 47.14, 48.68,
+      50.16, 51.74, 53.24, 54.71, 56.22, 57.76, 59.10, 60.47
+    ];
+
+    function setActive(index, source = 'recording') {
+      if (index === activeIndex && source !== 'voice') return;
+      activeIndex = index;
+      letterCards.forEach((card, cardIndex) => {
+        card.classList.toggle('is-active', cardIndex === index);
+        card.classList.toggle('is-speaking', source === 'voice' && cardIndex === index);
+      });
+      if (index >= 0) {
+        status.textContent = source === 'voice'
+          ? `Listen: ${letters[index]}`
+          : `Your turn: ${letters[index]}!`;
+        status.dataset.state = 'active';
+      }
+    }
+
+    function clearActive() {
+      setActive(-1);
+      status.textContent = 'A to Z is ready! Press play or tap a letter.';
+      status.dataset.state = '';
+    }
+
+    letters.forEach((letter, index) => {
+      const card = document.createElement('div');
+      card.className = `letter-card${vowels.has(letter) ? ' vowel' : ''}`;
+      card.style.setProperty('--tile', colors[index % colors.length]);
+      letterCards.push(card);
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'letter-button';
+      button.textContent = letter;
+      button.setAttribute('aria-label', `Hear ${letter}`);
+      button.addEventListener('click', () => speakLetter(letter, index));
+      card.appendChild(button);
+      grid.appendChild(card);
+    });
+
+    function speakLetter(letter, index) {
+      if (!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) {
+        status.textContent = 'Letter audio is not supported in this browser.';
+        status.dataset.state = 'error';
+        return;
+      }
+      audio.pause();
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(letter);
+      const englishVoice = window.speechSynthesis.getVoices().find(voice => voice.lang.toLowerCase().startsWith('en'));
+      if (englishVoice) utterance.voice = englishVoice;
+      utterance.lang = englishVoice ? englishVoice.lang : 'en-US';
+      activeUtterance = utterance;
+      utterance.onstart = () => setActive(index, 'voice');
+      utterance.onend = () => {
+        if (activeUtterance !== utterance) return;
+        activeUtterance = null;
+        setActive(-1);
+        status.textContent = `Nice listening! You heard ${letter}.`;
+        status.dataset.state = '';
+      };
+      utterance.onerror = () => {
+        if (activeUtterance !== utterance) return;
+        activeUtterance = null;
+        setActive(-1);
+        status.textContent = `Could not play the letter ${letter}. Try again.`;
+        status.dataset.state = 'error';
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function updateRecordingHighlight() {
+      if (audio.currentTime < letterStartTimes[0]) {
+        if (activeIndex !== -1) setActive(-1);
+        return;
+      }
+      let index = letterStartTimes.length - 1;
+      while (index > 0 && audio.currentTime < letterStartTimes[index]) index--;
+      if (index !== activeIndex) setActive(index);
+    }
+
+    function syncRecordingHighlight() {
+      updateRecordingHighlight();
+      if (!audio.paused && !audio.ended) requestAnimationFrame(syncRecordingHighlight);
+    }
+
+    audio.addEventListener('play', () => {
+      if (activeUtterance) {
+        window.speechSynthesis.cancel();
+        activeUtterance = null;
+      }
+      status.textContent = 'Listen closely and repeat after the speaker!';
+      status.dataset.state = '';
+      syncRecordingHighlight();
+    });
+    audio.addEventListener('timeupdate', updateRecordingHighlight);
+    audio.addEventListener('seeked', updateRecordingHighlight);
+    audio.addEventListener('pause', () => {
+      if (!audio.ended) {
+        status.textContent = 'Audio paused. Press play when you are ready!';
+        status.dataset.state = '';
+      }
+    });
+    audio.addEventListener('ended', () => {
+      setActive(-1);
+      status.textContent = 'Wonderful listening! You made it through the alphabet!';
+      status.dataset.state = '';
+    });
+    audio.addEventListener('error', () => {
+      status.textContent = 'The recording could not be loaded. Please try again later.';
+      status.dataset.state = 'error';
+    });
+  </script>
+</body>
+</html>
