@@ -1,6 +1,7 @@
 (function () {
     var startButton = document.getElementById("start-button");
     var startScreen = document.getElementById("start-screen");
+    var touchControls = document.getElementById("touch-controls");
     var pauseOverlay = document.getElementById("pause-overlay");
     var completionOverlay = document.getElementById("completion-overlay");
     var pauseBtn = document.getElementById("btn-pause-game");
@@ -52,18 +53,108 @@
         var height = (canvas && canvas.height) ||
             (window.FSM && window.FSM.MapScreener && window.FSM.MapScreener.height) ||
             stage.offsetHeight || 464;
+        var topInset = 8;
+        var bottomInset = 8;
+        var missionBar = document.getElementById("english-mission-bar");
+
+        if (window.innerWidth <= 900) {
+            if (missionBar) {
+                topInset = missionBar.getBoundingClientRect().bottom + 20;
+            }
+            if (touchControls && window.getComputedStyle(touchControls).display !== "none") {
+                bottomInset = window.innerHeight - touchControls.getBoundingClientRect().top + 8;
+            }
+        }
 
         // Margen de seguridad visual alrededor del viewport
-        var availWidth = Math.max(320, window.innerWidth - 16);
-        var availHeight = Math.max(240, window.innerHeight - 16);
+        var availWidth = Math.max(1, window.innerWidth - 16);
+        var availHeight = Math.max(1, window.innerHeight - topInset - bottomInset);
 
         // Escalar proporcionalmente al alto y ancho de la ventana
-        var scale = Math.min(availWidth / width, availHeight / height);
+        var widthScale = availWidth / width;
+        var heightScale = availHeight / height;
+        var scale = Math.min(widthScale, heightScale);
+
+        if (window.innerWidth <= 900 && widthScale <= heightScale) {
+            scale = Math.min(scale * 1.15, heightScale);
+        }
 
         // Permitir que crezca hasta 3.5x en monitores 1080p, 2K o 4K
-        scale = Math.max(0.6, Math.min(3.5, scale));
+        scale = Math.max(0.35, Math.min(3.5, scale));
 
-        stage.style.transform = "scale(" + scale + ")";
+        stage.style.transformOrigin = "top left";
+        stage.style.transform = "translate(" +
+            ((window.innerWidth - width * scale) / 2 - stage.offsetLeft) + "px, " +
+            ((topInset + window.innerHeight - bottomInset - height * scale) / 2 - stage.offsetTop) + "px) scale(" +
+            scale + ")";
+    }
+
+    function initTouchControls() {
+        if (!touchControls) {
+            return;
+        }
+
+        var activePointers = Object.create(null);
+
+        function releasePointer(event) {
+            var active = activePointers[event.pointerId];
+            if (!active) {
+                return;
+            }
+
+            delete activePointers[event.pointerId];
+            active.button.classList.remove("is-pressed");
+            active.button.setAttribute("aria-pressed", "false");
+
+            var inputWriter = window.FSM && window.FSM.InputWriter;
+            if (inputWriter) {
+                inputWriter.callEvent("onkeyup", active.keyCode, event);
+            }
+        }
+
+        function releaseAllPointers() {
+            Object.keys(activePointers).forEach(function (pointerId) {
+                releasePointer({
+                    pointerId: pointerId,
+                    preventDefault: function () {}
+                });
+            });
+        }
+
+        touchControls.addEventListener("pointerdown", function (event) {
+            var button = event.target.closest("[data-key-code]");
+            if (!button || !touchControls.contains(button) || activePointers[event.pointerId]) {
+                return;
+            }
+
+            event.preventDefault();
+            var active = {
+                button: button,
+                keyCode: Number(button.getAttribute("data-key-code"))
+            };
+            activePointers[event.pointerId] = active;
+            button.classList.add("is-pressed");
+            button.setAttribute("aria-pressed", "true");
+
+            if (button.setPointerCapture) {
+                button.setPointerCapture(event.pointerId);
+            }
+
+            var inputWriter = window.FSM && window.FSM.InputWriter;
+            if (inputWriter) {
+                inputWriter.callEvent("onkeydown", active.keyCode, event);
+            }
+        });
+
+        window.addEventListener("pointerup", releasePointer);
+        window.addEventListener("pointercancel", releasePointer);
+        touchControls.addEventListener("lostpointercapture", releasePointer);
+        window.addEventListener("blur", releaseAllPointers);
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                releaseAllPointers();
+            }
+        });
     }
 
     /**
@@ -413,12 +504,11 @@
 
             installWorldLimit();
             startFpsMeter();
-            fitStage();
-            window.addEventListener("resize", fitStage);
-
             window.FSM.GamesRunner.play();
             document.body.className += " playing";
             startScreen.hidden = true;
+            fitStage();
+            window.addEventListener("resize", fitStage);
             startButton.disabled = false;
             startButton.textContent = "▶ VOLVER AL JUEGO";
         } catch (error) {
@@ -430,6 +520,7 @@
     }
 
     initConversationAudio();
+    initTouchControls();
     startButton.addEventListener("click", startGame);
 
     // Conectar botón de Pausa superior

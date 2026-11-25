@@ -16,3 +16,4 @@ Al responder correctamente (con clic o teclas `[1]`, `[2]`), ganas puntos, moned
 - Shift: correr y lanzar fuego.
 - P: pausar.
 - 1 / 2 / 3: responder a las preguntas de gramática.
+- En móviles, usa las flechas y los botones **Saltar** y **Fuego** de la franja inferior.

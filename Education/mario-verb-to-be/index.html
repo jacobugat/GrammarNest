@@ -10,6 +10,24 @@
 <body>
     <main id="game" aria-label="Juego de Mario"></main>
     <div id="controls" aria-hidden="true"></div>
+    <div id="touch-controls" class="touch-controls" role="group" aria-label="Controles táctiles">
+        <button class="touch-control-btn" type="button" data-key-code="37" aria-label="Mover a la izquierda" aria-pressed="false">
+            <span class="touch-control-icon" aria-hidden="true">◀</span>
+            <span class="touch-control-label">IZQ.</span>
+        </button>
+        <button class="touch-control-btn" type="button" data-key-code="39" aria-label="Mover a la derecha" aria-pressed="false">
+            <span class="touch-control-icon" aria-hidden="true">▶</span>
+            <span class="touch-control-label">DER.</span>
+        </button>
+        <button class="touch-control-btn touch-control-jump" type="button" data-key-code="38" aria-label="Saltar" aria-pressed="false">
+            <span class="touch-control-icon" aria-hidden="true">⬆</span>
+            <span class="touch-control-label">SALTAR</span>
+        </button>
+        <button class="touch-control-btn touch-control-fire" type="button" data-key-code="16" aria-label="Disparar" aria-pressed="false">
+            <span class="touch-control-icon" aria-hidden="true">🔥</span>
+            <span class="touch-control-label">FUEGO</span>
+        </button>
+    </div>
     <output id="fps-meter" aria-live="off" hidden>FPS --</output>
 
     <!-- Banner Superior de Misión en Tiempo Real (Sin Pausa) -->
